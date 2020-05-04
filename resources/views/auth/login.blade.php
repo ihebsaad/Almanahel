@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="row" style="margin-top:8%;">
-        <center><img style="margin-bottom:30px;"  class="img-circle" width="100" src="{{ asset('public/img/najda.png') }}"></img></center>
+      <!--  <center><img style="margin-bottom:30px;"  class="img-circle" width="100" src="{{ asset('public/img/najda.png') }}"></img></center>-->
 
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default ">

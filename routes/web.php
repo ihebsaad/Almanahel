@@ -18,12 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 
+
+
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
- 
+$this->post('changerposte', 'Auth\LoginController@changerposte')->name('changerposte');
+$this->get('changerposte', 'Auth\LoginController@changerposte')->name('changerposte');
+
 // Registration Routes...
 $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 $this->post('register', 'Auth\RegisterController@register');
@@ -36,6 +40,7 @@ $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');;
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 $this->post('password/reset/{token}', 'Auth\ResetPasswordController@reset');
+
 
 
 

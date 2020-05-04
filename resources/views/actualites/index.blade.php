@@ -219,7 +219,7 @@
                 {
                     var _token = $('input[name="_token"]').val();
                     $.ajax({
-                        url:"{{ route('actualite.saving') }}",
+                        url:"{{ route('actualites.saving') }}",
                         method:"POST",
                         data:{titre:titre, _token:_token},
                         success:function(data){

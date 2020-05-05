@@ -46,7 +46,7 @@
 
  </div><!---->
 
- @include('layouts.partial.footer-scripts')
+ @include('layouts.partial.footer-scripts-back')
 
 </body>
 </html>

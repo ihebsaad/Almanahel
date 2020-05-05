@@ -8,3 +8,4 @@
   <!-- Custom scripts for this template -->
   <script  src="{{  URL::asset('public/site/js/clean-blog.min.js') }}"  ></script>
 
+ @yield('footer_scripts')

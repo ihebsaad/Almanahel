@@ -20,7 +20,12 @@
  
  <script  src="{{ asset('public/js/jquery-3.5.1.js') }}"  type="text/javascript"></script>
 
- 
+       <!-- CSS DAtatable  -->
+
+<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
+ <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
+
  
    <link rel="stylesheet" href="{{ URL::asset('public/bootstrap/css/bootstrap.min.css') }}">
 

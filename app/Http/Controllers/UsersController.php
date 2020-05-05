@@ -38,7 +38,8 @@ class UsersController extends Controller
 
         }
 		*/
-		   return redirect('/')->with('success', 'droits insuffisants');
+            return view('users.index',  compact('users'));        
+		 
 
 
      }

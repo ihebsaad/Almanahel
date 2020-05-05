@@ -1,6 +1,6 @@
  
 <head>
-    @include('layouts.partial.head')
+    @include('layouts.partial.head-back')
     <?php    setlocale(LC_ALL, "fr_FR.UTF-8");    ?>
 </head>
 <body>

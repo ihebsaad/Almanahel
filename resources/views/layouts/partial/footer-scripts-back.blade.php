@@ -4,7 +4,8 @@
 {{ csrf_field() }}
 
  
- <!--<script src="{{  URL::asset('public/js/custom_js/fixed_layout.js') }}" type="text/javascript"></script>-->
+  <script src="{{ URL::asset('public/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+
  
 <script  src="{{ asset('public/js/summernote.min.js') }}"  type="text/javascript"></script>
 <script src="{{  URL::asset('public/js/custom_js/compose.js') }}" type="text/javascript"></script>

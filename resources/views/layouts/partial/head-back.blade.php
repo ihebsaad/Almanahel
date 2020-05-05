@@ -18,6 +18,9 @@
       <!-- CSRF Token -->
  {{ csrf_field() }}
  
+   <link rel="stylesheet" href="{{ URL::asset('public/bootstrap/css/bootstrap.min.css') }}">
+
+   
    
  <link href="{{ URL::asset('public/css/datepicker.css') }}" rel="stylesheet">
  

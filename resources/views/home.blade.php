@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
-<?php $link= "url(". {{ asset('public/site/img/home-bg.jpg') }} .")"; ?>
+<?php $link  =  "http://$_SERVER[HTTP_HOST]/public/site/img/home-bg.jpg"; ?>
   <!-- Page Header -->
   <header class="masthead" style= "background-image:'<?php echo $link ;?>'" >
     <div class="overlay"></div>

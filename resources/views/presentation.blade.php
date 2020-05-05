@@ -4,9 +4,10 @@
 
   <!-- Page Header -->
   
-  
+  <?php $link  =  "http://$_SERVER[HTTP_HOST]/public/site/img/about-bg.jpg"; ?>
+
   <!-- Page Header -->
-  <header class="masthead" style=" background-image:url('<?php {{ asset('public/site/img/about-bg.jpg') }} ?>')">
+  <header class="masthead" style=" background-image:url('<?php  echo $link; ?>')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">

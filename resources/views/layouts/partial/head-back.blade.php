@@ -28,9 +28,7 @@
    
  <link href="{{ URL::asset('public/css/datepicker.css') }}" rel="stylesheet">
  
- <!--page level css-->
-    @yield('header_styles')
-
+  
     <!-- include alertify css -->
 
 <link rel="stylesheet" href="{{ URL::asset('resources/assets/css/alertify.css') }}">

@@ -1,14 +1,16 @@
+<?php
+
 @extends('layouts.front')
 
 @section('content')
 
- Vie scolaire
+
+Vie scolaire
+   
   
   
   
   
+@endsection
   
-  
-  
-  
-  @endsection
+?>

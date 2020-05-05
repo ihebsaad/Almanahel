@@ -49,7 +49,7 @@ class HomeController extends Controller
     }
 	 
 
-    public function presentaion()
+    public function presentation()
     {
          return view('presentation' );
     }

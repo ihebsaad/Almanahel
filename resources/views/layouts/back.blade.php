@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    @include('layouts.partials.head')
+    @include('layouts.partial.head')
     <?php    setlocale(LC_ALL, "fr_FR.UTF-8");    ?>
 </head>
 <body>
@@ -47,7 +47,7 @@
 
  </div><!---->
 
- @include('layouts.partials.footer-scripts')
+ @include('layouts.partial.footer-scripts')
 
 </body>
 </html>

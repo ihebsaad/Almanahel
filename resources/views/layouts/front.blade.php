@@ -1,4 +1,4 @@
-  @include('layouts.partials.head')
+  @include('layouts.partial.head')
  
   <!-- Main Content -->
   <div class="container">
@@ -10,8 +10,8 @@
 
   <hr>  
    
-@include('layouts.partials.footer')
-@include('layouts.partials.footer-scripts')
+@include('layouts.partial.footer')
+@include('layouts.partial.footer-scripts')
 </body>
 </html>
 

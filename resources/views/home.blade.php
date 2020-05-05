@@ -17,12 +17,7 @@
     </div>
   </header>
   
-  
-  
-  
-  
-  
-  
+   
   
   
   @endsection

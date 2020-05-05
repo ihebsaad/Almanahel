@@ -1,4 +1,4 @@
-@extends('layouts.adminlayout')
+@extends('layout.back')
 
 @section('content')
 <div class="form-group">

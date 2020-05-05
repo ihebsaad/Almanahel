@@ -16,13 +16,5 @@
 <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
  
-
  
-<!-- end of page level js -->
-<!-- begin page level js -->
-@yield('footer_scripts')
-<script type="text/javascript">
- 
-
-</script>
 

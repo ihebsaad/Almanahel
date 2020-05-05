@@ -167,30 +167,7 @@
             });
 
 
-
-/*
-            $('#add').click(function(){
-                var name = $('#name').val();
-                if ((name != '')  )
-                {
-                    var _token = $('input[name="_token"]').val();
-                    $.ajax({
-                        url:"{{ route('typeprestations.saving') }}",
-                        method:"POST",
-                        data:{name:name, _token:_token},
-                        success:function(data){
-
-                            //   alert('Added successfully');
-                            window.location =data;
-
-
-                        }
-                    });
-                }else{
-                    // alert('ERROR');
-                }
-            });
-*/
+ 
         });
 
     </script>

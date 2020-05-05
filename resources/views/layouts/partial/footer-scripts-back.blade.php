@@ -1,10 +1,11 @@
  
+<script  src="{{ asset('public/js/jquery-3.5.1.js') }}"  type="text/javascript"></script>
 
 <!--<script src="{{--  URL::asset('public/js/jquery-ui/jquery.ui.min.js') --}}" type="text/javascript"></script>-->
 {{ csrf_field() }}
 
  
-  <script src="{{ URL::asset('public/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('public/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
  
 <script  src="{{ asset('public/js/summernote.min.js') }}"  type="text/javascript"></script>

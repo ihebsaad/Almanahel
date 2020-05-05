@@ -1,26 +1,10 @@
- 
-
-<!--<script src="{{--  URL::asset('public/js/jquery-ui/jquery.ui.min.js') --}}" type="text/javascript"></script>-->
+  
 {{ csrf_field() }}
 
- 
- <!--<script src="{{  URL::asset('public/js/custom_js/fixed_layout.js') }}" type="text/javascript"></script>-->
- 
-<script  src="{{ asset('public/js/summernote.min.js') }}"  type="text/javascript"></script>
-<script src="{{  URL::asset('public/js/custom_js/compose.js') }}" type="text/javascript"></script>
- 
-<!----- Datepicker ------->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+   <!-- Bootstrap core JavaScript -->
+  <script    src="{{  URL::asset('public/site/js/jquery.min.js') }}"   ></script>
+  <script    src="{{  URL::asset('public/site/js/bootstrap.bundle.min.js') }}"     ></script>
 
- 
-
- 
-<!-- end of page level js -->
-<!-- begin page level js -->
-@yield('footer_scripts')
-<script type="text/javascript">
- 
-
-</script>
+  <!-- Custom scripts for this template -->
+  <script  src="{{  URL::asset('public/site/js/clean-blog.min.js') }}"  ></script>
 

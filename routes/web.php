@@ -12,11 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Auth::routes();
 
+Route::get('/home', array('as' => 'home','uses' => 'HomeController@home'));
+Route::get('/presentation', array('as' => 'presentation','uses' => 'HomeController@presentation'));
+Route::get('/formation', array('as' => 'formation','uses' => 'HomeController@formation'));
+Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scolaire'));
+Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
+
+Auth::routes();
 
 
 

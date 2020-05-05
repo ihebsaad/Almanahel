@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
+ 
 <head>
     @include('layouts.partial.head')
     <?php    setlocale(LC_ALL, "fr_FR.UTF-8");    ?>

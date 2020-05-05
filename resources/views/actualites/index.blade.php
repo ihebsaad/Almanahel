@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-lg-6">Actualités</div>
                 <div class="col-lg-6">
-                    <button id="addgr" class="btn btn-md btn-success"   data-toggle="modal" data-target="#create"><b><i class="fas fa-plus"></i> Ajouter un Gouvernorat</b></button>
+                    <button id="addgr" class="btn btn-md btn-success"   data-toggle="modal" data-target="#create"><b><i class="fas fa-plus"></i> Ajouter une actualité</b></button>
                 </div>
             </div>
         </div>

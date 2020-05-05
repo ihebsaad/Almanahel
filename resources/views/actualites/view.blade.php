@@ -10,14 +10,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="inputError" class="control-label">Nom *</label>
-                                <input onchange="changing(this)" type="text" class="form-control input" name="name" id="name"  value="{{ $citie->name }}">
+                                <label for="inputError" class="control-label">Titre *</label>
+                                <input onchange="changing(this)" type="text" class="form-control input" name="name" id="name"  value="{{ $actualite->titre }}">
                             </div>
                         </div>
   
 
                      </div>
-                    <input type="hidden" id="id" class="form-control"   value={{ $citie->id }}>
+                    <input type="hidden" id="id" class="form-control"   value={{ $actualite->id }}>
     </form>
                 </div>	 
 
@@ -40,7 +40,7 @@
          //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();
         $.ajax({
-            url: "{{ route('cities.updating') }}",
+            url: "{{ route('actualites.updating') }}",
             method: "POST",
             data: {citie: citie , champ:champ ,val:val, _token: _token},
             success: function (data) {
@@ -66,9 +66,9 @@
         //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();
         $.ajax({
-            url: "{{ route('cities.updating') }}",
+            url: "{{ route('actualites.updating') }}",
             method: "POST",
-            data: {citie: citie , champ:champ ,val:val, _token: _token},
+            data: {actualite: actualite , champ:champ ,val:val, _token: _token},
             success: function (data) {
                 if (elm=='annule'){
                 $('#nonactif').animate({

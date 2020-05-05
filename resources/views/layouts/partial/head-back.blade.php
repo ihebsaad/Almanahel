@@ -18,6 +18,10 @@
       <!-- CSRF Token -->
  {{ csrf_field() }}
  
+ <script  src="{{ asset('public/js/jquery-3.5.1.js') }}"  type="text/javascript"></script>
+
+ 
+ 
    <link rel="stylesheet" href="{{ URL::asset('public/bootstrap/css/bootstrap.min.css') }}">
 
    

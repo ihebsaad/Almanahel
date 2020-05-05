@@ -148,7 +148,7 @@ class UsersController extends Controller
  
         $user = User::find($id);
 
-        return view('dossiers.edit',  compact('user','id'));
+        return view('users.edit',  compact('user','id'));
     }
 
     /**

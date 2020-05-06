@@ -32,7 +32,8 @@
  
  
  
- 
+ <?php if  ($view_name != 'messagechat-messagerie')   { ?>
+
  
 <script>  
 $(document).ready(function(){
@@ -263,8 +264,7 @@ $(document).ready(function(){
 });  
 </script>
  
- 
- 
+<?php } ?>
  
  
  @yield('footer_scripts')

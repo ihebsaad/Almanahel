@@ -8,8 +8,7 @@
      {{ csrf_field() }}
 
 <div class="modal-body">
-    <form id="updateform">
-
+ 
     <div class="row">
 	
        <div class="form-group ">
@@ -23,12 +22,11 @@
 	
 	
 	 <div class="row">
-	   <button id="save" class="btn btn-md btn-success"  onclick="changing('contact');   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button id="save" class="btn btn-md btn-success"  onclick="changing('contact');"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 	
 	
-     </form>
- </div>	 
+  </div>	 
 
   </div>
 

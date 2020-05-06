@@ -59,7 +59,7 @@
        
        
 
-<?php if($user->user_type=='Élève') {?>
+<?php if($user->user_type=='eleve') {?>
     <tr>
 
         <td class="text-primary">Niveau</td>
@@ -86,7 +86,7 @@
         
         
  <?php } ?> 
- <?php if($user->user_type=='Parent') {?>
+ <?php if($user->user_type=='parent') {?>
    
         <tr>
 

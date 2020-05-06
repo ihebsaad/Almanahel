@@ -74,7 +74,7 @@
             </td>
         </tr>
 <?php } ?>
-<?php if($user->user_type=='Élève') {?>
+<?php if($user->user_type=='eleve') {?>
     <tr>
 
         <td class="text-primary">Niveau</td>
@@ -99,9 +99,12 @@
             <td> <input id="retards" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                  </td>
         </tr>
         
+        <td class="text-primary">Remarques</td>
+            <td> <textarea id="remarques" autocomplete="off" onchange="changing(this)"    class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
+        </tr>
         
  <?php } ?> 
- <?php if($user->user_type=='Parent') {?>
+ <?php if($user->user_type=='parent') {?>
    
         <tr>
 

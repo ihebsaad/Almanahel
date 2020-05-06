@@ -71,10 +71,13 @@
 
                             <div class="col-md-6">
                                 <select  name="user_type"  id="type" class="form-control"  >
-                                    <option value="Élève">Élève</option>
-                                    <option value="Enseignant"   >Enseignant</option>
-                                    <option  value="Parent"   >Parent</option>
-                                    <option  value="Membre Administration"    >Membre Administration</option>
+                                    <option value="eleve">Élève</option>
+                                    <option value="prof"   >Enseignant</option>
+                                    <option  value="parent"   >Parent</option>
+                                    <option  value="financier"   >Direction Finacière</option>
+                                    <option  value="membre"    >Membre d'administration</option>
+                                    <option  value="conseil"    >Conseil de pilotage</option>
+                                    <option  value="suivi"    >Suivi pédagogique</option>
                                   
                                 </select>
 

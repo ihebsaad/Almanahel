@@ -45,7 +45,7 @@ class UsersController extends Controller
 		  $users = User::orderBy('name', 'asc')->get() ;
                               
          
-             if ( $user->user_type==='Parent')
+             if ( $user->user_type==='parent')
             {
                  $idseleves = DB::table('parents_eleve')->where('parent','=',$id)->pluck('eleve');
                

@@ -97,9 +97,9 @@ class UsersController extends Controller
 		  
 		  $users = User::where('user_type','membre')
 		  ->orWhere('user_type','suivi')
-		  ->('user_type','admin')
-		  ->('user_type','conseil')
-		  ->('user_type','financier')
+		  ->orWhere('user_type','admin')
+		  ->orWhere('user_type','conseil')
+		  ->orWhere('user_type','financier')
 		  ->orderBy('name', 'asc')->get() ;
               
            return view('users.profs',  ['users' => $users]);        

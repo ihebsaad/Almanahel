@@ -20,6 +20,7 @@ Route::get('/home', array('as' => 'home','uses' => 'HomeController@home'));
 Route::get('/presentation', array('as' => 'presentation','uses' => 'HomeController@presentation'));
 Route::get('/formation', array('as' => 'formation','uses' => 'HomeController@formation'));
 Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scolaire'));
+Route::get('/inscription', array('as' => 'contact','uses' => 'HomeController@inscription'));
 Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
 
 Auth::routes();
@@ -80,5 +81,6 @@ Route::get('/contenupresentation', array('as' => 'contenupresentation','uses' =>
 Route::get('/contenuformation', array('as' => 'contenuformation','uses' => 'HomeController@contenu_formation'));
 Route::get('/contenuscolaire', array('as' => 'contenuscolaire','uses' => 'HomeController@contenu_scolaire'));
 Route::get('/contenucontact', array('as' => 'contenucontact','uses' => 'HomeController@contenu_contact'));
+Route::get('/contenuinscription', array('as' => 'contenuinscription','uses' => 'HomeController@contenu_inscription'));
 
 

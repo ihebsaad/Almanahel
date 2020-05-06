@@ -2,7 +2,7 @@
 <html lang="fr">
 <?php    setlocale(LC_ALL, "fr_FR.UTF-8");    ?>
 <head>
-    <title>Najda Assistance</title>
+    <title>Al Manahel</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">

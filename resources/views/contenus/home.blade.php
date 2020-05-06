@@ -11,18 +11,21 @@
     <form id="updateform">
 
     <div class="row">
+	
        <div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;width:100%" id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ></textarea>
+                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ></textarea>
                     </div>
-                </div>
+         </div>
 
     </div>
 	
 	
-	
-	
+	<div class="row">
+	   <button id="save" class="btn btn-md btn-success"    ><b><i class="fas fa-plus"></i> Enregistrer</b></button>
+    </div>
+
 	
      </form>
  </div>	 

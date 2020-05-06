@@ -90,6 +90,9 @@ class HomeController extends Controller
          return view('contenus.contact' );
     } 
 
-	
+		public function contenu_inscription()
+    {
+         return view('contenus.inscription' );
+    } 
 	  
 }

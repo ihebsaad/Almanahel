@@ -71,7 +71,7 @@ class HomeController extends Controller
          return view('contenus.home' );
     } 
 
-	public function contenu_presentatin()
+	public function contenu_presentation()
     {
          return view('contenus.presentation' );
     } 

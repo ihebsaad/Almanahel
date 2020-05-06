@@ -7,8 +7,8 @@
 <div class="form-group">
      {{ csrf_field() }}
 <?php 
-$contenu =  App\Contenu::where('zone', 'scolaire')->pluck('contenu');
-$contenu2 =  App\Contenu::where('zone', 'scolaire2')->pluck('contenu');
+$cont =  App\Contenu::where('zone', 'scolaire')->first();$contenu=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont->contenu ;
  
 ?>
 <div class="modal-body">

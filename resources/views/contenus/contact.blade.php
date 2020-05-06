@@ -35,15 +35,14 @@
 <script>
 
    function changing(elm) {
-        var champ=elm.id;
-
-        var val =document.getElementById(champ).value;
+        
+        var val =document.getElementById(elm).value;
       
         var _token = $('input[name="_token"]').val();
         $.ajax({
             url: "{{ route('home.updatecontent') }}",
             method: "POST",
-            data: {zone: zone   ,val:val, _token: _token},
+            data: {zone: elm   ,val:val, _token: _token},
             success: function (data) {
                 $('#'+champ).animate({
                     opacity: '0.3',

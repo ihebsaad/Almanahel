@@ -23,7 +23,7 @@ Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scola
 Route::get('/inscription', array('as' => 'inscription','uses' => 'HomeController@inscription'));
 Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
 
-Route::get('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));
+Route::post('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));
 
 Auth::routes();
 

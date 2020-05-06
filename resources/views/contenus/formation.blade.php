@@ -6,7 +6,10 @@
 <h1>Gestion du contenu: Page Formation </h1>
 <div class="form-group">
      {{ csrf_field() }}
+<?php 
+$contenu =  App\Contenu::where('zone', 'formation')->pluck('contenu');
 
+?>
 <div class="modal-body">
  
     <div class="row">
@@ -14,7 +17,7 @@
        <div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="formation" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ></textarea>
+                        <textarea style="min-height: 380px;"  id="formation" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>
          </div>
 
@@ -46,10 +49,10 @@
             method: "POST",
             data: {zone: elm   ,val:val, _token: _token},
             success: function (data) {
-                $('#'+champ).animate({
+                $('#'+elm).animate({
                     opacity: '0.3',
                 });
-                $('#'+champ).animate({
+                $('#'+elm).animate({
                     opacity: '1',
                 });
 

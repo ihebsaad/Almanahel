@@ -18,7 +18,8 @@
       <!-- CSRF Token -->
  {{ csrf_field() }}
  
- <script  src="{{ asset('public/js/jquery-3.5.1.js') }}"  type="text/javascript"></script>
+<!-- <script  src="{{ asset('public/js/jquery-3.5.1.js') }}"  type="text/javascript"></script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
        <!-- CSS DAtatable  -->
 

@@ -75,7 +75,7 @@
         <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
              <a class="collapse-item" href="{{route('eleves')}}">Elèves</a>
-            <a class="collapse-item" href="{{route('profs')}}">Ensignants</a>
+            <a class="collapse-item" href="{{route('profs')}}">Enseignants</a>
             <a class="collapse-item" href="{{route('parents')}}">Parents</a>
             <a class="collapse-item" href="{{route('contenuinscription')}}">Classes</a>
             <a class="collapse-item" href="{{route('personnels')}}">Personnels</a>

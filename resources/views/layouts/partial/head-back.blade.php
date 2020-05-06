@@ -22,7 +22,7 @@
  <!-- <script  src="{{ asset('public/js/jquery-3.5.1.js') }}"  type="text/javascript"></script> -->
 <!-- --------->
 
-<?php if  ($view_name ! = 'messagerie')   { ?>
+<?php if  ($view_name != 'messagerie')   { ?>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <?php }?>
        <!-- CSS DAtatable  

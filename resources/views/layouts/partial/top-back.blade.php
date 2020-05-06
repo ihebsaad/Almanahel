@@ -43,10 +43,16 @@
 
     <!-- Nav Item - Messages -->
             <li class="nav-item   no-arrow mx-1">
-              <a class="nav-link  " href="{{route('message')}}" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link  " href="{{route('message')}}" >
                 <i class="fas fa-sms fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
+				<?php $users= \App\User::get();
+				$count=0;
+					foreach($users as $user){
+						if($user->isOnline()){$count++;}
+					}
+				?>
+                <span class="badge badge-danger badge-counter"><?php echo $count-1;?></span>
               </a>
 			</li>
 

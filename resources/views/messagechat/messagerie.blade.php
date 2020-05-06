@@ -32,13 +32,13 @@
                 <div class="col-md-8 col-sm-6">
                     <h4>Utilisateurs</h4>
                 </div>
-                <div class="col-md-2 col-sm-3">
+              <!--  <div class="col-md-2 col-sm-3">
                     <input type="hidden" id="is_active_group_chat_window" value="no" />
                     <button type="button" name="group_chat" id="group_chat" class="btn btn-warning btn-xs">Groupe de Chat</button>
                 </div>
                 <div class="col-md-2 col-sm-3">
                    
-                </div>
+                </div>-->
             </div>
             <div class="table-responsive">
                 

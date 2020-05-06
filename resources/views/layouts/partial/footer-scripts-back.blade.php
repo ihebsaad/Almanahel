@@ -25,7 +25,7 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script  src="{{  URL::asset('public/sbadmin/js/jquery.easing.min.js') }}"  ></script>
+  <script  src="{{  URL::asset('public/sbadmin/jquery-easing/jquery.easing.min.js') }}"  ></script>
 
   <!-- Custom scripts for all pages-->
   <script   src="{{  URL::asset('public/sbadmin/js/sb-admin-2.min.js') }}" src="js/sb-admin-2.min.js"></script>

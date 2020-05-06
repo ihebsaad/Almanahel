@@ -7,7 +7,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Al manahel <sup>Academy</sup></div>
+        <div class="sidebar-brand-text mx-3">Al Manahel <sup></sup></div>
       </a>
 
       <!-- Divider -->
@@ -68,11 +68,11 @@
         Utilisateurs
       </div>
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree"   aria-controls="collapsethree">
           <i class="fas fa-fw fa-cog"></i>
           <span>Structure</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
              <a class="collapse-item" href="{{route('contenuhome')}}">Elèves</a>
             <a class="collapse-item" href="{{route('contenupresentation')}}">Ensignants</a>
@@ -84,20 +84,18 @@
       </li>
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item ">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+      <!--  <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">-->
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" >
           <i class="fas fa-fw fa-folder"></i>
           <span>Vie scolaire</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('contenuinscription')}}">inscriptions</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">paiements</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">absences</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">retards</a>
-              <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-             <a class="collapse-item active" href="blank.html">Blank Page</a>
-          </div>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Inscriptions</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Paiements</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Absences</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Retards</a>
+           </div>
         </div>
       </li>
 	  

@@ -156,7 +156,7 @@ public function get_user_name($user_id)
                     <tr>
                         <td>'.$row->name.' '.$this->count_unseen_message($row->id, auth::user()->id).' '.$this->fetch_is_type_status($row->id).'</td>
                         <td>'.$status.'</td>
-                        <td><button type="button" class="btn btn-info btn-xs start_chat" data-touserid="'.$row->id.'" data-tousername="'.$row->name.'">Start Chat</button></td>
+                        <td><button type="button" class="btn btn-info btn-xs start_chat" data-touserid="'.$row->id.'" data-tousername="'.$row->name.'">Chat</button></td>
                     </tr>
                     ';
                    }

@@ -1,8 +1,12 @@
 @extends('layouts.back')
 
 @section('content')
-    <link href="{{ asset('public/css/summernote.css') }}" rel="stylesheet" media="screen" />
+ 
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 
+ 
 <h1>Gestion du contenu: Page Formation </h1>
 <div class="form-group">
      {{ csrf_field() }}

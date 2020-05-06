@@ -13,7 +13,7 @@
     </title>
  <style>
      #swal2-content{font-size:15px;}
-	 .editor{width:600px;}
+	 .editor{width:800px;}
      </style>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
       <!-- CSRF Token -->

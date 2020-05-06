@@ -1,6 +1,6 @@
+@extends('layouts.back')
 
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
-
+   
 
     <h3 style="margin-left:50px">Créer un nouveau utilisateur</h3><br><br>
 

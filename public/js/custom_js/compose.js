@@ -9,11 +9,12 @@
 
               fontNames: ['Open Sans','Arial','Courier New'],
               height:300,
-			popover: {
-			image: [],
-			link: [],
-			air: []
-			}
+	popover: {
+    air: [
+      ['color', ['color']],
+      ['font', ['bold', 'underline', 'clear']]
+    ]
+  }
           });
 		  $('.textarea:first').summernote('focus');
 

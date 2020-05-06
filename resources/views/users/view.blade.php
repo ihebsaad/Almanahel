@@ -63,7 +63,7 @@
         <tr>
             <td class="text-primary">Qualification</td>
             <td>
-                <select  name="user_type"  id="user_type" onchange="changing(this);"  >
+                <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
                     <option></option>
                      <option value="Élève"  <?php if($user->user_type=='Élève') {echo'selected="selected"';}?> >Élève</option>
                      <option value="Enseignant"  <?php if($user->user_type=='Enseignant') {echo'selected="selected"';}?> >Enseignant </option>

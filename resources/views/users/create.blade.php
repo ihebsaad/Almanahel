@@ -70,7 +70,7 @@
                             <label for="type" class="col-md-4 control-label">Qualification</label>
 
                             <div class="col-md-6">
-                                <select  name="user_type"  id="type"   >
+                                <select  name="user_type"  id="type" class="form-control"  >
                                     <option value="Élève">Élève</option>
                                     <option value="Enseignant"   >Enseignant</option>
                                     <option  value="Parent"   >Parent</option>

@@ -11,5 +11,7 @@
               height:300
 
           });
+		  $('.textarea:first').summernote('focus');
+
     });
      

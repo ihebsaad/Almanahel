@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
  <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
  -->
-  <link  href="{{ asset('public/sbadmin/datatables/css/scroller.bootstrap.css') }}"  rel="stylesheet">
+  <link  href="{{ asset('public/sbadmin/datatables/scroller.bootstrap.css') }}"  rel="stylesheet">
 
  
    <link rel="stylesheet" href="{{ URL::asset('public/bootstrap/css/bootstrap.min.css') }}">

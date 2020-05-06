@@ -8,8 +8,8 @@
      {{ csrf_field() }}
 <?php 
 $cont =  App\Contenu::where('zone', 'inscription')->first();$contenu=$cont->contenu ;
-$cont2 =  App\Contenu::where('zone', 'inscription2')->first();$contenu2=$cont->contenu ;
-$cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'inscription2')->first();$contenu2=$cont2->contenu ;
+$cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->contenu ;
 
 ?>
 <div class="modal-body">

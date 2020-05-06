@@ -1,14 +1,14 @@
 @extends('layouts.back')
+    <link href="{{ asset('public/css/summernote.css') }}" rel="stylesheet" media="screen" />
 
 @section('content')
-    <link href="{{ asset('public/css/summernote.css') }}" rel="stylesheet" media="screen" />
 
 <h1>Gestion du contenu: Page Vie Scolaire </h1>
 <div class="form-group">
      {{ csrf_field() }}
 <?php 
 $cont =  App\Contenu::where('zone', 'scolaire')->first();$contenu=$cont->contenu ;
-$cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->contenu ;
  
 ?>
 <div class="modal-body">

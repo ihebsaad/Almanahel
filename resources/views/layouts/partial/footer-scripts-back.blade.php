@@ -32,7 +32,7 @@
  
  
  
- <?php if  ($view_name != 'messagechat-messagerie')   { ?>
+ <?php if  ($view_name == 'messagechat-messagerie')   { ?>
 
  
 <script>  

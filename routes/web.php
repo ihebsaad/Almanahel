@@ -20,8 +20,10 @@ Route::get('/home', array('as' => 'home','uses' => 'HomeController@home'));
 Route::get('/presentation', array('as' => 'presentation','uses' => 'HomeController@presentation'));
 Route::get('/formation', array('as' => 'formation','uses' => 'HomeController@formation'));
 Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scolaire'));
-Route::get('/inscription', array('as' => 'contact','uses' => 'HomeController@inscription'));
+Route::get('/inscription', array('as' => 'inscription','uses' => 'HomeController@inscription'));
 Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
+
+Route::get('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));
 
 Auth::routes();
 

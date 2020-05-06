@@ -19,5 +19,18 @@
 <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
  
+  <!-- Admin -->
+   <!-- Bootstrap core JavaScript 
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script  src="{{  URL::asset('public/sbadmin/js/jquery.easing.min.js') }}"  ></script>
+
+  <!-- Custom scripts for all pages-->
+  <script   src="{{  URL::asset('public/sbadmin/js/sb-admin-2.min.js') }}" src="js/sb-admin-2.min.js"></script>
+ 
+ 
+ 
  @yield('footer_scripts')
 

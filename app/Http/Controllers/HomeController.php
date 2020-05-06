@@ -65,5 +65,31 @@ class HomeController extends Controller
          return view('contact' );
     } 
 	 
+	public function contenu_home()
+    {
+         return view('contenus.home' );
+    } 
+
+	public function contenu_presentatin()
+    {
+         return view('contenus.presentation' );
+    } 
+
+	public function contenu_scolaire()
+    {
+         return view('contenus.scolaire' );
+    }
+
+	public function contenu_formation()
+    {
+         return view('contenus.formation' );
+    } 
+
+	public function contenu_contact()
+    {
+         return view('contenus.contact' );
+    } 
+
+	
 	  
 }

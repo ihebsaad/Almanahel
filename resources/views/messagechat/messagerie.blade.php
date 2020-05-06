@@ -21,6 +21,8 @@
 
 
  @section('content')
+ 
+ <?php echo $view_name;?>
   
         <div class="container">
             <br />

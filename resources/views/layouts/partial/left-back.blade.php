@@ -101,11 +101,11 @@
 	  
 	        <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item ">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
           <i class="fas fa-fw fa-folder"></i>
           <span>Direction</span>
         </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapse3" class="collapse show" aria-labelledby="collapse3" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('contenuinscription')}}">Dépenses</a>
                
@@ -115,14 +115,14 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href=" ">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Documetnts</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href=" ">
           <i class="fas fa-fw fa-table"></i>
           <span>Emails</span></a>
       </li>

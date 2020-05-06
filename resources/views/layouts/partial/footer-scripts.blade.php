@@ -7,5 +7,11 @@
 
   <!-- Custom scripts for this template -->
   <script  src="{{  URL::asset('public/site/js/clean-blog.min.js') }}"  ></script>
-
+<script  src="{{  URL::asset('public/site/js/jquery.slicknav.min.js') }}"  ></script>
+<script type="text/javascript">
+	$('ul#navigation').slicknav({
+		prependTo:"#menumob"
+	});
+	//$('#navigation').slicknav();
+</script>
  @yield('footer_scripts')

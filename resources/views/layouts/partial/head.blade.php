@@ -39,33 +39,102 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#">logo</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('home') }}">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('presentation') }}">Presentation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('scolaire') }}"> Vie Scolaire</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('formation') }}"> Formation & Emploi</a>
-          </li>		  
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('contact') }}">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+ <header class="header-area">
+<div class="header-top bg-2">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-8 col-xs-12">
+<div class="header-top-left">
+<p>LYCÉE Al-MANAHEL MONASTIR</p>
+</div>
+</div>
+<div class="col-md-6 col-sm-4 col-xs-12">
+<div class="header-top-right text-right">
+<ul>
+<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="header-middle bg-2">
+<div class="container">
+<div class="row">
+<div class="col-md-3 hidden-sm hidden-xs">
+<div class="logo">
+<h1><a href="{{ route('home') }}">AlManahel</a></h1>
+</div>
+</div>
+<div class="col-md-9 col-xs-12">
+<div class="header-middle-right">
+<ul>
+<li>
+<!--<div class="contact-icon">
+<i class="fa fa-clock-o"></i>
+</div>-->
+<div class="contact-info">
+<a href="#">Espace Eleve</a>
+<!--<span>Sunday colsed</span>-->
+</div>
+</li>
+<li>
+<!--<div class="contact-icon">
+<i class="fa fa-envelope"></i>
+</div>-->
+<div class="contact-info">
+<a href="#">Espace Enseignant</a>
+</div>
+</li>
+<li>
+<!--<div class="contact-icon">
+<i class="fa fa-phone"></i>
+</div>-->
+<div class="contact-info">
+<a href="#">Espace Administration</a>
+<!--<span> (+1) 1144-1254</span>-->
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="header-bottom" id="sticky-header">
+<div class="container">
+<div class="row">
+<div class="hidden-md hidden-lg col-sm-8 col-xs-6">
+<div class="logo">
+<h1><a href="{{ route('home') }}">AlManahel</a></h1>
+</div>
+</div>
+<div class="col-md-11 hidden-sm hidden-xs">
+<div class="mainmenu">
+<ul id="navigation">
+<li class="active"><a href="{{ route('home') }}">Accueil</a>
+</li>
+<li><a href="{{ route('presentation') }}">Presentation</a>
+</li>
+<li><a href="{{ route('scolaire') }}">Vie Scolaire</a>
+</li>
+<li><a href="{{ route('formation') }}">Formation & Emploi</a>
+</li>
+<li><a href="{{ route('contact') }}">Contact</a>
+</li>
+</ul>
+</div>
+</div>
 
+<div class="row" >
+  <div id="menumob" style="display: none"></div>
+</div>
+
+</div>
+</div>
+</div>
+</header> 

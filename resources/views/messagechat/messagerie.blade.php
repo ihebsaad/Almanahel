@@ -114,6 +114,8 @@
     </div>
 </div>
 
+ @endsection
+ @section('footer-scripts-back')
 
 <script>  
 $(document).ready(function(){

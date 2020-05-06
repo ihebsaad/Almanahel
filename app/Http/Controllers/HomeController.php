@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
  
 use App\User;
+use App\Contenu;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Session;
@@ -94,5 +95,17 @@ class HomeController extends Controller
     {
          return view('contenus.inscription' );
     } 
+	  
+	  
+		public function updatecontent(Request $request)
+    {
+
+        $zone= strval($request->get('zone'));
+        $val= $request->get('val');
+        Contenu::where('zone', $zone)->update(array('contenu' => $val));
+
+
+ 
+    }
 	  
 }

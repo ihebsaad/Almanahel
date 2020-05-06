@@ -7,7 +7,7 @@
         <!--<div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>-->
-        <div class="sidebar-brand-text mx-3"><sup><small>academy</small></sup>Al Manahel </div>
+        <div class="sidebar-brand-text mx-3"><sup><small>academy</small></sup>Al Manahel </div>
       </a>
 
       <!-- Divider -->

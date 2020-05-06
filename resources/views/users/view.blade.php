@@ -1,10 +1,10 @@
 @extends('layouts.back')
-
-  
+ 
     <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
 
 
+@section('content')
     <div class=" " style="padding:8px 8px 8px 8px">
         <div class="portlet box grey">
             <h3>   Utilisateur</h3>
@@ -286,3 +286,6 @@ return 'Pas de résultats';
         } // updating
 
 </script>
+
+
+@endsection 

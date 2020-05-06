@@ -26,7 +26,7 @@
         <div class="container">
             <br />
             
-            <h3 align="center">sélectionnez une personne pour discuter avec lui </h3><br />
+            <h3 align="center">sélectionnez une personne pour discuter (chat) </h3><br />
             <br />
             <div class="row">
                 <div class="col-md-8 col-sm-6">

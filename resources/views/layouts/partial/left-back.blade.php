@@ -7,7 +7,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Al manahel <sup>Academy</sup></div>
       </a>
 
       <!-- Divider -->
@@ -17,7 +17,7 @@
       <li class="nav-item">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Acuueil</span></a>
       </li>
 
       <!-- Divider -->
@@ -32,13 +32,15 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>Contenus</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+             <a class="collapse-item" href="{{route('contenuhome')}}">Accueil</a>
+            <a class="collapse-item" href="{{route('contenupresentation')}}">Presentation</a>
+            <a class="collapse-item" href="{{route('contenuscolaire')}}">Vie Scolaire</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Inscription</a>
+            <a class="collapse-item" href="{{route('contenucontact')}}">Contact</a>
           </div>
         </div>
       </li>
@@ -47,16 +49,14 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <span>Infos</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-          </div>
+            <a class="collapse-item" href="">Evênements</a>
+            <a class="collapse-item" href="">Actualités</a>
+            <a class="collapse-item" href=" ">Annonces</a>
+           </div>
         </div>
       </li>
 
@@ -65,23 +65,53 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Addons
+        Utilisateurs
       </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Structure</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+             <a class="collapse-item" href="{{route('contenuhome')}}">Elèves</a>
+            <a class="collapse-item" href="{{route('contenupresentation')}}">Ensignants</a>
+            <a class="collapse-item" href="{{route('contenuscolaire')}}">Parents</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Classes</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Personnels</a>
+          </div>
+        </div>
+      </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item ">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Vie scolaire</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">inscriptions</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">paiements</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">absences</a>
+            <a class="collapse-item" href="{{route('contenuinscription')}}">retards</a>
               <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
              <a class="collapse-item active" href="blank.html">Blank Page</a>
           </div>
+        </div>
+      </li>
+	  
+	        <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Direction</span>
+        </a>
+        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{route('contenuinscription')}}">Dépenses</a>
+               
+		  </div>
         </div>
       </li>
 
@@ -89,14 +119,14 @@
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+          <span>Documetnts</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Emails</span></a>
       </li>
 
       <!-- Divider -->

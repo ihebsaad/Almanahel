@@ -7,7 +7,7 @@
 <div class="form-group">
      {{ csrf_field() }}
 <?php 
-$contenu =  App\Contenu::where('zone', 'contact')->pluck('contenu');
+$contenu =  App\Contenu::where('zone', 'contact')->get('contenu');
 
 ?>
 <div class="modal-body">

@@ -19,6 +19,10 @@
 <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
  
+   <!-- Page level plugins -->
+  <script  src="{{ URL::asset('public/datatables/jquery.dataTables.min.js') }}"  ></script>
+  <script src="{{ URL::asset('public/datatables/dataTables.bootstrap4.min.js') }}"  ></script>
+  
   <!-- Admin -->
    <!-- Bootstrap core JavaScript 
   <script src="vendor/jquery/jquery.min.js"></script>

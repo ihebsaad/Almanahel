@@ -185,7 +185,7 @@ class UsersController extends Controller
             ->where('parent','=',$id)
             ->get();
             $eleves = DB::table('users')
-            ->where('user_type','=','Élève')
+            ->where('user_type','=','eleve')
             ->get();
             
 

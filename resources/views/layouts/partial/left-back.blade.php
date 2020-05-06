@@ -4,9 +4,9 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <!--<div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
-        </div>
+        </div>-->
         <div class="sidebar-brand-text mx-3">Al Manahel <sup></sup></div>
       </a>
 
@@ -48,7 +48,7 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fas fa-fw fa-calendar"></i>
           <span>Infos</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -69,7 +69,7 @@
       </div>
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree"   aria-controls="collapsethree">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="fas fa-fw fa-users"></i>
           <span>Structure</span>
         </a>
         <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -86,10 +86,10 @@
       <li class="nav-item ">
       <!--  <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">-->
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" >
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="fas fa-fw fa-wrench"></i>
           <span>Vie scolaire</span>
         </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('contenuinscription')}}">Inscriptions</a>
             <a class="collapse-item" href="{{route('contenuinscription')}}">Paiements</a>
@@ -116,14 +116,14 @@
       <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href=" ">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-folder-open"></i>
           <span>Documetnts</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href=" ">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-envelope"></i>
           <span>Emails</span></a>
       </li>
 

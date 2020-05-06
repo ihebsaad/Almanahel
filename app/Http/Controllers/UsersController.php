@@ -64,6 +64,49 @@ class UsersController extends Controller
 
  
  
+ public function parents()
+    {
+		  
+		  $users = User::where('user_type','parent')->orderBy('name', 'asc')->get() ;
+              
+           return view('users.parents',  ['users' => $users]);        
+		  
+     }
+ 
+ 
+  public function eleves()
+    {
+		  
+		  $users = User::where('user_type','eleve')->orderBy('name', 'asc')->get() ;
+              
+           return view('users.eleves',  ['users' => $users]);        
+		  
+     }
+	 
+	   public function profs()
+    {
+		  
+		  $users = User::where('user_type','prof')->orderBy('name', 'asc')->get() ;
+              
+           return view('users.profs',  ['users' => $users]);        
+		  
+     }
+	 
+	 	   public function personnels()
+    {
+		  
+		  $users = User::where('user_type','membre')
+		  ->orWhere('user_type','suivi')
+		  ->('user_type','admin')
+		  ->('user_type','conseil')
+		  ->('user_type','financier')
+		  ->orderBy('name', 'asc')->get() ;
+              
+           return view('users.profs',  ['users' => $users]);        
+		  
+     }
+	 
+	 
     /**
      * Show the form for creating a new resource.
      *

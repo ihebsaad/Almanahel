@@ -67,6 +67,11 @@ Route::get('/actualites/destroy/{id}', 'ActualitesController@destroy');
 
 //Route::resource('/users',  'UsersController');
 Route::get('/users', array('as' => 'users','uses' => 'UsersController@index'));
+Route::get('/profs', array('as' => 'profs','uses' => 'UsersController@profs'));
+Route::get('/eleves', array('as' => 'eleves','uses' => 'UsersController@eleves'));
+Route::get('/parents', array('as' => 'parents','uses' => 'UsersController@parents'));
+Route::get('/personnels', array('as' => 'personnels','uses' => 'UsersController@personnels'));
+
 Route::get('/users/create','UsersController@create')->name('users.create');
 Route::post('/users/saving','UsersController@saving')->name('users.saving');
 Route::post('/users/updating','UsersController@updating')->name('users.updating');

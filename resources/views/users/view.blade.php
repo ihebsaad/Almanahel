@@ -65,10 +65,12 @@
             <td>
                 <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
                     <option></option>
-                     <option value="Élève"  <?php if($user->user_type=='Élève') {echo'selected="selected"';}?> >Élève</option>
-                     <option value="Enseignant"  <?php if($user->user_type=='Enseignant') {echo'selected="selected"';}?> >Enseignant </option>
-                    <option  value="Parent"  <?php if($user->user_type=='Parent') {echo'selected="selected"';}?>  >Parent</option>
-                    <option  value="Membre Administration"  <?php if($user->user_type=='Membre Administration') {echo'selected="selected"';}?>  >Membre Administration</option>
+                     <option value="eleve"  <?php if($user->user_type=='eleve') {echo'selected="selected"';}?> >Élève</option>
+                     <option value="prof"  <?php if($user->user_type=='prof') {echo'selected="selected"';}?> >Enseignant </option>
+                    <option  value="parent"  <?php if($user->user_type=='parent') {echo'selected="selected"';}?>  >Parent</option>
+                    <option  value="membre"  <?php if($user->user_type=='membre') {echo'selected="selected"';}?>  >Membre d'administration</option>
+                    <option  value="conseil"  <?php if($user->user_type=='conseil') {echo'selected="selected"';}?>  >Conseil de pilotage</option>
+                    <option  value="suivi"  <?php if($user->user_type=='suivi') {echo'selected="selected"';}?>  >Suivi pédagogique</option>
                    
                 </select>
             </td>

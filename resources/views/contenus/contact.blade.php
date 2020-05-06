@@ -1,6 +1,10 @@
 @extends('layouts.back')
 
 @section('content')
+
+<script  src="{{ asset('public/js/summernote.min.js') }}"  type="text/javascript"></script>
+<script src="{{  URL::asset('public/js/custom_js/compose.js') }}" type="text/javascript"></script>
+
     <link href="{{ asset('public/css/summernote.css') }}" rel="stylesheet" media="screen" />
 
 <h1>Gestion du contenu: Page Contact </h1>

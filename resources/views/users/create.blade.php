@@ -8,7 +8,7 @@
                     <form class="form-horizontal" method="POST" action="{{ route('users.saving') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                        <div class="row form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
                             <label for="lastname" class="col-md-4 form-control">Nom</label>
 
                             <div class="col-md-6">
@@ -22,7 +22,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="row form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Prénom</label>
 
                             <div class="col-md-6">
@@ -35,7 +35,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="row form-group row">
                             <label for="username" class="col-md-4 form-control">Identifiant</label>
 
                             <div class="col-md-6">
@@ -53,7 +53,7 @@
 
 
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="row form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 form-control">Mot de passe</label>
 
                             <div class="col-md-6">
@@ -66,7 +66,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group " style="margin-bottom:30px">
+                        <div class="row form-group " style="margin-bottom:30px">
                             <label for="type" class="col-md-4 control-label">Qualification</label>
 
                             <div class="col-md-6">
@@ -95,7 +95,7 @@
                         </div>-->
 
 
-                        <div class="form-group" style="margin-bottom:30px">
+                        <div class="row form-group" style="margin-bottom:30px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Enregistrer

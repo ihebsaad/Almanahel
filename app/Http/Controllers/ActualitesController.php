@@ -25,7 +25,7 @@ class ActualitesController extends Controller
     public function index()
     { 
 
-        $actualites = Actualite::orderBy('name', 'asc')->paginate(10000000);
+        $actualites = Actualite::orderBy('id', 'desc')->get();
         return view('actualites.index',[ ], compact('actualites'));
     }
 

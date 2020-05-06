@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => '127.0.0.1', //env('DB_HOST', '127.0.0.1'),
-            'port' => '3306', //env('DB_PORT', '3306'),
-            'database'  =>'almanahel', //=> env('DB_DATABASE', 'almanahel'),
-            'username' => 'manaheluser', //env('DB_USERNAME', 'manaheluser'),
-            'password' => 'eSolutions2020*', //env('DB_PASSWORD', 'eSolutions2020*'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database'  => env('DB_DATABASE', 'almanahel'),
+            'username' => env('DB_USERNAME', 'manaheluser'),
+            'password' => env('DB_PASSWORD', 'eSolutions2020*'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

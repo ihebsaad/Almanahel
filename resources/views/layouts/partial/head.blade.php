@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Al Manahel Acaemy </title>
+  <title>Al Manahel Academy </title>
     <?php    setlocale(LC_ALL, "fr_FR.UTF-8");    ?>
   <!-- Bootstrap core CSS -->
   <link  href="{{  URL::asset('public/site/vendor/bootstrap/css/bootstrap.min.css') }}"   rel="stylesheet">
@@ -18,8 +18,22 @@
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+  <link rel="stylesheet" href="{{  URL::asset('public/site/vendor/fontawesome-free/css/font-awesome.min.css') }}">
+
   <!-- Custom styles for this template -->
   <link  href="{{  URL::asset('public/site/css/clean-blog.min.css') }}"   rel="stylesheet">
+  <link  href="{{  URL::asset('public/site/css/slicknav.min.css') }}"   rel="stylesheet">
+  <link  href="{{  URL::asset('public/site/css/menu.css') }}"   rel="stylesheet">
+
+  <style type="text/css">
+  @media screen and (max-width: 40em) {
+    
+
+   #menumob {
+        display:block!important;
+    }
+}
+</style>
 
 </head>
 

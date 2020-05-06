@@ -3,11 +3,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
         <!--<div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>-->
-        <div class="sidebar-brand-text mx-3">Al Manahel <sup></sup></div>
+        <div class="sidebar-brand-text mx-3"><sup><small>academy</small></sup>Al Manahel </div>
       </a>
 
       <!-- Divider -->
@@ -15,9 +15,9 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Acuueil</span></a>
+        <a class="nav-link"  href="{{route('home')}}">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Acueil</span></a>
       </li>
 
       <!-- Divider -->
@@ -105,7 +105,7 @@
           <i class="fas fa-fw fa-folder"></i>
           <span>Direction</span>
         </a>
-        <div id="collapse3" class="collapse show" aria-labelledby="collapse3" data-parent="#accordionSidebar">
+        <div id="collapse3" class="collapse " aria-labelledby="collapse3" data-parent="#accordionSidebar"><!--collapse show-->
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('contenuinscription')}}">Dépenses</a>
                

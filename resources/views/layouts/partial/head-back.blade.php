@@ -23,12 +23,12 @@
 <!-- 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 --------->
-       <!-- CSS DAtatable  -->
+       <!-- CSS DAtatable  
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
  <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
- 
+ -->
   <link  href="{{ asset('public/sbadmin/datatables/css/scroller.bootstrap.css') }}"  rel="stylesheet">
 
  

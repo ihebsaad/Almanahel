@@ -90,4 +90,11 @@ Route::get('/contenuscolaire', array('as' => 'contenuscolaire','uses' => 'HomeCo
 Route::get('/contenucontact', array('as' => 'contenucontact','uses' => 'HomeController@contenu_contact'));
 Route::get('/contenuinscription', array('as' => 'contenuinscription','uses' => 'HomeController@contenu_inscription'));
 
+/****  Messages chat  *****/
+Route::get('/messagerie', 'MessageChatController@index')->name('message');
+Route::get('/fetchuser/{id}', 'MessageChatController@fetchUser');
+Route::get('/insertchat/', 'MessageChatController@insertchat');
+Route::get('/fetch_user_chat_history/{to_user_id}', 'MessageChatController@fetch_user_chat_history');
+Route::get('/update_is_type_status/{from_user_id}', 'MessageChatController@update_is_type_status');
+
 

@@ -23,8 +23,8 @@ ul{
 .mb-40{margin-bottom:40px}
 .mb-20{margin-bottom:20px}
 
-.bg-1{background:#fafafa}
-.bg-2{background:#296dc1;}
+.bg-1{background:#028dc8}
+.bg-2{background:#ec3aa5;}
 .bg-fff{background:#fff}
 
 .black-opacity{
@@ -70,16 +70,15 @@ ul{
 .mainmenu ul li:last-child{margin-right:0px;}
 .mainmenu ul li > a{
 	text-transform:uppercase;
-	font-weight:500;
 	padding:22px 15px;
 	color:#333;
 	display:block;
 	position:relative;
 }
 .mainmenu ul li.active > a,.mainmenu ul li:hover > a{
-	background:#296dc1;
-	color:#fff;
-	text-decoration: none;
+	/*background:#296dc1;*/
+	color: #8f8f8f;
+    text-decoration: dotted;
 }
 /*.mainmenu ul li > a:before,.mainmenu ul li > a:after{
 	position: absolute;
@@ -331,12 +330,16 @@ ul{
 
 /*--------------header-style tow--------------*/
 .header-top{
-    padding: 15px 0px;
-    border-bottom: 1px solid #77adef;
+    padding: 5px 0px;
+    border-bottom: 1px solid #fa7fc9;
+    max-height: 40px;
 }
-.header-top-left p{
-    color: #fff;
-    font-style: italic;
+.header-top-left p {
+
+    padding-top: 5px;
+    margin: 0px!important;
+    color: white!important;
+    font-size:14px;
 }
 .header-top-right ul li{
     display: inline-block;
@@ -351,6 +354,15 @@ ul{
 }
 .header-bottom .mainmenu > ul {
     justify-content: flex-start;
+}
+.contact-info > a {
+    font-size: 14px;
+    color: white;
+}
+.contact-info > a:active,.contact-info > a:hover {
+    text-decoration: none;
+    color: #bedae6;
+
 }
 .header-middle{
     padding: 10px 0px;

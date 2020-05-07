@@ -26,12 +26,24 @@
   <link  href="{{  URL::asset('public/site/css/menu.css') }}"   rel="stylesheet">
 
   <style type="text/css">
+  body { font-family: 'Roboto';}
   @media screen and (max-width: 40em) {
     
 
    #menumob {
         display:block!important;
+        position: absolute;
+        right: 0px;
+        z-index: 100;
     }
+
+    #sticky-header {padding: 10px 0px;}
+
+    .slicknav_menu {
+    background: #7f8085; }
+    .slicknav_btn {
+    background-color: #7f8085;}
+
 }
 </style>
 
@@ -62,12 +74,12 @@
 </div>
 </div>
 </div>
-<div class="header-middle bg-2">
+<div class="header-middle bg-1">
 <div class="container">
 <div class="row">
-<div class="col-md-3 hidden-sm hidden-xs">
+<div class="col-md-3 d-none d-md-block">
 <div class="logo">
-<h1><a href="{{ route('home') }}">AlManahel</a></h1>
+<a href="{{ route('home') }}"><img src="{{  URL::asset('public/site/img/logo.png') }}" alt="AlManahel Academy" width="250"></a>
 </div>
 </div>
 <div class="col-md-9 col-xs-12">
@@ -78,7 +90,7 @@
 <i class="fa fa-clock-o"></i>
 </div>-->
 <div class="contact-info">
-<a href="#">Espace Eleve</a>
+<a href="#">Espace Élèves</a>
 <!--<span>Sunday colsed</span>-->
 </div>
 </li>
@@ -87,7 +99,16 @@
 <i class="fa fa-envelope"></i>
 </div>-->
 <div class="contact-info">
-<a href="#">Espace Enseignant</a>
+<a href="#">Espace Enseignants</a>
+</div>
+</li>
+<li>
+<!--<div class="contact-icon">
+<i class="fa fa-phone"></i>
+</div>-->
+<div class="contact-info">
+<a href="#">Espace Parents</a>
+<!--<span> (+1) 1144-1254</span>-->
 </div>
 </li>
 <li>
@@ -107,18 +128,18 @@
 </div>
 <div class="header-bottom" id="sticky-header">
 <div class="container">
-<div class="row">
-<div class="hidden-md hidden-lg col-sm-8 col-xs-6">
+<div class="row d-flex justify-content-between">
+<div class="d-md-none d-lg-none d-xl-none col-sm-8 col-xs-6">
 <div class="logo">
-<h1><a href="{{ route('home') }}">AlManahel</a></h1>
+<a href="{{ route('home') }}"><img src="{{  URL::asset('public/site/img/logo.png') }}" alt="AlManahel Academy" width="150"></a>
 </div>
 </div>
-<div class="col-md-11 hidden-sm hidden-xs">
+<div class="col-md-11 d-none d-md-block">
 <div class="mainmenu">
 <ul id="navigation">
 <li class="active"><a href="{{ route('home') }}">Accueil</a>
 </li>
-<li><a href="{{ route('presentation') }}">Presentation</a>
+<li><a href="{{ route('presentation') }}">Présentation</a>
 </li>
 <li><a href="{{ route('scolaire') }}">Vie Scolaire</a>
 </li>
@@ -130,9 +151,7 @@
 </div>
 </div>
 
-<div class="row" >
-  <div id="menumob" style="display: none"></div>
-</div>
+<div id="menumob" class="ml-auto" style="display: none"></div>
 
 </div>
 </div>

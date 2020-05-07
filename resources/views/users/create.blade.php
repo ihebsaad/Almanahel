@@ -1,6 +1,7 @@
-@extends('layouts.back')
 
-@section('content')
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
+
+
     <h3 style="margin-left:50px">Créer un nouveau utilisateur</h3><br><br>
 
                     <form class="form-horizontal" method="POST" action="{{ route('users.saving') }}">
@@ -69,11 +70,11 @@
 
                             <div class="col-md-6">
                                 <select  name="user_type"  id="type"   >
-                                    <option value="user"   >Agent </option>
-                                    <option value="autonome"   >Agent autonome</option>
-                                    <option  value="superviseur"   >Superviseur</option>
-                                    <option  value="financier"    >Financier</option>
-                                    <option  value="bureau"    >Bureau d'ordre</option>
+                                    <option value="Élève">Élève</option>
+                                    <option value="Enseignant"   >Enseignant</option>
+                                    <option  value="Parent"   >Parent</option>
+                                    <option  value="Membre Administration"    >Membre Administration</option>
+                                  
                                 </select>
 
                             </div>
@@ -103,7 +104,7 @@
                     </form>
 
 
-@endsection
+
 
 <style>
 

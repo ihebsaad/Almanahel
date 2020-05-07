@@ -38,7 +38,23 @@ class UsersController extends Controller
 
         }
 		*/
-		     $users = User::orderBy('name', 'asc')->get() ;
+         $id=Auth::id();
+           $user = User::find($id);
+         
+
+		  $users = User::orderBy('name', 'asc')->get() ;
+                              
+         
+             if ( $user->user_type==='Parent')
+            {
+                 $idseleves = DB::table('parents_eleve')->where('parent','=',$id)->pluck('eleve');
+               
+               
+               $users = User::orderBy('name', 'asc')
+               ->whereIn('id', $idseleves)
+               ->get() ;
+              
+            }
 
             return view('users.index',  ['users' => $users]);        
 		 
@@ -56,16 +72,16 @@ class UsersController extends Controller
     public function create()
     {
 
-        if(\Gate::allows('isAdmin'))
-        {
+      //  if(\Gate::allows('isAdmin'))
+       // {
             return view('users.create'  );
 
-        }
-        else {
+       // }
+       /* else {
             // redirect
             return redirect('/')->with('success', 'droits insuffisants');
 
-        }
+        }*/
     }
 
 
@@ -122,21 +138,36 @@ class UsersController extends Controller
 
         $user = User::find($id);
 
-
+          $relations = DB::table('parents_eleve')->select('eleve')
+            ->where('parent','=',$id)
+            ->get();
+            $eleves = DB::table('users')
+            ->where('user_type','=','Élève')
+            ->get();
+            
 
 
         //$roles = DB::table('roles')->get();
 
-        return view('users.view',  compact('user','id'));
+        return view('users.view',['relations'=>$relations, 'eleves'=>$eleves] ,compact('user','id'));
 
     }
 
     public function profile($id)
     {
         if(  Auth::id() ==$id )
-        {   
+
+        { 
+          $user = User::find($id);
+
+          $relations = DB::table('parents_eleve')->select('eleve')
+            ->where('parent','=',$id)
+            ->get();
+            $eleves = DB::table('users')
+            ->where('user_type','=','Élève')
+            ->get();  
          $user = User::find($id);
-        return view('users.profile' , compact('user','id'));
+        return view('users.profile',['relations'=>$relations, 'eleves'=>$eleves] , compact('user','id'));
         }
     }
 
@@ -274,6 +305,41 @@ class UsersController extends Controller
         if (isset($user[$champ])) {
             return $user[$champ] ;
         }else{return '';}
+
+    }
+     public  function createeleve(Request $request)
+    {
+        $parent=$request->get('parent');
+        $eleve= $request->get('eleve');
+
+        $count=DB::table('parents_eleve')->where(
+            ['parent' => $parent,
+                'eleve' => $eleve]
+        )->count();
+        if ($count==0) {
+            DB::table('parents_eleve')->insert(
+               ['parent' => $parent,
+                'eleve' => $eleve]
+            );
+            return 1;
+        } else{ return 0;}
+
+
+
+    }
+    public  function removeeleve(Request $request)
+    {
+        $parent=$request->get('parent');
+        $eleve= $request->get('eleve');
+
+
+        DB::table('parents_eleve')
+            ->where(
+                ['parent' => $parent,
+                'eleve' => $eleve]
+            )->delete();
+
+
 
     }
  

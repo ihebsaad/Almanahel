@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
 
 
 @section('content')
@@ -23,26 +24,23 @@
             <th>Statut</th>
             <th>Actions</th>
         </tr>
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Qualification</th>
-                <th>Statut</th>
-                <th> </th>
-              </tr>
+            
             </thead>
             <tbody>
             @foreach($users as $user)
+
                 <tr><?php $qual=$user->user_type; if($qual=='user'){$qual='agent';}?>
                     <td>{{$user->id}}</td>
                      <td><a href="{{action('UsersController@view', $user['id'])}}" >{{$user->name .' '.$user->lastname }}</a></td>
                     <td><?php echo $qual;?></td>
                     <td><?php if ($user->isOnline()){  if($user->statut==0){echo '<span class="label label-success">Connecté</span> ';} else{ echo '<span class="label label-warning">En Pause</span> ';  }    } else{echo '<span class="label label-danger">Hors ligne</span>';}  ?></td>
-                  <td>  @can('isAdmin')
+                  <td> 
+                
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('UsersController@destroy', $user['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
-                      @endcan</td>
+                  
+                  </td>
                 </tr>
             @endforeach
             </tbody>

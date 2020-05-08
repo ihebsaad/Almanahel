@@ -167,12 +167,12 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php  $user = auth()->user();  ?>
-				<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user['name'].' '.$user['lastname'] ;?></span>
+				<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php if(isset($user['name'] )){ echo $user['name'];} if(isset($user['lastname'] )){ echo ' '.$user['lastname'] ;}?></span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{route('profile',['id'=>$user['id']])}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profil 
                 </a>

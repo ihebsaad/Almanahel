@@ -11,8 +11,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h1>Contact Me</h1>
-            <span class="subheading">Have questions? I have answers.</span>
+            <h1>Contactez Nous</h1>
+            <!--<span class="subheading">Have questions? I have answers.</span>-->
           </div>
         </div>
       </div>
@@ -21,45 +21,68 @@
 
   <!-- Main Content -->
   <div class="container">
+  
+   <?php 
+$cont =  App\Contenu::where('zone', 'scolaire')->first();$contenu=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->contenu ;
+ 
+?>
+<div class="row">  
+
+<div class="col-xs-12 col-sm-12  col-md-7 col-lg-7">  
+<section>
+<?php echo $contenu; ?>
+</section>
+</div>
+
+<div class="col-xs-12 col-sm-12  col-md-5 col-lg-5">  
+ 
+ <center>
+ <a href="https://www.google.com/maps/place/Lyc%C3%A9e+Priv%C3%A9+Al+Manahel+Monastir/@35.7642893,10.7952923,15z/data=!4m5!3m4!1s0x0:0xadfd0b46e4ab1658!8m2!3d35.7627223!4d10.8033175">
+ <img src="http://<?php echo $_SERVER[HTTP_HOST];?>/public/site/img/manahel.png"></a>
+ </center>
+ 
+ </div>
+
+</div>
+
+
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-        <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-        <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-        <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-        <form name="sentMessage" id="contactForm" novalidate>
+        <p>Questions? n'hésitez pas à nous contacter</p>
+          <form name="sentMessage" id="contactForm" novalidate>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Name</label>
-              <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+              <label>Nom</label>
+              <input type="text" class="form-control" placeholder="Nom Complet" id="name" required data-validation-required-message="Please enter your name.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Email Address</label>
-              <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="Adresse Email" id="email" required data-validation-required-message="Please enter your email address.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-              <label>Phone Number</label>
-              <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+              <label>Tel</label>
+              <input type="tel" class="form-control" placeholder="N° Tel" id="phone" required data-validation-required-message="Please enter your phone number.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Message</label>
-              <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+              <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message=" "></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <br>
           <div id="success"></div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Envoyer</button>
           </div>
         </form>
       </div>

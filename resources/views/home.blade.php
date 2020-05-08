@@ -82,7 +82,8 @@
     </div>
   </header>
   
-   
-  
+    
   
   @endsection
+  
+  @extends('layouts.actus')

@@ -83,8 +83,8 @@
   </header>
   
     
-  
+ @include('layouts.actus')
+
   @endsection
-  @include('layouts.actus')
 
  

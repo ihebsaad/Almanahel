@@ -76,7 +76,7 @@
 
         <!-- Links -->
         <h6 class="font-weight-bold text-uppercase mb-4">MAP</h6>
-
+        <div id="map"></div>
         
       </div>
       

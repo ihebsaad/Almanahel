@@ -24,3 +24,9 @@ a > span.fa-stack {
 
 a > span.fa-stack:hover {
     color: #5f93a7!important; }
+
+/* Set the size of the div element that contains the map */
+#map {
+height: 200px;  /* The height is 400 pixels */
+width: 200%;  /* The width is the width of the web page */
+}

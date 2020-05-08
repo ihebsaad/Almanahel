@@ -14,7 +14,8 @@
 	});
 	//$('#navigation').slicknav();
 	
-	    $("#news-slider10").owlCarousel({
+  $(function() {
+    $("#news-slider10").owlCarousel({
         items : 4,
         itemsDesktop:[1199,3],
         itemsDesktopSmall:[980,2],
@@ -24,5 +25,6 @@
         pagination:true,
         autoPlay:true
     });
+			});
 </script>
  @yield('footer_scripts')

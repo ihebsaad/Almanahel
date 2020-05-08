@@ -26,7 +26,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
          </div>
 
     </div>
-	 <div class="row">
+	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick="changing('scolaire');;location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 	 <div class="row">

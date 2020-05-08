@@ -6,31 +6,50 @@
   
   <?php $link  =  "http://$_SERVER[HTTP_HOST]/public/site/img/about-bg.jpg"; ?>
 
-  <!-- Page Header -->
-  <header class="masthead" style=" background-image:url('<?php  echo $link; ?>')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>About Me</h1>
-            <span class="subheading">This is what I do.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+ 
+<?php 
+$cont =  App\Contenu::where('zone', 'presentation')->first();$contenu=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'presentation2')->first();$contenu2=$cont2->contenu ;
+$cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3->contenu ;
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
-      </div>
-    </div>
-  </div>
+?>
+
+
+<div class="row">
+<!-- Left -->
+<div class="col-xs-12 col-sm-12   col-md-7 col-lg-7  ">
+
+<section>
+<?php echo $contenu; ?>
+</section>
+
+</div>
+<!-- right -->
+<div class="col-xs-12 col-sm-12   col-md-5 col-lg-5  ">
+<div class="row">
+<!-- contenu 2 -->
+ <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
+<section>
+<?php echo $contenu2; ?>
+</section>
+
+</div>
+<!-- contenu 3 -->
+ <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
+<section>
+<?php echo $contenu3; ?>
+</section>
+
+</div>
+</div>
+ 
+
+
+
+</div>
+</div>
+
+
 
   
   

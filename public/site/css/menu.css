@@ -483,8 +483,9 @@ ul{
     	justify-content: flex-start;
     }
     .header-top-left,.header-top-right {
-    	text-align: center;
+    	/*text-align: center;*/
     }
+    .header-top-right { margin-top: -25px;}
     .header-middle-right ul {
     	display: block;
     }

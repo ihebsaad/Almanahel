@@ -1,0 +1,26 @@
+body { font-family: 'Roboto';}
+  @media screen and (max-width: 40em) {
+    
+
+   #menumob {
+        display:block!important;
+        position: absolute;
+        right: 0px;
+        z-index: 100;
+    }
+
+    #sticky-header {padding: 10px 0px;}
+
+    .slicknav_menu {
+    background: #7f8085; }
+    .slicknav_btn {
+    background-color: #7f8085;}
+
+}
+
+
+a > span.fa-stack {
+    color: #6fadc5!important; }
+
+a > span.fa-stack:hover {
+    color: #5f93a7!important; }

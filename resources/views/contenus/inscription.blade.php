@@ -27,7 +27,9 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
          </div>
 
     </div>
-	
+		 <div class="row">
+	   <button  class="btn btn-md btn-success"  onclick="changing('inscription');  ;location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>
 	    <div class="row">
 	
        <div class="form-group ">
@@ -38,7 +40,9 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
          </div>
 
     </div>
-	
+		 <div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=" changing('inscription2'); ;location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>
 		 <div class="row">
 	
        <div class="form-group ">
@@ -52,7 +56,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	
 	
 	 <div class="row">
-	   <button id="save" class="btn btn-md btn-success"  onclick="changing('inscription');changing('inscription2');changing('inscription3');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button class="btn btn-md btn-success"  onclick=" changing('inscription3');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 	

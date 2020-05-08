@@ -26,7 +26,9 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
          </div>
 
     </div>
-	
+	 <div class="row">
+	   <button   class="btn btn-md btn-success"  onclick="changing('scolaire');;location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+   </div>
 	 <div class="row">
 	
        <div class="form-group ">
@@ -39,7 +41,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
     </div>
 	
 	<div class="row">
-	   <button id="save" class="btn btn-md btn-success"  onclick="changing('scolaire');changing('scolaire2')"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button id="save" class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 	 

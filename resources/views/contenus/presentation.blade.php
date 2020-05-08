@@ -27,7 +27,9 @@ $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3-
          </div>
 
     </div>
-	
+	 <div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=";changing('presentation');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+   </div>
 	    <div class="row">
 	
        <div class="form-group ">
@@ -38,7 +40,9 @@ $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3-
          </div>
 
     </div>
-	
+	 <div class="row">
+	   <button   class="btn btn-md btn-success"  onclick="  changing('presentation3');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+   </div>
 	    <div class="row">
 	
        <div class="form-group ">
@@ -51,7 +55,7 @@ $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3-
     </div>
 	
  <div class="row">
-	   <button id="save" class="btn btn-md btn-success"  onclick="changing('presentation');changing('presentation2');changing('presentation3');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button  class="btn btn-md btn-success"  onclick=" ;changing('presentation3');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 
 	

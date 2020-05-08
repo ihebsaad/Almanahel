@@ -23,9 +23,8 @@
   <div class="container">
   
    <?php 
-$cont =  App\Contenu::where('zone', 'scolaire')->first();$contenu=$cont->contenu ;
-$cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->contenu ;
- 
+$cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu ;
+  
 ?>
 <div class="row"  style="margin-bottom:20px">  
 

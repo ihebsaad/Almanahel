@@ -152,6 +152,7 @@
 </div>
 <hr>
 
+@section('footer-scripts')
 
 <script>
 $(document).ready(function() {
@@ -292,5 +293,5 @@ $(document).ready(function() {
 
 
 
-
 </script>
+@endsection

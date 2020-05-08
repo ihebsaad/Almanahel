@@ -27,7 +27,7 @@ $cont =  App\Contenu::where('zone', 'scolaire')->first();$contenu=$cont->contenu
 $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->contenu ;
  
 ?>
-<div class="row">  
+<div class="row"  style="margin-bottom:20px">  
 
 <div class="col-xs-12 col-sm-12  col-md-7 col-lg-7">  
 <section>

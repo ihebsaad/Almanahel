@@ -9,7 +9,7 @@
 <div class="form-group">
      {{ csrf_field() }}
 <?php 
-$cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu ;
+$cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 
 ?>
 <div class="modal-body">

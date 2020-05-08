@@ -84,7 +84,16 @@
   
     
  @include('actus')
+ 
+<!----------------------- Section Home  -------->
+<section>
+<?php
+$cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 
+echo $contenu ;
+?>
+
+</section>
   @endsection
 
  

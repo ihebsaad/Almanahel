@@ -157,7 +157,7 @@
 @section('footer-scripts')
 
 <script>
-$(document).ready(function() {
+(function ( $ ) { 
    /* $("#news-slider").owlCarousel({
         items : 2,
         itemsDesktop : [1199,2],
@@ -291,7 +291,7 @@ $(document).ready(function() {
         autoPlay:true
     });
 	*/
-});
+}( jQuery ));
 
 
 

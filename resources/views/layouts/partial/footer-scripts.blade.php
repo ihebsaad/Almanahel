@@ -13,5 +13,16 @@
 		prependTo:"#menumob"
 	});
 	//$('#navigation').slicknav();
+	
+	    $("#news-slider10").owlCarousel({
+        items : 4,
+        itemsDesktop:[1199,3],
+        itemsDesktopSmall:[980,2],
+        itemsMobile : [600,1],
+        navigation:true,
+        navigationText:["",""],
+        pagination:true,
+        autoPlay:true
+    });
 </script>
  @yield('footer_scripts')

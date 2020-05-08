@@ -121,6 +121,8 @@
 </li>
 <li><a href="{{ route('presentation') }}">Présentation</a>
 </li>
+<li><a href="{{ route('inscription') }}">Inscription</a>
+</li>
 <li><a href="{{ route('scolaire') }}">Vie Scolaire</a>
 </li>
 <li><a href="{{ route('formation') }}">Formation & Emploi</a>

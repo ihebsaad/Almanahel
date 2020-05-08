@@ -52,7 +52,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	
 	
 	 <div class="row">
-	   <button id="save" class="btn btn-md btn-success"  onclick="changing('inscription');changing('inscription2');changing('inscription3')"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button id="save" class="btn btn-md btn-success"  onclick="changing('inscription');changing('inscription2');changing('inscription3');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 	

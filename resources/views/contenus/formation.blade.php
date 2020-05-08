@@ -29,7 +29,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 	
 	
 	 <div class="row">
-	   <button id="save" class="btn btn-md btn-success"    onclick="changing('formation');" ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button id="save" class="btn btn-md btn-success"    onclick="changing('formation');location.reload();" ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 	
 	

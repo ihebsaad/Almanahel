@@ -85,5 +85,6 @@
     
   
   @endsection
-  
-  @extends('layouts.actus')
+  @include('layouts.actus')
+
+ 

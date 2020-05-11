@@ -57,8 +57,18 @@ class ActualitesController extends Controller
 			$visible=0;			
 		}
 		
+		$image='';
+		if($request->file('image')!=null)
+		{$image=$request->file('image');
+		 $name =  $image->getClientOriginalName();
+                 $path = storage_path()."/images/";
+ 
+                  $image->move($path, $name);
+
+                 
+				 
         $actualites = new Actualite([
-             'image' =>trim( $request->file('image')),
+             'image' =>  $name ,
              'titre' =>trim( $request->get('titre')),
              'contenu' => trim($request->get('contenu')),
              'visible' => ($visible),

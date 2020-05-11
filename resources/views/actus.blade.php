@@ -95,7 +95,7 @@ width:20px;}
     <!--First slide-->
     <div class="row  carousel-item active">
 <table border=0  ><tr><td>
-      <div style="width:90%"  >
+      <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
@@ -109,7 +109,7 @@ width:20px;}
         </div>
       </div>
 </td><td>
-      <div style="width:90%" >
+      <div style="width:90%;margin-left:10%" >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
@@ -123,9 +123,7 @@ width:20px;}
         </div>
       </div>
 </td><td>
-      <div style="width:90%"
-
-	  >
+      <div style="width:90%;margin-left:10%"	  >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
@@ -144,8 +142,8 @@ width:20px;}
 
     <!--Second slide-->
     <div class="row carousel-item">
-
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<table border=0  ><tr><td>
+      <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
@@ -157,8 +155,8 @@ width:20px;}
           </div>
         </div>
       </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+</td><td>
+      <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
@@ -170,8 +168,8 @@ width:20px;}
           </div>
         </div>
       </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+</td><td>
+      <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
@@ -182,56 +180,12 @@ width:20px;}
             <a class="btn btn-primary">Lire Plus</a>
           </div>
         </div>
-      </div>
-
+      </div></td></tt>
+</table>
     </div>
     <!--/.Second slide-->
 
-    <!--Third slide-->
-    <div class="row carousel-item">
-
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Lire Plus</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Lire Plus</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Lire Plus</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!--/.Third slide-->
-
+    
   </div>
   <!--/.Slides-->
 

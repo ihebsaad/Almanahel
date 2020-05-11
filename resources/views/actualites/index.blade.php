@@ -23,12 +23,12 @@
             <div class="row">
                 <div class="col-lg-6">Actualités</div>
                 <div class="col-lg-6">
-                    <button id="addgr" class="btn btn-md btn-success"   data-toggle="modal" data-target="#create"><b><i class="fas fa-plus"></i> Ajouter une actualité</b></button>
+                    <button   class="btn btn-md btn-success"    href="{{action('ActualitesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une actualité</b></button>
                 </div>
             </div>
         </div>
 
-        <table class="table table-striped" id="mytable" style="width:100%">
+        <table id="mytable" class="table table-striped" id="mytable" style="width:100%">
             <thead>
             <tr id="headtable">
                 <th style="width:5%">N°</th>

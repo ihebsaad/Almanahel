@@ -50,11 +50,18 @@ class ActualitesController extends Controller
      */
     public function store(Request $request)
     {
+		$vis=$request->get('visible');
+		if($vis=="on"){
+			$visible=1;
+		}else{
+			$visible=0;			
+		}
+		
         $actualites = new Actualite([
              'titre' =>trim( $request->get('image')),
              'titre' =>trim( $request->get('titre')),
              'contenu' => trim($request->get('contenu')),
-             'visible' => trim($request->get('visible')),
+             'visible' => ($visible),
             // 'par'=> $request->get('par'),
 
         ]);

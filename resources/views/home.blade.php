@@ -81,10 +81,7 @@
       </div>
     </div>
   </header>
-  
-    
- @include('actus')
- 
+   
 <!----------------------- Section Home  -------->
 <section>
 <?php
@@ -94,6 +91,10 @@ echo $contenu ;
 ?>
 
 </section>
+
+ @include('actus')
+
+
   @endsection
 
  

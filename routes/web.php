@@ -66,6 +66,19 @@ Route::post('/actualites/store/', 'ActualitesController@store')->name('actualite
  
  
  
+
+/*** Annonces  **/
+ Route::get('/annonces', array('as' => 'annonces','uses' => 'AnnoncesController@index'));
+Route::post('/annonces/saving','AnnoncesController@saving')->name('annonces.saving');
+Route::post('/annonces/updating','AnnoncesController@updating')->name('annonces.updating');
+Route::get('/annonces/view/{id}', 'AnnoncesController@view');
+Route::get('/annonces/destroy/{id}', 'AnnoncesController@destroy');
+Route::get('/annonces/destroy/{id}', 'AnnoncesController@destroy');
+Route::get('/annonces/create/', 'AnnoncesController@create')->name('annonces.create');
+Route::post('/annonces/store/', 'AnnoncesController@store')->name('annonces.store');
+ 
+ 
+ 
  /*** Users **/
 
 //Route::resource('/users',  'UsersController');

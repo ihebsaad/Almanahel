@@ -156,7 +156,7 @@
 
 <style>
 .card-body .btn-primary{color:white!important;}
-.carousel-item {display:table-row;}
+.carousel-item .active {display:table-row;}
 </style>
 
 <!--Carousel Wrapper-->

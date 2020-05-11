@@ -6,21 +6,11 @@
   <script    src="{{  URL::asset('public/site/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"     ></script>
 
 
-<!-- google map -->
-<!--<script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIu-gKTYlbOxB-KOddBVkcyEGc5HCfozs&callback=initMap">
-    </script>-->
+<script  src="{{  URL::asset('public/site/js/jquery.slicknav.min.js') }}"  ></script>
+<script type="text/javascript">
+  $('ul#navigation').slicknav({
+    prependTo:"#menumob"
+  });
+  //$('#navigation').slicknav();
+</script>
  @yield('footer_scripts')

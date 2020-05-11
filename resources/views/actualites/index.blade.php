@@ -46,7 +46,7 @@
 
                 <tr>
                     <td  >{{$actualite->id}}</td>
-                    <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" ><center><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/></center> </a></td>
+                    <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" ><center><?php if($actualite->image==''){ ?> <img src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:100px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/> <?php } ?></center> </a></td>
                     <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" >{{$actualite->titre}}</a></td>
                     <td  > {{$actualite->titre}} </td>
                     <td  >   <label><span class="checked">
@@ -244,6 +244,35 @@
 
 
         });
+
+
+   function changing(elm,actus) {
+            var champ=elm.id;
+
+            var val =document.getElementById('actus-'+actus).checked==1;
+
+            if (val==true){val=1;}
+            else{val=0;}
+            //if ( (val != '')) {
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "{{ route('actualites.updating') }}",
+                method: "POST",
+                data: {actus:actus , champ:champ ,val:val, _token: _token},
+                success: function (data) {
+                    $('.actus-'+actus).animate({
+                        opacity: '0.3',
+                    });
+                    $('.actus-'+actus).animate({
+                        opacity: '1',
+                    });
+
+                }
+            });
+            // } else {
+
+            // }
+        }
 
  	 
 @stop

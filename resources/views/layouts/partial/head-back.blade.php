@@ -2,9 +2,7 @@
 <meta name="description" content="">
 <meta name="author" content="eSolutions">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="userId" content="{{ Auth::check() ? Auth::user()->id : '' }}">
- <link rel="shortcut icon" href="{{ asset('public/img/favicon.ico') }}" type="image/x-icon">
- <link rel="icon" href="{{ asset('public/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" type="image/png" href="{{  URL::asset('public/site/img/favicon.png') }}">
     <meta charset="UTF-8">
     <title>
         @section('title')

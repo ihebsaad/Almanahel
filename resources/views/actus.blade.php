@@ -95,7 +95,7 @@ width:20px;}
     <!--First slide-->
     <div class="row  carousel-item active">
 <table border=0  ><tr><td>
-      <div style="width:100%"  >
+      <div style="width:90%"  >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
@@ -109,7 +109,7 @@ width:20px;}
         </div>
       </div>
 </td><td>
-      <div style="width:100%" >
+      <div style="width:90%" >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
@@ -123,7 +123,9 @@ width:20px;}
         </div>
       </div>
 </td><td>
-      <div style="width:100%" >
+      <div style="width:90%"
+
+	  >
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"

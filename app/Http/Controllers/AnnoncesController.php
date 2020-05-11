@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
  use DB;
 
 
-class AnnonceController extends Controller
+class AnnoncesController extends Controller
 {
 
 

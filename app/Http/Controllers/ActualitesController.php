@@ -51,8 +51,10 @@ class ActualitesController extends Controller
     public function store(Request $request)
     {
         $actualites = new Actualite([
+             'titre' =>trim( $request->get('image')),
              'titre' =>trim( $request->get('titre')),
              'contenu' => trim($request->get('contenu')),
+             'visible' => trim($request->get('visible')),
             // 'par'=> $request->get('par'),
 
         ]);

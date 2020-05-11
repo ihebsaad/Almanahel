@@ -31,15 +31,14 @@
         <table class="table table-striped" id="mytable" style="width:100%">
             <thead>
             <tr id="headtable">
-                <th style="width:10%">N°</th>
-                <th style="width:45%">Titre</th>
+                <th style="width:5%">N°</th>
+                <th style="width:20%">Image</th>
+                <th style="width:20%">Titre</th>
+                <th style="width:35%">Contenu</th>
+                <th style="width:10%">Visible</th>
                  <th style="width:10%">Actions</th>
               </tr>
-            <tr>
-                <th style="width:10%">N°</th>
-                <th style="width:45%">Titre</th>
-                 <th class="no-sort" style="width:10%">Actions</th>
-            </tr>
+         
             </thead>
             <tbody>
             @foreach($actualites as $actualite)
@@ -47,7 +46,10 @@
 
                 <tr>
                     <td  >{{$actualite->id}}</td>
+                    <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" > </a></td>
                     <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" >{{$actualite->titre}}</a></td>
+                    <td  > {{$actualite->titre}} </td>
+                    <td  >  </td>
 					<td    >
                         @can('isAdmin')
                             <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('ActualitesController@destroy', $actualite['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >

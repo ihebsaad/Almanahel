@@ -21,18 +21,24 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('actualites.store') }}">
+            <form method="post" action="{{ route('actualites.store') }}"  enctype="multipart/form-data">
+			  {{ csrf_field() }}
                 <div class="form-group">
-                     {{ csrf_field() }}
+                    <label for="titre">Image:</label>
+                    <input id="image" type="file" class="form-control" name="image"/>
+                </div>
+                <div class="form-group">
                     <label for="titre">Titre:</label>
                     <input id="titre" type="text" class="form-control" name="titre"/>
-                </div>
-                <div class="form-group">
-                    <label for="type">Contenu :</label>
-                    <input id="contenu" type="text" class="form-control" name="contenu"/>
-                </div>
+                </div>				
+				<div class="form-group ">
+                    <label for="contenu">Contenu:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ></textarea>
+                    </div>
+				</div>
 
-
+    <label class="check "> <input type="checkbox" name="visible"  valuue="1" checked/> Visilble</label>
                 <button  type="submit"  class="btn btn-primary">Ajouter</button>
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>

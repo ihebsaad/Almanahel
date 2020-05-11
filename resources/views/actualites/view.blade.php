@@ -13,18 +13,10 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            Modifier
+            Modifier l'article
         </div>
         <div class="card-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div><br />
-            @endif
+          
             <form method="post" action="{{ route('actualites.store') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
 			  <div class="row">
@@ -34,23 +26,23 @@
                 </div>
 				 <div class="  col-md-6">
 
-				<?php if(actualite->image !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/><?php }?>
+				<?php if(actualite->image !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-width:150px"/><?php }?>
                 </div>
 				
                 </div>
                 <div class="form-group">
                     <label for="titre">Titre:</label>
-                    <input id="titre" type="text" class="form-control" name="titre"  value="{{$actualite->titre}}"/>
+                    <input id="titre" type="text" class="form-control" name="titre"  value="<?phph echo $actualite->['titre'];?>"/>
                 </div>				
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ><?php echo $actualite->contenu;?></textarea>
+                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ><?php echo $actualite['contenu'];?></textarea>
                     </div>
 				</div>
 				<div class="form-group ">
 
-             <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $actualite->visible==1)  {echo 'checked' ;} ?> /> Visilble</label>
+             <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $actualite['visible']==1)  {echo 'checked' ;} ?> /> Visilble</label>
 					</div>
 
           <div class="form-group ">

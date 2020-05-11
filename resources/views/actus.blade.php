@@ -94,7 +94,7 @@ width:20px;}
 
     <!--First slide-->
     <div class="row  carousel-item active">
-	 <section>
+<table border=0 ><tr><td>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
@@ -108,7 +108,7 @@ width:20px;}
           </div>
         </div>
       </div>
-
+</td><td>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
@@ -122,7 +122,7 @@ width:20px;}
           </div>
         </div>
       </div>
-
+</td><td>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
@@ -136,14 +136,12 @@ width:20px;}
           </div>
         </div>
       </div>
-	 </section>
-
+</td></tr></table>
     </div>
     <!--/.First slide-->
 
     <!--Second slide-->
     <div class="row carousel-item">
-	 <section>
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
@@ -183,14 +181,12 @@ width:20px;}
           </div>
         </div>
       </div>
-	 </section>
 
     </div>
     <!--/.Second slide-->
 
     <!--Third slide-->
     <div class="row carousel-item">
-	 <section>
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
@@ -230,7 +226,6 @@ width:20px;}
           </div>
         </div>
       </div>
-	 </section>
 
     </div>
     <!--/.Third slide-->

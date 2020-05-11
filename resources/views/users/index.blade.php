@@ -14,7 +14,7 @@
          <div class="row">
             <div class="col-md-8"><H2> Liste des utilisateurs</H2></div>
 			<div class="col-md-3">
-			  <button   class="btn btn-md btn-success"    href="{{action('UsersController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une utilisateur</b></button>
+			  <a   class="btn btn-md btn-success"    href="{{action('UsersController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une utilisateur</b></a>
 
 			<br>
 			</div>

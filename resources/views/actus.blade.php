@@ -320,8 +320,8 @@
 </div>
 <!--/.Carousel Wrapper-->
 
-
-<script>
+@section('footer-scripts')
+ <script>
 $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
   var next = $(this).next();
   if (!next.length) {
@@ -339,5 +339,5 @@ $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
 });
 </script>
 
-
+@endsection
 

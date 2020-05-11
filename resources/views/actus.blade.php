@@ -93,8 +93,8 @@ width:20px;}
   <div class="carousel-inner" role="listbox">
 
     <!--First slide-->
-    <div class="row  carousel-group active">
-
+    <div class="row  carousel-item active">
+	 <section>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
@@ -136,12 +136,14 @@ width:20px;}
           </div>
         </div>
       </div>
+	 </section>
 
     </div>
     <!--/.First slide-->
 
     <!--Second slide-->
-    <div class="row carousel-group">
+    <div class="row carousel-item">
+	 <section>
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
@@ -181,12 +183,14 @@ width:20px;}
           </div>
         </div>
       </div>
+	 </section>
 
     </div>
     <!--/.Second slide-->
 
     <!--Third slide-->
-    <div class="row carousel-group">
+    <div class="row carousel-item">
+	 <section>
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
@@ -226,6 +230,7 @@ width:20px;}
           </div>
         </div>
       </div>
+	 </section>
 
     </div>
     <!--/.Third slide-->
@@ -238,8 +243,8 @@ width:20px;}
 
 @section('footer-scripts')
  <script>
- 
-$('.carousel.carousel-multi-item  .carousel-group').each(function(){
+ /*
+$('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
   var next = $(this).next();
   if (!next.length) {
     next = $(this).siblings(':first');
@@ -254,7 +259,7 @@ $('.carousel.carousel-multi-item  .carousel-group').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
- 
+*/
 </script>
 
 @endsection

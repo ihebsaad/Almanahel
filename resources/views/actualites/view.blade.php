@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label for="titre">Titre:</label>
-                    <input id="titre" type="text" class="form-control" name="titre"  value="<?phph echo $actualite['titre'];?>"/>
+                    <input id="titre" type="text" class="form-control" name="titre"  value="<?php  echo $actualite['titre'];?>"/>
                 </div>				
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>

@@ -57,7 +57,7 @@ class ActualitesController extends Controller
 			$visible=0;			
 		}
 		
-		$image='';
+		$name='';
 		if($request->file('image')!=null)
 		{$image=$request->file('image');
 		 $name =  $image->getClientOriginalName();

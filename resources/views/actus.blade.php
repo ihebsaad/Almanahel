@@ -2,6 +2,8 @@
 <style>
 .card-body .btn-primary{color:white!important;}
 .carousel-item .active {display:table-row;}
+
+/*
 .controls-top	{
 		box-sizing:border-box;
 color:rgb(255, 255, 255);
@@ -65,6 +67,8 @@ transition-duration:0.6s;
 transition-property:opacity;
 transition-timing-function:ease;
 width:20px;}
+
+*/
 </style>
 
 <!--Carousel Wrapper-->

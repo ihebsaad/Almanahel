@@ -63,8 +63,8 @@ class ActualitesController extends Controller
 		 $name =  $image->getClientOriginalName();
                  $path = storage_path()."/images/";
  
-                  $image->move($path, $name);
-
+          $image->move($path, $name);
+		}
                  
 				 
         $actualites = new Actualite([

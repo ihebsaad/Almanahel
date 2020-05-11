@@ -154,6 +154,10 @@
 </div>
 <hr> -->
 
+<style>
+.card-body .btn-primary{color:white!important;}
+</style>
+
 <!--Carousel Wrapper-->
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 

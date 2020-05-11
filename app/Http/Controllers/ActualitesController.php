@@ -124,7 +124,7 @@ class ActualitesController extends Controller
     {
   
         $actualite = Actualite::find($id);
-        return view('actualites.view' , compact('actualite'));
+        return view('actualites.view' , ['actualite'=>$actualite]);
 
     }
 

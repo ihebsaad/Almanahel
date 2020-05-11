@@ -76,7 +76,11 @@
 
         <!-- Links -->
         <h6 class="font-weight-bold text-uppercase mb-4">MAP</h6>
-        <div id="map"></div>
+        <!--<div id="map"></div>-->
+        <center>
+         <a href="https://g.page/almanahel-monastir" target="blank">
+         <img src="{{  URL::asset('public/site/img/manahel.png') }}" width="300"></a>
+        </center>
         
       </div>
       

@@ -7,7 +7,7 @@
 
 
 <!-- google map -->
-<script>
+<!--<script>
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
@@ -19,12 +19,8 @@ function initMap() {
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIu-gKTYlbOxB-KOddBVkcyEGc5HCfozs&callback=initMap">
-    </script>
+    </script>-->
  @yield('footer_scripts')

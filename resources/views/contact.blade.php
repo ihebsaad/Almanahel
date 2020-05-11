@@ -37,8 +37,8 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
 <div class="col-xs-12 col-sm-12  col-md-5 col-lg-5">  
  
  <center>
- <a href="https://www.google.com/maps/place/Lyc%C3%A9e+Priv%C3%A9+Al+Manahel+Monastir/@35.7642893,10.7952923,15z/data=!4m5!3m4!1s0x0:0xadfd0b46e4ab1658!8m2!3d35.7627223!4d10.8033175">
- <img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/public/site/img/manahel.png"></a>
+ <a href="https://g.page/almanahel-monastir" target="blank">
+ <img src="{{  URL::asset('public/site/img/manahel.png') }}"></a>
  </center>
  
  </div>

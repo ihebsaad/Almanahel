@@ -50,7 +50,7 @@
                     <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" >{{$actualite->titre}}</a></td>
                     <td  > {{$actualite->titre}} </td>
                     <td  >   <label><span class="checked">
-                            <input  class="actus-<?php echo $actualite->id;?>"  type="checkbox"    id="actus-<?php echo $alerte->id;?>"    <?php if ($actualite->visible ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $actualite->id; ?>' );"      >
+                            <input  class="actus-<?php echo $actualite->id;?>"  type="checkbox"    id="actus-<?php echo $actualite->id;?>"    <?php if ($actualite->visible ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $actualite->id; ?>' );"      >
                         </span> Visible</label> </td>
 					<td    >
                         @can('isAdmin')

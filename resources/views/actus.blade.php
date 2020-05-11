@@ -179,7 +179,7 @@
     <!--First slide-->
     <div class="carousel-item active">
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
@@ -193,7 +193,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
@@ -207,7 +207,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
@@ -227,7 +227,7 @@
     <!--Second slide-->
     <div class="carousel-item">
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
@@ -240,7 +240,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
@@ -253,7 +253,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
@@ -272,7 +272,7 @@
     <!--Third slide-->
     <div class="carousel-item">
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
@@ -285,7 +285,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
@@ -298,7 +298,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg" alt="Card image cap">

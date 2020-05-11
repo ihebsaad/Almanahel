@@ -58,7 +58,7 @@ class ActualitesController extends Controller
 		}
 		
         $actualites = new Actualite([
-             'titre' =>trim( $request->get('image')),
+             'image' =>trim( $request->get('image')),
              'titre' =>trim( $request->get('titre')),
              'contenu' => trim($request->get('contenu')),
              'visible' => ($visible),

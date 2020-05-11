@@ -26,7 +26,7 @@
                 </div>
 				 <div class="  col-md-6">
 
-				<?php if(actualite['image'] !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-width:150px"/><?php } ?>
+				<?php if($actualite['image'] !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-width:150px"/><?php } ?>
                 </div>
 				
                 </div>

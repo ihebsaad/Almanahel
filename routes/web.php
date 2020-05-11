@@ -60,6 +60,9 @@ Route::post('/actualites/saving','ActualitesController@saving')->name('actualite
 Route::post('/actualites/updating','ActualitesController@updating')->name('actualites.updating');
 Route::get('/actualites/view/{id}', 'ActualitesController@view');
 Route::get('/actualites/destroy/{id}', 'ActualitesController@destroy');
+Route::get('/actualites/destroy/{id}', 'ActualitesController@destroy');
+Route::get('/actualites/create/', 'ActualitesController@create')->name('actualites.create');
+Route::post('/actualites/store/', 'ActualitesController@store')->name('actualites.store');
  
  
  

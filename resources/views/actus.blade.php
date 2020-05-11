@@ -93,7 +93,7 @@ width:20px;}
   <div class="carousel-inner" role="listbox">
 
     <!--First slide-->
-    <div class="row  carousel-item active">
+    <div class="row  carousel-group active">
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
@@ -141,7 +141,7 @@ width:20px;}
     <!--/.First slide-->
 
     <!--Second slide-->
-    <div class="row carousel-item">
+    <div class="row carousel-group">
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
@@ -186,7 +186,7 @@ width:20px;}
     <!--/.Second slide-->
 
     <!--Third slide-->
-    <div class="row carousel-item">
+    <div class="row carousel-group">
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card mb-2">
@@ -238,8 +238,8 @@ width:20px;}
 
 @section('footer-scripts')
  <script>
- /*
-$('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
+ 
+$('.carousel.carousel-multi-item  .carousel-group').each(function(){
   var next = $(this).next();
   if (!next.length) {
     next = $(this).siblings(':first');
@@ -254,7 +254,7 @@ $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
-*/
+ 
 </script>
 
 @endsection

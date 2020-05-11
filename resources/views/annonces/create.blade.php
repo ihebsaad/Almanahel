@@ -25,7 +25,7 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('actualites.store') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('annonces.store') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
                 <div class="form-group">
                     <label for="titre">Image:</label>

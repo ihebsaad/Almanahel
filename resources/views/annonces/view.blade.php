@@ -17,7 +17,7 @@
         </div>
         <div class="card-body">
           
-            <form method="post" action="{{ route('actualites.store') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('annonces.store') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
 			  <div class="row">
                 <div class="form-group col-md-6">
@@ -68,7 +68,7 @@
             {
                 var _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url:"{{ route('actualites.saving') }}",
+                    url:"{{ route('annonces.saving') }}",
                     method:"POST",
                     data:{nom:nom,type:type, _token:_token},
                     success:function(data){

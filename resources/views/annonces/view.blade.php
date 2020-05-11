@@ -26,23 +26,23 @@
                 </div>
 				 <div class="  col-md-6">
 
-				<?php if($actualite['image'] !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-width:150px"/><?php } ?>
+				<?php if($annonce['image'] !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce['image'];?>" style="max-width:150px"/><?php } ?>
                 </div>
 				
                 </div>
                 <div class="form-group">
                     <label for="titre">Titre:</label>
-                    <input id="titre" type="text" class="form-control" name="titre"  value="<?php  echo $actualite['titre'];?>"/>
+                    <input id="titre" type="text" class="form-control" name="titre"  value="<?php  echo $annonce['titre'];?>"/>
                 </div>				
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ><?php echo $actualite['contenu'];?></textarea>
+                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ><?php echo $annonce['contenu'];?></textarea>
                     </div>
 				</div>
 				<div class="form-group ">
 
-             <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $actualite['visible']==1)  {echo 'checked' ;} ?> /> Visilble</label>
+             <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $annonce['visible']==1)  {echo 'checked' ;} ?> /> Visilble</label>
 					</div>
 
           <div class="form-group ">

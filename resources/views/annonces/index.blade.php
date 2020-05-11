@@ -21,9 +21,9 @@
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6">Actualités</div>
+                <div class="col-lg-6">Annonces</div>
                 <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('ActualitesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une actualité</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('AnnoncesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une actualité</b></a>
                 </div>
             </div>
         </div>
@@ -41,20 +41,20 @@
          
             </thead>
             <tbody>
-            @foreach($actualites as $actualite)
+            @foreach($annonces as $annonce)
    
 
                 <tr>
-                    <td style="width:5%" >{{$actualite->id}}</td>
-                    <td style="width:20%" ><a href="{{action('ActualitesController@view', $actualite['id'])}}" ><center><?php if($actualite->image==''){ ?> <img src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:100px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/> <?php } ?></center> </a></td>
-                    <td style="width:20%" ><a href="{{action('ActualitesController@view', $actualite['id'])}}" >{{$actualite->titre}}</a></td>
-                    <td style="width:35%" > {{$actualite->titre}} </td>
+                    <td style="width:5%" >{{$annonce->id}}</td>
+                    <td style="width:20%" ><a href="{{action('AnnoncesController@view', $annonce['id'])}}" ><center><?php if($annonce->image==''){ ?> <img src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:100px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce->image;?>" style="max-width:150px"/> <?php } ?></center> </a></td>
+                    <td style="width:20%" ><a href="{{action('AnnoncesController@view', $annonce['id'])}}" >{{$annonce->titre}}</a></td>
+                    <td style="width:35%" > {{$annonce->titre}} </td>
                     <td style="width:10%" >   <label><span class="checked">
-                            <input  class="actus-<?php echo $actualite->id;?>"  type="checkbox"    id="actus-<?php echo $actualite->id;?>"    <?php if ($actualite->visible ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $actualite->id; ?>' );"      >
+                            <input  class="actus-<?php echo $annonce->id;?>"  type="checkbox"    id="actus-<?php echo $annonce->id;?>"    <?php if ($annonce->visible ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $annonce->id; ?>' );"      >
                         </span> Visible</label> </td>
 					<td style="width:10%"   >
                         @can('isAdmin')
-                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('ActualitesController@destroy', $actualite['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('AnnoncesController@destroy', $annonce['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                                 <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
                         @endcan

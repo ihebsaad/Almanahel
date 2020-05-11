@@ -1,90 +1,96 @@
+
 @extends('layouts.back')
 
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+
 @section('content')
-<div class="form-group">
-     {{ csrf_field() }}
+    <style>
+        .uper {
+            margin-top: 40px;
+        }
+    </style>
+    <div class="card uper">
+        <div class="card-header">
+            Modifier
+        </div>
+        <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div><br />
+            @endif
+            <form method="post" action="{{ route('actualites.store') }}"  enctype="multipart/form-data">
+			  {{ csrf_field() }}
+			  <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="titre">Image:</label>
+                    <input id="image" type="file" class="form-control" name="image"/>
+                </div>
+				 <div class="  col-md-6">
 
-<div class="modal-body">
-    <form id="updateform">
+				<?php if(actualite->image !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/><?php }?>
+                </div>
+				
+                </div>
+                <div class="form-group">
+                    <label for="titre">Titre:</label>
+                    <input id="titre" type="text" class="form-control" name="titre"  value="{{$actualite->titre}}"/>
+                </div>				
+				<div class="form-group ">
+                    <label for="contenu">Contenu:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ><?php echo $actualite->contenu;?></textarea>
+                    </div>
+				</div>
+				<div class="form-group ">
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputError" class="control-label">Titre *</label>
-                                <input onchange="changing(this)" type="text" class="form-control input" name="name" id="name"  value="{{ $actualite->titre }}">
-                            </div>
-                        </div>
-  
+             <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $actualite->visible==1)  {echo 'checked' ;} ?> /> Visilble</label>
+					</div>
 
-                     </div>
-                    <input type="hidden" id="id" class="form-control"   value={{ $actualite->id }}>
-    </form>
-                </div>	 
+          <div class="form-group ">
+      <button  type="submit"  class="btn btn-primary">Ajouter</button>
+  			 </div>
 
-  </div>
-
+             <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
+            </form>
+        </div>
+    </div>
 @endsection
 
 
-<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
-
+ 
 
 <script>
+    $(document).ready(function(){
 
-    function changing(elm) {
-        var champ=elm.id;
+        $('#add').click(function(){
+            var nom = $('#nom').val();
+            var typepres = $('#typepres').val();
+             if ((titre != '') )
+            {
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url:"{{ route('actualites.saving') }}",
+                    method:"POST",
+                    data:{nom:nom,type:type, _token:_token},
+                    success:function(data){
+                        alert('ajouté !');
 
-        var val =document.getElementById(champ).value;
-        //  var type = $('#type').val();
-        var citie = $('#id').val();
-         //if ( (val != '')) {
-        var _token = $('input[name="_token"]').val();
-        $.ajax({
-            url: "{{ route('actualites.updating') }}",
-            method: "POST",
-            data: {citie: citie , champ:champ ,val:val, _token: _token},
-            success: function (data) {
-                $('#'+champ).animate({
-                    opacity: '0.3',
+                    }
                 });
-                $('#'+champ).animate({
-                    opacity: '1',
-                });
-
+            }else{
+                alert('ERROR');
             }
         });
-        // } else {
-
-        // }
-    }
-
-    function disabling(elm) {
-        var champ=elm;
-
-        var val =1;
-         var citie = $('#id').val();
-        //if ( (val != '')) {
-        var _token = $('input[name="_token"]').val();
-        $.ajax({
-            url: "{{ route('actualites.updating') }}",
-            method: "POST",
-            data: {actualite: actualite , champ:champ ,val:val, _token: _token},
-            success: function (data) {
-                if (elm=='annule'){
-                $('#nonactif').animate({
-                    opacity: '0.3',
-                });
-                $('#nonactif').animate({
-                    opacity: '1',
-                });
-                }
 
 
-            }
-        });
-        // } else {
 
-        // }
-    }
 
+    });
 </script>

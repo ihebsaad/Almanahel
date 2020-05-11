@@ -41,43 +41,19 @@
                         <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ></textarea>
                     </div>
 				</div>
+				<div class="form-group ">
 
-    <label class="check "> <input type="checkbox" name="visible"  valuue="1" checked/> Visilble</label>
-                <button  type="submit"  class="btn btn-primary">Ajouter</button>
+             <label class="check "> <input type="checkbox" name="visible"  valuue="1" checked/> Visilble</label>
+					</div>
+
+          <div class="form-group ">
+      <button  type="submit"  class="btn btn-primary">Ajouter</button>
+  			 </div>
+
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
         </div>
     </div>
 @endsection
 
-
  
-
-<script>
-    $(document).ready(function(){
-
-        $('#add').click(function(){
-            var nom = $('#nom').val();
-            var typepres = $('#typepres').val();
-             if ((titre != '') )
-            {
-                var _token = $('input[name="_token"]').val();
-                $.ajax({
-                    url:"{{ route('actualites.saving') }}",
-                    method:"POST",
-                    data:{nom:nom,type:type, _token:_token},
-                    success:function(data){
-                        alert('ajouté !');
-
-                    }
-                });
-            }else{
-                alert('ERROR');
-            }
-        });
-
-
-
-
-    });
-</script>

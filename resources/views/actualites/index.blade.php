@@ -46,10 +46,12 @@
 
                 <tr>
                     <td  >{{$actualite->id}}</td>
-                    <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" ><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/> </a></td>
+                    <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" ><center><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/></center> </a></td>
                     <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" >{{$actualite->titre}}</a></td>
                     <td  > {{$actualite->titre}} </td>
-                    <td  >  </td>
+                    <td  >   <label><span class="checked">
+                            <input  class="actus-<?php echo $actualite->id;?>"  type="checkbox"    id="actus-<?php echo $alerte->id;?>"    <?php if ($actualite->visible ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $actualite->id; ?>' );"      >
+                        </span> Visible</label> </td>
 					<td    >
                         @can('isAdmin')
                             <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('ActualitesController@destroy', $actualite['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
@@ -243,5 +245,5 @@
 
         });
 
-    </script>
+ 	 
 @stop

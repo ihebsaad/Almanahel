@@ -106,12 +106,12 @@ class ActualitesController extends Controller
     public function updating(Request $request)
     {
 
-        $id= $request->get('actualite');
+        $id= $request->get('actus');
         $champ= strval($request->get('champ'));
        $val= $request->get('val');
-          Actualite::where('id', $id)->update(array($champ => $val));
+       Actualite::where('id', $id)->update(array('statut' => $val));
 
-  
+ 
     }
 
     /**

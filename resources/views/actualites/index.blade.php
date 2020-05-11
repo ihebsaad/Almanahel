@@ -46,7 +46,7 @@
 
                 <tr>
                     <td  >{{$actualite->id}}</td>
-                    <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" > </a></td>
+                    <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" ><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite->image;?>" style="max-width:150px"/> </a></td>
                     <td  ><a href="{{action('ActualitesController@view', $actualite['id'])}}" >{{$actualite->titre}}</a></td>
                     <td  > {{$actualite->titre}} </td>
                     <td  >  </td>

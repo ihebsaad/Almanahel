@@ -26,13 +26,13 @@
                 </div>
 				 <div class="  col-md-6">
 
-				<?php if(actualite->image !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-width:150px"/><?php }?>
+				<?php if(actualite['image'] !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-width:150px"/><?php } ?>
                 </div>
 				
                 </div>
                 <div class="form-group">
                     <label for="titre">Titre:</label>
-                    <input id="titre" type="text" class="form-control" name="titre"  value="<?phph echo $actualite->['titre'];?>"/>
+                    <input id="titre" type="text" class="form-control" name="titre"  value="<?phph echo $actualite['titre'];?>"/>
                 </div>				
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>

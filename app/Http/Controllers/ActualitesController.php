@@ -109,7 +109,7 @@ class ActualitesController extends Controller
         $id= $request->get('actus');
         $champ= strval($request->get('champ'));
        $val= $request->get('val');
-       Actualite::where('id', $id)->update(array('statut' => $val));
+       Actualite::where('id', $id)->update(array('visible' => $val));
 
  
     }

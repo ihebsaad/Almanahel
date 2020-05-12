@@ -118,7 +118,7 @@ $actus=(array)$actus ;
 ?>		
     <!--First slide-->
     <div class="row  carousel-item <?php if($i==1){echo 'active';}?>">
-	<table border=0  ><tr><td>
+	<table border=0  ><tr>
 
 	<?php	
 			echo  json_encode($chunk);
@@ -131,7 +131,7 @@ $actus=(array)$actus ;
 				$id=$actu[$j]['id'];
 				$j++;				
 ?>	
-      <div style="width:90%;margin-left:10%"  >
+     <td> <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">
        	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:320px;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:320px;height:219px"/><?php } ?>
 

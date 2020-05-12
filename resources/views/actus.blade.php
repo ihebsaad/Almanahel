@@ -128,6 +128,7 @@ $actus=(array)$actus ;
 				$image=$actu['image'];
 				$contenu=$actu['contenu'];
 				$id=$actu['id'];*/
+				$image='';
 ?>	
       <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">

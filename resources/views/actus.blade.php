@@ -123,12 +123,13 @@ $actus=(array)$actus ;
 		
 			foreach( $chunk as $actu)
 			{	echo json_encode($actu);
-
+$titre='titre;'
+$image='';
+$contenu='contenu;'
 				/*$titre=$actu['titre'];
 				$image=$actu['image'];
 				$contenu=$actu['contenu'];
 				$id=$actu['id'];*/
-				$image='';
 ?>	
       <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">

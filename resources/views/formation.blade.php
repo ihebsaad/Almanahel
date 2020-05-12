@@ -6,10 +6,9 @@
  
 <?php
 $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->contenu ;
-$cont2 =  App\Contenu::where('zone', 'formation2')->first();$contenu2=$cont2->contenu ;
+//$cont2 =  App\Contenu::where('zone', 'formation2')->first();$contenu2=$cont2->contenu ;
 
-echo $contenu ;
-?>
+ ?>
  
 <div class="row">  
 <section>
@@ -19,7 +18,7 @@ echo $contenu ;
 
  <div class="row">  
 <section>
-<?php echo $contenu2; ?>
+<?php //echo $contenu2; ?>
 </section>
 </div>
   

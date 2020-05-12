@@ -59,7 +59,7 @@
                         ->get() ;
                          foreach ($users as $user) {?>
  <a  href="{{action('UsersController@view', $user['id'])}}">
-                            <span class="fa fa-fw fa-trash-alt"></span><?php   echo $user->name." ".$user->lastname ; ?> 
+                             <?php   echo $user->name." ".$user->lastname ; ?> 
                         </a>
 
                    <br/>

@@ -91,56 +91,59 @@ width:20px;}
 
   <!--Slides-->
   <div class="carousel-inner" role="listbox">
+<?php  
 
+              function custom_echo($x, $length)
+              {
+                  if(strlen($x)<=$length)
+                  {
+                      echo $x;
+                  }
+                  else
+                  {
+                      $y=substr($x,0,$length) . '..';
+                      echo $y;
+                  }
+              }
+			  
+$actus= \App\Actualite::where('visible',1)->get();
+		// division de la liste par des listes de 50 emails
+        $chunks = array_chunk($actus, 3);
+		$i=0;
+        // parcours  
+        foreach ($chunks as $chunk)
+        {$i++;		 		
+?>		
     <!--First slide-->
-    <div class="row  carousel-item active">
-<table border=0  ><tr><td>
+    <div class="row  carousel-item <?php if($i==1){echo 'active';}?>">
+	<table border=0  ><tr><td>
+
+	<?php	
+		
+			foreach( $chunk as $actu)
+			{	$titre=$actu->titre;
+				$image=$actu->image;
+				$contenu=$actu->contenu;
+				$id=$actu->id;
+?>	
       <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Lire Plus</a>
-          </div>
-        </div>
-      </div>
-</td><td>
-      <div style="width:90%;margin-left:10%" >
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Lire Plus</a>
-          </div>
-        </div>
-      </div>
-</td><td>
-      <div style="width:90%;margin-left:10%"	  >
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Lire Plus</a>
-          </div>
-        </div>
-      </div>
-</td></tr></table>
-    </div>
-    <!--/.First slide-->
+       	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:320px;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:320px;height:219px"/><?php } ?>
 
-    <!--Second slide-->
+          <div class="card-body">
+            <h4 class="card-title"><?php echo $titre; ?></h4>
+            <p class="card-text"> <?php custom_echo($contenu, 20)  ; ?> </p>
+            <a class="btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
+          </div>
+        </div>
+      </div>
+</td>
+		 <?php } //chunk ?>
+ </tr></table>
+    </div>
+  <?php } //chunks   ?>
+
+    <!--Second slide 
     <div class="row carousel-item">
 <table border=0  ><tr><td>
       <div style="width:90%;margin-left:10%"  >

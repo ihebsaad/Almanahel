@@ -4,10 +4,14 @@
 
  
 
- <?php 
-$cont =  App\Contenu::where('zone', 'fomration')->first();$contenu=$cont->contenu ;
-  
+<section>
+<?php
+$cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->contenu ;
+
+echo $contenu ;
 ?>
+
+</section>
 <div class="row">  
 <section>
 <?php echo $contenu; ?>

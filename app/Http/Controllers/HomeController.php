@@ -50,6 +50,11 @@ class HomeController extends Controller
     }
 	 
 
+    public function inscription()
+    {
+         return view('inscription' );
+    }
+	
     public function presentation()
     {
          return view('presentation' );

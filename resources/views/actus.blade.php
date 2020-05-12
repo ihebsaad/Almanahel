@@ -122,7 +122,7 @@ $actus=(array)$actus ;
 	<?php	
 		
 			foreach( $chunk as $actu)
-			{	echo json_encode($actu)
+			{	echo json_encode($actu);
 
 				/*$titre=$actu['titre'];
 				$image=$actu['image'];

@@ -107,6 +107,7 @@ width:20px;}
               }
 			  
 $actus= \App\Actualite::where('visible',1)->get();
+$actus=(array)$actus ;
 		// division de la liste par des listes de 50 emails
         $chunks = array_chunk($actus, 3);
 		$i=0;

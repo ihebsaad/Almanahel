@@ -3,22 +3,25 @@
 @section('content')
 
  
-
-<section>
+ 
 <?php
 $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'formation2')->first();$contenu2=$cont2->contenu ;
 
 echo $contenu ;
 ?>
-
-</section>
+ 
 <div class="row">  
 <section>
 <?php echo $contenu; ?>
 </section>
 </div>
 
- 
+ <div class="row">  
+<section>
+<?php echo $contenu2; ?>
+</section>
+</div>
   
   
 @endsection

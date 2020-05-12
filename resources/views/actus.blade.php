@@ -92,7 +92,7 @@ width:20px;}
   <!--Slides-->
   <div class="carousel-inner" role="listbox">
 <?php  
-
+/*
               function custom_echo($x, $length)
               {
                   if(strlen($x)<=$length)
@@ -120,7 +120,7 @@ $actus=(array)$actus ;
 	<table border=0  ><tr><td>
 
 	<?php	
-		
+		/*
 			foreach( $chunk as $actu)
 			{	echo json_encode($actu);
 $titre='titre';
@@ -130,7 +130,7 @@ $id=0;
 				/*$titre=$actu['titre'];
 				$image=$actu['image'];
 				$contenu=$actu['contenu'];
-				$id=$actu['id'];*/
+				$id=$actu['id'];*//*
 ?>	
       <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">
@@ -147,9 +147,60 @@ $id=0;
 		 <?php } //chunk ?>
  </tr></table>
     </div>
-  <?php } //chunks   ?>
+  <?php } //chunks  
 
-    <!--Second slide 
+
+*/  ?>
+
+<!--First slide-->
+    <div class="row  carousel-item active">
+<table border=0  ><tr><td>
+      <div style="width:90%;margin-left:10%"  >
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Lire Plus</a>
+          </div>
+        </div>
+      </div>
+</td><td>
+      <div style="width:90%;margin-left:10%" >
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Lire Plus</a>
+          </div>
+        </div>
+      </div>
+</td><td>
+      <div style="width:90%;margin-left:10%"	  >
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Lire Plus</a>
+          </div>
+        </div>
+      </div>
+</td></tr></table>
+    </div>
+    <!--/.First slide-->
+	
+    <!--Second slide --->
     <div class="row carousel-item">
 <table border=0  ><tr><td>
       <div style="width:90%;margin-left:10%"  >

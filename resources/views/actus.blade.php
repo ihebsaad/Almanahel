@@ -126,6 +126,7 @@ $actus=(array)$actus ;
 $titre='titre';
 $image='';
 $contenu='contenu';
+$id=0;
 				/*$titre=$actu['titre'];
 				$image=$actu['image'];
 				$contenu=$actu['contenu'];

@@ -47,7 +47,7 @@
                            ->get() ;
                          foreach ($classes as $classe) {?>
                               <a  href="{{action('ClassesController@view', $classe['id'])}}">
-                            <span class="fa fa-fw fa-trash-alt"></span><?php  echo $classe->titre ; ?> 
+                             <?php  echo $classe->titre ; ?> 
                         </a>
 
                    <br/>

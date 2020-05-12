@@ -45,7 +45,7 @@ use App\User;
                            ->get() ;
                          foreach ($eleves as $eleve) {?>
                             <a  href="{{action('UsersController@view', $eleve['id'])}}">
-                            <span class="fa fa-fw fa-trash-alt"></span><?php  echo $eleve->name." ".$eleve->lastname; ?> 
+                             <?php  echo $eleve->name." ".$eleve->lastname; ?> 
                         </a>
 
                    <br/>

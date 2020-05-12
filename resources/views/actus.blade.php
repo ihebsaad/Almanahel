@@ -92,7 +92,7 @@ width:20px;}
   <!--Slides-->
   <div class="carousel-inner" role="listbox">
 <?php  
-/*
+ 
               function custom_echo($x, $length)
               {
                   if(strlen($x)<=$length)
@@ -120,17 +120,17 @@ $actus=(array)$actus ;
 	<table border=0  ><tr><td>
 
 	<?php	
-		/*
+		 
 			foreach( $chunk as $actu)
 			{	echo json_encode($actu);
 $titre='titre';
 $image='';
 $contenu='contenu';
 $id=0;
-				/*$titre=$actu['titre'];
+				/* $titre=$actu['titre'];
 				$image=$actu['image'];
 				$contenu=$actu['contenu'];
-				$id=$actu['id'];*//*
+				$id=$actu['id']; */
 ?>	
       <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">

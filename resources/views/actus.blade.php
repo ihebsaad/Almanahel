@@ -154,7 +154,7 @@ $id=0;*/
    ?>
 
 <!--First slide-->
-    <div class="row  carousel-item active">
+    <div class="row  carousel-item  ">
 <table border=0  ><tr><td>
       <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">

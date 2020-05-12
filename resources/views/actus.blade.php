@@ -150,7 +150,7 @@ $id=0;
   <?php } //chunks  
 
 
-*/  ?>
+   ?>
 
 <!--First slide-->
     <div class="row  carousel-item active">

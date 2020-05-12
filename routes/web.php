@@ -117,5 +117,27 @@ Route::get('/fetchuser/{id}', 'MessageChatController@fetchUser');
 Route::get('/insertchat/', 'MessageChatController@insertchat');
 Route::get('/fetch_user_chat_history/{to_user_id}', 'MessageChatController@fetch_user_chat_history');
 Route::get('/update_is_type_status/{from_user_id}', 'MessageChatController@update_is_type_status');
+/*** classes **/
+
+Route::get('/classes/create','ClassesController@create')->name('classes.create');
+Route::post('/classes/saving','ClassesController@saving')->name('classes.saving');
+Route::get('/classes/view/{id}', 'ClassesController@view');
+Route::get('/classes/destroy/{id}', 'ClassesController@destroy');
+Route::get('/classes', array('as' => 'classes','uses' => 'ClassesController@index'));
+Route::post('/classes/updating','ClassesController@updating')->name('classes.updating');
+Route::post('/edit1/{id}','ClassesController@update');
+Route::post('/classes/createeleveclass','ClassesController@createeleveclass')->name('classes.createeleveclass');
+Route::post('/classes/removeeleveclass','ClassesController@removeeleveclass')->name('classes.removeeleveclass');
+Route::post('/classes/createenseignantclass','ClassesController@createenseignantclass')->name('classes.createenseignantclass');
+Route::post('/classes/removeenseignantclass','ClassesController@removeenseignantclass')->name('classes.removeenseignantclass');
+ /*** Inscriptions **/
+Route::get('/inscriptions/create','InscriptionsController@create')->name('inscriptions.create');
+Route::post('/inscriptions/updating','InscriptionsController@updating')->name('inscriptions.updating');
+Route::post('/inscriptions/store','InscriptionsController@store')->name('inscriptions.store');
+Route::get('/inscriptions/destroy/{id}', 'InscriptionsController@destroy');
+Route::get('/inscriptions', array('as' => 'inscriptions','uses' => 'InscriptionsController@index'));
+Route::get('/inscriptions/view/{id}', 'InscriptionsController@view');
+Route::post('/edit2/{id}','InscriptionsController@update');
+Route::get('/inscriptions/valide/{id}', 'InscriptionsController@valide');
 
 

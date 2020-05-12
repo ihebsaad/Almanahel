@@ -7,8 +7,7 @@
 <?php
 
 
-  use App\Classe;
- 
+  use App\User ;
   ?>
 
 @section('content')
@@ -18,47 +17,62 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des Enseignants</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('UsersController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter un utilisateur"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
+            <div class="col-md-8"><H2> Liste des classes</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('ClassesController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une classe"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">
         <thead>
         <tr id="headtable">
             <th>ID</th>
-            <th>Nom</th>
-             <th>Statut</th>
-             <th>Classes</th>
+            <th>Nom de la classe</th>
+            <th>Année</th>
+             <th>Élèves</th>
+            <th>Enseignants</th>
             <th>Actions</th>
         </tr>
             
             </thead>
             <tbody>
-            @foreach($users as $user)
+            @foreach($classes as $classe)
 
-                <tr><?php $qual=$user->user_type; if($qual=='user'){$qual='agent';}?>
-                    <td>{{$user->id}}</td>
-                     <td><a href="{{action('UsersController@view', $user['id'])}}" >{{$user->name .' '.$user->lastname }}</a></td>
-                     <td><?php if ($user->isOnline()){  if($user->statut==0){echo '<span class="label label-success">Connecté</span> ';} else{ echo '<span class="label label-warning">En Pause</span> ';  }    } else{echo '<span class="label label-danger">Hors ligne</span>';}  ?></td>
-                  <td> <?php  
+                <tr>
+                    <td>{{$classe->id}}</td>
+                     <td><a href="{{action('ClassesController@view', $classe['id'])}}" >{{ $classe->titre }}</a></td>
+                    <td><?php echo $classe->annee;?></td>
+                     <td><?php
+
+                            $idseleves = DB::table('eleves_classe')->where('classe','=',$classe->id)->pluck('eleve');
+                          $users = User::orderBy('name', 'asc')
+                          ->whereIn('id', $idseleves)
+                        ->get() ;
+                        
+
+                       echo count($users) ; 
+
+?>
+                        </td>
+                     <td><?php  
 
 
-                       $idclasses = DB::table('profs_classe')->where('prof','=',$user->id)->pluck('classe');
-                          $classes = Classe::orderBy('titre', 'asc')
-                          ->whereIn('id', $idclasses)
-                           ->get() ;
-                         foreach ($classes as $classe) {?>
-                              <a  href="{{action('ClassesController@view', $classe['id'])}}">
-                            <span class="fa fa-fw fa-trash-alt"></span><?php  echo $classe->titre ; ?> 
+                       $idsenseignants = DB::table('profs_classe')->where('classe','=',$classe->id)->pluck('prof');
+                          $users = User::orderBy('name', 'asc')
+                          ->whereIn('id', $idsenseignants)
+                        ->get() ;
+                         foreach ($users as $user) {?>
+ <a  href="{{action('UsersController@view', $user['id'])}}">
+                            <span class="fa fa-fw fa-trash-alt"></span><?php   echo $user->name." ".$user->lastname ; ?> 
                         </a>
 
                    <br/>
 
+                     
 
+                          <?php }?>
                     
 
-                          <?php }?></td> 
-				  <td> 
-                
-                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('UsersController@destroy', $user['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+</td>
+                  
+                    <td>
+                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ClassesController@destroy', $classe['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
                   
@@ -67,8 +81,8 @@
             @endforeach
             </tbody>
         </table>
- @endsection
 
+    @endsection
 
 
 
@@ -191,4 +205,8 @@
         });
 
     </script>
+
+
 @stop
+
+

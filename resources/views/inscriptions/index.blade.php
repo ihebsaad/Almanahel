@@ -1,15 +1,8 @@
 @extends('layouts.back')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
-<?php
-
-
-  use App\Classe;
- 
-  ?>
 
 @section('content')
     <style>
@@ -18,57 +11,55 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des Enseignants</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('UsersController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter un utilisateur"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
+            <div class="col-md-8"><H2> Liste des pré-inscriptions</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('InscriptionsController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une inscription"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">
         <thead>
         <tr id="headtable">
             <th>ID</th>
-            <th>Nom</th>
-             <th>Statut</th>
-             <th>Classes</th>
+            <th>Nom de l'Élève</th>
+            <th>Date de naissance</th>
+             <th>Niveau</th>
+             <th>Etablissement</th>
+            <th>Parent</th>
             <th>Actions</th>
         </tr>
             
             </thead>
             <tbody>
-            @foreach($users as $user)
+            @foreach($inscriptions as $inscription)
 
-                <tr><?php $qual=$user->user_type; if($qual=='user'){$qual='agent';}?>
-                    <td>{{$user->id}}</td>
-                     <td><a href="{{action('UsersController@view', $user['id'])}}" >{{$user->name .' '.$user->lastname }}</a></td>
-                     <td><?php if ($user->isOnline()){  if($user->statut==0){echo '<span class="label label-success">Connecté</span> ';} else{ echo '<span class="label label-warning">En Pause</span> ';  }    } else{echo '<span class="label label-danger">Hors ligne</span>';}  ?></td>
-                  <td> <?php  
+                <tr>
+                    <td>{{$inscription->id}}</td>
+                     <td> <a href="{{action('InscriptionsController@view', $inscription['id'])}}" >{{ $inscription->nom." ".$inscription->prenom }}</a> </td>
+                    <td><?php echo $inscription->datenaissance;?></td>
+                     <td><?php echo $inscription->niveau; ?></td>
+                     <td><?php echo $inscription->etablissement;  ?></td>
+                     <td><?php echo $inscription->nom_rep." ".$inscription->prenom_rep;  ?></td>
 
-
-                       $idclasses = DB::table('profs_classe')->where('prof','=',$user->id)->pluck('classe');
-                          $classes = Classe::orderBy('titre', 'asc')
-                          ->whereIn('id', $idclasses)
-                           ->get() ;
-                         foreach ($classes as $classe) {?>
-                              <a  href="{{action('ClassesController@view', $classe['id'])}}">
-                            <span class="fa fa-fw fa-trash-alt"></span><?php  echo $classe->titre ; ?> 
-                        </a>
-
-                   <br/>
-
-
+                          
                     
 
-                          <?php }?></td> 
-				  <td> 
-                
-                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('UsersController@destroy', $user['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+</td>
+                  
+                    <td>
+                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@destroy', $inscription['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
+                        <?php if ($inscription->valide!==1){?>
+                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@valide', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
+                            <span class="fa fa-fw fa-trash-alt"></span> Valider
+                        </a>
+                        <?php } ?>
+                  
                   
                   </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
- @endsection
 
+    @endsection
 
 
 
@@ -191,4 +182,8 @@
         });
 
     </script>
+
+
 @stop
+
+

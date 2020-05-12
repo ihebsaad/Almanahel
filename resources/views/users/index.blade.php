@@ -1,9 +1,10 @@
 @extends('layouts.back')
- 
+
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
+
 
 @section('content')
     <style>
@@ -12,12 +13,7 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des utilisateurs</H2></div>
-			<div class="col-md-3">
-			  <a   class="btn btn-md btn-success"    href="{{action('UsersController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une utilisateur</b></a>
-
-			<br>
-			</div>
+            <div class="col-md-8"><H2> Liste des utilisateurs</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('UsersController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter un utilisateur"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">
         <thead>

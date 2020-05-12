@@ -1,8 +1,13 @@
 @extends('layouts.back')
- 
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
     <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+<?php
 
+
+  use App\Classe;
+   use App\User;
+  ?>
 
 @section('content')
 
@@ -83,6 +88,19 @@
             <td> <input id="niveau" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
         </tr>
 	<tr>
+        <tr>
+
+        <td class="text-primary">Classe</td>
+        <td><?php  
+
+
+                       $idclasses = DB::table('eleves_classe')->where('eleve','=',$user->id)->pluck('classe');
+                          $classes = Classe::orderBy('titre', 'asc')
+                          ->whereIn('id', $idclasses)
+                           ->get() ;?>
+        <input id="classe" readonly  type="text" class="form-control" name="classe" id="classe" value="<?php foreach ($classes as $classe) { echo $classe->titre." ," ;} ?> " />
+        </tr>
+    <tr>
 	    <td class="text-primary">Paiements</td>
             <td> <input id="paiements" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="paiements" id="paiements" value="{{ $user->paiements }}" />                  </td>
         </tr>
@@ -98,11 +116,29 @@
         <tr>
 
         <td class="text-primary">Retards</td>
-            <td> <input id="retards" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                  </td>
+            <td>      <input id="retards" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                </td>
         </tr>
         
         <td class="text-primary">Remarques</td>
             <td> <textarea id="remarques" autocomplete="off" onchange="changing(this)"    class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
+        </tr>
+         <tr>
+
+        <td class="text-primary">Parents</td>
+          <td>
+            <?php  
+
+
+                       $idparents= DB::table('parents_eleve')->where('eleve','=',$user->id)->pluck('parent');
+                          $parents = User::orderBy('name', 'asc')
+                          ->whereIn('id', $idparents)
+                           ->get() ;
+                          ?>
+<input id="parents" readonly  type="text" class="form-control" name="parents" id="parents" value="<?php foreach ($parents as $parent) { echo $parent->name." ".$parent->lastname." ," ;} ?> " />
+              
+          </td>
+
+
         </tr>
         
  <?php } ?> 
@@ -135,6 +171,28 @@
 
         </tr>
 
+ <?php } ?> 
+        <?php if($user->user_type=='prof') {?>
+   
+        <tr>
+
+        <td class="text-primary">Classes</td>
+          <td>
+            <?php  
+
+
+                       $idclasses = DB::table('profs_classe')->where('prof','=',$user->id)->pluck('classe');
+                          $classes = Classe::orderBy('titre', 'asc')
+                          ->whereIn('id', $idclasses)
+                           ->get() ;
+                          ?>
+<input id="classe" readonly  type="text" class="form-control" name="classe" id="classe" value="<?php foreach ($classes as $classe) { echo $classe->titre." ," ;} ?> " />
+              
+          </td>
+
+
+        </tr>
+
         
  <?php } ?> 
 
@@ -155,7 +213,10 @@
         #tabstats tr{margin-bottom:15px;text-align: center;height: 40px;}
         </style>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <script>
 

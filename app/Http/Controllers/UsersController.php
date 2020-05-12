@@ -102,7 +102,7 @@ class UsersController extends Controller
 		  ->orWhere('user_type','financier')
 		  ->orderBy('name', 'asc')->get() ;
               
-           return view('users.profs',  ['users' => $users]);        
+           return view('users.personnels',  ['users' => $users]);        
 		  
      }
 	 

@@ -4,7 +4,12 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
+<?php
 
+
+  use App\Classe;
+  use App\User;
+  ?>
 
 @section('content')
     <style>
@@ -34,8 +39,38 @@
                     <td>{{$user->id}}</td>
                      <td><a href="{{action('UsersController@view', $user['id'])}}" >{{$user->name .' '.$user->lastname }}</a></td>
                      <td><?php if ($user->isOnline()){  if($user->statut==0){echo '<span class="label label-success">Connecté</span> ';} else{ echo '<span class="label label-warning">En Pause</span> ';  }    } else{echo '<span class="label label-danger">Hors ligne</span>';}  ?></td>
-                   <td> </td> 
-                   <td> </td> 
+                   <td><?php  
+
+
+                       $idclasses = DB::table('eleves_classe')->where('eleve','=',$user->id)->pluck('classe');
+                          $classes = Classe::orderBy('titre', 'asc')
+                          ->whereIn('id', $idclasses)
+                           ->get() ;
+                         foreach ($classes as $classe) {?>
+                            <a  href="{{action('ClassesController@view', $classe['id'])}}">
+                            <span class="fa fa-fw fa-trash-alt"></span><?php  echo $classe->titre ; ?> 
+                        </a>
+
+                   <br/>
+
+                     
+
+                          <?php }?> </td> 
+                   <td> <?php  
+
+
+                       $idparents = DB::table('parents_eleve')->where('eleve','=',$user->id)->pluck('parent');
+                          $parents = User::orderBy('name', 'asc')
+                          ->whereIn('id',  $idparents)
+                           ->get() ;
+                         foreach ($parents as $parent) {?>
+ <a  href="{{action('UsersController@view', $parent['id'])}}">
+                            <span class="fa fa-fw fa-trash-alt"></span><?php echo $parent->name." ".$parent->lastname ; ?> 
+                        </a>
+
+                   <br/>
+
+                          <?php }?> </td> 
 
 				  <td> 
                 

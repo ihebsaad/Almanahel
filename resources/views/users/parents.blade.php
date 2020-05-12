@@ -5,7 +5,9 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
 
-
+<?php
+use App\User;
+  ?>
 @section('content')
     <style>
         .uper {
@@ -21,6 +23,7 @@
             <th>ID</th>
             <th>Nom</th>
              <th>Statut</th>
+             <th>Élèves</th>
             <th>Actions</th>
         </tr>
             
@@ -32,6 +35,26 @@
                     <td>{{$user->id}}</td>
                      <td><a href="{{action('UsersController@view', $user['id'])}}" >{{$user->name .' '.$user->lastname }}</a></td>
                      <td><?php if ($user->isOnline()){  if($user->statut==0){echo '<span class="label label-success">Connecté</span> ';} else{ echo '<span class="label label-warning">En Pause</span> ';  }    } else{echo '<span class="label label-danger">Hors ligne</span>';}  ?></td>
+                     <td>
+                        <?php  
+
+
+                       $ideleves= DB::table('parents_eleve')->where('parent','=',$user->id)->pluck('eleve');
+                          $eleves = User::orderBy('name', 'asc')
+                          ->whereIn('id', $ideleves)
+                           ->get() ;
+                         foreach ($eleves as $eleve) {?>
+                            <a  href="{{action('UsersController@view', $eleve['id'])}}">
+                            <span class="fa fa-fw fa-trash-alt"></span><?php  echo $eleve->name." ".$eleve->lastname; ?> 
+                        </a>
+
+                   <br/>
+
+
+                    
+
+                          <?php }?>
+                     </td>
                   <td> 
                 
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('UsersController@destroy', $user['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >

@@ -122,10 +122,10 @@ $actus=(array)$actus ;
 	<?php	
 		
 			foreach( $chunk as $actu)
-			{	$titre=$actu->titre;
-				$image=$actu->image;
-				$contenu=$actu->contenu;
-				$id=$actu->id;
+			{	$titre=$actu['titre'];
+				$image=$actu['image'];
+				$contenu=$actu['contenu'];
+				$id=$actu['id'];
 ?>	
       <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2">

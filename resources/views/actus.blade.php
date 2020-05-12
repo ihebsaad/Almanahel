@@ -2,6 +2,7 @@
 <style>
 .card-body .btn-primary{color:white!important;}
 .carousel-item .active {display:table-row;}
+.link{text-decoration:none;}
 
 /*
 .controls-top	{
@@ -120,6 +121,7 @@ $actus=(array)$actus ;
 	<table border=0  ><tr><td>
 
 	<?php	
+			echo  json_encode($chunk);
 		 $j=0;
 			foreach( $chunk as $actu)
 			{	 
@@ -136,7 +138,7 @@ $actus=(array)$actus ;
           <div class="card-body">
             <h4 class="card-title"><?php echo $titre; ?></h4>
             <p class="card-text"> <?php custom_echo($contenu, 20)  ; ?> </p>
-            <a class="btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
+            <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>
         </div>
       </div>
@@ -149,7 +151,7 @@ $actus=(array)$actus ;
 
    ?>
 
-<!--First slide-->
+<!--First slide- 
     <div class="row  carousel-item  ">
 <table border=0  ><tr><td>
       <div style="width:90%;margin-left:10%"  >
@@ -197,7 +199,7 @@ $actus=(array)$actus ;
     </div>
     <!--/.First slide-->
 	
-    <!--Second slide --->
+    <!--Second slide -- 
     <div class="row carousel-item">
 <table border=0  ><tr><td>
       <div style="width:90%;margin-left:10%"  >

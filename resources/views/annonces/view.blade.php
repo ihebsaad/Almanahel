@@ -42,7 +42,7 @@
 				</div>
 				<div class="form-group ">
 
-             <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $annonce['visible']==1)  {echo 'checked' ;} ?> /> Visilble</label>
+             <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $annonce['visible']==1)  {echo 'checked' ;} ?> /> Visible</label>
 					</div>
 
           <div class="form-group ">

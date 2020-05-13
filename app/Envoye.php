@@ -2,17 +2,15 @@
 
 namespace App;
 use Illuminate\Database\Eloquent\Model;
-class Absence extends Model
+class Envoye extends Model
 
 {
 	
   protected $fillable = [
- 'eleve',
- 'classe',
- 'debut',
- 'fin',
- 'seance',
- 'details',
- ];
+ 'emetteur',
+ 'destinataire',
+ 'sujet',
+ 'contenu',
+  ];
  
 }

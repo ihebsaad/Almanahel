@@ -17,8 +17,10 @@
         </div>
         <div class="card-body">
           
-            <form method="post" action="{{ route('actualites.store') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('actualites.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
+			   <input id="actualite" type="hidden" class="form-control" name="id"  value="<?php  echo $actualite['titre'];?>"/>
+
 			  <div class="row">
                 <div class="form-group col-md-6">
                     <label for="titre">Image:</label>

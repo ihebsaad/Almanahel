@@ -111,7 +111,7 @@ $actus= \App\Actualite::where('visible',1)->get();
 
 $actualites=array();
  foreach ($actus as $actualite) {
-                array_push($actualites, $actualite);
+                array_push($actualites, (array)$actualite);
             }
 
 		// division de la liste par des listes de 3  

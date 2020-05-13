@@ -122,7 +122,7 @@ $actualites=array();
         {$i++;		 		
 ?>		
     <!--First slide-->
-    <div class="row  carousel-item <?php if($i==1){echo 'active';}?>">
+    <div class="row   items <?php if($i==1){echo 'active';}?>">
 	<!--<table border=0  ><tr>-->
 
 	<?php	
@@ -263,8 +263,8 @@ $actualites=array();
 
 @section('footer-scripts')
  <script>
- /*
-$('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
+ 
+$(' .items').each(function(){
   var next = $(this).next();
   if (!next.length) {
     next = $(this).siblings(':first');
@@ -279,7 +279,7 @@ $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
-*/
+ 
 </script>
 
 @endsection

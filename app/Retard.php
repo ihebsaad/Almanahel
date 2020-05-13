@@ -2,7 +2,7 @@
 
 namespace App;
 use Illuminate\Database\Eloquent\Model;
-class Actualite extends Model
+class Retard extends Model
 
 {
 	

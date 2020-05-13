@@ -141,12 +141,16 @@ class ActualitesController extends Controller
 		 $image= $request->get('image');
 		 $titre= $request->get('titre');
 		 $contenu= $request->get('contenu');
-		 $visible= $request->get('visible');
-
+		$vis=$request->get('visible');
+		if($vis=="on"){
+			$visible=1;
+		}else{
+			$visible=0;			
+		}
         $actualite  = Actualite::find($id);
 		
 		if($image!=''){
-		$actualite->update(
+		 Actualite::where('id',$id)->update(
 		array(
 		'visible' => $val,
 		'titre' => $titre,
@@ -155,7 +159,7 @@ class ActualitesController extends Controller
 		)
 		);
 		}else{
-			$actualite->update(
+			Actualite::where('id',$id)->update(
 		array(
 		'visible' => $val,
 		'titre' => $titre,

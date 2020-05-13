@@ -116,9 +116,7 @@ $actualites=array();
 
 		// division de la liste par des listes de 3  
         $chunks = array_chunk($actualites, 3);
-		$count= count($chunks);
-		echo 'Nombre:  '.$count.'<br>';
-		$i=0;
+  		$i=0;
         // parcours  
         foreach ($chunks as $chunk)
         {$i++;		 		
@@ -142,7 +140,7 @@ $actualites=array();
 				$id=$actu[$j]['id'];
 				$j++;				*/
 ?>	
-     <td> <div style="width:90%;margin-left:10%"  >
+     <td> <div style="width:90%;margin-left:10%;margin-right:10%"  >
         <div class="card mb-2" style="width:300px">
        	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:320px;height:219px"/><?php } ?>
 

@@ -123,7 +123,7 @@ $actualites=array();
 ?>		
     <!--First slide-->
     <div class="row  carousel-item <?php if($i==1){echo 'active';}?>">
-	<table border=0  ><tr>
+	<!--<table border=0  ><tr>-->
 
 	<?php	
  		 $j=0;
@@ -140,7 +140,8 @@ $actualites=array();
 				$id=$actu[$j]['id'];
 				$j++;				*/
 ?>	
-     <td> <div style="width:90%;margin-left:10%;margin-right:10%"  >
+    <!-- <td> <div style="width:90%;margin-left:10%;margin-right:10%"  >-->
+      <div    >
         <div class="card mb-2" style="width:300px">
        	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:320px;height:219px"/><?php } ?>
 
@@ -151,9 +152,9 @@ $actualites=array();
           </div>
         </div>
       </div>
-</td>
+<!--</td>-->
 		 <?php } //chunk ?>
- </tr></table>
+<!-- </tr></table>-->
     </div>
   <?php } //chunks  
 

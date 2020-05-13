@@ -142,7 +142,7 @@ class ActualitesController extends Controller
 		 $image= $request->file('image');
 		 $titre= $request->get('titre');
 		 $contenu= $request->get('contenu');
-		 $extrait= $request->get('contenu');
+		 $extrait= $request->get('extrait');
 		$vis=$request->get('visible');
 		if($vis=="on" || $vis==1 ){
 			$visible=1;

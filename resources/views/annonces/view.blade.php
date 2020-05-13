@@ -16,9 +16,9 @@
             Modifier l'article
         </div>
         <div class="card-body">
-          
-            <form method="post" action="{{ route('annonces.store') }}"  enctype="multipart/form-data">
+                <form method="post" action="{{ route('annonces.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
+			   <input id="annonce" type="hidden" class="form-control" name="id"  value="<?php  echo $annonce['id'];?>"/>
 			  <div class="row">
                 <div class="form-group col-md-6">
                     <label for="titre">Image:</label>

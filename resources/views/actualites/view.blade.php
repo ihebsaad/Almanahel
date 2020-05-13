@@ -42,12 +42,7 @@
                         <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ><?php echo $actualite['contenu'];?></textarea>
                     </div>
 				</div>
-				<div class="form-group ">
-				<label><span class="checked">
-                            <input  class="actus-<?php echo $actualite['id'];?>"  type="checkbox"    id="actus-<?php echo $actualite['id'];?>"    <?php if ($actualite['visible'] ==1){echo 'checked'; }  ?>   name="visible"     >
-                        </span> Visible</label> 
- 					</div>
-
+			 
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>
   			 </div>

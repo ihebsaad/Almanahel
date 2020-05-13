@@ -134,14 +134,48 @@ class AnnoncesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+   public function edit(Request $request)
     {
         //
-        $annonces = Annonce::find($id);
+		 $id= $request->get('id');
+		 $image= $request->file('image');
+		 $titre= $request->get('titre');
+		 $contenu= $request->get('contenu');
+		$vis=$request->get('visible');
+		if($vis=="on" || $vis==1 ){
+			$visible=1;
+		}else{
+			$visible=0;			
+		}
+        $annonce  = Annonce::find($id);
+		
+	$name='';
+		if($request->file('image')!=null)
+		{$image=$request->file('image');
+		 $name =  $image->getClientOriginalName();
+                 $path = storage_path()."/images/";
  
-        return view('annonces.edit',  compact('annonces'));
+          $image->move($path, $name);	
+		  Annonce::where('id',$id)->update(
+		array(
+		//'visible' => $visible,
+		'titre' => $titre,
+		'contenu' => $contenu,
+		'image' => $name
+		));
+		}else{
+			Annonce::where('id',$id)->update(
+		array(
+		//'visible' => $visible,
+		'titre' => $titre,
+		'contenu' => $contenu,
+		)
+		);	
+			
+		}
+		
+        return back();
     }
-
     /**
      * Update the specified resource in storage.
      *

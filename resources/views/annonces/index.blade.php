@@ -34,7 +34,7 @@
                 <th style="width:5%">N°</th>
                 <th style="width:20%">Image</th>
                 <th style="width:20%">Titre</th>
-                <th style="width:35%">Contenu</th>
+                <th style="width:35%">Extrait</th>
                 <th style="width:10%">Visible</th>
                  <th style="width:10%">Actions</th>
               </tr>
@@ -48,7 +48,7 @@
                     <td style="width:5%" >{{$annonce->id}}</td>
                     <td style="width:20%" ><a href="{{action('AnnoncesController@view', $annonce['id'])}}" ><center><?php if($annonce->image==''){ ?> <img src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:100px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce->image;?>" style="max-width:150px"/> <?php } ?></center> </a></td>
                     <td style="width:20%" ><a href="{{action('AnnoncesController@view', $annonce['id'])}}" >{{$annonce->titre}}</a></td>
-                    <td style="width:35%" > {{$annonce->titre}} </td>
+                    <td style="width:35%" > {{$annonce->extrait}} </td>
                     <td style="width:10%" >   <label><span class="checked">
                             <input  class="actus-<?php echo $annonce->id;?>"  type="checkbox"    id="actus-<?php echo $annonce->id;?>"    <?php if ($annonce->visible ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $annonce->id; ?>' );"      >
                         </span> Visible</label> </td>

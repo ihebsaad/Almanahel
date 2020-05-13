@@ -34,7 +34,11 @@
                 <div class="form-group">
                     <label for="titre">Titre:</label>
                     <input id="titre" type="text" class="form-control" name="titre"/>
-                </div>				
+                </div>	
+                <div class="form-group">
+                    <label for="extrait">Extrait:</label>
+                    <textarea id="extrait" type="text" class="form-control" name="extrait" ></textarea>
+                </div>					
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <div class="editor" >

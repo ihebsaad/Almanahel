@@ -71,6 +71,7 @@ class ActualitesController extends Controller
              'image' =>  $name ,
              'titre' =>trim( $request->get('titre')),
              'contenu' => trim($request->get('contenu')),
+             'extrait' => trim($request->get('extrait')),
              'visible' => ($visible),
             // 'par'=> $request->get('par'),
 
@@ -141,6 +142,7 @@ class ActualitesController extends Controller
 		 $image= $request->file('image');
 		 $titre= $request->get('titre');
 		 $contenu= $request->get('contenu');
+		 $extrait= $request->get('contenu');
 		$vis=$request->get('visible');
 		if($vis=="on" || $vis==1 ){
 			$visible=1;
@@ -161,6 +163,7 @@ class ActualitesController extends Controller
 		'visible' => $visible,
 		'titre' => $titre,
 		'contenu' => $contenu,
+		'extrait' => $extrait,
 		'image' => $name
 		));
 		}else{
@@ -169,6 +172,7 @@ class ActualitesController extends Controller
 		'visible' => $visible,
 		'titre' => $titre,
 		'contenu' => $contenu,
+		'extrait' => $extrait,
 		)
 		);	
 			

@@ -11,6 +11,7 @@ class Annonce extends Model
  'contenu',
  'image',
  'visible',
+ 'extrait',
  ];
  
 }

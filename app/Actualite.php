@@ -11,6 +11,7 @@ class Actualite extends Model
  'contenu',
  'image',
  'visible',
+ 'extrait',
  ];
  
 }

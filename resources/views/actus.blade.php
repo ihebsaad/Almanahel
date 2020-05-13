@@ -131,7 +131,7 @@ $actualites=array();
 			{	 
 				$titre=$actu ['titre'];
 				$image=$actu ['image'];
-				$contenu=$actu ['contenu'];
+				$extrait=$actu ['extrait'];
 				$id=$actu ['id'];
 			/*	$j++;	 
 				 $titre=$actu[$j]['titre'];
@@ -147,7 +147,7 @@ $actualites=array();
 
           <div class="card-body">
             <h4 class="card-title"><?php custom_echo($titre, 20) ?></h4>
-            <p class="card-text"> <?php custom_echo($contenu, 30)  ; ?> </p><br>
+            <p class="card-text"> <?php custom_echo($extrait, 30)  ; ?> </p><br>
             <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>
         </div>

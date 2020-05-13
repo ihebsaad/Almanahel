@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/.htaccess
 /storage/*.key
 /vendor
 /.idea
@@ -9,6 +10,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.htaccess
 .env
 *.env.sublime-workspace
 *.htaccess

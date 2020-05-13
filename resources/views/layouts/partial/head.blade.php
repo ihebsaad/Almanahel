@@ -117,17 +117,29 @@
 <div class="col-md-11 d-none d-md-block">
 <div class="mainmenu">
 <ul id="navigation">
-<li class="active"><a href="{{ route('home') }}">Accueil</a>
+<li class="{{active_menu(Route::currentRouteName(), 'home',0 ,4)}}">
+<!--<li>-->
+  <a href="{{ route('home') }}">Accueil</a>
 </li>
-<li><a href="{{ route('presentation') }}">Présentation</a>
+<li class="{{active_menu(Route::currentRouteName(), 'presentation',0 ,12)}}">
+<!--<li>-->
+  <a href="{{ route('presentation') }}">Présentation</a>
 </li>
-<li><a href="{{ route('inscription') }}">Inscription</a>
+<li class="{{active_menu(Route::currentRouteName(), 'inscription',0 ,11)}}">
+<!--<li>-->
+  <a href="{{ route('inscription') }}">Inscription</a>
 </li>
-<li><a href="{{ route('scolaire') }}">Vie Scolaire</a>
+<li class="{{active_menu(Route::currentRouteName(), 'scolaire',0 ,8)}}">
+<!--<li>-->
+  <a href="{{ route('scolaire') }}">Vie Scolaire</a>
 </li>
-<li><a href="{{ route('formation') }}">Formation & Emploi</a>
+<li class="{{active_menu(Route::currentRouteName(), 'formation',0 ,9)}}">
+<!--<li>-->
+  <a href="{{ route('formation') }}">Formation & Emploi</a>
 </li>
-<li><a href="{{ route('contact') }}">Contact</a>
+<li class="{{active_menu(Route::currentRouteName(), 'contact',0 ,7)}}">
+<!--<li>-->
+  <a href="{{ route('contact') }}">Contact</a>
 </li>
 </ul>
 </div>

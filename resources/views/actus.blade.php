@@ -137,7 +137,7 @@ $actus=(array)$actus ;
 
           <div class="card-body">
             <h4 class="card-title"><?php echo $titre; ?></h4>
-            <p class="card-text"> <?php custom_echo($contenu, 20)  ; ?> </p>
+            <p class="card-text"> <?php custom_echo($contenu, 20)  ; ?> </p><span></span>
             <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>
         </div>

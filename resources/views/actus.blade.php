@@ -125,7 +125,7 @@ $actus=(array)$actus ;
 		 $j=0;
 			foreach( $chunk as $actu)
 			{	 
-		 	echo  json_encode($actu);
+		 	echo 'N : '.$j. json_encode($actu).'<br>';
 
 				 $titre=$actu[$j]['titre'];
 				$image=$actu[$j]['image'];
@@ -139,7 +139,7 @@ $actus=(array)$actus ;
 
           <div class="card-body">
             <h4 class="card-title"><?php echo $titre; ?></h4>
-            <p class="card-text"> <?php custom_echo($contenu, 20)  ; ?> </p><span></span>
+            <p class="card-text"> <?php custom_echo($contenu, 20)  ; ?> </p><br>
             <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>
         </div>

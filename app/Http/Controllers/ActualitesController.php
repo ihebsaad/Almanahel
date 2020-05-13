@@ -160,7 +160,7 @@ class ActualitesController extends Controller
           $image->move($path, $name);	
 		  Actualite::where('id',$id)->update(
 		array(
-		'visible' => $visible,
+	//	'visible' => $visible,
 		'titre' => $titre,
 		'contenu' => $contenu,
 		'extrait' => $extrait,
@@ -169,7 +169,7 @@ class ActualitesController extends Controller
 		}else{
 			Actualite::where('id',$id)->update(
 		array(
-		'visible' => $visible,
+	//	'visible' => $visible,
 		'titre' => $titre,
 		'contenu' => $contenu,
 		'extrait' => $extrait,

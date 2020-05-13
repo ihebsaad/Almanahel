@@ -111,11 +111,11 @@ $actus= \App\Actualite::where('visible',1)->get();
 
 $actualites=array();
  foreach ($actus as $actualite) {
-                array_push($actualites, (array)$actualite);
+                array_push($actualites,  $actualite);
             }
 
 		// division de la liste par des listes de 3  
-        $chunks = array_chunk($actus, 3);
+        $chunks = array_chunk($actualites, 3);
 		$count= count($chunks);
 		echo 'Nombre:  '.$count.'<br>';
 		$i=0;

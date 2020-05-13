@@ -43,9 +43,10 @@
                     </div>
 				</div>
 				<div class="form-group ">
-
-             <label class="check "> <input id="visible-<?php echo $actualite['id']; ?>" type="checkbox" name="visible"  value="1" <?php if( $actualite['visible']==1)  {echo 'checked' ;} ?> /> Visible</label>
-					</div>
+				<label><span class="checked">
+                            <input  class="actus-<?php echo $actualite['id'];?>"  type="checkbox"    id="actus-<?php echo $actualite['id'];?>"    <?php if ($actualite['visible'] ==1){echo 'checked'; }  ?>   name="visible"     >
+                        </span> Visible</label> 
+ 					</div>
 
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>

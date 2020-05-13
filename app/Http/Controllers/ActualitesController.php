@@ -138,24 +138,30 @@ class ActualitesController extends Controller
     {
         //
 		 $id= $request->get('id');
-		 $image= $request->get('image');
+		 $image= $request->file('image');
 		 $titre= $request->get('titre');
 		 $contenu= $request->get('contenu');
 		$vis=$request->get('visible');
-		if($vis=="on"){
+		if($vis=="on" || $vis==1 ){
 			$visible=1;
 		}else{
 			$visible=0;			
 		}
         $actualite  = Actualite::find($id);
 		
-		if($image!=''){
-		 Actualite::where('id',$id)->update(
+	$name='';
+		if($request->file('image')!=null)
+		{$image=$request->file('image');
+		 $name =  $image->getClientOriginalName();
+                 $path = storage_path()."/images/";
+ 
+          $image->move($path, $name);	
+		  Actualite::where('id',$id)->update(
 		array(
 		'visible' => $visible,
 		'titre' => $titre,
 		'contenu' => $contenu,
-		'image' => $image
+		'image' => $name
 		));
 		}else{
 			Actualite::where('id',$id)->update(

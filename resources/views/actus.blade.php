@@ -125,6 +125,8 @@ $actus=(array)$actus ;
 		 $j=0;
 			foreach( $chunk as $actu)
 			{	 
+		 	echo  json_encode($actu);
+
 				 $titre=$actu[$j]['titre'];
 				$image=$actu[$j]['image'];
 				$contenu=$actu[$j]['contenu'];

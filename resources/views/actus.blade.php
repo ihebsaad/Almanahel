@@ -108,11 +108,16 @@ width:20px;}
               }
 			  
 $actus= \App\Actualite::where('visible',1)->get();
-$actus=(array)$actus ;
+
+$actualites=array()
+ foreach ($actus as $actualite) {
+                array_push($actualites, $actualite);
+            }
+
 		// division de la liste par des listes de 3  
         $chunks = array_chunk($actus, 3);
 		$count= count($chunks);
-		echo 'Nombre:  '.$count;
+		echo 'Nombre:  '.$count.'<br>';
 		$i=0;
         // parcours  
         foreach ($chunks as $chunk)
@@ -123,17 +128,19 @@ $actus=(array)$actus ;
 	<table border=0  ><tr>
 
 	<?php	
-			echo  json_encode($chunk);
-		 $j=0;
+ 		 $j=0;
 			foreach( $chunk as $actu)
 			{	 
-		 	echo 'Numero : '.$j. json_encode($actu).'<br>';
-
+				$titre=$actu ['titre'];
+				$image=$actu ['image'];
+				$contenu=$actu ['contenu'];
+				$id=$actu ['id'];
+			/*	$j++;	 
 				 $titre=$actu[$j]['titre'];
 				$image=$actu[$j]['image'];
 				$contenu=$actu[$j]['contenu'];
 				$id=$actu[$j]['id'];
-				$j++;				
+				$j++;				*/
 ?>	
      <td> <div style="width:90%;margin-left:10%"  >
         <div class="card mb-2" style="width:300px">

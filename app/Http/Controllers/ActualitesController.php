@@ -152,7 +152,7 @@ class ActualitesController extends Controller
 		if($image!=''){
 		 Actualite::where('id',$id)->update(
 		array(
-		'visible' => $val,
+		'visible' => $visible,
 		'titre' => $titre,
 		'contenu' => $contenu,
 		'image' => $image
@@ -161,7 +161,7 @@ class ActualitesController extends Controller
 		}else{
 			Actualite::where('id',$id)->update(
 		array(
-		'visible' => $val,
+		'visible' => $visible,
 		'titre' => $titre,
 		'contenu' => $contenu,
 		)

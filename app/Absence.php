@@ -7,11 +7,12 @@ class Actualite extends Model
 {
 	
   protected $fillable = [
- 'titre',
- 'contenu',
- 'image',
- 'visible',
- 'extrait',
+ 'eleve',
+ 'classe',
+ 'debut',
+ 'fin',
+ 'seance',
+ 'details',
  ];
  
 }

@@ -19,7 +19,7 @@
           
             <form method="post" action="{{ route('actualites.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
-			   <input id="actualite" type="hidden" class="form-control" name="id"  value="<?php  echo $actualite['titre'];?>"/>
+			   <input id="actualite" type="hidden" class="form-control" name="id"  value="<?php  echo $actualite['id'];?>"/>
 
 			  <div class="row">
                 <div class="form-group col-md-6">

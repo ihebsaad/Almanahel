@@ -156,8 +156,7 @@ class ActualitesController extends Controller
 		'titre' => $titre,
 		'contenu' => $contenu,
 		'image' => $image
-		)
-		);
+		));
 		}else{
 			Actualite::where('id',$id)->update(
 		array(
@@ -169,7 +168,7 @@ class ActualitesController extends Controller
 			
 		}
 		
-        return view('actualites.view',  compact('actualite'));
+        return back();
     }
 
     /**

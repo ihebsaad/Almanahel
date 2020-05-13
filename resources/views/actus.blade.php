@@ -141,8 +141,8 @@ $actualites=array();
 				$j++;				*/
 ?>	
     <!-- <td> <div style="width:90%;margin-left:10%;margin-right:10%"  >-->
-      <div  class="col-md-3" style="display:block" >
-        <div class="card mb-2" style="width:300px">
+      <div  class="col-md-3" style="display:block;" >
+        <div class=" " style="width:300px">
        	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:300px;height:219px"/><?php } ?>
 
           <div class="card-body">

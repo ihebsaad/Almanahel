@@ -109,7 +109,7 @@ width:20px;}
 			  
 $actus= \App\Actualite::where('visible',1)->get();
 
-$actualites=array()
+$actualites=array();
  foreach ($actus as $actualite) {
                 array_push($actualites, $actualite);
             }

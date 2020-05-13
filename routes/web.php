@@ -63,9 +63,9 @@ Route::get('/actualites/destroy/{id}', 'ActualitesController@destroy');
 Route::get('/actualites/destroy/{id}', 'ActualitesController@destroy');
 Route::get('/actualites/create/', 'ActualitesController@create')->name('actualites.create');
 Route::post('/actualites/store/', 'ActualitesController@store')->name('actualites.store');
+Route::post('/actualites/edit/', 'ActualitesController@edit')->name('actualites.edit');
  
- 
- 
+  
 
 /*** Annonces  **/
  Route::get('/annonces', array('as' => 'annonces','uses' => 'AnnoncesController@index'));
@@ -76,6 +76,7 @@ Route::get('/annonces/destroy/{id}', 'AnnoncesController@destroy');
 Route::get('/annonces/destroy/{id}', 'AnnoncesController@destroy');
 Route::get('/annonces/create/', 'AnnoncesController@create')->name('annonces.create');
 Route::post('/annonces/store/', 'AnnoncesController@store')->name('annonces.store');
+Route::post('/annonces/edit/', 'AnnoncesController@edit')->name('annonces.edit');
  
  
  

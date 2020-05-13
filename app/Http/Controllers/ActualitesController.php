@@ -134,12 +134,38 @@ class ActualitesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
         //
-        $actualites = Actualite::find($id);
- 
-        return view('actualites.edit',  compact('actualites'));
+		 $id= $request->get('id');
+		 $image= $request->get('image');
+		 $titre= $request->get('titre');
+		 $contenu= $request->get('contenu');
+		 $visible= $request->get('visible');
+
+        $actualite  = Actualite::find($id);
+		
+		if($image!=''){
+		$actualite->update(
+		array(
+		'visible' => $val,
+		'titre' => $titre,
+		'contenu' => $contenu,
+		'image' => $image
+		)
+		);
+		}else{
+			$actualite->update(
+		array(
+		'visible' => $val,
+		'titre' => $titre,
+		'contenu' => $contenu,
+		)
+		);	
+			
+		}
+		
+        return view('actualites.view',  compact('actualite'));
     }
 
     /**

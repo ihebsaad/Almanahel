@@ -142,3 +142,11 @@ Route::post('/edit2/{id}','InscriptionsController@update');
 Route::get('/inscriptions/valide/{id}', 'InscriptionsController@valide');
 
 
+/****  Images gestion image slider carrousel  *****/
+Route::get('/mettreAjourSlider', 'ImageController@mettreAjourSlider');
+Route::post('/ExternefileUpload/upload', 'ImageController@uploadExterneFile')->name('Upload.ExterneFile');
+Route::get('/modifierimageslider', 'ImageController@modifierimageslider');
+Route::get('/supimageslider/{id}', 'ImageController@supimageslider');
+Route::get('/ChargerTableImagesSlider', 'ImageController@ChargerTableImagesSlider');
+
+

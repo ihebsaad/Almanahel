@@ -149,8 +149,8 @@ $actualites=array();
        	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:300px;height:219px"/><?php } ?>
 
           <div class="card-body" style="height:330px;min-height:330px;max-height:330px;">
-            <h4 class="card-title" style="font-size:18px"><?php custom_echo($titre, 80) ?></h4>
-            <p class="card-text" style=" height:200px;overflow:hidden" > <?php custom_echo($extrait, 140)  ; ?> </p><br>
+            <h4 class="card-title" style="font-size:18px;height:60px;min-height:60px;overflow:hidden"><?php custom_echo($titre, 80) ?></h4>
+            <p class="card-text" style=" height:150px;overflow:hidden" > <?php custom_echo($extrait, 140)  ; ?> </p><br>
             <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>
         </div>

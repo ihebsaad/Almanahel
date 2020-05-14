@@ -72,9 +72,9 @@ width:20px;}
 .carousel-item.active {
     display: inline-flex!important;
 }
- .carousel-item.next {
-    display: none!important;
-}
+  
+.carousel-item-next,
+.carousel-item-prev {display:none!important;}
 </style>
 
 <!--Carousel Wrapper-->

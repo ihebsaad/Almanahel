@@ -511,9 +511,10 @@ $(document).on('click', '#majslider', function() {
       success: function (data) {
                // $('#target').html(data.msg);
                alert(data);
+               location.reload();
             },
       error: function (data) {
-        console.log('Error:', data);
+        alert('Erreur:', data);
 
           }    
      

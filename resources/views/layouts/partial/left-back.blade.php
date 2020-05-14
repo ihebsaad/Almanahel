@@ -53,9 +53,9 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">Evênements</a>
-            <a class="collapse-item" href="">Actualités</a>
-            <a class="collapse-item" href=" ">Annonces</a>
+            <a class="collapse-item" href="{{route('evenements')}}">Evênements</a>
+            <a class="collapse-item" href="{{route('actualites')}}">Actualités</a>
+            <a class="collapse-item" href="{{route('annonces')}}">Annonces</a>
            </div>
         </div>
       </li>
@@ -93,8 +93,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('inscriptions')}}">Inscriptions</a>
             <a class="collapse-item" href="{{route('contenuinscription')}}">Paiements</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">Absences</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">Retards</a>
+            <a class="collapse-item" href="{{route('absences')}}">Absences</a>
+            <a class="collapse-item" href="{{route('retards')}}">Retards</a>
            </div>
         </div>
       </li>

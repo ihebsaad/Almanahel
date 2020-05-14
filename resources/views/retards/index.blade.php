@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-6">Retards</div>
                 <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('RetardsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une actualité</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('RetardsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un retard</b></a>
                 </div>
             </div>
         </div>

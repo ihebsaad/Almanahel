@@ -70,6 +70,9 @@ transition-timing-function:ease;
 width:20px;}
 
 */
+ .carousel-item{
+	width:30%!important;margin-right:0%!important;
+}
 </style>
 
 <!--Carousel Wrapper-->

@@ -48,7 +48,7 @@
 						foreach($eleves as $el)
 						{
 							$classe=ClassesController::ClasseEleve($el->id);
-						echo ' <option class="'.$classe[0] .'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+						echo ' <option   value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 	
 						}
 					?>
@@ -62,10 +62,23 @@
                     <label for="details">Détails:</label>
                     <textarea id="details" type="text" class="form-control" name="details" ></textarea>
                 </div>		
-                <div class="form-group">
-                    <label for="debut">Début:</label>
-                    <input id="debut" type="text" class="form-control" name="debut"/>
-                </div>	
+				<div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control"name="debut" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+				</div>
+				
+				<div class="form-group">
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" name="fin" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
 			   <div class="form-group">
                     <label for="fin">Fin:</label>
                     <input id="fin" type="text" class="form-control" name="fin"/>
@@ -104,6 +117,15 @@ function toggle(className, displayState){
   }
 
 $(function () {
+	
+	  $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+	
+	  $(function () {
+                $('#datetimepicker2').datetimepicker();
+            });
+			
 $('.select2').select2({
 filter: true,
 language: {

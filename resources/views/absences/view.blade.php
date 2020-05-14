@@ -27,6 +27,8 @@
             @endif
             <form method="post" action="{{ route('absences.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
+			 <input   type="hidden" class="form-control" name="id" value="<?php echo $absence['id']; ?>" />
+
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
                     <input id="classe" type="text" class="form-control" name="classe"  value="<?php echo $absence['classe']; ?>" />

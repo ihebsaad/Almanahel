@@ -27,6 +27,8 @@
             @endif
             <form method="post" action="{{ route('retards.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
+			   <input   type="hidden" class="form-control" name="id" value="<?php echo $retard['id']; ?>" />
+
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
                     <input id="classe" type="number" class="form-control" name="classe" value="<?php echo $retard['classe']; ?>" />

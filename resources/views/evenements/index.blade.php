@@ -21,9 +21,9 @@
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6">Evenements</div>
+                <div class="col-lg-6">Evénements</div>
                 <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('EvenementsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une actualité</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('EvenementsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un événement</b></a>
                 </div>
             </div>
         </div>

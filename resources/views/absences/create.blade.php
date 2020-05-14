@@ -42,7 +42,7 @@
 				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <select id="eleve" type="number" class="form-control select2" name="eleve" >
+                    <select id="eleve" type="number" class="form-control  " name="eleve" >
 					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)

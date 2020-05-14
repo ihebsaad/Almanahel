@@ -91,23 +91,13 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	  color: #6a6c6f;
 	}
 </style>
-<div class="row">
-	<section>
-		Vous etes <select id="elevestat">
-            <option>Selectionner</option>
-            <option value="nouveau">Nouveau</option>
-            <option value="ancien">Ancien</option>
-        </select>
-	</section>
-</div>
-<div class="row">
-    <div class="nouveau box">Vous etes <strong>nouveau</strong> eleve</div>
-    <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
-</div>  
+<div class="row" style="text-align: center;padding-bottom: 20px">
+	<h3> Pré-inscription / Inscription 2020-2021 </h3>
+</div> 
 
-<div class="row">
+<div class="row" style="min-width:930px;padding-bottom: 20px">
   <div class="clearfix"></div>
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="min-width:930px;padding-bottom: 20px">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
@@ -152,6 +142,20 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     </div>
   </div>
 </div>
+
+<div class="row">
+	<section>
+		Vous etes <select id="elevestat">
+            <option>Selectionner</option>
+            <option value="nouveau">Nouveau</option>
+            <option value="ancien">Ancien</option>
+        </select>
+	</section>
+</div>
+<div class="row">
+    <div class="nouveau box">Vous etes <strong>nouveau</strong> eleve</div>
+    <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
+</div> 
 
 
  

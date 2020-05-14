@@ -68,7 +68,10 @@ transition-duration:0.6s;
 transition-property:opacity;
 transition-timing-function:ease;
 width:20px;}
-
+*/
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display: inline-flex!important;
+}
  
 </style>
 

@@ -69,10 +69,24 @@ transition-property:opacity;
 transition-timing-function:ease;
 width:20px;}
 
-*/
- .carousel-item{
-	width:30%!important;margin-right:0%!important;
+ 
+/*
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  @include transition($carousel-transition);
 }
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+*/
 </style>
 
 <!--Carousel Wrapper-->
@@ -125,7 +139,7 @@ $actualites=array();
         {$i++;		 		
 ?>		
     <!--First slide-->
-    <div class="row  carousel-item <?php if($i==1){echo 'active';}?>">
+    <div class="row  carousel-item <?php if($i==1){echo 'active';}?>"    style="margin-right: 0px;">
 	<!--<table border=0  ><tr>-->
 
 	<?php	

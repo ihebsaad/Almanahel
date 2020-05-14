@@ -70,23 +70,6 @@ transition-timing-function:ease;
 width:20px;}
 
  
-/*
-.carousel-item {
-  position: relative;
-  display: none;
-  float: left;
-  width: 100%;
-  margin-right: -100%;
-  backface-visibility: hidden;
-  @include transition($carousel-transition);
-}
-
-.carousel-item.active,
-.carousel-item-next,
-.carousel-item-prev {
-  display: block;
-}
-*/
 </style>
 
 <!--Carousel Wrapper-->

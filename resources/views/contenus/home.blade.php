@@ -440,15 +440,17 @@ $(document).on('click', '#majslider', function() {
                     success:function(response) 
                     {
                         //alert(response);
-                        $('#successOrfailedUpload').modal('show');
+                        
                        $("#successUloadExterneFile").empty().html('<span style="color:green">'+response+'</span>');
+                       $('#successOrfailedUpload').modal('show');
                       
                     },
                       error: function(jqXHR, textStatus, errorThrown) {
 
                         //alert('erreur lors de création de la mission');
-                        $('#successOrfailedUpload').modal('show');
+                       
                     $("#successUloadExterneFile").empty().html('<span style="color:red">Erreur lors de l\'envoi du fichier au serveur</span>');
+                     $('#successOrfailedUpload').modal('show');
                     
 
 

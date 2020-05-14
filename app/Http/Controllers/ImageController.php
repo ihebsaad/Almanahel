@@ -112,10 +112,10 @@ class ImageController extends Controller
                    if (!file_exists($path."/ImagesSlider")) {
                         mkdir($path."/ImagesSlider", 0777, true);
                     }
-                    else
+                  /*  else
                     {
                       return('Ce fichier est déja existant');
-                    }    
+                    }*/    
 
                     $path= storage_path()."/ImagesSlider";
         // contrôle si le fichier existe déja ou non 

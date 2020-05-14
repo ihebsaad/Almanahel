@@ -40,7 +40,7 @@
          
             </thead>
             <tbody>
-            @foreach($absences as $absences)
+            @foreach($absences as $absence )
    
 
                 <tr>

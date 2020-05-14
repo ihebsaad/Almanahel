@@ -92,6 +92,32 @@ Route::post('/evenements/edit/', 'EvenementsController@edit')->name('evenements.
  
  
  
+/*** Retards  **/
+ Route::get('/retards', array('as' => 'retards','uses' => 'RetardsController@index'));
+Route::post('/retards/saving','RetardsController@saving')->name('retards.saving');
+Route::post('/retards/updating','RetardsController@updating')->name('retards.updating');
+Route::get('/retards/view/{id}', 'RetardsController@view');
+Route::get('/retards/destroy/{id}', 'RetardsController@destroy');
+Route::get('/retards/destroy/{id}', 'RetardsController@destroy');
+Route::get('/retards/create/', 'RetardsController@create')->name('retards.create');
+Route::post('/retards/store/', 'RetardsController@store')->name('retards.store');
+Route::post('/retards/edit/', 'RetardsController@edit')->name('retards.edit');
+ 
+ 
+ 
+/*** Absences  **/
+ Route::get('/absences', array('as' => 'absences','uses' => 'AbsencesController@index'));
+Route::post('/absences/saving','AbsencesController@saving')->name('absences.saving');
+Route::post('/absences/updating','AbsencesController@updating')->name('absences.updating');
+Route::get('/absences/view/{id}', 'AbsencesController@view');
+Route::get('/absences/destroy/{id}', 'AbsencesController@destroy');
+Route::get('/absences/destroy/{id}', 'AbsencesController@destroy');
+Route::get('/absences/create/', 'AbsencesController@create')->name('absences.create');
+Route::post('/absences/store/', 'AbsencesController@store')->name('absences.store');
+Route::post('/absences/edit/', 'AbsencesController@edit')->name('absences.edit');
+ 
+ 
+ 
  /*** Users **/
 
 //Route::resource('/users',  'UsersController');

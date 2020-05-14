@@ -25,29 +25,32 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('annonces.store') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('retards.store') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
-                <div class="form-group">
-                    <label for="titre">Image:</label>
-                    <input id="image" type="file" class="form-control" name="image"/>
+			  	<div class="form-group">
+                    <label for="classe">Classe:</label>
+                    <textarea id="classe" type="text" class="form-control" name="classe" ></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="titre">Titre:</label>
-                    <input id="titre" type="text" class="form-control" name="titre"/>
-                </div>	
+                    <label for="eleve">Elève:</label>
+                    <input id="eleve" type="text" class="form-control" name="eleve"/>
+                </div>		
                 <div class="form-group">
-                    <label for="extrait">Extrait:</label>
-                    <textarea id="extrait" type="text" class="form-control" name="extrait" ></textarea>
-                </div>					
-				<div class="form-group ">
-                    <label for="contenu">Contenu:</label>
-                    <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ></textarea>
-                    </div>
-				</div>
+                    <label for="seance">Séance:</label>
+                    <input id="seance" type="text" class="form-control" name="seance"/>
+                </div>						
+                <div class="form-group">
+                    <label for="details">Détails:</label>
+                    <textarea id="details" type="text" class="form-control" name="details" ></textarea>
+                </div>		
+                <div class="form-group">
+                    <label for="debut">Date:</label>
+                    <input id="debut" type="text" class="form-control" name="debut"/>
+                </div>	
+ 
 				<div class="form-group ">
 
-             <label class="check "> <input type="checkbox" name="visible"  value="1" checked/> Visible</label>
+             <label class="check "> <input type="checkbox" name="email"  value="1" checked/>Envoyer un Email aux parents</label>
 					</div>
 
           <div class="form-group ">

@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
 
 @section('content')
-
-
+ 
     <style>
         .uper {
             margin-top: 10px;
@@ -21,9 +20,9 @@
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6">Evénements</div>
+                <div class="col-lg-6">Retards</div>
                 <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('EvenementsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un événement</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('RetardsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une actualité</b></a>
                 </div>
             </div>
         </div>
@@ -32,33 +31,27 @@
             <thead>
             <tr id="headtable">
                 <th style="width:5%">N°</th>
-                 <th style="width:20%">Titre</th>
-                <th style="width:25%">description</th>
-                <th style="width:10%">Début</th>
-                <th style="width:10%">Fin</th>
-                <th style="width:10%">Visbilité</th>
+                <th style="width:20%">Classe</th>
+                <th style="width:20%">Elève</th>
+                <th style="width:10%">Date</th>
                  <th style="width:10%">Actions</th>
               </tr>
          
             </thead>
             <tbody>
-            @foreach($evenements as $evenement)
+            @foreach($absences as $absences)
    
 
                 <tr>
-                    <td style="width:5%" >{{$evenement->id}}</td>
-                    <td style="width:20%" ><a href="{{action('EvenementsController@view', $evenement['id'])}}" ><?php echo $evenement->titre; ?>   </a></td>
-                     <td style="width:25%" > {{$evenement->description}} </td>
-                     <td style="width:10%" > {{$evenement->debut}} </td>
-                     <td style="width:10%" > {{$evenement->fin}} </td>
-                  
-				  <td style="width:10%" >   <label><span class="checked">
-                            <input  class="actus-<?php echo $evenement->id;?>"  type="checkbox"    id="actus-<?php echo $evenement->id;?>"    <?php if ($evenement->visible ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $evenement->id; ?>' );"      >
-                        </span> Visible</label> </td>
+                    <td style="width:5%" ><a href="{{action('RetardsController@view', $absence['id'])}}" >{{$absence->id}}</a></td>
+                    <td style="width:20%" ><?php echo $absence['classe'];?> </td>
+                    <td style="width:20%" ><?php echo $absence['eleve'];?> </td>
+                     <td style="width:10%" ><?php echo $absence['date'];?> </td>
+ 
 					<td style="width:10%"   >
                         @can('isAdmin')
-                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('EvenementsController@destroy', $evenement['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
-                                <span class="fa fa-fw fa-trash-alt"></span> Supp 
+                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('RetardsController@destroy', $absence['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                                <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
                         @endcan
                     </td>
@@ -86,7 +79,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ajouter un Evenement</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter une Actualité</h5>
 
                 </div>
                 <div class="modal-body">
@@ -114,24 +107,24 @@
     </div>
 
 <script>
-   function changing(elm,evenement) {
+   function changing(elm,actus) {
             var champ=elm.id;
 
-            var val =document.getElementById('actus-'+evenement).checked==1;
+            var val =document.getElementById('actus-'+actus).checked==1;
 
             if (val==true){val=1;}
             else{val=0;}
             //if ( (val != '')) {
             var _token = $('input[name="_token"]').val();
             $.ajax({
-                url: "{{ route('evenements.updating') }}",
+                url: "{{ route('absences.updating') }}",
                 method: "POST",
-                data: {evenement:evenement , champ:champ ,val:val, _token: _token},
+                data: {actus:actus , champ:champ ,val:val, _token: _token},
                 success: function (data) {
-                    $('.actus-'+evenement).animate({
+                    $('.actus-'+actus).animate({
                         opacity: '0.3',
                     });
-                    $('.actus-'+evenement).animate({
+                    $('.actus-'+actus).animate({
                         opacity: '1',
                     });
 

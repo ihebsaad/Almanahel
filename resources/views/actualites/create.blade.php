@@ -47,7 +47,7 @@
 				</div>
 				<div class="form-group ">
 
-             <label class="check "> <input type="checkbox" name="visible"  valuue="1" checked/> Visilble</label>
+             <label class="check "> <input type="checkbox" name="visible"  value="1" checked/> Visible</label>
 					</div>
 
           <div class="form-group ">

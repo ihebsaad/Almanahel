@@ -178,7 +178,7 @@ class ActualitesController extends Controller
 			
 		}
 		
-        return back();
+        return redirect('/actualites/view/'.$id)->with('success', ' Modifié avec succès');
     }
 
     /**

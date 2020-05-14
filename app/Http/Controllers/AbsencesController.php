@@ -149,7 +149,7 @@ class AbsencesController extends Controller
 			
 		 
 		
-        return back();
+        return redirect('/absences/view/'.$id)->with('success', ' Modifié avec succès');
     }
 
     /**

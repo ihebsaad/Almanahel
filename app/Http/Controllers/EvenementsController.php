@@ -156,7 +156,7 @@ class EvenementsController extends Controller
 		);	
 			
 		 
-        return back();
+        return redirect('/evenements/view/'.$id)->with('success', ' Modifié avec succès');
     }
 
     /**

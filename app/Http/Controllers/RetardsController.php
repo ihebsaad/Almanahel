@@ -147,7 +147,7 @@ class RetardsController extends Controller
 			
 		 
 		
-        return back();
+        return redirect('/retards/view/'.$id)->with('success', ' Modifié avec succès');
     }
 
     /**

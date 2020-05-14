@@ -178,7 +178,7 @@ class AnnoncesController extends Controller
 			
 		}
 		
-        return back();
+        return redirect('/annonces/view/'.$id)->with('success', ' Modifié avec succès');
     }
     /**
      * Update the specified resource in storage.

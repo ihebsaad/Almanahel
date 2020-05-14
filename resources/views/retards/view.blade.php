@@ -29,11 +29,11 @@
 			  {{ csrf_field() }}
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <input id="classe" type="text" class="form-control" name="classe" value="<?php echo $absence['classe']; ?>" ></input>
+                    <input id="classe" type="number" class="form-control" name="classe" value="<?php echo $absence['classe']; ?>" />
                 </div>
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <input id="eleve" type="text" class="form-control" name="eleve" value="<?php echo $absence['eleve']; ?>"  />
+                    <input id="eleve" type="number" class="form-control" name="eleve" value="<?php echo $absence['eleve']; ?>"  />
                 </div>		
                 <div class="form-group">
                     <label for="seance">Séance:</label>

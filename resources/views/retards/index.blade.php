@@ -39,18 +39,18 @@
          
             </thead>
             <tbody>
-            @foreach($absences as $absences)
+            @foreach($retards as $retard )
    
 
                 <tr>
-                    <td style="width:5%" ><a href="{{action('RetardsController@view', $absence['id'])}}" >{{$absence->id}}</a></td>
-                    <td style="width:20%" ><?php echo $absence['classe'];?> </td>
-                    <td style="width:20%" ><?php echo $absence['eleve'];?> </td>
-                     <td style="width:10%" ><?php echo $absence['date'];?> </td>
+                    <td style="width:5%" ><a href="{{action('RetardsController@view', $retard['id'])}}" >{{$retard->id}}</a></td>
+                    <td style="width:20%" ><?php echo $retard['classe'];?> </td>
+                    <td style="width:20%" ><?php echo $retard['eleve'];?> </td>
+                     <td style="width:10%" ><?php echo $retard['date'];?> </td>
  
 					<td style="width:10%"   >
                         @can('isAdmin')
-                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('RetardsController@destroy', $absence['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('RetardsController@destroy', $retard['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                                 <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
                         @endcan
@@ -117,7 +117,7 @@
             //if ( (val != '')) {
             var _token = $('input[name="_token"]').val();
             $.ajax({
-                url: "{{ route('absences.updating') }}",
+                url: "{{ route('retards.updating') }}",
                 method: "POST",
                 data: {actus:actus , champ:champ ,val:val, _token: _token},
                 success: function (data) {

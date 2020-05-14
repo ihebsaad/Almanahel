@@ -318,7 +318,7 @@ class ClassesController extends Controller
 			
 	if (isset($classe  ))
 	{
-		return $classe->classe   ;
+		return $classe   ;
 	} else{
 		return null;
 	}		

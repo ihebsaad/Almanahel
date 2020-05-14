@@ -148,8 +148,8 @@ $actualites=array();
         <div class="card mb-2" style="width:300px">
        	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:300px;height:219px"/><?php } ?>
 
-          <div class="card-body">
-            <h4 class="card-title"><?php custom_echo($titre, 100) ?></h4>
+          <div class="card-body" style="height:300px;min-height:300px;max-height:300px;">
+            <h4 class="card-title" style="font-size:18px"><?php custom_echo($titre, 80) ?></h4>
             <p class="card-text"> <?php custom_echo($extrait, 180)  ; ?> </p><br>
             <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>

@@ -13,7 +13,8 @@
   });
   //$('#navigation').slicknav();
   
-  $('.carousel.carousel-multi-item.carouselitem').each(function(){
+  
+$('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
   var next = $(this).next();
   if (!next.length) {
     next = $(this).siblings(':first');
@@ -28,6 +29,5 @@
     next.children(':first-child').clone().appendTo($(this));
   }
 });
-  
 </script>
  @yield('footer_scripts')

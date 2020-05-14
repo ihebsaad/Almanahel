@@ -47,7 +47,8 @@
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)
 						{
-						echo ' <option class="'.ClassesController::ClasseEleve($el->id).'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+							$classe=ClassesController::ClasseEleve($el->id);
+						echo ' <option class="'.$classe->classe.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 	
 						}
 					?>

@@ -25,7 +25,7 @@
       width: 100%;
       height: 100%;
   }
-    .carousel-item:after {
+    #demo > .carousel-item:after {
       content:"";
       position:absolute;
       top:0;

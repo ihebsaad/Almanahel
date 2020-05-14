@@ -150,8 +150,7 @@ $actualites=array();
 
           <div class="card-body" style="height:330px;min-height:330px;max-height:330px;">
             <h4 class="card-title" style="font-size:18px"><?php custom_echo($titre, 80) ?></h4>
-            <p class="card-text" style="white-space: nowrap; width: 270px;height:150px;  overflow-y: hidden;
-  text-overflow: ellipsis;" > <?php custom_echo($extrait, 140)  ; ?> </p><br>
+            <p class="card-text" style=" height:200px;overflow:hidden" > <?php custom_echo($extrait, 140)  ; ?> </p><br>
             <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>
         </div>

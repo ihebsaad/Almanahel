@@ -44,8 +44,8 @@
                     <textarea id="details" type="text" class="form-control" name="details" ></textarea>
                 </div>		
                 <div class="form-group">
-                    <label for="debut">Date:</label>
-                    <input id="debut" type="text" class="form-control" name="debut"/>
+                    <label for="date">Date:</label>
+                    <input id="date" type="text" class="form-control" name="date"/>
                 </div>	
  
 				<div class="form-group ">

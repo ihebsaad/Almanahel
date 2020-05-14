@@ -316,9 +316,9 @@ class ClassesController extends Controller
       $classe=  DB::table('eleves_classe')
             ->where(['eleve'=> $eleve])->get();
 			
-	if (isset($classe->id ))
+	if (isset($classe->classe ))
 	{
-		return $classe->id ;
+		return $classe->classe ;
 	} else{
 		return null;
 	}		

@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <input id="eleve" type="number" class="form-control" name="eleve"   />
+                    <input id="eleve" type="number" class="form-control" name="eleve"   value="<?php echo $absence['eleve']; ?>"    />
                 </div>		
                 <div class="form-group">
                     <label for="seance">Séance:</label>

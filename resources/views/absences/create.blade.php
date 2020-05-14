@@ -40,7 +40,7 @@
                     <label for="eleve">Elève:</label>
                     <select id="eleve" type="number" class="form-control select2" name="eleve" >
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
-						foreach($eleves as $cl)
+						foreach($eleves as $el)
 						{
 						echo ' <option value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 	

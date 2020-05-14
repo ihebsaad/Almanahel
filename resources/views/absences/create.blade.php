@@ -1,10 +1,7 @@
 
 @extends('layouts.back')
 
-
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
-
+ 
 @section('content')
     <style>
         .uper {
@@ -29,11 +26,27 @@
 			  {{ csrf_field() }}
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <input id="classe" type="number" class="form-control" name="classe" />
+                    <select id="classe" type="number" class="form-control select2" name="classe" >
+					<?php $classes= \App\Classe::get(); 
+						foreach($classes as $cl)
+						{
+						echo ' <option value="'.$cl->id.'">'.$cl->titre.'</option>';
+	
+						}
+					?>
+ 					</select>
                 </div>
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <input id="eleve" type="number" class="form-control" name="eleve"/>
+                    <select id="eleve" type="number" class="form-control select2" name="eleve" >
+					<?php $eleves= \App\Users::where('user_type','eleve')->get(); 
+						foreach($eleves as $cl)
+						{
+						echo ' <option value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+	
+						}
+					?>
+					</select>
                 </div>		
                 <div class="form-group">
                     <label for="seance">Séance:</label>
@@ -67,4 +80,25 @@
     </div>
 @endsection
 
- 
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+<script>
+
+$(function () {
+$('.select2').select2({
+filter: true,
+language: {
+noResults: function () {
+return 'Pas de résultats';
+}
+}
+
+});
+
+
+
+
+});
+
+</script>

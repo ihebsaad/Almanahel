@@ -25,7 +25,7 @@ class AbsencesController extends Controller
     public function index()
     { 
 
-        $absences = ::orderBy('id', 'desc')->get();
+        $absences = Absence::orderBy('id', 'desc')->get();
         return view('absences.index',[ ], compact('absences'));
     }
 

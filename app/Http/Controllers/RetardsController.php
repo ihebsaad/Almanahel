@@ -25,7 +25,7 @@ class RetardsController extends Controller
     public function index()
     { 
 
-        $retards = ::orderBy('id', 'desc')->get();
+        $retards = Retard::orderBy('id', 'desc')->get();
         return view('retards.index',[ ], compact('retards'));
     }
 

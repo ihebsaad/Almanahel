@@ -78,7 +78,7 @@ width:20px;}
 </style>
 
 <!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" style="max-height:400px">
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
   <!--Controls-->
   <div class="controls-top">

@@ -27,16 +27,11 @@ class ClassesController extends Controller
     public function index()
     {
 		
-	
-       
-   
-
+	 
 		  $classes =Classe::orderBy('titre', 'asc')->get() ;
                               
           return view('classes.index',  ['classes' => $classes]);        
-		 
-
-
+		  
      }
 
  
@@ -311,11 +306,22 @@ class ClassesController extends Controller
                 ['classe' => $classe,
                 'prof' => $enseignant]
             )->delete();
-
-
-
+  
     }
  
- 
+ public  static function ClasseEleve ($eleve)
+ {
+	  
+
+      $classe=  DB::table('eleves_classe')
+            ->where('eleve', $eleve)->first();
+			
+	if (isset($classe))
+	{
+		return $classe->id;
+	} else{
+		return null;
+	}		
+ }
 
  }

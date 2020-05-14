@@ -27,6 +27,7 @@
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
                     <select id="classe" type="number" class="form-control select2" name="classe" >
+					 <option></option>
 					<?php $classes= \App\Classe::get(); 
 						foreach($classes as $cl)
 						{
@@ -36,13 +37,17 @@
 					?>
  					</select>
                 </div>
+				<?php use \App\Http\Controllers\ClassesController; ?>
+				
+				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
                     <select id="eleve" type="number" class="form-control select2" name="eleve" >
+					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)
 						{
-						echo ' <option value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+						echo ' <option class="'.ClassesController::ClasseEleve($el->id).'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 	
 						}
 					?>
@@ -80,10 +85,22 @@
     </div>
 @endsection
 
+
+
+
+@section('footer_scripts')
  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <script>
+
+function toggle(className, displayState){
+            var elements = document.getElementsByClassName(className);
+
+            for (var i = 0; i < elements.length; i++){
+                elements[i].style.display = displayState;
+            }
+  }
 
 $(function () {
 $('.select2').select2({
@@ -95,10 +112,8 @@ return 'Pas de résultats';
 }
 
 });
-
-
-
-
+  
 });
 
 </script>
+@endsection

@@ -47,7 +47,7 @@
 
                 <tr>
                     <td style="width:5%" >{{$evenement->id}}</td>
-                    <td style="width:20%" ><a href="{{action('EvenementsController@view', $evenement['id'])}}" ><center><?php if($evenement->image==''){ ?> <img src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:100px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $evenement->image;?>" style="max-width:150px"/> <?php } ?></center> </a></td>
+                    <td style="width:20%" ><a href="{{action('EvenementsController@view', $evenement['id'])}}" ><?php echo $evenement->titre; ?>   </a></td>
                      <td style="width:25%" > {{$evenement->description}} </td>
                      <td style="width:10%" > {{$evenement->debut}} </td>
                      <td style="width:10%" > {{$evenement->fin}} </td>
@@ -126,7 +126,7 @@
             $.ajax({
                 url: "{{ route('evenements.updating') }}",
                 method: "POST",
-                data: {actus:actus , champ:champ ,val:val, _token: _token},
+                data: {evenement:evenement , champ:champ ,val:val, _token: _token},
                 success: function (data) {
                     $('.actus-'+actus).animate({
                         opacity: '0.3',

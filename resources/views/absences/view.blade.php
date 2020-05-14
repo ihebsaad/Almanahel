@@ -37,19 +37,19 @@
                 </div>		
                 <div class="form-group">
                     <label for="seance">Séance:</label>
-                    <input id="seance" type="text" class="form-control" name="seance"   value="<?php echo $absence['seance']}}; ?>"/>
+                    <input id="seance" type="text" class="form-control" name="seance"   value="<?php echo $absence['seance'] ; ?>"/>
                 </div>						
                 <div class="form-group">
                     <label for="details">Détails:</label>
-                    <textarea id="details" type="text" class="form-control" name="details"   ><?php echo $absence['details']}}; ?></textarea>
+                    <textarea id="details" type="text" class="form-control" name="details"   ><?php echo $absence['details'] ; ?></textarea>
                 </div>		
                 <div class="form-group">
                     <label for="debut">Début:</label>
-                    <input id="debut" type="text" class="form-control" name="debut"  value="<?php echo $absence['debut']}}; ?>"/>
+                    <input id="debut" type="text" class="form-control" name="debut"  value="<?php echo $absence['debut'] ; ?>"/>
                 </div>	
 			   <div class="form-group">
                     <label for="fin">Fin:</label>
-                    <input id="fin" type="text" class="form-control" name="fin"  value="<?php echo $absence['debut']}}; ?>"/>
+                    <input id="fin" type="text" class="form-control" name="fin"  value="<?php echo $absence['debut'] ; ?>"/>
                 </div>	
 				
 			 

@@ -25,27 +25,27 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('absences.edit') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('retards.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <input id="classe" type="number" class="form-control" name="classe" value="<?php echo $absence['classe']; ?>" />
+                    <input id="classe" type="number" class="form-control" name="classe" value="<?php echo $retard['classe']; ?>" />
                 </div>
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <input id="eleve" type="number" class="form-control" name="eleve" value="<?php echo $absence['eleve']; ?>"  />
+                    <input id="eleve" type="number" class="form-control" name="eleve" value="<?php echo $retard['eleve']; ?>"  />
                 </div>		
                 <div class="form-group">
                     <label for="seance">Séance:</label>
-                    <input id="seance" type="text" class="form-control" name="seance"   value="<?php echo $absence['seance']; ; ?>"/>
+                    <input id="seance" type="text" class="form-control" name="seance"   value="<?php echo $retard['seance']; ; ?>"/>
                 </div>						
                 <div class="form-group">
                     <label for="details">Détails:</label>
-                    <textarea id="details" type="text" class="form-control" name="details"   ><?php echo $absence['details'] ; ?></textarea>
+                    <textarea id="details" type="text" class="form-control" name="details"   ><?php echo $retard['details'] ; ?></textarea>
                 </div>		
                 <div class="form-group">
                     <label for="date">Date:</label>
-                    <input id="date" type="text" class="form-control" name="date"  value="<?php echo $absence['date'] ; ?>"/>
+                    <input id="date" type="text" class="form-control" name="date"  value="<?php echo $retard['date'] ; ?>"/>
                 </div>	
 			   
 

@@ -13,7 +13,7 @@
   });
   //$('#navigation').slicknav();
   
-  $('.carousel.carousel-multi-item.  .carouselitem').each(function(){
+  $('.carousel.carousel-multi-item.carouselitem').each(function(){
   var next = $(this).next();
   if (!next.length) {
     next = $(this).siblings(':first');

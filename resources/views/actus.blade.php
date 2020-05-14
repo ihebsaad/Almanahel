@@ -78,7 +78,7 @@ width:20px;}
 </style>
 
 <!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" style="max-height:400px">
 
   <!--Controls-->
   <div class="controls-top">
@@ -87,7 +87,7 @@ width:20px;}
   </div>
   <!--/.Controls-->
 
-  <!--Indicators-->
+  <!--Indicators-- 
   <ol class="carousel-indicators">
     <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
     <li data-target="#multi-item-example" data-slide-to="1"></li>

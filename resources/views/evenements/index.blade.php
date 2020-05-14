@@ -117,7 +117,7 @@
    function changing(elm,evenement) {
             var champ=elm.id;
 
-            var val =document.getElementById('actus-'+actus).checked==1;
+            var val =document.getElementById('actus-'+evenement).checked==1;
 
             if (val==true){val=1;}
             else{val=0;}

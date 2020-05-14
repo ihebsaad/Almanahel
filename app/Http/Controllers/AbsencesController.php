@@ -132,12 +132,7 @@ class AbsencesController extends Controller
     {
  
 		$id=$request->get('id');
-		$vis=$request->get('visible');
-		if($vis=="on" || $vis==1 ){
-			$visible=1;
-		}else{
-			$visible=0;			
-		}
+		 
         $absence  = Absence::find($id);
 		
  

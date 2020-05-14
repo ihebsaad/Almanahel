@@ -78,6 +78,18 @@ Route::get('/annonces/create/', 'AnnoncesController@create')->name('annonces.cre
 Route::post('/annonces/store/', 'AnnoncesController@store')->name('annonces.store');
 Route::post('/annonces/edit/', 'AnnoncesController@edit')->name('annonces.edit');
  
+
+/*** Evenements  **/
+ Route::get('/evenements', array('as' => 'evenements','uses' => 'EvenementsController@index'));
+Route::post('/evenements/saving','EvenementsController@saving')->name('evenements.saving');
+Route::post('/evenements/updating','EvenementsController@updating')->name('evenements.updating');
+Route::get('/evenements/view/{id}', 'EvenementsController@view');
+Route::get('/evenements/destroy/{id}', 'EvenementsController@destroy');
+Route::get('/evenements/destroy/{id}', 'EvenementsController@destroy');
+Route::get('/evenements/create/', 'EvenementsController@create')->name('evenements.create');
+Route::post('/evenements/store/', 'EvenementsController@store')->name('evenements.store');
+Route::post('/evenements/edit/', 'EvenementsController@edit')->name('evenements.edit');
+ 
  
  
  /*** Users **/

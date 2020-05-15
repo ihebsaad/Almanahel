@@ -90,14 +90,19 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	  font-size: 16px;
 	  color: #6a6c6f;
 	}
+	.panel-body {
+		
+	    padding: 10px 15px;
+	}
 </style>
+<div class="container">
 <div class="row" style="text-align: center;padding-bottom: 20px">
 	<h3> Pré-inscription / Inscription 2020-2021 </h3>
 </div> 
 
-<div class="row" style="min-width:930px;padding-bottom: 20px">
+<div class="row" style="width:100%;padding-bottom: 20px">
   <div class="clearfix"></div>
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="min-width:930px;padding-bottom: 20px">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:100%;padding-bottom: 20px">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
@@ -107,7 +112,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
       </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
+        <div class="panel-body" style="width:100%;">
           <?php echo $contenu; ?>
         </div>
       </div>
@@ -156,7 +161,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     <div class="nouveau box">Vous etes <strong>nouveau</strong> eleve</div>
     <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
 </div> 
-
+</div>
 
  
 @endsection

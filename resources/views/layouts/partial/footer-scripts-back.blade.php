@@ -35,7 +35,10 @@
 $(function () {
 	
      $('.datepicker').datepicker({
-                    locale: 'fr'
+                    locale: 'fr',
+					 firstDay: 1,
+                     dateFormat: "dd/mm/yy"
+
                 });
          });
  </script>

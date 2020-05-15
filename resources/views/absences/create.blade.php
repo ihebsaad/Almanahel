@@ -98,13 +98,12 @@
         </div>
     </div>
 @endsection
-<!--
+ 
  <link href="{{ URL::asset('public/css/datepicker.css') }}" rel="stylesheet">
  <link href="{{ URL::asset('public/css/jquery-ui-timepicker.css') }}" rel="stylesheet">
  <script src="{{ URL::asset('public/js/jquery-ui-timepicker.js') }}"  >
 
--->
-
+ 
 @section('footer_scripts')
  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>

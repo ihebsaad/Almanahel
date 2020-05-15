@@ -1,5 +1,6 @@
 
 @extends('layouts.back')
+    <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 
  
 @section('content')
@@ -22,7 +23,7 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('absences.store') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('absences.store') }}"  enctype="multipart/form-data" >
 			  {{ csrf_field() }}
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
@@ -64,7 +65,7 @@
                 </div>		
 				<div class="form-group">
 				<label for="datetimepicker1">Début:</label>
-                <div class='input-group date' id='datetimepicker1'>
+                <div class='input-group date' id='datetimepicker1' style="width:400px">
                     <input type='text' class="form-control" name="debut" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -74,7 +75,7 @@
 				
 				<div class="form-group">
 				<label for="datetimepicker2">Fin:</label>				
-                <div class='input-group date' id='datetimepicker2'>
+                <div class='input-group date' id='datetimepicker2' style="width:400px" >
                     <input type='text' class="form-control" name="fin" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>

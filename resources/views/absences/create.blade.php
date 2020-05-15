@@ -131,9 +131,13 @@ function toggle(className, displayState){
 
 $(function () {
 	
-     $('#datetimepicker1').datetimepicker();
+     $('#datetimepicker1').datetimepicker({
+                    locale: 'fr'
+                });
  	
-     $('#datetimepicker2').datetimepicker();
+     $('#datetimepicker2').datetimepicker({
+                    locale: 'fr'
+                });
  			
 $('.select2').select2({
 filter: true,

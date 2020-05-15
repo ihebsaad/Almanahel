@@ -26,7 +26,7 @@
 			  {{ csrf_field() }}
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <select id="classe" type="number" class="form-control select2" name="classe" style="height:20px;">
+                    <select id="classe" type="number" class="form-control select2" name="classe" style="height:38px;">
 					 <option></option>
 					<?php $classes= \App\Classe::get(); 
 						foreach($classes as $cl)
@@ -42,7 +42,7 @@
 				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:20px;" >
+                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
 					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)

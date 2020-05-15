@@ -105,7 +105,7 @@
 
  <link href="{{ URL::asset('public/css/datepicker.css') }}" rel="stylesheet">
  <script src="{{ URL::asset('public/js/moment-with-locales.js') }}"  ></script>
- <script src="{{ URL::asset('public/js/bootstrap-datetimepicker.js') }}"  ></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"  ></script>
 
  
 

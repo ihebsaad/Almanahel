@@ -63,8 +63,9 @@
                     <textarea id="details" type="text" class="form-control" name="details" ></textarea>
                 </div>		
 				<div class="form-group">
+				<label for="datetimepicker1">Début:</label>
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control"name="debut" />
+                    <input type='text' class="form-control" name="debut" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -72,6 +73,7 @@
 				</div>
 				
 				<div class="form-group">
+				<label for="datetimepicker2">Fin:</label>				
                 <div class='input-group date' id='datetimepicker2'>
                     <input type='text' class="form-control" name="fin" />
                     <span class="input-group-addon">
@@ -79,10 +81,7 @@
                     </span>
                 </div>
             </div>
-			   <div class="form-group">
-                    <label for="fin">Fin:</label>
-                    <input id="fin" type="text" class="form-control" name="fin"/>
-                </div>	
+			 
 				
 				<div class="form-group ">
 
@@ -108,7 +107,6 @@
       <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
  
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
 

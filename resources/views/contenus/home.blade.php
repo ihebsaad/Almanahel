@@ -53,7 +53,7 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
     {{csrf_field()}}
   <div class="form-row">
     <div class="col-7">
-      <br><br><br>
+      <br><br>
       <div class="form-group">
          <label for="imgInp" style="font-size:20px;font-weight:bold;color:black"> Ajout d'une image à partir de disque local:&nbsp;&nbsp;&nbsp; </label> 
       <input  type='file' id="imgInp" name="imgInp"  />
@@ -440,8 +440,19 @@ $(document).on('click', '#majslider', function() {
                     success:function(response) 
                     {
                         //alert(response);
-                        
-                       $("#successUloadExterneFile").empty().html('<span style="color:green">'+response+'</span>');
+                         var str1 = String(response);
+                         var n1 = str1.includes("Le fichier est envoyé");
+
+                         if(n1)
+                         {
+                           $("#successUloadExterneFile").empty().html('<span style="color:green">Le fichier est envoyé au serveur avec succès</span>');
+                         }
+                         else
+                         {
+                           $("#successUloadExterneFile").empty().html('<span style="color:green">Le titre ou le fichier est déja existant');
+                         }
+
+                      
                        $('#successOrfailedUpload').modal('show');
                       
                     },

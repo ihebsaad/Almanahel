@@ -15,15 +15,15 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
         display: none;
         margin-top: 20px;
     }
-    /*.nouveau{ background: #ff0000; }
-    .ancien{ background: #228B22; }*/
+    .nouveau{ color: #000; margin-top: 10px;}
+    .ancien{ color: #000; margin-top: 10px; }
 
     /* Accordion */
 
 
 	.panel-default>.panel-heading {
 	  color: #333;
-	  background-color: #fff;
+	  background-color: #eee;
 	  border-color: #e4e5e7;
 	  padding: 0;
 	  -webkit-user-select: none;
@@ -55,7 +55,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	}
 
 	.panel-default>.panel-heading a[aria-expanded="true"] {
-	  background-color: #eee;
+	  background-color: #ccc;
 	}
 
 	.panel-default>.panel-heading a[aria-expanded="true"]:after {
@@ -93,6 +93,16 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	.panel-body {
 		
 	    padding: 10px 15px;
+	}
+	.sectionform {
+		background-color:#ccc;
+		color: black;
+		font-weight:600;
+		padding:5px 20px;
+    	margin-top: 20px;
+		margin-bottom: 15px}
+	.btn-preinscrit {
+
 	}
 </style>
 <div class="container">
@@ -149,7 +159,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 </div>
 
 <div class="row">
-	<section>
+	<section style=" font-size: 18px; font-weight: 500; color: #545454;">
 		Vous êtes : <select id="elevestat">
             <option>Selectionner</option>
             <option value="nouveau">Nouveau</option>
@@ -160,202 +170,263 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 </div>
 <div class="row">
     <div class="nouveau box">
-    	Veuillez remplir le formulaire ci dessous:
-    	            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}">
+    	<div class="row" style="margin-top: 10px">
+    	<p style="color:#f20101;text-decoration: underline;">Cette pré-inscription ne concerne pas les élèves déjà scolarisés au lycée Al-Manahel</p>
+			    <label for="mpreinscrit">Pour qu'un élève soit admis au lycée Al-Manahel, la première démarche à faire par le parent concerné est soit de: </label>
+			    <select  class="custom-select" name="mpreinscrit" id="mpreinscrit" >
+			    <option value="">Veuillez choisir une option</option>
+			     <option value="formenligne">1- Compléter le formulaire en ligne, joindre une copie des deux derniers bulletins de notes et valider la pré-inscription</option>
+			    <option value="telechargeform">2- Télécharger le formulaire en pdf, le remplir, le signer et le déposer, avec une copie des deux  derniers bulletins de notes, au secrétariat du lycée.</option>
+			  </select>
+		</div>
+		<div class="formenligne partie">
+    	<h4 style="padding-top: 20px;">Veuillez remplir le formulaire ci dessous:</h4>
+    	            <form class="form-horizontal" method="POST" action="{{-- route('inscriptions.store') --}}">
                         {{ csrf_field() }}
-					             <fieldset>
-					       <legend>Élève</legend> <!-- Titre du fieldset --> 
-					<div class="row"  style="margin-left:10px">
-					       <label for="eleve">Identifiant de l'élève : </label>
-					       <input type="number" name="eleve" id="eleve" />
-					       </div>
-					<div class="row" style="margin-left:10px">
-					       <label for="nom">Nom : </label>
-					       <input type="text" name="nom" id="nom" />
-					 
-					       <label for="prenom">Prénom : </label>
-					       <input type="text" name="prenom" id="prenom" />
+					<fieldset>
+					<div class="row sectionform">L'élève</div>
+					<div class="row">
+	    				<div class="col">
+						       <label for="nom">Nom : </label>
+						       <input class="form-control" type="text" name="nom" id="nom"  placeholder="Veuillez entrer votre nom" />
+						</div> 
+						<div class="col">
+						       <label for="prenom">Prénom : </label>
+						       <input class="form-control" type="text" name="prenom" id="prenom" placeholder="Veuillez entrer votre prenom" />
+						</div>
 					</div>
-					<div class="row" style="margin-left:10px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="datenaissance">Date de naissance : </label>
-					       <input type="date" name="datenaissance" id="datenaissance" />
-					 
-					    
+					       <input class="form-control" type="date" name="datenaissance" id="datenaissance" />
+					 	</div>
+					 	<div class="col">
+					 	</div>
 					</div>
-					<div class="row" style="margin-left:10px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="type_etabliss">Etablissement d'origine où votre enfant est actuellement scolarisé : </label>
-					        Public <input type="radio" id="type_etabliss" name="type_etabliss" value="0">
-					        Privé<input type="radio" id="type_etabliss" name="type_etabliss" value="1">
+
+					       <div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
+							  <input class="form-check-input" type="radio" name="type_etabliss" id="type_etabliss1" value="0">
+							  <label class="form-check-label" for="type_etabliss1">Public</label>
+							</div>
+							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
+							  <input class="form-check-input" type="radio" name="type_etabliss" id="type_etabliss2" value="1">
+							  <label class="form-check-label" for="type_etabliss2">Privé</label>
+							</div>
+						</div>
 					</div>
-					<div class="row" style="margin-left:10px">
+					<div class="row" >
+						<div class="col">
 					       <label for="etablissement">Nom de l'établissement d'origine : </label>
-					       <input type="text" name="etablissement" id="etablissement" />
-					 
+					       <input class="form-control" type="text" name="etablissement" id="etablissement" placeholder="Veuillez entrer le nom de l'établissement" />
+					 	</div>
+					 	<div class="col"></div>
 					    
 					</div>
-					<div class="row" style="margin-left:10px">
-					       <label for="niveau">Niveau d'études actuel : </label>
-					       <input type="text" name="niveau" id="niveau" />
-					 
+					<div class="row" style="margin-top: 10px">
+					 	<div class="col">
+					 		<label for="niveau">Niveau d'études actuel : </label>
+					       <input class="form-control" type="text" name="niveau" id="niveau" placeholder="Veuillez entrer votre niveau d'études actuel" />
+					 	</div>
+						<div class="col">
+						    <label for="section">Section : </label>
+						    <select  class="custom-select" name="section" id="section">
+						    <option value="">Veuillez choisir une option</option>
+						     <option value="Bac Français<">Bac Français</option>
+						    <option value="Sciences expérimentales">Sciences expérimentales</option>
+						    <option value="Mathématiques">Mathématiques</option>
+						    <option value="Sciences techniques">Sciences techniques</option>
+						    <option value="Autre">Autre</option>
+						  </select>
+						</div>
 					    
 					</div>
-					<div class="row" style="margin-left:10px">
-					       <label for="section">Section : </label>
-					    <select name="section" id="section">
-					    <option value="">--Please choose an option--</option>
-					     <option value="Bac Français<">Bac Français</option>
-					    <option value="Sciences expérimentales">Sciences expérimentales</option>
-					    <option value="Mathématiques">Mathématiques</option>
-					    <option value="Sciences techniques">Sciences techniques</option>
-					    <option value="Autre">Autre</option>
-					  </select>
-					 
-					    
+					<div class="row" style="margin-top: 10px">
+					       <div class="col" ><b>la moyenne de notes obtenues durant la dernière année d'étude  :</b> </div>
 					</div>
-					<div class="row" style="margin-left:10px">
-					       <label for="niveau">la moyenne de notes obtenues durant la dernière année d'étude  : </label>
-					       
-					    
-					</div>
-					<div class="row" style="margin-left:15px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="moyenne_1">Le premier trimestre : </label>
-					       <input type="number" step="any" name="moyenne_1" id="moyenne_1" />
-					 
-					    
-					</div>
-					<div class="row" style="margin-left:15px">
+					       <input class="form-control" type="number" step="any" name="moyenne_1" id="moyenne_1" placeholder="Moyenne de Le premier trimestre" />
+					 	</div>
+
+						<div class="col">
 					       <label for="moyenne_2">Le deuxième trimestre : </label>
-					       <input type="number" step="any" name="moyenne_2" id="moyenne_2" />
-					 
-					    
-					</div>
-					<div class="row" style="margin-left:15px">
+					       <input class="form-control" type="number" step="any" name="moyenne_2" id="moyenne_2" placeholder="Moyenne de Le deuxième trimestre" />
+						</div>
+						<div class="col">
 					       <label for="moyenne_3">Le troisième trimestre : </label>
-					       <input type="number" step="any" name="moyenne_3" id="moyenne_3" />
-					 
+					       <input class="form-control" type="number" step="any" name="moyenne_3" id="moyenne_3" placeholder="Moyenne de Le troisième trimestre" />
+					    </div>
 					    
 					</div>
-					<div class="row" style="margin-left:15px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">							
 					       <label for="moyenne_g">La moyenne générale : </label>
-					       <input type="number" step="any" name="moyenne_g" id="moyenne_g" />
-					 
-					    
+					       <input class="form-control" type="number" step="any" name="moyenne_g" id="moyenne_g" placeholder="Moyenne générale" />
+						</div>
 					</div>
-					<div class="row" style="margin-left:10px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="frere">Votre enfant a t'il un frère ou une soeur actuellement scolarisé(e) dans notre établissement ? </label>
-					      Oui <input type="radio" id="frere" name="frere" value="1">
-					      Non <input type="radio" id="frere" name="frere" value="0">
+					      	<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
+							  <input class="form-check-input" type="radio" name="frere" id="frere1" value="1">
+							  <label class="form-check-label" for="frere1">Oui</label>
+							</div>
+							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
+							  <input class="form-check-input" type="radio" name="frere" id="frere2" value="0">
+							  <label class="form-check-label" for="frere2">Non</label>
+							</div>
+						</div>
 					</div>
-					<div class="row" style="margin-left:10px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="clubs">Votre enfant souhaite-t-il intégrer un Club ? </label>
-					      Oui <input type="radio" id="clubs" name="clubs" value="1">
-					      Non <input type="radio" id="clubs" name="clubs" value="0">
+					      <div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
+							  <input class="form-check-input" type="radio" name="clubs" id="clubs1" value="1">
+							  <label class="form-check-label" for="clubs1">Oui</label>
+							</div>
+							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
+							  <input class="form-check-input" type="radio" name="clubs" id="clubs2" value="0">
+							  <label class="form-check-label" for="clubs2">Non</label>
+							</div>
+						</div>
 					</div>
-					<div class="row" style="margin-left:10px">
-					       <label for="niveau">les horaires d'activités de club : </label>
-					       
-					    
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					       <label for="niveau">Les horaires d'activités de club : </label>
+					   </div>   
 					</div>
-					<div class="row" style="margin-left:15px">
-					       <label for="heure_17h">17h15-18h30: </label>
-					     <input type="checkbox" id="heure_17h" name="heure_17h" value="1">
-					     
-					</div>
-					<div class="row" style="margin-left:15px">
-					       <label for="heure_12h">12h30-13h45 :  </label>
-					   <input type="checkbox" id="heure_12h" name="heure_12h" value="1">
-					     </div>
-					<div class="row" style="margin-left:15px">
-					       <label for="vendredi">Vendredi après-midi : </label>
-					  <input type="checkbox" id="vendredi" name="vendredi" value="1">
-					     
-					</div><div class="row" style="margin-left:15px">
-					       <label for="samedi">Samedi après-midi : </label>
-					       <input type="checkbox" id="samedi" name="samedi" value="1">
-					 
-					</div>
-					<div class="row" style="margin-left:15px">
-					       <label for="dimanche">Dimanche matin : </label>
-					       <input type="checkbox" id="dimanche" name="dimanche" value="1">
-					 
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					    <div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="1" id="heure_17h" name="heure_17h">
+						  <label class="form-check-label" for="heure_17h">
+						    17h15-18h30
+						  </label>
+						</div>
+						</div>
 					</div>
 
-					<div class="row" style="margin-left:10px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					    <div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="1" id="heure_12h" name="heure_12h">
+						  <label class="form-check-label" for="heure_12h">
+						    12h30-13h45
+						  </label>
+						</div>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					    <div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="1" id="vendredi" name="vendredi">
+						  <label class="form-check-label" for="vendredi">
+						    Vendredi après-midi
+						  </label>
+						</div>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					    <div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="1" id="samedi" name="samedi">
+						  <label class="form-check-label" for="samedi">
+						    Samedi après-midi
+						  </label>
+						</div>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					    <div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="1" id="dimanche" name="dimanche">
+						  <label class="form-check-label" for="dimanche">
+						    Dimanche matin
+						  </label>
+						</div>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="fichierpartg">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
-					       <input type="file"  name="fichierpartg" id="fichierpartg" />
-					 
-					    
+					       <input class="form-control" type="file"  name="fichierpartg" id="fichierpartg" />
+					    </div>
 					</div>
 
 
 
-					   </fieldset>
-					   <fieldset>
-					   <div class="row" style="margin-left:10px">
-					       
-					 
-					    
-					</div>
-					 </fieldset>
-					   <fieldset>
-					       <legend>Représentant légal</legend> <!-- Titre du fieldset --> 
-					<div class="row"  style="margin-left:10px">
-					       <label for="civilite">Identité du représentant légal : </label>
-					       <input type="number" name="civilite" id="civilite" />
-					       </div>
-					<div class="row" style="margin-left:10px">
+					</fieldset>
+					<fieldset>
+					<div class="row sectionform">Le représentant légal</div>	
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					       <label for="civilite">Civilité : </label>
+					       <input class="form-control" type="text" name="civilite" id="civilite" placeholder="Veuillez entrer votre civilité" />
+					 	</div>
+					 	<div class="col">
 					       <label for="nom_rep">Nom : </label>
-					       <input type="text" name="nom_rep" id="nom_rep" />
-					 
+					       <input class="form-control" type="text" name="nom_rep" id="nom_rep" placeholder="Veuillez entrer votre nom" />
+					 	</div>
+					 	<div class="col">
 					       <label for="prenom_rep">Prénom : </label>
-					       <input type="text" name="prenom_rep" id="prenom_rep" />
+					       <input class="form-control" type="text" name="prenom_rep" id="prenom_rep" placeholder="Veuillez entrer votre prénom" />
+					 	</div>
 					</div>
-					<div class="row" style="margin-left:10px">
+
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="ville">Ville : </label>
-					       <input type="text" name="ville" id="ville" />
-					 
+					       <input class="form-control" type="text" name="ville" id="ville" placeholder="Veuillez entrer votre ville" />
+					 	</div>
+					    <div class="col"></div>
 					    
 					</div>
-					<div class="row" style="margin-left:10px">
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="tel">Téléphone Portable : </label>
-					       <input type="number" name="tel" id="tel" />
-					 
-					    
-					</div>
-					<div class="row" style="margin-left:10px">
+					       <input class="form-control" type="number" name="tel" id="tel" placeholder="Votre numéro de téléphone portable" />
+					 	</div>
+					 	<div class="col">
 					       <label for="tel2">Téléphone fixe : </label>
-					       <input type="number" name="tel2" id="tel2" />
-					 
+					       <input class="form-control" type="text" name="tel2" id="tel2" placeholder="Votre numéro de téléphone fixe" />
+					 	</div>
 					    
 					</div>
-					<div class="row" style="margin-left:10px">
-					       <label for="email">E-mail: </label>
-					       <input type="text" name="email" id="email" />
-					 
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
+					       <label for="email">E-mail : </label>
+					       <input class="form-control" type="text" name="email" id="email" placeholder="Veuillez entrer votre adresse email" />
+					 	</div>
 					    
 					</div>
-
-					<div class="row" style="margin-left:10px">
-					       
-					 
-					    
+					<div class="row" style="margin-top: 20px">
+						<span class="badge badge-warning">Une fois la pré-inscription est validée, vous recevrez un email de confirmation de la validation de la  demande, et promettant qu'il sera tenu au courant de l'issue de sa demande dans les plus brefs délais.</span>
 					</div>
-
-
-
 					   </fieldset>
-					    <div class="row form-group" style="margin-bottom:30px">
-					                            <div class="col-md-6 col-md-offset-4">
-					                                <button type="submit" class="btn btn-primary">
-					                                   S'inscrire
-					                                </button>
-					                            </div>
-					                        </div>
+					    <div class="row form-group" style="margin-top:20px;margin-bottom:20px">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary btn-preinscrit">
+                                   Je valide la demande de pré-inscription
+                                </button>
+                            </div>
+                        </div>
 
 
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
     </div>
+    <div class="telechargeform partie">
+    	Télécharger le formulaire en pdf
+    </div>
+	</div>
     <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
 </div> 
 </div>

@@ -24,6 +24,17 @@
             }
         });
     }).change();
+    $("select#mpreinscrit").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".partie").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".partie").hide();
+            }
+        });
+    }).change();
 
     $(".toggle-accordion").on("click", function() {
     var accordionId = $(this).attr("accordion-id"),

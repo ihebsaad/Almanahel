@@ -104,8 +104,8 @@
 
 
  <link href="{{ URL::asset('public/css/datepicker.css') }}" rel="stylesheet">
- <link href="{{ URL::asset('public/css/jquery-ui-timepicker.css') }}" rel="stylesheet">
- <script src="{{ URL::asset('public/js/jquery-ui-timepicker.js') }}"  >
+ <link href="{{ URL::asset('public/js/moment-with-locales.js') }}" rel="stylesheet">
+ <script src="{{ URL::asset('public/js/bootstrap-datetimepicker.js') }}"  >
 
  
 

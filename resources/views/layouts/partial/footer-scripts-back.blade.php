@@ -34,7 +34,7 @@
 
 $(function () {
 	
-     $('.datepicker').datetimepicker({
+     $('.datepicker').datepicker({
                     locale: 'fr'
                 });
          });

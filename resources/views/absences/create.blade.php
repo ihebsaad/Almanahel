@@ -98,9 +98,12 @@
         </div>
     </div>
 @endsection
+<!--
+ <link href="{{ URL::asset('public/css/datepicker.css') }}" rel="stylesheet">
+ <link href="{{ URL::asset('public/css/jquery-ui-timepicker.css') }}" rel="stylesheet">
+ <script src="{{ URL::asset('public/js/jquery-ui-timepicker.js') }}"  >
 
-
-
+-->
 
 @section('footer_scripts')
  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -118,14 +121,10 @@ function toggle(className, displayState){
 
 $(function () {
 	
-	  $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-	
-	  $(function () {
-                $('#datetimepicker2').datetimepicker();
-            });
-			
+     $('#datetimepicker1').datetimepicker();
+ 	
+     $('#datetimepicker2').datetimepicker();
+ 			
 $('.select2').select2({
 filter: true,
 language: {

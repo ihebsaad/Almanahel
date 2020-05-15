@@ -37,6 +37,7 @@ $(function () {
      $('.datepicker').datetimepicker({
                     locale: 'fr'
                 });
+         });
  </script>
  
  <?php if  ($view_name == 'messagechat-messagerie')   { ?>

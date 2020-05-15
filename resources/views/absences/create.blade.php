@@ -65,7 +65,7 @@
                 </div>		
 				<div class="form-group">
 				<label for="datetimepicker1">Début:</label>
-                <div class='input-group date' id='datetimepicker1' style="width:400px">
+                <div class='input-group date' id='datetimepicker1'>
                     <input type='text' class="form-control" name="debut" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -75,7 +75,7 @@
 				
 				<div class="form-group">
 				<label for="datetimepicker2">Fin:</label>				
-                <div class='input-group date' id='datetimepicker2' style="width:400px" >
+                <div class='input-group date' id='datetimepicker2'>
                     <input type='text' class="form-control" name="fin" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>

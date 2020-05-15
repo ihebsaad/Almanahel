@@ -30,7 +30,14 @@
   <!-- Custom scripts for all pages-->
   <script   src="{{  URL::asset('public/sbadmin/js/sb-admin-2.min.js') }}" src="js/sb-admin-2.min.js"></script>
  
- 
+ <script>
+
+$(function () {
+	
+     $('.datepicker').datetimepicker({
+                    locale: 'fr'
+                });
+ </script>
  
  <?php if  ($view_name == 'messagechat-messagerie')   { ?>
 
@@ -38,7 +45,6 @@
 <script>  
 $(document).ready(function(){
 
-$('.datepicker').datepicker();
 
     fetch_user();
 

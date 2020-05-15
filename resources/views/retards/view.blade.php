@@ -29,15 +29,37 @@
 			  {{ csrf_field() }}
 			   <input   type="hidden" class="form-control" name="id" value="<?php echo $retard['id']; ?>" />
 
-			  	<div class="form-group">
+<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <input id="classe" type="number" class="form-control" name="classe" value="<?php echo $retard['classe']; ?>" />
+                    <select id="classe" type="number" class="form-control select2" name="classe" style="height:38px;">
+					 <option></option>
+					<?php $classes= \App\Classe::get(); 
+						foreach($classes as $cl)
+						{ if($retard['classe']==$cl->id){$sel='selected="selected"';}else{$sel='';}
+
+						echo ' <option '.$sel.' value="'.$cl->id.'">'.$cl->titre.'</option>';
+	
+						}
+					?>
+ 					</select>
                 </div>
+				<?php use \App\Http\Controllers\ClassesController; ?>
+				
+				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <input id="eleve" type="number" class="form-control" name="eleve" value="<?php echo $retard['eleve']; ?>"  />
-                </div>		
-                <div class="form-group">
+                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+					<option></option>
+					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
+						foreach($eleves as $el)
+						{if($retard['eleve']==$el->id){$sel='selected="selected"';}else{$sel='';}
+							$classe=ClassesController::ClasseEleve($el->id);
+						echo ' <option  '.$sel.' value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+	
+						}
+					?>
+					</select>
+                </div>		             <div class="form-group">
                     <label for="seance">Séance:</label>
                     <input id="seance" type="text" class="form-control" name="seance"   value="<?php echo $retard['seance']; ; ?>"/>
                 </div>						
@@ -62,3 +84,28 @@
 @endsection
 
  
+
+ @section('footer_scripts')
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+<script>
+
+function toggle(className, displayState){
+            var elements = document.getElementsByClassName(className);
+
+            for (var i = 0; i < elements.length; i++){
+                elements[i].style.display = displayState;
+            }
+  }
+
+$(function () {
+     $('#date').datepicker({
+                    locale: 'fr'
+                });
+});
+
+</script>
+@endsection
+				

@@ -25,15 +25,38 @@
                     </ul>
                 </div><br />
             @endif
+		 <?php use \App\Http\Controllers\ClassesController; ?>
+
             <form method="post" action="{{ route('retards.store') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <input id="classe" type="number" class="form-control" name="classe" /> 
-                </div>
+                   <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+					<option></option>
+					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
+						foreach($eleves as $el)
+						{
+							$classe=ClassesController::ClasseEleve($el->id);
+						echo ' <option   value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+	
+						}
+					?>
+					</select>                
+					</div>
+				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <input id="eleve" type="number" class="form-control" name="eleve"/>
+                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+					<option></option>
+					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
+						foreach($eleves as $el)
+						{
+							$classe=ClassesController::ClasseEleve($el->id);
+						echo ' <option   value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+	
+						}
+					?>
+					</select>
                 </div>		
                 <div class="form-group">
                     <label for="seance">Séance:</label>
@@ -63,4 +86,27 @@
     </div>
 @endsection
 
- 
+ @section('footer_scripts')
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+<script>
+
+function toggle(className, displayState){
+            var elements = document.getElementsByClassName(className);
+
+            for (var i = 0; i < elements.length; i++){
+                elements[i].style.display = displayState;
+            }
+  }
+
+$(function () {
+     $('#date').datepicker({
+                    locale: 'fr'
+                });
+});
+
+</script>
+@endsection
+				

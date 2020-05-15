@@ -38,6 +38,8 @@
 <script>  
 $(document).ready(function(){
 
+$('.datepicker').datepicker();
+
     fetch_user();
 
     setInterval(function(){

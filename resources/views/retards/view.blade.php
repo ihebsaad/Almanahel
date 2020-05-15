@@ -69,7 +69,7 @@
                 </div>		
                 <div class="form-group">
                     <label for="date">Date:</label>
-                    <input id="date" type="text" class="form-control" name="date"  value="<?php echo $retard['date'] ; ?>"/>
+                    <input id="date" type="text" class="form-control" name="date"  class="datepicker" value="<?php echo $retard['date'] ; ?>"/>
                 </div>	
 			   
 
@@ -101,7 +101,6 @@ function toggle(className, displayState){
             }
   }
 
-$('#date').datepicker();
 
 
 </script>

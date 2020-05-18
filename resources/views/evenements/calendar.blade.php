@@ -23,9 +23,28 @@
         right: 'dayGridMonth,listYear'
       },
  
+       googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
 
 buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Liste'},
-buttonIcons: {next: 'right-single-arrow', previous:'left-single-arrow',prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
+//buttonIcons: {next: 'right-single-arrow', previous:'left-single-arrow',prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
+ 
+ 
+ /*
+  eventSources: [
+
+    // your event source
+    {
+      events: function(start, end, timezone, callback) {
+        // ...
+      },
+      color: 'yellow',   // an option!
+      textColor: 'black' // an option!
+    }
+
+    // any other sources...
+
+  ]
+ */
  events: [
         {
           title: 'All Day Event',

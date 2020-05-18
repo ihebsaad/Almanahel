@@ -22,7 +22,7 @@
  
   <script>
 	 var currentYear = new Date().getFullYear();
-    var dataSource = $('.calendar').data('calendar').getDataSource();
+   /* var dataSource = $('.calendar').data('calendar').getDataSource();
 
  
     if(event.id) {
@@ -49,7 +49,7 @@
         dataSource.push(event);
     }
     
-    $('.calendar').data('calendar').setDataSource(dataSource);
+    $('.calendar').data('calendar').setDataSource(dataSource);*/
       $('.calendar').calendar( { 
 
 	//firstDay:1,

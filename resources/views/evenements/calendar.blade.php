@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
-      defaultDate: '<?php echo date("Y-m-d"); ?>',
+      defaultDate: '<?php echo date("Y-d-m"); ?>',
   	  
 	  
 	  

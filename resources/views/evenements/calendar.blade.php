@@ -12,7 +12,7 @@
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid' ],
+      plugins: [ 'interaction', 'dayGrid', 'list', 'googleCalendar','timeGrid' ],
 	
 
 	locale:'fr',

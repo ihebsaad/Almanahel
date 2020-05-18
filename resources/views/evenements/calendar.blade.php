@@ -30,12 +30,13 @@
       // THIS KEY WON'T WORK IN PRODUCTION!!!
       // To make your own Google API key, follow the directions here:
       // http://fullcalendar.io/docs/google_calendar/
-       googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
+     //  googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
 
       // TN Holidays
       // events: 'ar.tn#holiday@group.v.calendar.google.com', 
 	//   businessHours: true, // display business hours
-       events: [
+       
+      events: [
         {
           title: 'All Day Event',
           start: '2020-02-01'
@@ -91,7 +92,6 @@
           start: '2020-02-28'
         }
       ],
-    
       eventClick: function(arg) {
         // opens events in a popup window
         window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');

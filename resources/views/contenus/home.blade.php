@@ -447,6 +447,7 @@ $(document).on('click', '#majslider', function() {
                          {
                            /*$("#successUloadExterneFile").html('<span style="color:green">Le fichier est envoyé au serveur avec succès</span>');*/
                            alert("Le fichier est envoyé au serveur avec succès");
+                           location.reload();
                          }
                          else
                          {

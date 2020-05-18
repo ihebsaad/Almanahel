@@ -25,7 +25,7 @@
  
 
 buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Liste'},
-buttonIcons: {next: 'right-single-arrow', prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
+buttonIcons: {next: 'right-single-arrow', previous:'left-single-arrow',prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
  events: [
         {
           title: 'All Day Event',

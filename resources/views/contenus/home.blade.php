@@ -79,7 +79,7 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
  </div>
 
  <div class="form-group">
- <button type="submit" class="btn btn-md btn-success m-4 float-right"> Charger</button >
+ <button type="submit" class="btn btn-md btn-success m-4 float-right"><span></span> Charger</button >
 </div>
 </form>
 </div>
@@ -427,6 +427,12 @@ $(document).on('click', '#majslider', function() {
                     processData: false,
                     beforeSend: function() 
                     {
+                      
+                       //alert($(this).find('span'));
+                      //$(this).html('<span></span>Loading ...');
+                      $(this).find('span').addClass('fa fa-spinner fa-spin');
+      
+   
 
                       /* $('#successOrfailedUpload').modal('show');
                         $("#successUloadExterneFile").html('<div align="left"><img src="{{ URL::asset('public/img/progress.gif')}}" width="100%" height="8%" align="absmiddle" title="Upload...."/></div>');
@@ -440,6 +446,7 @@ $(document).on('click', '#majslider', function() {
                     success:function(response) 
                     {
                         //alert(response);
+                         $(this).find('span').removeClass('fa fa-spinner fa-spin');
                          var str1 = String(response);
                          var n1 = str1.includes("Le fichier est envoyé");
 
@@ -460,8 +467,8 @@ $(document).on('click', '#majslider', function() {
                       
                     },
                       error: function(jqXHR, textStatus, errorThrown) {
-
-                        alert("Erreur lors de l\'envoi du fichier au serveur");
+                         $(this).find('span').removeClass('fa fa-spinner fa-spin');
+                         alert("Erreur lors de l\'envoi du fichier au serveur");
                        
                     /*$("#successUloadExterneFile").html('<span style="color:red">Erreur lors de l\'envoi du fichier au serveur</span>');
                      $('#successOrfailedUpload').modal('show');*/

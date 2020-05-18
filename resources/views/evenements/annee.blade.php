@@ -26,6 +26,31 @@
       $('.calendar').data('calendar').setDataSource(dataSource);
     var dataSource = $('.calendar').data('calendar').getDataSource();
 
+    if(event.id) {
+        for(var i in dataSource) {
+            if(dataSource[i].id == event.id) {
+                dataSource[i].name = event.name;
+                 dataSource[i].startDate = event.startDate;
+                dataSource[i].endDate = event.endDate;
+            }
+        }
+    }
+    else
+    {
+        var newId = 0;
+        for(var i in dataSource) {
+            if(dataSource[i].id > newId) {
+                newId = dataSource[i].id;
+            }
+        }
+        
+        newId++;
+        event.id = newId;
+    
+        dataSource.push(event);
+    }
+    
+    $('.calendar').data('calendar').setDataSource(dataSource);
       $('.calendar').calendar( { 
 
 	//firstDay:1,

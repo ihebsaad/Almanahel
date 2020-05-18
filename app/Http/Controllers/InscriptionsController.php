@@ -402,8 +402,7 @@ if(empty($parent))
         $type=trim($request->get('type'));
        
 
-         $user= User::where('id', $id)
-            ->orWhere($id,$type)->first();
+         $user= User::where('id', $id)->first();
      return json_encode($user) ;
 
     }

@@ -6,6 +6,11 @@
   <script    src="{{  URL::asset('public/site/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"     ></script>
 
 
+ <link rel="stylesheet" href="{{  URL::asset('public/css/jquery.bootstrap.year.calendar.min.css') }}" />
+  <script     src="{{  URL::asset('public/js/jquery.bootstrap.year.calendar.min.js') }}" ></script>
+  
+
+
 <script  src="{{  URL::asset('public/site/js/jquery.slicknav.min.js') }}"  ></script>
 <script type="text/javascript">
   $('ul#navigation').slicknav({

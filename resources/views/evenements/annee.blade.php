@@ -17,10 +17,8 @@
  <link rel="stylesheet" href="{{ asset('public/css/jquery.bootstrap.year.calendar.css') }}"   > 
 
  Calendrier Général
-<div class="container">
-            <div class="calendar"></div>
-</div>
- 
+ <div class="calendar"></div>
+  
 
  
   <script>

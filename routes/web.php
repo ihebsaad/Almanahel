@@ -21,7 +21,6 @@ Route::get('/presentation', array('as' => 'presentation','uses' => 'HomeControll
 Route::get('/formation', array('as' => 'formation','uses' => 'HomeController@formation'));
 Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scolaire'));
 Route::get('/inscription', array('as' => 'inscription','uses' => 'HomeController@inscription'));
-Route::get('/bienvenue', array('as' => 'bienvenue','uses' => 'HomeController@bienvenue'));
 Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
 
 Route::post('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));
@@ -180,6 +179,7 @@ Route::get('/inscriptions', array('as' => 'inscriptions','uses' => 'Inscriptions
 Route::get('/inscriptions/view/{id}', 'InscriptionsController@view');
 Route::post('/edit2/{id}','InscriptionsController@update');
 Route::get('/inscriptions/valide/{id}', 'InscriptionsController@valide');
+Route::post('/inscriptions/checkexiste', 'InscriptionsController@checkexiste')->name('inscriptions.checkexiste');
 
 
 /****  Images gestion image slider carrousel  *****/

@@ -46,6 +46,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
   ]
  */
  events: [
+ 'ar.tn#holiday@group.v.calendar.google.com',
         {
           title: 'All Day Event',
           start: '2020-02-01'

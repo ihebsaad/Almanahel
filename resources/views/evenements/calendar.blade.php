@@ -30,8 +30,8 @@
       // http://fullcalendar.io/docs/google_calendar/
       googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
 
-      // US Holidays
-       events: 'fr.tn#holiday@group.v.calendar.google.com',
+      // TN Holidays
+       events: 'ar.tn#holiday@group.v.calendar.google.com',
 
       eventClick: function(arg) {
         // opens events in a popup window

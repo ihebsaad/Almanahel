@@ -9,23 +9,15 @@
 <script src="{{ asset('public/calendar/list/main.js')}}"></script>
 <script  src="{{ asset('public/calendar/google-calendar/main.js')}}"></script>
 <script>
-
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
-	  	 locale: 'fr',
-		  header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,listYear'
-      },
-    //   defaultDate: "<?php echo date('Y-m-d');?>",
-    navLinks: true,
-	      editable: true,
-
-   events: [
+      defaultDate: '2020-02-12',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
         {
           title: 'All Day Event',
           start: '2020-02-01'
@@ -85,7 +77,6 @@
 
     calendar.render();
   });
-
 </script>
 <style>
 

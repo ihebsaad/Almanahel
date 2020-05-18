@@ -159,6 +159,7 @@
                     document.getElementById(id).style.color='black';
                 }
 */                    parsed = JSON.parse(data);
+                    alert(data);
                     alert(parsed);
 
                 if(data==''){

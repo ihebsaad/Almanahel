@@ -159,18 +159,12 @@
                     document.getElementById(id).style.color='black';
                 }
 */                    parsed = JSON.parse(data);
-                    alert(data);
-                   // alert(parsed);
-                  //  alert(data['name']);
-                    alert(parsed['name']);
-
-                if(data==''){
-                    parsed = JSON.parse(data);
-                    string='Erreur,faux id vérifiez ';
+                   
+                if(parsed['name']==''){
+                     string='Erreur,faux id vérifiez ';
                
                    
-                    alert(parsed);
-                    Swal.fire({
+                     Swal.fire({
                         type: 'error',
                         title: 'Faux id...',
                         html: string
@@ -183,10 +177,11 @@
                      document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
                      $('#btnaddinscription').prop('disabled', true);
-                    parsed = JSON.parse(data);
-                    string='Eleve existe: ! ';
+                     string='Eleve existe: ! ';
                     if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
-                    if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; } 
+                    if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }
+
+					alert(string);					
                 }
 
 

@@ -56,7 +56,7 @@
                 location: 'San Francisco, CA',
                 startDate: new Date(currentYear, 8, 1),
                 endDate: new Date(currentYear, 8, 1)
-            },
+            } 
 	 } );
 
 /*

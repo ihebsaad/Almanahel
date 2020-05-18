@@ -173,11 +173,11 @@
 
                     document.getElementById(id).style.background='#FD9883';
                     document.getElementById(id).style.color='white';
-                    $('#btnaddinscription').prop(disabled, true);
+                    $('#btnaddinscription').prop('disabled', true);
                 } else{
                     document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
-                     $('#btnaddinscription').prop(disabled, true);
+                     $('#btnaddinscription').prop('disabled', true);
                     parsed = JSON.parse(data);
                     string='Eleve existe: ! ';
                     if(parsed['nom']!=null){string+='Nom : '+parsed['nom']+ ' - '; }

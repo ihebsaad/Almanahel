@@ -109,7 +109,7 @@ class EnvoyesController extends Controller
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
                        ->setBody($contenu, 'text/html');
-            });
+            })
 		){
 			$envoyes = new Envoye([
               'emetteur' =>trim( $request->get('emetteur')),

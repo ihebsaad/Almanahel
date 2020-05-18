@@ -26,7 +26,37 @@
       $('.calendar').calendar( { 
 	   
 	//firstDay:1,
-	locale:'fr'
+	//locale:'fr'
+	
+	dataSource: [
+            {
+                id: 0,
+                name: 'Google I/O',
+                location: 'San Francisco, CA',
+                startDate: new Date(currentYear, 4, 28),
+                endDate: new Date(currentYear, 4, 29)
+            },
+            {
+                id: 1,
+                name: 'Microsoft Convergence',
+                location: 'New Orleans, LA',
+                startDate: new Date(currentYear, 2, 16),
+                endDate: new Date(currentYear, 2, 19)
+            },
+            {
+                id: 2,
+                name: 'Microsoft Build Developer Conference',
+                location: 'San Francisco, CA',
+                startDate: new Date(currentYear, 3, 29),
+                endDate: new Date(currentYear, 4, 1)
+            },
+            {
+                id: 3,
+                name: 'Apple Special Event',
+                location: 'San Francisco, CA',
+                startDate: new Date(currentYear, 8, 1),
+                endDate: new Date(currentYear, 8, 1)
+            },
 	 } );
 
 /*

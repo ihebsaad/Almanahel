@@ -48,7 +48,31 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 
   ]
  */
- events: [
+ 
+  eventSources: [
+     {
+      events: 'ar.tn#holiday@group.v.calendar.google.com',
+      color: 'yellow',   // an option!
+      textColor: 'black' // an option!
+    },
+	{
+  events: [
+    {
+      title: 'Event1',
+      start: '2020-05-10'
+    },
+    {
+      title: 'Event2',
+      start: '2020-05-15'
+    }
+    // etc...
+  ],
+  color: 'yellow',   // an option!
+  textColor: 'black' // an option!
+	}
+	
+	],
+ /*events: [
  'ar.tn#holiday@group.v.calendar.google.com',
         {
           title: 'All Day Event',
@@ -105,7 +129,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
           start: '2020-05-28'
         }
       ]
-    ,
+    ,*/
       eventClick: function(arg) {
         // opens events in a popup window
         window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');

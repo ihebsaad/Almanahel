@@ -22,10 +22,9 @@
  
   <script>
 	 var currentYear = new Date().getFullYear();
-
-      $('.calendar').data('calendar').setDataSource(dataSource);
     var dataSource = $('.calendar').data('calendar').getDataSource();
 
+ 
     if(event.id) {
         for(var i in dataSource) {
             if(dataSource[i].id == event.id) {

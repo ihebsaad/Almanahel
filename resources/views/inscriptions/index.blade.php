@@ -130,7 +130,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                    <span type="button" id="btnaddinscription" class="btn btn-primary">Chercher</span>
+                    <span type="button" id="btnaddinscription" onclick="adding();" class="btn btn-primary">Chercher</span>
                 </div>
             </div>
         </div>
@@ -193,11 +193,11 @@
 
         // }
     }
-    $('#btnaddinscription').click(function(){
+     function adding(){
 
           
     var champ = $('#champ1').val();
-           
+           alert(champ);
             if ((champ != '') )
             {
                 var _token = $('input[name="_token"]').val();
@@ -215,7 +215,7 @@
             }else{
                 // alert('ERROR');
             }
-        });
+        }
 	</script>
 	
      @endsection

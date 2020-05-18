@@ -123,18 +123,10 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body" style="width:100%;">
-          
-		  
-		 @include('evenements.calendar')
-
-		  
-		  
+            
 		  <?php echo $contenu; ?>
 		  
-		  
-		  
-		  
-		  
+		    
         </div>
       </div>
     </div>

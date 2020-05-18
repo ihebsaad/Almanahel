@@ -16,7 +16,7 @@
 	
 	firstDay:1,
 	locale:'fr',
-      defaultDate: '<?php echo date("Y-m-d");?>',
+      defaultDate: ''+<?php echo date("Y-m-d");?> ,
 	 // defaultDate: '<?php echo date('Y-m-d');?>',
    header: {
         left: 'prev,next today',

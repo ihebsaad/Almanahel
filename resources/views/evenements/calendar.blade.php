@@ -27,7 +27,6 @@
       },
  
        googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
-
 buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Liste'},
 //buttonIcons: {next: 'right-single-arrow', previous:'left-single-arrow',prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
  
@@ -58,15 +57,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
     },
 	{
    events: [
-   {
-      title: 'Event1',
-      start: '2020-05-10'
-    },
-    {
-      title: 'Event2',
-      start: '2020-05-15'
-    }
-<?php /*			$liste=\App\Evenement::get();
+<?php			$liste=\App\Evenement::get();
 		$ct=count($liste);	 
 		$i=0;
     if ($ct>0) {
@@ -93,7 +84,6 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 		
 	 	}// end foreach
    }//end if
-	*/
 	?>			 
 			 
   /*

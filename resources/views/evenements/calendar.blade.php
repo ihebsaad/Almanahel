@@ -11,8 +11,9 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
-
+ 
     var calendar = new FullCalendar.Calendar(calendarEl, {
+	 locale: 'fr',
 
       plugins: [ 'interaction', 'dayGrid', 'list', 'googleCalendar' ],
 
@@ -22,7 +23,7 @@
         right: 'dayGridMonth,listYear'
       },
 
-      displayEventTime: false, // don't show the time column in list view
+      displayEventTime: true, // don't show the time column in list view
 
       // THIS KEY WON'T WORK IN PRODUCTION!!!
       // To make your own Google API key, follow the directions here:

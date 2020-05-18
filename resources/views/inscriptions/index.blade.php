@@ -175,13 +175,13 @@
                     document.getElementById(id).style.color='white';
                     $('#btnaddinscription').prop('disabled', true);
                 } else{
-                  /*  document.getElementById(id).style.background='white';
+                     document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
                      $('#btnaddinscription').prop('disabled', true);
                     parsed = JSON.parse(data);
                     string='Eleve existe: ! ';
                     if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
-                    if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }*/
+                    if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; } 
                 }
 
 

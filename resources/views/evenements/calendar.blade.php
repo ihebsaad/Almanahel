@@ -17,7 +17,7 @@
     <div id="calendar"></div>
   
   <script>
-   
+   /*
     $(document).ready(function(){
 
     $('#calendar').fullCalendar({
@@ -64,7 +64,7 @@
 });     
 
     });
-	
+	*/
  </script>
  
 

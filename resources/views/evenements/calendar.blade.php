@@ -16,9 +16,9 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
       defaultDate: '2020-02-12',
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
+      defaultDate: "<?php echo date('Y-m-d');?>",
+    navLinks: true,
+   events: [
         {
           title: 'All Day Event',
           start: '2020-02-01'

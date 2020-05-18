@@ -9,6 +9,7 @@
  <link rel="stylesheet" href="{{  URL::asset('public/css/jquery.bootstrap.year.calendar.min.css') }}" />
   <script     src="{{  URL::asset('public/js/jquery.bootstrap.year.calendar.min.js') }}" ></script>
   
+<script type="text/javascript">var ajax_url = 'https://mdbootstrap.com/wp-load.php';</script><link rel="alternate" hreflang="en" href="https://mdbootstrap.com/plugins/jquery/full-calendar/" />
 
 
 <script  src="{{  URL::asset('public/site/js/jquery.slicknav.min.js') }}"  ></script>

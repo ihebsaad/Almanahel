@@ -3,7 +3,7 @@
 <link href="{{ asset('public/calendar/daygrid/main.css')}}" rel='stylesheet' />
 <link href="{{ asset('public/calendar/list/main.css')}}" rel='stylesheet' />
 <script src="{{ asset('public/calendar/core/main.js')}}"></script>
-<script src="{{ asset('public/calendar/timgrid/main.js')}}"></script>
+<script src="{{ asset('public/calendar/timegrid/main.js')}}"></script>
 <script src="{{ asset('public/calendar/interaction/main.js')}}"></script>
 <script src="{{ asset('public/calendar/daygrid/main.js')}}"></script>
 <script src="{{ asset('public/calendar/list/main.js')}}"></script>

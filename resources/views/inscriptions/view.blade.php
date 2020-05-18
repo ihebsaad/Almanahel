@@ -1,6 +1,6 @@
 @extends('layouts.back')
    
-   
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
    
    
    <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
@@ -279,7 +279,7 @@
         <?php if($inscription->bulletin1 !==''){?>
 
 
-          <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/manahellocal/storage/fichiers/<?php echo $inscription['bulletin1'];?>" > 
+          <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin1'];?>" > 
            <span class="fa fa-fw fa-trash-alt"></span> <?php echo $inscription['bulletin1'];?>
 </a>
           <?php } ?>
@@ -297,7 +297,7 @@
         <?php if($inscription->bulletin2 !==''){?>
 
 
-          <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/manahellocal/storage/fichiers/<?php echo $inscription['bulletin2'];?>" > 
+          <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin2'];?>" > 
            <span class="fa fa-fw fa-trash-alt"></span> <?php echo $inscription['bulletin2'];?>
 </a>
           <?php } ?>

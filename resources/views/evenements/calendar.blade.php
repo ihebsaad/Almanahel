@@ -3,6 +3,7 @@
 <link href="{{ asset('public/calendar/daygrid/main.css')}}" rel='stylesheet' />
 <link href="{{ asset('public/calendar/list/main.css')}}" rel='stylesheet' />
 <script src="{{ asset('public/calendar/core/main.js')}}"></script>
+<script src="{{ asset('public/calendar/timgrid/main.js')}}"></script>
 <script src="{{ asset('public/calendar/interaction/main.js')}}"></script>
 <script src="{{ asset('public/calendar/daygrid/main.js')}}"></script>
 <script src="{{ asset('public/calendar/list/main.js')}}"></script>
@@ -15,7 +16,7 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
 	 locale: 'fr',
 
-      plugins: [ 'interaction', 'dayGrid', 'list', 'googleCalendar' ],
+      plugins: [ 'interaction', 'dayGrid', 'list', 'googleCalendar','timeGrid' ],
 
       header: {
         left: 'prev,next today',
@@ -36,8 +37,7 @@
       // TN Holidays
       // events: 'ar.tn#holiday@group.v.calendar.google.com', 
 	   businessHours: true, // display business hours
-      editable: true,
-      events: [
+       events: [
         {
           title: 'Business Lunch',
           start: '2020-02-03T13:00:00',

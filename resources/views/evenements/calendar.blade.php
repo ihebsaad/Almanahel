@@ -16,7 +16,8 @@
 	
 	firstDay:1,
 	locale:'fr',
-      defaultDate: '2020-05-18',
+      defaultDate: '2020-02-12',
+	 // defaultDate: '<?php echo date('Y-m-d');?>',
    header: {
         left: 'prev,next today',
         center: 'title',

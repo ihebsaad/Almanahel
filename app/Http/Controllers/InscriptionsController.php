@@ -108,7 +108,7 @@ $pathb = storage_path()."/fichiers/";
         ]);
 
         $Inscription->save();
-        if(isset($request->get('sourcepg'))
+        if(isset($request->get('sourcepg')))
         {return redirect('/bienvenue');}
         else
         {return redirect('/inscriptions')->with('success', ' inscrit avec succès');}

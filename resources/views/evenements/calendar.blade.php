@@ -69,7 +69,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
     // etc...
   ],
   color: '#028dc8',   // an option!
-  textColor: 'black' // an option!
+  textColor: 'white' // an option!
 	}
 	
 	],

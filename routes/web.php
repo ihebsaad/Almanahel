@@ -157,7 +157,7 @@ Route::get('/insertchat/', 'MessageChatController@insertchat');
 Route::get('/fetch_user_chat_history/{to_user_id}', 'MessageChatController@fetch_user_chat_history');
 Route::get('/update_is_type_status/{from_user_id}', 'MessageChatController@update_is_type_status');
 /*** classes **/
-
+​
 Route::get('/classes/create','ClassesController@create')->name('classes.create');
 Route::post('/classes/saving','ClassesController@saving')->name('classes.saving');
 Route::get('/classes/view/{id}', 'ClassesController@view');
@@ -179,6 +179,7 @@ Route::get('/inscriptions', array('as' => 'inscriptions','uses' => 'Inscriptions
 Route::get('/inscriptions/view/{id}', 'InscriptionsController@view');
 Route::post('/edit2/{id}','InscriptionsController@update');
 Route::get('/inscriptions/valide/{id}', 'InscriptionsController@valide');
+Route::post('/inscriptions/checkexiste', 'InscriptionsController@checkexiste')->name('inscriptions.checkexiste');
 
 
 /****  Images gestion image slider carrousel  *****/

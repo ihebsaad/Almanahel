@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-6">Emails Envoyés</div>
                 <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('EnvoyesController@send')}}" ><b><i class="fas fa-plus"></i> Ajouter une envoye</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('EnvoyesController@send')}}" ><b><i class="fas fa-envelope"></i> Envoyer un email</b></a>
                 </div>
             </div>
         </div>

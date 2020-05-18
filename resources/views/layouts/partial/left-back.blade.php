@@ -122,7 +122,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href=" ">
+        <a class="nav-link" href="{{route('envoyes')}}">
           <i class="fas fa-fw fa-envelope"></i>
           <span>Emails</span></a>
       </li>

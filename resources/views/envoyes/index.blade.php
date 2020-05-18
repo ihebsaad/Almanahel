@@ -64,45 +64,7 @@
         </table>
     </div>
 
- 
-    <?php use \App\Http\Controllers\UsersController;
-    $users=UsersController::ListeUsers();
-
-    $CurrentUser = auth()->user();
-
-    $iduser=$CurrentUser->id;
-
-    ?>
-   
-<script>
-   function changing(elm,actus) {
-            var champ=elm.id;
-
-            var val =document.getElementById('actus-'+actus).checked==1;
-
-            if (val==true){val=1;}
-            else{val=0;}
-            //if ( (val != '')) {
-            var _token = $('input[name="_token"]').val();
-            $.ajax({
-                url: "{{ route('envoyes.updating') }}",
-                method: "POST",
-                data: {actus:actus , champ:champ ,val:val, _token: _token},
-                success: function (data) {
-                    $('.actus-'+actus).animate({
-                        opacity: '0.3',
-                    });
-                    $('.actus-'+actus).animate({
-                        opacity: '1',
-                    });
-
-                }
-            });
-            // } else {
-
-            // }
-        }
-</script>		
+  
 
 @endsection
 

@@ -123,7 +123,7 @@ class EnvoyesController extends Controller
 		  
 	
 	}
-/*
+
     public function updating(Request $request)
     {
 
@@ -132,7 +132,7 @@ class EnvoyesController extends Controller
        $val= $request->get('val');
        Envoye::where('id', $id)->update(array('visible' => $val));
  
-    }*/
+    }
 
     /**
      * Display the specified resource.

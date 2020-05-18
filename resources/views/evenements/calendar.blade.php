@@ -51,10 +51,10 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
  
   eventSources: [
      {
-		googleCalendarId:'ihebs002@gmail.com', 
+	 googleCalendarId:'ihebs002@gmail.com', 
        events: ['ar.tn#holiday@group.v.calendar.google.com'],
-      color: 'yellow',   // an option!
-      textColor: 'black' // an option!
+      color: '#0b8043',   // an option!
+      textColor: 'white' // an option!
     },
 	{
   events: [
@@ -68,7 +68,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
     }
     // etc...
   ],
-  color: 'yellow',   // an option!
+  color: '#028dc8',   // an option!
   textColor: 'black' // an option!
 	}
 	

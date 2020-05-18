@@ -183,7 +183,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 		</div>
 		<div class="formenligne partie">
     	<h4 style="padding-top: 20px;">Veuillez remplir le formulaire ci dessous:</h4>
-    	            <form class="form-horizontal" method="POST" action="{{-- route('inscriptions.store') --}}">
+    	            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}">
                         {{ csrf_field() }}
 					<fieldset>
 					<div class="row sectionform">L'élève</div>
@@ -300,15 +300,40 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						<div class="col">
 					       <label for="clubs">Votre enfant souhaite-t-il intégrer un Club ? </label>
 					      <div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="clubs" id="clubs1" value="1"  onfocusout="clubverif()">
+							  <input class="form-check-input" type="radio" name="clubs" id="clubs1" value="1"  onclick="clubverif()">
 							  <label class="form-check-label" for="clubs1">Oui</label>
 							</div>
 							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="clubs" id="clubs2" value="0" onfocusout="clubverif1()" >
+							  <input class="form-check-input" type="radio" name="clubs" id="clubs2" value="0" onclick="clubverif1()" >
 							  <label class="form-check-label" for="clubs2">Non</label>
 							</div>
 						</div>
 					</div>
+					<div  id="sect1"class="row" style="display:none"  >
+					    <div class="col">
+					       <label   for="section">Nom de Club : </label>
+					    <select name="nomclub" id="nomclub" class="form-control" onchange="autreverif()" >
+						    <option value="">Veuillez choisir une option</option>
+						     <option value="Musique">Musique</option>
+						    <option value="Théâtre">Théâtre</option>
+						    <option value="Robotique">Robotique</option>
+						    <option value="Anglais">Anglais</option>
+						    <option value="Autres">Autres</option>
+						</select>
+						</div>
+					 	<div class="col"></div>
+					 	<div class="col"></div>
+					</div> 
+
+					    <div  id="sectautre"class="row" style="margin-top: 10px;display:none"  >
+
+						    <div class="col">
+						       <label  for="section">Nom d'autre club : </label>
+						    <input type="text" name="nomclubautre" id="nomclubautre" class="form-control" />
+						 	</div>
+					 
+					    </div> 
+					<div id="sect2" style="display:none">    
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="niveau">Les horaires d'activités de club : </label>
@@ -368,7 +393,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						</div>
 						</div>
 					</div>
-
+					</div>
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="bulletin1">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
@@ -449,10 +474,9 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
  <script type="text/javascript">
  	function clubverif()
 {
-  var clubs = document.getElementById("clubs").value;
   
 
- if(clubs==true)
+ if(document.getElementById("clubs1").checked==true)
 {
 document.getElementById('sect1').style.display = 'block'; 
 document.getElementById('sect2').style.display = 'block'; 
@@ -464,20 +488,23 @@ document.getElementById('sect2').style.display = 'none';
 }}
 function clubverif1()
 {
-  var clubs = document.getElementById("clubs").value;
   
+  document.getElementById('sect1').style.display = 'none'; 
+document.getElementById('sect2').style.display = 'none'; 
+}
 
- if(clubs==false)
+function autreverif()
 {
-document.getElementById('sect1').style.display = 'block'; 
-document.getElementById('sect2').style.display = 'block'; 
+  var nomclub = document.getElementById("nomclub").value;
+
+ if(nomclub=="Autres")
+{
+document.getElementById('sectautre').style.display = 'block'; 
 }
 else
 {
-  document.getElementById('sect1').style.display = 'none'; 
-document.getElementById('sect2').style.display = 'none'; 
-}}
-
-
+document.getElementById('sectautre').style.display = 'none'; 
+}
+}
  </script>
 @endsection

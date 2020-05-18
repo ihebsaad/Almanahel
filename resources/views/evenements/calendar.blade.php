@@ -23,6 +23,8 @@
       },
     //   defaultDate: "<?php echo date('Y-m-d');?>",
     navLinks: true,
+	      editable: true,
+
    events: [
         {
           title: 'All Day Event',

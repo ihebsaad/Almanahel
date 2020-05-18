@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
-      defaultDate: '2020-02-12',
+      defaultDate: '<?php echo date("Y-m-d"); ?>',
   	  
 	  
 	  

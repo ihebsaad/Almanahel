@@ -12,8 +12,8 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
      
- <script  src="{{ asset('public/js/jquery.bootstrap.year.calendar.js') }}"  type="text/javascript"></script>
- <link rel="stylesheet" href="{{ asset('public/css/jquery.bootstrap.year.calendar.css') }}"   > 
+ <script  src="{{ asset('public/js/jquery.bootstrap.year.calendar.min.js') }}"  type="text/javascript"></script>
+ <link rel="stylesheet" href="{{ asset('public/css/jquery.bootstrap.year.calendar.min.css') }}"   > 
 
  Calendrier Général
              <div class="calendar"></div>

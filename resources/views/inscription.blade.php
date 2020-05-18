@@ -186,6 +186,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     	            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}">
                         {{ csrf_field() }}
 					<fieldset>
+						<input  value="2020" type="hidden" name="annee" id="annee" />
 					<div class="row sectionform">L'élève</div>
 					<div class="row">
 	    				<div class="col">

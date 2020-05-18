@@ -14,7 +14,7 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid', 'list', 'googleCalendar','timeGrid' ],
 	
-
+	firstDay:1,
 	locale:'fr',
       defaultDate: '2020-02-12',
    header: {

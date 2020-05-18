@@ -12,8 +12,8 @@
     prependTo:"#menumob"
   });
   
- 
- $('#calendar').fullCalendar({
+  
+   $('#calendar').fullCalendar({
     header: {
         left: 'prev,next today',
         center: 'title',
@@ -54,7 +54,11 @@
             end: '2018-11-29'
         },
     ]
-});     
+});   
+  
+  $(document).ready(function(){
+
+  
 
 
     $("select#elevestat").change(function(){

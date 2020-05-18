@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
     use App\Envoye ;
  use DB;
  use Swift_Mailer;
- use Mail
+ use Mail;
 
 class EnvoyesController extends Controller
 {

@@ -8,12 +8,7 @@
 
  <link rel="stylesheet" href="{{  URL::asset('public/css/jquery.bootstrap.year.calendar.min.css') }}" />
   <script     src="{{  URL::asset('public/js/jquery.bootstrap.year.calendar.min.js') }}" ></script>
-  
-<script type="text/javascript">var ajax_url = 'https://mdbootstrap.com/wp-load.php';</script><link rel="alternate" hreflang="en" href="https://mdbootstrap.com/plugins/jquery/full-calendar/" />
-<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.0/main.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.0/locales/fr.js" type="text/javascript"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.0/main.css"  /> 
-
+ 
 
 <script  src="{{  URL::asset('public/site/js/jquery.slicknav.min.js') }}"  ></script>
 <script type="text/javascript">
@@ -21,21 +16,9 @@
     prependTo:"#menumob"
   });
   
-  /*
-$(function() {
-
-  // page is now ready, initialize the calendar...
-
-  $('#calendar').fullCalendar({
-    // put your options and callbacks here
-  })
-
-});
-  */
-  $(document).ready(function(){
-
  
-
+  $(document).ready(function(){
+ 
     $("select#elevestat").change(function(){
         $(this).find("option:selected").each(function(){
             var optionValue = $(this).attr("value");

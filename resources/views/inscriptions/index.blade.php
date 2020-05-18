@@ -176,7 +176,7 @@
                 } else{
                      document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
-                     $('#btnaddinscription').prop('disabled', true);
+                     $('#btnaddinscription').prop('disabled', false);
                      string='Eleve existe: ! ';
                     if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
                     if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }

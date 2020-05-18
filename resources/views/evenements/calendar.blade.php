@@ -34,7 +34,7 @@
       googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
 
       // TN Holidays
-       events: 'ar.tn#holiday@group.v.calendar.google.com',
+     //  events: 'ar.tn#holiday@group.v.calendar.google.com',
 events: [{
             title: 'Front-End Conference',
             start: '2018-11-16',

@@ -1,6 +1,6 @@
 
 @extends('layouts.back')
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
+
 
 @section('content')
 <h3 style="margin-left:50px">Formulaire Pré-inscription </h3><br><br>    
@@ -8,22 +8,14 @@
                         {{ csrf_field() }}
              <fieldset>
        <legend>Élève</legend> <!-- Titre du fieldset --> 
-<div class="row" style="margin-left:10px">
-   
-  <div class="form-group">
-      <div class="col-md-6">
-       <label class="form-label" for="eleve">Identifiant de l'élève : </label>
-       <input type="number" name="eleve" id="eleve" class="form-control"  />
-       </div>
-       </div>
-          </div>
+
 <div class="row" style="margin-left:10px">
   <div class="form-group">
-    <div class="col-md-3">
+    <div class="col-md-6">
        <label class="form-label" for="nom">Nom : </label>
        <input type="text" name="nom" id="nom"  class="form-control"/>
  </div>
-  <div class="col-md-3">
+  <div class="col-md-6">
        <label  class="form-label" for="prenom">Prénom : </label>
        <input type="text" name="prenom" id="prenom" class="form-control" />
        </div>
@@ -31,14 +23,14 @@
 </div>
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="datenaissance">Date de naissance : </label>
        <input type="date" name="datenaissance" id="datenaissance" class="form-control" />
  
    </div> </div></div>
    <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="email">E-mail: </label>
        <input  class="form-control" type="text" name="email" id="email" />
  </div>
@@ -46,7 +38,7 @@
 </div>
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="reemail_rep">Confirmez E-mail: </label>
        <label id="alert" style="display:none; color:red;">Il faut retapez le mail</label>
        <input  class="form-control" type="text" name="reemail" id="reemail" onBlur="checkMail1()"/>
@@ -56,7 +48,7 @@
 
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="annee">Année: </label>
       <?php $max= date('Y', strtotime('+1 year')); $min= date('Y', strtotime('-1 year'));?>
        <input  class="form-control" type="number" name="annee" id="annee"  min="<?php echo $min; ?>"  max="<?php echo $max;?>"/>
@@ -66,7 +58,7 @@
 
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="type_etabliss">Etablissement d'origine où votre enfant est actuellement scolarisé : </label>
         Public <input type="radio" id="type_etabliss" name="type_etabliss" value="0" >
         Privé<input type="radio" id="type_etabliss" name="type_etabliss" value="1">
@@ -75,7 +67,7 @@
 </div>
 <div class="row" style="margin-left:10px">
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="etablissement">Nom de l'établissement d'origine : </label>
        <input type="text" name="etablissement" id="etablissement"  class="form-control"/>
  
@@ -85,7 +77,7 @@
 </div>
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="niveau">Niveau d'études actuel : </label>
        <input type="text" name="niveau" id="niveau" class="form-control" onKeyUp="sectionverif()"/>
  </div>
@@ -94,7 +86,7 @@
 <?php ?>
 <div  id="sect"class="row" style="margin-left:10px ;display:none"  >
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label  class="form-label" for="section">Section : </label>
     <select name="section" id="section" class="form-control" >
     <option value="">--Please choose an option--</option>
@@ -109,14 +101,14 @@
 </div>
 <div class="row" style="margin-left:10px">
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="niveau">la moyenne de notes obtenues durant la dernière année d'étude  : </label>
      </div>  
     </div>
 </div>
 <div class="row" style="margin-left:15px">
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label  class="form-label" for="moyenne_1">Le premier trimestre : </label>
        <input type="number" step="any" name="moyenne_1" id="moyenne_1" class="form-control"  />
  </div>
@@ -125,7 +117,7 @@
 </div>
 <div class="row" style="margin-left:15px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="moyenne_2">Le deuxième trimestre : </label>
        <input type="number" step="any" name="moyenne_2" id="moyenne_2"class="form-control" />
  </div>
@@ -133,7 +125,7 @@
 </div>
 <div class="row" style="margin-left:15px">
     <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="moyenne_3">Le troisième trimestre : </label>
        <input type="number" step="any" name="moyenne_3" id="moyenne_3" class="form-control" />
  </div>
@@ -141,7 +133,7 @@
 </div>
 <div class="row" style="margin-left:15px">
       <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="moyenne_g">La moyenne générale : </label>
        <input type="number" step="any" name="moyenne_g" id="moyenne_g" class="form-control" />
  </div>
@@ -149,7 +141,7 @@
 </div>
 <div class="row" style="margin-left:10px">
        <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="frere">Votre enfant a t'il un frère ou une soeur actuellement scolarisé(e) dans notre établissement ? </label>
       Oui <input type="radio" id="frere" name="frere" value="1">
       Non <input type="radio" id="frere" name="frere" value="0">
@@ -158,7 +150,7 @@
 </div>
 <div class="row" style="margin-left:10px">
        <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="clubs">Votre enfant souhaite-t-il intégrer un Club ? </label>
       Oui <input type="radio" id="clubs" name="clubs" value="1" onBlur="clubverif()">
       Non <input type="radio" id="clubs" name="clubs" value="0" onBlur="clubverif1()"  >
@@ -167,7 +159,7 @@
 </div>
 <div  id="sect1"class="row" style="margin-left:10px ;display:none"  >
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label  class="form-label" for="section">Nom de Club : </label>
     <select name="nomclub" id="nomclub" class="form-control" onBlur="autreverif()" >
     <option value="">--Please choose an option--</option>
@@ -182,7 +174,7 @@
     </div> 
     <div  id="sectautre"class="row" style="margin-left:10px ;display:none"  >
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label  class="form-label" for="section">Nom d'autre club : </label>
     <input type="text" name="nomclubautre" id="nomclubautre" class="form-control" />
  </div>
@@ -191,14 +183,14 @@
 <div id="sect2" style="display:none">
 <div class="row" style="margin-left:10px;">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="niveau">les horaires d'activités de club : </label>
      </div>  
     </div>
 </div>
 <div class="row" style="margin-left:15px">
      <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="heure_17h">17h15-18h30: </label>
      <input type="checkbox" id="heure_17h" name="heure_17h" value="1"  >
     </div>
@@ -206,7 +198,7 @@
 </div>
 <div class="row" style="margin-left:15px">
      <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="heure_12h">12h30-13h45 :  </label>
    <input type="checkbox" id="heure_12h" name="heure_12h" value="1">
      </div>
@@ -214,7 +206,7 @@
      </div>
 <div class="row" style="margin-left:15px">
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label  class="form-label" for="vendredi">Vendredi après-midi : </label>
   <input type="checkbox" id="vendredi" name="vendredi" value="1">
       </div>
@@ -222,7 +214,7 @@
 </div>
 <div class="row" style="margin-left:15px">
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="samedi">Samedi après-midi : </label>
        <input type="checkbox" id="samedi" name="samedi" value="1">
 
@@ -231,7 +223,7 @@
 </div>
 <div class="row" style="margin-left:15px">
     <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="dimanche">Dimanche matin : </label>
        <input type="checkbox" id="dimanche" name="dimanche" value="1">
        </div>
@@ -241,7 +233,7 @@
 </div>
 <div class="row" style="margin-left:10px">
      <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="bulletin1">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
        <input type="file" accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin1" id="bulletin1" class="form-control" />
        <input type="file"  accept="image/png, image/jpeg,image/jpg,.pdf" name="bulletin2" id="bulletin2" class="form-control" />
@@ -262,21 +254,18 @@
  </fieldset>
    <fieldset>
        <legend>Représentant légal</legend> <!-- Titre du fieldset --> 
-<div class="row"  style="margin-left:10px">
-    <div class="form-group">
-    <div class="col-md-6">
-       <label  class="form-label" for="civilite">Identité du représentant légal : </label>
-       <input type="number" name="civilite" id="civilite" class="form-control" />
-        </div>
-        </div>
-       </div>
+
 <div class="row" style="margin-left:10px">
      <div class="form-group">
-    <div class="col-md-3">
+       <div class="col-md-4">
+       <label  class="form-label" for="civilite">Civilité : </label>
+       <input type="text" name="civilite" id="civilite" class="form-control" />
+        </div>
+    <div class="col-md-4">
        <label class="form-label" for="nom_rep">Nom : </label>
        <input  class="form-control" type="text" name="nom_rep" id="nom_rep" />
  </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
        <label class="form-label" for="prenom_rep">Prénom : </label>
        <input  class="form-control" type="text" name="prenom_rep" id="prenom_rep" />
        </div>
@@ -284,7 +273,7 @@
 </div>
 <div class="row" style="margin-left:10px">
      <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="ville">Ville : </label>
        <input class="form-control" type="text" name="ville" id="ville" />
  </div>
@@ -292,7 +281,7 @@
 </div>
 <div class="row" style="margin-left:10px">
     <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label"  for="tel">Téléphone Portable : </label>
        <input class="form-control" type="number" name="tel" id="tel" />
  </div>
@@ -300,7 +289,7 @@
 </div>
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label"  for="tel2">Téléphone fixe : </label>
        <input class="form-control" type="number" name="tel2" id="tel2" />
  </div>
@@ -309,7 +298,7 @@
 
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="email_rep">E-mail: </label>
 
        <input  class="form-control" type="text" name="email_rep" id="email_rep"  />
@@ -318,7 +307,7 @@
 </div>
 <div class="row" style="margin-left:10px">
    <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
        <label class="form-label" for="reemail_rep">Confirmez E-mail: </label>
        <label id="alert1" style="display:none; color:red;">Il faut retapez le mail</label>
        <input  class="form-control" type="text" name="reemail_rep" id="reemail_rep" onBlur="checkMail()"/>

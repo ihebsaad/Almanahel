@@ -207,6 +207,17 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					</div>
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
+					       <label for="email">E-mail : </label>
+					       <input class="form-control" type="text" name="email" id="email" />
+					 	</div>
+					 	<div class="col">
+					       <label for="reemail">Confirmez E-mail : </label>
+					       <span class="badge badge-alert" id="alertemail" style="display:none;">Il faut retaper le même email</span>
+					       <input class="form-control" type="text" name="reemail" id="reemail" />
+					 	</div>
+					</div>
+					<div class="row" style="margin-top: 10px">
+						<div class="col">
 					       <label for="type_etabliss">Etablissement d'origine où votre enfant est actuellement scolarisé : </label>
 
 					       <div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
@@ -269,6 +280,8 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					       <label for="moyenne_g">La moyenne générale : </label>
 					       <input class="form-control" type="number" step="any" name="moyenne_g" id="moyenne_g" placeholder="Moyenne générale" />
 						</div>
+						<div class="col"></div>
+						<div class="col"></div>
 					</div>
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
@@ -432,6 +445,11 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
 </div> 
 </div>
+<script type="text/javascript">
+	$( "#reemail" ).focusout(function() {
+		alert("f out");
 
+	});
+</script>
  
 @endsection

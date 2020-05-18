@@ -19,9 +19,7 @@
              <div class="calendar"></div>
  
  
-
- @section('footer-scripts')
-  
+ 
   <script>
   
   
@@ -77,6 +75,5 @@
 	
 	*/
 </script>
-@endsection
-
+ 
 

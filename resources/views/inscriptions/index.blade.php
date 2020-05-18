@@ -135,6 +135,66 @@
             </div>
         </div>
     </div>
+	
+	<script>
+	    function checkexiste( elm,type) {
+        var id=elm.id;
+        var val =document.getElementById(id).value;
+        //  var type = $('#type').val();
+
+        //if ( (val != '')) {
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: "{{ route('inscriptions.checkexiste') }}",
+            method: "POST",
+            data: {   val:val,type:type, _token: _token},
+            success: function (data) {
+
+           /*     if(data>0){
+                    alert('  Existe deja !');
+                    document.getElementById(id).style.background='#FD9883';
+                    document.getElementById(id).style.color='white';
+                } else{
+                    document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                }
+*/
+                if(data==''){
+                    parsed = JSON.parse(data);
+                    string='Erreur,faux id vérifiez ';
+               
+                   
+                   // alert(string);
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Faux id...',
+                        html: string
+                    });
+
+                    document.getElementById(id).style.background='#FD9883';
+                    document.getElementById(id).style.color='white';
+                    $('#btnaddinscription').prop(disabled, true);
+                } else{
+                    document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                     $('#btnaddinscription').prop(disabled, true);
+                    parsed = JSON.parse(data);
+                    string='Eleve existe: ! ';
+                    if(parsed['nom']!=null){string+='Nom : '+parsed['nom']+ ' - '; }
+                    if(parsed['prenom']!=null){string+='Prénom : '+parsed['prenom']+ ' - '; }
+                }
+
+
+
+
+            }
+        });
+        // } else {
+
+        // }
+    }
+	</script>
+	
      @endsection
 
 
@@ -256,62 +316,7 @@
 
  
         });
-         function checkexiste( elm,type) {
-        var id=elm.id;
-        var val =document.getElementById(id).value;
-        //  var type = $('#type').val();
-
-        //if ( (val != '')) {
-        var _token = $('input[name="_token"]').val();
-        $.ajax({
-            url: "{{ route('inscriptions.checkexiste') }}",
-            method: "POST",
-            data: {   val:val,type:type, _token: _token},
-            success: function (data) {
-
-           /*     if(data>0){
-                    alert('  Existe deja !');
-                    document.getElementById(id).style.background='#FD9883';
-                    document.getElementById(id).style.color='white';
-                } else{
-                    document.getElementById(id).style.background='white';
-                    document.getElementById(id).style.color='black';
-                }
-*/
-                if(data==''){
-                    parsed = JSON.parse(data);
-                    string='Erreur,faux id vérifiez ';
-               
-                   
-                   // alert(string);
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Faux id...',
-                        html: string
-                    });
-
-                    document.getElementById(id).style.background='#FD9883';
-                    document.getElementById(id).style.color='white';
-                    $(#[btnaddinscription]).prop(disabled, true);
-                } else{
-                    document.getElementById(id).style.background='white';
-                    document.getElementById(id).style.color='black';
-                     $(#[btnaddinscription]).prop(disabled, true);
-                    parsed = JSON.parse(data);
-                    string='Eleve existe: ! ';
-                    if(parsed['nom']!=null){string+='Nom : '+parsed['nom']+ ' - '; }
-                    if(parsed['prenom']!=null){string+='Prénom : '+parsed['prenom']+ ' - '; }
-                }
-
-
-
-
-            }
-        });
-        // } else {
-
-        // }
-    }
+     
 
     </script>
 

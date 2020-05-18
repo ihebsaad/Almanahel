@@ -8,18 +8,25 @@
 <script src="{{ asset('public/calendar/daygrid/main.js')}}"></script>
 <script src="{{ asset('public/calendar/list/main.js')}}"></script>
 <script  src="{{ asset('public/calendar/google-calendar/main.js')}}"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
+<script>document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
-   	  
-	  
-	  
-	  
-	  
-      events: [
+	
+
+	locale:'fr',
+      defaultDate: '2020-02-12',
+   header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,listYear'
+      },
+ 
+
+buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Liste'},
+buttonIcons: {next: 'right-single-arrow', prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
+ events: [
         {
           title: 'All Day Event',
           start: '2020-02-01'

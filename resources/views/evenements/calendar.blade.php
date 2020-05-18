@@ -18,7 +18,7 @@
       plugins: [ 'interaction', 'dayGrid', 'list', 'googleCalendar' ],
 
       header: {
-        left: 'prev,next today',
+        left: "Préc,Suiv Aujourd'hui",
         center: 'title',
         right: 'dayGridMonth,listYear'
       },

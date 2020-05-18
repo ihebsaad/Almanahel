@@ -158,7 +158,9 @@
                     document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
                 }
-*/
+*/                    parsed = JSON.parse(data);
+                    alert(parsed);
+
                 if(data==''){
                     parsed = JSON.parse(data);
                     string='Erreur,faux id vérifiez ';

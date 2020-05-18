@@ -22,11 +22,19 @@
   });
   
   
+$(function() {
 
+  // page is now ready, initialize the calendar...
+
+  $('#calendar').fullCalendar({
+    // put your options and callbacks here
+  })
+
+});
   
   $(document).ready(function(){
 
-     $('#calendar').fullCalendar({
+   /*  $('#calendar').fullCalendar({
     header: {
         left: 'prev,next today',
         center: 'title',
@@ -68,7 +76,7 @@
         },
     ]
 });   
-
+*/
 
     $("select#elevestat").change(function(){
         $(this).find("option:selected").each(function(){

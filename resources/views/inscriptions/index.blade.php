@@ -161,6 +161,8 @@
 */                    parsed = JSON.parse(data);
                     alert(data);
                     alert(parsed);
+                    alert(data['name']);
+                    alert(parsed['name']);
 
                 if(data==''){
                     parsed = JSON.parse(data);

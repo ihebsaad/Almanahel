@@ -396,6 +396,17 @@ if(empty($parent))
         }
     }
  return $mdp; }
+  public static function checkexiste(Request $request)
+    {
+        $id =  trim($request->get('id'));
+        $type=trim($request->get('type'));
+       
+
+         $user= User::where('id', $id)
+            ->orWhere($id,$type)->first();
+     return json_encode($user) ;
+
+    }
 
  
  

@@ -16,9 +16,11 @@
 	
 	firstDay:1,
 	locale:'fr',
+	     navLinks: true,
+	  businessHours: true, // display business hours
+
       defaultDate: '<?php echo date("Y-m-d");?>' ,
-	 // defaultDate: '<?php echo date('Y-m-d');?>',
-   header: {
+    header: {
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,listYear'

@@ -26,6 +26,9 @@ Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact
 
 Route::post('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));
 
+
+Route::post('/inscriptions/store','InscriptionsController@store')->name('inscriptions.store');
+
 Auth::routes();
 
 
@@ -174,7 +177,6 @@ Route::post('/classes/removeenseignantclass','ClassesController@removeenseignant
 Route::get('/inscriptions/create','InscriptionsController@create')->name('inscriptions.create');
 Route::get('/inscriptions/create_front','InscriptionsController@create')->name('inscriptions.create_front');
 Route::post('/inscriptions/updating','InscriptionsController@updating')->name('inscriptions.updating');
-Route::post('/inscriptions/store','InscriptionsController@store')->name('inscriptions.store');
 Route::get('/inscriptions/destroy/{id}', 'InscriptionsController@destroy');
 Route::get('/inscriptions', array('as' => 'inscriptions','uses' => 'InscriptionsController@index'));
 Route::get('/inscriptions/view/{id}', 'InscriptionsController@view');

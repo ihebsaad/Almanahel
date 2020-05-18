@@ -207,8 +207,8 @@
                     data:{champ:champ, _token:_token},
                     success:function(data){
 
-                        //   alert('Added successfully');
-                        window.location =data;
+                     alert('Added successfully');
+                      //  window.location =data;
 
                     }
                 });

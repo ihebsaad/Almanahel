@@ -61,7 +61,6 @@ Route::post('/actualites/saving','ActualitesController@saving')->name('actualite
 Route::post('/actualites/updating','ActualitesController@updating')->name('actualites.updating');
 Route::get('/actualites/view/{id}', 'ActualitesController@view');
 Route::get('/actualites/destroy/{id}', 'ActualitesController@destroy');
-Route::get('/actualites/destroy/{id}', 'ActualitesController@destroy');
 Route::get('/actualites/create/', 'ActualitesController@create')->name('actualites.create');
 Route::post('/actualites/store/', 'ActualitesController@store')->name('actualites.store');
 Route::post('/actualites/edit/', 'ActualitesController@edit')->name('actualites.edit');
@@ -74,7 +73,6 @@ Route::post('/annonces/saving','AnnoncesController@saving')->name('annonces.savi
 Route::post('/annonces/updating','AnnoncesController@updating')->name('annonces.updating');
 Route::get('/annonces/view/{id}', 'AnnoncesController@view');
 Route::get('/annonces/destroy/{id}', 'AnnoncesController@destroy');
-Route::get('/annonces/destroy/{id}', 'AnnoncesController@destroy');
 Route::get('/annonces/create/', 'AnnoncesController@create')->name('annonces.create');
 Route::post('/annonces/store/', 'AnnoncesController@store')->name('annonces.store');
 Route::post('/annonces/edit/', 'AnnoncesController@edit')->name('annonces.edit');
@@ -85,7 +83,6 @@ Route::post('/annonces/edit/', 'AnnoncesController@edit')->name('annonces.edit')
 Route::post('/evenements/saving','EvenementsController@saving')->name('evenements.saving');
 Route::post('/evenements/updating','EvenementsController@updating')->name('evenements.updating');
 Route::get('/evenements/view/{id}', 'EvenementsController@view');
-Route::get('/evenements/destroy/{id}', 'EvenementsController@destroy');
 Route::get('/evenements/destroy/{id}', 'EvenementsController@destroy');
 Route::get('/evenements/create/', 'EvenementsController@create')->name('evenements.create');
 Route::post('/evenements/store/', 'EvenementsController@store')->name('evenements.store');
@@ -99,7 +96,6 @@ Route::post('/retards/saving','RetardsController@saving')->name('retards.saving'
 Route::post('/retards/updating','RetardsController@updating')->name('retards.updating');
 Route::get('/retards/view/{id}', 'RetardsController@view');
 Route::get('/retards/destroy/{id}', 'RetardsController@destroy');
-Route::get('/retards/destroy/{id}', 'RetardsController@destroy');
 Route::get('/retards/create/', 'RetardsController@create')->name('retards.create');
 Route::post('/retards/store/', 'RetardsController@store')->name('retards.store');
 Route::post('/retards/edit/', 'RetardsController@edit')->name('retards.edit');
@@ -112,10 +108,20 @@ Route::post('/absences/saving','AbsencesController@saving')->name('absences.savi
 Route::post('/absences/updating','AbsencesController@updating')->name('absences.updating');
 Route::get('/absences/view/{id}', 'AbsencesController@view');
 Route::get('/absences/destroy/{id}', 'AbsencesController@destroy');
-Route::get('/absences/destroy/{id}', 'AbsencesController@destroy');
 Route::get('/absences/create/', 'AbsencesController@create')->name('absences.create');
 Route::post('/absences/store/', 'AbsencesController@store')->name('absences.store');
 Route::post('/absences/edit/', 'AbsencesController@edit')->name('absences.edit');
+ 
+ 
+/*** Envoyes  **/
+ Route::get('/envoyes', array('as' => 'envoyes','uses' => 'EnvoyesController@index'));
+Route::post('/envoyes/saving','EnvoyesController@saving')->name('envoyes.saving');
+ Route::post('/envoyes/sending','EnvoyesController@updating')->name('envoyes.sending');
+Route::get('/envoyes/view/{id}', 'EnvoyesController@view');
+Route::get('/envoyes/destroy/{id}', 'EnvoyesController@destroy');
+Route::get('/envoyes/send/', 'EnvoyesController@send')->name('envoyes.send');
+Route::post('/envoyes/store/', 'EnvoyesController@store')->name('envoyes.store');
+Route::post('/envoyes/edit/', 'EnvoyesController@edit')->name('envoyes.edit');
  
  
  

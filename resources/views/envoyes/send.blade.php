@@ -3,6 +3,11 @@
 
  
 @section('content')
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+
+
     <style>
         .uper {
             margin-top: 40px;
@@ -22,74 +27,35 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('absences.store') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('envoyes.sending') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
-			  	<div class="form-group">
-                    <label for="classe">Classe:</label>
-                    <select id="classe" type="number" class="form-control select2" name="classe" style="height:38px;">
-					 <option></option>
-					<?php $classes= \App\Classe::get(); 
-						foreach($classes as $cl)
-						{
-						echo ' <option value="'.$cl->id.'">'.$cl->titre.'</option>';
-	
-						}
-					?>
- 					</select>
-                </div>
-				<?php use \App\Http\Controllers\ClassesController; ?>
-				
-				
-                <div class="form-group">
-                    <label for="eleve">Elève:</label>
-                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
-					<option></option>
-					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
-						foreach($eleves as $el)
-						{
-							$classe=ClassesController::ClasseEleve($el->id);
-						echo ' <option   value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
-	
-						}
-					?>
-					</select>
-                </div>		
-                <div class="form-group">
-                    <label for="seance">Séance:</label>
-                    <input id="seance" type="text" class="form-control" name="seance"/>
-                </div>						
-                <div class="form-group">
-                    <label for="details">Détails:</label>
-                    <textarea id="details" type="text" class="form-control" name="details" ></textarea>
-                </div>		
-				<div class="form-group">
-				<label for="datetimepicker1">Début:</label>
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" name="debut" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-				</div>
-				
-				<div class="form-group">
-				<label for="datetimepicker2">Fin:</label>				
-                <div class='input-group date' id='datetimepicker2'>
-                    <input type='text' class="form-control" name="fin" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
 			 
-				
+			 <?php use \App\Http\Controllers\UsersController;
+ 
+    $CurrentUser = auth()->user();
+
+    $iduser=$CurrentUser->id;
+
+    ?>
+	 		  <input id="emetteur" type="hidden" value="<?php echo $iduser; ?>" name="emetteur"  />
+
+                <div class="form-group">
+                    <label for="destinataire">Destinataire:</label>
+                    <input id="destinataire" type="text" class="form-control" name="destinataire"/>
+                </div>						
+               
+			 <div class="form-group">
+                    <label for="sujet">Sujet:</label>
+                    <input id="sujet" type="text" class="form-control" name="sujet"/>
+             </div>	
 				<div class="form-group ">
-
-             <label class="check "> <input type="checkbox" name="email"  value="1" checked/>Envoyer un Email aux parents</label>
-					</div>
-
+                    <label for="contenu">Contenu:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="contenu" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ></textarea>
+                    </div>
+				</div>
           <div class="form-group ">
-      <button  type="submit"  class="btn btn-primary">Ajouter</button>
+      <button  type="submit"  class="btn btn-primary">Envoyer</button>
   			 </div>
 
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->

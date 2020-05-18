@@ -20,9 +20,9 @@
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6">Absences</div>
+                <div class="col-lg-6">Emails Envoyés</div>
                 <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('AbsencesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une absence</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('EnvoyesController@send')}}" ><b><i class="fas fa-plus"></i> Ajouter une envoye</b></a>
                 </div>
             </div>
         </div>
@@ -31,28 +31,28 @@
             <thead>
             <tr id="headtable">
                 <th style="width:5%">N°</th>
-                <th style="width:20%">Classe</th>
-                <th style="width:20%">Elève</th>
-                <th style="width:10%">Début</th>
-                <th style="width:10%">Fin</th>
+                <th style="width:15%">Date</th>
+                <th style="width:20%">Emetteur</th>
+                <th style="width:30%">Sujet</th>
+				 <th style="width:15%">Destinataire</th>
                  <th style="width:10%">Actions</th>
               </tr>
          
             </thead>
             <tbody>
-            @foreach($absences as $absence )
+            @foreach($envoyes as $envoye )
    
 
                 <tr>
-                    <td style="width:5%" ><a href="{{action('AbsencesController@view', $absence['id'])}}" >{{$absence->id}}</a></td>
-                    <td style="width:20%" ><?php echo $absence['classe'];?> </td>
-                    <td style="width:20%" ><?php echo $absence['eleve'];?> </td>
-                    <td style="width:10%" ><?php echo $absence['debut'];?> </td>
-                    <td style="width:10%" ><?php echo $absence['fin'];?> </td>
+                    <td style="width:5%" ><a href="{{action('EnvoyesController@view', $envoye['id'])}}" >{{$envoye->id}}</a></td>
+                    <td style="width:15%" ><?php echo $envoye['created_at'];?> </td>
+                    <td style="width:20%" ><?php echo $envoye['emetteur'];?> </td>
+                    <td style="width:30%" ><?php echo $envoye['sujet'];?> </td>
+                    <td style="width:15%" ><?php echo $envoye['destinataire'];?> </td>
  
 					<td style="width:10%"   >
                         @can('isAdmin')
-                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('AbsencesController@destroy', $absence['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('EnvoyesController@destroy', $envoye['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                                 <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
                         @endcan
@@ -64,10 +64,7 @@
         </table>
     </div>
 
-
-
-
-
+ 
     <?php use \App\Http\Controllers\UsersController;
     $users=UsersController::ListeUsers();
 
@@ -76,38 +73,7 @@
     $iduser=$CurrentUser->id;
 
     ?>
-    <!-- Modal -->
-    <div class="modal fade" id="create"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ajouter une Actualité</h5>
-
-                </div>
-                <div class="modal-body">
-                    <div class="card-body">
-
-                        <form method="post" >
-                            {{ csrf_field() }}
-
-                            <div class="form-group">
-                                <label for="type">Titre :</label>
-                                <input class="form-control" type="text" id="titre" />
-
-                            </div>
-
-                        </form>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                    <button type="button" id="add" class="btn btn-primary">Ajouter</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+   
 <script>
    function changing(elm,actus) {
             var champ=elm.id;
@@ -119,7 +85,7 @@
             //if ( (val != '')) {
             var _token = $('input[name="_token"]').val();
             $.ajax({
-                url: "{{ route('absences.updating') }}",
+                url: "{{ route('envoyes.updating') }}",
                 method: "POST",
                 data: {actus:actus , champ:champ ,val:val, _token: _token},
                 success: function (data) {

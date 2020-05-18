@@ -300,11 +300,11 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						<div class="col">
 					       <label for="clubs">Votre enfant souhaite-t-il intégrer un Club ? </label>
 					      <div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="clubs" id="clubs1" value="1">
+							  <input class="form-check-input" type="radio" name="clubs" id="clubs1" value="1"  onfocusout="clubverif()">
 							  <label class="form-check-label" for="clubs1">Oui</label>
 							</div>
 							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="clubs" id="clubs2" value="0">
+							  <input class="form-check-input" type="radio" name="clubs" id="clubs2" value="0" onfocusout="clubverif1()" >
 							  <label class="form-check-label" for="clubs2">Non</label>
 							</div>
 						</div>
@@ -446,5 +446,38 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
 </div> 
 </div>
- 
+ <script type="text/javascript">
+ 	function clubverif()
+{
+  var clubs = document.getElementById("clubs").value;
+  
+
+ if(clubs==true)
+{
+document.getElementById('sect1').style.display = 'block'; 
+document.getElementById('sect2').style.display = 'block'; 
+}
+else
+{
+  document.getElementById('sect1').style.display = 'none'; 
+document.getElementById('sect2').style.display = 'none'; 
+}}
+function clubverif1()
+{
+  var clubs = document.getElementById("clubs").value;
+  
+
+ if(clubs==false)
+{
+document.getElementById('sect1').style.display = 'block'; 
+document.getElementById('sect2').style.display = 'block'; 
+}
+else
+{
+  document.getElementById('sect1').style.display = 'none'; 
+document.getElementById('sect2').style.display = 'none'; 
+}}
+
+
+ </script>
 @endsection

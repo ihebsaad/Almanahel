@@ -14,9 +14,9 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 <section>
 <?php // echo $contenu; ?>
 
-@include('evenements.calendar')
+@include('evenements.annee')
 
-
+ 
 </section>
 </div>
 

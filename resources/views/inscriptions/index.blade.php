@@ -180,8 +180,8 @@
                      $('#btnaddinscription').prop('disabled', true);
                     parsed = JSON.parse(data);
                     string='Eleve existe: ! ';
-                    if(parsed['nom']!=null){string+='Nom : '+parsed['nom']+ ' - '; }
-                    if(parsed['prenom']!=null){string+='Prénom : '+parsed['prenom']+ ' - '; }
+                    if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
+                    if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }
                 }
 
 

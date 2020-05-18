@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
 
- 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
 
 @section('content')
     <style>
@@ -11,7 +11,11 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des pré-inscriptions</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('InscriptionsController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une inscription"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
+            <div class="col-md-8"><H2> Liste des pré-inscriptions</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('InscriptionsController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une inscription"  class="fa fa-fw fa-plus fa-2x"></span></a>
+
+             <button style="float:right" id="add1" class="btn btn-md btn-default"   data-toggle="modal" data-target="#adding1"><b>  Ancien Élève </b></button>
+
+                        </a><br></div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">
         <thead>
@@ -85,8 +89,52 @@
             @endforeach
             </tbody>
         </table>
+<!-- Modal Tels -->
+     <div class="modal fade" id="adding1"   role="dialog" aria-labelledby="exampleModal01" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal1">Ancien Élève</h5>
 
-    @endsection
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+
+                        <div class="form-group">
+
+                            <form   id="ff" name="">
+                                {{ csrf_field() }}
+
+
+
+
+                                <div class="form-group " >
+                                    <label for="champ1">Ancien Élève</label>
+                                    <div class=" row  ">
+                                        <input class="form-control" type="number" required id="champ1"  onchange="checkexiste(this,'id')" />
+
+                                    </div>
+                                </div>
+
+                                
+
+
+
+                            </form>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <span type="button" id="btnaddtel" class="btn btn-primary">Chercher</span>
+                </div>
+            </div>
+        </div>
+    </div>
+     @endsection
 
 
 

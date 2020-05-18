@@ -428,12 +428,12 @@ $(document).on('click', '#majslider', function() {
                     beforeSend: function() 
                     {
 
-                       $('#successOrfailedUpload').modal('show');
+                      /* $('#successOrfailedUpload').modal('show');
                         $("#successUloadExterneFile").html('<div align="left"><img src="{{ URL::asset('public/img/progress.gif')}}" width="100%" height="8%" align="absmiddle" title="Upload...."/></div>');
                          setTimeout(function() {
                             
                                                   },2000); 
-                       $('#successOrfailedUpload').modal('hide');
+                       $('#successOrfailedUpload').modal('hide');*/
                      
                        
                     },

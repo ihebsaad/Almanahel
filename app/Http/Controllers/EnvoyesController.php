@@ -101,7 +101,8 @@ class EnvoyesController extends Controller
         $swiftTransport->setPassword('ihebssss'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
-        if (Mail::setSwiftMailer($swiftMailer);
+		Mail::setSwiftMailer($swiftMailer);
+        if (
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)

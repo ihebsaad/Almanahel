@@ -204,7 +204,7 @@
 } ?>
 
 <div class="row" style="margin-left:10px">
-   <
+   
       <div class="col">
        <label  for="niveau">les horaires d'activités de club : </label>
        
@@ -227,7 +227,7 @@
    <input type="checkbox" id="heure_12h" name="heure_12h" onchange="changing1(this)"   value="1"   <?php if ($inscription->heure_12h ==1){echo 'checked';} ?>>
  </div>
      </div>
-   </div>
+ 
 <div class="row" style="margin-left:15px">
   
  <div class="col">

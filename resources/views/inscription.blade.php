@@ -212,11 +212,11 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					 	</div>
 					 	<div class="col">
 					       <label for="reemail">Confirmez E-mail : </label>
-					       <span class="badge badge-alert" id="alertemail" style="display:none;">Il faut retaper le même email</span>
+					       <span class="badge badge-danger" id="alertemail" style="display:none;">Il faut retaper le même email</span>
 					       <input class="form-control" type="text" name="reemail" id="reemail" />
 					 	</div>
 					</div>
-					<div class="row" style="margin-top: 10px">
+					<div class="row" style="margin-top: 20px">
 						<div class="col">
 					       <label for="type_etabliss">Etablissement d'origine où votre enfant est actuellement scolarisé : </label>
 

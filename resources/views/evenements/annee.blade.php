@@ -23,12 +23,14 @@
   <script>
 	 var currentYear = new Date().getFullYear();
 
-  
+      $('.calendar').data('calendar').setDataSource(dataSource);
+    var dataSource = $('.calendar').data('calendar').getDataSource();
+
       $('.calendar').calendar( { 
 
 	//firstDay:1,
 	//locale:'fr'
-	
+	language:'fr',
 	dataSource: [
             {
                 id: 0,

@@ -31,7 +31,7 @@
       googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
 
       // US Holidays
-    //  events: 'en.usa#holiday@group.v.calendar.google.com',
+       events: 'fr.tn#holiday@group.v.calendar.google.com',
 
       eventClick: function(arg) {
         // opens events in a popup window

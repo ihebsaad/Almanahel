@@ -16,13 +16,11 @@
  <script  src="{{ asset('public/js/jquery.bootstrap.year.calendar.js') }}"  type="text/javascript"></script>
  <link rel="stylesheet" href="{{ asset('public/css/jquery.bootstrap.year.calendar.css') }}"   > 
 
-@section('content')
-Calendrier Général
+ Calendrier Général
 <div class="container">
             <div class="calendar"></div>
 </div>
-@endsection
-
+ 
 
  @section('footer-scripts')
   

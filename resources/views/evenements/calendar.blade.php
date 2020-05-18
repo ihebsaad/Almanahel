@@ -13,11 +13,9 @@
             crossorigin="anonymous"></script>
      -->
   
-@section('content')
-Calendrier des événements 
+ Calendrier des événements 
              <div id="calendar"></div>
- @endsection
-
+ 
 
  @section('footer-scripts')
   

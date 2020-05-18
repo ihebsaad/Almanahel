@@ -16,7 +16,7 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
 	  	 locale: 'fr',
-       defaultDate: "<?php echo date('Y-m-d');?>",
+    //   defaultDate: "<?php echo date('Y-m-d');?>",
     navLinks: true,
    events: [
         {

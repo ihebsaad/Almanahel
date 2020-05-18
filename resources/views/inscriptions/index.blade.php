@@ -159,27 +159,29 @@
                     document.getElementById(id).style.color='black';
                 }
 */                    parsed = JSON.parse(data);
-                    alert(data);
-                   // alert(parsed);
-                  //  alert(data['name']);
-                    alert(parsed['name']);
-
-                if(data!==''){
-                    document.getElementById(id).style.background='white';
-                    document.getElementById(id).style.color='black';
-                     $('#btnaddinscription').prop('disabled', false);
-                    parsed = JSON.parse(data);
-                    string='Eleve existe: ! ';
-                    if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
-                    if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; } 
-                    
-                } else{
-                     document.getElementById(id).style.color='black';
-                     $('#btnaddinscription').prop('disabled', true);
-                    parsed = JSON.parse(data);
-                    string="Eleve n'existe pas Verifiez: ! ";
                    
+                if(parsed['name']==''){
+                     string='Erreur,faux id vérifiez ';
+               
+                   
+                     Swal.fire({
+                        type: 'error',
+                        title: 'Faux id...',
+                        html: string
+                    });
 
+                    document.getElementById(id).style.background='#FD9883';
+                    document.getElementById(id).style.color='white';
+                    $('#btnaddinscription').prop('disabled', true);
+                } else{
+                     document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                     $('#btnaddinscription').prop('disabled', true);
+                     string='Eleve existe: ! ';
+                    if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
+                    if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }
+
+					alert(string);					
                 }
 
 

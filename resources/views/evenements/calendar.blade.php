@@ -51,7 +51,8 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
  
   eventSources: [
      {
-      events: 'ar.tn#holiday@group.v.calendar.google.com',
+		googleCalendarId:'ihebs002@gmail.com', 
+     // events: 'ar.tn#holiday@group.v.calendar.google.com',
       color: 'yellow',   // an option!
       textColor: 'black' // an option!
     },

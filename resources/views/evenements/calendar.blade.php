@@ -34,38 +34,61 @@
       googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
 
       // TN Holidays
-     //  events: 'ar.tn#holiday@group.v.calendar.google.com',
-events: [{
-            title: 'Front-End Conference',
-            start: '2018-11-16',
-            end: '2018-11-18'
+      // events: 'ar.tn#holiday@group.v.calendar.google.com', 
+	   businessHours: true, // display business hours
+      editable: true,
+      events: [
+        {
+          title: 'Business Lunch',
+          start: '2020-02-03T13:00:00',
+          constraint: 'businessHours'
         },
         {
-            title: 'Hair stylist with Mike',
-            start: '2018-11-20',
-            allDay: true
+          title: 'Meeting',
+          start: '2020-02-13T11:00:00',
+          constraint: 'availableForMeeting', // defined below
+          color: '#257e4a'
         },
         {
-            title: 'Car mechanic',
-            start: '2018-11-14T09:00:00',
-            end: '2018-11-14T11:00:00'
+          title: 'Conference',
+          start: '2020-02-18',
+          end: '2020-02-20'
         },
         {
-            title: 'Dinner with Mike',
-            start: '2018-11-21T19:00:00',
-            end: '2018-11-21T22:00:00'
+          title: 'Party',
+          start: '2020-02-29T20:00:00'
+        },
+
+        // areas where "Meeting" must be dropped
+        {
+          groupId: 'availableForMeeting',
+          start: '2020-02-11T10:00:00',
+          end: '2020-02-11T16:00:00',
+          rendering: 'background'
         },
         {
-            title: 'Chillout',
-            start: '2018-11-15',
-            allDay: true
+          groupId: 'availableForMeeting',
+          start: '2020-02-13T10:00:00',
+          end: '2020-02-13T16:00:00',
+          rendering: 'background'
+        },
+
+        // red areas where no events can be dropped
+        {
+          start: '2020-02-24',
+          end: '2020-02-28',
+          overlap: false,
+          rendering: 'background',
+          color: '#ff9f89'
         },
         {
-            title: 'Vacation',
-            start: '2018-11-23',
-            end: '2018-11-29'
-        },
-    ],
+          start: '2020-02-06',
+          end: '2020-02-08',
+          overlap: false,
+          rendering: 'background',
+          color: '#ff9f89'
+        }
+      ],
       eventClick: function(arg) {
         // opens events in a popup window
         window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');

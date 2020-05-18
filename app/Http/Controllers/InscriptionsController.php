@@ -427,6 +427,7 @@ if(empty($parent))
                 'ideleve' => $user['id'],
                 'eleve' => $user['id'],
                   ]);
+           $inscription->save();
 
             return redirect('/inscriptions')->with('success', '  ajouté  avec succès');
             

@@ -466,11 +466,17 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
     </div>
-    <div class="telechargeform partie">
-    	Télécharger le formulaire en pdf
+    <div class="telechargeform partie" style="margin-top: 20px">
+    	<p>1- Veuillez télécharger ce formulaire en pdf (<a href="{{  URL::asset('public/site/Demande_Pre-inscription.pdf') }}" download>lien de téléchargement</a>)</p>
+		<p>2- le remplir et le signer</p>
+		<p>3- le déposer, avec une copie des deux derniers bulletins de notes, au secrétariat du lycée.</p>
     </div>
 	</div>
-    <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
+    <div class="ancien box">
+		<p>1- Veuillez télécharger ce formulaire en pdf (<a href="{{  URL::asset('public/site/Demande_inscription.pdf') }}" download>lien de téléchargement</a>)</p>
+		<p>2- le remplir et le signer</p>
+		<p>3- le déposer, avec le formulaire de règlement Intérieur et le frais d'inscription, au secrétariat du lycée.</p>
+    </div>
 </div> 
 </div>
  <script type="text/javascript">

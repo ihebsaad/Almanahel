@@ -65,7 +65,7 @@ events: [{
             start: '2018-11-23',
             end: '2018-11-29'
         },
-    ]
+    ],
       eventClick: function(arg) {
         // opens events in a popup window
         window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');

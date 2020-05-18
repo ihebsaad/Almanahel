@@ -371,8 +371,9 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
-					       <label for="fichierpartg">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
-					       <input class="form-control" type="file"  name="fichierpartg" id="fichierpartg" />
+					       <label for="bulletin1">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
+					       <input type="file" accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin1" id="bulletin1" class="form-control" />
+					       <input type="file"  accept="image/png, image/jpeg,image/jpg,.pdf" name="bulletin2" id="bulletin2" class="form-control" />
 					    </div>
 					</div>
 
@@ -417,8 +418,8 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					</div>
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
-					       <label for="email">E-mail : </label>
-					       <input class="form-control" type="text" name="email" id="email" placeholder="Veuillez entrer votre adresse email" />
+					       <label for="email_rep">E-mail : </label>
+					       <input class="form-control" type="text" name="email_rep" id="email_rep" placeholder="Veuillez entrer votre adresse email" />
 					 	</div>
 					    
 					</div>

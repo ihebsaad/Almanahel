@@ -58,7 +58,15 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
     },
 	{
    events: [
-<?php			$liste=\App\Evenement::get();
+   {
+      title: 'Event1',
+      start: '2020-05-10'
+    },
+    {
+      title: 'Event2',
+      start: '2020-05-15'
+    }
+<?php /*			$liste=\App\Evenement::get();
 		$ct=count($liste);	 
 		$i=0;
     if ($ct>0) {
@@ -85,6 +93,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 		
 	 	}// end foreach
    }//end if
+	*/
 	?>			 
 			 
   /*

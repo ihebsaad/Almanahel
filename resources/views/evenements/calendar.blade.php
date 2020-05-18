@@ -57,7 +57,37 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
       textColor: 'white' // an option!
     },
 	{
-  events: [
+   events: [
+<?php			$liste=\App\Evenement::get();
+		$ct=count($liste);	 
+		$i=0;
+    if ($ct>0) {
+	  foreach($liste as $event)  
+	  {$i++;
+				$titre=$event->titre;
+ 				 $debut = DateTime::createFromFormat('d/m/Y', $event->debut );
+ 				 $fin = DateTime::createFromFormat('d/m/Y', $event->fin );
+				 $debut=$debut->format('Y-m-d');
+				 $fin=$fin->format('Y-m-d');
+ 				  //$start=$date.'T'.$debut;
+				 //$debut =substr ($reserv['Reservation']['debut'],0 , strlen($reserv['Reservation']['debut'])-3 );
+  				// $end=$date.'T'.$fin;
+				 //$fin =substr ($reserv['Reservation']['fin'],0 , strlen($reserv['Reservation']['fin'])-3 );
+ 				 
+	 // }
+				echo 
+				"{
+					title: '"  . $titre ."',
+					start:  '".  $debut. "' ,
+					end: '". $fin ."' 
+ 				} ";
+			 	if($i<$ct){echo ',';}
+		
+	 	}// end foreach
+   }//end if
+	?>			 
+			 
+  /*
     {
       title: 'Event1',
       start: '2020-05-10'
@@ -66,7 +96,8 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
       title: 'Event2',
       start: '2020-05-15'
     }
-    // etc...
+    // etc...*/
+	
   ],
   color: '#028dc8',   // an option!
   textColor: 'white' // an option!

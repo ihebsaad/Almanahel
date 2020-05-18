@@ -123,7 +123,7 @@ class EnvoyesController extends Controller
 		  
 	
 	}
-
+/*
     public function updating(Request $request)
     {
 
@@ -131,9 +131,8 @@ class EnvoyesController extends Controller
         $champ= strval($request->get('champ'));
        $val= $request->get('val');
        Envoye::where('id', $id)->update(array('visible' => $val));
-
  
-    }
+    }*/
 
     /**
      * Display the specified resource.

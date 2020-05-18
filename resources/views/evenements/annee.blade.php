@@ -83,7 +83,7 @@ function saveEvent() {
     $('#event-modal').modal('hide');
 }
 
-$(function() {
+    $(document).ready(function(){
     var currentYear = new Date().getFullYear();
 
     $('#calendar').calendar({

@@ -19,7 +19,7 @@
 
 .notify h1 { margin-bottom: 6px; }
 
-.successbox h1 { color: #1fa843; }
+.successbox h1 { color: #81b48f; }
 
 .successbox h1:before, .successbox h1:after { background: #cad8a9; }
 .errorbox h1:before, .errorbox h1:after { background: #d6b8b7; }
@@ -33,9 +33,10 @@
 <div class="container">
 <div class="row" style="text-align: center;padding-bottom: 20px;padding-top: 40px">
 <div class="notify successbox">
-	<h1>Success!</h1>
-	<span class="alerticon"><img src="http://s22.postimg.org/i5iji9hv1/check.png"  /></span>
-	<p>Thanks so much for your message. We check e-mail frequently and will try our best to respond to your inquiry.</p>
+	<h1>Bien reçu!</h1>
+	<span class="alerticon"><img src="{{  URL::asset('public/site/img/success.png') }}" width=80 /></span>
+	<p>Votre demande de préinscription est bien reçue.</br>
+Une fois la préinscription est validée, vous recevrez un email de confirmation de la validation de la demande, et promettant qu'il sera tenu au courant de l'issue de sa demande dans les plus brefs délais.</p>
 </div>
 </div>
 </div>

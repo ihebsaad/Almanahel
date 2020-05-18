@@ -187,6 +187,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
                         {{ csrf_field() }}
 					<fieldset>
 						<input  value="2020" type="hidden" name="annee" id="annee" />
+						<input  value="front" type="hidden" name="sourcepg" id="sourcepg" />
 					<div class="row sectionform">L'élève</div>
 					<div class="row">
 	    				<div class="col">
@@ -450,7 +451,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					    
 					</div>
 					<div class="row" style="margin-top: 20px">
-						<span class="badge badge-warning">Une fois la pré-inscription est validée, vous recevrez un email de confirmation de la validation de la  demande, et promettant qu'il sera tenu au courant de l'issue de sa demande dans les plus brefs délais.</span>
+						<span class="badge badge-warning">Une fois la pré-inscription est validée, vous recevrez un email de confirmation de la validation de la demande, et promettant qu'il sera tenu au courant de l'issue de sa demande dans les plus brefs délais.</span>
 					</div>
 					   </fieldset>
 					    <div class="row form-group" style="margin-top:20px;margin-bottom:20px">

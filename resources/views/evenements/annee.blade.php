@@ -21,7 +21,8 @@
  
  
   <script>
-  
+      var currentYear = new Date().getFullYear();
+
   
       $('.calendar').calendar( { 
 	   

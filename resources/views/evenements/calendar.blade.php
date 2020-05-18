@@ -103,6 +103,19 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
           start: '2020-05-28'
         }
       ]
+    ,
+      eventClick: function(arg) {
+        // opens events in a popup window
+        window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');
+
+        arg.jsEvent.preventDefault() // don't navigate in main tab
+      },
+
+      loading: function(bool) {
+        document.getElementById('loading').style.display =
+          bool ? 'block' : 'none';
+      }
+
     });
 
     calendar.render();
@@ -136,4 +149,4 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 
   <div id='calendar'></div>
  
-<?php echo date('Y-m-d');?>
+ 

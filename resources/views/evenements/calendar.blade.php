@@ -16,7 +16,7 @@
 	
 	firstDay:1,
 	locale:'fr',
-      defaultDate: '2020-02-12',
+      defaultDate: '2020-05-18',
    header: {
         left: 'prev,next today',
         center: 'title',
@@ -135,3 +135,4 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 
   <div id='calendar'></div>
  
+<?php echo date('Y-m-d');?>

@@ -21,6 +21,7 @@ Route::get('/presentation', array('as' => 'presentation','uses' => 'HomeControll
 Route::get('/formation', array('as' => 'formation','uses' => 'HomeController@formation'));
 Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scolaire'));
 Route::get('/inscription', array('as' => 'inscription','uses' => 'HomeController@inscription'));
+Route::get('/bienvenue', array('as' => 'bienvenue','uses' => 'HomeController@bienvenue'));
 Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
 
 Route::post('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));

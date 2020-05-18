@@ -445,11 +445,5 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     <div class="ancien box">Vous etes <strong>ancien</strong> eleve</div>
 </div> 
 </div>
-<script type="text/javascript">
-	$( "#reemail" ).focusout(function() {
-		alert("f out");
-
-	});
-</script>
  
 @endsection

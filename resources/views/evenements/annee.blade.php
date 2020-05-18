@@ -25,7 +25,7 @@
   
       $('.calendar').calendar( { 
 	   
-	firstDay:1,
+	//firstDay:1,
 	locale:'fr'
 	 } );
 

@@ -24,16 +24,9 @@
   
   
       $('.calendar').calendar( { 
-	  events:{
-		 {
-      title: 'Event1',
-      start: '2020-05-10'
-		},
-		{
-      title: 'Event2',
-      start: '2020-05-15'
-		} 
-			}
+	   
+	firstDay:1,
+	locale:'fr'
 	 } );
 
 /*

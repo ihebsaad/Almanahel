@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
       plugins: [ 'interaction', 'dayGrid' ],
       defaultDate: '2020-02-12',
       editable: true,
-      eventLimit: true, // allow "more" link when too many events
+ 	  
+	  
+	  
+	  
+	  
       events: [
         {
           title: 'All Day Event',

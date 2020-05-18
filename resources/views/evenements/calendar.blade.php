@@ -24,7 +24,7 @@
         right: 'dayGridMonth,listYear'
       },
 
-      displayEventTime: true, // don't show the time column in list view
+    //  displayEventTime: true, // don't show the time column in list view
   defaultDate: '<?php echo date('Y-m-d');?>',
     navLinks: true,
    
@@ -35,7 +35,7 @@
 
       // TN Holidays
       // events: 'ar.tn#holiday@group.v.calendar.google.com', 
-	   businessHours: true, // display business hours
+	//   businessHours: true, // display business hours
        events: [
         {
           title: 'All Day Event',

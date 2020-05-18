@@ -21,10 +21,10 @@
  
  
   <script>
+	 var currentYear = new Date().getFullYear();
 
   
       $('.calendar').calendar( { 
-	         var currentYear = new Date().getFullYear();
 
 	//firstDay:1,
 	//locale:'fr'

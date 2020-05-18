@@ -108,7 +108,7 @@ $pathb = storage_path()."/fichiers/";
         ]);
 
         $Inscription->save();
-        if($request->get('sourcepg')!=null)
+        if(isset($request->get('sourcepg'))
         {return redirect('/bienvenue');}
         else
         {return redirect('/inscriptions')->with('success', ' inscrit avec succès');}
@@ -401,11 +401,11 @@ if(empty($parent))
  return $mdp; }
   public static function checkexiste(Request $request)
     {
-        $id =  trim($request->get('id'));
+        $val =  trim($request->get('val'));
         $type=trim($request->get('type'));
        
 
-         $user= User::where('id', $id)->first();
+         $user= User::where('id', $val)->first();
      return json_encode($user) ;
 
     }

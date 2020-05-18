@@ -22,8 +22,7 @@
 </div>
  
 
- @section('footer-scripts')
-  
+ 
   <script>
   
   
@@ -79,6 +78,6 @@
 	
 	*/
 </script>
-@endsection
+ 
 
 

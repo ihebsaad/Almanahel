@@ -1,70 +1,80 @@
-
  
-    <!-- Bootstrap CSS  --> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Javascripts    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-    
-  -->
- Calendrier des événements 
-    <div id="calendar"></div>
-  
-  <script>
-   /*
-    $(document).ready(function(){
+<link href="{{ asset('public/calendar/core/main.css')}}" rel='stylesheet' />
+<link href="{{ asset('public/calendar/daygrid/main.css')}}" rel='stylesheet' />
+<link href="{{ asset('public/calendar/list/main.css')}}" rel='stylesheet' />
+<script src="{{ asset('public/calendar/core/main.js')}}"></script>
+<script src="{{ asset('public/calendar/interaction/main.js')}}"></script>
+<script src="{{ asset('public/calendar/daygrid/main.js')}}"></script>
+<script src="{{ asset('public/calendar/list/main.js')}}"></script>
+<script  src="{{ asset('public/calendar/google-calendar/main.js')}}"></script>
+<script>
 
-    $('#calendar').fullCalendar({
-    header: {
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+
+      plugins: [ 'interaction', 'dayGrid', 'list', 'googleCalendar' ],
+
+      header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay,listWeek'
-    },
-     defaultDate: '2018-11-16',
-   // defaultDate: '<?php echo date('Y-m-d');?>',
-    navLinks: true,
-    eventLimit: true,
-    events: [{
-            title: 'Front-End Conference',
-            start: '2018-11-16',
-            end: '2018-11-18'
-        },
-        {
-            title: 'Hair stylist with Mike',
-            start: '2018-11-20',
-            allDay: true
-        },
-        {
-            title: 'Car mechanic',
-            start: '2018-11-14T09:00:00',
-            end: '2018-11-14T11:00:00'
-        },
-        {
-            title: 'Dinner with Mike',
-            start: '2018-11-21T19:00:00',
-            end: '2018-11-21T22:00:00'
-        },
-        {
-            title: 'Chillout',
-            start: '2018-11-15',
-            allDay: true
-        },
-        {
-            title: 'Vacation',
-            start: '2018-11-23',
-            end: '2018-11-29'
-        },
-    ]
-});     
+        right: 'dayGridMonth,listYear'
+      },
+
+      displayEventTime: false, // don't show the time column in list view
+
+      // THIS KEY WON'T WORK IN PRODUCTION!!!
+      // To make your own Google API key, follow the directions here:
+      // http://fullcalendar.io/docs/google_calendar/
+      googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+
+      // US Holidays
+      events: 'en.usa#holiday@group.v.calendar.google.com',
+
+      eventClick: function(arg) {
+        // opens events in a popup window
+        window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');
+
+        arg.jsEvent.preventDefault() // don't navigate in main tab
+      },
+
+      loading: function(bool) {
+        document.getElementById('loading').style.display =
+          bool ? 'block' : 'none';
+      }
 
     });
-	*/
- </script>
+
+    calendar.render();
+  });
+
+</script>
+<style>
+
+  body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  #loading {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+</style>
  
 
+  <div id='loading'>loading...</div>
+
+  <div id='calendar'></div>
+ 

@@ -23,6 +23,7 @@
              <th>Etablissement</th>
             <th>Parent</th>
             <th>Actions</th>
+        
         </tr>
             
             </thead>
@@ -30,17 +31,35 @@
             @foreach($inscriptions as $inscription)
 
                 <tr>
-                    <td>{{$inscription->id}}</td>
-                     <td> <a href="{{action('InscriptionsController@view', $inscription['id'])}}" >{{ $inscription->nom." ".$inscription->prenom }}</a> </td>
+              
+                     <td> <a href="{{action('InscriptionsController@view', $inscription['id'])}}" >{{$inscription->id}}</a> </td>
+                     <td>
+                        <?php if ($inscription->valide==1){?>
+                        <a href="{{action('UsersController@view', $inscription['ideleve'])}}" >{{  $inscription->nom." ".$inscription->prenom}}</a>
+  <?php } else { 
+
+ echo $inscription->nom." ".$inscription->prenom;}
+    ?>
+
+                    </td>
                     <td><?php echo $inscription->datenaissance;?></td>
                      <td><?php echo $inscription->niveau; ?></td>
                      <td><?php echo $inscription->etablissement;  ?></td>
-                     <td><?php echo $inscription->nom_rep." ".$inscription->prenom_rep;  ?></td>
+ 
+                     <td>
+                        <?php if ($inscription->valide==1){?>
+                        <a href="{{action('UsersController@view', $inscription['idparent'])}}" >{{  $inscription->nom_rep." ".$inscription->prenom_rep}}</a>
+  <?php } else { 
 
+ echo $inscription->nom_rep." ".$inscription->prenom_rep;}
+    ?>
+
+                    </td>
+                    
                           
                     
 
-</td>
+
                   
                     <td>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@destroy', $inscription['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
@@ -50,10 +69,18 @@
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@valide', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
                             <span class="fa fa-fw fa-trash-alt"></span> Valider
                         </a>
+                       
+                         
                         <?php } ?>
+                        <a   href="{{action('InscriptionsController@view', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
+                            <span class="fa fa-fw fa-trash-alt"></span> Voir
+                        </a>
                   
                   
                   </td>
+                  
+                  
+                    
                 </tr>
             @endforeach
             </tbody>

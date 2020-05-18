@@ -21,6 +21,8 @@ class Inscription extends Model
  'moyenne_3',
  'moyenne_g',
  'clubs',
+ 'nomclub',
+ 'nomclubautre',
  'heure_12h',
  'heure_17h',
  'vendredi',
@@ -33,7 +35,11 @@ class Inscription extends Model
  'tel',
  'tel2',
 'email',
-'valide'
+'valide',
+'annee',
+'email_rep',
+'bulletin1',
+'bulletin2'
 
  ];
  

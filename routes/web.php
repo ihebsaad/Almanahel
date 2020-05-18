@@ -171,6 +171,7 @@ Route::post('/classes/createenseignantclass','ClassesController@createenseignant
 Route::post('/classes/removeenseignantclass','ClassesController@removeenseignantclass')->name('classes.removeenseignantclass');
  /*** Inscriptions **/
 Route::get('/inscriptions/create','InscriptionsController@create')->name('inscriptions.create');
+Route::get('/inscriptions/create_front','InscriptionsController@create')->name('inscriptions.create_front');
 Route::post('/inscriptions/updating','InscriptionsController@updating')->name('inscriptions.updating');
 Route::post('/inscriptions/store','InscriptionsController@store')->name('inscriptions.store');
 Route::get('/inscriptions/destroy/{id}', 'InscriptionsController@destroy');

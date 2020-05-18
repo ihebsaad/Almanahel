@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
     use App\Inscription ;
       use App\User ;
  use DB;
+use Swift_Mailer;
+ use Mail;
 
 
 class InscriptionsController extends Controller
@@ -37,6 +39,11 @@ class InscriptionsController extends Controller
  
         return view('inscriptions.create'  );
     }
+      public function createfront()
+    {
+ 
+        return view('inscriptions.create_front'  );
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -46,6 +53,23 @@ class InscriptionsController extends Controller
      */
     public function store(Request $request)
     {
+      $name='';
+    if($request->file('bulletin1')!=null)
+    {$bulletin1=$request->file('bulletin1');
+     $name =  $bulletin1->getClientOriginalName();
+     $path = storage_path()."/fichiers/";
+ 
+          $bulletin1->move($path, $name);
+    }
+     $nameb='';
+    if($request->file('bulletin2')!=null)
+    {$bulletin2=$request->file('bulletin2');
+     $nameb =  $bulletin2->getClientOriginalName();
+$pathb = storage_path()."/fichiers/";
+    
+ 
+          $bulletin2->move($pathb, $nameb);
+    }
         $Inscription = new Inscription([
              'eleve' =>$request->get('eleve'),
              'nom' => $request->get('nom'),
@@ -61,6 +85,8 @@ class InscriptionsController extends Controller
              'moyenne_3' => $request->get('moyenne_3'),
              'moyenne_g' => $request->get('moyenne_g'),
              'clubs' => $request->get('clubs'),
+             'nomclub'=> $request->get('nomclub'),
+             'nomclubautre'=> $request->get('nomclubautre'),
              'heure_12h' => $request->get('heure_12h'),
              'heure_17h' => $request->get('heure_17h'),
              'vendredi' => $request->get('vendredi'),
@@ -72,7 +98,11 @@ class InscriptionsController extends Controller
               'ville'=> $request->get('ville'),
               'tel'=> $request->get('tel'),
               'tel2'=> $request->get('tel2'),
-              'email'=> $request->get('email')
+              'email'=> $request->get('email'),
+              'email_rep'=> $request->get('email_rep'),
+               'annee'=> $request->get('annee'),
+               'bulletin1' =>  $name,
+               'bulletin2' =>  $nameb
             // 'par'=> $request->get('par'),ville
 
         ]);
@@ -182,8 +212,9 @@ class InscriptionsController extends Controller
          $user->email = $request->get('email');
          $user->type_user = $request->get('type_user');
 */
-
-        $inscription = Inscription::find($id);
+  $inscription = Inscription::find($id);
+        
+    
 
       /*  $request->validate([
             'name' => 'required|string|max:255',
@@ -224,11 +255,40 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
            if( ($request->get('tel'))!=null) { $inscription->tel = $request->get('tel');}
        if( ($request->get('tel2'))!=null) { $inscription->tel2 = $request->get('tel2');}
        if( ($request->get('email'))!=null) { $inscription->email = $request->get('email');}
+       if( ($request->get('email_rep'))!=null) { $inscription->email_rep = $request->get('email_rep');}
+       if( ($request->get('annee'))!=null) { $inscription->annee = $request->get('annee');}
+        if( ($request->get('nomclub'))!=null) { $inscription->nomclub = $request->get('nomclub');}
+        if( ($request->get('nomclubautre'))!=null) { $inscription->nomclubautre = $request->get('nomclubautre');}
      //   $user->email = $request->get('email');
       //  $user->user_type = $request->get('user_type');
 
         //$data['id'] = $id;
         $inscription->save();
+      
+ 
+        $bulletin1= $request->file('bulletin1');
+      
+         $name1='';
+         if($request->file('bulletin1')!=null)
+          {$bulletin1=$request->file('bulletin1');
+            $name1 = $bulletin1->getClientOriginalName();
+        
+          $path1 = storage_path()."/fichiers/";
+          $bulletin1->move($path1, $name1);}
+
+  
+      $bulletin2= $request->file('bulletin2');
+       $name2='';
+         if($request->file('bulletin2')!=null)
+          {$bulletin2=$request->file('bulletin2');
+            $name2 = $bulletin2->getClientOriginalName();
+        
+          $path2 = storage_path()."/fichiers/";
+          $bulletin2->move($path2, $name2);
+
+        }
+          Inscription::where('id', $inscription['id'])->update(['bulletin2' => $name2,'bulletin1' => $name1]);
+         
 
 
         return redirect('/inscriptions')->with('success', ' mise à jour avec succès');    }
@@ -243,24 +303,99 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
           $eleve = new User([
             'name' => $inscription["prenom"],
             'lastname' => $inscription["nom"],
-                'username' =>$inscription["prenom"],
+                'username' =>$inscription["nom"].$inscription["prenom"],
                'user_type'=> "eleve",
-               'password'=>  bcrypt($inscription["prenom"]),
+               'password'=> InscriptionsController::genererMDP(8),
+               "email"=>$inscription["email"],
 
         ]);
                   $eleve->save();
-        $parent = new User([
+
+        $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
+        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
+        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftMailer = new Swift_Mailer($swiftTransport);
+         Mail::setSwiftMailer($swiftMailer);
+         $to=$eleve["email"];
+         $sujet="Création d'un nouvel élève";
+         $contenu='Création d\'un nouvel élève avec username '.$eleve['username'].'<br>
+                  et Mot de passe : '.$eleve['password'];
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+                $message
+                    ->to($to)
+                    //   ->cc($cc  ?: [])
+                    ->subject($sujet)
+                       ->setBody($contenu, 'text/html');
+            });
+
+$parent = User::where('user_type','parent')
+          ->where('email',$inscription["email_rep"])->first() ;
+echo($parent);
+
+if(empty($parent))
+
+       { $parent = new User([
             'name' => $inscription["prenom_rep"],
             'lastname' => $inscription["nom_rep"],
-                'username' =>$inscription["prenom_rep"],
+                'username' =>$inscription["nom_rep"].$inscription["prenom_rep"],
                'user_type'=> "parent",
-               'password'=>  bcrypt($inscription["prenom_rep"]),
+               'password'=>  InscriptionsController::genererMDP(8),
+               "email"=>$inscription["email_rep"],
 
         ]);
         $parent->save();
+                $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
+        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
+        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftMailer = new Swift_Mailer($swiftTransport);
+         Mail::setSwiftMailer($swiftMailer);
+         $to=$parent["email"];
+         $sujet="Création d'un nouvel parent";
+         $contenu='Création d\'un nouvel parent avec username '.$parent['username'].'<br>
+                  et Mot de passe : '.$parent['password'];
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+                $message
+                    ->to($to)
+                    //   ->cc($cc  ?: [])
+                    ->subject($sujet)
+                       ->setBody($contenu, 'text/html');
+            }); }
+        Inscription::where('id', $inscription['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"]]);
+         DB::table('parents_eleve')->insert(
+               ['parent' => $parent['id'],
+                'eleve' => $eleve["id"]]
+
+            );
+
 
         return redirect('/inscriptions')->with('success', '  valider avec succès');
     }
+    public function genererMDP ($longueur){
+    // initialiser la variable $mdp
+    $mdp = "";
+    // Définir tout les caractères possibles dans le mot de passe,
+    // Il est possible de rajouter des voyelles ou bien des caractères spéciaux
+    $possible = "2346789bcdfghjkmnpqrtvwxyzBCDFGHJKLMNPQRTVWXYZ";
+    // obtenir le nombre de caractères dans la chaîne précédente
+    // cette valeur sera utilisé plus tard
+    $longueurMax = strlen($possible);
+    if ($longueur > $longueurMax) {
+        $longueur = $longueurMax;
+    }
+    // initialiser le compteur
+    $i = 0;
+    // ajouter un caractère aléatoire à $mdp jusqu'à ce que $longueur soit atteint
+    while ($i < $longueur) {
+        // prendre un caractère aléatoire
+        $caractere = substr($possible, mt_rand(0, $longueurMax-1), 1);
+        // vérifier si le caractère est déjà utilisé dans $mdp
+        if (!strstr($mdp, $caractere)) {
+            // Si non, ajouter le caractère à $mdp et augmenter le compteur
+            $mdp .= $caractere;
+            $i++;
+        }
+    }
+ return $mdp; }
 
  
  

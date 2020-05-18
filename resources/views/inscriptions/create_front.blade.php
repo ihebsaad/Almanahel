@@ -4,7 +4,7 @@
 
 @section('content')
 <h3 style="margin-left:50px">Formulaire Pré-inscription </h3><br><br>    
-            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}" enctype="multipart/form-data" onsubmit="return verifier();" >
                         {{ csrf_field() }}
              <fieldset>
        <legend>Élève</legend> <!-- Titre du fieldset --> 
@@ -328,6 +328,7 @@
 
 
 
+
 <div class="row" style="margin-left:10px">
        
  
@@ -337,6 +338,28 @@
 
 
    </fieldset>
+    <fieldset>
+       <legend>Pré-inscription</legend> <!-- Titre du fieldset --> 
+       <div class="row" style="margin-left:10px">
+       <div class="form-group">
+    <div class="col-md-6">
+    
+      Je confirme que je souhaite préinscrire mon enfant pour la rentrée prochaine au lycée Al Manahel et que tous les renseignements ci-dessus sont exacts.  <input type="checkbox" id="coche" name="coche">
+     
+      </div>
+</div>
+</div>
+  <div class="row" style="margin-left:10px">
+       <div class="form-group">
+    <div class="col-md-6">
+    
+      La demande de pré-inscription ne garantit pas  l'inscription dans l'établissement.  <input type="checkbox" id="coche1" name="coche1">
+     
+      </div>
+</div>
+</div>
+         </fieldset>
+
     <div class="row form-group" style="margin-bottom:30px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -445,6 +468,18 @@ else
   document.getElementById('sect1').style.display = 'none'; 
 document.getElementById('sect2').style.display = 'none'; 
 }}
+function verifier()
+{
+ if ((document.getElementById('coche').checked) && (document.getElementById('coche1').checked))
+ {
+  return true;
+ }
+ else
+ {
+  alert('Vous devez accepter les conditions de Pré-inscription.');
+  return false;
+ }
+}
 
 
 

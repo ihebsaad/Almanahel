@@ -445,23 +445,25 @@ $(document).on('click', '#majslider', function() {
 
                          if(n1)
                          {
-                           $("#successUloadExterneFile").empty().html('<span style="color:green">Le fichier est envoyé au serveur avec succès</span>');
+                           /*$("#successUloadExterneFile").html('<span style="color:green">Le fichier est envoyé au serveur avec succès</span>');*/
+                           alert("Le fichier est envoyé au serveur avec succès");
                          }
                          else
                          {
-                           $("#successUloadExterneFile").empty().html('<span style="color:green">Le titre ou le fichier est déja existant');
+                           /*$("#successUloadExterneFile").html('<span style="color:green">Le titre ou le fichier est déja existant');*/
+                           alert("Le titre ou le fichier est déjà existant");
                          }
 
                       
-                       $('#successOrfailedUpload').modal('show');
+                       //$('#successOrfailedUpload').modal('show');
                       
                     },
                       error: function(jqXHR, textStatus, errorThrown) {
 
-                        //alert('erreur lors de création de la mission');
+                        alert("Erreur lors de l\'envoi du fichier au serveur");
                        
-                    $("#successUloadExterneFile").empty().html('<span style="color:red">Erreur lors de l\'envoi du fichier au serveur</span>');
-                     $('#successOrfailedUpload').modal('show');
+                    /*$("#successUloadExterneFile").html('<span style="color:red">Erreur lors de l\'envoi du fichier au serveur</span>');
+                     $('#successOrfailedUpload').modal('show');*/
                     
 
 

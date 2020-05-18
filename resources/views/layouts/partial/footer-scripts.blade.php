@@ -13,6 +13,8 @@
   });
   
   $(document).ready(function(){
+	        $('.calendar').calendar();
+
     $("select#elevestat").change(function(){
         $(this).find("option:selected").each(function(){
             var optionValue = $(this).attr("value");

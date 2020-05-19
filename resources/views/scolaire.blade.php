@@ -134,9 +134,22 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
 </div>
   
   
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+    div#demo > div.carousel-inner > div.carousel-item:after {
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      background:rgba(0,0,0,0.3);
+    }
   
-  
-<style>
 a [role="button"]{color:black;text-decoration:none;}
  
     .box{

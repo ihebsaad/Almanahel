@@ -411,7 +411,7 @@ if(empty($parent))
     }
     public function inscriptionsadd(Request $request)
     {
-        
+        dd('test');
 
             $champ=$request->get('champ');
             dd( $champ);

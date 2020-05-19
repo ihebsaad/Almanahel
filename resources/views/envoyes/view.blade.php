@@ -15,7 +15,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            <label>Ajouter</label>
+            <label>Email Envoyé</label>
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -53,7 +53,7 @@
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <section>  
-					<div style="padding:20px 20px 20px 20px;barder:1px solid grey;min-height:500px;oveflow:scroll " clas="form-control">
+					<div style="padding:20px 20px 20px 20px;border:1px solid grey;min-height:500px;oveflow:scroll " clas="form-control">
 					<?php echo nl2br($envoye['contenu'] ); ?>
 					</div>
                     </section>

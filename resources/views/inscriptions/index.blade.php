@@ -102,8 +102,7 @@
 
                         <div class="form-group">
 
-                            <form   id="ff" name="">
-                                {{ csrf_field() }}
+                                 {{ csrf_field() }}
 
 
 
@@ -120,8 +119,7 @@
                                 
 
 
-
-                            </form>
+ 
                         </div>
 
 

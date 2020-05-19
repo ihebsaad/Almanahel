@@ -60,7 +60,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; by eSolutions 2020</span>
+            <span>Al Manahel Academy &copy; 2020 by eSolutions </span>
           </div>
         </div>
       </footer>

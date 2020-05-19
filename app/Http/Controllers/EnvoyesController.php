@@ -102,13 +102,17 @@ class EnvoyesController extends Controller
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
+		$from='almanahelacademy@gmail.com';
+		$fromname='Almanahel Academy';
         if (
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
-                       ->setBody($contenu, 'text/html');
+                       ->setBody($contenu, 'text/html')
+                    ->setFrom([$from => $fromname]);
+					   ;
             })
 		){
 			$envoyes = new Envoye([

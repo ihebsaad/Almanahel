@@ -24,9 +24,9 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body" style="width:100%;">
-           
+           <div  style="height:600px">
 		@include('evenements.calendar')
-		   
+		   </div>
         </div>
       </div>
     </div>

@@ -5,9 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
  
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
-
+ 
 @section('content')
  
     <style>
@@ -174,7 +172,7 @@
 
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
-                dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
+               // dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
                 buttons: [
 

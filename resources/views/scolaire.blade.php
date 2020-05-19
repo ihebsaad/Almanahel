@@ -8,6 +8,12 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  
 ?>
 <div class="row">  
+
+ @include('evenements.calendar')
+ 
+</div>
+
+<div class="row">  
 <section>
 <?php echo $contenu; ?>
 </section>

@@ -12,11 +12,11 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
  
 <div class="row">  
 <section>
-<?php // echo $contenu; ?>
-
+<?php // echo $contenu; 
+/*
 @include('evenements.annee')
-
- @include('evenements.calendar')
+*/
+?>
 
 </section>
 </div>

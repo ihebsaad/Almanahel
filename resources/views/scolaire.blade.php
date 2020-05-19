@@ -11,9 +11,12 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  
  
   
-  <div class="row" style="width:100%;padding-bottom: 20px">
+<div class="row" style="width:100%;padding-bottom: 20px">
   <div class="clearfix"></div>
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:100%;padding-bottom: 20px">
+  
+	<div class="col-lg-6 col-sm-12">
+  
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:100%;padding-bottom: 20px">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
@@ -24,8 +27,9 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body" style="width:100%;">
-           <div  style="height:750px">
-		@include('evenements.calendar')
+           <div  style="min-height:300px">
+		     <?php echo $contenu; ?>
+
 		   </div>
         </div>
       </div>
@@ -40,7 +44,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </div>
       <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
         <div class="panel-body"   >
-		  <div  style="height:600px">
+		  <div  style="min-height:600px">
 
           <?php echo $contenu; ?>
 		    </div  >
@@ -58,7 +62,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </div>
       <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
         <div class="panel-body">
-		 <div  style="height:600px">
+		 <div  style="min-height:300px">
 
           <?php echo $contenu2; ?>
 		  </div>
@@ -66,6 +70,13 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </div>
     </div>
   </div>
+
+	</div>
+	<div class="col-lg-6 col-sm-12">
+
+	@include('evenements.calendar')  
+	</div>
+
 </div>
   
   

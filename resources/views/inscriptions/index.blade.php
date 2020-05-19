@@ -130,7 +130,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                    <span type="button" id="btnaddinscription" onclick="adding();" class="btn btn-primary">Chercher</span>
+                   <button type="button" id="btnaddinscription" onclick="adding();" class="btn btn-primary">Chercher</button>
                 </div>
             </div>
         </div>

@@ -102,7 +102,8 @@
 
                         <div class="form-group">
 
-                                 {{ csrf_field() }}
+                             <form class="form-horizontal" method="POST" action="{{ route('inscriptions.inscriptionsadd') }}">
+                 {{ csrf_field() }}
 
 
 
@@ -110,7 +111,8 @@
                                 <div class="form-group " >
                                     <label for="champ1">Ancien Élève</label>
                                     <div class=" row  ">
-                                        <input class="form-control" type="number" required id="champ1"  onchange="checkexiste(this,'eleve')" />
+                                        <input class="form-control" type="number"  id="champ1" name="champ1"  onchange="checkexiste(this,'eleve')" />
+                                      
 
 
                                     </div>
@@ -119,7 +121,8 @@
                                 
 
 
- 
+
+                            </form>
                         </div>
 
 
@@ -128,7 +131,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                   <button type="button" id="btnaddinscription" onclick="adding();" class="btn btn-primary">Chercher</button>
+                   <button type="submit"  id="test" class="btn btn-primary">
+                                   S'inscrire
+                                </button>
                 </div>
             </div>
         </div>
@@ -202,10 +207,10 @@
                 $.ajax({
                     url:"{{ route('inscriptions.inscriptionsadd') }}",
                     method:"POST",
-                    data:{champ:3, _token:_token},
+                    data:{champ:champ, _token:_token},
                     success:function(data){
 
-                     alert(data);
+                     alert('Added successfully');
                       //  window.location =data;
 
                     }

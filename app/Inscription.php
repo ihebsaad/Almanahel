@@ -37,6 +37,8 @@ class Inscription extends Model
 'email',
 'valide',
 'annee',
+'ideleve',
+'idparent',
 'email_rep',
 'bulletin1',
 'bulletin2'

@@ -39,6 +39,11 @@ class InscriptionsController extends Controller
  
         return view('inscriptions.create'  );
     }
+    public function eleveainscrire()
+    {
+ 
+        return view('inscriptions.eleveainscrire'  );
+    }
       public function createfront()
     {
  
@@ -411,10 +416,10 @@ if(empty($parent))
     }
     public function inscriptionsadd(Request $request)
     {
-        dd('test');
+     
 
-            $champ=$request->get('champ');
-            dd( $champ);
+            $champ=$request->get('champ1');
+           
             $user= User::where('id', $champ)->first();
             $inscription = new Inscription([
                 'nom' => $user['lastname'],
@@ -424,8 +429,8 @@ if(empty($parent))
                 'valide' => 1,
                 'user_type' => 'eleve',
                 'annee' => date('Y', strtotime('-1 year')),
-                'ideleve' => $user['id'],
-                'eleve' => $user['id'],
+                  'eleve' => $user['id'],
+                  'ideleve' => $user['id']
                   ]);
            $inscription->save();
 

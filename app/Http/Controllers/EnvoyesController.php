@@ -105,7 +105,7 @@ class EnvoyesController extends Controller
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
         if (
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])

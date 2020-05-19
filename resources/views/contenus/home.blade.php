@@ -63,7 +63,7 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 
    <div class="col">
      <div class="form-group">
-       <img id="blah" height="" width="180" height="180" src="#" alt="your image" />
+       <img id="blah" height="" width="180" height="180" src="{{  URL::asset('public/img/no-image.png') }}" alt="your image" />
      </div>
    </div>
  </div>

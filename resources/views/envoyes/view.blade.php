@@ -36,11 +36,14 @@
     ?>
            <div class="form-group">
                     <label for="destinataire">Emetteur:</label>
-                    <input id="destinataire" type="text" class="form-control" name="destinataire"  <?php echo $envoye['emetteur'] ;?>/>
+					<?php $userid= $envoye['emetteur'];
+					$user=\App\User::where('id',$iduser->first)
+					?>
+                    <input id="destinataire" type="text" class="form-control" name="emetteur"  value="<?php echo $user->name.' '.$user->lastname ;?>" />
                 </div>	
                 <div class="form-group">
                     <label for="destinataire">Destinataire:</label>
-                    <input id="destinataire" type="text" class="form-control" name="destinataire"  <?php echo $envoye['destinataire'] ;?>/>
+                    <input id="destinataire" type="text" class="form-control" name="destinataire"  value="<?php echo $envoye['destinataire'] ;?>" />
                 </div>						
                
 			 <div class="form-group">

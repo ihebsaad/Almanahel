@@ -12,7 +12,7 @@
  <style>
      #swal2-content{font-size:15px;}
 	 .editor{width:800px;}
-	 #mytable{width:100%;margin-top:10px;}
+	 #mytable{width:100%!important;margin-top:10px !important;}
 	/* #mytable_filter{position:absolute!important;right:5px!important;}*/
 	
 	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {

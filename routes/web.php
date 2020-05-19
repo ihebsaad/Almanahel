@@ -191,6 +191,7 @@ Route::post('/inscriptions/inscriptionsadd', 'InscriptionsController@inscription
 
 /****  Images gestion image slider carrousel  *****/
 Route::get('/mettreAjourSlider', 'ImageController@mettreAjourSlider');
+Route::get('/mettreAjourSliderScolaire', 'ImageController@mettreAjourSliderScolaire');
 Route::post('/ExternefileUpload/upload', 'ImageController@uploadExterneFile')->name('Upload.ExterneFile');
 Route::get('/modifierimageslider', 'ImageController@modifierimageslider');
 Route::get('/supimageslider/{id}', 'ImageController@supimageslider');

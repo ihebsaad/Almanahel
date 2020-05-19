@@ -55,7 +55,7 @@ class ImageController extends Controller
         //$array=json_decode($req->get('data'));
          $Word='';
        
-         $imagesslider=Image::where('categorie','slider')->get();
+         $imagesslider=Image::where('categorie','slider')->where('home',1)->get();
 
          foreach ($imagesslider as $is ) {
              if($is->visible==1)
@@ -80,6 +80,39 @@ class ImageController extends Controller
         return "Le carrousel a été mis à jour avec succès" ;
 
     }
+
+ public function mettreAjourSliderScolaire(Request $req)
+    {
+
+        //$array=json_decode($req->get('data'));
+         $Word='';
+       
+         $imagesslider=Image::where('categorie','slider')->where('home',0)->get();
+
+         foreach ($imagesslider as $is ) {
+             if($is->visible==1)
+             {
+                $is->update(["visible"=>0]);
+             }
+         }
+
+         $tok = strtok(trim($req->get('data')), " ");
+         $imagesslider=Image::where('id',((int)$tok))->first();
+         $imagesslider->update(["visible"=>1]);
+       while ($tok !== false) {
+            if($tok !=' ')
+            {
+            $imagesslider=Image::where('id',((int)$tok))->first();
+            $imagesslider->update(['visible'=>1]);
+        // $Word=$Word.' '.$tok;
+         $tok = strtok(" ");
+           }
+         }
+   
+        return "Le carrousel a été mis à jour avec succès" ;
+
+    }
+
 
     function uploadExterneFile(Request $request)
     {

@@ -367,7 +367,7 @@ $(document).on('click', '#majslider', function() {
           //alert(chaine);
 
          $.ajax({
-            url: "{{url('/')}}/mettreAjourSlider",
+            url: "{{url('/')}}/mettreAjourSliderScolaire",
             type: 'get',            
             data: {data : chaine, _token:_token},
             success: function (data) {

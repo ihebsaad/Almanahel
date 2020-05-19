@@ -119,7 +119,9 @@
                                 </div>
 
                                 
-
+							<button type="submit"  id="test" class="btn btn-primary pull-right">
+                                   S'inscrire
+                                </button>
 
 
                             </form>
@@ -131,9 +133,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                   <button type="submit"  id="test" class="btn btn-primary">
-                                   S'inscrire
-                                </button>
+                 
                 </div>
             </div>
         </div>

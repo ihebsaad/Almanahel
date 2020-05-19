@@ -34,8 +34,10 @@
   
 
     ?>
-	 		  <input id="emetteur" type="text"  name="emetteur" <?php echo $envoye['emetteur'];?> />
-
+           <div class="form-group">
+                    <label for="destinataire">Emetteur:</label>
+                    <input id="destinataire" type="text" class="form-control" name="destinataire"  <?php echo $envoye['emetteur'] ;?>/>
+                </div>	
                 <div class="form-group">
                     <label for="destinataire">Destinataire:</label>
                     <input id="destinataire" type="text" class="form-control" name="destinataire"  <?php echo $envoye['destinataire'] ;?>/>
@@ -48,7 +50,7 @@
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <section>  
-					<div style="padding:20px 20px 20px 20px; ">
+					<div style="padding:20px 20px 20px 20px; " clas="form-control">
 					<?php echo nl2br($envoye['contenu'] ); ?>
 					</div>
                     </section>

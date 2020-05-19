@@ -12,10 +12,12 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
  
 <div class="row">  
 <section>
+
+<center><h4>Dernières Annonces<h4></center>
 <?php // echo $contenu; 
-/*
-@include('evenements.annee')
-*/
+ 
+@include('annonces')
+ 
 ?>
 
 </section>
@@ -23,7 +25,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 
  <div class="row">  
 <section>
-<?php //echo $contenu2; ?>
+<?php  echo $contenu ; ?>
 </section>
 </div>
   

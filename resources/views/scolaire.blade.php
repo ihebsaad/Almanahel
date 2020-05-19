@@ -79,7 +79,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          Calendrier De l'école
+          Règlement intérieur
         </a>
       </h4>
       </div>

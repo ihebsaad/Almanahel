@@ -47,7 +47,7 @@
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
-     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->get();
+     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->where('home',1)->get();
      $nb= $imagesslider->count();$u=0;
       ?>
 

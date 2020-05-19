@@ -11,7 +11,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  <div class="row" style="width:100%;padding-bottom: 20px">
 
  <div class="col-lg-6 col-sm-12">
- <h3 style="text-align:center" >Galerie</h3>
+ <h4 style="text-align:center" >Galerie</h4>
  
  
  
@@ -21,7 +21,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
-     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->get();
+     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->where('home',0)->get();
      $nb= $imagesslider->count();$u=0;
       ?>
 
@@ -64,7 +64,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  	</div>
 
   <div class="col-lg-6 col-sm-12">
- <h3 style="text-align:center" >Calendrier de l'école</h3>
+ <h4 style="text-align:center" >Calendrier de l'école</h4>
 
 	@include('evenements.calendar')  
 	</div>

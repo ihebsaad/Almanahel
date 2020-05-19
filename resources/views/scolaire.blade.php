@@ -17,14 +17,14 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Calendrier De l'école
         </a>
       </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body" style="width:100%;">
-           <div  style="height:600px">
+           <div  style="height:750px">
 		@include('evenements.calendar')
 		   </div>
         </div>
@@ -72,7 +72,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
   
   
 <style>
-
+a [role="button"]{color:black;text-decoration:none;}
  
     .box{
         color: #fff;

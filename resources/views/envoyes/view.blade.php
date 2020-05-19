@@ -37,7 +37,7 @@
            <div class="form-group">
                     <label for="destinataire">Emetteur:</label>
 					<?php $userid= $envoye['emetteur'];
-					$user=\App\User::where('id',$userid->first)
+					$user=\App\User::where('id',$userid)->first();
 					?>
                     <input id="destinataire" type="text" class="form-control" name="emetteur"  value="<?php echo $user->name.' '.$user->lastname ;?>" />
                 </div>	

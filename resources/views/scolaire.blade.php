@@ -11,12 +11,11 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  <div class="row" style="width:100%;padding-bottom: 20px">
 
  <div class="col-lg-6 col-sm-12">
- <h2>Galerie</h2>
- 	@include('actus')  
-
+ <h3 style="text-align:center" >Galerie</h3>
+ 
  
  	</div>
- <h2>Calendrier de l'école</h2>
+ <h3 style="text-align:center" >Calendrier de l'école</h3>
 
   <div class="col-lg-6 col-sm-12">
 

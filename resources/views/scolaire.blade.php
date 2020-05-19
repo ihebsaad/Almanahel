@@ -40,8 +40,11 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </div>
       <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
         <div class="panel-body"   >
-		
+		  <div  style="height:600px">
+
           <?php echo $contenu; ?>
+		    </div  >
+
         </div>
       </div>
     </div>
@@ -55,7 +58,10 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </div>
       <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
         <div class="panel-body">
+		 <div  style="height:600px">
+
           <?php echo $contenu2; ?>
+		  </div>
         </div>
       </div>
     </div>

@@ -129,7 +129,7 @@ class EnvoyesController extends Controller
             }
  
 		} else{
-			  return redirect('/envoyes' )->with('errors', 'Erreur') ;
+			  return redirect('/envoyes' )  ;
 
  		}
 		  

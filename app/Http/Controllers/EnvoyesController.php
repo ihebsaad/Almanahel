@@ -113,14 +113,14 @@ class EnvoyesController extends Controller
                        ->setBody($contenu, 'text/html')
                     ->setFrom([$from => $fromname]);
 					   ;
-            })
+            });
 		 
 			$envoye  = new Envoye([
               'emetteur' => ( $request->get('emetteur')),
              'destinataire' => trim($request->get('destinataire')),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu'))
-         ]);
+								]);
 		
 		 if ($envoye->save())
             { $id=$envoye->id;

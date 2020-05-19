@@ -116,7 +116,7 @@ Route::post('/absences/edit/', 'AbsencesController@edit')->name('absences.edit')
 /*** Envoyes  **/
  Route::get('/envoyes', array('as' => 'envoyes','uses' => 'EnvoyesController@index'));
 Route::post('/envoyes/saving','EnvoyesController@saving')->name('envoyes.saving');
- Route::post('/envoyes/sending','EnvoyesController@updating')->name('envoyes.sending');
+ Route::post('/envoyes/sending','EnvoyesController@sending')->name('envoyes.sending');
 Route::get('/envoyes/view/{id}', 'EnvoyesController@view');
 Route::get('/envoyes/destroy/{id}', 'EnvoyesController@destroy');
 Route::get('/envoyes/send/', 'EnvoyesController@send')->name('envoyes.send');

@@ -130,7 +130,7 @@ class EnvoyesController extends Controller
         $id= $request->get('envoye');
         $champ= strval($request->get('champ'));
        $val= $request->get('val');
-       Envoye::where('id', $id)->update(array('visible' => $val));
+       Envoye::where('id', $id)->update(array($champ => $val));
  
     }
 

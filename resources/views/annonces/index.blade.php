@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-6">Annonces</div>
                 <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('AnnoncesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une actualité</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('AnnoncesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une annonce</b></a>
                 </div>
             </div>
         </div>

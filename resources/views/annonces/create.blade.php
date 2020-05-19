@@ -45,11 +45,11 @@
                         <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ></textarea>
                     </div>
 				</div>
-				<div class="form-group ">
+			<!--	<div class="form-group ">
 
              <label class="check "> <input type="checkbox" name="visible"  value="1" checked/> Visible</label>
 					</div>
-
+-->
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Ajouter</button>
   			 </div>

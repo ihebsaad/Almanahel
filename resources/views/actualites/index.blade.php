@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <table id="mytable" class="table table-striped" id="mytable" style="width:100%">
+        <table id="mytable" class="table table-striped"  style="width:100%">
             <thead>
             <tr id="headtable">
                 <th style="width:5%">N°</th>

@@ -106,6 +106,8 @@
    
 <!----------------------- Section Home  -------->
 <section>
+  <h2 class="heading-title" >À PROPOS DE L'ACADÉMIE</h2>
+  <span class="heading-title-border"></span>
 <?php
 $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 
@@ -113,9 +115,11 @@ echo $contenu ;
 ?>
 
 </section>
-
+<section>
+  <h2 class="heading-title" >ACTUALITÉS</h2>
+  <span class="heading-title-border"></span>
  @include('actus')
-
+</section>
 
   @endsection
 

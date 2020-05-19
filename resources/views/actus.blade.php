@@ -1,6 +1,25 @@
  
 <style>
-.card-body .btn-primary{color:white!important;}
+.card-body .btn-primary {
+    color: white!important;
+    background-color: #016893!important;
+    border-color: #31c5ff!important;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 15px;
+}
+h4.card-title {
+    font-size: 17px;
+    height: 63px;
+    min-height: 63px;
+    overflow: hidden;
+}
+p.card-text {
+    height: 105px;
+    overflow: hidden;
+    font-size: 15px;
+    color: #7a7a7b;
+}
 .carousel-item .active {display:table-row;}
 .link{text-decoration:none;}
 
@@ -75,6 +94,45 @@ width:20px;}
   
 .carousel-item-next,
 .carousel-item-prev {display:none!important;}
+
+.carousel-multi-item .controls-top .btn-floating {
+    background: #8f8f8f;
+}
+
+.btn-floating {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+.btn-floating i {
+    display: inline-block;
+    width: inherit;
+    color: #fff;
+    text-align: center;
+}
+.btn-floating i {
+    font-size: 1.25rem;
+    line-height: 36px;
+}
+.card-body {
+    padding: 1rem!important; 
+
+    height: 260px;
+    min-height: 260px;
+    max-height: 260px;
+  }
+p.card-text {
+    margin-bottom: 5px;
+}
 </style>
 
 <!--Carousel Wrapper-->
@@ -150,9 +208,9 @@ $actualites=array();
         <div class="card mb-2" style="width:300px">
        	 <?php if($image==''){ ?> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:300px;height:219px"/><?php } ?>
 
-          <div class="card-body" style="height:330px;min-height:330px;max-height:330px;">
-            <h4 class="card-title" style="font-size:18px;height:60px;min-height:60px;overflow:hidden"><?php custom_echo($titre, 80) ?></h4>
-            <p class="card-text" style=" height:135px;overflow:hidden" > <?php custom_echo($extrait, 140)  ; ?> </p><br>
+          <div class="card-body" >
+            <h4 class="card-title" ><?php custom_echo($titre, 80) ?></h4>
+            <p class="card-text"  > <?php custom_echo($extrait, 140)  ; ?> </p>
             <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
           </div>
         </div>

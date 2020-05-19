@@ -97,8 +97,8 @@ class EnvoyesController extends Controller
 	 
 
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('ihebs002@gmail.com'); //adresse email
-        $swiftTransport->setPassword('ihebssss'); // mot de passe email
+        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
+        $swiftTransport->setPassword('21septembre'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);

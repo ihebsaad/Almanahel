@@ -1,8 +1,10 @@
 @extends('layouts.back')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
 
-  
+<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
+ 
 
 @section('content')
     <style>
@@ -118,7 +120,9 @@
                                     </div>
                                 </div>
 
-                                
+                                  <button type="submit"  id="test" class="btn btn-primary">
+                                   S'inscrire
+                                </button>
 
 
 
@@ -131,9 +135,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                   <button type="submit"  id="test" class="btn btn-primary">
-                                   S'inscrire
-                                </button>
+                 
                 </div>
             </div>
         </div>
@@ -262,7 +264,7 @@
 
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
-                dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
+               // dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
                 buttons: [
 

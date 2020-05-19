@@ -420,7 +420,9 @@ if(empty($parent))
         $type=trim($request->get('type'));
        
 
-         $user= User::where('id', $val)->first();
+         $user= User::where('id', $val)
+		 ->where('user_type', 'eleve')
+		 ->first();
      return json_encode($user) ;
 
     }

@@ -411,9 +411,10 @@ if(empty($parent))
     }
     public function inscriptionsadd(Request $request)
     {
-        if( ($request->get('champ'))!=null) {
+        
 
             $champ=$request->get('champ');
+            dd( $champ);
             $user= User::where('id', $champ)->first();
             $inscription = new Inscription([
                 'nom' => $user['lastname'],
@@ -425,14 +426,11 @@ if(empty($parent))
                 'annee' => date('Y', strtotime('-1 year')),
                 'ideleve' => $user['id'],
                 'eleve' => $user['id'],
-                  
-
-
-            ]);
+                  ]);
 
             return redirect('/inscriptions')->with('success', '  ajouté  avec succès');
             
-        } }
+      }
 
  
  

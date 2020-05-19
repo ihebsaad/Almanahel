@@ -8,14 +8,26 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  
 ?>
  
+ <div class="row" style="width:100%;padding-bottom: 20px">
+
+ <div class="col-lg-6 col-sm-12">
+ <h2>Galerie</h2>
+ 	@include('actus')  
+
  
- 
+ 	</div>
+ <h2>Calendrier de l'école</h2>
+
+  <div class="col-lg-6 col-sm-12">
+
+	@include('evenements.calendar')  
+	</div>
+	</div>
   
 <div class="row" style="width:100%;padding-bottom: 20px">
   <div class="clearfix"></div>
   
-	<div class="col-lg-6 col-sm-12">
-  
+	
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:100%;padding-bottom: 20px">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
@@ -71,11 +83,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
     </div>
   </div>
 
-	</div>
-	<div class="col-lg-6 col-sm-12">
-
-	@include('evenements.calendar')  
-	</div>
+ 
 
 </div>
   

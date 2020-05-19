@@ -53,7 +53,7 @@
 				<div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <section>  
-					<div style="padding:20px 20px 20px 20px;border:1px solid grey;min-height:500px;oveflow:scroll " clas="form-control">
+					<div style="padding:20px 20px 20px 20px;border:1px solid #d1d3e2;min-height:500px;oveflow:scroll " clas="form-control">
 					<?php echo nl2br($envoye['contenu'] ); ?>
 					</div>
                     </section>

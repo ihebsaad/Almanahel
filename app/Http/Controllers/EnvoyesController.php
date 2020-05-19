@@ -125,11 +125,11 @@ class EnvoyesController extends Controller
 		 if ($envoye->save())
             { $id=$envoye->id;
 
-                return url('/envoyes/view/'.$id)->with('success', 'Envoyé avec succès')*/;
+                return url('/envoyes/view/'.$id)->with('success', 'Envoyé avec succès') ;
             }
  
 		} else{
-			  return url('/envoyes' )->with('error', 'Erreur') ;
+			  return url('/envoyes' )->with('errors', 'Erreur') ;
 
  		}
 		  

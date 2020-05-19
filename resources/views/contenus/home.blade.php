@@ -59,6 +59,8 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
       <input  type='file' id="imgInp" name="imgInp"  />
        </div>
     </div>
+	      <input  type='hidden' id="home" name="home" value="1" />
+
    <div class="col">
      <div class="form-group">
        <img id="blah" height="" width="180" height="180" src="#" alt="your image" />

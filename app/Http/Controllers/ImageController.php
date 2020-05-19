@@ -145,7 +145,7 @@ class ImageController extends Controller
             'type'  => $fichier_ext,
              'visible'=> 0,
              'categorie'=>'slider',
-             'home'=> 1
+             'home'=> $request->get('home')
            
              
         ]);
@@ -174,7 +174,7 @@ class ImageController extends Controller
       </tr>
     </thead>
     <tbody>';
-      $imagesslider=Image::where('categorie','slider')->orderBy('created_at','DESC')->get();
+      $imagesslider=Image::where('categorie','slider')->where('home',1)->orderBy('created_at','DESC')->get();
 
       foreach($imagesslider as $ims)
       {
@@ -207,7 +207,55 @@ class ImageController extends Controller
       }
 
    
- 
+  public function ChargerTableImagesSliderScolaire()
+     {
+
+        $output='';
+
+     $output='<table class="table table-bordered" style="background-color:white">
+    <thead>
+      <tr>
+        <th>titre image</th>
+        <th>description image</th>
+        <th>Vue</th>
+        <th>Visible</th>
+        <th>Action</th>
+
+      </tr>
+    </thead>
+    <tbody>';
+      $imagesslider=Image::where('categorie','slider')->where('home',0)->orderBy('created_at','DESC')->get();
+
+      foreach($imagesslider as $ims)
+      {
+       $urlimg= URL::to('/').'/storage/'.$ims->url;
+      $output.='<tr>
+        <td id="t'.$ims->id.'">'.$ims->titre.'</td>
+        <td id="d'.$ims->id.'">'.$ims->descrip.'</td><td><img  width="100" height="100" src="'.$urlimg.'" alt="" /></td> <td><input id="c'.$ims->id.'" type="checkbox" class="checkboxkbs"'; 
+
+         if($ims->visible==1){
+          $output.='checked ></td>';
+          }
+          else
+          {
+            $output.=' ></td>';
+          }
+       $output.=' <td><i id="e'.$ims->id.'" class="fa fa-edit editkbs" style=" cursor:pointer;color:blue"></i> <i id="s'.$ims->id.'" class="fa fa-trash trashkbs" style=" cursor:pointer;color:red"></i></td>
+          </tr>';
+         }
+     
+       $output.='</tbody>
+        </table>
+        <br>
+        <button id="majslider" class="btn  btn-success float-right"> Mettre à jour le carrousel </button>
+       <br>';
+
+
+
+        return $output;
+
+      }
+
     /**
      * Display a listing of the resource.
      *

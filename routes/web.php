@@ -195,5 +195,6 @@ Route::post('/ExternefileUpload/upload', 'ImageController@uploadExterneFile')->n
 Route::get('/modifierimageslider', 'ImageController@modifierimageslider');
 Route::get('/supimageslider/{id}', 'ImageController@supimageslider');
 Route::get('/ChargerTableImagesSlider', 'ImageController@ChargerTableImagesSlider');
+Route::get('/ChargerTableImagesSliderScolaire', 'ImageController@ChargerTableImagesSliderScolaire');
 
 

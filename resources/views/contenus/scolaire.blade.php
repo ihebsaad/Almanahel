@@ -52,6 +52,56 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
 
 
 
+ <br>
+ <div class="row">
+ <div class="col-lg-12 col-md-12 mx-auto">
+ <h3 style="color:black">Images de carrousel (slider) </h3> <br>
+ <h4 style="color:black">Charger une nouvelle image depuis votre ordinateur </h4>
+ </div>
+ </div>
+
+ <div class=" row w-100 shadow-sm p-4 mb-4 bg-white" style="color: white"> 
+ <div class="col-lg-12 col-md-12 mx-auto">
+  
+  <form  id="formFileExterne" method="post"  enctype="multipart/form-data" >
+
+    {{csrf_field()}}
+  <div class="form-row">
+    <div class="col-7">
+      <br><br>
+      <div class="form-group">
+         <label for="imgInp" style="font-size:20px;font-weight:bold;color:black"> Ajout d'une image à partir de disque local:&nbsp;&nbsp;&nbsp; </label> 
+      <input  type='file' id="imgInp" name="imgInp"  />
+       </div>
+    </div>
+	      <input  type='hidden' id="home" name="home" value="0" />
+
+   <div class="col">
+     <div class="form-group">
+       <img id="blah" height="" width="180" height="180" src="#" alt="your image" />
+     </div>
+   </div>
+ </div>
+ <br>
+  <div class="form-group" >
+  <label for="titrefileExterne" class="control-label " style="font-size:20px;font-weight:bold; color: black">Titre </label> <br>
+
+<input style="width:72% " type="text" name="titrefileExterne" class="from-control" id="titrefileExterne" />
+  </div>
+ <br>
+
+ <div class="form-group">
+    <label for="descripfileExterne" class=" control-label" style="font-size:20px;font-weight:bold ; color: black">Description </label>
+ <textarea class="form-control" style="width:72%; height:70px;"  name="descripfileExterne" id="descripfileExterne" ></textarea>
+ </div>
+
+ <div class="form-group">
+ <button type="submit" class="btn btn-md btn-success m-4 float-right"><span id="spinnerkbs"></span> Charger Image</button >
+</div>
+</form>
+</div>
+ </div>
+
 
 
 
@@ -550,7 +600,7 @@ $(document).on('click','#okapreschargement', function() {
     
            $.ajax({
 
-               url:"{{url('/')}}/ChargerTableImagesSlider/",
+               url:"{{url('/')}}/ChargerTableImagesSliderScolaire/",
                type : 'get',
                contentType: "application/json;charset=utf-8",
                success: function(data){

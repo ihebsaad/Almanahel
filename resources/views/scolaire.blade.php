@@ -39,7 +39,8 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       </h4>
       </div>
       <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-        <div class="panel-body">
+        <div class="panel-body"   >
+		
           <?php echo $contenu; ?>
         </div>
       </div>
@@ -65,6 +66,9 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
   
   
 <style>
+
+.panel-body{min-height:500px;}
+
     .box{
         color: #fff;
         padding: 20px;

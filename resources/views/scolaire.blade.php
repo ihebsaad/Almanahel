@@ -14,10 +14,57 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  <h3 style="text-align:center" >Galerie</h3>
  
  
+ 
+ 
+          <div id="demo" class="carousel slide" data-ride="carousel">
+
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->get();
+     $nb= $imagesslider->count();$u=0;
+      ?>
+
+    @for($i=0; $i<$nb ;$i++)
+    <li data-target="#demo" data-slide-to="{{$i}}" class="{{ ($i==0) ? 'checked' : '' }}"></li>
+    <!--  <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li> -->
+     @endfor
+  </ul>
+          <div class="carousel-inner">
+                  @foreach($imagesslider as $ims)
+
+    <div class="carousel-item <?php if($u==0){echo'active' ; $u++ ; }?>">
+      <!-- <img src="http://test6.enterpriseesolutions.com/almanahel/wp-content/uploads/2016/08/slide01.jpg" alt="Los Angeles" width="1100" height="450"> -->
+      <img src="{{URL::to('/').'/storage/'.$ims->url }}"  alt="" title="slide01"  width="1920" height="1065" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+      <div class="carousel-caption">
+           <h3>{{$ims->titre}}</h3>
+          <p>{{$ims->descrip}}</p> 
+        </div>
+    </div>
+
+    @endforeach
+
+    </div>
+ 
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
+ 
+ 
+ 
  	</div>
- <h3 style="text-align:center" >Calendrier de l'école</h3>
 
   <div class="col-lg-6 col-sm-12">
+ <h3 style="text-align:center" >Calendrier de l'école</h3>
 
 	@include('evenements.calendar')  
 	</div>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
     use App\Inscription ;
       use App\User ;
+        use App\Classe ;
  use DB;
 use Swift_Mailer;
  use Mail;
@@ -39,11 +40,11 @@ class InscriptionsController extends Controller
  
         return view('inscriptions.create'  );
     }
-    public function eleveainscrire()
+  /*  public function eleveainscrire()
     {
  
         return view('inscriptions.eleveainscrire'  );
-    }
+    }*/
       public function createfront()
     {
  
@@ -421,6 +422,16 @@ if(empty($parent))
             $champ=$request->get('champ1');
            
             $user= User::where('id', $champ)->first();
+             $relation = DB::table('parents_eleve')
+                                         ->where([
+                                            ['eleve', '=', $user['id']],
+                                            ])->first();
+            $relation1 = DB::table('eleves_classe')
+                                         ->where([
+                                            ['eleve', '=', $user['id']],
+                                            ])->first();
+ $parent= User::where('id',  $relation->parent)->first();
+ $classe= Classe::where('id',  $relation1->classe)->first();
             $inscription = new Inscription([
                 'nom' => $user['lastname'],
                 'prenom' =>$user['name'] ,
@@ -430,9 +441,20 @@ if(empty($parent))
                 'user_type' => 'eleve',
                 'annee' => date('Y', strtotime('-1 year')),
                   'eleve' => $user['id'],
-                  'ideleve' => $user['id']
+                  'ideleve' => $user['id'],
+                  'nom_rep' => $parent['lastname'],
+                  'prenom_rep' =>$parent['name'] ,
+                  'email_rep' => $parent['email'],
+                  'tel'=> $parent['tel'],
+                  'ville'=> $parent['adresse'],
+                  'idparent'=> $parent['id'],
+                  'niveau'=> $classe['titre'],
+                  'etablissement'=> 'ELManahel',
+                  'type_etabliss'=> 1,
                   ]);
            $inscription->save();
+          
+
 
             return redirect('/inscriptions')->with('success', '  ajouté  avec succès');
             

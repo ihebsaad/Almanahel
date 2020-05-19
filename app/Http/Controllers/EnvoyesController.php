@@ -104,7 +104,7 @@ class EnvoyesController extends Controller
 		Mail::setSwiftMailer($swiftMailer);
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
-        if (
+        
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
                 $message
                     ->to($to)
@@ -114,9 +114,9 @@ class EnvoyesController extends Controller
                     ->setFrom([$from => $fromname]);
 					   ;
             })
-		){
+		 
 			$envoye  = new Envoye([
-              'emetteur' =>trim( $request->get('emetteur')),
+              'emetteur' => ( $request->get('emetteur')),
              'destinataire' => trim($request->get('destinataire')),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu'))
@@ -128,7 +128,7 @@ class EnvoyesController extends Controller
                 return redirect('/envoyes/view/'.$id)->with('success', 'Envoyé avec succès') ;
             }
  
-		} else{
+		  else{
 			  return redirect('/envoyes' )  ;
 
  		}

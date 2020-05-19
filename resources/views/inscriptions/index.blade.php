@@ -137,7 +137,7 @@
     </div>
 	
 	<script>
-	    function checkexiste( elm,type) {
+	     function checkexiste( elm,type) {
         var id=elm.id;
         var val =document.getElementById(id).value;
         //  var type = $('#type').val();
@@ -181,7 +181,7 @@
                     if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
                     if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }
 
-					alert(string);					
+                    alert(string);                  
                 }
 
 
@@ -193,6 +193,29 @@
 
         // }
     }
+    $('#btnaddinscription').click(function(){
+
+          
+    var champ = $('#champ1').val();
+           
+            if ((champ != '') )
+            {
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url:"{{ route('inscriptions.inscriptionsadd') }}",
+                    method:"POST",
+                    data:{champ:champ, _token:_token},
+                    success:function(data){
+
+                        //   alert('Added successfully');
+                        window.location =data;
+
+                    }
+                });
+            }else{
+                // alert('ERROR');
+            }
+        });
 	</script>
 	
      @endsection

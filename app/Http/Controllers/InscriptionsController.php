@@ -102,8 +102,8 @@ $pathb = storage_path()."/fichiers/";
               'email_rep'=> $request->get('email_rep'),
                'annee'=> $request->get('annee'),
                'bulletin1' =>  $name,
-               'bulletin2' =>  $nameb
-            // 'par'=> $request->get('par'),ville
+               'bulletin2' =>  $nameb,
+            // 'par'=> $request->get('p,ar'),ville
 
         ]);
 
@@ -409,6 +409,30 @@ if(empty($parent))
      return json_encode($user) ;
 
     }
+    public function inscriptionsadd(Request $request)
+    {
+        if( ($request->get('champ'))!=null) {
+
+            $champ=$request->get('champ');
+            $user= User::where('id', $champ)->first();
+            $inscription = new Inscription([
+                'nom' => $user['lastname'],
+                'prenom' =>$user['name'] ,
+                'email' => $user['email'],
+                 'datenaissance' =>$user['naissance'],
+                'valide' => 1,
+                'user_type' => 'eleve',
+                'annee' => date('Y', strtotime('-1 year'),
+                'ideleve' => $user['id'],
+                'eleve' => $user['id'],
+                  
+
+
+            ]);
+
+            return redirect('/inscriptions')->with('success', '  ajouté  avec succès');
+            
+        } }
 
  
  

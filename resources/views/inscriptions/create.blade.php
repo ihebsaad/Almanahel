@@ -39,7 +39,7 @@
 <div class="row" style="margin-left:10px">
   
     <div class="col">
-       <label  for="reemail">Confirmez E-mail: </label>
+       <label  for="reemail_rep">Confirmez E-mail: </label>
        <label id="alert" style="display:none; color:red;">Il faut retapez le mail</label>
        <input  class="form-control" type="text" name="reemail" id="reemail" onBlur="checkMail1()"/>
  </div>
@@ -232,7 +232,7 @@
      
  
 </div>
-
+</div>
 <div class="row" style="margin-left:10px">
   
     <div class="col">

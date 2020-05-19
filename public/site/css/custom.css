@@ -30,3 +30,8 @@ a > span.fa-stack:hover {
 height: 200px;  /* The height is 400 pixels */
 width: 200%;  /* The width is the width of the web page */
 }
+
+/* actualite carousel */
+#multi-item-example > .carousel-inner {
+    margin: 0 3%;
+}

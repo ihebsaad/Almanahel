@@ -422,7 +422,7 @@ if(empty($parent))
                  'datenaissance' =>$user['naissance'],
                 'valide' => 1,
                 'user_type' => 'eleve',
-                'annee' => date('Y', strtotime('-1 year'),
+                'annee' => date('Y', strtotime('-1 year')),
                 'ideleve' => $user['id'],
                 'eleve' => $user['id'],
                   

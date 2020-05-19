@@ -2,10 +2,9 @@
 
 @section('content')
  
-  <?php $link  =  "http://$_SERVER[HTTP_HOST]/public/site/img/contact-bg.jpg"; ?>
 
   <!-- Page Header -->
-  <header class="masthead" style=" background-image:url('<?php  echo $link; ?>')"  >
+  <header class="masthead" style=" background-image:url('{{  URL::asset('public/site/img/contact-bg.jpg') }}')"  >
     <div class="overlay"></div>
     <div class="container">
       <div class="row">

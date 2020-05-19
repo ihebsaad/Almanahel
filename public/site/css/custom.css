@@ -68,3 +68,12 @@ div#multi-item-example > div.carousel-inner {
     top: 0;
     width: 33px;
 }
+
+/* bouton */
+.btn-primary {
+    background-color: #016893!important;
+    border-color: #31c5ff!important;
+}
+.btn-primary:active,.btn-primary:focus,.btn-primary:hover{
+    background-color:#3891b6!important;
+    border-color:#31c5ff!important}

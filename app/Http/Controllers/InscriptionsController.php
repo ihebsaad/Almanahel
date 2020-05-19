@@ -40,11 +40,11 @@ class InscriptionsController extends Controller
  
         return view('inscriptions.create'  );
     }
-  /*  public function eleveainscrire()
+    public function eleveainscrire()
     {
  
         return view('inscriptions.eleveainscrire'  );
-    }*/
+    }
       public function createfront()
     {
  
@@ -76,6 +76,9 @@ $pathb = storage_path()."/fichiers/";
  
           $bulletin2->move($pathb, $nameb);
     }
+      $annee=  $request->get('annee');
+if($annee == null){
+$annee=date('Y', strtotime('0 year')); }
         $Inscription = new Inscription([
              'eleve' =>$request->get('eleve'),
              'nom' => $request->get('nom'),
@@ -106,7 +109,7 @@ $pathb = storage_path()."/fichiers/";
               'tel2'=> $request->get('tel2'),
               'email'=> $request->get('email'),
               'email_rep'=> $request->get('email_rep'),
-               'annee'=> $request->get('annee'),
+               'annee'=> $annee,
                'bulletin1' =>  $name,
                'bulletin2' =>  $nameb,
             // 'par'=> $request->get('p,ar'),ville
@@ -326,9 +329,12 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$eleve["email"];
-         $sujet="Création d'un nouvel élève";
-         $contenu='Création d\'un nouvel élève avec username '.$eleve['username'].'<br>
-                  et Mot de passe : '.$eleve['password'];
+         $sujet="AlManahel Academy - votre préinscription est validée";
+         $contenu='BONJOUR ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
+                  VOTRE PRÉINSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>
+                  Vos codes accès :'.'<br>
+                   Username :'.$eleve['username'].'<br>
+                   Mot de passe :'.$eleve['password'];
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -359,9 +365,12 @@ if(empty($parent))
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
-         $sujet="Création d'un nouvel parent";
-         $contenu='Création d\'un nouvel parent avec username '.$parent['username'].'<br>
-                  et Mot de passe : '.$parent['password'];
+         $sujet="AlManahel Academy - la préinscription de votre fils/fille est validée";
+          $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
+                LA PRÉINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL EST VALIDÉE.'.'<br>
+                  Vos codes accès :'.'<br>
+                   Username :'.$parent['username'].'<br>
+                   Mot de passe :'.$parent['password'];
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -439,7 +448,7 @@ if(empty($parent))
                  'datenaissance' =>$user['naissance'],
                 'valide' => 1,
                 'user_type' => 'eleve',
-                'annee' => date('Y', strtotime('-1 year')),
+                'annee' => date('Y', strtotime('0 year')),
                   'eleve' => $user['id'],
                   'ideleve' => $user['id'],
                   'nom_rep' => $parent['lastname'],

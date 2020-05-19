@@ -32,6 +32,6 @@ width: 200%;  /* The width is the width of the web page */
 }
 
 /* actualite carousel */
-#multi-item-example > .carousel-inner {
-    margin: 0 3%;
+div#multi-item-example > div.carousel-inner {
+    margin: 0 3% !important;
 }

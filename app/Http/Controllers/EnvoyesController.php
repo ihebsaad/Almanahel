@@ -115,7 +115,7 @@ class EnvoyesController extends Controller
 					   ;
             })
 		){
-			$envoyes = new Envoye([
+			$envoye  = new Envoye([
               'emetteur' =>trim( $request->get('emetteur')),
              'destinataire' => trim($request->get('destinataire')),
              'sujet' => trim($request->get('sujet')),

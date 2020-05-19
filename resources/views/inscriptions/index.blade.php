@@ -1,12 +1,6 @@
 @extends('layouts.back')
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
-
-<link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
- 
-
- <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  -->
 
   
 
@@ -125,9 +119,7 @@
                                 </div>
 
                                 
-							<button type="submit"  id="test" class="btn btn-primary pull-right">
-                                   S'inscrire
-                                </button>
+
 
 
                             </form>
@@ -139,14 +131,17 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                 
+                   <button type="submit"  id="test" class="btn btn-primary">
+                                   S'inscrire
+                                </button>
                 </div>
             </div>
         </div>
     </div>
-	
+	  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	<script>
-	     function checkexiste( elm,type) {
+	    function checkexiste( elm,type) {
         var id=elm.id;
         var val =document.getElementById(id).value;
         //  var type = $('#type').val();
@@ -168,29 +163,34 @@
                     document.getElementById(id).style.color='black';
                 }
 */                    parsed = JSON.parse(data);
-                   
-                if(parsed['name']==''){
+           
+                if(data=="null"){
                      string='Erreur,faux id vérifiez ';
                
-                   
-                     Swal.fire({
+                    Swal.fire({
                         type: 'error',
-                        title: 'Faux id...',
+                        title: 'Existe ...',
                         html: string
-                    });
+                    });  
+                     
 
                     document.getElementById(id).style.background='#FD9883';
                     document.getElementById(id).style.color='white';
-                    $('#btnaddinscription').prop('disabled', true);
+                   $('#test').prop('disabled', true);
                 } else{
                      document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
-                     $('#btnaddinscription').prop('disabled', false);
+                    $('#test').prop('disabled', false);
                      string='Eleve existe: ! ';
                     if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
                     if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }
 
-                    alert(string);                  
+                   // alert(string);  
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Existe ...',
+                        html: string
+                    });                
                 }
 
 
@@ -262,7 +262,7 @@
 
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
-              //  dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
+                dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
                 buttons: [
 

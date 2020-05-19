@@ -205,7 +205,7 @@
                     data:{champ:champ, _token:_token},
                     success:function(data){
 
-                     alert('Added successfully');
+                     alert(data);
                       //  window.location =data;
 
                     }

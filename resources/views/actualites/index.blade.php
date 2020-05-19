@@ -160,7 +160,10 @@
     <script type="text/javascript" src="{{ asset('resources/assets/datatables/js/pdfmake.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('resources/assets/datatables/js/vfs_fonts.js') }}" ></script>
 
-    <style>.searchfield{width:100px;}</style>
+    <style>.searchfield{width:100px;}
+		 #mytable{width:100%!important;margin-top:10px !important;}
+
+	</style>
 
 
     <script type="text/javascript">

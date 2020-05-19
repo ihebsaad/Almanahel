@@ -119,6 +119,10 @@ class EnvoyesController extends Controller
              
         ]);
 		
+		   return redirect('/envoyes')->with('success', ' ajouté avec succès');
+
+		} else{
+			return back()->with('error', ' Erreur ! ');;
 		}
 		  
 	

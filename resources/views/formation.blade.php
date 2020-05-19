@@ -14,12 +14,9 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 <section>
 
 <center><h4>Dernières Annonces<h4></center>
-<?php // echo $contenu; 
- 
+  
 @include('annonces')
- 
-?>
-
+  
 </section>
 </div>
 

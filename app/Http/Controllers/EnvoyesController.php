@@ -120,14 +120,18 @@ class EnvoyesController extends Controller
              'destinataire' => trim($request->get('destinataire')),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu'))
-             
-        ]);
+         ]);
 		
-		   return redirect('/envoyes')->with('success', ' ajouté avec succès');
+		 if ($envoye->save())
+            { $id=$envoye->id;
 
+                return url('/envoyes/view/'.$id)->with('success', 'Envoyé avec succès')*/;
+            }
+ 
 		} else{
-			return back()->with('error', ' Erreur ! ');;
-		}
+			  return url('/envoyes' )->with('error', 'Erreur') ;
+
+ 		}
 		  
 	
 	}

@@ -106,7 +106,7 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
       </tr>
     </thead>
     <tbody>
-      <?php $imagesslider=App\Image::where('categorie','slider')->orderBy('created_at','DESC')->get(); ?>
+      <?php $imagesslider=App\Image::where('categorie','slider')->where('home',1)->orderBy('created_at','DESC')->get(); ?>
 
       @foreach($imagesslider as $ims)
       <tr>

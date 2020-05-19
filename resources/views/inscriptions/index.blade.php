@@ -202,7 +202,7 @@
                 $.ajax({
                     url:"{{ route('inscriptions.inscriptionsadd') }}",
                     method:"POST",
-                    data:{champ:champ, _token:_token},
+                    data:{champ:3, _token:_token},
                     success:function(data){
 
                      alert(data);

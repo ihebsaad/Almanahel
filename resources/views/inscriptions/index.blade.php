@@ -218,7 +218,7 @@
             success: function (data) {
 
                parsed = JSON.parse(data);
-           alert(data);
+          // alert(data);
                 if(data>0){
                      
                     document.getElementById(id).style.background='white';
@@ -248,7 +248,7 @@
 
           
     var champ = $('#champ1').val();
-           alert(champ);
+          // alert(champ);
             if ((champ != '') )
             {
                 var _token = $('input[name="_token"]').val();
@@ -258,7 +258,7 @@
                     data:{champ:champ, _token:_token},
                     success:function(data){
 
-                     alert('Added successfully');
+                     //alert('Added successfully');
                       //  window.location =data;
 
                     }

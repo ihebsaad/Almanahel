@@ -40,11 +40,11 @@ class InscriptionsController extends Controller
  
         return view('inscriptions.create'  );
     }
-    public function eleveainscrire()
+    /*public function eleveainscrire()
     {
  
         return view('inscriptions.eleveainscrire'  );
-    }
+    }*/
       public function createfront()
     {
  
@@ -471,7 +471,18 @@ if(empty($parent))
             
       }
 
- 
+   public static function checkexiste1(Request $request)
+    {
+        $val =  trim($request->get('val'));
+     
+     $count =  Inscription::where('ideleve', $val)
+              ->where('annee', date('Y', strtotime('0 year')))
+              ->where('valide',1)
+              ->count();
+
+     return $count;
+
+    }
  
 
 

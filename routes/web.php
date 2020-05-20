@@ -188,6 +188,7 @@ Route::post('/edit2/{id}','InscriptionsController@update');
 Route::get('/inscriptions/valide/{id}', 'InscriptionsController@valide');
 Route::post('/inscriptions/checkexiste', 'InscriptionsController@checkexiste')->name('inscriptions.checkexiste');
 Route::post('/inscriptions/inscriptionsadd', 'InscriptionsController@inscriptionsadd')->name('inscriptions.inscriptionsadd');
+Route::post('/inscriptions/checkexiste1', 'InscriptionsController@checkexiste1')->name('inscriptions.checkexiste1');
 
 /****  Images gestion image slider carrousel  *****/
 Route::get('/mettreAjourSlider', 'ImageController@mettreAjourSlider');

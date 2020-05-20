@@ -113,7 +113,7 @@
                                 <div class="form-group " >
                                     <label for="champ1">Ancien Élève</label>
                                     <div class=" row  ">
-                                        <input class="form-control" type="number"  id="champ1" name="champ1"  onchange="checkexiste(this,'eleve')" />
+                                        <input class="form-control" type="number"  id="champ1" name="champ1"  onchange="checkexiste(this,'eleve');checkexiste1(this)" />
                                       
 
 
@@ -186,6 +186,46 @@
                      string='Eleve existe: ! ';
                     if(parsed['name']!=null){string+='Nom : '+parsed['name']+ ' - '; }
                     if(parsed['lastname']!=null){string+='Prénom : '+parsed['lastname']+ ' - '; }
+
+                   // alert(string);  
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Existe ...',
+                        html: string
+                    });                
+                }
+
+
+
+
+            }
+        });
+        // } else {
+
+        // }
+    }
+     function checkexiste1( elm) {
+        var id=elm.id;
+        var val =document.getElementById(id).value;
+        //  var type = $('#type').val();
+
+        //if ( (val != '')) {
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: "{{ route('inscriptions.checkexiste1') }}",
+            method: "POST",
+            data: {   val:val, _token: _token},
+            success: function (data) {
+
+               parsed = JSON.parse(data);
+           alert(data);
+                if(data>0){
+                     
+                    document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                    $('#test').prop('disabled', true);
+                     string='Eleve deja inscrit ! ';
+                    
 
                    // alert(string);  
                     Swal.fire({

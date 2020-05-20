@@ -34,7 +34,9 @@
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #ddd;
+	margin-top:12px;
 }
+#mytable_length select{margin-left:5px;margin-right:5px;}
      </style>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
       <!-- CSRF Token -->

@@ -70,7 +70,7 @@
 <i class="fa fa-clock-o"></i>
 </div>-->
 <div class="contact-info">
-<a href="#">Espace Élèves</a>
+<a href="{{ route('login') }}">Espace Élèves</a>
 <!--<span>Sunday colsed</span>-->
 </div>
 </li>
@@ -79,7 +79,7 @@
 <i class="fa fa-envelope"></i>
 </div>-->
 <div class="contact-info">
-<a href="#">Espace Enseignants</a>
+<a href="{{ route('login') }}">Espace Enseignants</a>
 </div>
 </li>
 <li>
@@ -87,7 +87,7 @@
 <i class="fa fa-phone"></i>
 </div>-->
 <div class="contact-info">
-<a href="#">Espace Parents</a>
+<a href="{{ route('login') }}">Espace Parents</a>
 <!--<span> (+1) 1144-1254</span>-->
 </div>
 </li>
@@ -96,7 +96,7 @@
 <i class="fa fa-phone"></i>
 </div>-->
 <div class="contact-info">
-<a href="#">Espace Administration</a>
+<a href="{{ route('login') }}">>Espace Administration</a>
 <!--<span> (+1) 1144-1254</span>-->
 </div>
 </li>

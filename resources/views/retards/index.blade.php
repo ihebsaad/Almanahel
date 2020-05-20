@@ -38,13 +38,20 @@
             </thead>
             <tbody>
             @foreach($retards as $retard )
-   
+   		<?php
+				$userid=$absence['eleve'];
+				$idcl=$absence['classe'];
+				$user=	\App\User::where('id',$userid)->first();
+				$classe=	\App\User::where('id',$idcl)->first();
+				  
+				
+				?>
 
                 <tr>
                     <td style="width:5%" ><a href="{{action('RetardsController@view', $retard['id'])}}" >{{$retard->id}}</a></td>
-                    <td style="width:20%" ><?php echo $retard['classe'];?> </td>
-                    <td style="width:20%" ><?php echo $retard['eleve'];?> </td>
-                     <td style="width:10%" ><?php echo $retard['date'];?> </td>
+                  <td style="width:20%" ><?php echo $classe->titre;?> </td>
+                    <td style="width:20%" ><?php echo $user->name .' '.$user->lastname;;?> </td>
+                       <td style="width:10%" ><?php echo $retard['date'];?> </td>
  
 					<td style="width:10%"   >
                         @can('isAdmin')

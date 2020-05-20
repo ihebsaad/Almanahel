@@ -39,12 +39,18 @@
             </thead>
             <tbody>
             @foreach($absences as $absence )
-   
-
+				<?php
+				$userid=$absence['eleve'];
+				$idcl=$absence['classe'];
+				$user=	\App\User::where('id',$userid)->first();
+				$classe=	\App\User::where('id',$idcl)->first();
+				  
+				
+				?>
                 <tr>
                     <td style="width:5%" ><a href="{{action('AbsencesController@view', $absence['id'])}}" >{{$absence->id}}</a></td>
-                    <td style="width:20%" ><?php echo $absence['classe'];?> </td>
-                    <td style="width:20%" ><?php echo $absence['eleve'];?> </td>
+                    <td style="width:20%" ><?php echo $classe->titre;?> </td>
+                    <td style="width:20%" ><?php echo $user->name .' '.$user->lastname;;?> </td>
                     <td style="width:10%" ><?php echo $absence['debut'];?> </td>
                     <td style="width:10%" ><?php echo $absence['fin'];?> </td>
  
@@ -67,8 +73,7 @@
 
 
     <?php use \App\Http\Controllers\UsersController;
-    $users=UsersController::ListeUsers();
-
+ 
     $CurrentUser = auth()->user();
 
     $iduser=$CurrentUser->id;

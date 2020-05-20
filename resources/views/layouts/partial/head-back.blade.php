@@ -11,7 +11,7 @@
     </title>
 	
  <style>
- 
+ #mytable_filter{right:0px!important;position:absolute!important;}
      #swal2-content{font-size:15px;}
 	 .editor{width:800px;}
 	table, #mytable{display:table !important;width:100%!important;margin-top:10px !important;}

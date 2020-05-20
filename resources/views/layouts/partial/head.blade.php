@@ -96,7 +96,7 @@
 <i class="fa fa-phone"></i>
 </div>-->
 <div class="contact-info">
-<a href="{{ route('login') }}">>Espace Administration</a>
+<a href="{{ route('login') }}">Espace Administration</a>
 <!--<span> (+1) 1144-1254</span>-->
 </div>
 </li>

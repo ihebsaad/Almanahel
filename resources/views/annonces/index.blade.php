@@ -120,7 +120,7 @@
             //if ( (val != '')) {
             var _token = $('input[name="_token"]').val();
             $.ajax({
-                url: "{{ route('actualites.updating') }}",
+                url: "{{ route('annonces.updating') }}",
                 method: "POST",
                 data: {actus:actus , champ:champ ,val:val, _token: _token},
                 success: function (data) {

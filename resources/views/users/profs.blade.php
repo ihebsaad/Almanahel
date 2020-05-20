@@ -19,7 +19,9 @@
          <div class="row">
             <div class="col-md-8"><H2> Liste des Enseignants</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('UsersController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter un utilisateur"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
         </div>
-    <table class="table table-striped" id="mytable" style="width:100%">
+ 	<div class="table-responsive">
+     <table class="table table-striped table-bordered" id="mytable" width="100%" cellspacing="0">
+             
         <thead>
         <tr id="headtable">
             <th>ID</th>
@@ -66,6 +68,7 @@
             @endforeach
             </tbody>
         </table>
+		</div>
  @endsection
 
 

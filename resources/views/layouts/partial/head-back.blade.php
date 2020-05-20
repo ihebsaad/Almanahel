@@ -6,11 +6,10 @@
     <meta charset="UTF-8">
     <title>
         @section('title')
-              Al Manahel Academy
+              Al Manahel
         @show
     </title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+	
  <style>
  
      #swal2-content{font-size:15px;}

@@ -105,8 +105,8 @@
 
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
-               // dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
-               // responsive:true,
+                 dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
+                 responsive:true,
                 buttons: [
 
                     'csv', 'excel', 'pdf', 'print'

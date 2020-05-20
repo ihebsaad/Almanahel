@@ -72,7 +72,7 @@
     <script type="text/javascript" src="{{ asset('resources/assets/datatables/js/pdfmake.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('resources/assets/datatables/js/vfs_fonts.js') }}" ></script>
 
-    <style>.searchfield{width:100px;}</style>
+    <style>/*.searchfield{width:100px;}*/</style>
 
 
     <script type="text/javascript">

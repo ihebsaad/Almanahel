@@ -11,12 +11,11 @@
     </title>
 	
  <style>
- #mytable_filter{right:0px!important;position:absolute!important;}
+ #mytable_filter{right:10px!important;position:absolute!important;}
      #swal2-content{font-size:15px;}
 	 .editor{width:800px;}
 	table, #mytable{display:table !important;width:100%!important;margin-top:10px !important;}
-	/* #mytable_filter{position:absolute!important;right:5px!important;}*/
-	
+ 	
 	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     z-index: 3;
     color: #fff;

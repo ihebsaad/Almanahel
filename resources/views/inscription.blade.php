@@ -162,7 +162,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 
 <div class="row">
 	<section style=" font-size: 18px; font-weight: 500; color: #545454;">
-		Vous êtes : <select id="elevestat">
+		Vous êtes : <select class="form-control" id="elevestat">
             <option>Selectionner</option>
             <option value="nouveau">Nouveau</option>
             <option value="ancien">Ancien</option>
@@ -175,7 +175,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     	<div class="row" style="margin-top: 10px">
     	<p style="color:#f20101;text-decoration: underline;">Cette pré-inscription ne concerne pas les élèves déjà scolarisés au lycée Al-Manahel</p>
 			    <label for="mpreinscrit">Pour qu'un élève soit admis au lycée Al-Manahel, la première démarche à faire par le parent concerné est soit de: </label>
-			    <select  class="custom-select" name="mpreinscrit" id="mpreinscrit" >
+			    <select  class="form-control" name="mpreinscrit" id="mpreinscrit" >
 			    <option value="">Veuillez choisir une option</option>
 			     <option value="formenligne">1- Compléter le formulaire en ligne, joindre une copie des deux derniers bulletins de notes et valider la pré-inscription</option>
 			    <option value="telechargeform">2- Télécharger le formulaire en pdf, le remplir, le signer et le déposer, avec une copie des deux  derniers bulletins de notes, au secrétariat du lycée.</option>
@@ -247,7 +247,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					 	</div>
 						<div class="col">
 						    <label for="section">Section : </label>
-						    <select  class="custom-select" name="section" id="section">
+						    <select  class="form-control" name="section" id="section">
 						    <option value="">Veuillez choisir une option</option>
 						     <option value="Bac Français<">Bac Français</option>
 						    <option value="Sciences expérimentales">Sciences expérimentales</option>

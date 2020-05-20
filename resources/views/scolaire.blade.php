@@ -135,7 +135,118 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
   
   
     <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+    div#demo > div.carousel-inner > div.carousel-item:after {
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      background:rgba(0,0,0,0.3);
+    }
+  
+a [role="button"]{color:black;text-decoration:none;}
+ 
+    .box{
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+    }
+    .nouveau{ color: #000; margin-top: 10px;}
+    .ancien{ color: #000; margin-top: 10px; }
 
+    /* Accordion */
+
+
+	.panel-default>.panel-heading {
+	  color: #333;
+	  background-color: #eee;
+	  border-color: #e4e5e7;
+	  padding: 0;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+
+	.panel-default>.panel-heading a {
+	    display: block;
+	    padding: 10px 15px;
+	    font-size: 16px;
+	}
+
+	.panel-default>.panel-heading a:after {
+	  content: "";
+	  position: relative;
+	  top: 1px;
+	  display: inline-block;
+	  font-family: 'Glyphicons Halflings';
+	  font-style: normal;
+	  font-weight: 400;
+	  line-height: 1;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	  float: right;
+	  transition: transform .25s linear;
+	  -webkit-transition: -webkit-transform .25s linear;
+	}
+
+	.panel-default>.panel-heading a[aria-expanded="true"] {
+	  background-color: #ccc;
+	}
+
+	.panel-default>.panel-heading a[aria-expanded="true"]:after {
+	  content: "\2212";
+	  -webkit-transform: rotate(180deg);
+	  transform: rotate(180deg);
+	}
+
+	.panel-default>.panel-heading a[aria-expanded="false"]:after {
+	  content: "\002b";
+	  -webkit-transform: rotate(90deg);
+	  transform: rotate(90deg);
+	}
+
+	.accordion-option {
+	  width: 100%;
+	  float: left;
+	  clear: both;
+	  margin: 15px 0;
+	}
+
+	.accordion-option .title {
+	  font-size: 20px;
+	  font-weight: bold;
+	  float: left;
+	  padding: 0;
+	  margin: 0;
+	}
+
+	.accordion-option .toggle-accordion {
+	  float: right;
+	  font-size: 16px;
+	  color: #6a6c6f;
+	}
+	.panel-body {
+		
+	    padding: 10px 15px;
+	}
+	.sectionform {
+		background-color:#ccc;
+		color: black;
+		font-weight:600;
+		padding:5px 20px;
+    	margin-top: 20px;
+		margin-bottom: 15px}
+	.btn-preinscrit {
+
+	}
 </style>
   
 @endsection

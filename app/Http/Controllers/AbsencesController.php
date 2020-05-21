@@ -51,23 +51,67 @@ class AbsencesController extends Controller
     public function store(Request $request)
     {
 		$vis=$request->get('email');
-		if($vis=="on"){
+		$eleve=$request->get('eleve');
+		$classe = trim($request->get('classe'));
+		$seance = trim($request->get('seance'));
+		$details = trim($request->get('details'));
+        $debut = trim($request->get('debut')):
+        $fin = trim($request->get('fin')):
+		
+		$Eleve=User::where('id',$eleve)->get();
+		$nomeleve=$Eleve->name.' '.$Eleve->lastname;
+		if($vis=="on" || $vis==1 ){
 			$email=1;
 		}else{
 			$email=0;			
 		}
 		
-	 
+		if($email==1){
+			// Envoi Email aux parents
+			// get liste parents
+			 $idsparents = DB::table('parents_eleve')->where('eleve','=',$eleve)->pluck('parent');
+         
+               $parents = User::orderBy('name', 'asc')
+               ->whereIn('id', $idsparents)
+               ->get() ;
+			   
+			forech($parents as $parent)
+			{  
+				$to=trim($parent->email);
+				//$nomp=$parent->name. ' '.$parent->lastname ;
+				$sujet="Notification - Absence d'éleve ".$nomeleve." ";
+				$contenu="Bonjour,<br>
+				Nous vous informons que votre enfant ".$nomeleve." a été absent à l'école.<br>
+				De: ".$debut." A: ".$fin."<br>
+				Séance(s): ".$seance."<br>
+				".$details."<br><br>
+				
+				Pour toutes informations supplémentaires, veillez contacter l'administration de l'école.<br><br>
+				
+				Cordialement.<br><br>
+				
+				AL MANAHEL Academy.
+				" ;
+				
+				$data=array('to'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+				$request = new Illuminate\Http\Request($data);
+
+				\App\Http\Controllers\EnvoyesController::sendnotif($request);
+				//app('\App\Http\Controllers\UserController')->sendnotif($request);
+				
+			}
+			
+		}
                  
 				 
         $absences = new Absence([
-              'eleve' =>trim( $request->get('eleve')),
-             'classe' => trim($request->get('classe')),
-             'details' => trim($request->get('details')),
-             'seance' => trim($request->get('seance')),
-             'debut' => trim($request->get('debut')),
-             'fin' => trim($request->get('fin')),
- 
+              'eleve' => $eleve,
+             'classe' => $classe ,
+             'seance' => $seance ,
+             'details' => $details ,
+             'debut' => $debut ,
+             'fin' => $fin 
+             
         ]);
 
         $absences->save();

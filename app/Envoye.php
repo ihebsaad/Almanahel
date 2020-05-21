@@ -11,6 +11,7 @@ class Envoye extends Model
  'destinataire',
  'sujet',
  'contenu',
+ 'type'
   ];
  
 }

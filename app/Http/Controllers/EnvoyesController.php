@@ -119,7 +119,8 @@ class EnvoyesController extends Controller
               'emetteur' => ( $request->get('emetteur')),
              'destinataire' => trim($request->get('destinataire')),
              'sujet' => trim($request->get('sujet')),
-             'contenu' => trim($request->get('contenu'))
+             'contenu' => trim($request->get('contenu')),
+             'type' => 'communication')
 								]);
 		
 		 if ($envoye->save())
@@ -135,6 +136,59 @@ class EnvoyesController extends Controller
 		  
 	
 	}
+
+
+	
+	  public function sendnotif(Request $request)
+    {
+ 	 $to= $request->get('destinataire') ;
+	 $sujet= $request->get('sujet') ;
+	 $contenu= $request->get('contenu') ;
+	 $type= $request->get('type') ;
+	 
+
+ $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
+        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
+        $swiftTransport->setPassword('21septembre'); // mot de passe email
+		
+        $swiftMailer = new Swift_Mailer($swiftTransport);
+		Mail::setSwiftMailer($swiftMailer);
+		$from='almanahelacademy@gmail.com';
+		$fromname='Almanahel Academy';
+        
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
+                $message
+                    ->to($to)
+                    //   ->cc($cc  ?: [])
+                    ->subject($sujet)
+                       ->setBody($contenu, 'text/html')
+                    ->setFrom([$from => $fromname]);
+					   ;
+            });
+		 
+			$envoye  = new Envoye([
+              'emetteur' => ( $request->get('emetteur')),
+             'destinataire' => trim($request->get('destinataire')),
+             'sujet' => trim($request->get('sujet')),
+             'contenu' => trim($request->get('contenu')),
+             'type' => $type)
+								]);
+		
+		 if ($envoye->save())
+            {  
+                return true ;
+            }
+ 
+		  else{
+			  return false  ;
+
+ 		}
+		  
+	
+	}
+
+
+
 
     public function updating(Request $request)
     {

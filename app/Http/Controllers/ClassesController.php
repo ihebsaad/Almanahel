@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Log;
 
 use Illuminate\Http\Request;
   use App\Classe ;
+  use App\Retard ;
+  use App\Absence ;
  use DB;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -195,6 +197,8 @@ class ClassesController extends Controller
     {
         $classe = Classe::find($id);
         $classe->delete();
+		 Absence::where('classe',$id)->delete();
+		 Retard::where('classe',$id)->delete();
 
         return redirect('/classes')->with('success', '  supprimé avec succès');
     }

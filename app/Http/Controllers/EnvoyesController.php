@@ -171,7 +171,7 @@ class EnvoyesController extends Controller
              'destinataire' => trim($request->get('destinataire')),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu')),
-             'type' => $type)
+             'type' => $type
 								]);
 		
 		 if ($envoye->save())

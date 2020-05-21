@@ -31,18 +31,17 @@
 			  {{ csrf_field() }}
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                   <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
-					<option></option>
-					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
-						foreach($eleves as $el)
+                    <select id="classe" type="number" class="form-control select2" name="classe" style="height:38px;">
+					 <option></option>
+					<?php $classes= \App\Classe::get(); 
+						foreach($classes as $cl)
 						{
-							$classe=ClassesController::ClasseEleve($el->id);
-						echo ' <option   value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+						echo ' <option value="'.$cl->id.'">'.$cl->titre.'</option>';
 	
 						}
 					?>
-					</select>                
-					</div>
+ 					</select>
+                </div>
 				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>

@@ -49,7 +49,7 @@
 
                 <tr>
                     <td style="width:5%" ><a href="{{action('RetardsController@view', $retard['id'])}}" >{{$retard->id}}</a></td>
-                  <td style="width:20%" ><?php echo $classe->titre;?> </td>
+                  <td style="width:20%" ><?php if(isset($classe)){echo $classe->titre;}?> </td>
                     <td style="width:20%" ><?php echo $user->name .' '.$user->lastname;;?> </td>
                        <td style="width:10%" ><?php echo $retard['date'];?> </td>
  

@@ -55,8 +55,8 @@ class AbsencesController extends Controller
 		$classe = trim($request->get('classe'));
 		$seance = trim($request->get('seance'));
 		$details = trim($request->get('details'));
-        $debut = trim($request->get('debut')):
-        $fin = trim($request->get('fin')):
+        $debut = trim($request->get('debut'));
+        $fin = trim($request->get('fin'));
 		
 		$Eleve=User::where('id',$eleve)->get();
 		$nomeleve=$Eleve->name.' '.$Eleve->lastname;

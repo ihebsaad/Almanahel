@@ -77,7 +77,7 @@ class AbsencesController extends Controller
 			   $countP=count($parents);
 			if($countP>0)
 			{	
-			forech($parents as $parent)
+			foreach($parents as $parent)
 			{  
 				$to=trim($parent->email);
 				//$nomp=$parent->name. ' '.$parent->lastname ;

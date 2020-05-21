@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Log;
-
+use App\Http\Controllers\Illuminate\Http\Request;
 use Illuminate\Http\Request;
     use App\Absence ;
     use App\User ;

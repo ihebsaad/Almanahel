@@ -1,7 +1,7 @@
 
 @extends('layouts.front')
 
-  <link href="css/blog-post.css" rel="stylesheet">
+  <link   rel="stylesheet"   href="{{  URL::asset('public/css/blog-post.css') }}">
 
 @section('content')
   

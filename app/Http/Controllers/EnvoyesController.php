@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
  use DB;
  use Swift_Mailer;
  use Mail;
+use Illuminate\Support\Facades\Auth;
 
 class EnvoyesController extends Controller
 {

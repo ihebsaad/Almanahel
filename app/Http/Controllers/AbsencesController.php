@@ -96,8 +96,8 @@ class AbsencesController extends Controller
 				$data=array('to'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
 				$request = new Illuminate\Http\Request($data);
 
-				\App\Http\Controllers\EnvoyesController::sendnotif($request);
-				//app('\App\Http\Controllers\UserController')->sendnotif($request);
+				//\App\Http\Controllers\EnvoyesController::sendnotif($request);
+				 app('\App\Http\Controllers\UserController')->sendnotif($request);
 				
 			}
 			

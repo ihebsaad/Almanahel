@@ -2,7 +2,8 @@
 @extends('layouts.front')
 
   <link   rel="stylesheet"   href="{{  URL::asset('public/css/blog-post.css') }}">
-
+  <link   rel="stylesheet"   href="{{  URL::asset('public/bootstrap/css/vendor/bootstrap.min.css') }}">
+ 
 @section('content')
   
 
@@ -144,7 +145,7 @@
           <div class="card-body">
             You can put anything you want inside of these side widgets.<br> They are easy to use, and feature the new Bootstrap 4 card containers!
           </div>
-        </div> --->
+        </div>  
 
       </div>--->
 

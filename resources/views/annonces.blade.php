@@ -211,7 +211,7 @@ $actualites=array();
           <div class="card-body" >
             <h4 class="card-title" ><?php custom_echo($titre, 80) ?></h4>
             <p class="card-text"  > <?php custom_echo($extrait, 140)  ; ?> </p>
-            <a class="link btn btn-primary"  href="{{action('ActualitesController@view', $id )}}" >Lire Plus</a>
+            <a class="link btn btn-primary"  href="{{action('HomeController@show_annonce', $id )}}" >Lire Plus</a>
           </div>
         </div>
       </div>

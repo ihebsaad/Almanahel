@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
  
 use App\User;
+use App\Annonce;
+use App\Actualite;
 use App\Contenu;
 use Illuminate\Http\Request;
 use DB;
@@ -107,6 +109,18 @@ class HomeController extends Controller
     } 
 	  
 	  
+	  
+	 	public function show_actualite($id)
+    {
+		$actualite= Actualite::where('id',$id)->first();
+         return view('actualites.show',['actualite'=>$actualite] );
+    }
+
+		public function show_annonce($id)
+    {
+		 $annonce= Annonce::where('id',$id)->first();
+         return view('annonces.show',['annonce'=>$annonce] );
+    }
 		public function updatecontent(Request $request)
     {
 

@@ -111,9 +111,10 @@ class HomeController extends Controller
 	  
 	  
 	 	public function show_actualite($id)
-    {
-		if(isset($actualite)){
+    { 	
 		$actualite= Actualite::where('id',$id)->first();
+
+		if(isset($actualite)){
         if($actualite->visible==1){  return view('actualites.show',['actualite'=>$actualite] );}else{return view('home' );;}
    		}else{return view('home' );   }
 

@@ -22,7 +22,7 @@
 --->
 		<?php $date=  date('d/m/Y H:i', strtotime($actualite['created_at'] )); ?>
          <!-- Date/Time -->
-        <p>Publié le  <?php echo $date; ?></p>
+        <p>Publié le  <b><?php echo $date; ?><b></p>
 
         <hr>				
         <!-- Preview Image -->

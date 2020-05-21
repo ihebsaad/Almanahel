@@ -82,7 +82,7 @@ class AbsencesController extends Controller
 				$to=trim($parent->email);
 				$type='notif absence';
 				//$nomp=$parent->name. ' '.$parent->lastname ;
-				$sujet="Notification - Absence d'éleve ".$nomeleve." ";
+				$sujet="Notification - Absence de l'éleve ".$nomeleve." ";
 				$contenu="Bonjour,<br>
 				Nous vous informons que votre enfant ".$nomeleve." a été absent à l'école.<br>
 				De: ".$debut." A: ".$fin."<br>

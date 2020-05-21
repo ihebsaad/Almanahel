@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Log;
+    use App\User ;
 
 use Illuminate\Http\Request;
     use App\Retard ;
@@ -51,21 +52,69 @@ class RetardsController extends Controller
     public function store(Request $request)
     {
 		$vis=$request->get('email');
-		if($vis=="on"){
+		$eleve=intval(trim($request->get('eleve')));
+		$date=$request->get('date');
+		$details=$request->get('details');
+		$seance=$request->get('seance');
+		$classe=$request->get('classe');
+		$leleve=DB::table('users')->where('id',$eleve)->first();
+ 		$nomeleve=$leleve->name .' '.$leleve->lastname;
+		if($vis=="on" || $vis==1 ){
 			$email=1;
 		}else{
 			$email=0;			
 		}
 		
+		if($email==1){
+			// Envoi Email aux parents
+			// get liste parents
+			 $idsparents = DB::table('parents_eleve')->where('eleve','=',$eleve)->pluck('parent');
+         
+               $parents = DB::table('users')
+               ->whereIn('id', $idsparents)
+               ->get() ;
+			   $countP=count($parents);
+			if($countP>0)
+			{	
+			foreach($parents as $parent)
+			{  
+				$to=trim($parent->email);
+				$type='notif retard';
+				//$nomp=$parent->name. ' '.$parent->lastname ;
+				$sujet="Notification - Retard de l'éleve ".$nomeleve." ";
+				$contenu="Bonjour,<br>
+				Nous vous informons que votre enfant ".$nomeleve." a été en retard à l'école.<br>
+				Date: ".$date." <br>
+				Séance : ".$seance."<br>
+				".$details."<br><br>
+				
+				Pour toutes informations supplémentaires, veillez contacter l'administration de l'école.<br><br>
+				
+				Cordialement.<br><br>
+				
+				AL MANAHEL Academy.
+				" ;
+				
+				$data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+				$request = new Request($data);
+
+				//\App\Http\Controllers\EnvoyesController::sendnotif($request);
+				 app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
+				
+			}
+			
+			}// count
+		}
+                 
 	 
                  
 				 
         $retards = new Retard([
-              'eleve' =>trim( $request->get('eleve')),
-             'classe' => trim($request->get('classe')),
-             'details' => trim($request->get('details')),
-             'seance' => trim($request->get('seance')),
-             'date' => trim($request->get('date')),
+              'eleve' =>  $eleve ,
+             'classe' =>  $classe  ,
+             'details' =>  $details  ,
+             'seance' => $seance  ,
+             'date' => $date  ,
   
         ]);
 

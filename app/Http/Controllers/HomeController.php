@@ -113,13 +113,13 @@ class HomeController extends Controller
 	 	public function show_actualite($id)
     {
 		$actualite= Actualite::where('id',$id)->first();
-        if($actualite->visible==1){  return view('actualites.show',['actualite'=>$actualite] );}else{return back();}
+        if($actualite->visible==1){  return view('actualites.show',['actualite'=>$actualite] );}else{return view('home' );;}
     }
 
 		public function show_annonce($id)
     {
 		 $annonce= Annonce::where('id',$id)->first();
-         if($annonce->visible==1){return view('annonces.show',['annonce'=>$annonce] );}else{return back();}
+         if($annonce->visible==1){return view('annonces.show',['annonce'=>$annonce] );}else{return view('home' );;}
     }
 		public function updatecontent(Request $request)
     {

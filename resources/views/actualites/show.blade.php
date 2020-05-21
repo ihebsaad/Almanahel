@@ -5,6 +5,7 @@
   
 @section('content')
   
+<div class="container">
 
     <div class="row">
 
@@ -152,7 +153,7 @@
     <!-- /.row -->
 
 
-
+</div>
   
 @endsection
 

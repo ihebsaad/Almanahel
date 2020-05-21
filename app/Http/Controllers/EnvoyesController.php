@@ -145,7 +145,8 @@ class EnvoyesController extends Controller
 	 $sujet= $request->get('sujet') ;
 	 $contenu= $request->get('contenu') ;
 	 $type= $request->get('type') ;
-	 
+	  $id=Auth::id();
+            
 
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
@@ -167,7 +168,7 @@ class EnvoyesController extends Controller
             });
 		 
 			$envoye  = new Envoye([
-              'emetteur' => ( $request->get('emetteur')),
+              'emetteur' =>   $id  ,
              'destinataire' => trim($request->get('destinataire')),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu')),

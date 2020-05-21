@@ -27,7 +27,7 @@
 
         <hr>				
         <!-- Preview Image -->
-		<?php if($annonce['image'] !=''){?> <img class="img-fluid rounded" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce['image'];?>" style="max-width:150px"/><?php } ?>
+		<?php if($annonce['image'] !=''){?> <img class="img-fluid rounded" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce['image'];?>" style="max-heigt:300px"/><?php } ?>
 
         <hr>
 

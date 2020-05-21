@@ -22,11 +22,11 @@
 --->
 		<?php $date=  date('d/m/Y H:i', strtotime($actualite['created_at'] )); ?>
          <!-- Date/Time -->
-        <p>Publié le  <b><?php echo $date; ?><b></p>
+        <p>Publié le  <b><?php echo $date; ?></b></p>
 
         <hr>				
         <!-- Preview Image -->
-		<?php if($actualite['image'] !=''){?> <img class="img-fluid rounded" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-width:150px"/><?php } ?>
+		<?php if($actualite['image'] !=''){?> <img class="img-fluid rounded" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $actualite['image'];?>" style="max-height:300px"/><?php } ?>
 
         <hr>
 

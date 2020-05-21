@@ -3,9 +3,7 @@
 
    
 @section('content')
-  
-<div class="container">
-
+   
     <div class="row">
 
       <!-- Post Content Column was 8 -->
@@ -145,7 +143,7 @@
           </div>
         </div>  
 
-      </div>--->
+      </div> 
 
     </div>
     <!-- /.row -->

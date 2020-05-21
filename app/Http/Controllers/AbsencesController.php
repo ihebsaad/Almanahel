@@ -96,11 +96,11 @@ class AbsencesController extends Controller
 				AL MANAHEL Academy.
 				" ;
 				
-				$data=array('to'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+				$data=('to'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
 				$request = new Request($data);
 
 				//\App\Http\Controllers\EnvoyesController::sendnotif($request);
-				 app('\App\Http\Controllers\EnvoyesController')->sendnotif($data);
+				 app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
 				
 			}
 			

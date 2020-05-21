@@ -42,8 +42,8 @@
             <tbody>
             @foreach($retards as $retard )
    		<?php
-				$userid=intval($absence['eleve']);
-				$idcl=intval($absence['classe']);
+				$userid=intval($retard['eleve']);
+				$idcl=intval($retard['classe']);
 				$user=	\App\User::where('id',$userid)->first();
 				$classe=	 Classe::where('id',$idcl)->first();
  				  

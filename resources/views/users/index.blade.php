@@ -14,10 +14,11 @@
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6">Liste des utilisateurs</div>
-                <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('UsersController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un utilisateur</b></a>
-                </div>
+                <div class="col-lg-9">Liste des utilisateurs</div>
+                <div class="col-lg-3">
+                   <a   class="btn btn-md btn-success"    href="{{action('UsersController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un utilisateur</b></a>
+
+				</div>
             </div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">

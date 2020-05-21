@@ -32,7 +32,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Contenus</span>
+          <span>Contenu du site</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -49,11 +49,11 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-calendar"></i>
-          <span>Infos</span>
+          <span>Nouveautés</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('evenements')}}">Evênements</a>
+            <a class="collapse-item" href="{{route('evenements')}}">Evénements</a>
             <a class="collapse-item" href="{{route('actualites')}}">Actualités</a>
             <a class="collapse-item" href="{{route('annonces')}}">Annonces</a>
            </div>
@@ -70,15 +70,15 @@
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree"   aria-controls="collapsethree">
           <i class="fas fa-fw fa-users"></i>
-          <span>Structure</span>
+          <span>Membres</span>
         </a>
         <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-             <a class="collapse-item" href="{{route('eleves')}}">Elèves</a>
+            <a class="collapse-item" href="{{route('personnels')}}">Administration</a>
+			<a class="collapse-item" href="{{route('eleves')}}">Elèves</a>
             <a class="collapse-item" href="{{route('profs')}}">Enseignants</a>
             <a class="collapse-item" href="{{route('parents')}}">Parents</a>
             <a class="collapse-item" href="{{route('classes')}}">Classes</a>
-            <a class="collapse-item" href="{{route('personnels')}}">Personnels</a>
           </div>
         </div>
       </li>
@@ -87,7 +87,7 @@
       <!--  <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">-->
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" >
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Vie scolaire</span>
+          <span>Vie Scolaire</span>
         </a>
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -103,10 +103,11 @@
       <li class="nav-item ">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Direction</span>
+          <span>Finances</span>
         </a>
         <div id="collapse3" class="collapse " aria-labelledby="collapse3" data-parent="#accordionSidebar"><!--collapse show-->
           <div class="bg-white py-2 collapse-inner rounded">
+		   <a class="collapse-item" href="{{route('contenuinscription')}}">Paiements</a>
             <a class="collapse-item" href="{{route('contenuinscription')}}">Dépenses</a>
                
 		  </div>

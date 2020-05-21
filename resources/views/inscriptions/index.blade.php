@@ -13,7 +13,7 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des pré-inscriptions</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('InscriptionsController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une inscription"  class="fa fa-fw fa-plus fa-2x"></span></a>
+            <div class="col-md-9"><H2> Liste des pré-inscriptions</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('InscriptionsController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une inscription"  class="fa fa-fw fa-plus fa-2x"></span></a>
 
              <button style="float:left" id="add1" class="btn btn-md btn-default"   data-toggle="modal" data-target="#adding1"><b>  Ancien Élève </b></button>
 

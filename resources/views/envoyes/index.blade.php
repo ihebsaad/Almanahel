@@ -15,11 +15,11 @@
     </style>
     <div class="uper">
 
-        <div class="portlet box grey">
+  <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6">Emails Envoyés</div>
-                <div class="col-lg-6">
-                    <a   class="btn btn-md btn-success"    href="{{action('EnvoyesController@send')}}" ><b><i class="fas fa-envelope"></i> Envoyer un email</b></a>
+                <div class="col-lg-9"><h2>Emails Envoyés</h2></div>
+                <div class="col-lg-3">
+                    <a   class="btn btn-md btn-primary"    href="{{action('EnvoyesController@send')}}" ><b><i class="fas fa-envelope"></i> Envoyer un Email </b></a>
                 </div>
             </div>
         </div>

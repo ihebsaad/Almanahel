@@ -19,10 +19,10 @@
     </style>
     <div class="uper">
 
-        <div class="portlet box grey">
+     <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6">Retards</div>
-                <div class="col-lg-6">
+                <div class="col-lg-9"><h2>Liste des Retards</h2></div>
+                <div class="col-lg-3">
                     <a   class="btn btn-md btn-success"    href="{{action('RetardsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un retard</b></a>
                 </div>
             </div>

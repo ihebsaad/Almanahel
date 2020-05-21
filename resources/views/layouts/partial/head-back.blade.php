@@ -14,7 +14,7 @@
  #mytable_filter{right:10px!important;position:absolute!important;}
      #swal2-content{font-size:15px;}
 	 .editor{width:800px;}
-	table, #mytable{display:table !important;width:100%!important;margin-top:10px !important;}
+	table, #mytable{display:table !important;width:100%!important;margin-top:10px !important;border:1px solid lightgrey;}
  	
 	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     z-index: 3;

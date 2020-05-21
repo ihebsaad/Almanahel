@@ -67,7 +67,7 @@
                 </div>		
                 <div class="form-group">
                     <label for="date">Date:</label>
-                    <input id="date" type="text" class="form-control" name="date"/>
+                    <input id="date" type="text" class="form-control" name="date" autocomplete="off"/>
                 </div>	
  
 				<div class="form-group ">

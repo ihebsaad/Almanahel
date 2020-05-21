@@ -15,8 +15,13 @@
             margin-top: 40px;
         }
     </style>
-         <div class="row">
-            <div class="col-md-8"><H2> Liste des classes</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('ClassesController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une classe"  class="fa fa-fw fa-plus fa-2x"></span></a><br></div>
+     <div class="portlet box grey">
+            <div class="row">
+                <div class="col-lg-9"><h2>Liste des Classes</h2></div>
+                <div class="col-lg-3">
+                    <a   class="btn btn-md btn-success"    href="{{action('ClassesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une classe</b></a>
+                </div>
+            </div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">
         <thead>

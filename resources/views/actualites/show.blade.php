@@ -1,8 +1,7 @@
 
 @extends('layouts.front')
 
-  <link   rel="stylesheet"   href="{{  URL::asset('public/css/blog-post.css') }}">
-  
+   
 @section('content')
   
 <div class="container">
@@ -24,8 +23,7 @@
         <hr>
 --->
 		<?php $date=  date('d/m/Y H:i', strtotime($actualite['created_at'] )); ?>
-		<?php echo $date; ?>
-        <!-- Date/Time -->
+         <!-- Date/Time -->
         <p>Publié le  <?php echo $date; ?></p>
 
         <hr>				

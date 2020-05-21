@@ -72,7 +72,7 @@ class AbsencesController extends Controller
 			// get liste parents
 			 $idsparents = DB::table('parents_eleve')->where('eleve','=',$eleve)->pluck('parent');
          
-               $parents = User::orderBy('name', 'asc')
+               $parents = DB::table('users')
                ->whereIn('id', $idsparents)
                ->get() ;
 			   $countP=count($parents);

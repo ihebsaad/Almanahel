@@ -100,7 +100,7 @@ class AbsencesController extends Controller
 				$request = new Request($data);
 
 				//\App\Http\Controllers\EnvoyesController::sendnotif($request);
-				 app('\App\Http\Controllers\UserController')->sendnotif($data);
+				 app('\App\Http\Controllers\EnvoyesController')->sendnotif($data);
 				
 			}
 			

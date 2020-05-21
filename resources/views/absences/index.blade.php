@@ -38,8 +38,8 @@
          
             </thead>
             <tbody>
-            @foreach($absences as $absence )
-				<?php
+          <?php  foreach($absences as $absence )
+		  {
 				$userid=intval($absence['eleve']);
 				$idcl=intval($absence['classe']);
 				$user=	\App\User::where('id',$userid)->first();
@@ -64,7 +64,7 @@
                     </td>
  
                 </tr>
-            @endforeach
+            <?php } ?>
             </tbody>
         </table>
     </div>

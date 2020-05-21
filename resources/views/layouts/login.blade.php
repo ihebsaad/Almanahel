@@ -16,8 +16,7 @@
 	<!-- global level css -->
     <link href="{{ URL::asset('public/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('assets/vendors/animate/animate.min.css') }}" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="{{ asset('public/img/favicon.ico') }}" type="image/x-icon">
-<link rel="icon" href="{{ asset('public/img/favicon.ico') }}" type="image/x-icon">
+   <link rel="shortcut icon" type="image/png" href="{{  URL::asset('public/site/img/favicon.png') }}">
 
 
 </head>

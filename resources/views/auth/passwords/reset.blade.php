@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row" style="margin-top:5%">
         <div class="col-md-8 col-md-offset-2">
-            <center><a href="{{ config('app.url') }}"><img style="margin-bottom:30px;"  class="img-circle" width="100" src="{{ asset('public/img/najda.png') }}"></img></a></center>
+<center><img style="margin-bottom:30px;"  src="{{  URL::asset('public/site/img/logo.png') }}" alt="Almanahel Academy" class="img-circle" width="200"></center>
 
             <div class="panel panel-default">
-                <div class="panel-heading" style=";font-weight:800;font-size:20px;text-align:center;">Réinitialiser le mot de passe</div>
+                <div class="panel-heading icon1" style=";font-weight:800;font-size:20px;text-align:center;">Réinitialiser le mot de passe</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('password.reset', $token) }}">

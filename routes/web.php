@@ -114,6 +114,30 @@ Route::get('/absences/create/', 'AbsencesController@create')->name('absences.cre
 Route::post('/absences/store/', 'AbsencesController@store')->name('absences.store');
 Route::post('/absences/edit/', 'AbsencesController@edit')->name('absences.edit');
  
+  
+ 
+/*** Paiements  **/
+ Route::get('/paiements', array('as' => 'paiements','uses' => 'PaiementsController@index'));
+Route::post('/paiements/saving','PaiementsController@saving')->name('paiements.saving');
+Route::post('/paiements/updating','PaiementsController@updating')->name('paiements.updating');
+Route::get('/paiements/view/{id}', 'PaiementsController@view');
+Route::get('/paiements/destroy/{id}', 'PaiementsController@destroy');
+Route::get('/paiements/create/', 'PaiementsController@create')->name('paiements.create');
+Route::post('/paiements/store/', 'PaiementsController@store')->name('paiements.store');
+Route::post('/paiements/edit/', 'PaiementsController@edit')->name('paiements.edit');
+  
+  
+/*** Depenses  **/
+ Route::get('/depenses', array('as' => 'depenses','uses' => 'DepensesController@index'));
+Route::post('/depenses/saving','DepensesController@saving')->name('depenses.saving');
+Route::post('/depenses/updating','DepensesController@updating')->name('depenses.updating');
+Route::get('/depenses/view/{id}', 'DepensesController@view');
+Route::get('/depenses/destroy/{id}', 'DepensesController@destroy');
+Route::get('/depenses/create/', 'DepensesController@create')->name('depenses.create');
+Route::post('/depenses/store/', 'DepensesController@store')->name('depenses.store');
+Route::post('/depenses/edit/', 'DepensesController@edit')->name('depenses.edit');
+ 
+ 
  
 /*** Envoyes  **/
  Route::get('/envoyes', array('as' => 'envoyes','uses' => 'EnvoyesController@index'));

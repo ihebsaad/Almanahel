@@ -92,7 +92,7 @@
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('inscriptions')}}">Inscriptions</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">Paiements</a>
+            <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
             <a class="collapse-item" href="{{route('absences')}}">Absences</a>
             <a class="collapse-item" href="{{route('retards')}}">Retards</a>
            </div>
@@ -107,8 +107,8 @@
         </a>
         <div id="collapse3" class="collapse " aria-labelledby="collapse3" data-parent="#accordionSidebar"><!--collapse show-->
           <div class="bg-white py-2 collapse-inner rounded">
-		   <a class="collapse-item" href="{{route('contenuinscription')}}">Paiements</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">Dépenses</a>
+		   <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
+            <a class="collapse-item" href="{{route('depenses')}}">Dépenses</a>
                
 		  </div>
         </div>

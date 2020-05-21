@@ -74,7 +74,9 @@ class AbsencesController extends Controller
                $parents = User::orderBy('name', 'asc')
                ->whereIn('id', $idsparents)
                ->get() ;
-			   
+			   $countP=count($parents);
+			if($countP>0)
+			{	
 			forech($parents as $parent)
 			{  
 				$to=trim($parent->email);
@@ -101,6 +103,7 @@ class AbsencesController extends Controller
 				
 			}
 			
+			}// count
 		}
                  
 				 

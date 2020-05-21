@@ -42,7 +42,7 @@
 				$userid=$retard['eleve'];
 				$idcl=$retard['classe'];
 				$user=	\App\User::where('id',$userid)->first();
-				$classe=	\App\Classe::where('id',$idcl)->first();
+				$classe=	\App\Classe::where('id',$idcl)->get();
 				  
 				
 				?>

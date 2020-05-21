@@ -44,6 +44,7 @@
 				$idcl=intval($absence['classe']);
 				$user=	\App\User::where('id',$userid)->first();
 				$classe=	 Classe::where('id',$idcl)->get();
+				echo json_encode($classe );
 				  
 				
 				?>

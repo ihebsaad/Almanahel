@@ -52,7 +52,7 @@ class AbsencesController extends Controller
     public function store(Request $request)
     {
 		$vis=$request->get('email');
-		$eleve=$request->get('eleve');
+		$eleve=intval($request->get('eleve'));
 		$classe = trim($request->get('classe'));
 		$seance = trim($request->get('seance'));
 		$details = trim($request->get('details'));

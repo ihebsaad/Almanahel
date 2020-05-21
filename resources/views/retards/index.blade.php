@@ -4,7 +4,10 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
+ <?php 
+ use  App\User; use  App\Classe;
  
+ ?>
  
 @section('content')
  
@@ -39,11 +42,11 @@
             <tbody>
             @foreach($retards as $retard )
    		<?php
-				$userid=intval($retard['eleve']);
-				$idcl=intval($retard['classe']);
+				$userid=intval($absence['eleve']);
+				$idcl=intval($absence['classe']);
 				$user=	\App\User::where('id',$userid)->first();
-				$classe=	\App\Classe::where('id',$idcl)->get();
-				  
+				$classe=	 Classe::where('id',$idcl)->first();
+ 				  
 				
 				?>
 

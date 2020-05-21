@@ -30,6 +30,7 @@
                 <th style="width:5%">N°</th>
                 <th style="width:10%">Date</th>
                  <th style="width:20%">Libellé</th>
+                 <th style="width:20%">Bénéficiaire</th>
                 <th style="width:10%">Montant</th>
                  <th style="width:10%">Actions</th>
               </tr>
@@ -45,6 +46,7 @@
                     <td style="width:5%" ><a href="{{action('PaiementsController@view', $depense['id'])}}" >{{$depense->id}}</a></td>
                     <td style="width:10%" ><?php echo $depense['created_at'];?> </td>
                      <td style="width:20%" ><?php echo $depense['libelle'];?> </td>
+                     <td style="width:20%" ><?php echo $depense['beneficiaire'];?> </td>
                     <td style="width:10%" ><?php echo $depense['montant'];?> </td>
  
 					<td style="width:10%"   >

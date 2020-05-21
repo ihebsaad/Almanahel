@@ -36,6 +36,11 @@
                 </div>		
 		 
 				 <div class="form-group">
+                    <label for="montant">Bénéficiaire:</label>
+                    <input id="details" type="text" class="form-control" name="beneficiaire"   value="<?php echo $depense['beneficiaire']; ?>"/>
+                </div>	
+				
+				 <div class="form-group">
                     <label for="montant">Détails:</label>
                     <input id="details" type="text" class="form-control" name="details"   value="<?php echo $depense['details']; ?>"/>
                 </div>

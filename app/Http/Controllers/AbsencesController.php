@@ -58,7 +58,7 @@ class AbsencesController extends Controller
 		$details = trim($request->get('details'));
         $debut = trim($request->get('debut'));
         $fin = trim($request->get('fin'));
- 		$leleve=DB::table('users')::where('id',$eleve)->first();
+ 		$leleve=DB::table('users')->where('id',$eleve)->first();
 		dd($leleve);
 		$nomeleve=$leleve['name'].' '.$leleve['lastname'];
 		if($vis=="on" || $vis==1 ){

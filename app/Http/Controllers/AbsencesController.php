@@ -80,6 +80,7 @@ class AbsencesController extends Controller
 			foreach($parents as $parent)
 			{  
 				$to=trim($parent->email);
+				$type='notif absence';
 				//$nomp=$parent->name. ' '.$parent->lastname ;
 				$sujet="Notification - Absence d'éleve ".$nomeleve." ";
 				$contenu="Bonjour,<br>

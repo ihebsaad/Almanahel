@@ -51,7 +51,7 @@
                 <tr>
                     <td style="width:5%" ><a href="{{action('AbsencesController@view', $absence['id'])}}" >{{$absence->id}}</a></td>
                     <td style="width:20%" ><?php // echo $classe->titre ; ?> </td>
-                    <td style="width:20%" ><?php echo $user->name .' '.$user->lastname;;?> </td>
+                    <td style="width:20%" ><?php echo $user->id.' '.$user->name .' '.$user->lastname;;?> </td>
                     <td style="width:10%" ><?php echo $absence['debut'];?> </td>
                     <td style="width:10%" ><?php echo $absence['fin'];?> </td>
  

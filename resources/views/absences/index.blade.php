@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
  
- 
+ <?php use App\Classe;  ?>
 @section('content')
  
     <style>
@@ -43,7 +43,7 @@
 				$userid=intval($absence['eleve']);
 				$idcl=intval($absence['classe']);
 				$user=	\App\User::where('id',$userid)->first();
-				$classe=	\App\Classe::where('id',$idcl)->get();
+				$classe=	 Classe::where('id',$idcl)->get();
 				  
 				
 				?>

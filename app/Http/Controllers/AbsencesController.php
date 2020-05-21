@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Log;
-use App\Http\Controllers\Illuminate\Http\Request;
+
 use Illuminate\Http\Request;
     use App\Absence ;
     use App\User ;
@@ -97,10 +97,10 @@ class AbsencesController extends Controller
 				" ;
 				
 				$data=array('to'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
-				$request = new Illuminate\Http\Request($data);
+				$request = new Request($data);
 
 				//\App\Http\Controllers\EnvoyesController::sendnotif($request);
-				 app('\App\Http\Controllers\UserController')->sendnotif($request);
+				 app('\App\Http\Controllers\UserController')->sendnotif($data);
 				
 			}
 			

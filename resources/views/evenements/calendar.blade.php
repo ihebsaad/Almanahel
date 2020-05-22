@@ -57,17 +57,41 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
     },
 	{
    events: [
-<?php			$liste=\App\Evenement::get();
+<?php			$liste=\App\Evenement::where('visible',1)->get();
 		$ct=count($liste);	 
 		$i=0;
     if ($ct>0) {
 	  foreach($liste as $event)  
 	  {$i++;
 				$titre=$event->titre;
+				$titre=$event->type;
  				 $debut = DateTime::createFromFormat('d/m/Y', $event->debut );
  				 $fin = DateTime::createFromFormat('d/m/Y', $event->fin );
 				 $debut=$debut->format('Y-m-d');
 				 $fin=$fin->format('Y-m-d');
+				 if($type=="simple"){
+				 $color="
+				   color: '#04b431',    
+				   textColor: 'white'
+				 
+				 ";
+				 }
+				 if($type=="vacances"){
+				  $color="				  
+				   color: '#028dc8',    
+				   textColor: 'white'
+				  ";
+				 }
+				 if($type=="examens"){
+				  $color="				  
+				   color: '#ec3aa5',    
+				   textColor: 'white'				  
+				  ";
+					
+				 }				 
+				 /**
+				 
+				 */
  				  //$start=$date.'T'.$debut;
 				 //$debut =substr ($reserv['Reservation']['debut'],0 , strlen($reserv['Reservation']['debut'])-3 );
   				// $end=$date.'T'.$fin;
@@ -78,7 +102,11 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 				"{
 					title: '"  . $titre ."',
 					start:  '".  $debut. "' ,
-					end: '". $fin ."' 
+					end: '". $fin ."' ,
+					 ". $color ."
+					 
+					
+					
  				} ";
 			 	if($i<$ct){echo ',';}
 		
@@ -97,9 +125,9 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
     }
     // etc...*/
 	
-  ],
-  color: '#028dc8',   // an option!
-  textColor: 'white' // an option!
+  ] //,
+ // color: '#028dc8',    
+ // textColor: 'white'  
 	}
 	
 	],
@@ -160,13 +188,15 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
           start: '2020-05-28'
         }
       ]
-    ,*/
+    , 
       eventClick: function(arg) {
         // opens events in a popup window
         window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');
 
         arg.jsEvent.preventDefault() // don't navigate in main tab
-      },
+      }
+	  
+	  */,
 
       loading: function(bool) {
         document.getElementById('loading').style.display =
@@ -196,7 +226,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 </style>
  
 
-  <div id='loading'>loading...</div>
+  <div id='loading'>Chargement...</div>
 
   <div id='calendar'></div>
  

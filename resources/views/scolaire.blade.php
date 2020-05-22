@@ -132,6 +132,10 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
   
   
     <style>
+	h4{color:#028dc8;margin-top:15px;margin-bottom:15px;}
+	
+	.fc-content{font-size:20px;height:40px;}
+	
   /* Make the image fully responsive */
   .carousel-inner img {
       width: 100%;

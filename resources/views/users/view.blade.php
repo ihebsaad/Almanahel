@@ -335,13 +335,13 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {parent: parent , eleve:item ,  _token: _token},
                         success: function () {
-                            $( "#eleve" ).hide( "slow", function() {
+                           /* $( "#eleve" ).hide( "slow", function() {
                                 // Animation complete.
                             });
                             $( "#eleve" ).show( "slow", function() {
                                 // Animation complete.
                             });
-
+*/
                             location.reload();
 
                         }

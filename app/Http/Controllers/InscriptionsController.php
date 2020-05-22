@@ -312,29 +312,17 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
         $inscription = Inscription::find($id);
         
          Inscription::where('id', $id)->update(['valide' => 1]);
-          $eleve = new User([
-            'name' => $inscription["prenom"],
-            'lastname' => $inscription["nom"],
-                'username' =>$inscription["nom"].$inscription["prenom"],
-               'user_type'=> "eleve",
-               'password'=> InscriptionsController::genererMDP(8),
-               "email"=>$inscription["email"],
-
-        ]);
-                  $eleve->save();
+         
 
         $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
         $swiftTransport->setPassword('21septembre'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
-         $to=$eleve["email"];
+         $to=$inscription["email"];
          $sujet="AlManahel Academy - votre préinscription est validée";
-         $contenu='BONJOUR ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
-                  VOTRE PRÉINSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>
-                  Vos codes accès :'.'<br>
-                   Username :'.$eleve['username'].'<br>
-                   Mot de passe :'.$eleve['password'];
+         $contenu='BONJOUR ,'.$inscription['prenom'].' '.$inscription['nom'].'<br>
+                  VOTRE PRÉINSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>';
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -343,47 +331,23 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
                        ->setBody($contenu, 'text/html');
             });
 
-$parent = User::where('user_type','parent')
-          ->where('email',$inscription["email_rep"])->first() ;
-echo($parent);
-
-if(empty($parent))
-
-       { $parent = new User([
-            'name' => $inscription["prenom_rep"],
-            'lastname' => $inscription["nom_rep"],
-                'username' =>$inscription["nom_rep"].$inscription["prenom_rep"],
-               'user_type'=> "parent",
-               'password'=>  InscriptionsController::genererMDP(8),
-               "email"=>$inscription["email_rep"],
-
-        ]);
-        $parent->save();
-                $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
+     $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
         $swiftTransport->setPassword('21septembre'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
-         $to=$parent["email"];
-         $sujet="AlManahel Academy - la préinscription de votre fils/fille est validée";
-          $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                LA PRÉINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL EST VALIDÉE.'.'<br>
-                  Vos codes accès :'.'<br>
-                   Username :'.$parent['username'].'<br>
-                   Mot de passe :'.$parent['password'];
+         $to=$inscription["email_rep"];
+         $sujet="AlManahel Academy - la préinscription de votre fils/fille ".$inscription['prenom']." " .$inscription['nom']." est validée";
+          $contenu='BONJOUR ,'.$inscription['prenom_rep'].' '.$inscription['nom_rep'].'<br>
+                LA PRÉINSCRIPTION DE VOTRE FILS/FILLE '.$inscription['prenom'].' ' .$inscription['nom']. ' À  ALMANAHEL EST VALIDÉE.'.'<br>';
+                  
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
                        ->setBody($contenu, 'text/html');
-            }); }
-        Inscription::where('id', $inscription['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"]]);
-         DB::table('parents_eleve')->insert(
-               ['parent' => $parent['id'],
-                'eleve' => $eleve["id"]]
-
-            );
+            }); 
 
 
         return redirect('/inscriptions')->with('success', '  valider avec succès');

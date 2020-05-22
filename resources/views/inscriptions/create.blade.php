@@ -330,7 +330,7 @@
    </fieldset>
     <div class="row form-group" style="margin-bottom:30px">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit"  id="test" class="btn btn-primary">
                                    S'inscrire
                                 </button>
                             </div>
@@ -341,7 +341,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 
-
+ $('#test').prop('disabled', false);
 
 function checkMail()
 {

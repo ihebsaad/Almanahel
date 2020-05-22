@@ -203,19 +203,34 @@ Route::post('/classes/createeleveclass','ClassesController@createeleveclass')->n
 Route::post('/classes/removeeleveclass','ClassesController@removeeleveclass')->name('classes.removeeleveclass');
 Route::post('/classes/createenseignantclass','ClassesController@createenseignantclass')->name('classes.createenseignantclass');
 Route::post('/classes/removeenseignantclass','ClassesController@removeenseignantclass')->name('classes.removeenseignantclass');
- /*** Inscriptions **/
+
+
+/*** pre-Inscriptions **/
 Route::get('/inscriptions/create','InscriptionsController@create')->name('inscriptions.create');
-Route::get('/inscriptions/create_front','InscriptionsController@create')->name('inscriptions.create_front');
+Route::get('/inscriptions/eleveainscrire','InscriptionsController@eleveainscrire')->name('inscriptions.eleveainscrire');
 Route::post('/inscriptions/updating','InscriptionsController@updating')->name('inscriptions.updating');
 Route::post('/inscriptions/store','InscriptionsController@store')->name('inscriptions.store');
 Route::get('/inscriptions/destroy/{id}', 'InscriptionsController@destroy');
 Route::get('/inscriptions', array('as' => 'inscriptions','uses' => 'InscriptionsController@index'));
 Route::get('/inscriptions/view/{id}', 'InscriptionsController@view');
-Route::post('/edit2/{id}','InscriptionsController@update');
+Route::post('/update/{id}','InscriptionsController@update');
 Route::get('/inscriptions/valide/{id}', 'InscriptionsController@valide');
+Route::get('/inscriptions/createfront','InscriptionsController@createfront')->name('inscriptions.create_front');
 Route::post('/inscriptions/checkexiste', 'InscriptionsController@checkexiste')->name('inscriptions.checkexiste');
 Route::post('/inscriptions/inscriptionsadd', 'InscriptionsController@inscriptionsadd')->name('inscriptions.inscriptionsadd');
 Route::post('/inscriptions/checkexiste1', 'InscriptionsController@checkexiste1')->name('inscriptions.checkexiste1');
+ /*** Inscriptions **/
+ Route::get('/inscriptionsv/create','InscriptionsvController@create')->name('inscriptionsv.create');
+Route::post('/inscriptionsv/inscriptionsadd', 'InscriptionsvController@inscriptionsadd')->name('inscriptionsv.inscriptionsadd');
+Route::post('/inscriptionsv/checkexiste1', 'InscriptionsvController@checkexiste1')->name('inscriptionsv.checkexiste1');
+Route::post('/inscriptionsv/inscriptionsaddnov', 'InscriptionsvController@inscriptionsaddnov')->name('inscriptionsv.inscriptionsaddnov');
+Route::post('/inscriptionsv/checkexiste2', 'InscriptionsvController@checkexiste2')->name('inscriptionsv.checkexiste2');
+Route::get('/inscriptionsv/destroy/{id}', 'InscriptionsvController@destroy');
+Route::get('/inscriptionsv', array('as' => 'inscriptionsv','uses' => 'InscriptionsvController@index'));
+Route::get('/inscriptionsv/view/{id}', 'InscriptionsvController@view');
+Route::post('/update1/{id}','InscriptionsvController@update1');
+Route::post('/inscriptionsv/updating','InscriptionsvController@updating')->name('inscriptionsv.updating');
+
 
 /****  Images gestion image slider carrousel  *****/
 Route::get('/mettreAjourSlider', 'ImageController@mettreAjourSlider');

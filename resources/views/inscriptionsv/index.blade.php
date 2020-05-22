@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
+ 
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
  
@@ -13,7 +14,7 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des pré-inscriptions</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('InscriptionsController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une inscription"  class="fa fa-fw fa-plus fa-2x"></span></a>
+            <div class="col-md-8"><H2> Liste des inscriptions</H2></div><div class="col-md-3"><a data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom"  style="float:right;margin-right:20px;margin-bottom:25px;padding:3px 3px 3px 3px;border:1px solid #4fc1e9;" href="{{action('InscriptionsvController@create')}}"><span role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Ajouter une inscription"  class="fa fa-fw fa-plus fa-2x"></span></a>
 
              <button style="float:left" id="add1" class="btn btn-md btn-default"   data-toggle="modal" data-target="#adding1"><b>  Ancien Élève </b></button>
 
@@ -34,30 +35,25 @@
             
             </thead>
             <tbody>
-            @foreach($inscriptions as $inscription)
+            @foreach($inscriptionsv as $inscriptionv)
 
                 <tr>
               
-                     <td> <a href="{{action('InscriptionsController@view', $inscription['id'])}}" >{{$inscription->id}}</a> </td>
+                     <td> <a href="{{action('InscriptionsvController@view', $inscriptionv['id'])}}" >{{$inscriptionv->id}}</a> </td>
                      <td>
-                       
-  <?php 
-
- echo $inscription->nom." ".$inscription->prenom;
-    ?>
+                     
+                        <a href="{{action('UsersController@view', $inscriptionv['ideleve'])}}" >{{  $inscriptionv->nom." ".$inscriptionv->prenom}}</a>
+  
 
                     </td>
-                    <td><?php echo $inscription->datenaissance;?></td>
-                     <td><?php echo $inscription->niveau; ?></td>
-                     <td><?php echo $inscription->etablissement;  ?></td>
+                    <td><?php echo $inscriptionv->datenaissance;?></td>
+                     <td><?php echo $inscriptionv->niveau; ?></td>
+                     <td><?php echo $inscriptionv->etablissement;  ?></td>
  
                      <td>
-                       
-  <?php 
-
- echo $inscription->nom_rep." ".$inscription->prenom_rep;
-    ?>
-
+                     
+                        <a href="{{action('UsersController@view', $inscriptionv['idparent'])}}" >{{  $inscriptionv->nom_rep." ".$inscriptionv->prenom_rep}}</a>
+  
                     </td>
                     
                           
@@ -66,17 +62,11 @@
 
                   
                     <td>
-                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@destroy', $inscription['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsvController@destroy', $inscriptionv['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
-                        <?php if ($inscription->valide!==1){?>
-                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@valide', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
-                            <span class="fa fa-fw fa-trash-alt"></span> Valider
-                        </a>
                        
-                         
-                        <?php } ?>
-                        <a   href="{{action('InscriptionsController@view', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
+                        <a   href="{{action('InscriptionsvController@view', $inscriptionv['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
                             <span class="fa fa-fw fa-trash-alt"></span> Voir
                         </a>
                   

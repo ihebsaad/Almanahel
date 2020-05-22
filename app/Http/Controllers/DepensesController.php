@@ -55,12 +55,14 @@ class DepensesController extends Controller
 		$montant = trim($request->get('montant'));
 		$annee = trim($request->get('annee'));
         $details = trim($request->get('details'));
+        $beneficiaire = trim($request->get('beneficiaire'));
 		 
 		  	 
         $depense  = new Depense([
               'libelle' => $libelle ,
              'montant' => $montant ,
              'details' => $details ,
+             'beneficiaire' => $beneficiaire ,
              'annee' => $annee ,
               
         ]);
@@ -134,6 +136,7 @@ class DepensesController extends Controller
 		 Depense::where('id',$id)->update(
 		array(
                'details' => trim($request->get('details')),
+             'beneficiaire' => trim($request->get('beneficiaire')),
              'montant' => trim($request->get('montant')),
              'libelle' => trim($request->get('libelle')),
              'annee' => trim($request->get('annee')),

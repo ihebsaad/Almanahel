@@ -194,9 +194,9 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
         window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');
 
         arg.jsEvent.preventDefault() // don't navigate in main tab
-      }
+      },
 	  
-	  */,
+	  */ 
 
       loading: function(bool) {
         document.getElementById('loading').style.display =

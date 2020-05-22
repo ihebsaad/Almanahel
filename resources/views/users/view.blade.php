@@ -313,10 +313,10 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {parent: parent ,eleve: item , _token: _token},
                         success: function () {
-                            $('.select2-selection').animate({
+                            $('#eleve').animate({
                                 opacity: '0.3',
                             });
-                            $('.select2-selection').animate({
+                            $('#eleve').animate({
                                 opacity: '1',
                             });
                             location.reload();

@@ -13,6 +13,8 @@ class Absence extends Model
  'fin',
  'seance',
  'details',
+ 'heure_debut',
+ 'heure_fin',
  ];
  
 }

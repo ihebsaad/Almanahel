@@ -94,3 +94,22 @@
 
     });
 </script>
+
+
+ @section('footer_scripts')
+
+  
+<script>
+ 
+$(function () {
+     $('#debut').datepicker({
+                    locale: 'fr'
+                });
+    $('#fin').datepicker({
+                    locale: 'fr'
+                });
+});
+
+</script>
+@endsection
+				

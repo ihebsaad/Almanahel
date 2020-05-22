@@ -10,8 +10,10 @@ class Document extends Model
  'titre',
   'description',
  'emetteur',
- 'destinataire',
- 'taille'
+ 'chemin',
+ 'taille',
+ 'type',
+ 'parent',
  ];
  
 }

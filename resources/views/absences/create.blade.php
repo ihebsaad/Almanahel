@@ -61,7 +61,24 @@
                 <div class="form-group">
                     <label for="details">Détails:</label>
                     <textarea id="details" type="text" class="form-control" name="details" ></textarea>
-                </div>		
+                </div>					
+				 <div class="form-group">
+                    <label for="seance">Date de Début:</label>
+                    <input id="debut" type="text" class="form-control" name="debut"/>
+                </div>
+				 <div class="form-group">
+                    <label for="heure_debut">Heure de Début:</label>
+                    <input id="heure_debut" type="time" class="form-control" name="heure_debut"/>
+                </div>				
+                <div class="form-group">
+                    <label for="fin">Date de Fin:</label>
+                    <input id="fin" type="text" class="form-control" name="fin" />
+                </div>	
+				 <div class="form-group">
+                    <label for="heure_fin">Heure de Fin:</label>
+                    <input id="heure_fin" type="time" class="form-control" name="heure_fin"/>
+                </div>	
+				<!--		
 				<div class="form-group">
 				<label for="datetimepicker1">Début:</label>
                 <div class='input-group date' id='datetimepicker1'>
@@ -71,8 +88,8 @@
                     </span>
                 </div>
 				</div>
-				
-				<div class="form-group">
+				 
+			 <div class="form-group">
 				<label for="datetimepicker2">Fin:</label>				
                 <div class='input-group date' id='datetimepicker2'>
                     <input type='text' class="form-control" name="fin" />
@@ -80,8 +97,9 @@
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+				
             </div>
-			 
+			 -->
 				
 				<div class="form-group ">
 
@@ -100,6 +118,8 @@
  
 
 @section('footer_scripts')
+
+<!--
     <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
       <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
@@ -110,7 +130,7 @@
 
 
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
-
+--->
 
  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
@@ -126,15 +146,20 @@ function toggle(className, displayState){
   }
 
 $(function () {
-	
-     $('#datetimepicker1').datetimepicker({
+	 $('#date').datepicker({
+                    locale: 'fr'
+                });
+		$('#date').datepicker({
+                    locale: 'fr'
+                });		
+   /*  $('#datetimepicker1').datetimepicker({
                     locale: 'fr'
                 });
  	
      $('#datetimepicker2').datetimepicker({
                     locale: 'fr'
                 });
- 			
+ 		*/	
 $('.select2').select2({
 filter: true,
 language: {

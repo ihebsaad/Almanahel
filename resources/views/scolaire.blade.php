@@ -10,12 +10,9 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  
  <div class="row" style="width:100%;padding-bottom: 20px">
 
- <div class="col-lg-6 col-sm-12">
+ <div class="col-lg-12 col-sm-12">
  <h4 style="text-align:center" >Galerie</h4>
- 
- 
- 
- 
+  
           <div id="demo" class="carousel slide" data-ride="carousel">
 
 
@@ -63,7 +60,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
  
  	</div>
 
-  <div class="col-lg-6 col-sm-12">
+  <div class="col-lg-12 col-sm-12">
  <h4 style="text-align:center" >Calendrier de l'école</h4>
 
 	@include('evenements.calendar')  

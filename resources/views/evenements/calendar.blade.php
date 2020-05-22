@@ -64,7 +64,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
 	  foreach($liste as $event)  
 	  {$i++;
 				$titre=$event->titre;
-				$titre=$event->type;
+				$type=$event->type;
  				 $debut = DateTime::createFromFormat('d/m/Y', $event->debut );
  				 $fin = DateTime::createFromFormat('d/m/Y', $event->fin );
 				 $debut=$debut->format('Y-m-d');

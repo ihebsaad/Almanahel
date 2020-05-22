@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
- 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
 
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
  
@@ -79,55 +79,7 @@
             @endforeach
             </tbody>
         </table>
-<!-- Modal Tels -->
-     <div class="modal fade" id="adding1"   role="dialog" aria-labelledby="exampleModal01" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModal1">Ancien Élève</h5>
 
-                </div>
-                <div class="modal-body">
-                    <div class="card-body">
-
-                        <div class="form-group">
-
-                             <form class="form-horizontal" method="POST" action="{{ route('inscriptions.inscriptionsadd') }}">
-                 {{ csrf_field() }}
-
-
-
-
-                                <div class="form-group " >
-                                    <label for="champ1">Ancien Élève</label>
-                                    <div class=" row  ">
-                                        <input class="form-control" type="number"  id="champ1" name="champ1"  onchange="checkexiste(this,'eleve');checkexiste1(this)" />
-                                      
-
-
-                                    </div>
-                                </div>
-
-                                  <button type="submit"  id="test" class="btn btn-primary">
-                                   S'inscrire
-                                </button>
-
-
-
-                            </form>
-                        </div>
-
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                 
-                </div>
-            </div>
-        </div>
-    </div>
 	  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	<script>
@@ -292,7 +244,7 @@
 
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
-                dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
+                 dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
                 buttons: [
 

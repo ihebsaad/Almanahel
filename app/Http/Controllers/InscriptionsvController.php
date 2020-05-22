@@ -332,10 +332,12 @@ if(empty($parent))
  public static function checkexiste2(Request $request)
     {
         $val =  trim($request->get('val'));
-
+       
      
      $count =  Inscription::where('id', $val)
               ->where('annee', date('Y', strtotime('0 year')))
+              ->whereNotNull('ideleve')
+               ->whereNotNull('idparent')
               ->where('valide',1)
               ->count();
 

@@ -313,12 +313,14 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {parent: parent ,eleve: item , _token: _token},
                         success: function () {
-                            $('#eleve').animate({
+                          /*  $('#eleve').animate({
                                 opacity: '0.3',
                             });
                             $('#eleve').animate({
                                 opacity: '1',
                             });
+							
+							*/
                             location.reload();
 
                         }

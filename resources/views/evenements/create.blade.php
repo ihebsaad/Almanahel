@@ -38,11 +38,11 @@
                 </div>					
 	 		    <div class="form-group">
                     <label for="description">Date de Début:</label>
-                    <input id="description" type="text" class="form-control" name="debut" ></input>
+                    <input autocomplete="off" id="debut" type="text" class="form-control" name="debut" ></input>
                 </div>	
 				<div class="form-group">
                     <label for="fin">Date de Fin:</label>
-                    <input id="fin" type="text" class="form-control" name="fin" ></input>
+                    <input autocomplete="off" id="fin" type="text" class="form-control" name="fin" ></input>
                 </div>
 				<div class="form-group">
                     <label for="type">Type:</label>

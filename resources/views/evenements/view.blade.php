@@ -36,12 +36,12 @@
                 </div>		
 				<div class="form-group ">
                     <label for="debut">Début:</label>
-                   <input id="debut" type="text" class="form-control" name="debut"  value="<?php  echo $evenement['debut'];?>"/>
+                   <input id="debut" autocomplete="off" type="text" class="form-control" name="debut"  value="<?php  echo $evenement['debut'];?>"/>
 				</div>
 			 
 				<div class="form-group ">
                     <label for="fin">Fin:</label>
-                   <input id="fin" type="text" class="form-control" name="fin"  value="<?php  echo $evenement['fin'];?>"/>
+                   <input id="fin" type="text" autocomplete="off" class="form-control" name="fin"  value="<?php  echo $evenement['fin'];?>"/>
 				</div>
 				
 					<div class="form-group ">

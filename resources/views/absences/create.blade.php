@@ -146,10 +146,10 @@ function toggle(className, displayState){
   }
 
 $(function () {
-	 $('#date').datepicker({
+	 $('#debut').datepicker({
                     locale: 'fr'
                 });
-		$('#date').datepicker({
+		$('#fin').datepicker({
                     locale: 'fr'
                 });		
    /*  $('#datetimepicker1').datetimepicker({

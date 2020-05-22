@@ -10,6 +10,7 @@ class Depense extends Model
   'montant',
  'libelle',
   'details',
+  'beneficiaire',
   'annee'
  ];
  

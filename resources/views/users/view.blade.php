@@ -335,10 +335,10 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {parent: parent , eleve:item ,  _token: _token},
                         success: function () {
-                            $( ".select2-selection--multiple" ).hide( "slow", function() {
+                            $( "#eleve" ).hide( "slow", function() {
                                 // Animation complete.
                             });
-                            $( ".select2-selection--multiple" ).show( "slow", function() {
+                            $( "#eleve" ).show( "slow", function() {
                                 // Animation complete.
                             });
 

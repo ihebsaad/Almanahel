@@ -26,8 +26,12 @@ class EnvoyesController extends Controller
      */
     public function index()
     { 
-
-        $envoyes = Envoye::orderBy('id', 'desc')->get();
+ 
+$user = auth()->user();
+ $iduser=$user->id;
+ 
+        $envoyes = Envoye::orderBy('id', 'desc')->where('emetteur',$iduser)
+		->get();
         return view('envoyes.index',[ ], compact('envoyes'));
     }
 

@@ -50,13 +50,13 @@
 					<option value="simple">Simple</option>
 					<option value="vacances">Vacances</option>
 					<option value="examens">Examens</option>
-					<option value="event">Evenement</option>
+					<!--<option value="event">Evenement</option>-->
 					</select>
                 </div>
 				<!--
 		 		 <div class="form-group">
-                    <label for="description">Heure de Début:</label>
-                    <input id="description" type="text" class="form-control" name="debut" ></input>
+                    <label for="debut">Heure de Début:</label>
+                    <input id="debut" type="text" class="form-control" name="debut" ></input>
                 </div>	
 				<div class="form-group">
                     <label for="fin">Heure de Fin:</label>

@@ -65,37 +65,7 @@
 
 
  
-
-<script>
-    $(document).ready(function(){
-
-        $('#add').click(function(){
-            var nom = $('#nom').val();
-            var typepres = $('#typepres').val();
-             if ((titre != '') )
-            {
-                var _token = $('input[name="_token"]').val();
-                $.ajax({
-                    url:"{{ route('evenements.saving') }}",
-                    method:"POST",
-                    data:{nom:nom,type:type, _token:_token},
-                    success:function(data){
-                        alert('ajouté !');
-
-                    }
-                });
-            }else{
-                alert('ERROR');
-            }
-        });
-
-
-
-
-    });
-</script>
-
-
+ 
  @section('footer_scripts')
 
   
@@ -103,10 +73,13 @@
  
 $(function () {
      $('#debut').datepicker({
-                    locale: 'fr'
+                    locale: 'fr',
+					dateFormat:'dd/mm/yyyy'
                 });
     $('#fin').datepicker({
-                    locale: 'fr'
+                    locale: 'fr',
+					dateFormat:'dd/mm/yyyy'
+
                 });
 });
 

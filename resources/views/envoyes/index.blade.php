@@ -17,7 +17,7 @@
 
   <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-9"><h2>Emails Envoyés</h2></div>
+                <div class="col-lg-9"><h2>Mes Emails Envoyés</h2></div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-primary"    href="{{action('EnvoyesController@send')}}" ><b><i class="fas fa-envelope"></i> Envoyer un Email </b></a>
                 </div>
@@ -29,7 +29,7 @@
             <tr id="headtable">
                 <th style="width:5%">N°</th>
                 <th style="width:15%">Date</th>
-                <th style="width:20%">Emetteur</th>
+             <!--   <th style="width:20%">Emetteur</th>-->
                 <th style="width:30%">Sujet</th>
 				 <th style="width:15%">Destinataire</th>
                  <th style="width:10%">Actions</th>
@@ -43,7 +43,7 @@
                 <tr>
                     <td style="width:5%" ><a href="{{action('EnvoyesController@view', $envoye['id'])}}" >{{$envoye->id}}</a></td>
                     <td style="width:15%" ><?php echo $envoye['created_at'];?> </td>
-                    <td style="width:20%" ><?php echo $envoye['emetteur'];?> </td>
+               <!--     <td style="width:20%" ><?php echo $envoye['emetteur'];?> </td>-->
                     <td style="width:30%" ><?php echo $envoye['sujet'];?> </td>
                     <td style="width:15%" ><?php echo $envoye['destinataire'];?> </td>
  

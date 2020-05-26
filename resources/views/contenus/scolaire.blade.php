@@ -41,7 +41,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Calendrier des examens:</label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
@@ -58,16 +58,16 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 		 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Réunions Parents-Professeurs:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire3" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire3');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 
@@ -75,16 +75,16 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Réunions Conseils détablissement:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire4');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 
@@ -92,16 +92,16 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Réunions des délégués de classes:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire5" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire5');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 
@@ -109,16 +109,16 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Cellule découte:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire6" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire6');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 
@@ -126,16 +126,16 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Clubs </label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire7" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire7');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 
@@ -143,16 +143,16 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Manifestaions diverses:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire8" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire8');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>	
 	 
 	 

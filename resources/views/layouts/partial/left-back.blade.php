@@ -1,7 +1,11 @@
 <?php
+$user_type='';
+if (Auth::check()) {
+
 $user = auth()->user();
  $iduser=$user->id;
 $user_type=$user->user_type;
+}
 ?>
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">

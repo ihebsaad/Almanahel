@@ -60,7 +60,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
        <div class="form-group ">
                     <label for="contenu">Réunions Parents-Professeurs:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire3" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire3" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu3; ?></textarea>
                     </div>
          </div>
 
@@ -77,7 +77,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
        <div class="form-group ">
                     <label for="contenu">Réunions Conseils détablissement:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu4; ?></textarea>
                     </div>
          </div>
 
@@ -94,7 +94,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
        <div class="form-group ">
                     <label for="contenu">Réunions des délégués de classes:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire5" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire5" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu5; ?></textarea>
                     </div>
          </div>
 
@@ -111,7 +111,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
        <div class="form-group ">
                     <label for="contenu">Cellule découte:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire6" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire6" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu6; ?></textarea>
                     </div>
          </div>
 
@@ -128,7 +128,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
        <div class="form-group ">
                     <label for="contenu">Clubs </label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire7" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire7" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu7; ?></textarea>
                     </div>
          </div>
 
@@ -145,7 +145,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
        <div class="form-group ">
                     <label for="contenu">Manifestaions diverses:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="scolaire8" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="scolaire8" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu8; ?></textarea>
                     </div>
          </div>
 

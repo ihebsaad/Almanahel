@@ -26,7 +26,23 @@ class AbsencesController extends Controller
     public function index()
     { 
 
+ 
+ $user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+
+
+	if($user_type=='parent'){
+		
+		 $ideleves= DB::table('parents_eleve')->where('parent','=',$iduser->pluck('eleve');
+                           
+		        $absences = Absence::orderBy('id', 'desc')->whereIn('eleve', $ideleves)->get();
+
+	}else{
         $absences = Absence::orderBy('id', 'desc')->get();
+
+	}
+
         return view('absences.index',[ ], compact('absences'));
     }
 

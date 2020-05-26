@@ -88,7 +88,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body" style="width:100%;">
-           <div  style="min-height:700px">
+           <div  style="min-height:200px">
 		     <?php echo $contenu; ?>
          <!--  <iframe src="{{ URL::asset('public/reglement.pdf') }}" frameborder="0" style="width:100%;min-height:640px;"></iframe>-->
 		   </div>

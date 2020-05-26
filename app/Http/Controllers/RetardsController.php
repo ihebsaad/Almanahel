@@ -25,8 +25,24 @@ class RetardsController extends Controller
      */
     public function index()
     { 
+ 
+ $user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
 
-        $retards = Retard::orderBy('id', 'desc')->get();
+
+	if($user_type=='parent'){
+		
+		 $ideleves= DB::table('parents_eleve')->where('parent','=',$iduser->pluck('eleve');
+                           
+		   $retards = Retard::orderBy('id', 'desc')->whereIn('eleve', $ideleves)->get();
+
+	}else{
+		        $retards = Retard::orderBy('id', 'desc')->get();
+
+	}
+
+ 
         return view('retards.index',[ ], compact('retards'));
     }
 

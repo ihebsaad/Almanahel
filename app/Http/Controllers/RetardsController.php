@@ -33,7 +33,7 @@ $user_type=$user->user_type;
 
 	if($user_type=='parent'){
 		
-		 $ideleves= DB::table('parents_eleve')->where('parent','=',$iduser->pluck('eleve');
+		 $ideleves= DB::table('parents_eleve')->where('parent',  $iduser)->pluck('eleve');
                            
 		   $retards = Retard::orderBy('id', 'desc')->whereIn('eleve', $ideleves)->get();
 

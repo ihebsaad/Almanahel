@@ -1,4 +1,8 @@
-
+<?php
+$user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+?>
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -19,7 +23,7 @@
           <i class="fas fa-fw fa-home"></i>
           <span>Acueil</span></a>
       </li>
-
+<?php  if ($user_type=='admin' || $user_type=='membre' ){?>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -59,7 +63,6 @@
            </div>
         </div>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -82,6 +85,11 @@
           </div>
         </div>
       </li>
+	  
+<?php } ?>
+
+	<?php  if ($user_type=='admin' || $user_type=='membre' || $user_type=='parent' ){ ?>
+	  
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item ">
       <!--  <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">-->
@@ -91,15 +99,20 @@
         </a>
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
+<?php  if ( ! ($user_type=='parent') ) { ?> 
             <a class="collapse-item" href="{{route('inscriptions')}}">Inscriptions</a>
-            <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
+			<a class="collapse-item" href="{{route('paiements')}}">Paiements</a> 
+<?php } ?> 
             <a class="collapse-item" href="{{route('absences')}}">Absences</a>
             <a class="collapse-item" href="{{route('retards')}}">Retards</a>
            </div>
         </div>
       </li>
-	  
-	        <!-- Nav Item - Pages Collapse Menu -->
+	
+
+	<?php } if ($user_type=='admin' || $user_type=='financier' ){?>
+
+	  <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item ">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
           <i class="fas fa-fw fa-folder"></i>
@@ -113,6 +126,8 @@
 		  </div>
         </div>
       </li>
+
+	<?php }  ?>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">

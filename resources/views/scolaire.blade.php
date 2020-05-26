@@ -5,6 +5,10 @@
  <?php 
 $cont =  App\Contenu::where('zone', 'scolaire')->first();$contenu=$cont->contenu ;
 $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->contenu ;
+$cont3 =  App\Contenu::where('zone', 'scolaire3')->first();$contenu3=$cont3->contenu ;
+$cont4 =  App\Contenu::where('zone', 'scolaire4')->first();$contenu4=$cont4->contenu ;
+$cont5 =  App\Contenu::where('zone', 'scolaire5')->first();$contenu5=$cont5->contenu ;
+$cont6 =  App\Contenu::where('zone', 'scolaire6')->first();$contenu6=$cont6->contenu ;
  
 ?>
  
@@ -93,7 +97,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       <div class="panel-heading" role="tab" id="headingTwo">
         <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          Réunions 
+          Calendrier des Examens 
         </a>
       </h4>
       </div>
@@ -101,7 +105,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
         <div class="panel-body"   >
 		  <div  style="min-height:600px">
 
-          <?php echo $contenu; ?>
+          <?php echo $contenu2; ?>
 		    </div  >
 
         </div>
@@ -111,7 +115,7 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
       <div class="panel-heading" role="tab" id="headingThree">
         <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          Clubs et Manifestations
+          Réunions Parents-professeurs
         </a>
       </h4>
       </div>
@@ -119,11 +123,108 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
-          <?php echo $contenu2; ?>
+          <?php echo $contenu3; ?>
 		  </div>
         </div>
       </div>
     </div>
+	
+	
+	    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          Réunions du conseil d'établissement
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+		 <div  style="min-height:300px">
+
+          <?php echo $contenu4; ?>
+		  </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          Réunions des délégués de classes
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+		 <div  style="min-height:300px">
+
+          <?php echo $contenu5; ?>
+		  </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          Cellule d'écoute
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+		 <div  style="min-height:300px">
+
+          <?php echo $contenu6; ?>
+		  </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          CLubs
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+		 <div  style="min-height:300px">
+
+          <?php echo $contenu7; ?>
+		  </div>
+        </div>
+      </div>
+    </div>
+	
+	
+		    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          Manifestations diverses
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+		 <div  style="min-height:300px">
+
+          <?php echo $contenu8; ?>
+		  </div>
+        </div>
+      </div>
+    </div>
+	
+	
   </div>
 
  

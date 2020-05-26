@@ -106,7 +106,7 @@
    
 <!----------------------- Section Home  -------->
 <section>
-  <h2 class="heading-title" >À PROPOS DE L'ACADÉMIE</h2>
+  <h2 class="heading-title" >Al Manahel Academy: Le passeport pour la réussite</h2>
   <span class="heading-title-border"></span>
 <?php
 $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;

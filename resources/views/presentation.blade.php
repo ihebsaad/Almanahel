@@ -4,13 +4,13 @@
 
   <!-- Page Header -->
   
-  <?php $link  =  "http://$_SERVER[HTTP_HOST]/public/site/img/about-bg.jpg"; ?>
-
+ 
  
 <?php 
 $cont =  App\Contenu::where('zone', 'presentation')->first();$contenu=$cont->contenu ;
 $cont2 =  App\Contenu::where('zone', 'presentation2')->first();$contenu2=$cont2->contenu ;
 $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3->contenu ;
+$cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4->contenu ;
 
 ?>
 

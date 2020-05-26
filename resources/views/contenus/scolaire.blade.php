@@ -55,7 +55,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 
 	 
 	 
-		 <div class="row">
+		<br> <div class="row">
 	
        <div class="form-group ">
                     <label for="contenu">Réunions Parents-Professeurs:</label>
@@ -72,7 +72,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 
 
 
-	 <div class="row">
+	 <br><div class="row">
 	
        <div class="form-group ">
                     <label for="contenu">Réunions Conseils détablissement:</label>
@@ -88,7 +88,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 
 
-
+<br>
 	 <div class="row">
 	
        <div class="form-group ">
@@ -104,7 +104,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire5');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
-
+<br>
 
 	 <div class="row">
 	
@@ -121,7 +121,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire6');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
-
+<br>
 
 	 <div class="row">
 	
@@ -138,7 +138,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire7');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
-
+<br>
 
 	 <div class="row">
 	

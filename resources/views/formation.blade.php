@@ -11,14 +11,12 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
  ?>
  
 <div class="row">  
-<section>
-
+ 
 <center><h4>Dernières Annonces<h4></center>
   
 @include('annonces')
   
-</section>
-</div>
+ </div>
 
  <div class="row">  
 <section>

@@ -44,11 +44,11 @@
                         <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ><?php echo $annonce['contenu'];?></textarea>
                     </div>
 				</div>
-				<div class="form-group ">
+	<!--			<div class="form-group ">
 
              <label class="check "> <input type="checkbox" name="visible"  value="1" <?php if( $annonce['visible']==1)  {echo 'checked' ;} ?> /> Visible</label>
 					</div>
-
+-->
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>
   			 </div>

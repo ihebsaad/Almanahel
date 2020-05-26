@@ -80,10 +80,14 @@
  
 $(function () {
      $('#debut').datepicker({
-                    locale: 'fr'
+                    locale: 'fr',
+					dateFormat:'dd/mm/yy'
+
                 });
     $('#fin').datepicker({
-                    locale: 'fr'
+                    locale: 'fr',
+				    dateFormat:'dd/mm/yy'
+
                 });
 });
 

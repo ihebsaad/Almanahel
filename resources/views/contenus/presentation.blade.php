@@ -13,6 +13,7 @@
 $cont =  App\Contenu::where('zone', 'presentation')->first();$contenu=$cont->contenu ;
 $cont2 =  App\Contenu::where('zone', 'presentation2')->first();$contenu2=$cont2->contenu ;
 $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3->contenu ;
+$cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4->contenu ;
 
 ?>
 <div class="modal-body">
@@ -20,7 +21,7 @@ $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3-
     <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu:</label>
+                    <label for="contenu">Mot de la Direction:</label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="presentation" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>
@@ -30,10 +31,11 @@ $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3-
 	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick=";changing('presentation');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
+   <br><br>
 	    <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Nos résultats:</label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="presentation2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
@@ -43,10 +45,11 @@ $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3-
 	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick="  changing('presentation2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
-	    <div class="row">
+   <br><br>
+  <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 3:</label>
+                    <label for="contenu">Alumni:</label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="presentation3" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu3; ?></textarea>
                     </div>
@@ -57,6 +60,24 @@ $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3-
  <div class="row">
 	   <button  class="btn btn-md btn-success"  onclick=" ;changing('presentation3');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
+
+
+ <br><br>
+  <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Divers:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="presentation4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu4; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	
+ <div class="row">
+	   <button  class="btn btn-md btn-success"  onclick=" ;changing('presentation4');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+   </div>
+
 
 	
   </div>	 

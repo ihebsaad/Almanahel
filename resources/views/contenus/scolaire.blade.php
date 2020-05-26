@@ -12,6 +12,12 @@
 <?php 
 $cont =  App\Contenu::where('zone', 'scolaire')->first();$contenu=$cont->contenu ;
 $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->contenu ;
+$cont3 =  App\Contenu::where('zone', 'scolaire3')->first();$contenu3=$cont3->contenu ;
+$cont4 =  App\Contenu::where('zone', 'scolaire4')->first();$contenu4=$cont4->contenu ;
+$cont5 =  App\Contenu::where('zone', 'scolaire5')->first();$contenu5=$cont5->contenu ;
+$cont6 =  App\Contenu::where('zone', 'scolaire6')->first();$contenu6=$cont6->contenu ;
+$cont7 =  App\Contenu::where('zone', 'scolaire7')->first();$contenu7=$cont7->contenu ;
+$cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->contenu ;
  
 ?>
 <div class="modal-body">
@@ -19,16 +25,19 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
     <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 1:</label>
+                    <label for="contenu">Règlement intérieur:</label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="scolaire" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>
          </div>
 
     </div>
+	
 	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick="changing('scolaire');;location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
+   
+   
 	 <div class="row">
 	
        <div class="form-group ">
@@ -41,9 +50,112 @@ $cont2 =  App\Contenu::where('zone', 'scolaire2')->first();$contenu2=$cont2->con
     </div>
 	
 	<div class="row">
-	   <button id="save" class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
+	 
+	 
+		 <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Contenu 2:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	
+	<div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>
+
+
+
+	 <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Contenu 2:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	
+	<div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>
+
+
+
+	 <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Contenu 2:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	
+	<div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>
+
+
+
+	 <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Contenu 2:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	
+	<div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>
+
+
+
+	 <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Contenu 2:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	
+	<div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>
+
+
+
+	 <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Contenu 2:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="scolaire2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	
+	<div class="row">
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+    </div>	
+	 
+	 
 	 
  </div>	 
 

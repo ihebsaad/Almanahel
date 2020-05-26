@@ -9,6 +9,8 @@ $cont3 =  App\Contenu::where('zone', 'scolaire3')->first();$contenu3=$cont3->con
 $cont4 =  App\Contenu::where('zone', 'scolaire4')->first();$contenu4=$cont4->contenu ;
 $cont5 =  App\Contenu::where('zone', 'scolaire5')->first();$contenu5=$cont5->contenu ;
 $cont6 =  App\Contenu::where('zone', 'scolaire6')->first();$contenu6=$cont6->contenu ;
+$cont7 =  App\Contenu::where('zone', 'scolaire7')->first();$contenu7=$cont7->contenu ;
+$cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->contenu ;
  
 ?>
  

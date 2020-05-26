@@ -140,7 +140,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4">
+      <div id="collapse4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -159,7 +159,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading5">
+      <div id="collapse5" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading5">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -178,7 +178,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
+      <div id="collapse6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -197,7 +197,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
+      <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -216,7 +216,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8">
+      <div id="collapse8" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 

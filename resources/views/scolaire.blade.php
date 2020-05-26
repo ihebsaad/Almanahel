@@ -133,14 +133,14 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	
 	
 	    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
+      <div class="panel-heading" role="tab" id="heading4">
         <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapseThree">
           Réunions du conseil d'établissement
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -152,14 +152,14 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	
 	
 	    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
+      <div class="panel-heading" role="tab" id="heading5">
         <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapseThree">
           Réunions des délégués de classes
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading5">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -171,14 +171,14 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	
 	
 	    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
+      <div class="panel-heading" role="tab" id="heading6">
         <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapseThree">
           Cellule d'écoute
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -190,14 +190,14 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	
 	
 	    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
+      <div class="panel-heading" role="tab" id="heading7">
         <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true" aria-controls="collapseThree">
           CLubs
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 
@@ -209,14 +209,14 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 	
 	
 		    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
+      <div class="panel-heading" role="tab" id="heading8">
         <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="true" aria-controls="collapseThree">
           Manifestations diverses
         </a>
       </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8">
         <div class="panel-body">
 		 <div  style="min-height:300px">
 

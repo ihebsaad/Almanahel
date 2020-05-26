@@ -74,11 +74,11 @@
 $(function () {
      $('#debut').datepicker({
                     locale: 'fr',
-					dateFormat:'dd/mm/yyyy'
+					dateFormat:'dd/mm/Y'
                 });
     $('#fin').datepicker({
                     locale: 'fr',
-					dateFormat:'dd/mm/yyyy'
+					dateFormat:'dd/mm/Y'
 
                 });
 });

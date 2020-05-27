@@ -421,7 +421,7 @@ class UsersController extends Controller
     {
 		$count=Paiement::where('eleve', $user)
 		->where('annee',$annee)
-		->count();
+		->sum('montant');
 		
 		 User::where('id', $user)->update(array('totalpaiement' => $count));
  

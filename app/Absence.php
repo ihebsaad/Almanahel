@@ -15,6 +15,7 @@ class Absence extends Model
  'details',
  'heure_debut',
  'heure_fin',
+ 'annee',
  ];
  
 }

@@ -24,6 +24,14 @@
             @endif
             <form method="post" action="{{ route('absences.store') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
+		<?php	  //ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		?>
+			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
+
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
                     <select id="classe" type="number" class="form-control select2" name="classe" style="height:38px;">

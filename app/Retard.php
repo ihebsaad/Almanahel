@@ -12,6 +12,7 @@ class Retard extends Model
  'date',
   'seance',
  'details',
+ 'annee',
  ];
  
 }

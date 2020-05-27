@@ -25,7 +25,14 @@
             <form method="post" action="{{ route('paiements.store') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
 			  
-				
+						<?php	  //ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		?>
+			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
+
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
                     <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
@@ -53,10 +60,7 @@
                     <input id="details" type="text" class="form-control" name="details"/>
                 </div>
 				
-				 <div class="form-group">
-                    <label for="montant">Année:</label>
-                    <input id="annee" type="number" min="2020"  class="form-control" name="annee"/>
-                </div>	
+				 
 			  
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Ajouter</button>

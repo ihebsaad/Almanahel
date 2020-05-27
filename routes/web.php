@@ -144,6 +144,7 @@ Route::post('/depenses/edit/', 'DepensesController@edit')->name('depenses.edit')
 Route::post('/envoyes/saving','EnvoyesController@saving')->name('envoyes.saving');
  Route::post('/envoyes/sending','EnvoyesController@sending')->name('envoyes.sending');
  Route::post('/envoyes/sendnotif','EnvoyesController@sendnotif')->name('envoyes.sendnotif');
+ Route::post('/envoyes/sendmessage','EnvoyesController@sendmessage')->name('envoyes.sendmessage');
 Route::get('/envoyes/view/{id}', 'EnvoyesController@view');
 Route::get('/envoyes/destroy/{id}', 'EnvoyesController@destroy');
 Route::get('/envoyes/send/', 'EnvoyesController@send')->name('envoyes.send');

@@ -43,11 +43,14 @@
                     <input id="details" type="text" class="form-control" name="details"/>
                 </div>
 				
-				 <div class="form-group">
-                    <label for="montant">Année:</label>
-                    <input id="annee" type="number" min="2020"  class="form-control" name="annee"/>
-                </div>	
-			  
+			<?php	  //ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		?>
+			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
+
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Ajouter</button>
   			 </div>

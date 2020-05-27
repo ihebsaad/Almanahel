@@ -81,7 +81,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
             </div>
           </div>
 		 <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
+            <div class="form-group  ">
               <label>Qualification</label>
               <select   class="form-control"   id="qualification"  >
 			  <option value="">sélectionnez</option>
@@ -148,7 +148,8 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 					swal({
                         type: 'success',
                         title: 'Envoyé ...',
-                        html: 'Votre demande a été envoyée avec succès'
+                        text: 'Votre demande a été envoyée avec succès'
+ 						icon: "success",
                     }); 
 					document.getElementById("myform").reset();
 

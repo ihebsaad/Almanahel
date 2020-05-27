@@ -104,7 +104,8 @@ $user_type=$user->user_type;
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 <?php  if ( ! ($user_type=='parent') ) { ?> 
-            <a class="collapse-item" href="{{route('inscriptions')}}">Inscriptions</a>
+            <a class="collapse-item" href="{{route('inscriptions')}}">Pré-Inscriptions</a>
+            <a class="collapse-item" href="{{route('inscriptionsv')}}">Inscriptions</a>
 			<a class="collapse-item" href="{{route('paiements')}}">Paiements</a> 
 <?php } ?> 
             <a class="collapse-item" href="{{route('absences')}}">Absences</a>
@@ -127,7 +128,7 @@ $user_type=$user->user_type;
 		   <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
             <a class="collapse-item" href="{{route('depenses')}}">Dépenses</a>
             <a class="collapse-item" href="{{route('excels')}}">Excels</a>
-            <a class="collapse-item" href="{{route('excels')}}">Ajouter un Excel</a>
+            <a class="collapse-item" href="{{route('excels.create')}}">Ajouter un Excel</a>
                
 		  </div>
         </div>

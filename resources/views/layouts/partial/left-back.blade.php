@@ -126,7 +126,8 @@ $user_type=$user->user_type;
           <div class="bg-white py-2 collapse-inner rounded">
 		   <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
             <a class="collapse-item" href="{{route('depenses')}}">Dépenses</a>
-            <a class="collapse-item" href="{{route('depenses')}}">Excels</a>
+            <a class="collapse-item" href="{{route('excels')}}">Excels</a>
+            <a class="collapse-item" href="{{route('excels')}}">Ajouter un Excel</a>
                
 		  </div>
         </div>

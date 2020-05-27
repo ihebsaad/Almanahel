@@ -131,6 +131,7 @@ $user_type=$user->user_type;
              'details' => $details ,
              'debut' => $debut ,
              'fin' => $fin 
+             'annee' => $annee 
              
         ]);
 

@@ -18,7 +18,7 @@
     </style>
      <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-9"><h2>Liste des excels</h2></div>
+                <div class="col-lg-9"><h2>Liste des excels frinances</h2></div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success" href="{{action('ExcelsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un excel</b></a>
                 </div>
@@ -31,6 +31,7 @@
             <th>Date</th>
             <th>Titre</th>
              <th>Emetteur</th>
+             <th>Type</th>
             <th>Actions</th>
         </tr>
             
@@ -47,7 +48,9 @@
 $user=User::where('id',$excel->emetteur)->first() ;
                     echo $user['name']." ".$user['lastname'];?></td>
                     
-                    <td>
+                    <td>{{$excel->type}}</td>
+
+					</td>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>

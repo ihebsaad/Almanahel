@@ -73,6 +73,7 @@ $user_type=$user->user_type;
 		$details=$request->get('details');
 		$seance=$request->get('seance');
 		$classe=$request->get('classe');
+		$annee=$request->get('annee');
 		$leleve=DB::table('users')->where('id',$eleve)->first();
  		$nomeleve=$leleve->name .' '.$leleve->lastname;
 		if($vis=="on" || $vis==1 ){
@@ -131,6 +132,7 @@ $user_type=$user->user_type;
              'details' =>  $details  ,
              'seance' => $seance  ,
              'date' => $date  ,
+             'annee' => $annee  ,
   
         ]);
 

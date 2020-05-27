@@ -150,8 +150,9 @@ $user = auth()->user();
 	 $sujet= $request->get('sujet') ;
 	 $contenu= $request->get('contenu') ;
 	 $type= $request->get('type') ;
-	  $id=Auth::id();
-            
+	 if (Auth::check()) {
+		$id=Auth::id();
+	 } else{$id=0;}
 
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email

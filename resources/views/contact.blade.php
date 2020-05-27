@@ -35,8 +35,13 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Questions? n'hésitez pas à nous contacter</p>
-          <form name="sentMessage" id="contactForm" novalidate>
-          <div class="control-group">
+		<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">
+			  {{ csrf_field() }}
+		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com ">
+		  <input type="hidden" class="form-control"  id="type"  name="type"  value="contact">
+		  <input type="hidden" class="form-control"  id="sujet"  name="sujet"  value="Message de Contact - Al Manahel">
+ 
+			 <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Nom</label>
               <input type="text" class="form-control" placeholder="Nom Complet" id="name" required data-validation-required-message="Please enter your name.">
@@ -60,7 +65,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Message</label>
-              <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message=" "></textarea>
+              <textarea rows="5" class="form-control" placeholder="Message" id="contenu" name="contenu" required data-validation-required-message=" "></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>

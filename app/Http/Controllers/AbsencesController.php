@@ -62,7 +62,7 @@ $user_type=$user->user_type;
 		        $absences = Absence::orderBy('id', 'desc')->whereIn('eleve', $ideleves)->where('annee',$annee)->get();
 
 	}else{
-        $absences = Absence::orderBy('id', 'desc')->get();
+        $absences = Absence::orderBy('id', 'desc')->where('annee',$annee)->get();
 
 	}
 

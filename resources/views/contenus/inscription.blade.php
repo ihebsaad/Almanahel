@@ -20,7 +20,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 1:</label>
+                    <label for="contenu">Calendrier:</label>
                     <div class="editor" >
                         <textarea style="min-height: 280px;"  id="inscription" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>
@@ -29,24 +29,24 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     </div>
 	 <div class="row" style="margin-bottom:30px">
 	   <button  class="btn btn-md btn-success"  onclick="changing('inscription');  ;location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
-    </div>
+    </div><br><br>
 	    <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 2:</label>
+                    <label for="contenu">Procédure d'admission de nouveaux élèves:</label>
                     <div class="editor" >
                         <textarea style="min-height: 280px;"  id="inscription2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
-    </div>
+    </div><br><br>
 	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick=" changing('inscription2'); ;location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 		 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Contenu 3:</label>
+                    <label for="contenu">Procédures d'inscription</label>
                     <div class="editor" >
                         <textarea style="min-height: 280px;"  id="inscription3" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu3; ?></textarea>
                     </div>

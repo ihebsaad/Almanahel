@@ -31,7 +31,7 @@
                          <label for="name" class="col-md-4 control-label">Fichier</label>
 
                             <div class="col-md-6">
-                                <input  autocomplete="off"  id="chemin" type="file" class="form-control" name="chemin"  required  >
+                                <input  autocomplete="off"  id="chemin" type="file" class="form-control" name="chemin"  required accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
 
                                 
                             </div>

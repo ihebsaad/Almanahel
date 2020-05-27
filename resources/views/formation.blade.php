@@ -149,7 +149,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
                         type: 'success',
                         title: 'Envoyé ...',
                         text: 'Votre demande a été envoyée avec succès'
- 						icon: "success",
+ 					//	icon: "success",
                     }); 
 					document.getElementById("myform").reset();
 

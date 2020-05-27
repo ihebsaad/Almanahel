@@ -196,7 +196,7 @@ $user = auth()->user();
 
 
 
-	  public function sendnmessage(Request $request)
+	  public function sendmessage(Request $request)
     {
  	 $to= $request->get('destinataire') ;
 	 $sujet= $request->get('sujet') ;
@@ -243,12 +243,10 @@ $user = auth()->user();
 		
 		 if ($envoye->save())
             {  
-                return true ;
-            }
+             }
  
 		  else{
-			  return false  ;
-
+ 
  		}
 		  
 	

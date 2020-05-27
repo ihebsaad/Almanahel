@@ -81,8 +81,9 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
     </div>
   </div>
   
+    @endsection
   
-  
+@section('footer-scripts')
 <script>
     $(document).ready(function(){
 

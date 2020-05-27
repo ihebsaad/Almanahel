@@ -1,7 +1,6 @@
 
 @extends('layouts.back')
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
-
+ 
 @section('content')
 <h3 style="margin-left:50px">Formulaire Pré-inscription </h3><br><br>    
             <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}" enctype="multipart/form-data" onsubmit="return verifier();" >

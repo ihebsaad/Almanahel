@@ -1,6 +1,5 @@
 @extends('layouts.back')
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  >
-@section('content')
+ @section('content')
 
     <h3 style="margin-left:50px">Créer une classe </h3><br><br>
 

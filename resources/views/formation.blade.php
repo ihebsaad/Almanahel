@@ -145,7 +145,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
                     method:"POST",
                     data:{diplome:diplome,qualification:qualification,demande:demande,naisssance:naisssance,adresse:adresse,nom:nom,email:email,tel:tel,sujet:sujet,contenu:contenu,type:type,destinataire:destinataire, _token:_token},
                     success:function(data){
-						swal.fire({
+					swal({
                         type: 'success',
                         title: 'Envoyé ...',
                         html: 'Votre demande a été envoyée avec succès'
@@ -155,11 +155,12 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
                     }
                 });
             }else{
-						swal.fire({
+					swal({
                         type: 'error',
                         title: 'Existe ...',
                         html: string
-                    });              }
+                    });            
+					}
         });
 
 

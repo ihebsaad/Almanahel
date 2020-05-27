@@ -80,10 +80,8 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
       </div>
     </div>
   </div>
-  
-    @endsection
-  
-@section('footer-scripts')
+  <script    src="{{  URL::asset('public/site/vendor/jquery/jquery.min.js') }}"   ></script>
+
 <script>
     $(document).ready(function(){
 
@@ -118,4 +116,5 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
   
   
   
-  @endsection
+    @endsection
+  

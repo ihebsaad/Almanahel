@@ -46,15 +46,13 @@
    
 </div>
 
-<div class="row" style="margin-left:10px">
-
-    <div class="col">
-       <label  for="annee">Année: </label>
-      <?php $max= date('Y', strtotime('+1 year')); $min= date('Y', strtotime('-1 year'));?>
-       <input  class="form-control" type="number" name="annee" id="annee"  min="<?php echo $min; ?>"  max="<?php echo $max;?>"/>
-
-    </div>
-</div>
+ <?php	  //ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		?>
+	   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
 
 <div class="row" style="margin-left:10px">
   

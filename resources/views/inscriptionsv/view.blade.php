@@ -58,14 +58,7 @@
 
  
 </div>
-<div class="row" style="margin-left:10px">
  
-    <div class="col">
-       <label  for="annee">Année: </label>
-       <input class="form-control" type="text" name="annee" id="annee" onchange="changing(this)"    value="{{ $inscriptionv->annee }}" />
- </div>
-   
-</div>
 <div class="row" style="margin-left:10px">
 
        <div class="col">

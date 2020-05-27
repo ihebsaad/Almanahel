@@ -120,6 +120,16 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
 <div id="ancien_box" style="display:none">
    <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsadd') }}">
       {{ csrf_field() }}
+	  
+	  <?php	  //ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		?>
+	  <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
+			   
+			   
 <div class="row" style="margin-left:20px">
   <div class="form-group " >
     <div class=" row">

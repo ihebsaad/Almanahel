@@ -77,8 +77,7 @@ $pathb = storage_path()."/fichiers/";
           $bulletin2->move($pathb, $nameb);
     }
       $annee=  $request->get('annee');
-if($annee == null){
-$annee=date('Y', strtotime('0 year')); }
+ 
         $Inscription = new Inscription([
              'eleve' =>$request->get('eleve'),
              'nom' => $request->get('nom'),

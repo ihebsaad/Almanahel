@@ -50,7 +50,7 @@ $user=User::where('id',$excel->emetteur)->first() ;
                     
                     <td>{{$excel->type}}</td>
 
-					</td>
+					<td>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>

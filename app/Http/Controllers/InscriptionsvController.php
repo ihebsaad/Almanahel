@@ -78,7 +78,7 @@ class InscriptionsvController extends Controller
                  'datenaissance' =>$user['naissance'],
                 'valide' => 1,
                 'user_type' => 'eleve',
-                'annee' => date('Y', strtotime('0 year')),
+                'annee' => $request->get('annee'),
                   'eleve' => $user['id'],
                   'ideleve' => $user['id'],
                   'nom_rep' => $parent['lastname'],

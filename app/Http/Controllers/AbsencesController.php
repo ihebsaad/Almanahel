@@ -74,6 +74,7 @@ $user_type=$user->user_type;
 		$details = trim($request->get('details'));
         $debut = trim($request->get('debut'));
         $fin = trim($request->get('fin'));
+        $annee = trim($request->get('annee'));
  		$leleve=DB::table('users')->where('id',$eleve)->first();
  		$nomeleve=$leleve->name .' '.$leleve->lastname;
 		if($vis=="on" || $vis==1 ){

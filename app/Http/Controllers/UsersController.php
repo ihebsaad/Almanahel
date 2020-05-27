@@ -188,9 +188,9 @@ class UsersController extends Controller
 		$mois=intval($month);
 		$annee=intval($year);
 		if($mois > 9 ){$annee=$annee-1;}
-		$this->countPaiements($user,$annee):
-		$this->countRetards($user,$annee):
-		$this->countAbsences($user,$annee):
+		$this->countPaiements($user,$annee);
+		$this->countRetards($user,$annee);
+		$this->countAbsences($user,$annee);
 
           $relations = DB::table('parents_eleve')->select('eleve')
             ->where('parent','=',$id)

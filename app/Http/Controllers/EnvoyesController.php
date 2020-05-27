@@ -31,7 +31,7 @@ class EnvoyesController extends Controller
 $user = auth()->user();
  $iduser=$user->id;
  
-        $envoyes = Envoye::orderBy('id', 'desc')->where('emetteur',$iduser)
+        $envoyes = Envoye::orderBy('id', 'desc')->where('emetteur',$iduser)->where('type','communication')
 		->get();
         return view('envoyes.index',[ ], compact('envoyes'));
     }

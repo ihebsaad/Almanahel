@@ -178,11 +178,10 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function view($id)
+   
+public function view($id)
     {
-
-
-        $user = User::find($id);
+    $user = User::find($id);
 		//ANNEE
 		$year=date('Y');$month=date('m');
 		$mois=intval($month);
@@ -192,20 +191,33 @@ class UsersController extends Controller
 		$this->countRetards($id,$annee);
 		$this->countAbsences($id,$annee);
 
-          $relations = DB::table('parents_eleve')->select('eleve')
+		$relations = DB::table('parents_eleve')->select('eleve')
             ->where('parent','=',$id)
             ->get();
             $eleves = DB::table('users')
             ->where('user_type','=','eleve')
             ->get();
-            
-
-
+          $relations1 = DB::table('parents_eleve')->select('parent')
+            ->where('eleve','=',$id)
+            ->get();
+            $parents = DB::table('users')
+            ->where('user_type','=','parent')
+            ->get();
+             $relations2 = DB::table('eleves_classe')->select('classe')
+            ->where('eleve','=',$id)
+            ->get();
+            $classes = DB::table('classes')
+            ->get();
+             $relations3 = DB::table('profs_classe')->select('classe')
+            ->where('prof','=',$id)
+            ->get();
+            $classes1 = DB::table('classes')
+            ->get();
         //$roles = DB::table('roles')->get();
-
-        return view('users.view',['relations'=>$relations, 'eleves'=>$eleves] ,compact('user','id'));
-
+        return view('users.view',['relations'=>$relations, 'eleves'=>$eleves,'relations1'=>$relations1, 'parents'=>$parents,'relations2'=>$relations2, 'classes'=>$classes,'relations3'=>$relations3, 'classes1'=>$classes1] ,compact('user','id'));
     }
+
+ 
 
     public function profile($id)
     {

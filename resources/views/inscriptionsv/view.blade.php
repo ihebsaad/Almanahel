@@ -7,6 +7,8 @@
 
 
 @section('content')
+<div class=" " style="padding:8px 8px 8px 8px">
+        <div class="portlet box grey">
 <h3 style="margin-left:50px">Pré-inscription</h3><br><br>    
                <form class="form-horizontal" method="POST"  action="{{action('InscriptionsvController@update1', $id)}} " enctype="multipart/form-data" >
       {{ csrf_field() }}
@@ -42,7 +44,7 @@
      <div class="col">
        <label class="form-label" for="datenaissance">Date de naissance : </label>
 
-       <input  class="form-control" type="date" name="datenaissance" id="datenaissance"  onchange="changing(this)"   value="{{ $inscriptionv->datenaissance }}" />
+       <input  class="form-control datepicker" type="text" name="datenaissance" id="datenaissance"  onchange="changing(this)"   value="{{ $inscriptionv->datenaissance }}" />
  
 
          </div>
@@ -398,6 +400,8 @@
 
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
+                </div>
+              </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 

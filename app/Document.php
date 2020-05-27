@@ -8,12 +8,14 @@ class Document extends Model
 	
   protected $fillable = [
  'titre',
+  'chemin',
   'description',
  'emetteur',
- 'chemin',
+  'type',
+ 'destinataire',
+  'envoye',
  'taille',
- 'type',
- 'parent',
+ 'parent'
  ];
  
 }

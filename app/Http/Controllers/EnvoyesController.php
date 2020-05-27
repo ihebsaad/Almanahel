@@ -94,13 +94,12 @@ $user = auth()->user();
     }
 	
 	
-	  public function sending(Request $request)
+public function sending(Request $request)
     {
  	 $to= $request->get('destinataire') ;
 	 $sujet= $request->get('sujet') ;
 	 $contenu= $request->get('contenu') ;
-	 
-
+	
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
         $swiftTransport->setPassword('21septembre'); // mot de passe email
@@ -109,7 +108,6 @@ $user = auth()->user();
 		Mail::setSwiftMailer($swiftMailer);
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
-        
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
                 $message
                     ->to($to)
@@ -119,7 +117,7 @@ $user = auth()->user();
                     ->setFrom([$from => $fromname]);
 					   ;
             });
-		 
+		
 			$envoye  = new Envoye([
               'emetteur' => ( $request->get('emetteur')),
              'destinataire' => trim($request->get('destinataire')),
@@ -127,18 +125,38 @@ $user = auth()->user();
              'contenu' => trim($request->get('contenu')),
              'type' => 'communication'
 								]);
+			
 		
 		 if ($envoye->save())
             { $id=$envoye->id;
-
+            	$des=$envoye->destinataire;
+            	$destinataire = DB::table('users')
+                  ->where('email',$des)
+                ->first();
+             $name='';
+       if($request->file('document')!=null)
+    {$document=$request->file('document');
+     $name =$document->getClientOriginalName();
+     $path = storage_path()."/documents/";
+     $document->move($path, $name);
+ $document = new Document([
+             'titre' =>$envoye['type'],
+             'description' =>$envoye['contenu'],
+             'chemin'=> $name,
+             'emetteur' => $envoye['emetteur'],
+             'envoye' =>  $id,
+              'type' => $destinataire->user_type,
+             'destinataire' => $destinataire->id,
+            // 'par'=> $request->get('p,ar'),ville
+        ]);
+     $document->save();}
                 return redirect('/envoyes/view/'.$id)->with('success', 'Envoyé avec succès') ;
             }
- 
 		  else{
 			  return redirect('/envoyes' )  ;
-
  		}
-		  
+ 		
+		 
 	
 	}
 

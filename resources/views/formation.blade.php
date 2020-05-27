@@ -119,6 +119,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
     </div>
   </div>
   <script    src="{{  URL::asset('public/site/vendor/jquery/jquery.min.js') }}"   ></script>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
     $(document).ready(function(){
@@ -148,7 +149,8 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
                         type: 'success',
                         title: 'Envoyé ...',
                         html: 'Votre demande a été envoyée avec succès'
-                    });  					document.getElementById("myform").reset();
+                    }); 
+					document.getElementById("myform").reset();
 
                     }
                 });

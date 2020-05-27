@@ -54,6 +54,12 @@
                         <textarea style="min-height: 380px;"  id="contenu" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ></textarea>
                     </div>
 				</div>
+               <div class="form-group">
+                    <label for="contenu">Document:</label>
+              
+                        <input type="file"  id="document" type="text"    name="document"   ></input >
+                 
+                </div>
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Envoyer</button>
   			 </div>

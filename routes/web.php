@@ -244,3 +244,17 @@ Route::get('/ChargerTableImagesSlider', 'ImageController@ChargerTableImagesSlide
 Route::get('/ChargerTableImagesSliderScolaire', 'ImageController@ChargerTableImagesSliderScolaire');
 
 
+/*** documents **/
+ Route::get('/documents/create','DocumentsController@create')->name('documents.create');
+Route::post('/documents/store','DocumentsController@store')->name('documents.store');
+Route::post('/documents/create','DocumentsController@create')->name('documents.create');
+Route::get('/documents', array('as' => 'documents','uses' => 'DocumentsController@index'));
+Route::get('/documents/view/{id}', 'DocumentsController@view');
+Route::get('/documents/destroy/{id}', 'DocumentsController@destroy');
+Route::get('/docsrecu', array('as' => 'docsrecu','uses' => 'DocumentsController@docsrecu'));
+Route::get('/docsenv', array('as' => 'docsenv','uses' => 'DocumentsController@docsenv'));
+Route::get('/documents/view/{id}', 'DocumentsController@view');
+Route::post('/update3/{id}','DocumentsController@update3');
+Route::post('/documents/updating','DocumentsController@updating')->name('documents.updating');
+
+

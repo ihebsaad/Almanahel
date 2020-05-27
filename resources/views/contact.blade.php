@@ -88,6 +88,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
     $(document).ready(function(){
 
         $('#send').click(function(){
+			alert();
             var sujet = $('#sujet').val();
             var contenu = $('#contenu').val();
             var type = $('#type').val();

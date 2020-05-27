@@ -275,7 +275,11 @@ $user = auth()->user();
 	 
 	 $contenu= 'Nom : '.$nom.'<br>
 			Email: '.$email.'<br>
+			Adresse: '.$adresse.'<br>
 			Tel: '.$tel.'<br>
+			Diplome: '.$diplome.'<br>
+			Type de demande: '.$demande.'<br>
+			Qualification: '.$qualification.'<br>
 			Message: '.$mess.'<br>';
  
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');

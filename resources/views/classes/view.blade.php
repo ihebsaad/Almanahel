@@ -1,5 +1,6 @@
 @extends('layouts.back')
- 
+
+
   
     <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
@@ -209,13 +210,13 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {classe: classe ,eleve: item , _token: _token},
                         success: function () {
-                            $('.select2-selection').animate({
+                           /* $('.select2-selection').animate({
                                 opacity: '0.3',
                             });
                             $('.select2-selection').animate({
                                 opacity: '1',
-                            });
-                            location.reload();
+                            });*/
+                           // location.reload();
 
                         }
                     });
@@ -231,14 +232,14 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {classe: classe , eleve:item ,  _token: _token},
                         success: function () {
-                            $( ".select2-selection--multiple" ).hide( "slow", function() {
+                          /*  $( ".select2-selection--multiple" ).hide( "slow", function() {
                                 // Animation complete.
                             });
                             $( ".select2-selection--multiple" ).show( "slow", function() {
                                 // Animation complete.
-                            });
+                            });*/
 
-                            location.reload();
+                            //location.reload();
 
                         }
                     });
@@ -300,12 +301,12 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {classe: classe , enseignant:item ,  _token: _token},
                         success: function () {
-                            $('.select2-selection').animate({
+                          /*  $('.select2-selection').animate({
                                 opacity: '0.3',
                             });
                             $('.select2-selection').animate({
                                 opacity: '1',
-                            });
+                            });*/
 
                         }
                     });
@@ -320,12 +321,12 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {classe: classe , enseignant:item ,  _token: _token},
                         success: function () {
-                            $( ".select2-selection--multiple" ).hide( "slow", function() {
+                          /*  $( ".select2-selection--multiple" ).hide( "slow", function() {
                                 // Animation complete.
                             });
                             $( ".select2-selection--multiple" ).show( "slow", function() {
                                 // Animation complete.
-                            });
+                            });*/
                         }
                     });
 

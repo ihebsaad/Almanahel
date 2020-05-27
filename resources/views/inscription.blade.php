@@ -183,7 +183,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 		</div>
 		<div class="formenligne partie">
     	<h4 style="padding-top: 20px;">Veuillez remplir le formulaire ci dessous:</h4>
-    	            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}">
+    	            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }} "  enctype="multipart/form-data">
                         {{ csrf_field() }}
 					<fieldset>
 						<input  value="2020" type="hidden" name="annee" id="annee" />

@@ -126,20 +126,35 @@ $user_type=$user->user_type;
           <div class="bg-white py-2 collapse-inner rounded">
 		   <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
             <a class="collapse-item" href="{{route('depenses')}}">Dépenses</a>
+            <a class="collapse-item" href="{{route('depenses')}}">Excels</a>
                
 		  </div>
         </div>
       </li>
 
-	<?php }  ?>
+	<?php } if ($user_type=='admin'   ){?>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href=" ">
+        <a class="nav-link" href="{{route('documents')}}">
           <i class="fas fa-fw fa-folder-open"></i>
-          <span>Documetnts</span></a>
+          <span>Tous les Documetnts</span></a>
       </li>
+	<?php }  ?>
 
+	  <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('docsrecu')}}">
+          <i class="fas fa-file-import"></i>
+          <span>Mes Documetnts reçus</span></a>
+      </li>
+	  <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('docsenv')}}">
+          <i class="fas fa-file-export"></i>
+          <span>Mes Documetnts envoyés</span></a>
+      </li>
+	  
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="{{route('envoyes')}}">

@@ -25,7 +25,7 @@
 
     <div class="col">
        <label  for="datenaissance">Date de naissance : </label>
-       <input type="date" name="datenaissance" id="datenaissance" class="form-control" />
+       <input type="text" name="datenaissance" id="datenaissance" class="form-control" />
  
   </div></div>
    <div class="row" style="margin-left:10px">
@@ -436,6 +436,11 @@ else
   document.getElementById('sect1').style.display = 'none'; 
 document.getElementById('sect2').style.display = 'none'; 
 }}
+     $(function () {
+     $('#datenaissance').datepicker({
+                    locale: 'fr'
+                });
+});
 
 
 

@@ -1,6 +1,7 @@
 
 @extends('layouts.back')
- 
+
+
 @section('content')
 <h3 style="margin-left:50px">Formulaire Pré-inscription </h3><br><br>    
             <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}" enctype="multipart/form-data" onsubmit="return verifier();" >

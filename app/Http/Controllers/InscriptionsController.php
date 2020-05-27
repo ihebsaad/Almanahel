@@ -117,6 +117,30 @@ $annee=date('Y', strtotime('0 year')); }
         ]);
 
         $Inscription->save();
+        $to=trim('hammalisirine120@gmail.com');
+        $type='notif demande Pré-inscription';
+        //$nomp=$parent->name. ' '.$parent->lastname ;
+        $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
+        $contenu="Bonjour,<br>
+        Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>";
+        
+        
+        $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+        $request = new Request($data);
+        //\App\Http\Controllers\EnvoyesController::sendnotif($request);
+         app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
+           $to=trim('hammalisirine95@gmail.com');
+        $type='notif demande inscription';
+        //$nomp=$parent->name. ' '.$parent->lastname ;
+        $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
+        $contenu="Bonjour,<br>
+        Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>";
+        
+        
+        $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+        $request = new Request($data);
+        //\App\Http\Controllers\EnvoyesController::sendnotif($request);
+         app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
         if($request->get('sourcepg') != null)
         {return redirect('/bienvenue');}
         else

@@ -428,4 +428,85 @@ class UsersController extends Controller
     }
 	
 
+
+public  function createparent(Request $request)
+    {
+        $eleve=$request->get('eleve');
+        $parent= $request->get('parent');
+        $count=DB::table('parents_eleve')->where(
+            ['parent' => $parent,
+                'eleve' => $eleve]
+        )->count();
+        if ($count==0) {
+            DB::table('parents_eleve')->insert(
+               ['parent' => $parent,
+                'eleve' => $eleve]
+            );
+            return 1;
+        } else{ return 0;}
+    }
+    public  function removeparent(Request $request)
+    {
+        $parent=$request->get('parent');
+        $eleve= $request->get('eleve');
+        DB::table('parents_eleve')
+            ->where(
+                ['parent' => $parent,
+                'eleve' => $eleve]
+            )->delete();
+    }
+      public  function createclasse(Request $request)
+    {
+        $eleve=$request->get('eleve');
+        $classe= $request->get('classe');
+        $count=DB::table('eleves_classe')->where(
+            ['classe' => $classe,
+                'eleve' => $eleve]
+        )->count();
+        if ($count==0) {
+            DB::table('eleves_classe')->insert(
+               ['classe' => $classe,
+                'eleve' => $eleve]
+            );
+            return 1;
+        } else{ return 0;}
+    }
+    public  function removeclasse(Request $request)
+    {
+       $eleve=$request->get('eleve');
+        $classe= $request->get('classe');
+        DB::table('eleves_classe')
+            ->where(
+                ['classe' => $classe,
+                'eleve' => $eleve]
+            )->delete();
+    }
+     public  function createclasse1(Request $request)
+    {
+        $prof=$request->get('prof');
+        $classe1= $request->get('classe1');
+        $count=DB::table('profs_classe')->where(
+            ['classe' => $classe1,
+                'prof' => $prof]
+        )->count();
+        if ($count==0) {
+            DB::table('profs_classe')->insert(
+               ['classe' => $classe1,
+                'prof' => $prof]
+            );
+            return 1;
+        } else{ return 0;}
+    }
+    public  function removeclasse1(Request $request)
+    {
+        $prof=$request->get('prof');
+        $classe1= $request->get('classe1');
+        DB::table('profs_classe')
+            ->where(
+                ['classe' => $classe1,
+                'prof' => $prof]
+            )->delete();
+    }
+
+
  }

@@ -1,5 +1,6 @@
 @extends('layouts.back')
- @section('content')
+  
+@section('content')
 
     <h3 style="margin-left:50px">Créer une classe </h3><br><br>
 

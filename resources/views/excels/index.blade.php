@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/dataTables.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/buttons.bootstrap.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
+
  <?php
 
 
@@ -17,9 +18,9 @@
     </style>
      <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-9"><h2>Liste des Classes</h2></div>
+                <div class="col-lg-9"><h2>Liste des excels</h2></div>
                 <div class="col-lg-3">
-                    <a   class="btn btn-md btn-success"    href="{{action('ClassesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une classe</b></a>
+                    <a   class="btn btn-md btn-success"    href="{{action('DocumentsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un excel</b></a>
                 </div>
             </div>
         </div>
@@ -27,58 +28,32 @@
         <thead>
         <tr id="headtable">
             <th>ID</th>
-            <th>Nom de la classe</th>
-            <th>Année</th>
-             <th>Élèves</th>
-            <th>Enseignants</th>
+            <th>Date</th>
+            <th>Titre</th>
+             <th>Emetteur</th>
             <th>Actions</th>
         </tr>
             
             </thead>
             <tbody>
-            @foreach($classes as $classe)
+            @foreach($excels as $excel)
 
                 <tr>
-                    <td>{{$classe->id}}</td>
-                     <td><a href="{{action('ClassesController@view', $classe['id'])}}" >{{ $classe->titre }}</a></td>
-                    <td><?php echo $classe->annee;?></td>
-                     <td><?php
+                    <td>{{$excel->id}}</td>
+                     <td><?php echo $excel->created_at;?></td>
+                     <td><a href="{{action('DocumentsController@view', $excel['id'])}}" >{{ $excel->titre }}</a></td>
+                    <td><?php 
 
-                            $idseleves = DB::table('eleves_classe')->where('classe','=',$classe->id)->pluck('eleve');
-                          $users = User::orderBy('name', 'asc')
-                          ->whereIn('id', $idseleves)
-                        ->get() ;
-                        
-
-                       echo count($users) ; 
-
-?>
-                        </td>
-                     <td><?php  
-
-
-                       $idsenseignants = DB::table('profs_classe')->where('classe','=',$classe->id)->pluck('prof');
-                          $users = User::orderBy('name', 'asc')
-                          ->whereIn('id', $idsenseignants)
-                        ->get() ;
-                         foreach ($users as $user) {?>
- <a  href="{{action('UsersController@view', $user['id'])}}">
-                             <?php   echo $user->name." ".$user->lastname ; ?> 
-                        </a>
-
-                   <br/>
-
-                     
-
-                          <?php }?>
+$user=User::where('id',$excel->emetteur)->first() ;
+                    echo $user['name']." ".$user['lastname'];?></td>
                     
-
-</td>
-                  
                     <td>
-                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ClassesController@destroy', $classe['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                        <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
+                          <a  class="btn btn-md btn-success" role="button"  class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/excels/<?php echo  $excel->chemin?>" > 
+                            <span class="fa fa-fw fa-trash-alt"></span> Télécharger
+                   </a>
                   
                   </td>
                 </tr>
@@ -111,7 +86,7 @@
 
 
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(excel).ready(function() {
 
 
             $('#mytable thead tr:eq(1) th').each( function () {

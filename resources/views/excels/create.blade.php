@@ -39,8 +39,7 @@
 						
 						   <div class="form-group " style="margin-bottom:30px">
                          <label for="name" class="col-md-4 control-label">Mois</label>
-						<?php $mois=0;?>
-					<select     class="form-control input"   name="mois" id="mois"    style="width:150px">
+ 					<select     class="form-control input"   name="mois" id="mois"    style="width:150px">
                         <option value="0"></option>
                         <option  value="1"  >  Janvier  </option>
                         <option  value="2" >  Février  </option>

@@ -86,6 +86,8 @@ class ExcelsController extends Controller
              'titre' =>$request->get('titre'),
              'chemin'=> $name,
               'type' => $request->get('type'),
+              'mois' => $request->get('mois'),
+              'annee' => $request->get('annee'),
               'emetteur' => $emetteur,
             
             // 'par'=> $request->get('p,ar'),ville

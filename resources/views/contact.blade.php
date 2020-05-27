@@ -72,10 +72,11 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
           </div>
           <br>
           <div id="success"></div>
-          <div class="form-group">
+  
+        </form>
+		    <div class="form-group">
             <button  class="btn btn-primary" id="send">Envoyer</button>
           </div>
-        </form>
       </div>
     </div>
   </div>

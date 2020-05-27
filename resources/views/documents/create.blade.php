@@ -39,10 +39,10 @@
                             </div>
                         </div>
                          <div class="form-group " style="margin-bottom:30px">
-                         <label for="name" class="col-md-4 control-label">Type destinataire</label>
+                         <label for="name" class="col-md-4 control-label">Cible</label>
                           <div class="col-md-6">
                                <select name="type" id="type" class="form-control" onBlur="verif()" >
-                              <option value="">--Please choose an option--</option>
+                              <option value="">--Sélectionnez--</option>
                              <option value="eleve">Élève</option>
                           <option value="parent">Parent</option>
                          <option value="prof">Enseignant</option>

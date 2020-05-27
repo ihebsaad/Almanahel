@@ -4,7 +4,6 @@
   
     <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
-\
 @section('content')
 <div class=" " style="padding:8px 8px 8px 8px">
         <div class="portlet box grey">
@@ -54,12 +53,12 @@
                 <input id="description" onchange="changing(this)" type="text"  class="form-control" name="description"  value="{{ $document->description }}" />
             </td>
         </tr>
-         <tr>
+    <!--     <tr>
 
              <td class="text-primary">type : </td>
             <td>
               <select class="form-control"  name="type" id="type"  onchange="changing(this)"  value="{{ $document->type }}"  >
-    <option value="">--Please choose an option--</option>
+    <option value="">--Sélectionnez--</option>
      <option  <?php if ($document['type'] =='eleve'){echo 'selected="selected"';}?>  value="eleve">Élève</option>
     <option   <?php if ($document['type'] =='parent'){echo 'selected="selected"';}?> value="parent">Parent</option>
    <option   <?php if ($document['type'] =='prof'){echo 'selected="selected"';}?> value="prof">Enseignant</option>
@@ -93,7 +92,7 @@
 
                                                             </select>
             </td>
-        </tr>
+        </tr>-->
          <?php } ?>
          <?php if($document->type =='parent'){  
 

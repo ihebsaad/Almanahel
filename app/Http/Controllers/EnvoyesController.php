@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Log;
 
 use Illuminate\Http\Request;
     use App\Envoye ;
+    use App\Document ;
  use DB;
  use Swift_Mailer;
  use Mail;

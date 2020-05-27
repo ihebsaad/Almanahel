@@ -160,7 +160,7 @@
                          <?php
                          } else { ?>
                          @foreach($eleves as $eleve)
-                             <option    onclick="createeleve('tpr<?php echo $eleve->id; ?>')"  value="<?php echo $eleve->id;?>"> <?php echo $eleve->name.$eleve->lastname ; ?></option>
+                             <option    onclick="createeleve('tpr<?php echo $eleve->id; ?>')"  value="<?php echo $eleve->id;?>"> <?php echo $eleve->name.' '.$eleve->lastname ; ?></option>
                          @endforeach
 
                          <?php }  ?>

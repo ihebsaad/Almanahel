@@ -42,18 +42,18 @@
 						<?php $mois=0;?>
 					<select     class="form-control input"   name="mois" id="mois"    style="width:150px">
                         <option value=""></option>
-                        <option <?php if($mois=='01'){echo 'selected="selected"';}?>  >  Janvier  </option>
-                        <option <?php if($mois=='02'){echo 'selected="selected"';}?> >   Février  </option>
-                        <option <?php if($mois=='03'){echo 'selected="selected"';}?>  >  Mars  </option>
-                        <option <?php if($mois=='04'){echo 'selected="selected"';}?>  >  Avril  </option>
-                        <option <?php if($mois=='05'){echo 'selected="selected"';}?>  >  Mai  </option>
-                        <option <?php if($mois=='06'){echo 'selected="selected"';}?>  >  Juin  </option>
-                        <option <?php if($mois=='07'){echo 'selected="selected"';}?>  >  Juillet  </option>
-                        <option <?php if($mois=='08'){echo 'selected="selected"';}?>  >  Août  </option>
-                        <option <?php if($mois=='09'){echo 'selected="selected"';}?>  >  Septembre  </option>
-                        <option <?php if($mois=='10'){echo 'selected="selected"';}?>  >  Octobre  </option>
-                        <option <?php if($mois=='11'){echo 'selected="selected"';}?>  >  Novembre  </option>
-                        <option <?php if($mois=='12'){echo 'selected="selected"';}?>  >  Décembre  </option>
+                        <option    >  Janvier  </option>
+                        <option   >   Février  </option>
+                        <option    >  Mars  </option>
+                        <option    >  Avril  </option>
+                        <option    >  Mai  </option>
+                        <option    >  Juin  </option>
+                        <option   >  Juillet  </option>
+                        <option    >  Août  </option>
+                        <option    >  Septembre  </option>
+                        <option    >  Octobre  </option>
+                        <option   >  Novembre  </option>
+                        <option    >  Décembre  </option>
                     </select>
                         </div>
                      

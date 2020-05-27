@@ -264,3 +264,12 @@ Route::post('/update3/{id}','DocumentsController@update3');
 Route::post('/documents/updating','DocumentsController@updating')->name('documents.updating');
 
 
+/*** Excels **/
+ Route::get('/excels/create','ExcelsController@create')->name('excels.create');
+Route::post('/excels/store','ExcelsController@store')->name('excels.store');
+Route::post('/excels/create','ExcelsController@create')->name('excels.create');
+Route::get('/excels', array('as' => 'excels','uses' => 'ExcelsController@index'));
+Route::get('/excels/view/{id}', 'ExcelsController@view');
+Route::get('/excels/destroy/{id}', 'ExcelsController@destroy');
+ Route::get('/excels/view/{id}', 'ExcelsController@view');
+ Route::post('/excels/updating','ExcelsController@updating')->name('excels.updating');

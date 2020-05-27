@@ -87,6 +87,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
 
         $('#send').click(function(){
 			alert();
+            var type = $('#type').val();
             var sujet = $('#sujet').val();
             var contenu = $('#contenu').val();
              var nom = $('#nom').val();
@@ -99,7 +100,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
                 $.ajax({
                     url:"{{ route('envoyes.sendmessage') }}",
                     method:"POST",
-                    data:{sujet:sujet,contenu:contenu,type:type,destinataire:destinataire, _token:_token},
+                    data:{nom:nom,email:email,tel:tel,sujet:sujet,contenu:contenu,type:type,destinataire:destinataire, _token:_token},
                     success:function(data){
                         alert('ajouté !');
 

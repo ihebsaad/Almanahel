@@ -1,5 +1,6 @@
 @extends('layouts.back')
- <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
+
+<link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
 
 
@@ -47,7 +48,7 @@
         </tr>
         <tr>
             <td class="text-primary">Date de naissance</td>
-            <td> <input id="naissance" autocomplete="off" onchange="changing(this)"   type="datetime-local" class="form-control" name="naissance"  id="naissance" value="{{ $user->naissance }}" />
+            <td> <input id="naissance" autocomplete="off" onchange="changing(this)"   type="text" class="form-control datepicker" name="naissance"  id="naissance" value="{{ $user->naissance }}" />
             </td>
         </tr>
             <tr>
@@ -277,6 +278,11 @@
 
             });
         } // updating
+             $(function () {
+     $('#naissance').datepicker({
+                    locale: 'fr'
+                });
+});
 
 
     </script>

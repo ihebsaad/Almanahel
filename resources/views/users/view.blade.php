@@ -1,7 +1,7 @@
 @extends('layouts.back')
 
     <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
-
+<link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
 <?php
 
 
@@ -25,6 +25,7 @@
 
 
         <input type="hidden" id="iduser" value="{{$id}}" ></input>
+        <div class="form-group">
         <table class="table">
 
         <tbody>
@@ -45,17 +46,17 @@
             <td class="text-primary">Identifiant</td>
             <td> <input   id="username" autocomplete="off"  onchange="changing(this)" type="text" class="form-control" name="username" value="{{ $user->username }}" />          </td>
         </tr>
-      <!--  <tr>
+        <tr>
             <td class="text-primary">Mot de passe</td>
             <td> <input autocomplete="off"   onchange="changing(this)"  type="password" class="form-control" name="password"  id="password"   />          </td>
-        </tr>-->
+        </tr>
         <tr>
             <td class="text-primary">Adresse E-mail</td>
             <td> <input id="email" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
         </tr>
         <tr>
             <td class="text-primary">Date de naissance</td>
-            <td> <input id="naissance" autocomplete="off" onchange="changing(this)"   type="datetime-local" class="form-control" name="naissance"  id="naissance" value="{{ $user->naissance }}" />
+            <td> <input id="naissance" autocomplete="off" onchange="changing(this)"   type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
             </td>
         </tr>
             <tr>
@@ -91,16 +92,29 @@
         <tr>
 
         <td class="text-primary">Classe</td>
-        <td><?php  
+        <td>
+              <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="classe" >
+                          <?php if ( count($relations2) > 0 ) { ?>
 
+                         @foreach($relations2 as $relation2)
+                             @foreach($classes as $classe)
+                                 <option  <?php if($relation2->classe==$classe->id){echo 'selected="selected"';}?>    onclick="createclasse('tpr<?php echo $classe->id; ?>')"  value="<?php echo $classe->id;?>"> <?php echo $classe->titre;?></option>
+                             @endforeach
+                         @endforeach
 
-                       $idclasses = DB::table('eleves_classe')->where('eleve','=',$user->id)->pluck('classe');
-                          $classes = Classe::orderBy('titre', 'asc')
-                          ->whereIn('id', $idclasses)
-                           ->get() ;?>
-        <input id="classe" readonly  type="text" class="form-control" name="classe" id="classe" value="<?php foreach ($classes as $classe) { echo $classe->titre." ," ;} ?> " />
+                         <?php
+                         } else { ?>
+                         @foreach($classes as $classe)
+                             <option    onclick="createclasse('tpr<?php echo $classe->id; ?>')"  value="<?php echo $classe->id;?>"> <?php echo $classe->titre ; ?></option>
+                         @endforeach
+
+                         <?php }  ?>
+
+                     </select>
+
+            </td>
         </tr>
-    <tr>
+      <tr>
 	    <td class="text-primary">Paiements</td>
             <td> <select id="paiements"   onchange="changing(this)"    class="form-control" name="paiements"    >
 				<option value=""></option>
@@ -131,16 +145,24 @@
 
         <td class="text-primary">Parents</td>
           <td>
-            <?php  
+             <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="parent" >
+                          <?php if ( count($relations1) > 0 ) { ?>
 
+                         @foreach($relations1 as $relation1)
+                             @foreach($parents as $parent)
+                                 <option  <?php if($relation1->parent==$parent->id){echo 'selected="selected"';}?>    onclick="createparent('tpr<?php echo $parent->id; ?>')"  value="<?php echo $parent->id;?>"> <?php echo $parent->name.$parent->lastname ;?></option>
+                             @endforeach
+                         @endforeach
 
-                       $idparents= DB::table('parents_eleve')->where('eleve','=',$user->id)->pluck('parent');
-                          $parents = User::orderBy('name', 'asc')
-                          ->whereIn('id', $idparents)
-                           ->get() ;
-                          ?>
-<input id="parents" readonly  type="text" class="form-control" name="parents" id="parents" value="<?php foreach ($parents as $parent) { echo $parent->name." ".$parent->lastname." ," ;} ?> " />
-              
+                         <?php
+                         } else { ?>
+                         @foreach($parents as $parent)
+                             <option    onclick="createeleve('tpr<?php echo $parent->id; ?>')"  value="<?php echo $parent->id;?>"> <?php echo $parent->name.$parent->lastname ; ?></option>
+                         @endforeach
+
+                         <?php }  ?>
+
+                     </select>
           </td>
 
 
@@ -153,7 +175,7 @@
 
         <td class="text-primary">Élèves</td>
           <td>
-               <select class="itemName form-control col-lg-6" style="width:100%" name="itemName"  multiple  id="eleve" >
+               <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="eleve" >
                           <?php if ( count($relations) > 0 ) { ?>
 
                          @foreach($relations as $relation)
@@ -165,7 +187,7 @@
                          <?php
                          } else { ?>
                          @foreach($eleves as $eleve)
-                             <option    onclick="createeleve('tpr<?php echo $eleve->id; ?>')"  value="<?php echo $eleve->id;?>"> <?php echo $eleve->name.' '.$eleve->lastname ; ?></option>
+                             <option    onclick="createeleve('tpr<?php echo $eleve->id; ?>')"  value="<?php echo $eleve->id;?>"> <?php echo $eleve->name.$eleve->lastname ; ?></option>
                          @endforeach
 
                          <?php }  ?>
@@ -183,16 +205,25 @@
 
         <td class="text-primary">Classes</td>
           <td>
-            <?php  
+          
+                <select class="form-control select2 " style="width:100%" name="itemName1"  multiple  id="classe1" >
+                          <?php if ( count($relations3) > 0 ) { ?>
 
+                         @foreach($relations3 as $relation3)
+                             @foreach($classes1 as $classe1)
+                                 <option  <?php if($relation3->classe==$classe1->id){echo 'selected="selected"';}?>    onclick="createclasse1('tpr<?php echo $classe1->id; ?>')"  value="<?php echo $classe1->id;?>"> <?php echo $classe1->titre;?></option>
+                             @endforeach
+                         @endforeach
 
-                       $idclasses = DB::table('profs_classe')->where('prof','=',$user->id)->pluck('classe');
-                          $classes = Classe::orderBy('titre', 'asc')
-                          ->whereIn('id', $idclasses)
-                           ->get() ;
-                          ?>
-<input id="classe" readonly  type="text" class="form-control" name="classe" id="classe" value="<?php foreach ($classes as $classe) { echo $classe->titre." ," ;} ?> " />
-              
+                         <?php
+                         } else { ?>
+                         @foreach($classes1 as $classe1)
+                             <option    onclick="createclasse1('tpr<?php echo $classe1->id; ?>')"  value="<?php echo $classe1->id;?>"> <?php echo $classe1->titre ; ?></option>
+                         @endforeach
+
+                         <?php }  ?>
+
+                     </select>
           </td>
 
 
@@ -212,6 +243,7 @@
 
 
 </div>
+</div>
 	<style>
         #tabstats {font-size: 15px;padding:30px 30px 30px 30px;}
         #tabstats td{border-left:1px solid white;border-bottom:1px solid white;min-width:50px;min-height: 25px;;text-align: center;}
@@ -225,7 +257,7 @@
 
 <script>
 
-$(function () {
+/*$(function () {
 $('.itemName').select2({
 filter: true,
 language: {
@@ -239,7 +271,7 @@ return 'Pas de résultats';
 
 
 
-});
+});*/
 
 
     function changing(elm) {
@@ -318,15 +350,7 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {parent: parent ,eleve: item , _token: _token},
                         success: function () {
-                          /*  $('#eleve').animate({
-                                opacity: '0.3',
-                            });
-                            $('#eleve').animate({
-                                opacity: '1',
-                            });
-							
-							*/
-                            location.reload();
+                           
 
                         }
                     });
@@ -342,14 +366,8 @@ return 'Pas de résultats';
                         method: "POST",
                         data: {parent: parent , eleve:item ,  _token: _token},
                         success: function () {
-                           /* $( "#eleve" ).hide( "slow", function() {
-                                // Animation complete.
-                            });
-                            $( "#eleve" ).show( "slow", function() {
-                                // Animation complete.
-                            });
-*/
-                            location.reload();
+                            
+                      
 
                         }
                     });
@@ -358,6 +376,265 @@ return 'Pas de résultats';
 
             });
         } // updating
+         $('#parent').select2({
+            filter: true,
+            language: {
+                noResults: function () {
+                    return 'Pas de résultats';
+                }
+            }
+
+        });
+
+       var $topo1 = $('#parent');
+
+        var valArray0 = ($topo1.val()) ? $topo1.val() : [];
+
+        $topo1.change(function() {
+            var val0 = $(this).val(),
+                numVals = (val0) ? val0.length : 0,
+                changes;
+            if (numVals != valArray0.length) {
+                var longerSet, shortSet;
+                (numVals > valArray0.length) ? longerSet = val0 : longerSet = valArray0;
+                (numVals > valArray0.length) ? shortSet = valArray0 : shortSet = val0;
+                //create array of values that changed - either added or removed
+                changes = $.grep(longerSet, function(n) {
+                    return $.inArray(n, shortSet) == -1;
+                });
+
+                UpdatingS(changes, (numVals > valArray0.length) ? 'selected' : 'removed');
+
+            }else{
+                // if change event occurs and previous array length same as new value array : items are removed and added at same time
+                UpdatingS( valArray0, 'removed');
+                UpdatingS( val0, 'selected');
+            }
+            valArray0 = (val0) ? val0 : [];
+        });
+
+
+
+        function UpdatingS(array, type) {
+            $.each(array, function(i, item) {
+
+                if (type=="selected"){
+
+
+                    var eleve = $('#iduser').val();
+                    var _token = $('input[name="_token"]').val();
+
+                    $.ajax({
+                        url: "{{ route('users.createparent') }}",
+                        method: "POST",
+                        data: {eleve: eleve , parent:item ,  _token: _token},
+                        success: function () {
+                          /*  $('.select2-selection').animate({
+                                opacity: '0.3',
+                            });
+                            $('.select2-selection').animate({
+                                opacity: '1',
+                            });*/
+
+                        }
+                    });
+
+                }
+
+                if (type=="removed"){
+                    var eleve = $('#iduser').val();
+                    var _token = $('input[name="_token"]').val();
+                    $.ajax({
+                        url: "{{ route('users.removeparent') }}",
+                        method: "POST",
+                        data: {eleve: eleve , parent:item ,  _token: _token},
+                        success: function () {
+                          
+                        }
+                    });
+
+                }
+
+            });
+        } // updating
+   
+$('#classe').select2({
+            filter: true,
+            language: {
+                noResults: function () {
+                    return 'Pas de résultats';
+                }
+            }
+
+        });
+       
+
+         var $gouv = $('#classe');
+
+        var valArray = ($gouv.val()) ? $gouv.val() : [];
+
+        $gouv.change(function() {
+            var val = $(this).val(),
+                numVals = (val) ? val.length : 0,
+                changes;
+            if (numVals != valArray.length) {
+                var longerSet, shortSet;
+                (numVals > valArray.length) ? longerSet = val : longerSet = valArray;
+                (numVals > valArray.length) ? shortSet = valArray : shortSet = val;
+                //create array of values that changed - either added or removed
+                changes = $.grep(longerSet, function(n) {
+                    return $.inArray(n, shortSet) == -1;
+                });
+
+                UpdatingG(changes, (numVals > valArray.length) ? 'selected' : 'removed');
+
+            }else{
+                // if change event occurs and previous array length same as new value array : items are removed and added at same time
+                UpdatingG( valArray, 'removed');
+                UpdatingG( val, 'selected');
+            }
+            valArray = (val) ? val : [];
+        });
+
+
+        function UpdatingG(array, type) {
+            $.each(array, function(i, item) {
+
+                if (type=="selected"){
+
+
+                    var eleve = $('#iduser').val();
+                    var _token = $('input[name="_token"]').val();
+
+                    $.ajax({
+                        url: "{{ route('users.createclasse') }}",
+                        method: "POST",
+                        data: {eleve: eleve , classe:item ,  _token: _token},
+                        success: function () {
+                         /*   $('.select2-selection').animate({
+                                opacity: '0.3',
+                            });
+                            $('.select2-selection').animate({
+                                opacity: '1',
+                            });*/
+                      
+
+                        }
+                    });
+
+                }
+
+                if (type=="removed"){
+
+                       var eleve = $('#iduser').val();
+                    var _token = $('input[name="_token"]').val();
+
+                    $.ajax({
+                        url: "{{ route('users.removeclasse') }}",
+                        method: "POST",
+                        data: {eleve: eleve , classe:item ,  _token: _token},
+                        success: function () {
+                           
+
+                         
+                        }
+                    });
+
+                }
+
+            });
+        } // 
+        $('#classe1').select2({
+            filter: true,
+            language: {
+                noResults: function () {
+                    return 'Pas de résultats';
+                }
+            }
+
+        });
+       
+
+         var $gouv1 = $('#classe1');
+
+        var valArray1 = ($gouv1.val()) ? $gouv1.val() : [];
+
+        $gouv1.change(function() {
+            var val1 = $(this).val(),
+                numVals1 = (val1) ? val1.length : 0,
+                changes;
+            if (numVals1 != valArray1.length) {
+                var longerSet, shortSet;
+                (numVals1 > valArray1.length) ? longerSet = val1 : longerSet = valArray1;
+                (numVals1 > valArray1.length) ? shortSet = valArray1 : shortSet = val1;
+                //create array of values that changed - either added or removed
+                changes = $.grep(longerSet, function(n) {
+                    return $.inArray(n, shortSet) == -1;
+                });
+
+                UpdatingG1(changes, (numVals1 > valArray1.length) ? 'selected' : 'removed');
+
+            }else{
+                // if change event occurs and previous array length same as new value array : items are removed and added at same time
+                UpdatingG1( valArray1, 'removed');
+                UpdatingG1( val1, 'selected');
+            }
+            valArray1 = (val1) ? val1 : [];
+        });
+
+
+        function UpdatingG1(array, type) {
+            $.each(array, function(i, item) {
+
+                if (type=="selected"){
+
+
+                    var prof = $('#iduser').val();
+                    var _token = $('input[name="_token"]').val();
+
+                    $.ajax({
+                        url: "{{ route('users.createclasse1') }}",
+                        method: "POST",
+                        data: {prof: prof , classe1:item ,  _token: _token},
+                        success: function () {
+                           /* $('#classe1').animate({
+                                opacity: '0.3',
+                            });
+                            $('#classe1').animate({
+                                opacity: '1',
+                            });*/
+                      
+
+                        }
+                    });
+
+                }
+
+                if (type=="removed"){
+
+                    var prof = $('#iduser').val();
+                    var _token = $('input[name="_token"]').val();
+                    $.ajax({
+                        url: "{{ route('users.removeclasse1') }}",
+                        method: "POST",
+                        data: {prof: prof , classe1:item ,  _token: _token},
+                        success: function () {
+                           
+
+                         
+                        }
+                    });
+
+                }
+
+            });
+        } // 
+        $(function () {
+     $('#naissance').datepicker({
+                    locale: 'fr'
+                });
+});
+       
 
 </script>
 

@@ -35,8 +35,8 @@
 <div class="notify successbox">
 	<h1>Bien reçu!</h1>
 	<span class="alerticon"><img src="{{  URL::asset('public/site/img/success.png') }}" width=80 /></span>
-	<p>Votre demande de préinscription est bien reçue.</br>
-Une fois la préinscription est validée, vous recevrez un email de confirmation de la validation de la demande, et promettant qu'il sera tenu au courant de l'issue de sa demande dans les plus brefs délais.</p>
+	<p>Votre demande de pré-inscription est bien reçue.</br>
+Une fois la pré-inscription est validée, vous recevrez un email de confirmation de la validation de la demande, et promettant que vous serez tenu au courant de l'issue de votre demande dans les plus brefs délais.</p>
 </div>
 </div>
 </div>

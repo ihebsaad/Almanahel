@@ -114,7 +114,7 @@ class ExcelsController extends Controller
 
 		$excel = Excel::find($id);
  
-        return view('excels.view',[ 'excel'=>$excel 'id'=>$id],compact('excel','id'));
+        return view('excels.view',[ 'excel'=>$excel ,'id'=>$id],compact('excel','id'));
 
     }
 

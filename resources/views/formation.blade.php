@@ -33,7 +33,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 			  {{ csrf_field() }}
 		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com ">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="demande">
-		  <input type="hidden" class="form-control"  id="sujet"  name="sujet"  value="Demande d'Emloi/Formation - Al Manahel">
+		  <input type="hidden" class="form-control"  id="sujet"  name="sujet"  value="Demande d'Emploi/Formation - Al Manahel">
  
 			 <div class="control-group">
             <div class="form-group floating-label-form-group controls">

@@ -145,6 +145,7 @@ Route::post('/envoyes/saving','EnvoyesController@saving')->name('envoyes.saving'
  Route::post('/envoyes/sending','EnvoyesController@sending')->name('envoyes.sending');
  Route::post('/envoyes/sendnotif','EnvoyesController@sendnotif')->name('envoyes.sendnotif');
  Route::post('/envoyes/sendmessage','EnvoyesController@sendmessage')->name('envoyes.sendmessage');
+ Route::post('/envoyes/sendmessagef','EnvoyesController@sendmessagef')->name('envoyes.sendmessagef');
 Route::get('/envoyes/view/{id}', 'EnvoyesController@view');
 Route::get('/envoyes/destroy/{id}', 'EnvoyesController@destroy');
 Route::get('/envoyes/send/', 'EnvoyesController@send')->name('envoyes.send');

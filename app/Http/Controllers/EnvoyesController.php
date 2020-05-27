@@ -212,7 +212,7 @@ $user = auth()->user();
 	 $contenu='Nom : '.$nom.'<br>
 			Email: '.$email.'<br>
 			Tel: '.$tel.'<br>
-			Message: '.$tel.'<br>';
+			Message: '.$mess.'<br>';
  
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
@@ -251,6 +251,71 @@ $user = auth()->user();
 		  
 	
 	}
+
+
+
+
+ public function sendmessagef(Request $request)
+    {
+ 	 $to= $request->get('destinataire') ;
+	 $sujet= $request->get('sujet') ;
+	 $nom= $request->get('nom') ;
+	 $email= $request->get('email') ;
+	 $tel= $request->get('tel') ;
+	 $mess= $request->get('contenu') ;
+	 $adresse= $request->get('adresse') ;
+	 $qualification= $request->get('qualification') ;
+	 $type= $request->get('type') ;
+	 $diplome= $request->get('diplome') ;
+	 $naissance= $request->get('naissance') ;
+	 $demande= $request->get('demande') ;
+	 if (Auth::check()) {
+		$id=Auth::id();
+	 } else{$id=0;}
+	 
+	 $contenu= 'Nom : '.$nom.'<br>
+			Email: '.$email.'<br>
+			Tel: '.$tel.'<br>
+			Message: '.$mess.'<br>';
+ 
+ $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
+        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
+        $swiftTransport->setPassword('21septembre'); // mot de passe email
+		
+        $swiftMailer = new Swift_Mailer($swiftTransport);
+		Mail::setSwiftMailer($swiftMailer);
+		$from='almanahelacademy@gmail.com';
+		$fromname='Almanahel Academy';
+        
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
+                $message
+                    ->to($to)
+                    //   ->cc($cc  ?: [])
+                    ->subject($sujet)
+                       ->setBody($contenu, 'text/html')
+                    ->setFrom([$from => $fromname]);
+					   ;
+            });
+		 
+			$envoye  = new Envoye([
+              'emetteur' =>   $id  ,
+             'destinataire' => trim($request->get('destinataire')),
+             'sujet' => trim($request->get('sujet')),
+             'contenu' => trim($request->get('contenu')),
+             'type' => $type
+								]);
+		
+		 if ($envoye->save())
+            {  
+             }
+ 
+		  else{
+ 
+ 		}
+		  
+	
+	}
+
 
 
     public function updating(Request $request)

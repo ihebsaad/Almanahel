@@ -29,14 +29,14 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Questions? n'hésitez pas à nous contacter</p>
 		<!--<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">-->
-		<form method="post"   >
+		<form method="post"  id="myform" >
 			  {{ csrf_field() }}
 		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com ">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="demande">
 		  <input type="hidden" class="form-control"  id="sujet"  name="sujet"  value="Demande d'Emploi/Formation - Al Manahel">
  
 			 <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
+            <div class="form-group  ">
               <label>Type de demande</label>
               <select   class="form-control"   id="demande"  >
 			  <option value="">sélectionnez</option>
@@ -144,13 +144,20 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
                     method:"POST",
                     data:{diplome:diplome,qualification:qualification,demande:demande,naisssance:naisssance,adresse:adresse,nom:nom,email:email,tel:tel,sujet:sujet,contenu:contenu,type:type,destinataire:destinataire, _token:_token},
                     success:function(data){
-                        alert('envoyé !');
+						Swal.fire({
+                        type: 'success',
+                        title: 'Envoyé ...',
+                        html: 'Votre demande a été envoyée avec succès'
+                    });  					document.getElementById("myform").reset();
 
                     }
                 });
             }else{
-                alert('ERROR');
-            }
+						Swal.fire({
+                        type: 'error',
+                        title: 'Existe ...',
+                        html: string
+                    });              }
         });
 
 

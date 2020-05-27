@@ -162,7 +162,7 @@ Route::get('/profs', array('as' => 'profs','uses' => 'UsersController@profs'));
 Route::get('/eleves', array('as' => 'eleves','uses' => 'UsersController@eleves'));
 Route::get('/parents', array('as' => 'parents','uses' => 'UsersController@parents'));
 Route::get('/personnels', array('as' => 'personnels','uses' => 'UsersController@personnels'));
-
+Route::get('/users', array('as' => 'users','uses' => 'UsersController@index'));
 Route::get('/users/create','UsersController@create')->name('users.create');
 Route::post('/users/saving','UsersController@saving')->name('users.saving');
 Route::post('/users/updating','UsersController@updating')->name('users.updating');
@@ -171,9 +171,15 @@ Route::get('/users/profile/{id}', 'UsersController@profile')->name('profile');
 Route::post('/users/createuserrole', 'UsersController@createuserrole')->name('users.createuserrole');
 Route::post('/users/removeuserrole', 'UsersController@removeuserrole')->name('users.removeuserrole');
 Route::post('/users/sessionroles', 'UsersController@sessionroles')->name('users.sessionroles');
+Route::post('/changestatut', 'UsersController@changestatut')->name('users.changestatut');
 Route::post('/users/createeleve','UsersController@createeleve')->name('users.createeleve');
 Route::post('/users/removeeleve','UsersController@removeeleve')->name('users.removeeleve');
-Route::post('/changestatut', 'UsersController@changestatut')->name('users.changestatut');
+Route::post('/users/createparent','UsersController@createparent')->name('users.createparent');
+Route::post('/users/removeparent','UsersController@removeparent')->name('users.removeparent');
+Route::post('/users/createclasse','UsersController@createclasse')->name('users.createclasse');
+Route::post('/users/removeclasse','UsersController@removeclasse')->name('users.removeclasse');
+Route::post('/users/createclasse1','UsersController@createclasse1')->name('users.createclasse1');
+Route::post('/users/removeclasse1','UsersController@removeclasse1')->name('users.removeclasse1');
 Route::get('/users/destroy/{id}', 'UsersController@destroy');
 Route::post('/edit/{id}','UsersController@update');
 

@@ -397,7 +397,7 @@ class UsersController extends Controller
  
     }
  
-     public  function countReatrds(  $user,$annee)
+     public  function countRetards(  $user,$annee)
     {
 		$count=Retard::where('eleve', $user)
 		->where('annee',$annee)

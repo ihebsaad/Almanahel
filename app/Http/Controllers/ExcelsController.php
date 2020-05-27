@@ -31,7 +31,7 @@ class ExcelsController extends Controller
        
    
 
-		  $excels =Excel::orderBy('titre', 'asc')->get() ;
+		  $excels =Excel::orderBy('mois', 'desc')->get() ;
                               
           return view('excels.index',  ['excels' => $excels]);        
 		 
@@ -50,21 +50,11 @@ class ExcelsController extends Controller
     public function create()
     {
              
-        $parents = DB::table('users')
-                  ->where('user_type','parent' )
-                ->get();
-        $enseignants = DB::table('users')
-                  ->where('user_type','prof' )
-                ->get();
-          $eleves = DB::table('users')
-                  ->where('user_type','eleve' )
-                ->get();
-    $classes = DB::table('classes')
-    ->get();
+       
     $id=Auth::id();
 
     
-            return view('excels.create',['parents'=>$parents,'enseignants'=>$enseignants ,'eleves'=>$eleves,'classes'=>$classes ,'id'=>$id] );
+            return view('excels.create',[  'id'=>$id] );
 
     }
 
@@ -90,20 +80,13 @@ class ExcelsController extends Controller
  
           $chemin->move($path, $name);
     }*/
-   if( ($request->get('destinataire2'))!=0) {$destinataire=0;$destinataire=$request->get('destinataire2');}
-   if( ($request->get('destinataire1'))!=0) {$destinataire=0; $destinataire=$request->get('destinataire1');}
-      if( ($request->get('destinataire3'))!=0) {$destinataire=0; $destinataire=$request->get('destinataire3');}
-        if( ($request->get('destinataire4'))!=0) {$destinataire=0; $destinataire=$request->get('destinataire4');}
-              if( ($request->get('destinataire3'))==0 &&($request->get('destinataire2'))==0 && ($request->get('destinataire1'))==0 && ($request->get('destinataire4'))==0) {$destinataire=0; $destinataire=Auth::id();}
-      $emetteur=Auth::id(); 
+       $emetteur=Auth::id(); 
 
         $excel = new Excel([
              'titre' =>$request->get('titre'),
              'chemin'=> $name,
-             'description' => $request->get('description'),
-             'type' => $request->get('type'),
-             'destinataire' => $destinataire,
-             'emetteur' => $emetteur,
+              'type' => $request->get('type'),
+              'emetteur' => $emetteur,
             
             // 'par'=> $request->get('p,ar'),ville
 
@@ -113,7 +96,7 @@ class ExcelsController extends Controller
         if($request->get('sourcepg') != null)
         {return redirect('/bienvenue');}
         else
-        {return redirect('/docsenv')->with('success', ' ajouté avec succès');}
+        {return redirect('/excels')->with('success', ' ajouté avec succès');}
 
     }
 
@@ -129,25 +112,9 @@ class ExcelsController extends Controller
     public function view($id)
     {
 
- $excel = Excel::find($id);
-       
-            $parents = DB::table('users')
-                  ->where('user_type','parent' )
-                ->get();
-        $enseignants = DB::table('users')
-                  ->where('user_type','prof' )
-                ->get();
-          $eleves = DB::table('users')
-                  ->where('user_type','eleve' )
-                ->get();
-    $classes = DB::table('classes')
-    ->get();
-
-
-
-        //$roles = DB::table('roles')->get();
-
-        return view('excels.view',['parents'=>$parents,'enseignants'=>$enseignants ,'eleves'=>$eleves,'classes'=>$classes ,'id'=>$id],compact('excel','id'));
+		$excel = Excel::find($id);
+ 
+        return view('excels.view',[ 'excel'=>$excel 'id'=>$id],compact('excel','id'));
 
     }
 

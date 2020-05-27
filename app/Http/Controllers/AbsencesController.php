@@ -130,7 +130,7 @@ $user_type=$user->user_type;
              'seance' => $seance ,
              'details' => $details ,
              'debut' => $debut ,
-             'fin' => $fin 
+             'fin' => $fin ,
              'annee' => $annee 
              
         ]);

@@ -35,7 +35,8 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Questions? n'hésitez pas à nous contacter</p>
-		<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">
+		<!--<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">-->
+		<form method="post"   enctype="multipart/form-data">
 			  {{ csrf_field() }}
 		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com ">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="contact">
@@ -51,7 +52,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Email</label>
-              <input type="email" class="form-control" placeholder="Adresse Email" id="email" required data-validation-required-message="Please enter your email address.">
+              <input type="email" class="form-control" placeholder="Adresse Email" id="emetteur" name="emetteur" required data-validation-required-message="Please enter your email address.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
@@ -72,7 +73,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
           <br>
           <div id="success"></div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Envoyer</button>
+            <button type="submit" class="btn btn-primary" id="send">Envoyer</button>
           </div>
         </form>
       </div>
@@ -81,6 +82,36 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
   
   
   
+<script>
+    $(document).ready(function(){
+
+        $('#send').click(function(){
+            var sujet = $('#sujet').val();
+            var contenu = $('#contenu').val();
+            var type = $('#type').val();
+            var destinataire = $('#destinataire').val();
+             if ((contenu != '') )
+            {
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url:"{{ route('envoyes.sendnotif') }}",
+                    method:"POST",
+                    data:{sujet:sujet,contenu:contenu,type:type,destinataire:destinataire, _token:_token},
+                    success:function(data){
+                        alert('ajouté !');
+
+                    }
+                });
+            }else{
+                alert('ERROR');
+            }
+        });
+
+
+
+
+    });
+</script>
   
   
   

@@ -53,7 +53,7 @@ text-transform: uppercase;   text-shadow: 0px 1px rgba(64, 64, 64, 0.8);
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
-     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->where('home',1)->orderBy('created_at','DESC')->get();
+     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->where('home',1)->orderBy('created_at','ASC')->get();
      $nb= $imagesslider->count();$u=0;
       ?>
 

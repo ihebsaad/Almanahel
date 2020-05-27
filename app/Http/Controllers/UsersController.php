@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Log;
 
 use Illuminate\Http\Request;
   use App\User ;
+  use App\Retard ;
+  use App\Absence ;
+  use App\Paiement ;
  use DB;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -180,6 +183,14 @@ class UsersController extends Controller
 
 
         $user = User::find($id);
+		//ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		$this->countPaiements($user,$annee):
+		$this->countRetards($user,$annee):
+		$this->countAbsences($user,$annee):
 
           $relations = DB::table('parents_eleve')->select('eleve')
             ->where('parent','=',$id)
@@ -370,6 +381,8 @@ class UsersController extends Controller
 
 
     }
+	
+	
     public  function removeeleve(Request $request)
     {
         $parent=$request->get('parent');
@@ -381,11 +394,38 @@ class UsersController extends Controller
                 ['parent' => $parent,
                 'eleve' => $eleve]
             )->delete();
-
-
-
+ 
     }
  
+     public  function countReatrds(  $user,$annee)
+    {
+		$count=Retard::where('eleve', $user)
+		->where('annee',$annee)
+		->count();
+		
+		 User::where('id', $user)->update(array('retards' => $count));
  
+    }
+	
+	    public  function countAbsences(  $user,$annee)
+    {
+		$count=Absence::where('eleve', $user)
+		->where('annee',$annee)
+		->count();
+		
+		 User::where('id', $user)->update(array('absences' => $count));
+ 
+    }
+	
+		  public  function countPaiements(  $user,$annee)
+    {
+		$count=Paiement::where('eleve', $user)
+		->where('annee',$annee)
+		->count();
+		
+		 User::where('id', $user)->update(array('totalpaiements' => $count));
+ 
+    }
+	
 
  }

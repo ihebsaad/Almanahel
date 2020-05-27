@@ -102,21 +102,26 @@
         </tr>
     <tr>
 	    <td class="text-primary">Paiements</td>
-            <td> <input id="paiements" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="paiements" id="paiements" value="{{ $user->paiements }}" />                  </td>
+            <td> <select id="paiements"   onchange="changing(this)"    class="form-control" name="paiements"    >
+				<option value=""></option>
+				<option <?php if(  $user->paiements =='termine'  ){echo 'selected="selected"';} ?> value="termine">Terminé</option>
+				<option <?php if(  $user->paiements =='encours'  ){echo 'selected="selected"';} ?>value="encours">En cours</option>
+				</select>
+			</td>
         </tr>
         <tr>
         <td class="text-primary">Total Paiement</td>
-            <td> <input id="totalpaiement" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
+            <td> <input id="totalpaiement" autocomplete="off"    type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
         </tr>
         <tr>
 
         <td class="text-primary">Absences</td>
-            <td> <input id="absences" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
+            <td> <input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
         </tr>
         <tr>
 
         <td class="text-primary">Retards</td>
-            <td>      <input id="retards" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                </td>
+            <td>      <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                </td>
         </tr>
         
         <td class="text-primary">Remarques</td>

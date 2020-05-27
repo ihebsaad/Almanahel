@@ -30,7 +30,13 @@ class PaiementsController extends Controller
         return view('paiements.index',[ ], compact('paiements'));
     }
 
- 
+     public function annee($annee)
+    { 
+
+        $paiements = Paiement::orderBy('id', 'desc')->where('annee',$annee)->get();
+        return view('paiements.index',[ ], compact('paiements'));
+    }
+
  
     /**
      * Show the form for creating a new resource.

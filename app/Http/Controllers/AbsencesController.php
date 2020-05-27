@@ -46,7 +46,28 @@ $user_type=$user->user_type;
         return view('absences.index',[ ], compact('absences'));
     }
 
+     public function annee($annee)
+    { 
+
  
+ $user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+
+
+	if($user_type=='parent'){
+		
+		 $ideleves= DB::table('parents_eleve')->where('parent',  $iduser)->pluck('eleve');
+                           
+		        $absences = Absence::orderBy('id', 'desc')->whereIn('eleve', $ideleves)->where('annee',$annee)->get();
+
+	}else{
+        $absences = Absence::orderBy('id', 'desc')->get();
+
+	}
+
+        return view('absences.index',[ ], compact('absences'));
+    }
  
     /**
      * Show the form for creating a new resource.

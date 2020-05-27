@@ -26,20 +26,19 @@ class ExcelsController extends Controller
      */
     public function index()
     {
-		
-	
-       
-   
-
-		  $excels =Excel::orderBy('mois', 'desc')->get() ;
-                              
+		 
+		  $excels =Excel::orderBy('mois', 'desc')->get() ;      
           return view('excels.index',  ['excels' => $excels]);        
 		 
-
-
      }
 
-  
+     public function annee($annee)
+    {
+		 
+		  $excels =Excel::orderBy('mois', 'desc')->where('annee',$annee)->get() ;      
+          return view('excels.index',  ['excels' => $excels]);        
+		 
+     }
  
  
     /**

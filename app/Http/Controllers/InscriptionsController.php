@@ -166,19 +166,20 @@ $pathb = storage_path()."/fichiers/";
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
-    
-       
-   
-
-          $inscriptions =Inscription::orderBy('eleve', 'asc')->get() ;
-                              
+    {  
+          $inscriptions =Inscription::orderBy('eleve', 'asc')->get() ;              
           return view('inscriptions.index',  ['inscriptions' => $inscriptions]);        
-         
-
 
      }
+	 
+	   public function annee($annee)
+    {  
+          $inscriptions =Inscription::orderBy('eleve', 'asc')->where('annee',$annee)->get() ;              
+          return view('inscriptions.index',  ['inscriptions' => $inscriptions]);        
+
+     }
+	 
+	 
       /**
      * Remove the specified resource from storage.
      *

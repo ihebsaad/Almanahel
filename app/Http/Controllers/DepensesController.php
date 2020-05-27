@@ -30,7 +30,12 @@ class DepensesController extends Controller
         return view('depenses.index',[ ], compact('depenses'));
     }
 
- 
+   public function annee($annee)
+    { 
+
+        $depenses = Depense::orderBy('id', 'desc')->where('annee',$annee)->get();
+        return view('depenses.index',[ ], compact('depenses'));
+    }
  
     /**
      * Show the form for creating a new resource.

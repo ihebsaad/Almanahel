@@ -408,16 +408,19 @@ if(empty($parent))
     }
       public function index()
     {
-        
-    
-       
-   
-
-          $inscriptionsv =Inscriptionv::orderBy('eleve', 'asc')->get() ;
-                              
-          return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
+		$inscriptionsv =Inscriptionv::orderBy('eleve', 'asc')->get() ;                     
+         return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
          
-}
+	}
+	
+	     public function annee($annee)
+    {
+		$inscriptionsv =Inscriptionv::orderBy('eleve', 'asc')->where('annee',$annee)->get() ;                     
+         return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
+         
+	}
+	
+	
   public function destroy($id)
     {
         $inscriptionv = Inscriptionv::find($id);

@@ -46,6 +46,29 @@ $user_type=$user->user_type;
         return view('retards.index',[ ], compact('retards'));
     }
 
+
+    public function annee($annee)
+    { 
+ 
+ $user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+
+
+	if($user_type=='parent'){
+		
+		 $ideleves= DB::table('parents_eleve')->where('parent',  $iduser)->pluck('eleve');
+                           
+		   $retards = Retard::orderBy('id', 'desc')->whereIn('eleve', $ideleves)->where('annee',$annee)->get();
+
+	}else{
+		        $retards = Retard::orderBy('id', 'desc')->where('annee',$annee)->get();
+
+	}
+
+ 
+        return view('retards.index',[ ], compact('retards'));
+    }
  
  
     /**

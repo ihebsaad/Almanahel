@@ -101,7 +101,8 @@ Route::get('/retards/destroy/{id}', 'RetardsController@destroy');
 Route::get('/retards/create/', 'RetardsController@create')->name('retards.create');
 Route::post('/retards/store/', 'RetardsController@store')->name('retards.store');
 Route::post('/retards/edit/', 'RetardsController@edit')->name('retards.edit');
- 
+ Route::get('/retards/annee/{annee}', 'RetardsController@annee')->name('retards.annee');
+
  
  
 /*** Absences  **/
@@ -113,7 +114,8 @@ Route::get('/absences/destroy/{id}', 'AbsencesController@destroy');
 Route::get('/absences/create/', 'AbsencesController@create')->name('absences.create');
 Route::post('/absences/store/', 'AbsencesController@store')->name('absences.store');
 Route::post('/absences/edit/', 'AbsencesController@edit')->name('absences.edit');
- 
+ Route::get('/absences/annee/{annee}', 'AbsencesController@annee')->name('absences.annee');
+
   
  
 /*** Paiements  **/
@@ -125,7 +127,8 @@ Route::get('/paiements/destroy/{id}', 'PaiementsController@destroy');
 Route::get('/paiements/create/', 'PaiementsController@create')->name('paiements.create');
 Route::post('/paiements/store/', 'PaiementsController@store')->name('paiements.store');
 Route::post('/paiements/edit/', 'PaiementsController@edit')->name('paiements.edit');
-  
+ Route::get('/paiements/annee/{annee}', 'PaiementsController@annee')->name('paiements.annee');
+
   
 /*** Depenses  **/
  Route::get('/depenses', array('as' => 'depenses','uses' => 'DepensesController@index'));
@@ -136,7 +139,8 @@ Route::get('/depenses/destroy/{id}', 'DepensesController@destroy');
 Route::get('/depenses/create/', 'DepensesController@create')->name('depenses.create');
 Route::post('/depenses/store/', 'DepensesController@store')->name('depenses.store');
 Route::post('/depenses/edit/', 'DepensesController@edit')->name('depenses.edit');
- 
+ Route::get('/depenses/annee/{annee}', 'DepensesController@annee')->name('depenses.annee');
+
  
  
 /*** Envoyes  **/
@@ -151,7 +155,8 @@ Route::get('/envoyes/destroy/{id}', 'EnvoyesController@destroy');
 Route::get('/envoyes/send/', 'EnvoyesController@send')->name('envoyes.send');
 Route::post('/envoyes/store/', 'EnvoyesController@store')->name('envoyes.store');
 Route::post('/envoyes/edit/', 'EnvoyesController@edit')->name('envoyes.edit');
- 
+Route::get('/envoyes/annee/{annee}', 'EnvoyesController@annee')->name('envoyes.annee');
+
  
  
  /*** Users **/
@@ -227,6 +232,10 @@ Route::get('/inscriptions/createfront','InscriptionsController@createfront')->na
 Route::post('/inscriptions/checkexiste', 'InscriptionsController@checkexiste')->name('inscriptions.checkexiste');
 Route::post('/inscriptions/inscriptionsadd', 'InscriptionsController@inscriptionsadd')->name('inscriptions.inscriptionsadd');
 Route::post('/inscriptions/checkexiste1', 'InscriptionsController@checkexiste1')->name('inscriptions.checkexiste1');
+Route::get('/inscriptions/annee/{annee}', 'InscriptionsController@annee')->name('inscriptions.annee');
+
+
+
  /*** Inscriptions **/
  Route::get('/inscriptionsv/create','InscriptionsvController@create')->name('inscriptionsv.create');
 Route::post('/inscriptionsv/inscriptionsadd', 'InscriptionsvController@inscriptionsadd')->name('inscriptionsv.inscriptionsadd');
@@ -238,6 +247,7 @@ Route::get('/inscriptionsv', array('as' => 'inscriptionsv','uses' => 'Inscriptio
 Route::get('/inscriptionsv/view/{id}', 'InscriptionsvController@view');
 Route::post('/update1/{id}','InscriptionsvController@update1');
 Route::post('/inscriptionsv/updating','InscriptionsvController@updating')->name('inscriptionsv.updating');
+Route::get('/inscriptionsv/annee/{id}', 'InscriptionsvController@annee')->name('inscriptionsv.annee');
 
 
 /****  Images gestion image slider carrousel  *****/
@@ -262,6 +272,7 @@ Route::get('/docsenv', array('as' => 'docsenv','uses' => 'DocumentsController@do
 Route::get('/documents/view/{id}', 'DocumentsController@view');
 Route::post('/update3/{id}','DocumentsController@update3');
 Route::post('/documents/updating','DocumentsController@updating')->name('documents.updating');
+Route::get('/documents/annee/{annee}', 'DocumentsController@annee')->name('documents.annee');
 
 
 /*** Excels **/
@@ -273,3 +284,4 @@ Route::get('/excels/view/{id}', 'ExcelsController@view');
 Route::get('/excels/destroy/{id}', 'ExcelsController@destroy');
  Route::get('/excels/view/{id}', 'ExcelsController@view');
  Route::post('/excels/updating','ExcelsController@updating')->name('excels.updating');
+Route::get('/excels/annee/{annee}', 'ExcelsController@annee')->name('excels.annee');

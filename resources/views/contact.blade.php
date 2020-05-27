@@ -36,7 +36,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Questions? n'hésitez pas à nous contacter</p>
 		<!--<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">-->
-		<form method="post"   enctype="multipart/form-data">
+		<form method="post"   >
 			  {{ csrf_field() }}
 		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com ">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="contact">
@@ -73,7 +73,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
           <br>
           <div id="success"></div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="send">Envoyer</button>
+            <button  class="btn btn-primary" id="send">Envoyer</button>
           </div>
         </form>
       </div>

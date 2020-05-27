@@ -253,6 +253,12 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
       right:0;
       background:rgba(0,0,0,0.3);
     }
+	
+	.carousel-caption h3 {
+   font-family: Roboto;
+   font-weight: 400; font-size: 24px;
+text-transform: uppercase;   text-shadow: 0px 1px rgba(64, 64, 64, 0.8);
+}
   
 a [role="button"]{color:black;text-decoration:none;}
  

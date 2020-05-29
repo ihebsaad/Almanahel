@@ -18,7 +18,7 @@
     </style>
      <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-9"><h2>Liste des excels frinances</h2></div>
+                <div class="col-lg-9"><h2>Liste des excels finances - Année <?php $annee; ?></h2></div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success" href="{{action('ExcelsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un excel</b></a>
                 </div>

@@ -13,7 +13,7 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des pré-inscriptions</H2></div><div class="col-md-3">
+            <div class="col-md-8"><H2> Liste des pré-inscriptions - Année <?php $annee; ?></H2></div><div class="col-md-3">
 			
                     <a   class="btn btn-md btn-success"    href="{{action('InscriptionsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une pré-inscription</b></a>
 

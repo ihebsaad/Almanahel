@@ -17,7 +17,7 @@
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-9"><h2>Liste des Dépenses</h2></div>
+                <div class="col-lg-9"><h2>Liste des Dépenses - Année <?php $annee; ?></h2></div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success"    href="{{action('DepensesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une dépense</b></a>
                 </div>

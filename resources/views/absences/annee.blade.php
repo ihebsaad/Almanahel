@@ -18,7 +18,7 @@
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-9"><h2>Liste des Absences</h2></div>
+                <div class="col-lg-9"><h2>Liste des Absences - Année <?php $annee; ?></h2></div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success"    href="{{action('AbsencesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une absence</b></a>
                 </div>

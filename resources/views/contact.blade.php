@@ -101,13 +101,21 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
                     method:"POST",
                     data:{nom:nom,email:email,tel:tel,sujet:sujet,contenu:contenu,type:type,destinataire:destinataire, _token:_token},
                     success:function(data){
-                        alert('envoyé !');
-
+					swal({
+                        type: 'success',
+                        title: 'Envoyé ...',
+                        text: 'Votre demande a été envoyée avec succès'
+ 					//	icon: "success",
+                    }); 
                     }
                 });
             }else{
-                alert('ERROR');
-            }
+					swal({
+                        type: 'error',
+                        title: 'Erreur ...',
+                        text: 'Erreur! '
+ 					//	icon: "success",
+                    });             }
         });
 
 

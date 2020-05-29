@@ -137,7 +137,7 @@ $user_type=$user->user_type;
 	<?php } if ($user_type=='admin'   ){?>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item   <?php if  ( ! (strpos($view_name,'documents-index') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('documents')}}">
           <i class="fas fa-fw fa-folder-open"></i>
           <span>Tous les Documetnts</span></a>
@@ -145,13 +145,13 @@ $user_type=$user->user_type;
 	<?php }  ?>
 
 	  <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item  <?php if  ( ! (strpos($view_name,'documents-docsrecu') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('docsrecu')}}">
           <i class="fas fa-file-import"></i>
           <span>Mes Documetnts reçus</span></a>
       </li>
 	  <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item   <?php if  ( ! (strpos($view_name,'documents-docsenv') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('docsenv')}}">
           <i class="fas fa-file-export"></i>
           <span>Mes Documetnts envoyés</span></a>

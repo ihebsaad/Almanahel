@@ -25,15 +25,15 @@
                     <i class="fa fa-archive"></i> Archive  
                 </button>
                 <ul class="dropdown-menu pull-right">
-                    <li style="text-align:center">
+                    <li style="text-align:center;width:120px">
                         <a href="{{route('absences.annee',['annee'=>'2020' ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             2020 </a>
                     </li>
-                    <li style="text-align:center">
+                    <li style="text-align:center;width:120px">
                         <a href="{{route('absences.annee',['annee'=>2021 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             2021 </a>
                     </li>
-                    <li style="text-align:center">
+                    <li style="text-align:center;;width:120px">
                         <a href="{{route('absences.annee',['annee'=>2022 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             2022 </a>
                     </li>

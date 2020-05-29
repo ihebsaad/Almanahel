@@ -123,7 +123,7 @@ $user_type=$user->user_type;
           <i class="fas fa-fw fa-folder"></i>
           <span>Finances</span>
         </a>
-        <div id="collapsetrois" class="collapse <?php //if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'show';}?> " aria-labelledby="collapse3" data-parent="#accordionSidebar"><!--collapse show-->
+        <div id="collapsetrois" class="collapse <?php //if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'show';}?> " aria-labelledby="collapsetrois" data-parent="#accordionSidebar"><!--collapse show-->
           <div class="bg-white py-2 collapse-inner rounded">
 		   <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
             <a class="collapse-item" href="{{route('depenses')}}">Dépenses</a>

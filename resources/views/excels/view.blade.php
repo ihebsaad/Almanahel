@@ -26,8 +26,8 @@
                             <div class="col-md-6">
                                 <input  autocomplete="off"  id="chemin" type="file" class="form-control" name="chemin"  required   accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
  
-                                         <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $document['chemin'];?>" > 
-           <span class="fa fa-fw fa-download-alt"></span> <?php echo $document['chemin'];?>
+                                         <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $excel['chemin'];?>" > 
+           <span class="fa fa-fw fa-download-alt"></span> <?php echo $excel['chemin'];?>
 			</a>
                             </div>
                         </div>

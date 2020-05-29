@@ -71,7 +71,7 @@
                 <tr>
                     <td style="width:5%" ><a href="{{action('PaiementsController@view', $paiement['id'])}}" >{{$paiement->id}}</a></td>
                     <td style="width:10%" ><?php echo $paiement['created_at'];?> </td>
-                    <td style="width:20%" ><?php if($userid>0){echo $user->name .' '.$user->lastname;}?> </td>
+                    <td style="width:20%" ><?php if($userid>0){echo $user['name'] .' '.$user['lastname'];}?> </td>
                     <td style="width:20%" ><?php echo $paiement['libelle'];?> </td>
                     <td style="width:10%" ><?php echo $paiement['montant'];?> </td>
  

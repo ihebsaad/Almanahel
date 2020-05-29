@@ -1,14 +1,13 @@
   @include('layouts.partial.head')
  
   <!-- Main Content -->
-  <div class="container">
+  <div class="container bgcontent">
   
    @yield('content')
  	
 	
   </div>
 
-  <hr>  
    
 @include('layouts.partial.footer')
 @include('layouts.partial.footer-scripts')

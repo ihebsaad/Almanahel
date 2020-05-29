@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body class="bgpattern">
 
  <header class="header-area">
 <div class="header-top bg-2">

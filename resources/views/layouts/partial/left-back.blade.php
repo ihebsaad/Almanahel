@@ -38,7 +38,7 @@ $user_type=$user->user_type;
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item     <?php if  ( ! (strpos($view_name,'contenus') === false) )   { echo 'active';}?> ">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Contenu du site</span>
         </a>
@@ -55,7 +55,7 @@ $user_type=$user->user_type;
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item  <?php if ( ( ! (strpos($view_name,'evenements') === false) ) || ( ! (strpos($view_name,'actualites') === false) ) || ( ! (strpos($view_name,'annonces') === false) ) )  { echo 'active';}?>  "  >
-        <a class="nav-link collapsed" href="#" data-toggle="collapse  " data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse  " data-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-calendar"></i>
           <span>Nouveautés</span>
         </a>
@@ -119,7 +119,7 @@ $user_type=$user->user_type;
 
 	  <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'active';}?> ">
-        <a class="nav-link" href="#" data-toggle="collapse  " data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+        <a class="nav-link" href="#" data-toggle="collapse  " data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
           <i class="fas fa-fw fa-folder"></i>
           <span>Finances</span>
         </a>

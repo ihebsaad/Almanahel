@@ -20,21 +20,20 @@
             <div class="row">
                 <div class="col-lg-6"><h2>Liste des Absences</h2></div>
                 <div class="col-lg-3">
-				        <div class="btn-group">
-            <div class="btn-group">
+             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-archive"></i> Archive <i class="fa fa-angle-down"></i>
+                    <i class="fa fa-archive"></i> Archive  
                 </button>
                 <ul class="dropdown-menu pull-right">
-                    <li>
+                    <li style="text-align:center">
                         <a href="{{route('absences.annee',['annee'=>'2020' ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             2020 </a>
                     </li>
-                    <li>
+                    <li style="text-align:center">
                         <a href="{{route('absences.annee',['annee'=>2021 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             2021 </a>
                     </li>
-                    <li>
+                    <li style="text-align:center">
                         <a href="{{route('absences.annee',['annee'=>2022 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             2022 </a>
                     </li>
@@ -42,8 +41,7 @@
                 </ul>
             </div>
 				
-				</div>
-				</div>
+ 				</div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success"    href="{{action('AbsencesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une absence</b></a>
                 </div>

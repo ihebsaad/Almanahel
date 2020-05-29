@@ -14,7 +14,7 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des inscriptions - Année <?php $annee; ?></H2></div><div class="col-md-3">
+            <div class="col-md-8"><H2> Liste des inscriptions - Année <?php echo $annee; ?></H2></div><div class="col-md-3">
 			
                      <a   class="btn btn-md btn-success"    href="{{action('InscriptionsvController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une inscription</b></a>
 

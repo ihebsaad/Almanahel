@@ -5,10 +5,11 @@
     <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
 @section('content')
-<div class=" " style="padding:8px 8px 8px 8px">
-        <div class="portlet box grey">
-            <h3>  Classe</h3>
+    <div class="card uper">
+        <div class="card-header">
+            Classe
         </div>
+        <div class="card-body">
     <form class="form-horizontal" method="POST"  action="{{action('ClassesController@update', $id)}}" >
         {{ csrf_field() }}
 
@@ -17,26 +18,16 @@
 
 
         <input type="hidden" id="idclasse" value="{{$id}}" ></input>
-        <table class="table">
+ 
+       
 
-        <tbody>
-
-        <tr>
-            <td class="text-primary">Nom de la classe </td>
-            <td>
+           <div class="form-group ">
+                    <label for="titre">Titre:</label>
                 <input id="titre" onchange="changing(this)" type="text" class="form-control" name="titre"  value="{{ $classe->titre }}" />
-                </td>
-        </tr>
-        <tr>
-            <td class="text-primary">Année</td>
-            <td>
-                <input id="annee" onchange="changing(this)" type="number" placeholder="YYYY" min="2020" max="2800" class="form-control" name="annee"  value="{{ $classe->annee }}" />
-            </td>
-        </tr>
-        <tr>
-
-        <td class="text-primary">Élèves</td>
-          <td>
+          </div>
+        
+             <div class="form-group ">
+                    <label for="eleve">Elève:</label>
                <select class="itemName form-control col-lg-6" style="width:100%" name="eleve"  multiple  id="eleve" >
                           <?php if ( count($relations1) > 0 ) { ?>
 
@@ -55,14 +46,10 @@
                          <?php }  ?>
 
                      </select>
-          </td>
+          </div>
 
-
-        </tr>
-        <tr>
-
-        <td class="text-primary">Enseignants</td>
-          <td>
+           <div class="form-group ">
+                    <label for="enseignant">Enseignant:</label>
                <select class="form-control  col-lg-12 itemName" style="width:100%" name="enseignant"  multiple  id="enseignant" >
                           <?php 
                           $sel=0;
@@ -85,22 +72,14 @@
                          <?php }  ?>
 
                      </select>
-          </td>
+          </div>
 
-
-        </tr>
+ 
         
+ 
 
 
-       
-
-        </tbody>
-        </table>
-
-       
-    </form>
-
-
+</div>
 </div>
 	<style>
         #tabstats {font-size: 15px;padding:30px 30px 30px 30px;}

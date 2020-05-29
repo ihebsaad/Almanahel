@@ -6,6 +6,13 @@
 
                     <form class="form-horizontal" method="POST" action="{{ route('classes.saving') }}">
                         {{ csrf_field() }}
+	<?php	  //ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		?>
+			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
 
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">
                             <label for="titre" class="col-md-4 control-label">Nom de la classe</label>
@@ -23,11 +30,7 @@
                              <div class="form-group " style="margin-bottom:30px">
                          <label for="name" class="col-md-4 control-label">Année</label>
 
-                            <div class="col-md-6">
-                                <input  autocomplete="off"  id="annee" type="number" placeholder="YYYY" min="2020" max="2800" class="form-control" name="annee"  required  >
-
-                                
-                            </div>
+                            
                         </div>
                        
                       <!--  <div class="form-group">

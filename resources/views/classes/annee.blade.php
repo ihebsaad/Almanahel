@@ -39,10 +39,11 @@
 
                 </ul>
             </div>
+		  </div>
+
 				<div class="col-lg-3">
                     <a   class="btn btn-md btn-success"    href="{{action('ClassesController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une classe</b></a>
                 </div>
-            </div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">
         <thead>

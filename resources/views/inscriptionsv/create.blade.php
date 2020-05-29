@@ -108,7 +108,7 @@
 
 <h3 style="margin-left:50px">Inscription </h3><br><br>    
        <div class="row"  style="margin-left:20px"  >
-  <section style=" font-size: 18px; font-weight: 500; color: #545454;">
+  <section style="width:500px; font-size: 18px; font-weight: 500; color: #545454;">
 Inscription pour : <select id="elevestat" onBlur="eleveverif()"  class="form-control">
             <option>Selectionner</option>
             <option value="nouveau">Nouveau élève</option>

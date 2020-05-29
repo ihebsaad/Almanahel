@@ -26,19 +26,19 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-		
-	
-       
-   
-
+		 
 		  $documents =Document::orderBy('titre', 'asc')->get() ;
                               
           return view('documents.index',  ['documents' => $documents]);        
 		 
-
-
      }
+	 
+  public function annee($annee)
+    {
+		 $documents =Document::orderBy('titre', 'asc')->where('annee',$annee)->get() ;                              
+          return view('documents.annee',  ['documents' => $documents]);        
 
+	}
  public function docsrecu()
     {
         $id=Auth::id();

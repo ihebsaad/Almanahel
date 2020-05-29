@@ -46,10 +46,10 @@
             <td class="text-primary">Identifiant</td>
             <td> <input   id="username" autocomplete="off"  onchange="changing(this)" type="text" class="form-control" name="username" value="{{ $user->username }}" />          </td>
         </tr>
-        <tr>
+    <!--    <tr>
             <td class="text-primary">Mot de passe</td>
             <td> <input autocomplete="off"   onchange="changing(this)"  type="password" class="form-control" name="password"  id="password"   />          </td>
-        </tr>
+        </tr>-->
         <tr>
             <td class="text-primary">Adresse E-mail</td>
             <td> <input id="email" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>

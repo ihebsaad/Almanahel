@@ -66,7 +66,7 @@ $user_type=$user->user_type;
 
 	}
 
-        return view('absences.annee',[ ], compact('absences'));
+        return view('absences.annee',[ 'annee'=>$annee], compact('absences'));
     }
  
     /**

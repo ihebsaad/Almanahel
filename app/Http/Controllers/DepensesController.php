@@ -34,7 +34,7 @@ class DepensesController extends Controller
     { 
 
         $depenses = Depense::orderBy('id', 'desc')->where('annee',$annee)->get();
-        return view('depenses.annee',[ ], compact('depenses'));
+        return view('depenses.annee',['annee'=>$annee ], compact('depenses'));
     }
  
     /**

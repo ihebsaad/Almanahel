@@ -34,7 +34,7 @@ class PaiementsController extends Controller
     { 
 
         $paiements = Paiement::orderBy('id', 'desc')->where('annee',$annee)->get();
-        return view('paiements.index',[ ], compact('paiements'));
+        return view('paiements.index',['annee'=>$annee ], compact('paiements'));
     }
 
  

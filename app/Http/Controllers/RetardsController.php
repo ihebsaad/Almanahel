@@ -67,7 +67,7 @@ $user_type=$user->user_type;
 	}
 
  
-        return view('retards.annee',[ ], compact('retards'));
+        return view('retards.annee',[ 'annee'=>$annee], compact('retards'));
     }
  
  

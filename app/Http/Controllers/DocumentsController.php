@@ -36,7 +36,7 @@ class DocumentsController extends Controller
   public function annee($annee)
     {
 		 $documents =Document::orderBy('titre', 'asc')->where('annee',$annee)->get() ;                              
-          return view('documents.annee',  ['documents' => $documents]);        
+          return view('documents.annee',  ['annee'=>$annee,'documents' => $documents]);        
 
 	}
  public function docsrecu()

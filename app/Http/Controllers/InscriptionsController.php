@@ -176,7 +176,7 @@ $pathb = storage_path()."/fichiers/";
 	   public function annee($annee)
     {  
           $inscriptions =Inscription::orderBy('eleve', 'asc')->where('annee',$annee)->get() ;              
-          return view('inscriptions.annee',  ['inscriptions' => $inscriptions]);        
+          return view('inscriptions.annee',  ['annee'=>$annee,'inscriptions' => $inscriptions]);        
 
      }
 	 

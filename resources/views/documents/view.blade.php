@@ -36,8 +36,8 @@
 
 
           <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $document['chemin'];?>" > 
-           <span class="fa fa-fw fa-trash-alt"></span> <?php echo $document['chemin'];?>
-</a>
+           <span class="fa fa-fw fa-download-alt"></span> <?php echo $document['chemin'];?>
+			</a>
           <?php } ?>
             </td>
         </tr>

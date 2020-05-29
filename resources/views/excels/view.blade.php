@@ -11,7 +11,7 @@
                             <label for="titre" class="col-md-4 control-label">Titre</label>
 
                             <div class="col-md-6">
-                                <input  autocomplete="off"  id="titre" type="text" class="form-control" name="titre" value="{{ old('titre') }}" required autofocus>
+                                <input  autocomplete="off"  id="titre" type="text" class="form-control" name="titre" value="{<?php echo $excel['mois'] ?>"   autofocus>
 
                                 @if ($errors->has('titre'))
                                     <span class="help-block">
@@ -25,8 +25,10 @@
 
                             <div class="col-md-6">
                                 <input  autocomplete="off"  id="chemin" type="file" class="form-control" name="chemin"  required   accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
-
-                                
+ 
+                                         <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $document['chemin'];?>" > 
+           <span class="fa fa-fw fa-download-alt"></span> <?php echo $document['chemin'];?>
+			</a>
                             </div>
                         </div>
 						<?php $mois= $excel['mois']; ?>
@@ -48,17 +50,18 @@
                         <option <?php if($mois=='12'){echo 'selected="selected"';}?>  >  Décembre  </option>
                     </select>
                         </div>
-                     
+                    	<?php $type= $excel['type']; ?>
+
                          <div class="form-group " style="margin-bottom:30px">
                          <label for="name" class="col-md-4 control-label">Type</label>
                           <div class="col-md-6">
-                               <select name="type" id="type" class="form-control" " >
+                               <select name="type" id="type" class="form-control"   >
                               <option value="">--Sélectionnez--</option>
-                             <option value="comptable">Comptable</option>
-                          <option value="caisse">Caisse</option>
-                         <option value="profs">Paie Enseignants</option>
-                          <option value="eleves">Paie Elèves</option>
-                            <option value="personnels">Paie Personnels</option>
+                             <option  <?php if($type=='comptable'){echo 'selected="selected"';}?> value="comptable">Comptable</option>
+                          <option <?php if($type=='caisse'){echo 'selected="selected"';}?> value="caisse">Caisse</option>
+                         <option <?php if($type=='profs'){echo 'selected="selected"';}?> value="profs">Paie Enseignants</option>
+                          <option <?php if($type=='eleves'){echo 'selected="selected"';}?> value="eleves">Paie Elèves</option>
+                            <option <?php if($type=='personnels'){echo 'selected="selected"';}?> value="personnels">Paie Personnels</option>
 							</select>
                             </div>
                            

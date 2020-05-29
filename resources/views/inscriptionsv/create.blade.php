@@ -148,6 +148,8 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
                      </select>
 
                                     </div>
+                                        </div>
+                                            </div>
                                 
 
 <br><br> <br><br> <br><br> 

@@ -98,3 +98,8 @@ background: ##e6a3cb;
 background-image: url("pattern.jpg"), url("pattern.jpg");
 background-repeat: repeat-x, repeat;
 }
+
+div#sticky-header {
+    background: #eaeaea;
+    border-bottom:solid 1px #d6d6d6;
+}

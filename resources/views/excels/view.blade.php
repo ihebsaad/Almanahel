@@ -11,7 +11,7 @@
                             <label for="titre" class="col-md-4 control-label">Titre</label>
 
                             <div class="col-md-6">
-                                <input  autocomplete="off"  id="titre" type="text" class="form-control" name="titre" value="{<?php echo $excel['mois'] ?>"   autofocus>
+                                <input  autocomplete="off"  id="titre" type="text" class="form-control" name="titre" value=" <?php echo $excel['titre'] ;?>"   autofocus>
 
                                 @if ($errors->has('titre'))
                                     <span class="help-block">

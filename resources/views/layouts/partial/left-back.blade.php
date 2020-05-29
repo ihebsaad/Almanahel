@@ -74,12 +74,12 @@ $user_type=$user->user_type;
       <div class="sidebar-heading">
         Utilisateurs
       </div>
-      <li class="nav-item ">
+      <li class="nav-item   <?php if  ( ! (strpos($view_name,'users') === false) )   { echo 'active';}?> ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree"   aria-controls="collapsethree">
           <i class="fas fa-fw fa-users"></i>
           <span>Membres</span>
         </a>
-        <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapsethree" class="collapse   <?php if  ( ! (strpos($view_name,'users') === false) )   { echo 'show';}?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('personnels')}}">Administration</a>
 			<a class="collapse-item" href="{{route('eleves')}}">Elèves</a>
@@ -158,7 +158,7 @@ $user_type=$user->user_type;
       </li>
 	  
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <li class="nav-item   <?php if  ( ! (strpos($view_name,'envoyes') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('envoyes')}}">
           <i class="fas fa-fw fa-envelope"></i>
           <span>Emails</span></a>

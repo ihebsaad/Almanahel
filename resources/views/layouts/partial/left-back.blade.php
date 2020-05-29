@@ -59,7 +59,7 @@ $user_type=$user->user_type;
           <i class="fas fa-fw fa-calendar"></i>
           <span>Nouveautés</span>
         </a>
-        <div id="collapseUtilities" class="collapse <?php if ( ( ! (strpos($view_name,'evenements') === false) ) || ( ! (strpos($view_name,'actualites') === false) ) || ( ! (strpos($view_name,'annonces') === false) ) )  { echo 'show';}?> " aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse <?php //if ( ( ! (strpos($view_name,'evenements') === false) ) || ( ! (strpos($view_name,'actualites') === false) ) || ( ! (strpos($view_name,'annonces') === false) ) )  { echo 'show';}?> " aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('evenements')}}">Evénements</a>
             <a class="collapse-item" href="{{route('actualites')}}">Actualités</a>
@@ -123,7 +123,7 @@ $user_type=$user->user_type;
           <i class="fas fa-fw fa-folder"></i>
           <span>Finances</span>
         </a>
-        <div id="collapse3" class="collapse <?php if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'show';}?> " aria-labelledby="collapse3" data-parent="#accordionSidebar"><!--collapse show-->
+        <div id="collapse3" class="collapse <?php //if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'show';}?> " aria-labelledby="collapse3" data-parent="#accordionSidebar"><!--collapse show-->
           <div class="bg-white py-2 collapse-inner rounded">
 		   <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
             <a class="collapse-item" href="{{route('depenses')}}">Dépenses</a>

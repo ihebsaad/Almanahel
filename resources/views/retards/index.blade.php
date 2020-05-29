@@ -22,7 +22,7 @@
      <div class="portlet box grey">
             <div class="row">
                 <div class="col-lg-6"><h2>Liste des Retards</h2></div>
-				                <div class="col-lg-3">
+			 <div class="col-lg-3">
              <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-archive"></i> Archive  

@@ -36,7 +36,7 @@ class ExcelsController extends Controller
     {
 		 
 		  $excels =Excel::orderBy('mois', 'desc')->where('annee',$annee)->get() ;      
-          return view('excels.index',  ['excels' => $excels]);        
+          return view('excels.annee',  ['excels' => $excels]);        
 		 
      }
  

@@ -126,6 +126,7 @@ class DocumentsController extends Controller
              'titre' =>$request->get('titre'),
              'chemin'=> $name,
              'description' => $request->get('description'),
+             'annee' => $request->get('annee'),
              'type' => $request->get('type'),
              'destinataire' => $destinataire,
              'emetteur' => $emetteur,

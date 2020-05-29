@@ -15,7 +15,8 @@ class Document extends Model
  'destinataire',
   'envoye',
  'taille',
- 'parent'
+ 'parent',
+ 'annee'
  ];
  
 }

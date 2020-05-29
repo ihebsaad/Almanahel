@@ -14,7 +14,7 @@
     </style>
          <div class="row">
             <div class="col-md-6"><H2> Liste des pré-inscriptions</H2></div>
-			                <div class="col-lg-3">
+			 <div class="col-lg-3">
              <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-archive"></i> Archive  

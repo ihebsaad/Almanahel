@@ -13,12 +13,34 @@
         }
     </style>
          <div class="row">
-            <div class="col-md-8"><H2> Liste des pré-inscriptions - Année <?php echo $annee; ?></H2></div><div class="col-md-3">
+            <div class="col-md-6"><H2> Liste des pré-inscriptions - Année <?php echo $annee; ?></H2></div>
+			  <div class="col-lg-3">
+             <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-archive"></i> Archive  
+                </button>
+                <ul class="dropdown-menu pull-right">
+                    <li style="text-align:center;width:120px">
+                        <a href="{{route('inscriptions.annee',['annee'=>'2020' ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            2020 </a>
+                    </li>
+                    <li style="text-align:center;width:120px">
+                        <a href="{{route('inscriptions.annee',['annee'=>2021 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            2021 </a>
+                    </li>
+                    <li style="text-align:center;;width:120px">
+                        <a href="{{route('inscriptions.annee',['annee'=>2022 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            2022 </a>
+                    </li>
+
+                </ul>
+            </div>
+				
+ 				</div>
+			<div class="col-md-3">
 			
                     <a   class="btn btn-md btn-success"    href="{{action('InscriptionsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter une pré-inscription</b></a>
-
-
-                        </a><br></div>
+  </a><br></div>
         </div>
     <table class="table table-striped" id="mytable" style="width:100%">
         <thead>

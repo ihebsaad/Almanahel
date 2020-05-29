@@ -6,6 +6,13 @@
 
                     <form class="form-horizontal" method="POST" action="{{ route('documents.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
+	  		<?php	  //ANNEE
+		$year=date('Y');$month=date('m');
+		$mois=intval($month);
+		$annee=intval($year);
+		if($mois > 9 ){$annee=$annee-1;}
+		?>
+			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
 
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">
                             <label for="titre" class="col-md-4 control-label">Titre</label>

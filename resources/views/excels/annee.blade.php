@@ -18,7 +18,30 @@
     </style>
      <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-9"><h2>Liste des excels finances - Année <?php $annee; ?></h2></div>
+                <div class="col-lg-6"><h2>Liste des excels finances - Année <?php $annee; ?></h2></div>
+			<div class="col-lg-3">
+             <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-archive"></i> Archive  
+                </button>
+                <ul class="dropdown-menu pull-right">
+                    <li style="text-align:center;width:120px">
+                        <a href="{{route('excels.annee',['annee'=>'2020' ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            2020 </a>
+                    </li>
+                    <li style="text-align:center;width:120px">
+                        <a href="{{route('excels.annee',['annee'=>2021 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            2021 </a>
+                    </li>
+                    <li style="text-align:center;;width:120px">
+                        <a href="{{route('excels.annee',['annee'=>2022 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            2022 </a>
+                    </li>
+
+                </ul>
+            </div>
+				
+ 				</div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success" href="{{action('ExcelsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un excel</b></a>
                 </div>

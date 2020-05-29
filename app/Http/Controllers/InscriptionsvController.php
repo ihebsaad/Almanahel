@@ -416,7 +416,7 @@ if(empty($parent))
 	     public function annee($annee)
     {
 		$inscriptionsv =Inscriptionv::orderBy('eleve', 'asc')->where('annee',$annee)->get() ;                     
-         return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
+         return view('inscriptionsv.annee',  ['inscriptionsv' => $inscriptionsv]);        
          
 	}
 	

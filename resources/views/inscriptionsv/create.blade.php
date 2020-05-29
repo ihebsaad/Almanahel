@@ -136,7 +136,7 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()"  class="form-con
     <div class=" row">
                                    
     Sélectionnez l'élève <br> <br>                                
- <select  class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >
+ <select style="width:400px" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >
 @foreach($users as $user)
  <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .$user->name; ?></option>                          
        @endforeach </select>  

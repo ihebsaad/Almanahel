@@ -29,7 +29,7 @@
                                 
                             </div>
                         </div>
-						
+						<?php $mois= $excel['mois']; ?>
 						   <div class="form-group " style="margin-bottom:30px">
                          <label for="name" class="col-md-4 control-label">Mois</label>
  					<select     class="form-control input"   name="mois" id="mois"    style="width:150px">
@@ -50,9 +50,9 @@
                         </div>
                      
                          <div class="form-group " style="margin-bottom:30px">
-                         <label for="name" class="col-md-4 control-label">Cible</label>
+                         <label for="name" class="col-md-4 control-label">Type</label>
                           <div class="col-md-6">
-                               <select name="type" id="type" class="form-control" onBlur="verif()" >
+                               <select name="type" id="type" class="form-control" " >
                               <option value="">--Sélectionnez--</option>
                              <option value="comptable">Comptable</option>
                           <option value="caisse">Caisse</option>

@@ -109,7 +109,8 @@
 <h3 style="margin-left:50px">Inscription </h3><br><br>    
        <div class="row"  style="margin-left:20px"  >
   <section style="width:500px; font-size: 18px; font-weight: 500; color: #545454;">
-Inscription pour : <select id="elevestat" onBlur="eleveverif()"  class="form-control">
+Inscription pour : 
+<select id="elevestat" onBlur="eleveverif()"  class="form-control">
             <option>Selectionner</option>
             <option value="nouveau">Nouveau élève</option>
             <option value="ancien">Ancien élève</option>
@@ -117,8 +118,7 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()"  class="form-con
          
   </section>
 </div>
-<br><br> <br><br> <br><br> 
-<div id="ancien_box" style="display:none">
+ <div id="ancien_box" style="display:none">
    <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsadd') }}">
       {{ csrf_field() }}
 	  
@@ -129,13 +129,12 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()"  class="form-con
 		if($mois > 9 ){$annee=$annee-1;}
 		?>
 	  <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
-			   
-			   
+
 <div class="row" style="margin-left:20px">
   <div class="form-group " >
     <div class=" row">
                                    
-    Sélectionnez l'élève <br> <br>                                
+    Sélectionnez l'élève                                  
  <select style="width:400px" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >
 @foreach($users as $user)
  <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .$user->name; ?></option>                          
@@ -149,8 +148,7 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()"  class="form-con
                             </div>
                         </div>
 </form>  
-
-                         </div>
+   </div>
                       
 
 <div id="nouveau_box" style="display:none">
@@ -159,7 +157,7 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()"  class="form-con
 <div class="row" style="margin-left:20px">
   <div class="form-group " >
     <div class=" row">
-                            Sélectionnez l'élève   <br> <br>     
+            Sélectionnez l'élève        
                                     
                 <select class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
                        

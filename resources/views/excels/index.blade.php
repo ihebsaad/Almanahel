@@ -19,7 +19,7 @@
      <div class="portlet box grey">
             <div class="row">
                 <div class="col-lg-6"><h2>Liste des excels finances</h2></div>
-				                <div class="col-lg-3">
+			  <div class="col-lg-3">
              <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-archive"></i> Archive  
@@ -60,8 +60,14 @@
             
             </thead>
             <tbody>
-            @foreach($excels as $excel)
-
+             <?php foreach($excels as $excel)
+			 { $type=$excel['type']; $Type="";
+				if($type=='comptable'){$Type='Paie Comptable';}
+				if($type=='caisse'){$Type='Paie de Caisse';}
+				if($type=='profs'){$Type='Paie des enseignants';}
+				if($type=='eleves'){$Type='Paie des élèves';}
+				if($type=='personnels'){$Type='Paie de personnels';}
+			 ?>
                 <tr>
                     <td>{{$excel->id}}</td>
                      <td><?php echo $excel->created_at;?></td>
@@ -71,7 +77,7 @@
 $user=User::where('id',$excel->emetteur)->first() ;
                     echo $user['name']." ".$user['lastname'];?></td>
                     
-                    <td>{{$excel->type}}</td>
+                    <td><?php echo $Type; ?></td>
 
 					<td>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
@@ -83,7 +89,7 @@ $user=User::where('id',$excel->emetteur)->first() ;
                   
                   </td>
                 </tr>
-            @endforeach
+            <?php } ?>
             </tbody>
         </table>
 

@@ -220,14 +220,14 @@ class InscriptionsvController extends Controller
         ]);
                 
            $inscriptionv->save();
-
+$pass1=InscriptionsvController::genererMDP(8);
 
           $eleve = new User([
             'name' => $inscriptionv["prenom"],
             'lastname' => $inscriptionv["nom"],
                 'username' =>$inscriptionv["nom"].$inscriptionv["prenom"],
                'user_type'=> "eleve",
-               'password'=> InscriptionsvController::genererMDP(8),
+               'password'=> bcrypt($pass1),
                "email"=>$inscriptionv["email"],
                'naissance'=>$inscriptionv["datenaissance"],
                'niveau'=>$inscriptionv["niveau"],
@@ -246,7 +246,7 @@ class InscriptionsvController extends Controller
                   VOTRE INSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>
                   Vos codes accès :'.'<br>
                    Username :'.$eleve['username'].'<br>
-                   Mot de passe :'.$eleve['password'];
+                   Mot de passe :'.$pass1;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -261,12 +261,13 @@ echo($parent);
 
 if(empty($parent))
 
-       { $parent = new User([
+       { $pass=InscriptionsvController::genererMDP(8);
+        $parent = new User([
             'name' => $inscriptionv["prenom_rep"],
             'lastname' => $inscriptionv["nom_rep"],
                 'username' =>$inscriptionv["nom_rep"].$inscriptionv["prenom_rep"],
                'user_type'=> "parent",
-               'password'=>  InscriptionsvController::genererMDP(8),
+               'password'=>  bcrypt($pass) ,
                "email"=>$inscriptionv["email_rep"],
                "tel"=>$inscriptionv["tel"],
               "adresse"=>$inscriptionv["ville"],
@@ -284,7 +285,7 @@ if(empty($parent))
                 lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
                   Vos codes accès :'.'<br>
                    Username :'.$parent['username'].'<br>
-                   Mot de passe :'.$parent['password'];
+                   Mot de passe :'.$pass;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -416,7 +417,7 @@ if(empty($parent))
 	     public function annee($annee)
     {
 		$inscriptionsv =Inscriptionv::orderBy('eleve', 'asc')->where('annee',$annee)->get() ;                     
-         return view('inscriptionsv.annee',  ['inscriptionsv' => $inscriptionsv]);        
+         return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
          
 	}
 	

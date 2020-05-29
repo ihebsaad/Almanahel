@@ -59,6 +59,7 @@ class InscriptionsController extends Controller
      */
     public function store(Request $request)
     {
+      $srcpage = $request->get('sourcepg');
       $name='';
     if($request->file('bulletin1')!=null)
     {$bulletin1=$request->file('bulletin1');
@@ -140,7 +141,7 @@ $pathb = storage_path()."/fichiers/";
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-        if($request->get('sourcepg') != null)
+        if($srcpage != null)
         {return redirect('/bienvenue');}
         else
         {return redirect('/inscriptions')->with('success', ' inscrit avec succès');}

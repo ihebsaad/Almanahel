@@ -39,11 +39,7 @@
                     <label for="montant">Détails:</label>
                     <input id="details" type="text" class="form-control" name="details"   value="<?php echo $paiement['details']; ?>"/>
                 </div>
-				
-				 <div class="form-group">
-                    <label for="montant">Année:</label>
-                    <input id="annee" type="number" min="2020"  class="form-control" name="annee"   value="<?php echo $paiement['annee']; ?>"/>
-                </div>	
+			 
 			  
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Modifier</button>

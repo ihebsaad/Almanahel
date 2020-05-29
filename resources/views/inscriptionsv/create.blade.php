@@ -8,103 +8,7 @@
 
 
 
-<style>
-    .box{
-        color: #fff;
-        padding: 20px;
-        display: none;
-        margin-top: 20px;
-    }
-    .nouveau{ color: #000; margin-top: 10px;}
-    .ancien{ color: #000; margin-top: 10px; }
 
-    /* Accordion */
-
-
-  .panel-default>.panel-heading {
-    color: #333;
-    background-color: #eee;
-    border-color: #e4e5e7;
-    padding: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  .panel-default>.panel-heading a {
-      display: block;
-      padding: 10px 15px;
-      font-size: 16px;
-  }
-
-  .panel-default>.panel-heading a:after {
-    content: "";
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    float: right;
-    transition: transform .25s linear;
-    -webkit-transition: -webkit-transform .25s linear;
-  }
-
-  .panel-default>.panel-heading a[aria-expanded="true"] {
-    background-color: #ccc;
-  }
-
-  .panel-default>.panel-heading a[aria-expanded="true"]:after {
-    content: "\2212";
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-
-  .panel-default>.panel-heading a[aria-expanded="false"]:after {
-    content: "\002b";
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-
-  .accordion-option {
-    width: 100%;
-    float: left;
-    clear: both;
-    margin: 15px 0;
-  }
-
-  .accordion-option .title {
-    font-size: 20px;
-    font-weight: bold;
-    float: left;
-    padding: 0;
-    margin: 0;
-  }
-
-  .accordion-option .toggle-accordion {
-    float: right;
-    font-size: 16px;
-    color: #6a6c6f;
-  }
-  .panel-body {
-    
-      padding: 10px 15px;
-  }
-  .sectionform {
-    background-color:#ccc;
-    color: black;
-    font-weight:600;
-    padding:5px 20px;
-      margin-top: 20px;
-    margin-bottom: 15px}
-  .btn-preinscrit {
-
-  }
-</style>
 
 <h3 style="margin-left:50px">Inscription </h3><br><br>    
            <div class="row"  style="margin-left:20px">
@@ -116,7 +20,7 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
         </select>
          élève.
   </section>
-</div>
+</div></br></br></br></br></br></br></br>
 <div id="ancien_box" style="display:none">
    <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsadd') }}">
       {{ csrf_field() }}
@@ -132,10 +36,10 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
 			   
 <div class="row" style="margin-left:20px">
   <div class="form-group " >
-    <div class=" row">
+   
                                    
-                                    
- <select  class="form-control select2" style="width:100%" id="champ1" name="champ1"  onchange="checkexiste1(this)"   >
+                Sélectionnez l'élève         </br>            
+ <select  class="form-control select2" id="champ1" name="champ1"  onchange="checkexiste1(this)"   >
                        
                   
                        
@@ -148,11 +52,12 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
 
                                     </div>
                                 </div>
- </div>
 
 
 
-    <div class="row form-group" style="margin-bottom:30px">
+
+</br></br></br></br></br></br></br>
+    <div class="row form-group" style="margin-bottom:60px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit"  id="test" class="btn btn-primary">
                                    S'inscrire
@@ -169,10 +74,12 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
          {{ csrf_field() }}
 <div class="row" style="margin-left:20px">
   <div class="form-group " >
-    <div class=" row">
-                                   
+        
+  
+                   Sélectionnez l'élève    </br>   
+
                                     
-                <select class="form-control select2" style="width:100%" id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
+           <select class="form-control select2" style="width:100%"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
                        
                   
                        
@@ -183,8 +90,10 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
 
                      </select>
  </div>
+  </div>
+  
 
-
+</br></br></br></br></br></br></br>
 
     <div class="row form-group" style="margin-bottom:30px">
                             <div class="col-md-6 col-md-offset-4">
@@ -196,6 +105,7 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()">
                        
                    </form>  
   </div>
+</div>
 
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
         

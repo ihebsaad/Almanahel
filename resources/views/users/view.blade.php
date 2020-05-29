@@ -13,10 +13,12 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-    <div class=" " style="padding:8px 8px 8px 8px">
-        <div class="portlet box grey">
-            <h3>   Utilisateur</h3>
+     <div class="card uper">
+
+		<div class="card-header">
+            Fiche d'utilisateur
         </div>
+        <div class="card-body">
     <form class="form-horizontal" method="POST"  action="{{action('UsersController@update', $id)}}" >
         {{ csrf_field() }}
 
@@ -113,15 +115,15 @@
                 <div class="form-group">
                     <label for="eleve">Total des paiements:</label>
           <input id="totalpaiement" autocomplete="off"    type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
-         				</div>
+         	 	</div>
                 <div class="form-group">
                     <label for="absences">Total des absences:</label>
 					<input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
-      				</div>
+      			 </div>
                 <div class="form-group">
                     <label for="retards">Total des retards:</label>
              <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                </td>
-          				</div>
+          		 </div>
                 <div class="form-group">
                     <label for="eleve">Remarques:</label>
 		  <textarea id="remarques" autocomplete="off" onchange="changing(this)"    class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
@@ -210,6 +212,7 @@
     </form>
 
 
+ </div>
  </div>
 	<style>
         #tabstats {font-size: 15px;padding:30px 30px 30px 30px;}

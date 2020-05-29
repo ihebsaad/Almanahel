@@ -216,6 +216,7 @@ Route::post('/classes/createeleveclass','ClassesController@createeleveclass')->n
 Route::post('/classes/removeeleveclass','ClassesController@removeeleveclass')->name('classes.removeeleveclass');
 Route::post('/classes/createenseignantclass','ClassesController@createenseignantclass')->name('classes.createenseignantclass');
 Route::post('/classes/removeenseignantclass','ClassesController@removeenseignantclass')->name('classes.removeenseignantclass');
+Route::get('/classes/annee/{annee}', 'ClassesController@annee')->name('classes.annee');
 
 
 /*** pre-Inscriptions **/

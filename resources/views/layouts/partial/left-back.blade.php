@@ -42,7 +42,7 @@ $user_type=$user->user_type;
           <i class="fas fa-fw fa-cog"></i>
           <span>Contenu du site</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse <?php if  ( ! (strpos($view_name,'contenus') === false) )   { echo 'show';}?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
              <a class="collapse-item" href="{{route('contenuhome')}}">Accueil</a>
             <a class="collapse-item" href="{{route('contenupresentation')}}">Presentation</a>

@@ -37,7 +37,7 @@ $user_type=$user->user_type;
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item     <?php if  ( startsWith($view_name,'contenus')  )   { echo 'active';}?> ">
+      <li class="nav-item     <?php if  ( ! (strpos($view_name,'contenus') === false) )   { echo 'active';}?> ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Contenu du site</span>

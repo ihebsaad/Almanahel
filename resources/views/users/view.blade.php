@@ -25,50 +25,39 @@
 
 
         <input type="hidden" id="iduser" value="{{$id}}" ></input>
-        <div class="form-group">
-        <table class="table">
-
-        <tbody>
-
-        <tr>
-            <td class="text-primary">Prénom </td>
-            <td>
+        
+        
+                <div class="form-group">
+                <label for="name">Prénom:</label>
                 <input id="name" onchange="changing(this)" type="text" class="form-control" name="name"  value="{{ $user->name }}" />
-                </td>
-        </tr>
-        <tr>
-            <td class="text-primary">Nom </td>
-            <td>
+               </div>
+           
+                <div class="form-group">
+                    <label for="eleve">Nom:</label>
                 <input id="lastname" onchange="changing(this)" type="text" class="form-control" name="lastname"  value="{{ $user->lastname }}" />
-            </td>
-        </tr>
-        <tr>
-            <td class="text-primary">Identifiant</td>
-            <td> <input   id="username" autocomplete="off"  onchange="changing(this)" type="text" class="form-control" name="username" value="{{ $user->username }}" />          </td>
-        </tr>
-    <!--    <tr>
-            <td class="text-primary">Mot de passe</td>
-            <td> <input autocomplete="off"   onchange="changing(this)"  type="password" class="form-control" name="password"  id="password"   />          </td>
-        </tr>-->
-        <tr>
-            <td class="text-primary">Adresse E-mail</td>
-            <td> <input id="email" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
-        </tr>
-        <tr>
-            <td class="text-primary">Date de naissance</td>
-            <td> <input id="naissance" autocomplete="off" onchange="changing(this)"   type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
-            </td>
-        </tr>
-            <tr>
-                <td class="text-primary">Tel</td>
-                <td>    <input id="tel" onchange="changing(this);"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
-                </td>
-            </tr>
-       
+             
+         		 </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse Email:</label>
+               <input id="email" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
+               </div>
+
+                <div class="form-group">
+                    <label for="eleve">Date de naissance:</label>
+              <input id="naissance" autocomplete="off" onchange="changing(this)"   type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
+             	 </div>
+
+                <div class="form-group">
+                    <label for="eleve">N° Tel:</label>
+
+			<input id="tel" onchange="changing(this);"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
+          	 </div>
+
        <?php if($user->user_type!='admin') { ?>
-        <tr>
-            <td class="text-primary">Qualification</td>
-            <td>
+         
+                <div class="form-group">
+                    <label for="user_type">Qualification:</label>
                 <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
                     <option></option>
                      <option value="eleve"  <?php if($user->user_type=='eleve') {echo'selected="selected"';}?> >Élève</option>
@@ -79,20 +68,20 @@
                     <option  value="suivi"  <?php if($user->user_type=='suivi') {echo'selected="selected"';}?>  >Suivi pédagogique</option>
                    
                 </select>
-            </td>
-        </tr>
+           </div>
+
 <?php } ?>
 <?php if($user->user_type=='eleve') {?>
-    <tr>
+ 
+                <div class="form-group">
+                    <label for="eleve">Niveau:</label>
+             <input id="niveau" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
+       
+		 		 </div>
 
-        <td class="text-primary">Niveau</td>
-            <td> <input id="niveau" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
-        </tr>
-	<tr>
-        <tr>
-
-        <td class="text-primary">Classe</td>
-        <td>
+        
+                <div class="form-group">
+                    <label for="classe">Classe:</label>
               <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="classe" >
                           <?php if ( count($relations2) > 0 ) { ?>
 
@@ -111,40 +100,35 @@
                          <?php }  ?>
 
                      </select>
+			  </div>
 
-            </td>
-        </tr>
-      <tr>
-	    <td class="text-primary">Paiements</td>
-            <td> <select id="paiements"   onchange="changing(this)"    class="form-control" name="paiements"    >
+                <div class="form-group">
+                    <label for="paiements">Paiements:</label>
+				<select id="paiements"   onchange="changing(this)"    class="form-control" name="paiements"    >
 				<option value=""></option>
 				<option <?php if(  $user->paiements =='termine'  ){echo 'selected="selected"';} ?> value="termine">Terminé</option>
 				<option <?php if(  $user->paiements =='encours'  ){echo 'selected="selected"';} ?>value="encours">En cours</option>
 				</select>
-			</td>
-        </tr>
-        <tr>
-        <td class="text-primary">Total Paiement</td>
-            <td> <input id="totalpaiement" autocomplete="off"    type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
-        </tr>
-        <tr>
-
-        <td class="text-primary">Absences</td>
-            <td> <input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
-        </tr>
-        <tr>
-
-        <td class="text-primary">Retards</td>
-            <td>      <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                </td>
-        </tr>
+		 		 </div>
+                <div class="form-group">
+                    <label for="eleve">Total des paiements:</label>
+          <input id="totalpaiement" autocomplete="off"    type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
+         				</div>
+                <div class="form-group">
+                    <label for="absences">Total des absences:</label>
+					<input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
+      				</div>
+                <div class="form-group">
+                    <label for="retards">Total des retards:</label>
+             <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                </td>
+          				</div>
+                <div class="form-group">
+                    <label for="eleve">Remarques:</label>
+		  <textarea id="remarques" autocomplete="off" onchange="changing(this)"    class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
         
-        <td class="text-primary">Remarques</td>
-            <td> <textarea id="remarques" autocomplete="off" onchange="changing(this)"    class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
-        </tr>
-         <tr>
-
-        <td class="text-primary">Parents</td>
-          <td>
+				</div>
+                <div class="form-group">
+                    <label for="eleve">Parents:</label>
              <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="parent" >
                           <?php if ( count($relations1) > 0 ) { ?>
 
@@ -161,20 +145,15 @@
                          @endforeach
 
                          <?php }  ?>
-
-                     </select>
-          </td>
-
-
-        </tr>
-        
+			</select>
+			</div>
+                    
  <?php } ?> 
  <?php if($user->user_type=='parent') {?>
    
-        <tr>
-
-        <td class="text-primary">Élèves</td>
-          <td>
+        
+                <div class="form-group">
+                    <label for="eleve">Enfant:</label>
                <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="eleve" >
                           <?php if ( count($relations) > 0 ) { ?>
 
@@ -193,19 +172,14 @@
                          <?php }  ?>
 
                      </select>
-          </td>
-
-
-        </tr>
-
+       
+</div>
  <?php } ?> 
         <?php if($user->user_type=='prof') {?>
    
-        <tr>
-
-        <td class="text-primary">Classes</td>
-          <td>
-          
+        
+                <div class="form-group">
+                    <label for="eleve">Classse(s):</label>
                 <select class="form-control select2 " style="width:100%" name="itemName1"  multiple  id="classe1" >
                           <?php if ( count($relations3) > 0 ) { ?>
 
@@ -224,26 +198,19 @@
                          <?php }  ?>
 
                      </select>
-          </td>
-
-
-        </tr>
-
+       </div>
         
  <?php } ?> 
 
 
        
-
-        </tbody>
-        </table>
+ 
 
        
     </form>
 
 
-</div>
-</div>
+ </div>
 	<style>
         #tabstats {font-size: 15px;padding:30px 30px 30px 30px;}
         #tabstats td{border-left:1px solid white;border-bottom:1px solid white;min-width:50px;min-height: 25px;;text-align: center;}

@@ -28,15 +28,19 @@ class ClassesController extends Controller
      */
     public function index()
     {
-		
-	 
-		  $classes =Classe::orderBy('titre', 'asc')->get() ;
+		   $classes =Classe::orderBy('titre', 'asc')->get() ;
                               
           return view('classes.index',  ['classes' => $classes]);        
 		  
      }
 
- 
+     public function annee($annee)
+    {
+		  $classes =Classe::orderBy('titre', 'asc')->where('annee',$annee)->get() ;
+                              
+          return view('classes.annee',  ['annee'=>$annee,'classes' => $classes]);        
+		  
+     }
  
     /**
      * Show the form for creating a new resource.

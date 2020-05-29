@@ -118,8 +118,8 @@ $user_type=$user->user_type;
 	<?php } if ($user_type=='admin' || $user_type=='financier' ){?>
 
 	  <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item <?php if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'active';}?> ">
-        <a class="nav-link" href="#" data-toggle="collapse  " data-target="#collapsetrois" aria-expanded="false" aria-controls="collapsetrois">
+      <li class="nav-item ">
+        <a class="nav-link  <?php if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'active';}?> " href="#" data-toggle="collapse  " data-target="#collapsetrois" aria-expanded="false" aria-controls="collapsetrois">
           <i class="fas fa-fw fa-folder"></i>
           <span>Finances</span>
         </a>

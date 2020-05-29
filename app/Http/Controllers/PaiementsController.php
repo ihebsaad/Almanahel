@@ -27,14 +27,14 @@ class PaiementsController extends Controller
     { 
 
         $paiements = Paiement::orderBy('id', 'desc')->get();
-        return view('paiements.annee',[ ], compact('paiements'));
+        return view('paiements.index',[ ], compact('paiements'));
     }
 
      public function annee($annee)
     { 
 
         $paiements = Paiement::orderBy('id', 'desc')->where('annee',$annee)->get();
-        return view('paiements.index',['annee'=>$annee ], compact('paiements'));
+        return view('paiements.annee',['annee'=>$annee ], compact('paiements'));
     }
 
  

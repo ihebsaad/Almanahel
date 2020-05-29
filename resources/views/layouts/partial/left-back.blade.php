@@ -55,7 +55,7 @@ $user_type=$user->user_type;
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item  <?php if ( ( ! (strpos($view_name,'evenements') === false) ) || ( ! (strpos($view_name,'actualites') === false) ) || ( ! (strpos($view_name,'annonces') === false) ) )  { echo 'active';}?>  "  >
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse <?php if ( ( ! (strpos($view_name,'evenements') === false) ) || ( ! (strpos($view_name,'actualites') === false) ) || ( ! (strpos($view_name,'annonces') === false) ) )  { echo 'show';}?>  " data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-calendar"></i>
           <span>Nouveautés</span>
         </a>
@@ -97,11 +97,11 @@ $user_type=$user->user_type;
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item ">
       <!--  <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">-->
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" >
+        <a class="nav-link  <?php if ( ( ! (strpos($view_name,'inscriptions') === false) ) || ( ! (strpos($view_name,'absences') === false) ) || ( ! (strpos($view_name,'retards') === false) ) )  { echo 'active';}?> " href="#" data-toggle="collapse" data-target="#collapsePages" >
           <i class="fas fa-fw fa-wrench"></i>
           <span>Vie Scolaire</span>
         </a>
-        <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse  <?php if ( ( ! (strpos($view_name,'inscriptions') === false) ) || ( ! (strpos($view_name,'absences') === false) ) || ( ! (strpos($view_name,'retards') === false) ) )  { echo 'show';}?>  " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 <?php  if ( ! ($user_type=='parent') ) { ?> 
             <a class="collapse-item" href="{{route('inscriptions')}}">Pré-Inscriptions</a>
@@ -118,8 +118,8 @@ $user_type=$user->user_type;
 	<?php } if ($user_type=='admin' || $user_type=='financier' ){?>
 
 	  <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item ">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+      <li class="nav-item <?php if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'active';}?> ">
+        <a class="nav-link" href="#" data-toggle="collapse <?php if ( ( ! (strpos($view_name,'paiements') === false) ) || ( ! (strpos($view_name,'depenses') === false) ) || ( ! (strpos($view_name,'excels') === false) ) )  { echo 'show';}?> " data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
           <i class="fas fa-fw fa-folder"></i>
           <span>Finances</span>
         </a>
@@ -137,7 +137,7 @@ $user_type=$user->user_type;
 	<?php } if ($user_type=='admin'   ){?>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item  <?php if (  ! (strpos($view_name,'documents-index') === false) )   { echo 'active';}?> ">
         <a class="nav-link" href="{{route('documents')}}">
           <i class="fas fa-fw fa-folder-open"></i>
           <span>Tous les Documetnts</span></a>
@@ -145,20 +145,20 @@ $user_type=$user->user_type;
 	<?php }  ?>
 
 	  <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item  <?php if (  ! (strpos($view_name,'documents-docsrec') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('docsrecu')}}">
           <i class="fas fa-file-import"></i>
           <span>Mes Documetnts reçus</span></a>
       </li>
 	  <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item  <?php if (  ! (strpos($view_name,'documents-docsenv') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('docsenv')}}">
           <i class="fas fa-file-export"></i>
           <span>Mes Documetnts envoyés</span></a>
       </li>
 	  
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <li class="nav-item  <?php if (  ! (strpos($view_name,'envoyes') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('envoyes')}}">
           <i class="fas fa-fw fa-envelope"></i>
           <span>Emails</span></a>

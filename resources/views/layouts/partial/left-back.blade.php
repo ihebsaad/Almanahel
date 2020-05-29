@@ -37,7 +37,7 @@ $user_type=$user->user_type;
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item     <?php if  ( startsWith($view_name,'contenus')  )   { echo 'active';}?> ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Contenu du site</span>
@@ -74,7 +74,7 @@ $user_type=$user->user_type;
       <div class="sidebar-heading">
         Utilisateurs
       </div>
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree"   aria-controls="collapsethree">
           <i class="fas fa-fw fa-users"></i>
           <span>Membres</span>

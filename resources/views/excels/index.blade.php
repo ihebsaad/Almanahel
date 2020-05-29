@@ -81,10 +81,10 @@ $user=User::where('id',$excel->emetteur)->first() ;
 
 					<td>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
-                            <span class="fa fa-fw fa-download"></span> Supprimer
+                            <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
                           <a  class="btn btn-md btn-success" role="button"  class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/excels/<?php echo  $excel->chemin?>" > 
-                            <span class="fa fa-fw fa-trash-alt"></span> Télécharger
+                            <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>
                   
                   </td>

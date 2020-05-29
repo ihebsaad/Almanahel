@@ -71,7 +71,7 @@
                 <tr>
                     <td>{{$excel->id}}</td>
                      <td><?php echo $excel->created_at;?></td>
-                     <td><a href="{{action('DocumentsController@view', $excel['id'])}}" >{{ $excel->titre }}</a></td>
+                     <td><a href="{{action('ExcelsController@view', $excel['id'])}}" >{{ $excel->titre }}</a></td>
                     <td><?php 
 
 $user=User::where('id',$excel->emetteur)->first() ;

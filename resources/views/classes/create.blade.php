@@ -27,11 +27,7 @@
                                 @endif
                             </div>
                         </div>
-                             <div class="form-group " style="margin-bottom:30px">
-                         <label for="name" class="col-md-4 control-label">Année</label>
-
-                            
-                        </div>
+                           
                        
                       <!--  <div class="form-group">
                             <label for="Role" class="col-md-4 control-label">Rôle</label>

@@ -13,7 +13,13 @@ $cont7 =  App\Contenu::where('zone', 'scolaire7')->first();$contenu7=$cont7->con
 $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->contenu ;
  
 ?>
- 
+  <div class="jumbotron card card-image" style="background-image: url({{  URL::asset('public/site/img/gradient.jpg') }}); padding:0px!important;text-align:left!important;border:none!important;border-radius:0px!important;margin-top: -30px;">
+  <div class="text-white text-center py-5 px-4" style="padding-top: 20px!important; padding-bottom: 40px!important;">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold" style="margin-bottom: 0px!important;"><strong>Vie Scolaire</strong></h2>
+    </div>
+  </div>
+</div>
  <div class="row" style="width:100%;padding-bottom: 20px">
 
  <div class="col-lg-12 col-sm-12">

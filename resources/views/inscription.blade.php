@@ -105,6 +105,13 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 
 	}
 </style>
+<div class="jumbotron card card-image" style="background-image: url({{  URL::asset('public/site/img/gradient.jpg') }}); padding:0px!important;text-align:left!important;border:none!important;border-radius:0px!important;margin-top: -30px;">
+  <div class="text-white text-center py-5 px-4" style="padding-top: 20px!important; padding-bottom: 40px!important;">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold" style="margin-bottom: 0px!important;"><strong>Inscription</strong></h2>
+    </div>
+  </div>
+</div>
 <div class="container">
 <div class="row" style="text-align: center;padding-bottom: 20px">
 	<h3> Pré-inscription / Inscription 2020-2021 </h3>

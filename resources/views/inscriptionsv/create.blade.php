@@ -112,14 +112,13 @@
    <div class="card-body">
    
    <div class="form-group"  style=" ">
-  <section  style=" font-size: 18px; font-weight: 1300; color: #545454;">
-Inscription pour : <select id="elevestat" onBlur="eleveverif()" style="width:1100" class="form-control">
+ Inscription pour :<br>
+ <select id="elevestat" onBlur="eleveverif()" style="width:1100" class="form-control">
             <option>Selectionner</option>
             <option value="nouveau">Nouveau élève</option>
             <option value="ancien">Ancien élève</option>
         </select>
-  </section>
-</div>
+ </div>
 <div id="ancien_box" style="display:none">
    <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsadd') }}">
       {{ csrf_field() }}
@@ -134,8 +133,8 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()" style="width:110
  
    <div class="form-group " >
                                     
-    Sélectionnez l'élève <br> $                                
- <select style="width:1300" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
+    Sélectionnez l'élève <br>                                 
+ <select style="width:100%" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
 @foreach($users as $user)
                             <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .$user->name; ?></option>                          
                              @endforeach

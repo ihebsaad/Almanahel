@@ -31,7 +31,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
  
  <center>
  <a href="https://g.page/almanahel-monastir" target="blank">
- <img src="{{  URL::asset('public/site/img/manahel.png') }}"></a>
+ <img src="{{  URL::asset('public/site/img/manahel.png') }}" width="420"></a>
  </center>
  
  </div>

@@ -20,7 +20,8 @@ $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4-
 <div class="col-xs-12 col-sm-12     ">
 
 <section>
-<h2> Mot de la direction pédagogique du lycée Al-Manahel-Monastir</h2>
+<h2 class="heading-title" >Mot de la direction pédagogique du lycée Al-Manahel-Monastir</h2>
+  <span class="heading-title-border"></span>
 <?php echo $contenu; ?>
 </section>
 
@@ -30,7 +31,8 @@ $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4-
 <div class="row">
 <!-- contenu 2 -->
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
-<h2>Nos résultats </h2>
+<h2 class="heading-title" >Nos résultats</h2>
+  <span class="heading-title-border"></span>
 <section>
 <?php echo $contenu2; ?>
 </section>
@@ -38,7 +40,8 @@ $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4-
 </div>
 <!-- contenu 3 -->
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
-<h2> Alumni</h2>
+<h2 class="heading-title" >Alumni</h2>
+  <span class="heading-title-border"></span>
 <section>
 <?php echo $contenu3; ?>
 </section>

@@ -17,7 +17,8 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
  <div class="row" style="width:100%;padding-bottom: 20px">
 
  <div class="col-lg-12 col-sm-12">
- <h4 style="text-align:center" >Galerie</h4>
+ <h2 class="heading-title" >Galerie</h2>
+  <span class="heading-title-border"></span>
   
           <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -66,8 +67,9 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
  
  	</div>
 
-  <div class="col-lg-12 col-sm-12">
- <h4 style="text-align:center" >Calendrier de l'école</h4>
+  <div class="col-lg-12 col-sm-12" style="margin-bottom: 20px;margin-top: 40px">
+ <h2 class="heading-title" >Calendrier de l'école</h2>
+  <span class="heading-title-border"></span>
 
 	@include('evenements.calendar')  
 	</div>
@@ -235,11 +237,11 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
   
   
     <style>
-	h4{color:#028dc8;margin-top:15px;margin-bottom:15px;}
+	/*h4{color:#028dc8;margin-top:15px;margin-bottom:15px;}
 	
 	.fc-content{font-size:16px;height:40px;}
 	
-  /* Make the image fully responsive */
+ 
   .carousel-inner img {
       width: 100%;
       height: 100%;
@@ -258,7 +260,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
    font-family: Roboto;
    font-weight: 400; font-size: 24px;
 text-transform: uppercase;   text-shadow: 0px 1px rgba(64, 64, 64, 0.8);
-}
+}*/
   
 a [role="button"]{color:black;text-decoration:none;}
  

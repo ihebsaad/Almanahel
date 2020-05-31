@@ -69,11 +69,12 @@ ul{
 .mainmenu ul li:first-child{margin-left:0px;}
 .mainmenu ul li:last-child{margin-right:0px;}
 .mainmenu ul li > a{
-	text-transform:uppercase;
-	padding:22px 15px;
-	color:#333;
-	display:block;
-	position:relative;
+	text-transform: uppercase;
+    padding: 22px 15px;
+    color: #525252;
+    display: block;
+    position: relative;
+    font-weight: 600;
 }
 .mainmenu ul li.active > a,.mainmenu ul li:hover > a{
 	/*background:#296dc1;*/

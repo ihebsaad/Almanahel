@@ -10,10 +10,11 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 
  ?>
  
-<div class="row">  
- 
-<center><h4>Dernières Annonces<h4></center>
-  
+<div class="col-lg-12 col-sm-12">  
+ <h2 class="heading-title" >Dernières Annonces</h2>
+  <span class="heading-title-border"></span>
+</div>
+ <div class="row" style="margin-bottom: 40px">  
 @include('annonces')
   
  </div>
@@ -26,7 +27,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
   
  
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-8 col-md-10 mx-auto" style="margin-top: 40px">
         <p>Questions? n'hésitez pas à nous contacter</p>
 		<!--<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">-->
 		<form method="post"  id="myform" >

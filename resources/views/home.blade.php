@@ -19,28 +19,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-  <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-      width: 100%;
-      height: 100%;
-  }
-    div#demo > div.carousel-inner > div.carousel-item:after {
-      content:"";
-      position:absolute;
-      top:0;
-      bottom:0;
-      left:0;
-      right:0;
-      background:rgba(0,0,0,0.3);
-    }
-	
- .carousel-caption h3 {
-   font-family: Roboto;
-   font-weight: 400; font-size: 24px;
-text-transform: uppercase;   text-shadow: 0px 1px rgba(64, 64, 64, 0.8);
-}
-  </style>
+ 
 
   <header class="masthead" style= "background-image:'<?php echo $link ;?>'" >
     <div class="overlay"></div>

@@ -136,8 +136,8 @@
     Sélectionnez l'élève <br>                                 
  <select style="width:100%" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
 @foreach($users as $user)
-                            <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .$user->name; ?></option>                          
-                             @endforeach
+  <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .' '.$user->name; ?></option>                          
+   @endforeach
    </select>
     </div>
   

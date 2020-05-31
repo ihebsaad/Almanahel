@@ -3,7 +3,7 @@
 
 
 @section('content')
-<h3 style="margin-left:50px">Formulaire Pré-inscription </h3><br><br>    
+<h3 style="margin-left:50px">Formulaire Pré-inscription </h3>    
             <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
              <fieldset>

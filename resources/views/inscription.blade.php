@@ -168,13 +168,13 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 </div>
 
 <div class="row">
-	<section style=" font-size: 18px; font-weight: 500; color: #545454;">
+	<section style=" font-size: 18px; font-weight: 500; color: #545454;width:200px">
 		Vous êtes : <select id="elevestat">
             <option>Selectionner</option>
-            <option value="nouveau">Nouveau</option>
-            <option value="ancien">Ancien</option>
+            <option value="nouveau">Nouveau élève</option>
+            <option value="ancien">Ancien élève</option>
         </select>
-         élève.
+         
 	</section>
 </div>
 <div class="row">

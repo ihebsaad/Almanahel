@@ -105,9 +105,13 @@
 
   }
 </style>
-
-<h3 style="margin-left:50px">Créer une inscription </h3><br><br>    
-  <div class="row"  style="margin-left:20px">
+ <div class="card uper">
+        <div class="card-header">
+            <label>Créer une inscription</label>
+        </div>
+   <div class="card-body">
+   
+   <div class="form-group"  style=" ">
   <section  style=" font-size: 18px; font-weight: 1300; color: #545454;">
 Inscription pour : <select id="elevestat" onBlur="eleveverif()" style="width:1100" class="form-control">
             <option>Selectionner</option>
@@ -147,16 +151,14 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()" style="width:110
  </div>
 </form>  
 
-                         </div>
+  </div>
                       
 
 <div id="nouveau_box" style="display:none">
      <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsaddnov') }}">
          {{ csrf_field() }}
-<div class="row" style="margin-left:20px">
-  <div class="form-group " >
-    <div class=" row">
-   Sélectionnez l'élève   <br>     
+   <div class="form-group " >
+    Sélectionnez l'élève   <br>     
                                     
     <select  style="width:1300" class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
                        
@@ -169,19 +171,19 @@ Inscription pour : <select id="elevestat" onBlur="eleveverif()" style="width:110
 
                      </select>
  </div>
-
-<br><br> <br><br> <br><br> 
-
-    <div class="row form-group" style="margin-bottom:30px">
+  <div class="  form-group" style="margin-bottom:20px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit"  id="test1" class="btn btn-primary">
                                    S'inscrire
                                 </button>
                             </div>
-                        </div>
-                       
-                   </form>  
   </div>
+                       
+   </form>  
+  </div>
+  
+ </div>
+</div>
 
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
         

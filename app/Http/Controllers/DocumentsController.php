@@ -27,7 +27,7 @@ class DocumentsController extends Controller
     public function index()
     {
      
-      $documents =Document::orderBy('created_at', 'des')->get() ;
+      $documents =Document::orderBy('created_at', 'desc')->get() ;
                               
           return view('documents.index',  ['documents' => $documents]);        
      
@@ -35,7 +35,7 @@ class DocumentsController extends Controller
    
   public function annee($annee)
     {
-     $documents =Document::orderBy('created_at', 'des')->where('annee',$annee)->get() ;                              
+     $documents =Document::orderBy('created_at', 'desc')->where('annee',$annee)->get() ;                              
           return view('documents.annee',  ['annee'=>$annee,'documents' => $documents]);        
 
   }
@@ -44,7 +44,7 @@ class DocumentsController extends Controller
         $id=Auth::id();
    $idclasses = DB::table('eleves_classe')->where('eleve','=',$id)->pluck('classe');
 
-          $documents = Document::orderBy('created_at', 'des')->where('type', '!=' , 'classe')->where('destinataire',$id)
+          $documents = Document::orderBy('created_at', 'desc')->where('type', '!=' , 'classe')->where('destinataire',$id)
           ->orWhere('type','classe')->whereIn('destinataire', $idclasses)->orderBy('titre', 'asc')->get() ;
         
           
@@ -57,7 +57,7 @@ class DocumentsController extends Controller
         $id=Auth::id();
  
 
-          $documents = Document::orderBy('created_at', 'des')->where('emetteur',$id)
+          $documents = Document::orderBy('created_at', 'desc')->where('emetteur',$id)
           ->get() ;
         
           

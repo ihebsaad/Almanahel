@@ -63,7 +63,9 @@ class EvenementsController extends Controller
                'titre' => trim($request->get('titre')),
                'description' => trim($request->get('description')),
                'debut' => trim($request->get('debut')),
+               'heure_debut' => trim($request->get('heure_debut')),
                'fin' => trim($request->get('fin')),
+               'heure_fin' => trim($request->get('heure_fin')),
              'type' => trim($request->get('type')),
              'visible' => ($visible),
             // 'par'=> $request->get('par'),
@@ -136,6 +138,8 @@ class EvenementsController extends Controller
 		 $description= $request->get('description');
 		 $debut= $request->get('debut');
 		 $fin= $request->get('fin');
+		 $heure_debut= $request->get('heure_debut');
+		 $heure_fin= $request->get('heure_fin');
 		 $type= $request->get('type');
 		$vis=$request->get('visible');
 		if($vis=="on" || $vis==1 ){
@@ -151,6 +155,8 @@ class EvenementsController extends Controller
 		'description' => $description,
 		'debut' => $debut,
 		'fin' => $fin,
+		'heure_debut' => $heure_debut,
+		'heure_fin' => $heure_fin,
 		'type' => $type,
 		)
 		);	

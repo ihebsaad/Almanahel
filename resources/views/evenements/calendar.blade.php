@@ -66,10 +66,14 @@ allDayText:'Toute la journée',
 	  {$i++;
 				$titre=$event->titre;
 				$type=$event->type;
+				$heure_debut=$event->heure_debut;
+				$heure_fin=$event->heure_fin;
  				 $debut = DateTime::createFromFormat('d/m/Y', $event->debut );
  				 $fin = DateTime::createFromFormat('d/m/Y', $event->fin );
 				 $debut=$debut->format('Y-m-d');
 				 $fin=$fin->format('Y-m-d');
+				 
+				// if()
 				 if($type=="simple"){
 				 $color="
 				   color: '#04b431',    

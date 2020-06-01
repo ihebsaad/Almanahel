@@ -46,7 +46,7 @@
                 </div>
 				<div class="form-group">
                     <label for="type">Type:</label>
-                    <select id="type" type="text" class="form-control" name="type" onchange="verif();" required>
+                    <select id="type" type="text" class="form-control" name="type" onchange=" " required>
 					<option value=""></option>
 					<option value="simple">Simple</option>
 					<option value="vacances">Vacances</option>
@@ -54,7 +54,7 @@
 					<!--<option value="event">Evenement</option>-->
 					</select>
                 </div>
-				<div style="display:none" id="time"> 
+				<div   id="time"> 
 		 		 <div class="form-group">
                     <label for="heure_debut">Heure de Début:</label>
                     <input id="heure_debut" type="time" class="form-control" name="heure_debut" ></input>

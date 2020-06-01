@@ -135,9 +135,9 @@ class PaiementsController extends Controller
     {
  
 		$id=$request->get('id');
-		$eleve= (intval) $request->get('eleve');
+		$eleve=  $request->get('eleve');
          $paiement  = Paiement::find($id);
-		
+		if($eleve>0){$eleve =$request->get('eleve'); }else{$eleve=0;}
  
 		 Paiement::where('id',$id)->update(
 		array(

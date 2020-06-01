@@ -45,9 +45,8 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
  
 			 <div class="control-group">
             <div class="form-group  ">
-              <label>Type de demande</label>
               <select   class="form-control"   id="demande"  >
-			  <option value="">sélectionnez</option>
+			  <option value="">Sélectionnez le type de demande</option>
 			  <option value="emploi">Emploi</option>
 			  <option value="formation">Formation</option>
 			  </select>
@@ -77,7 +76,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
           <div class="control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Date de naissance</label>
-              <input type="text" class="form-control" placeholder="jj/mm/aaaa" id="naissance" >
+              <input type="text" class="form-control" placeholder="date de naissance (jj/mm/aaaa)" id="naissance" >
               <p class="help-block text-danger"></p>
             </div>
           </div>
@@ -90,9 +89,8 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
           </div>
 		 <div class="control-group">
             <div class="form-group  ">
-              <label>Qualification</label>
-              <select   class="form-control"   id="qualification"  >
-			  <option value="">sélectionnez</option>
+               <select   class="form-control"   id="qualification"  >
+			  <option value="">sélectionnez votre qualification</option>
 			  <option value="technicien">Technicien</option>
 			  <option value="preparateur">Préparateur</option>
 			  <option value="enseignant">Enseignant</option>
@@ -106,7 +104,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 		  <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Adresse</label>
-              <textarea   class="form-control"  id="adresse"  ></textarea>
+              <textarea   class="form-control"  id="adresse" placeholder="Adresse" ></textarea>
              </div>
           </div>
           <div class="control-group">

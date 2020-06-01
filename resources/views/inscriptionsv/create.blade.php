@@ -167,6 +167,7 @@
     <select  style="width:100%;height:38px;padding-top: 5px;padding-left:5px;" class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
  
 @foreach($preins as $prein)
+<option></option>
     <option value="<?php  echo $prein->id; ?>"><?php echo $prein->nom .' '.$prein->prenom; ?></option>                          
        @endforeach                    
     </select>

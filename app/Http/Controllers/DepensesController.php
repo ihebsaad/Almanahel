@@ -144,7 +144,7 @@ class DepensesController extends Controller
              'beneficiaire' => trim($request->get('beneficiaire')),
              'montant' => trim($request->get('montant')),
              'libelle' => trim($request->get('libelle')),
-             'annee' => trim($request->get('annee')),
+           //  'annee' => trim($request->get('annee')),
 		)
 		);	
 			

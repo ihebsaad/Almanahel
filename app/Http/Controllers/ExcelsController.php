@@ -88,7 +88,7 @@ class ExcelsController extends Controller
 		Excel::where('type',$type)
 		->where('annee',$annee)
 		->where('mois',$mois)
-		-delete();
+		->delete();
 		
         $excel = new Excel([
              'titre' =>$request->get('titre'),

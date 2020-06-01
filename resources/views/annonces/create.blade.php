@@ -29,7 +29,7 @@
 			  {{ csrf_field() }}
                 <div class="form-group">
                     <label for="titre">Image:</label>
-                    <input id="image" type="file" class="form-control" name="image"/>
+                    <input id="image" type="file" class="form-control" name="image"  accept="image/*"/>
                 </div>
                 <div class="form-group">
                     <label for="titre">Titre:</label>

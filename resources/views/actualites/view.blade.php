@@ -24,7 +24,7 @@
 			  <div class="row">
                 <div class="form-group col-md-6">
                     <label for="titre">Image:</label>
-                    <input id="image" type="file" class="form-control" name="image"/>
+                    <input id="image" type="file" class="form-control" name="image"  accept="image/*"/>
                 </div>
 				 <div class="  col-md-6">
 

@@ -46,7 +46,8 @@
                 </div>
 				<div class="form-group">
                     <label for="type">Type:</label>
-                    <select id="type" type="text" class="form-control" name="type" onchange="verif();" >
+                    <select id="type" type="text" class="form-control" name="type" onchange="verif();" required>
+					<option value=""></option>
 					<option value="simple">Simple</option>
 					<option value="vacances">Vacances</option>
 					<option value="examens">Examens</option>

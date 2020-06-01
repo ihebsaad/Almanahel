@@ -38,7 +38,7 @@ class InscriptionsvController extends Controller
      */
     public function create()
     {
-  $preins = DB::table('inscriptions')->get();
+  $preins = DB::table('inscriptions')->where('valide',1)->get();
   $users = DB::table('users')->where('user_type','eleve')->get();
         return view('inscriptionsv.create',['preins'=>$preins,'users'=>$users] );
     }

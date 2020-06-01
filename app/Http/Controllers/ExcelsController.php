@@ -147,18 +147,6 @@ class ExcelsController extends Controller
 	$mois= $request->get('mois');
 	$annee= $request->get('annee');
 	
-   
-   $chemin= $request->file('chemin');
-       $name='';
-         if($request->file('chemin')!=null)
-          {$chemin=$request->file('chemin');
-            $name = $chemin->getClientOriginalName();
-        
-          $path = storage_path()."/excels/";
-          $chemin->move($path, $name);
-
-
-        }
     
 	$name='';
 		if($request->file('chemin')!=null)

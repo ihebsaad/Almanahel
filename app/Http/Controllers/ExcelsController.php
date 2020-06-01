@@ -146,6 +146,7 @@ class ExcelsController extends Controller
 	$type=	$request->get('type');
 	$mois= $request->get('mois');
 	$annee= $request->get('annee');
+	$titre= $request->get('titre');
 	
     
 	$name='';

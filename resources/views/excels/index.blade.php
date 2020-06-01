@@ -52,9 +52,10 @@
         <tr id="headtable">
             <th>ID</th>
             <th>Date</th>
+			<th>Type</th>
+			<th>Mois</th>
             <th>Titre</th>
              <th>Emetteur</th>
-             <th>Type</th>
             <th>Actions</th>
         </tr>
             
@@ -67,17 +68,20 @@
 				if($type=='profs'){$Type='Paie des enseignants';}
 				if($type=='eleves'){$Type='Paie des élèves';}
 				if($type=='personnels'){$Type='Paie de personnels';}
+				$date=  date('d/m/Y H:i', strtotime($excel['created_at'] ));
 			 ?>
                 <tr>
                     <td>{{$excel->id}}</td>
-                     <td><?php echo $excel->created_at;?></td>
+                     <td><?php echo $date;?></td>
+					  <td><?php echo $Type; ?></td>
+					  <td><?php echo $excel['mois']; ?></td>
+
                      <td><a href="{{action('ExcelsController@view', $excel['id'])}}" >{{ $excel->titre }}</a></td>
                     <td><?php 
 
 $user=User::where('id',$excel->emetteur)->first() ;
                     echo $user['name']." ".$user['lastname'];?></td>
                     
-                    <td><?php echo $Type; ?></td>
 
 					<td>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >

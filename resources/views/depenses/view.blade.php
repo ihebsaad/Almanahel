@@ -22,7 +22,7 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('depenses.store') }}"  enctype="multipart/form-data">
+            <form method="post" action="{{ route('depenses.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
 			  
 		  <input type="hidden" value="<?php echo $depense['id']; ?>" name="id"  >
@@ -45,11 +45,7 @@
                     <label for="montant">Détails:</label>
                     <input id="details" type="text" class="form-control" name="details"   value="<?php echo $depense['details']; ?>"/>
                 </div>
-				
-				 <div class="form-group">
-                    <label for="montant">Année:</label>
-                    <input id="annee" type="number" min="2020"  class="form-control" name="annee"   value="<?php echo $depense['annee']; ?>"/>
-                </div>	
+				 
 			  
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Modifier</button>

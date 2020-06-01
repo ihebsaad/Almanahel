@@ -27,7 +27,7 @@
       },
  
        googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
-buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Liste'},
+buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Liste',all-day:'Toute la journée'},
 //buttonIcons: {next: 'right-single-arrow', previous:'left-single-arrow',prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
  
  

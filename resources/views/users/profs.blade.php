@@ -106,6 +106,7 @@
                 orderCellsTop: true,
                  dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
 				        //  "dom": '<"top"i>rt<"bottom"flp><"clear">'
+				 aaSorting : [],               
  
 
                  responsive:true,

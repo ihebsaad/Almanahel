@@ -103,6 +103,7 @@ use App\User;
                 orderCellsTop: true,
                  dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
+				 aaSorting : [],               
                 buttons: [
 
                     'csv', 'excel', 'pdf', 'print'

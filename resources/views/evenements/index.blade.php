@@ -177,6 +177,7 @@
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
                 dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
+				 aaSorting : [],               
                 responsive:true,
                 buttons: [
 

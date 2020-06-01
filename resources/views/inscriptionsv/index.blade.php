@@ -272,7 +272,8 @@
                 orderCellsTop: true,
                 dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
-                buttons: [
+         		 aaSorting : [],               
+				buttons: [
 
                     'csv', 'excel', 'pdf', 'print'
                 ],

@@ -5,8 +5,6 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
 
  <?php
-
-
   use App\User ;
   ?>
 
@@ -19,7 +17,7 @@
      <div class="portlet box grey">
             <div class="row">
                 <div class="col-lg-6"><h2>Liste des excels finances - Année <?php echo $annee; ?></h2></div>
-			<div class="col-lg-3">
+            <div class="col-lg-3">
              <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-archive"></i> Archive  
@@ -40,8 +38,8 @@
 
                 </ul>
             </div>
-				
- 				</div>
+                
+                </div>
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success" href="{{action('ExcelsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un excel</b></a>
                 </div>
@@ -52,8 +50,8 @@
         <tr id="headtable">
             <th>ID</th>
             <th>Date</th>
-			<th>Type</th>
-			<th>Mois</th>
+            <th>Type</th>
+            <th>Mois</th>
             <th>Titre</th>
              <th>Emetteur</th>
             <th>Actions</th>
@@ -62,40 +60,39 @@
             </thead>
             <tbody>
              <?php foreach($excels as $excel)
-			 { $type=$excel['type']; $Type="";
-				if($type=='comptable'){$Type='Paie Comptable';}
-				if($type=='caisse'){$Type='Paie de Caisse';}
-				if($type=='profs'){$Type='Paie des enseignants';}
-				if($type=='eleves'){$Type='Paie des élèves';}
-				if($type=='personnels'){$Type='Paie de personnels';}
-				$date=  date('d/m/Y H:i', strtotime($excel['created_at'] ));
-				
-				$mois=$excel['mois'];$Mois='';
-				if($mois==1){$Mois="Janvier";} if($mois==7){$Mois="Juillet";}
-				if($mois==2){$Mois="Février";} if($mois==8){$Mois="Août";}
-				if($mois==3){$Mois="Mars";} if($mois==9){$Mois="Septembre";}
-				if($mois==4){$Mois="Avril";} if($mois==10){$Mois="Octobre";}
-				if($mois==5){$Mois="Mai";} if($mois==11){$Mois="Novembre";}
-				if($mois==6){$Mois="Juin";} if($mois==12){$Mois="Décembre";}
-			 ?>
+             { $type=$excel['type']; $Type="";
+                if($type=='comptable'){$Type='Paie Comptable';}
+                if($type=='caisse'){$Type='Paie de Caisse';}
+                if($type=='profs'){$Type='Paie des enseignants';}
+                if($type=='eleves'){$Type='Paie des élèves';}
+                if($type=='personnels'){$Type='Paie de personnels';}
+                $date=  date('d/m/Y H:i', strtotime($excel['created_at'] ));
+                
+                $mois=$excel['mois'];$Mois='';
+                if($mois==1){$Mois="Janvier";} if($mois==7){$Mois="Juillet";}
+                if($mois==2){$Mois="Février";} if($mois==8){$Mois="Août";}
+                if($mois==3){$Mois="Mars";} if($mois==9){$Mois="Septembre";}
+                if($mois==4){$Mois="Avril";} if($mois==10){$Mois="Octobre";}
+                if($mois==5){$Mois="Mai";} if($mois==11){$Mois="Novembre";}
+                if($mois==6){$Mois="Juin";} if($mois==12){$Mois="Décembre";}
+             ?>
                 <tr>
                     <td>{{$excel->id}}</td>
                      <td><?php echo $date;?></td>
-					  <td><?php echo $Type; ?></td>
-					  <td><?php echo $Mois ; ?></td>
+                      <td><?php echo $Type; ?></td>
+                      <td><?php echo $Mois ; ?></td>
 
                      <td><a href="{{action('ExcelsController@view', $excel['id'])}}" >{{ $excel->titre }}</a></td>
                     <td><?php 
-
 $user=User::where('id',$excel->emetteur)->first() ;
                     echo $user['name']." ".$user['lastname'];?></td>
                     
 
-					<td>
+                    <td>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
-                          <a  class="btn btn-md btn-success" role="button"  class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/excels/<?php echo  $excel->chemin?>" > 
+                          <a  class="btn btn-md btn-success" role="button"  target="_blank"   class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/excels/<?php echo  $excel->chemin?>" > 
                             <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>
                   
@@ -130,19 +127,15 @@ $user=User::where('id',$excel->emetteur)->first() ;
 
     <script type="text/javascript">
         $(excel).ready(function() {
-
-
             $('#mytable thead tr:eq(1) th').each( function () {
                 var title = $('#mytable thead tr:eq(0) th').eq( $(this).index() ).text();
                 $(this).html( '<input class="searchfield" type="text"   />' );
             } );
-
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
                 dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
                 buttons: [
-
                     'csv', 'excel', 'pdf', 'print'
                 ],
                 "columnDefs": [ {
@@ -175,26 +168,19 @@ $user=User::where('id',$excel->emetteur)->first() ;
                             "sortDescending": ": activer pour un tri descendant"
                         }
                     }
-
             });
-
             // Restore state
        /*     var state = table.state.loaded();
             if ( state ) {
                 table.columns().eq( 0 ).each( function ( colIdx ) {
                     var colSearch = state.columns[colIdx].search;
-
                     if ( colSearch.search ) {
                         $( '#mytable thead tr:eq(1) th:eq(' + index + ') input', table.column( colIdx ).footer() ).val( colSearch.search );
-
                     }
                 } );
-
                 table.draw();
             }
-
 */
-
             function delay(callback, ms) {
                 var timer = 0;
                 return function() {
@@ -211,24 +197,15 @@ $user=User::where('id',$excel->emetteur)->first() ;
                     table.column($(this).parent().index() + ':visible')
                         .search(this.value)
                         .draw();
-
-
                 });
-
                 $('#mytable thead tr:eq(1) th:eq(' + index + ') input').keyup(delay(function (e) {
                     console.log('Time elapsed!', this.value);
                     $(this).blur();
-
                 }, 2000));
             });
-
-
  
         });
-
     </script>
 
 
 @stop
-
-

@@ -101,10 +101,7 @@ class InscriptionsvController extends Controller
          $to=$user["email"];
          $sujet="AlManahel Academy - votre inscription est validée";
          $contenu='BONJOUR ,'.$user['name'].' '.$user['lastname'].'<br>
-                  VOTRE INSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>
-                  Rappel : Vos codes accès :'.'<br>
-                   Username :'.$user['username'].'<br>
-                   Mot de passe :'.$user['password'];
+                  VOTRE INSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>';
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -120,10 +117,8 @@ class InscriptionsvController extends Controller
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
           $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$user['name'].' ' .$user['lastname']. ' EST VALIDÉE.'.'<br>
-                  Rappel : Vos codes accès :'.'<br>
-                   Username :'.$parent['username'].'<br>
-                   Mot de passe :'.$parent['password'];
+                lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$user['name'].' ' .$user['lastname']. ' EST VALIDÉE.'.'<br>';
+                  
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -245,7 +240,7 @@ $pass1=InscriptionsvController::genererMDP(8);
          $contenu='BONJOUR ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
                   VOTRE INSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>
                   Vos codes accès :'.'<br>
-                   Username :'.$eleve['username'].'<br>
+                   E-mail :'.$eleve['email'].'<br>
                    Mot de passe :'.$pass1;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
@@ -284,7 +279,7 @@ if(empty($parent))
           $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
                   Vos codes accès :'.'<br>
-                   Username :'.$parent['username'].'<br>
+                   E-mail :'.$parent['email'].'<br>
                    Mot de passe :'.$pass;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message

@@ -71,7 +71,7 @@ $user=User::where('id',$document->emetteur)->first() ;
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('DocumentsController@destroy', $document['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
-                          <a  class="btn btn-md btn-success" role="button"  class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo  $document->chemin?>" > 
+                          <a  class="btn btn-md btn-success" role="button"  target="_blank"  class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo  $document->chemin?>" > 
                             <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>
                   

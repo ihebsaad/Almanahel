@@ -29,7 +29,7 @@
  		<?php if ($paiement['eleve']>0) { ?>
 		         <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+                    <select id="eleve"  class="form-control  "  readonly style="height:38px;padding:" >
 					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)

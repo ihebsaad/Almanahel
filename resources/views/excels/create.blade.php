@@ -2,7 +2,7 @@
  
 @section('content')
 
-    <h3 style="margin-left:50px">Ajouter un document </h3><br><br>
+    <h3 style="margin-left:50px">Ajouter un fichier excel </h3><br><br>
 
      <form class="form-horizontal" method="POST" action="{{ route('excels.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
@@ -31,7 +31,7 @@
                          <label for="name" class="col-md-4 control-label">Fichier</label>
 
                             <div class="col-md-6">
-                                <input  autocomplete="off"  id="chemin" type="file" class="form-control" name="chemin"  required accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
+                                <input  autocomplete="off"  id="chemin" type="file" class="form-co-ntrol" name="chemin"  required accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
 
                                 
                             </div>

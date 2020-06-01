@@ -145,8 +145,7 @@ class PaiementsController extends Controller
               'details' => trim($request->get('details')),
              'montant' => trim($request->get('montant')),
              'libelle' => trim($request->get('libelle')),
-             'annee' => trim($request->get('annee')),
-		)
+ 		)
 		);	
 			
 		 

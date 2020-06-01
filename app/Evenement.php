@@ -13,7 +13,7 @@ class Evenement extends Model
  'fin',
  'type',
  'visible',
- 'heure_febut',
+ 'heure_debut',
  'heure_fin',
  
  ];

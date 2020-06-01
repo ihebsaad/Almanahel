@@ -10,7 +10,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            <label>Modifier</label>
+            <label>Absence</label>
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -64,25 +64,22 @@
                     <label for="details">Détails:</label>
                     <textarea id="details" type="text" class="form-control" name="details" ><?php echo $absence['details']; ?></textarea>
                 </div>		
-				<div class="form-group">
-				<label for="datetimepicker1">Début:</label>
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" name="debut"  value="<?php echo $absence['debut']; ?>" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+				 <div class="form-group">
+                    <label for="seance">Date de Début:</label>
+                    <input id="debut" type="text" class="form-control" name="debut" value="<?php echo $absence['debut']; ?>"  />
                 </div>
-				</div>
-				
-				<div class="form-group">
-				<label for="datetimepicker2">Fin:</label>				
-                <div class='input-group date' id='datetimepicker2'>
-                    <input type='text' class="form-control" name="fin"  value="<?php echo $absence['fin']; ?>" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
+				 <div class="form-group">
+                    <label for="heure_debut">Heure de Fin:</label>
+                    <input id="heure_debut" type="time" class="form-control" name="heure_debut"  value="<?php echo $absence['heure_debut']; ?>"  />
+                </div>				
+                <div class="form-group">
+                    <label for="fin">Date de Fin:</label>
+                    <input id="fin" type="text" class="form-control" name="fin" value="<?php echo $absence['fin']; ?>"  />
+                </div>	
+				 <div class="form-group">
+                    <label for="heure_fin">Heure de Fin:</label>
+                    <input id="heure_fin" type="time" class="form-control" name="heure_fin" value="<?php echo $absence['heure_fin']; ?>"  />
+                </div>	
 			 
 				
 			 
@@ -115,7 +112,12 @@ function toggle(className, displayState){
   }
 
 $(function () {
-	 
+	 $('#debut').datepicker({
+                    locale: 'fr'
+                });
+		$('#fin').datepicker({
+                    locale: 'fr'
+                });
  			
 $('.select2').select2({
 filter: true,

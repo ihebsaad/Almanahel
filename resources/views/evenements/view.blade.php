@@ -38,12 +38,18 @@
                     <label for="debut">Début:</label>
                    <input id="debut" autocomplete="off" type="text" class="form-control" name="debut"  value="<?php  echo $evenement['debut'];?>"/>
 				</div>
-			 
+				<div class="form-group">
+                    <label for="heure_debut">Heure de Début:</label>
+                    <input id="heure_debut" type="time" class="form-control" name="heure_debut" value="<?php  echo $evenement['heure_debut'];?>" ></input>
+                </div>			 
 				<div class="form-group ">
                     <label for="fin">Fin:</label>
                    <input id="fin" type="text" autocomplete="off" class="form-control" name="fin"  value="<?php  echo $evenement['fin'];?>"/>
 				</div>
-				
+				<div class="form-group">
+                    <label for="heure_fin">Heure de Fin:</label>
+                    <input id="heure_fin" type="time" class="form-control" name="heure_fin" value="<?php  echo $evenement['heure_fin'];?>" ></input>
+                </div>				
 					<div class="form-group ">
                     <label for="type">Type:</label>
                     <select id="type"   class="form-control" name="type" >

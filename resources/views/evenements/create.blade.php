@@ -40,10 +40,18 @@
                     <label for="description">Date de Début:</label>
                     <input autocomplete="off" id="debut" type="text" class="form-control" name="debut" ></input>
                 </div>	
+				 <div class="form-group">
+                    <label for="heure_debut">Heure de Début:</label>
+                    <input id="heure_debut" type="time" class="form-control" name="heure_debut" ></input>
+                </div>
 				<div class="form-group">
                     <label for="fin">Date de Fin:</label>
                     <input autocomplete="off" id="fin" type="text" class="form-control" name="fin" ></input>
                 </div>
+				<div class="form-group">
+                    <label for="heure_fin">Heure de Fin:</label>
+                    <input id="heure_fin" type="time" class="form-control" name="heure_fin" ></input>
+                </div>				
 				<div class="form-group">
                     <label for="type">Type:</label>
                     <select id="type" type="text" class="form-control" name="type" onchange=" " required>
@@ -55,14 +63,8 @@
 					</select>
                 </div>
 				<div   id="time"> 
-		 		 <div class="form-group">
-                    <label for="heure_debut">Heure de Début:</label>
-                    <input id="heure_debut" type="time" class="form-control" name="heure_debut" ></input>
-                </div>	
-				<div class="form-group">
-                    <label for="heure_fin">Heure de Fin:</label>
-                    <input id="heure_fin" type="time" class="form-control" name="heure_fin" ></input>
-                </div>	
+		
+	
                 
 				</div>	
  			

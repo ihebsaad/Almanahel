@@ -57,11 +57,11 @@
 				<div style="display:none" id="time"> 
 		 		 <div class="form-group">
                     <label for="heure_debut">Heure de Début:</label>
-                    <input id="heure_debut" type="text" class="form-control" name="heure_debut" ></input>
+                    <input id="heure_debut" type="time" class="form-control" name="heure_debut" ></input>
                 </div>	
 				<div class="form-group">
                     <label for="heure_fin">Heure de Fin:</label>
-                    <input id="heure_fin" type="text" class="form-control" name="heure_fin" ></input>
+                    <input id="heure_fin" type="time" class="form-control" name="heure_fin" ></input>
                 </div>	
                 
 				</div>	

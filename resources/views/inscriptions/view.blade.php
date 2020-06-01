@@ -7,15 +7,15 @@
 
 
 @section('content')
-<div  style="padding:8px 8px 8px 8px">
-        <div class="portlet box grey">
+<div  style="padding:8px 8px 8px 8px" >
+        <div class="portlet box grey" >
 <h3 style="margin-left:50px">Pré-inscription</h3><br><br>    
                <form class="form-horizontal" method="POST"  action="{{action('InscriptionsController@update', $id)}} " enctype="multipart/form-data" >
       {{ csrf_field() }}
 
 
              <fieldset>
-                      <input type="hidden" id="idins" value="{{$id}}" ></input>
+                      <input type="hidden" id="idins" value="{{$id}}" />
        <legend>Élève</legend> <!-- Titre du fieldset --> 
     
     
@@ -110,7 +110,7 @@
   
     <div class="col">
        <label  for="moyenne_1">Le premier trimestre : </label>
-       <input class="form-control" type="number" step="any" name="moyenne_1" id="moyenne_1" onchange="changing(this)"    value="{{ $inscription-> moyenne_1}}"  />
+       <input class="form-control" type="number" step="any" name="moyenne_1" id="moyenne_1" onchange="changing(this)"    value="{{ $inscription-> moyenne_1}}"  
  
   
     </div>
@@ -182,7 +182,7 @@
 
       <div class="col">
        <label  for="section">Nom d'autre club : </label>
-    <input class="form-control" type="text"  name="nomclubautre" id="nomclubautre" onchange="changing(this)"    value="{{ $inscription-> nomclubautre}}"> </input>
+    <input class="form-control" type="text"  name="nomclubautre" id="nomclubautre" onchange="changing(this)"    value="{{ $inscription-> nomclubautre}}"/>
   
  </div>
 
@@ -362,7 +362,7 @@
     </div>
 </div>
 
-</div>
+
 <div class="row" style="margin-left:10px">
        
  

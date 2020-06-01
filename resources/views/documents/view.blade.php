@@ -17,171 +17,47 @@
 
 
         <input type="hidden" id="iddocument" value="{{$id}}" ></input>
-        <table class="table">
+        
 
-        <tbody>
-
-        <tr>
-            <td class="text-primary">Titre : </td>
-            <td>
+     <div class="form-group ">
+            <label class="text-primary">Titre : </label>
+           
                 <input id="titre" onchange="changing(this)" type="text" class="form-control" name="titre"  value="{{ $document->titre }}" />
-                </td>
-        </tr>
+             
+        </div>
         <tr>
-            <tr>
-             <td class="text-primary">Fichier : </td>
-            <td>
+            <div class="form-group ">
+             <label class="text-primary">Fichier : </label>
+         
                <input id="chemin" type="file" class="form-control" name="chemin"    >
                 <?php if($document->chemin !==''){?>
 
 
-          <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $document['chemin'];?>" > 
+          <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $document['chemin'];?>" > 
            <span class="fa fa-fw fa-download-alt"></span> <?php echo $document['chemin'];?>
-			</a>
+      </a>
           <?php } ?>
-            </td>
-        </tr>
-         <tr>
-            <td class="text-primary">Date : </td>
-            <td>
+           
+        </div>
+         <div class="form-group ">
+            <label class="text-primary">Date : </label>
+           
                 <input id="created_at" onchange="changing(this)" readonly="" class="form-control" name="created_at"  value="{{ $document->created_at }}" />
-            </td>
-        </tr>
-        <tr>
-             <td class="text-primary">Description : </td>
-            <td>
+          
+        </div>
+        <div class="form-group ">
+             <label class="text-primary">Description : </label>
+        
                 <input id="description" onchange="changing(this)" type="text"  class="form-control" name="description"  value="{{ $document->description }}" />
-            </td>
-        </tr>
-    <!--     <tr>
-
-             <td class="text-primary">type : </td>
-            <td>
-              <select class="form-control"  name="type" id="type"  onchange="changing(this)"  value="{{ $document->type }}"  >
-    <option value="">--Sélectionnez--</option>
-     <option  <?php if ($document['type'] =='eleve'){echo 'selected="selected"';}?>  value="eleve">Élève</option>
-    <option   <?php if ($document['type'] =='parent'){echo 'selected="selected"';}?> value="parent">Parent</option>
-   <option   <?php if ($document['type'] =='prof'){echo 'selected="selected"';}?> value="prof">Enseignant</option>
-    <option   <?php if ($document['type'] =='classe'){echo 'selected="selected"';}?> value="classe">Classe</option>
-    <option   <?php if ($document['type'] =='moimeme'){echo 'selected="selected"';}?> value="moimeme">Moi-même</option>
-  </select>
-            </td>
-        </tr>
-<?php if($document->type =='eleve'){  
-
-    $eleve = DB::table('users')
-    ->where('id',$document['destinataire'])
-    ->first();?>
-  <tr>
-
-
-             <td class="text-primary">Destinataire : </td>
-            <td>
-                  <select  id="destinataire2" name="destinataire2" class="form-control" onchange="changing(this)"  value="{{$eleve->id}}" >
-                                                                <option value="0">Sélectionner..... </option>
-
-
-                                                                @foreach($eleves as $eleve  )
-                                                                 <?php if ($document['destinataire'] ==$eleve->id){?>
-                                                                <option   <?php echo 'selected="selected"';?>  value="{{$eleve->id}}">{{$eleve->name.' '.$eleve->lastname}}</option>
-                                                                   <?php }else {?>
-                                                                    <option
-                                                                            value="{{$eleve->id}}">{{$eleve->name.' '.$eleve->lastname}}</option>
-                                                                                 <?php }?>
-                                                                @endforeach
-
-                                                            </select>
-            </td>
-        </tr>-->
-         <?php } ?>
-         <?php if($document->type =='parent'){  
-
-    $eleve = DB::table('users')
-    ->where('id',$document['destinataire'])
-    ->first();?>
-  <tr>
-
-
-             <td class="text-primary">Destinataire : </td>
-            <td>
-                  <select  id="destinataire1" name="destinataire1" class="form-control" onchange="changing(this)"    value="{{$eleve->id}}"  >
-                                                                <option value="0">Sélectionner..... </option>
-
-
-                                                                @foreach($parents as $parent  )
-                                                                 <?php if ($document['destinataire'] ==$parent->id){?>
-                                                                <option   <?php echo 'selected="selected"';?>  value="{{$parent->id}}">{{$parent->name.' '.$parent->lastname}}</option>
-                                                                   <?php }else {?>
-                                                                    <option
-                                                                            value="{{$parent->id}}">{{$parent->name.' '.$parent->lastname}}</option>
-                                                                                 <?php }?>
-                                                                @endforeach
-
-                                                            </select>
-            </td>
-        </tr>
-         <?php } ?>
-          <?php if($document->type =='prof'){  
-
-    $eleve = DB::table('users')
-    ->where('id',$document['destinataire'])
-    ->first();?>
-  <tr>
-
-
-             <td class="text-primary">Destinataire: </td>
-            <td>
-                  <select  id="destinataire3" name="destinataire3" class="form-control" onchange="changing(this)"    value="{{$eleve->id}}"  >
-                                                                <option value="0">Sélectionner..... </option>
-
-
-                                                                @foreach($enseignants as $enseignant  )
-                                                                 <?php if ($document['destinataire'] ==$enseignant->id){?>
-                                                                <option   <?php echo 'selected="selected"';?>  value="{{$enseignant->id}}">{{$enseignant->name.' '.$enseignant->lastname}}</option>
-                                                                   <?php }else {?>
-                                                                    <option
-                                                                            value="{{$enseignant->id}}">{{$enseignant->name.' '.$enseignant->lastname}}</option>
-                                                                                 <?php }?>
-                                                                @endforeach
-
-                                                            </select>
-            </td>
-        </tr>
-         <?php } ?>
-           <?php if($document->type =='classe'){  
-
-    $eleve = DB::table('classes')
-    ->where('id',$document['destinataire'])
-    ->first();?>
-  <tr>
-
-
-             <td class="text-primary">Destinataire: </td>
-            <td>
-                  <select  id="destinataire4" name="destinataire4" class="form-control" onchange="changing(this)"    value="{{$eleve->id}}"  >
-                                                                <option value="0">Sélectionner..... </option>
-
-
-                                                                @foreach($classes as $classe  )
-                                                                 <?php if ($document['destinataire'] ==$classe->id){?>
-                                                                <option   <?php echo 'selected="selected"';?>  value="{{$classe->id}}">{{$classe->titre}}</option>
-                                                                   <?php }else {?>
-                                                                    <option
-                                                                            value="{{$classe->id}}">{{$classe->titre}}</option>
-                                                                                 <?php }?>
-                                                                @endforeach
-
-                                                            </select>
-            </td>
-        </tr>
-         <?php } ?>
+          
+        </div>
+   
 
 
 
        
 
-        </tbody>
-        </table>
+       
 <div class="form-group "  style="margin-left:30px">
        <button  type="submit"  class="btn btn-primary">Enregistrer</button>
    
@@ -196,7 +72,7 @@
 
 
 </div>
-	<style>
+  <style>
         #tabstats {font-size: 15px;padding:30px 30px 30px 30px;}
         #tabstats td{border-left:1px solid white;border-bottom:1px solid white;min-width:50px;min-height: 25px;;text-align: center;}
         #tabstats tr{margin-bottom:15px;text-align: center;height: 40px;}
@@ -210,7 +86,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <script>
-
 $(function () {
 $('.itemName').select2({
 filter: true,
@@ -219,21 +94,12 @@ noResults: function () {
 return 'Pas de résultats';
 }
 }
-
 });
-
-
-
-
 });
-
-
     function changing(elm) {
         var champ = elm.id;
-
         var val = document.getElementById(champ).value;
    
-
         var doc = $('#iddocument').val();
         //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();
@@ -241,7 +107,6 @@ return 'Pas de résultats';
             url: "{{ route('documents.updating') }}",
             method: "POST",
             data: {doc: doc, champ: champ, val: val, _token: _token},
-
             success: function (data) {
                 $('#' + champ).animate({
                     opacity: '0.3',
@@ -249,14 +114,11 @@ return 'Pas de résultats';
                 $('#' + champ).animate({
                     opacity: '1',
                 });
-
             }
         });
         // } else {
-
         // }
     }
-
         
    
 </script>

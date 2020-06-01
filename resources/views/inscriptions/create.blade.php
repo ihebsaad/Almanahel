@@ -13,11 +13,11 @@
 
     <div class="col">
        <label  for="nom">Nom : </label>
-       <input type="text" name="nom" id="nom"  class="form-control"/>
+       <input required type="text" name="nom" id="nom"  class="form-control"/>
  </div>
   <div class="col">
        <label  for="prenom">Prénom : </label>
-       <input type="text" name="prenom" id="prenom" class="form-control" />
+       <input required type="text" name="prenom" id="prenom" class="form-control" />
      
 </div>
 </div>
@@ -25,14 +25,15 @@
 
     <div class="col">
        <label  for="datenaissance">Date de naissance : </label>
-       <input type="text" name="datenaissance" id="datenaissance" class="form-control" />
+       <input  required  type="text" name="datenaissance" id="datenaissance" class="form-control" />
  
   </div></div>
    <div class="row" style="margin-left:10px">
   
     <div class="col">
        <label  for="email">E-mail: </label>
-       <input  class="form-control" type="text" name="email" id="email" />
+         <label id="alert8" style="display:none; color:red;">L'adresse E-mail est invalide</label>
+       <input   required  class="form-control" type="text" name="email" id="email" onchange="validation()" />
 
     </div>
 </div>
@@ -58,8 +59,8 @@
   
     <div class="col">
        <label  for="type_etabliss">Etablissement d'origine où votre enfant est actuellement scolarisé : </label>
-        Public <input type="radio" id="type_etabliss" name="type_etabliss" value="0" >
-        Privé<input type="radio" id="type_etabliss" name="type_etabliss" value="1">
+        Public <input  required  type="radio" id="type_etabliss" name="type_etabliss" value="0" >
+        Privé<input  required  type="radio" id="type_etabliss" name="type_etabliss" value="1">
 
 </div>
 </div>
@@ -67,7 +68,7 @@
 
     <div class="col">
        <label  for="etablissement">Nom de l'établissement d'origine : </label>
-       <input type="text" name="etablissement" id="etablissement"  class="form-control"/>
+       <input  required  type="text" name="etablissement" id="etablissement"  class="form-control"/>
  
     
 </div>
@@ -77,7 +78,7 @@
  
     <div class="col">
        <label for="niveau">Niveau d'études actuel : </label>
-       <input type="text" name="niveau" id="niveau" class="form-control" onKeyUp="sectionverif()"/>
+       <input  required  type="text" name="niveau" id="niveau" class="form-control" onKeyUp="sectionverif()"/>
 
    </div> 
 </div>
@@ -86,7 +87,7 @@
 
     <div class="col">
        <label  class="form-label" for="section">Section : </label>
-    <select name="section" id="section" class="form-control" >
+    <select  name="section" id="section" class="form-control" >
     <option value="">--Please choose an option--</option>
      <option value="Bac Français<">Bac Français</option>
     <option value="Sciences expérimentales">Sciences expérimentales</option>
@@ -109,7 +110,8 @@
  
     <div class="col">
        <label  for="moyenne_1">Le premier trimestre : </label>
-       <input type="number" step="any" name="moyenne_1" id="moyenne_1" class="form-control"  />
+      <label id="alert4" style="display:none; color:red;">La moyenne de premier trimestre est invalide</label>
+       <input  required  max=20 min=0 type="number" step="any" name="moyenne_1" id="moyenne_1" class="form-control" onblur="checkmoyenne1()" />
  </div>
 </div>
     
@@ -118,7 +120,8 @@
  
     <div class="col">
        <label  for="moyenne_2">Le deuxième trimestre : </label>
-       <input type="number" step="any" name="moyenne_2" id="moyenne_2"class="form-control" />
+        <label id="alert5" style="display:none; color:red;">La moyenne de deuxième trimestre est invalide</label>
+       <input  required   max=20 min=0 type="number" step="any" name="moyenne_2" id="moyenne_2"class="form-control" onblur="checkmoyenne2()" />
 
     </div>
 </div>
@@ -126,7 +129,8 @@
   
     <div class="col">
        <label  for="moyenne_3">Le troisième trimestre : </label>
-       <input type="number" step="any" name="moyenne_3" id="moyenne_3" class="form-control" />
+         <label id="alert6" style="display:none; color:red;">La moyenne de  troisième trimestre est invalide</label>
+       <input  required  max=20 min=0 type="number" step="any" name="moyenne_3" id="moyenne_3" class="form-control" onblur="checkmoyenne3()" />
 
     </div>
 </div>
@@ -134,7 +138,8 @@
      
     <div class="col">
        <label  for="moyenne_g">La moyenne générale : </label>
-       <input type="number" step="any" name="moyenne_g" id="moyenne_g" class="form-control" />
+         <label id="alert7" style="display:none; color:red;">La moyenne générale est invalide</label>
+       <input  required   max=20 min=0 type="number" step="any" name="moyenne_g" id="moyenne_g" class="form-control"  onblur="checkmoyenneg()" />
  </div>
    
 </div>
@@ -142,8 +147,8 @@
      
     <div class="col">
        <label  for="frere">Votre enfant a t'il un frère ou une soeur actuellement scolarisé(e) dans notre établissement ? </label>
-      Oui <input type="radio" id="frere" name="frere" value="1">
-      Non <input type="radio" id="frere" name="frere" value="0">
+      Oui <input  required  type="radio" id="frere" name="frere" value="1">
+      Non <input  required  type="radio" id="frere" name="frere" value="0">
 </div>
 
 </div>
@@ -151,8 +156,8 @@
      
     <div class="col">
        <label for="clubs">Votre enfant souhaite-t-il intégrer un Club ? </label>
-      Oui <input type="radio" id="clubs" name="clubs" value="1" onBlur="clubverif()">
-      Non <input type="radio" id="clubs" name="clubs" value="0" onBlur="clubverif1()"  >
+      Oui <input  required  type="radio" id="clubs" name="clubs" value="1" onBlur="clubverif()">
+      Non <input  required  type="radio" id="clubs" name="clubs" value="0" onBlur="clubverif1()"  >
       </div>
 
 </div>
@@ -176,7 +181,7 @@
 
     <div class="col">
        <label  for="section">Nom d'autre club : </label>
-    <input type="text" name="nomclubautre" id="nomclubautre" class="form-control" />
+    <input   type="text" name="nomclubautre" id="nomclubautre" class="form-control" />
  </div>
  
     </div> 
@@ -192,7 +197,7 @@
     
     <div class="col">
        <label for="heure_17h">17h15-18h30: </label>
-     <input type="checkbox" id="heure_17h" name="heure_17h" value="1"  >
+     <input    type="checkbox" id="heure_17h" name="heure_17h" value="1"  >
     </div>
     
 </div>
@@ -208,7 +213,7 @@
 
     <div class="col">
        <label   for="vendredi">Vendredi après-midi : </label>
-  <input type="checkbox" id="vendredi" name="vendredi" value="1">
+  <input   type="checkbox" id="vendredi" name="vendredi" value="1">
       
      </div>
 </div>
@@ -216,7 +221,7 @@
 
     <div class="col">
        <label  for="samedi">Samedi après-midi : </label>
-       <input type="checkbox" id="samedi" name="samedi" value="1">
+       <input  type="checkbox" id="samedi" name="samedi" value="1">
 
  </div>
   
@@ -225,7 +230,7 @@
  
     <div class="col">
        <label  for="dimanche">Dimanche matin : </label>
-       <input type="checkbox" id="dimanche" name="dimanche" value="1">
+       <input  type="checkbox" id="dimanche" name="dimanche" value="1">
        </div>
      
  
@@ -235,8 +240,10 @@
   
     <div class="col">
        <label  for="bulletin1">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
-       <input type="file" accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin1" id="bulletin1" class="form-control" />
-       <input type="file"  accept="image/png, image/jpeg,image/jpg,.pdf" name="bulletin2" id="bulletin2" class="form-control" />
+        <label id="alert2" style="display:none; color:red;">La taille de fichier 1 dépasse la taille maximale</label>
+       <input  required  accept="image/png, image/jpeg,image/jpg,.pdf" type="file" name="bulletin1" id="bulletin1" class="form-control" onchange="checktaillebull1()"/>
+               <label id="alert3" style="display:none; color:red;">La taille de fichier 2 dépasse la taille maximale</label>
+       <input  required  type="file"  accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin2" id="bulletin2" class="form-control" onchange="checktaillebull2()" />
  
   
        </div>
@@ -259,7 +266,7 @@
     
        <div class="col">
        <label  for="civilite">Civilité : </label>
-       <input type="text" name="civilite" id="civilite" class="form-control" />
+       <input  required  type="text" name="civilite" id="civilite" class="form-control" />
         </div>
     <div class="col">
        <label for="nom_rep">Nom : </label>
@@ -267,7 +274,7 @@
  </div>
   <div class="col">
        <label  for="prenom_rep">Prénom : </label>
-       <input  class="form-control" type="text" name="prenom_rep" id="prenom_rep" />
+       <input  required  class="form-control" type="text" name="prenom_rep" id="prenom_rep" />
        </div>
        </div>
 
@@ -275,7 +282,7 @@
  
     <div class="col">
        <label  for="ville">Ville : </label>
-       <input class="form-control" type="text" name="ville" id="ville" />
+       <input  required  class="form-control" type="text" name="ville" id="ville" />
 
     </div>
 </div>
@@ -283,7 +290,7 @@
    
     <div class="col">
        <label  for="tel">Téléphone Portable : </label>
-       <input class="form-control" type="number" name="tel" id="tel" />
+       <input  required  class="form-control" type="number" name="tel" id="tel" />
 
     </div>
 </div>
@@ -291,7 +298,7 @@
   
     <div class="col">
        <label   for="tel2">Téléphone fixe : </label>
-       <input class="form-control" type="number" name="tel2" id="tel2" />
+       <input  required  class="form-control" type="number" name="tel2" id="tel2" />
 
     </div>
 </div>
@@ -300,8 +307,8 @@
    
     <div class="col">
        <label  for="email_rep">E-mail: </label>
-
-       <input  class="form-control" type="text" name="email_rep" id="email_rep"  />
+    <label id="alert9" style="display:none; color:red;">L'adresse E-mail est invalide</label>
+       <input   required  class="form-control" type="text" name="email_rep" id="email_rep" onchange="validation1()"  />
  </div>
  
 </div>
@@ -439,7 +446,164 @@ document.getElementById('sect2').style.display = 'none';
                     locale: 'fr'
                 });
 });
+     function checktaillebull1()
+{
 
+taille=document.getElementById('bulletin1').files[0].size;
+
+
+
+if(taille >20000000)
+{
+document.getElementById("alert2").style.display="block";
+document.getElementById("bulletin1").value  = "";
+}
+else
+{
+document.getElementById("alert2").style.display="none";
+
+}
+
+
+ 
+}
+     function checktaillebull2()
+{
+
+taille=document.getElementById('bulletin2').files[0].size;
+
+
+
+if(taille >20000000)
+{
+document.getElementById("alert3").style.display="block";
+document.getElementById("bulletin2").value  = "";
+}
+else
+{
+document.getElementById("alert3").style.display="none";
+
+}
+
+
+ 
+}
+    function checkmoyenne1()
+{
+
+var moy1 = document.getElementById("moyenne_1").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert4").style.display="block";
+document.getElementById("moyenne_1").value  = "";
+}
+else
+{
+document.getElementById("alert4").style.display="none";
+
+}
+
+
+ 
+}
+ function checkmoyenne2()
+{
+
+var moy1 = document.getElementById("moyenne_2").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert5").style.display="block";
+document.getElementById("moyenne_2").value  = "";
+}
+else
+{
+document.getElementById("alert5").style.display="none";
+
+}}
+ function checkmoyenne3()
+{
+
+var moy1 = document.getElementById("moyenne_3").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert6").style.display="block";
+document.getElementById("moyenne_3").value  = "";
+}
+else
+{
+document.getElementById("alert6").style.display="none";
+
+}}
+function checkmoyenneg()
+{
+
+var moy1 = document.getElementById("moyenne_g").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert7").style.display="block";
+document.getElementById("moyenne_g").value  = "";
+}
+else
+{
+document.getElementById("alert7").style.display="none";
+
+}
+
+ 
+}
+
+function validation()
+{
+var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+
+if (expressionReguliere.test(document.getElementById("email").value))
+{
+  document.getElementById("alert8").style.display="none";
+
+
+}
+else
+{
+  document.getElementById("alert8").style.display="block";
+document.getElementById("email").value  = "";
+
+}
+return false;
+}
+function validation1()
+{
+var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+
+if (expressionReguliere.test(document.getElementById("email_rep").value))
+{
+  document.getElementById("alert9").style.display="none";
+
+
+}
+else
+{
+  document.getElementById("alert9").style.display="block";
+document.getElementById("email_rep").value  = "";
+
+}
+return false;
+}
 
 
 </script>

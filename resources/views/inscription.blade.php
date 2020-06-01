@@ -199,17 +199,17 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row">
 	    				<div class="col">
 						       <label for="nom">Nom : </label>
-						       <input class="form-control" type="text" name="nom" id="nom"  placeholder="Veuillez entrer votre nom" />
+						       <input required class="form-control" type="text" name="nom" id="nom"  placeholder="Veuillez entrer votre nom" />
 						</div> 
 						<div class="col">
 						       <label for="prenom">Prénom : </label>
-						       <input class="form-control" type="text" name="prenom" id="prenom" placeholder="Veuillez entrer votre prenom" />
+						       <input required class="form-control" type="text" name="prenom" id="prenom" placeholder="Veuillez entrer votre prenom" />
 						</div>
 					</div>
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="datenaissance">Date de naissance : </label>
-					       <input class="form-control" type="date" name="datenaissance" id="datenaissance" />
+					       <input required class="form-control" type="date" name="datenaissance" id="datenaissance" />
 					 	</div>
 					 	<div class="col">
 					 	</div>
@@ -217,8 +217,9 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="email">E-mail : </label>
-					       <input class="form-control" type="text" name="email" id="email" />
-					 	</div>
+					          <label id="alert8" style="display:none; color:red;">L'adresse E-mail est invalide</label>
+					       <input required class="form-control" type="text" name="email" id="email" onchange="validation()" />
+					   </div>
 					 	<div class="col">
 					       <label for="reemail">Confirmez E-mail : </label>
 					       <span class="badge badge-danger" id="alertemail" style="display:none;">Il faut retaper le même email</span>
@@ -230,11 +231,11 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					       <label for="type_etabliss">Etablissement d'origine où votre enfant est actuellement scolarisé : </label>
 
 					       <div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="type_etabliss" id="type_etabliss1" value="0">
+							  <input required class="form-check-input" type="radio" name="type_etabliss" id="type_etabliss1" value="0">
 							  <label class="form-check-label" for="type_etabliss1">Public</label>
 							</div>
 							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="type_etabliss" id="type_etabliss2" value="1">
+							  <input required class="form-check-input" type="radio" name="type_etabliss" id="type_etabliss2" value="1">
 							  <label class="form-check-label" for="type_etabliss2">Privé</label>
 							</div>
 						</div>
@@ -242,7 +243,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row" >
 						<div class="col">
 					       <label for="etablissement">Nom de l'établissement d'origine : </label>
-					       <input class="form-control" type="text" name="etablissement" id="etablissement" placeholder="Veuillez entrer le nom de l'établissement" />
+					       <input required class="form-control" type="text" name="etablissement" id="etablissement" placeholder="Veuillez entrer le nom de l'établissement" />
 					 	</div>
 					 	<div class="col"></div>
 					    
@@ -250,7 +251,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row" style="margin-top: 10px">
 					 	<div class="col">
 					 		<label for="niveau">Niveau d'études actuel : </label>
-					       <input class="form-control" type="text" name="niveau" id="niveau" placeholder="Veuillez entrer votre niveau d'études actuel" />
+					       <input required class="form-control" type="text" name="niveau" id="niveau" placeholder="Veuillez entrer votre niveau d'études actuel" />
 					 	</div>
 						<div class="col">
 						    <label for="section">Section : </label>
@@ -271,23 +272,27 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="moyenne_1">Le premier trimestre : </label>
-					       <input class="form-control" type="number" step="any" name="moyenne_1" id="moyenne_1" placeholder="Moyenne de Le premier trimestre" />
+					             <label id="alert4" style="display:none; color:red;">La moyenne de premier trimestre est invalide</label>
+					       <input required class="form-control" type="number" step="any" name="moyenne_1" id="moyenne_1" placeholder="Moyenne de Le premier trimestre" onblur="checkmoyenne1()" />
 					 	</div>
 
 						<div class="col">
 					       <label for="moyenne_2">Le deuxième trimestre : </label>
-					       <input class="form-control" type="number" step="any" name="moyenne_2" id="moyenne_2" placeholder="Moyenne de Le deuxième trimestre" />
+					           <label id="alert5" style="display:none; color:red;">La moyenne de deuxième trimestre est invalide</label>
+					       <input required class="form-control" type="number" step="any" name="moyenne_2" id="moyenne_2" placeholder="Moyenne de Le deuxième trimestre" onblur="checkmoyenne2()" />
 						</div>
 						<div class="col">
 					       <label for="moyenne_3">Le troisième trimestre : </label>
-					       <input class="form-control" type="number" step="any" name="moyenne_3" id="moyenne_3" placeholder="Moyenne de Le troisième trimestre" />
+					        <label id="alert6" style="display:none; color:red;">La moyenne de  troisième trimestre est invalide</label>
+					       <input required class="form-control" type="number" step="any" name="moyenne_3" id="moyenne_3" placeholder="Moyenne de Le troisième trimestre" onblur="checkmoyenne3()" />
 					    </div>
 					    
 					</div>
 					<div class="row" style="margin-top: 10px">
 						<div class="col">							
 					       <label for="moyenne_g">La moyenne générale : </label>
-					       <input class="form-control" type="number" step="any" name="moyenne_g" id="moyenne_g" placeholder="Moyenne générale" />
+					        <label id="alert7" style="display:none; color:red;">La moyenne générale est invalide</label>
+					       <input required class="form-control" type="number" step="any" name="moyenne_g" id="moyenne_g" placeholder="Moyenne générale" onblur="checkmoyenneg()" />
 						</div>
 						<div class="col"></div>
 						<div class="col"></div>
@@ -296,7 +301,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						<div class="col">
 					       <label for="frere">Votre enfant a t'il un frère ou une soeur actuellement scolarisé(e) dans notre établissement ? </label>
 					      	<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="frere" id="frere1" value="1">
+							  <input required class="form-check-input" type="radio" name="frere" id="frere1" value="1">
 							  <label class="form-check-label" for="frere1">Oui</label>
 							</div>
 							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
@@ -309,11 +314,11 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						<div class="col">
 					       <label for="clubs">Votre enfant souhaite-t-il intégrer un Club ? </label>
 					      <div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="clubs" id="clubs1" value="1"  onclick="clubverif()">
+							  <input required class="form-check-input" type="radio" name="clubs" id="clubs1" value="1"  onclick="clubverif()">
 							  <label class="form-check-label" for="clubs1">Oui</label>
 							</div>
 							<div class="form-check form-check-inline" style=" top: -3px; margin-left: 10px;">
-							  <input class="form-check-input" type="radio" name="clubs" id="clubs2" value="0" onclick="clubverif1()" >
+							  <input  required class="form-check-input" type="radio" name="clubs" id="clubs2" value="0" onclick="clubverif1()" >
 							  <label class="form-check-label" for="clubs2">Non</label>
 							</div>
 						</div>
@@ -404,11 +409,15 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					</div>
 					</div>
 					<div class="row" style="margin-top: 10px">
-						<div class="col">
-					       <label for="bulletin1">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
-					       <input type="file" accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin1" id="bulletin1" class="form-control" />
-					       <input type="file"  accept="image/png, image/jpeg,image/jpg,.pdf" name="bulletin2" id="bulletin2" class="form-control" />
-					    </div>
+						 <div class="col">
+       <label  for="bulletin1">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
+        <label id="alert2" style="display:none; color:red;">La taille de fichier 1 dépasse la taille maximale</label>
+       <input  required  accept="image/png, image/jpeg,image/jpg,.pdf" type="file" name="bulletin1" id="bulletin1" class="form-control" onchange="checktaillebull1()"/>
+               <label id="alert3" style="display:none; color:red;">La taille de fichier 2 dépasse la taille maximale</label>
+       <input  required  type="file"  accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin2" id="bulletin2" class="form-control" onchange="checktaillebull2()" />
+ 
+  
+       </div>
 					</div>
 
 
@@ -419,22 +428,22 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="civilite">Civilité : </label>
-					       <input class="form-control" type="text" name="civilite" id="civilite" placeholder="Veuillez entrer votre civilité" />
+					       <input required class="form-control" type="text" name="civilite" id="civilite" placeholder="Veuillez entrer votre civilité" />
 					 	</div>
 					 	<div class="col">
 					       <label for="nom_rep">Nom : </label>
-					       <input class="form-control" type="text" name="nom_rep" id="nom_rep" placeholder="Veuillez entrer votre nom" />
+					       <input required class="form-control" type="text" name="nom_rep" id="nom_rep" placeholder="Veuillez entrer votre nom" />
 					 	</div>
 					 	<div class="col">
 					       <label for="prenom_rep">Prénom : </label>
-					       <input class="form-control" type="text" name="prenom_rep" id="prenom_rep" placeholder="Veuillez entrer votre prénom" />
+					       <input required class="form-control" type="text" name="prenom_rep" id="prenom_rep" placeholder="Veuillez entrer votre prénom" />
 					 	</div>
 					</div>
 
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="ville">Ville : </label>
-					       <input class="form-control" type="text" name="ville" id="ville" placeholder="Veuillez entrer votre ville" />
+					       <input required class="form-control" type="text" name="ville" id="ville" placeholder="Veuillez entrer votre ville" />
 					 	</div>
 					    <div class="col"></div>
 					    
@@ -442,18 +451,19 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="tel">Téléphone Portable : </label>
-					       <input class="form-control" type="number" name="tel" id="tel" placeholder="Votre numéro de téléphone portable" />
+					       <input required  class="form-control" type="number" name="tel" id="tel" placeholder="Votre numéro de téléphone portable" />
 					 	</div>
 					 	<div class="col">
 					       <label for="tel2">Téléphone fixe : </label>
-					       <input class="form-control" type="text" name="tel2" id="tel2" placeholder="Votre numéro de téléphone fixe" />
+					       <input required class="form-control" type="text" name="tel2" id="tel2" placeholder="Votre numéro de téléphone fixe" />
 					 	</div>
 					    
 					</div>
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="email_rep">E-mail : </label>
-					       <input class="form-control" type="text" name="email_rep" id="email_rep" placeholder="Veuillez entrer votre adresse email" />
+					        <label id="alert9" style="display:none; color:red;">L'adresse E-mail est invalide</label>
+					       <input required class="form-control" type="text" name="email_rep" id="email_rep" placeholder="Veuillez entrer votre adresse email" onchange="validation1()" />
 					 	</div>
 					    
 					</div>
@@ -521,5 +531,164 @@ else
 document.getElementById('sectautre').style.display = 'none'; 
 }
 }
+   function checktaillebull1()
+{
+
+taille=document.getElementById('bulletin1').files[0].size;
+
+
+
+if(taille >20000000)
+{
+document.getElementById("alert2").style.display="block";
+document.getElementById("bulletin1").value  = "";
+}
+else
+{
+document.getElementById("alert2").style.display="none";
+
+}
+
+
+ 
+}
+     function checktaillebull2()
+{
+
+taille=document.getElementById('bulletin2').files[0].size;
+
+
+
+if(taille >20000000)
+{
+document.getElementById("alert3").style.display="block";
+document.getElementById("bulletin2").value  = "";
+}
+else
+{
+document.getElementById("alert3").style.display="none";
+
+}
+
+
+ 
+}
+  function checkmoyenne1()
+{
+
+var moy1 = document.getElementById("moyenne_1").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert4").style.display="block";
+document.getElementById("moyenne_1").value  = "";
+}
+else
+{
+document.getElementById("alert4").style.display="none";
+
+}
+
+
+ 
+}
+ function checkmoyenne2()
+{
+
+var moy1 = document.getElementById("moyenne_2").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert5").style.display="block";
+document.getElementById("moyenne_2").value  = "";
+}
+else
+{
+document.getElementById("alert5").style.display="none";
+
+}}
+ function checkmoyenne3()
+{
+
+var moy1 = document.getElementById("moyenne_3").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert6").style.display="block";
+document.getElementById("moyenne_3").value  = "";
+}
+else
+{
+document.getElementById("alert6").style.display="none";
+
+}}
+function checkmoyenneg()
+{
+
+var moy1 = document.getElementById("moyenne_g").value;
+
+
+
+
+if(moy1 >20 || moy1 <0) 
+{
+document.getElementById("alert7").style.display="block";
+document.getElementById("moyenne_g").value  = "";
+}
+else
+{
+document.getElementById("alert7").style.display="none";
+
+}
+
+ 
+}
+
+function validation()
+{
+var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+
+if (expressionReguliere.test(document.getElementById("email").value))
+{
+  document.getElementById("alert8").style.display="none";
+
+
+}
+else
+{
+  document.getElementById("alert8").style.display="block";
+document.getElementById("email").value  = "";
+
+}
+return false;
+}
+function validation1()
+{
+var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+
+if (expressionReguliere.test(document.getElementById("email_rep").value))
+{
+  document.getElementById("alert9").style.display="none";
+
+
+}
+else
+{
+  document.getElementById("alert9").style.display="block";
+document.getElementById("email_rep").value  = "";
+
+}
+return false;
+}
+
  </script>
 @endsection

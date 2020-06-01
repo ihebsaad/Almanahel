@@ -26,25 +26,25 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-		 
-		  $documents =Document::orderBy('titre', 'asc')->get() ;
+     
+      $documents =Document::orderBy('created_at', 'des')->get() ;
                               
           return view('documents.index',  ['documents' => $documents]);        
-		 
+     
      }
-	 
+   
   public function annee($annee)
     {
-		 $documents =Document::orderBy('titre', 'asc')->where('annee',$annee)->get() ;                              
+     $documents =Document::orderBy('created_at', 'des')->where('annee',$annee)->get() ;                              
           return view('documents.annee',  ['annee'=>$annee,'documents' => $documents]);        
 
-	}
+  }
  public function docsrecu()
     {
         $id=Auth::id();
    $idclasses = DB::table('eleves_classe')->where('eleve','=',$id)->pluck('classe');
 
-          $documents = Document::where('type', '!=' , 'classe')->where('destinataire',$id)
+          $documents = Document::orderBy('created_at', 'des')->where('type', '!=' , 'classe')->where('destinataire',$id)
           ->orWhere('type','classe')->whereIn('destinataire', $idclasses)->orderBy('titre', 'asc')->get() ;
         
           
@@ -57,7 +57,7 @@ class DocumentsController extends Controller
         $id=Auth::id();
  
 
-          $documents = Document::where('emetteur',$id)
+          $documents = Document::orderBy('created_at', 'des')->where('emetteur',$id)
           ->get() ;
         
           
@@ -94,9 +94,9 @@ class DocumentsController extends Controller
     }
 
 
-	 
-	   
-	
+   
+     
+  
     public function store(Request $request)
     {
      $name='';
@@ -207,7 +207,6 @@ class DocumentsController extends Controller
             'share_price'=> 'required|integer',
             'share_qty' => 'required|integer'
         ]);
-
         */
       /*  $user = User::find($id);
       $user->name = $request->get('name');

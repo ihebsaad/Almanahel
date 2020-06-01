@@ -5,8 +5,6 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
 
  <?php
-
-
   use App\User ;
   ?>
 
@@ -43,7 +41,6 @@
                      <td><?php echo $document->created_at;?></td>
                      <td><a href="{{action('DocumentsController@view', $document['id'])}}" >{{ $document->titre }}</a></td>
                     <td><?php 
-
 $user=User::where('id',$document->emetteur)->first() ;
                     echo $user['name']." ".$user['lastname'];?></td>
                     
@@ -52,7 +49,7 @@ $user=User::where('id',$document->emetteur)->first() ;
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
                         <a  class="btn btn-md btn-success" role="button"  class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo  $document->chemin?>" > 
-                            <span class="fa fa-fw fa-trash-alt"></span> Télécharger
+                            <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>
                   
                   </td>
@@ -87,19 +84,15 @@ $user=User::where('id',$document->emetteur)->first() ;
 
     <script type="text/javascript">
         $(document).ready(function() {
-
-
             $('#mytable thead tr:eq(1) th').each( function () {
                 var title = $('#mytable thead tr:eq(0) th').eq( $(this).index() ).text();
                 $(this).html( '<input class="searchfield" type="text"   />' );
             } );
-
             var table = $('#mytable').DataTable({
                 orderCellsTop: true,
                 dom : '<"top"flp<"clear">>rt<"bottom"ip<"clear">>',
                 responsive:true,
                 buttons: [
-
                     'csv', 'excel', 'pdf', 'print'
                 ],
                 "columnDefs": [ {
@@ -132,26 +125,19 @@ $user=User::where('id',$document->emetteur)->first() ;
                             "sortDescending": ": activer pour un tri descendant"
                         }
                     }
-
             });
-
             // Restore state
        /*     var state = table.state.loaded();
             if ( state ) {
                 table.columns().eq( 0 ).each( function ( colIdx ) {
                     var colSearch = state.columns[colIdx].search;
-
                     if ( colSearch.search ) {
                         $( '#mytable thead tr:eq(1) th:eq(' + index + ') input', table.column( colIdx ).footer() ).val( colSearch.search );
-
                     }
                 } );
-
                 table.draw();
             }
-
 */
-
             function delay(callback, ms) {
                 var timer = 0;
                 return function() {
@@ -168,24 +154,15 @@ $user=User::where('id',$document->emetteur)->first() ;
                     table.column($(this).parent().index() + ':visible')
                         .search(this.value)
                         .draw();
-
-
                 });
-
                 $('#mytable thead tr:eq(1) th:eq(' + index + ') input').keyup(delay(function (e) {
                     console.log('Time elapsed!', this.value);
                     $(this).blur();
-
                 }, 2000));
             });
-
-
  
         });
-
     </script>
 
 
 @stop
-
-

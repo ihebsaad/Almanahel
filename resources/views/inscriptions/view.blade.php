@@ -7,7 +7,7 @@
 
 
 @section('content')
-<div class=" " style="padding:8px 8px 8px 8px">
+<div  style="padding:8px 8px 8px 8px">
         <div class="portlet box grey">
 <h3 style="margin-left:50px">Pré-inscription</h3><br><br>    
                <form class="form-horizontal" method="POST"  action="{{action('InscriptionsController@update', $id)}} " enctype="multipart/form-data" >
@@ -266,8 +266,8 @@
         <?php if($inscription->bulletin1 !==''){?>
 
 
-          <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin1'];?>" > 
-           <span class="fa fa-fw fa-trash-alt"></span> <?php echo $inscription['bulletin1'];?>
+          <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin1'];?>" > 
+           <span class="far fa-eye"></span> <?php echo $inscription['bulletin1'];?>
 </a>
           <?php } ?>
 
@@ -284,8 +284,8 @@
         <?php if($inscription->bulletin2 !==''){?>
 
 
-          <a class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin2'];?>" > 
-           <span class="fa fa-fw fa-trash-alt"></span> <?php echo $inscription['bulletin2'];?>
+          <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin2'];?>" > 
+           <span class="far fa-eye"></span> <?php echo $inscription['bulletin2'];?>
 </a>
           <?php } ?>
 

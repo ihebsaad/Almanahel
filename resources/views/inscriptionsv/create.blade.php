@@ -106,19 +106,19 @@
   }
 </style>
 
-<h3 style="margin-left:50px">Inscription </h3><br><br>    
-       <div class="row"  style="margin-left:20px"  >
-  <section style="width:500px; font-size: 18px; font-weight: 500; color: #545454;">
-Inscription pour : 
-<select id="elevestat" onBlur="eleveverif()"  class="form-control">
+<h3 style="margin-left:50px">Créer une inscription </h3><br><br>    
+           <div class="row"  style="margin-left:20px">
+  <section  style=" font-size: 18px; font-weight: 1300; color: #545454;">
+Inscription pour : <select id="elevestat" onBlur="eleveverif()" style="width:1100" class="form-control">
             <option>Selectionner</option>
-            <option value="nouveau">Nouveau élève</option>
-            <option value="ancien">Ancien élève</option>
+            <option value="nouveau">Nouveau</option>
+            <option value="ancien">Ancien</option>
         </select>
-         
+         élève.
   </section>
 </div>
- <div id="ancien_box" style="display:none">
+<br><br> <br><br> <br><br> 
+<div id="ancien_box" style="display:none">
    <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsadd') }}">
       {{ csrf_field() }}
 	  
@@ -129,18 +129,32 @@ Inscription pour :
 		if($mois > 9 ){$annee=$annee-1;}
 		?>
 	  <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
-
+			   
+			   
 <div class="row" style="margin-left:20px">
   <div class="form-group " >
     <div class=" row">
                                    
-    Sélectionnez l'élève                                  
- <select style="width:400px" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >
+    Sélectionnez l'élève <br> <br>                                
+ <select style="width:1300" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >
+                       
+                  
+                       
 @foreach($users as $user)
- <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .$user->name; ?></option>                          
-       @endforeach </select>  
-	   </div></div>  </div>
-   <div class="row form-group" style="margin-bottom:30px">
+                            <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .$user->name; ?></option>                          
+                             @endforeach
+                       
+
+                     </select>
+
+                                    </div>
+                                        </div>
+                                            </div>
+                                
+
+<br><br> <br><br> <br><br> 
+
+    <div class="row form-group" style="margin-bottom:30px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit"  id="test" class="btn btn-primary">
                                    S'inscrire
@@ -148,7 +162,8 @@ Inscription pour :
                             </div>
                         </div>
 </form>  
-   </div>
+
+                         </div>
                       
 
 <div id="nouveau_box" style="display:none">
@@ -157,9 +172,9 @@ Inscription pour :
 <div class="row" style="margin-left:20px">
   <div class="form-group " >
     <div class=" row">
-            Sélectionnez l'élève        
+                            Sélectionnez l'élève   <br> <br>     
                                     
-                <select class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
+             <select  style="width:1300" class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
                        
                   
                        
@@ -190,6 +205,8 @@ Inscription pour :
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script>
+  $(champ1).select2();
+$(champ2).select2();
 function eleveverif()
 {
   var eleve = document.getElementById("elevestat").value;
@@ -212,8 +229,7 @@ document.getElementById('ancien_box').style.display = 'none';
 }
  
 }
-$(champ1).select2();
-$(champ2).select2();
+
 
 
 

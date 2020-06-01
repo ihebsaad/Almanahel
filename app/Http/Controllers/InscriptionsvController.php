@@ -409,15 +409,15 @@ if(empty($parent))
     }
       public function index()
     {
-		$inscriptionsv =Inscriptionv::orderBy('eleve', 'asc')->get() ;                     
+		$inscriptionsv =Inscriptionv::orderBy('created_at', 'des')->get() ;                     
          return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
          
 	}
 	
 	     public function annee($annee)
     {
-		$inscriptionsv =Inscriptionv::orderBy('eleve', 'asc')->where('annee',$annee)->get() ;                     
-         return view('inscriptionsv.index',  ['annee'=>$annee,'inscriptionsv' => $inscriptionsv]);        
+		$inscriptionsv =Inscriptionv::orderBy('created_at', 'des')->where('annee',$annee)->get() ;                     
+         return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
          
 	}
 	

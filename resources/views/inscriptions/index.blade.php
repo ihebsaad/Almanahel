@@ -14,7 +14,7 @@
     </style>
          <div class="row">
             <div class="col-md-6"><H2> Liste des pré-inscriptions</H2></div>
-			 <div class="col-lg-3">
+			                <div class="col-lg-3">
              <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-archive"></i> Archive  
@@ -96,13 +96,13 @@
                         </a>
                         <?php if ($inscription->valide!==1){?>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@valide', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
-                            <span class="fa fa-fw fa-trash-alt"></span> Valider
+                            <span class="fas fa-check"></span> Valider
                         </a>
                        
                          
                         <?php } ?>
                         <a   href="{{action('InscriptionsController@view', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
-                            <span class="fa fa-fw fa-trash-alt"></span> Voir
+                            <span class="far fa-eye" ></span> Voir
                         </a>
                   
                   

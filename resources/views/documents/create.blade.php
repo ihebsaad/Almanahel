@@ -6,13 +6,13 @@
 
                     <form class="form-horizontal" method="POST" action="{{ route('documents.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
-	  		<?php	  //ANNEE
-		$year=date('Y');$month=date('m');
-		$mois=intval($month);
-		$annee=intval($year);
-		if($mois > 9 ){$annee=$annee-1;}
-		?>
-			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
+        <?php   //ANNEE
+    $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+    ?>
+         <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
 
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">
                             <label for="titre" class="col-md-4 control-label">Titre</label>
@@ -129,7 +129,6 @@
 
                       <!--  <div class="form-group">
                             <label for="Role" class="col-md-4 control-label">Rôle</label>
-
                             <div class="col-md-6">
                                 <select  name="user_type">
                                     <option value="user">Agent Simple</option>
@@ -153,18 +152,12 @@
 
 
 <style>
-
-
-
 </style>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-
-
 function verif()
 {
   var type = document.getElementById("type").value;
-
  if(type=="eleve")
 {
 document.getElementById('secteleve').style.display = 'block'; 
@@ -197,12 +190,7 @@ else
 {
 document.getElementById('sectclasse').style.display = 'none'; 
 }
-
 }
-
-
-
-
 </script>
 
  @endsection

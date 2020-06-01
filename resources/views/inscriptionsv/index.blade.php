@@ -93,7 +93,7 @@
                         </a>
                        
                         <a   href="{{action('InscriptionsvController@view', $inscriptionv['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
-                            <span class="fa fa-fw fa-trash-alt"></span> Voir
+                            <span class="far fa-eye"></span> Voir
                         </a>
                   
                   

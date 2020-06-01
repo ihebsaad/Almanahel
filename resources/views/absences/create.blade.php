@@ -72,7 +72,7 @@
                 </div>					
 				 <div class="form-group">
                     <label for="seance">Date de Début:</label>
-                    <input id="debut" type="text" class="form-control" name="debut"/>
+                    <input autocomplete="off" id="debut" type="text" class="form-control" name="debut"/>
                 </div>
 				 <div class="form-group">
                     <label for="heure_debut">Heure de Fin:</label>
@@ -80,7 +80,7 @@
                 </div>				
                 <div class="form-group">
                     <label for="fin">Date de Fin:</label>
-                    <input id="fin" type="text" class="form-control" name="fin" />
+                    <input autocomplete="off" id="fin" type="text" class="form-control" name="fin" />
                 </div>	
 				 <div class="form-group">
                     <label for="heure_fin">Heure de Fin:</label>

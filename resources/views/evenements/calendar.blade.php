@@ -66,14 +66,15 @@ allDayText:'Toute la journée',
 	  {$i++;
 				$titre=$event->titre;
 				$type=$event->type;
-				$heure_debut=$event->heure_debut;
-				$heure_fin=$event->heure_fin;
+				$heure_debut=substr($event->heure_debut,0,5);
+				$heure_fin=substr($event->heure_fin,0,5);
  				 $debut = DateTime::createFromFormat('d/m/Y', $event->debut );
  				 $fin = DateTime::createFromFormat('d/m/Y', $event->fin );
 				 $debut=$debut->format('Y-m-d');
 				 $fin=$fin->format('Y-m-d');
 				 
-				// if()
+				 if($heure_debut !=''){ $debut=$debut.'T'.$heure_debut; }
+				 if($heure_fin !=''){ $fin=$fin.'T'.$heure_fin; }
 				 if($type=="simple"){
 				 $color="
 				   color: '#04b431',    

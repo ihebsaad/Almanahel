@@ -30,7 +30,7 @@
             <tr id="headtable">
                 <th style="width:5%">N°</th>
                  <th style="width:20%">Titre</th>
-                <th style="width:25%">description</th>
+                <th style="width:25%">Type</th>
                 <th style="width:10%">Début</th>
                 <th style="width:10%">Fin</th>
                 <th style="width:10%">Visbilité</th>
@@ -45,7 +45,7 @@
                 <tr>
                     <td style="width:5%" >{{$evenement->id}}</td>
                     <td style="width:20%" ><a href="{{action('EvenementsController@view', $evenement['id'])}}" ><?php echo $evenement->titre; ?>   </a></td>
-                     <td style="width:25%" > {{$evenement->description}} </td>
+                     <td style="width:25%" > {{$evenement->type}} </td>
                      <td style="width:10%" > {{$evenement->debut}} </td>
                      <td style="width:10%" > {{$evenement->fin}} </td>
                   

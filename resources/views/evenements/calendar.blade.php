@@ -227,7 +227,9 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
  
 
   <div id='loading'>Chargement...</div>
-
+<div style="width:80px;background-color:#04b431;color:white;margin-left:20px">Evénement court</div>
+<div style="width:80px;background-color:#ec3aa5;color:white;margin-left:20px">Examens</div>
+<div style="width:80px;background-color:#028dc8;color:white;margin-left:20px">Vacances </div>
   <div id='calendar'></div>
  
  

@@ -26,7 +26,22 @@
 			  {{ csrf_field() }}
 			  
 			  <input type="hidden" value="<?php echo $paiement['id']; ?>" name="id"  >
- 		
+ 		<?php if ($paiement['eleve']>0) { ?>
+		         <div class="form-group">
+                    <label for="eleve">Elève:</label>
+                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+					<option></option>
+					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
+						foreach($eleves as $el)
+						{if($paiement['eleve']==$el->id){$sel='selected="selected"';}else{$sel='';}
+ 						echo ' <option  '.$sel.' value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+	
+						}
+					?>
+					</select>
+                </div>	
+		
+		<?php  } ?>
                 <div class="form-group">
                     <label for="libelle">Libellé:</label>
                     <input id="libelle" type="text" class="form-control" name="libelle"  value="<?php echo $paiement['libelle']; ?>"/>

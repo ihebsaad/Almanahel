@@ -7,7 +7,7 @@
 
  
 
-  <header class="masthead" style= "background-image:'<?php echo $link ;?>'" >
+  <header class="masthead"    >
     <div class="overlay"></div>
     <div class="container">
       <div class="row">

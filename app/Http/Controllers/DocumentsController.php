@@ -253,7 +253,7 @@ class DocumentsController extends Controller
       if( ($request->get('destinataire3'))!=0) { $destinataire=$request->get('destinataire3');}
         if( ($request->get('destinataire4'))!=0) { $destinataire=$request->get('destinataire4');}
            if( ($request->get('destinataire3'))==0 &&($request->get('destinataire2'))==0 && ($request->get('destinataire1'))==0 && ($request->get('destinataire4'))==0) {$destinataire=0; $destinataire=Auth::id();}
-         Document::where('id', $document['id'])->update(['destinataire' => $destinataire]);
+         Document::where('id', $document['id'])->update(['destinataire' => $destinataire,'chemin' => $name]);
 
      //   $user->email = $request->get('email');
       //  $user->user_type = $request->get('user_type');

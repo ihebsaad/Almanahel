@@ -135,13 +135,13 @@ class PaiementsController extends Controller
     {
  
 		$id=$request->get('id');
-		 
-        $paiement  = Paiement::find($id);
+		$eleve= (intval)$request->get('eleve');
+         $paiement  = Paiement::find($id);
 		
  
 		 Paiement::where('id',$id)->update(
 		array(
-			'eleve' =>trim( $request->get('eleve')),
+			'eleve' =>trim( $eleve),
               'details' => trim($request->get('details')),
              'montant' => trim($request->get('montant')),
              'libelle' => trim($request->get('libelle')),

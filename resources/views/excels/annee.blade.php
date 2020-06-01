@@ -78,7 +78,7 @@ $user=User::where('id',$excel->emetteur)->first() ;
                             <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                         </a>
                           <a  class="btn btn-md btn-success" role="button"  class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/excels/<?php echo  $excel->chemin?>" > 
-                            <span class="fa fa-fw fa-trash-alt"></span> Télécharger
+                            <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>
                   
                   </td>

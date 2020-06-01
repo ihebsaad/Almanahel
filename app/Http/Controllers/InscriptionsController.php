@@ -168,14 +168,14 @@ $pathb = storage_path()."/fichiers/";
      */
     public function index()
     {  
-          $inscriptions =Inscription::orderBy('created_at', 'des')->get() ;              
+          $inscriptions =Inscription::orderBy('created_at', 'desc')->get() ;              
           return view('inscriptions.index',  ['inscriptions' => $inscriptions]);        
 
      }
 	 
 	   public function annee($annee)
     {  
-          $inscriptions =Inscription::orderBy('created_at', 'des')->where('annee',$annee)->get() ;              
+          $inscriptions =Inscription::orderBy('created_at', 'desc')->where('annee',$annee)->get() ;              
           return view('inscriptions.index',  ['inscriptions' => $inscriptions]);        
 
      }

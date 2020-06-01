@@ -25,7 +25,7 @@
             <form method="post" action="{{ route('paiements.edit') }}"  enctype="multipart/form-data">
 			  {{ csrf_field() }}
 			  
-			  <input type="hidden" value="<?php echo $absence['id']; ?>" name="id"  >
+			  <input type="hidden" value="<?php echo $paiement['id']; ?>" name="id"  >
  		
                 <div class="form-group">
                     <label for="libelle">Libellé:</label>

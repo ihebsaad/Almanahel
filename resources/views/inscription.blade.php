@@ -113,10 +113,6 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
   </div>
 </div>
 <div class="container">
-<div class="row" style="text-align: center;padding-bottom: 20px">
-	<h3> Pré-inscription / Inscription 2020-2021 </h3>
-</div> 
-
 <div class="row" style="width:100%;padding-bottom: 20px">
   <div class="clearfix"></div>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="width:100%;padding-bottom: 20px">
@@ -166,11 +162,13 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     </div>
   </div>
 </div>
-
+<div class="row" style="text-align: center;padding-bottom: 20px">
+	<h3> Pré-inscription / Inscription 2020-2021 </h3>
+</div>
 <div class="row">
 	<section style=" font-size: 18px; font-weight: 500; color: #545454;width:200px">
-		Vous êtes : <select id="elevestat">
-            <option>Selectionner</option>
+		Vous êtes : <select id="elevestat" class="form-control">
+            <option>Sélectionnez</option>
             <option value="nouveau">Nouveau élève</option>
             <option value="ancien">Ancien élève</option>
         </select>

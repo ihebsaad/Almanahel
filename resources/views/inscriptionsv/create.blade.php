@@ -159,7 +159,7 @@
          {{ csrf_field() }}
    <div class="form-group " >
     Sélectionnez l'élève pré-inscrit  <br>                                        
-    <select  style="wisth:100%;height38px;padding-top: 5px;padding-left:5px;" class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
+    <select  style="width:100%;height38px;padding-top: 5px;padding-left:5px;" class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
  
 @foreach($preins as $prein)
     <option value="<?php  echo $prein->id; ?>"><?php echo $prein->nom .' '.$prein->prenom; ?></option>                          

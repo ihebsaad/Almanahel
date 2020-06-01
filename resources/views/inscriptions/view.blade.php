@@ -376,7 +376,7 @@
        <button  type="submit"  class="btn btn-primary">Enregistrer</button>
     <?php if ($inscription->valide!==1){?>
                         <a  onclick="return confirm('Êtes-vous sûrs ?')"  href="{{action('InscriptionsController@valide', $inscription['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
-                            <span class="fa fa-fw fa-trash-alt"></span> Valider
+                            <span class="fas fa-check"></span> Valider
                         </a>
                         <?php } ?>
 

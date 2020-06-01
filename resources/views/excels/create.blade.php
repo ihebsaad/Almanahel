@@ -57,7 +57,7 @@
                         </div>
                      
                          <div class="form-group " style="margin-bottom:30px">
-                         <label for="name" class="col-md-4 control-label">Cible</label>
+                         <label for="name" class="col-md-4 control-label">Type de fichier</label>
                           <div class="col-md-6">
                                <select name="type" id="type" class="form-control" onBlur="verif()" >
                               <option value="">--Sélectionnez--</option>

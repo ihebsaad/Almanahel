@@ -34,7 +34,7 @@
                         </div>
 						<?php $mois= $excel['mois']; ?>
 						   <div class="form-group " style="margin-bottom:30px;margin-left:10px;">
-                         <label for="name" class="col-md-4 control-label">Mois</label>
+                         <label for="name" class="col-md-4 control-label">Mois</label><br>
  				 
 			<?php	$mois=$excel['mois'];$Mois='';
 				if($mois==1){$Mois="Janvier";} if($mois==7){$Mois="Juillet";}
@@ -43,7 +43,7 @@
 				if($mois==4){$Mois="Avril";} if($mois==10){$Mois="Octobre";}
 				if($mois==5){$Mois="Mai";} if($mois==11){$Mois="Novembre";}
 				if($mois==6){$Mois="Juin";} if($mois==12){$Mois="Décembre";}   ?>
-				 <label   class="col-md-4 control-label"><?php echo $Mois;?></label>
+				 <label style="font-weight:blod"  class="col-md-4 control-label"><?php echo $Mois;?></label>
 
                         </div>
                     	<?php $type= $excel['type']; ?>

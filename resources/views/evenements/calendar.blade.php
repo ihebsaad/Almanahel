@@ -28,7 +28,8 @@
  
        googleCalendarApiKey: 'AIzaSyCcYzKrsFJ3ImlhlmdRuAyaHlD_N2m1I3s',
 buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Liste'},
-//buttonIcons: {next: 'right-single-arrow', previous:'left-single-arrow',prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
+allDayText:'Toute la journée',
+ //buttonIcons: {next: 'right-single-arrow', previous:'left-single-arrow',prevYear: 'left-double-arrow', nextYear: 'right-double-arrow'},
  
  
  /*
@@ -227,7 +228,7 @@ buttonText: {today: "Aujourd'hui", month: 'Mois', week: 'Semaine', day: 'Jour', 
  
 
   <div id='loading'>Chargement...</div>
-<div class="row" stylr="width:100%">
+<div class="row" style="width:100%;margin-left:30px;margin-bottom:25px;text-align:center;">
 <div style="width:170px;background-color:#04b431;color:white;margin-left:20px">Evénement court</div>
 <div style="width:170px;background-color:#ec3aa5;color:white;margin-left:20px">Examens</div>
 <div style="width:170px;background-color:#028dc8;color:white;margin-left:20px">Vacances </div>

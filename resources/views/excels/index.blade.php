@@ -71,12 +71,12 @@
 				$date=  date('d/m/Y H:i', strtotime($excel['created_at'] ));
 				
 				$mois=$excel['mois'];$Mois='';
-				if{$mois==1{$Mois="Janvier";} if{$mois==7{$Mois="Juillet";}
-				if{$mois==2{$Mois="Février";} if{$mois==8{$Mois="Août";}
-				if{$mois==3{$Mois="Mars";} if{$mois==9{$Mois="Septembre";}
-				if{$mois==4{$Mois="Avril";} if{$mois==10{$Mois="Octobre";}
-				if{$mois==5{$Mois="Mai";} if{$mois==11{$Mois="Novembre";}
-				if{$mois==6{$Mois="Juin";} if{$mois==12{$Mois="Décembre";}
+				if($mois==1){$Mois="Janvier";} if($mois==7){$Mois="Juillet";}
+				if($mois==2){$Mois="Février";} if($mois==8){$Mois="Août";}
+				if($mois==3){$Mois="Mars";} if($mois==9){$Mois="Septembre";}
+				if($mois==4){$Mois="Avril";} if($mois==10){$Mois="Octobre";}
+				if($mois==5){$Mois="Mai";} if($mois==11){$Mois="Novembre";}
+				if($mois==6){$Mois="Juin";} if($mois==12){$Mois="Décembre";}
 			 ?>
                 <tr>
                     <td>{{$excel->id}}</td>

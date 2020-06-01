@@ -4,7 +4,7 @@
 
     <h3 style="margin-left:50px">Ajouter un document </h3><br><br>
 
-                    <form class="form-horizontal" method="POST" action="{{ route('excels.store') }}" enctype="multipart/form-data">
+     <form class="form-horizontal" method="POST" action="{{ route('excels.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 		<?php	  //ANNEE
 		$year=date('Y');$month=date('m');

@@ -80,13 +80,22 @@ class ExcelsController extends Controller
           $chemin->move($path, $name);
     }*/
        $emetteur=Auth::id(); 
-
+	$type=	$request->get('type');
+	$mois= $request->get('mois');
+	$annee= $request->get('annee');
+	
+	// Suppression ancien fichier
+		Excel::where('type',$type)
+		->where('annee',$annee)
+		->where('mois',$mois)
+		-delete();
+		
         $excel = new Excel([
              'titre' =>$request->get('titre'),
              'chemin'=> $name,
-              'type' => $request->get('type'),
-              'mois' => $request->get('mois'),
-              'annee' => $request->get('annee'),
+              'type' => $type,
+              'mois' => $mois,
+              'annee' => $annee,
               'emetteur' => $emetteur,
             
             // 'par'=> $request->get('p,ar'),ville

@@ -46,23 +46,25 @@
                 </div>
 				<div class="form-group">
                     <label for="type">Type:</label>
-                    <select id="type" type="text" class="form-control" name="type" >
+                    <select id="type" type="text" class="form-control" name="type" onchange="verif();" >
 					<option value="simple">Simple</option>
 					<option value="vacances">Vacances</option>
 					<option value="examens">Examens</option>
 					<!--<option value="event">Evenement</option>-->
 					</select>
                 </div>
-				<!--
+				<div style="display:none" id="time"> 
 		 		 <div class="form-group">
-                    <label for="debut">Heure de Début:</label>
-                    <input id="debut" type="text" class="form-control" name="debut" ></input>
+                    <label for="heure_debut">Heure de Début:</label>
+                    <input id="heure_debut" type="text" class="form-control" name="heure_debut" ></input>
                 </div>	
 				<div class="form-group">
-                    <label for="fin">Heure de Fin:</label>
-                    <input id="fin" type="text" class="form-control" name="fin" ></input>
+                    <label for="heure_fin">Heure de Fin:</label>
+                    <input id="heure_fin" type="text" class="form-control" name="heure_fin" ></input>
                 </div>	
--->				
+                
+				</div>	
+ 			
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Ajouter</button>
   			 </div>
@@ -70,6 +72,22 @@
              </form>
         </div>
     </div>
+	
+	<script>
+	function verif()
+	{
+		var type =document.getElementById('type');
+		if(type=='simple')
+		{ 
+		document.getElementById('time').style.display = 'block'; 
+
+		}
+		else{
+		document.getElementById('time').style.display = 'none'; 
+	
+		}
+	}
+	</script>
 @endsection
 
  

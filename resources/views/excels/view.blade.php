@@ -6,7 +6,8 @@
 
      <form class="form-horizontal" method="POST" action="{{ route('excels.edit') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
-		 
+		 			   <input id="id" type="hidden" class="form-control" name="id"  value="<?php  echo $excel['id'];?>"/>
+
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">
                             <label for="titre" class="col-md-4 control-label">Titre</label>
 

@@ -77,7 +77,7 @@
 	<script>
 	function verif()
 	{
-		var type =document.getElementById('type');
+		var type =document.getElementById('type').value;
 		if(type=='simple')
 		{ 
 		document.getElementById('time').style.display = 'block'; 

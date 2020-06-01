@@ -35,21 +35,16 @@
 						<?php $mois= $excel['mois']; ?>
 						   <div class="form-group " style="margin-bottom:30px;margin-left:10px;">
                          <label for="name" class="col-md-4 control-label">Mois</label>
- 					<select     class="form-control input"   name="mois" id="mois"   readonly style="width:150px">
-                        <option value=""></option>
-                        <option <?php if($mois=='01'){echo 'selected="selected"';}?>  >  Janvier  </option>
-                        <option <?php if($mois=='02'){echo 'selected="selected"';}?> >   Février  </option>
-                        <option <?php if($mois=='03'){echo 'selected="selected"';}?>  >  Mars  </option>
-                        <option <?php if($mois=='04'){echo 'selected="selected"';}?>  >  Avril  </option>
-                        <option <?php if($mois=='05'){echo 'selected="selected"';}?>  >  Mai  </option>
-                        <option <?php if($mois=='06'){echo 'selected="selected"';}?>  >  Juin  </option>
-                        <option <?php if($mois=='07'){echo 'selected="selected"';}?>  >  Juillet  </option>
-                        <option <?php if($mois=='08'){echo 'selected="selected"';}?>  >  Août  </option>
-                        <option <?php if($mois=='09'){echo 'selected="selected"';}?>  >  Septembre  </option>
-                        <option <?php if($mois=='10'){echo 'selected="selected"';}?>  >  Octobre  </option>
-                        <option <?php if($mois=='11'){echo 'selected="selected"';}?>  >  Novembre  </option>
-                        <option <?php if($mois=='12'){echo 'selected="selected"';}?>  >  Décembre  </option>
-                    </select>
+ 				 
+			<?php	$mois=$excel['mois'];$Mois='';
+				if($mois==1){$Mois="Janvier";} if($mois==7){$Mois="Juillet";}
+				if($mois==2){$Mois="Février";} if($mois==8){$Mois="Août";}
+				if($mois==3){$Mois="Mars";} if($mois==9){$Mois="Septembre";}
+				if($mois==4){$Mois="Avril";} if($mois==10){$Mois="Octobre";}
+				if($mois==5){$Mois="Mai";} if($mois==11){$Mois="Novembre";}
+				if($mois==6){$Mois="Juin";} if($mois==12){$Mois="Décembre";}   ?>
+				 <label   class="col-md-4 control-label"><?php echo $Mois;?></label>
+
                         </div>
                     	<?php $type= $excel['type']; ?>
 

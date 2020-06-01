@@ -283,6 +283,6 @@ Route::post('/excels/create','ExcelsController@create')->name('excels.create');
 Route::get('/excels', array('as' => 'excels','uses' => 'ExcelsController@index'));
 Route::get('/excels/view/{id}', 'ExcelsController@view');
 Route::get('/excels/destroy/{id}', 'ExcelsController@destroy');
- Route::get('/excels/edit', 'ExcelsController@edit')->name('excels.edit');
+ Route::post('/excels/edit', 'ExcelsController@edit')->name('excels.edit');
  Route::post('/excels/updating','ExcelsController@updating')->name('excels.updating');
 Route::get('/excels/annee/{annee}', 'ExcelsController@annee')->name('excels.annee');

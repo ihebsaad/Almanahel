@@ -134,7 +134,7 @@
    <div class="form-group " >
                                     
     Sélectionnez l'élève <br>                                 
- <select style="width:100%;height:38px;padding: .375rem .75rem;" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
+ <select style="width:100%;height:38px;padding-top: 5px;padding-left:5px;" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
 @foreach($users as $user)
 <option ></option>
   <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .' '.$user->name; ?></option>                          
@@ -142,7 +142,7 @@
    </select>
     </div>
   
-    <div class="row form-group" style="margin-bottom:30px;margin-top:20px">
+    <div class="row form-group" style="margin-bottom:20px;margin-top:20px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit"  id="test" class="btn btn-primary">
                                    S'inscrire
@@ -158,20 +158,15 @@
      <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsaddnov') }}">
          {{ csrf_field() }}
    <div class="form-group " >
-    Sélectionnez l'élève   <br>     
-                                    
-    <select  style="width:1300" class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
-                       
-                  
-                       
+    Sélectionnez l'élève pré-inscrit  <br>                                        
+    <select  style="wisth:100%;height38px;padding-top: 5px;padding-left:5px;" class="form-control select2"  id="champ2" name="champ2"  onchange="checkexiste2(this)"  >
+ 
 @foreach($preins as $prein)
-                            <option value="<?php  echo $prein->id; ?>"><?php echo $prein->nom .$prein->prenom; ?></option>                          
-                             @endforeach
-                       
-
-                     </select>
+    <option value="<?php  echo $prein->id; ?>"><?php echo $prein->nom .$prein->prenom; ?></option>                          
+       @endforeach                    
+    </select>
  </div>
-  <div class="  form-group" style="margin-bottom:20px">
+  <div class="  form-group" style="margin-bottom:20px;margin-top:20px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit"  id="test1" class="btn btn-primary">
                                    S'inscrire

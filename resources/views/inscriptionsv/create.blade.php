@@ -115,8 +115,8 @@
  Inscription pour :<br>
  <select id="elevestat" onBlur="eleveverif()"  class="form-control">
             <option>Sélectionnez</option>
-            <option value="nouveau">Nouveau élève</option>
-            <option value="ancien">Ancien élève</option>
+            <option value="nouveau">Nouveau élève (pré-inscription validée)</option>
+            <option value="ancien">Ancien élève dans la plateforme  </option>
         </select>
  </div>
 <div id="ancien_box" style="display:none">
@@ -133,7 +133,7 @@
  
    <div class="form-group " >
                                     
-    Sélectionnez l'élève <br>                                 
+    Sélectionnez l'élève deja enregistré dans la palteforme<br>                                 
  <select style="width:100%;height:38px;padding-top: 5px;padding-left:5px;" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
 @foreach($users as $user)
 <option ></option>

@@ -113,8 +113,8 @@
    
    <div class="form-group"  style=" ">
  Inscription pour :<br>
- <select id="elevestat" onBlur="eleveverif()" style="width:1100" class="form-control">
-            <option>Selectionner</option>
+ <select id="elevestat" onBlur="eleveverif()"  class="form-control">
+            <option>Sélectionnez</option>
             <option value="nouveau">Nouveau élève</option>
             <option value="ancien">Ancien élève</option>
         </select>
@@ -134,14 +134,15 @@
    <div class="form-group " >
                                     
     Sélectionnez l'élève <br>                                 
- <select style="width:100%" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
+ <select style="width:100%;height:38px;padding: .375rem .75rem;" class="form-control select2"  id="champ1" name="champ1"  onchange="checkexiste1(this)"   >      
 @foreach($users as $user)
+<option ></option>
   <option value="<?php  echo $user->id; ?>"><?php echo $user->lastname .' '.$user->name; ?></option>                          
    @endforeach
    </select>
     </div>
   
-    <div class="row form-group" style="margin-bottom:30px">
+    <div class="row form-group" style="margin-bottom:30px;margin-top:20px">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit"  id="test" class="btn btn-primary">
                                    S'inscrire

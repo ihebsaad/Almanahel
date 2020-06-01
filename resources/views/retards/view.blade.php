@@ -43,7 +43,9 @@
 					?>
  					</select>
                 </div>
-				<?php use \App\Http\Controllers\ClassesController; ?>
+				<?php use \App\Http\Controllers\ClassesController; 
+				if ($retard['eleve']) {
+				?>
 				
 				
                 <div class="form-group">
@@ -59,7 +61,9 @@
 						}
 					?>
 					</select>
-                </div>		             <div class="form-group">
+                </div>		
+				<?php } ?>
+				<div class="form-group">
                     <label for="seance">Séance:</label>
                     <input id="seance" type="text" class="form-control" name="seance"   value="<?php echo $retard['seance']; ; ?>"/>
                 </div>						

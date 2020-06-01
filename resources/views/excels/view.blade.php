@@ -4,7 +4,7 @@
 
     <h3 style="margin-left:50px">Modifier le fichier excel </h3><br><br>
 
-     <form class="form-horizontal" method="POST" action="{{ route('excels.store') }}" enctype="multipart/form-data">
+     <form class="form-horizontal" method="POST" action="{{ route('excels.edit') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 		 
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">

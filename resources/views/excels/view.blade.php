@@ -2,9 +2,9 @@
  
 @section('content')
 
-    <h3 style="margin-left:50px">Modifier le document </h3><br><br>
+    <h3 style="margin-left:50px">Modifier le fichier excel </h3><br><br>
 
-     <form class="form-horizontal" method="POST" action="{{ route('documents.store') }}" enctype="multipart/form-data">
+     <form class="form-horizontal" method="POST" action="{{ route('excels.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 		 
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">
@@ -34,7 +34,7 @@
 						<?php $mois= $excel['mois']; ?>
 						   <div class="form-group " style="margin-bottom:30px;margin-left:10px;">
                          <label for="name" class="col-md-4 control-label">Mois</label>
- 					<select     class="form-control input"   name="mois" id="mois"    style="width:150px">
+ 					<select     class="form-control input"   name="mois" id="mois"   readonly style="width:150px">
                         <option value=""></option>
                         <option <?php if($mois=='01'){echo 'selected="selected"';}?>  >  Janvier  </option>
                         <option <?php if($mois=='02'){echo 'selected="selected"';}?> >   Février  </option>

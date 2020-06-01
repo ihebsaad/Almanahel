@@ -130,20 +130,7 @@ class ExcelsController extends Controller
 
    
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit1($id)
-    {
- 
-        $classe = Classe::find($id);
-
-        return view('classes.edit1',  compact('classe','id'));
-    }
-
+   
     /**
      * Update the specified resource in storage.
      *
@@ -151,44 +138,17 @@ class ExcelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update3(Request $request, $id)
+    public function edit(Request $request )
     {
-       /* $request->validate([
-            'share_name'=>'required',
-            'share_price'=> 'required|integer',
-            'share_qty' => 'required|integer'
-        ]);
-
-        */
-      /*  $user = User::find($id);
-      $user->name = $request->get('name');
-         $user->email = $request->get('email');
-         $user->type_user = $request->get('type_user');
-*/
-
-        $excel = Excel::find($id);
-
-  
-      /*  $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-         ]);
-        */
- /*       $data = $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);*/
-
-      if( ($request->get('titre'))!=null) { $excel->titre = $request->get('titre');}
-      if( ($request->get('created_at'))!=null) { $excel->created_at = $request->get('created_at');}
-      if( ($request->get('description'))!=null) { $excel->description = $request->get('description');}
-      if( ($request->get('type'))!=null) { $excel->type = $request->get('type');}
-
+		
+ 	$id=	$request->get('id');
+     $emetteur=Auth::id(); 
+	$type=	$request->get('type');
+	$mois= $request->get('mois');
+	$annee= $request->get('annee');
+	
    
- $excel->emetteur=Auth::id();
-   $excel->save();
-  $chemin= $request->file('chemin');
+   $chemin= $request->file('chemin');
        $name='';
          if($request->file('chemin')!=null)
           {$chemin=$request->file('chemin');
@@ -199,22 +159,32 @@ class ExcelsController extends Controller
 
 
         }
-     
-           if( ($request->get('destinataire2'))!=0) {$destinataire=$request->get('destinataire2');}
-   if( ($request->get('destinataire1'))!=0) { $destinataire=$request->get('destinataire1');}
-      if( ($request->get('destinataire3'))!=0) { $destinataire=$request->get('destinataire3');}
-        if( ($request->get('destinataire4'))!=0) { $destinataire=$request->get('destinataire4');}
-           if( ($request->get('destinataire3'))==0 &&($request->get('destinataire2'))==0 && ($request->get('destinataire1'))==0 && ($request->get('destinataire4'))==0) {$destinataire=0; $destinataire=Auth::id();}
-         Excel::where('id', $excel['id'])->update(['destinataire' => $destinataire]);
-
-     //   $user->email = $request->get('email');
-      //  $user->user_type = $request->get('user_type');
-
-        //$data['id'] = $id;
-      
-
-
-        return redirect('/docsenv')->with('success', ' mise à jour avec succès');    }
+    
+	$name='';
+		if($request->file('chemin')!=null)
+		{$chemin=$request->file('chemin');
+		 $name =  $chemin->getClientOriginalName();
+         $path = storage_path()."/excels/";
+ 
+          $chemin->move($path, $name);	
+		  Excel::where('id',$id)->update(
+		array(
+		//'visible' => $visible,
+		'titre' => $titre,
+		'emetteur' => $emetteur,
+		'chemin' => $name
+		));
+		}else{
+		 Excel::where('id',$id)->update(
+		array(
+		//'visible' => $visible,
+		'titre' => $titre,
+		'emetteur' => $emetteur,
+		)
+		);	
+			
+		}
+        return redirect('/excels')->with('success', ' mise à jour avec succès');    }
 
     /**
      * Remove the specified resource from storage.
@@ -227,7 +197,7 @@ class ExcelsController extends Controller
         $excel = Excel::find($id);
         $excel->delete();
 
-        return redirect('/docsenv')->with('success', '  supprimé avec succès');
+        return redirect('/excels')->with('success', '  supprimé avec succès');
     }
 
 

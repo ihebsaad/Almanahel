@@ -134,7 +134,7 @@ $user_type=$user->user_type;
         </div>
       </li>
 
-	<?php } if ($user_type=='admin'  || $user_type=='suivi' || $user_type=='conseil' || ){?>
+	<?php } if ($user_type=='admin'  || $user_type=='suivi' || $user_type=='conseil'   ){?>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item   <?php if  ( ! (strpos($view_name,'documents-index') === false) )   { echo 'active';}?>">

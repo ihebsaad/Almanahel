@@ -12,8 +12,8 @@
 	
 <style>
 .select2-container--default .select2-selection--single {    
-    height: 38px;
-    padding-top: 5px;
+    height: 38px!important;
+    padding-top: 5px!important;
 }
 
  #mytable_filter{right:10px!important;position:absolute!important;}

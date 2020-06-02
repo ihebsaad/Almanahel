@@ -56,7 +56,7 @@
 					<option  <?php if($evenement['type']=='simple'){echo 'selected="selected"'; }?> value="simple">Simple</option>
 					<option <?php if($evenement['type']=='vacances'){echo 'selected="selected"'; }?> value="vacances">Vacances</option>
 					<option <?php if($evenement['type']=='examens'){echo 'selected="selected"'; }?> value="examens">Examens</option>
-					<option <?php if($evenement['type']=='event'){echo 'selected="selected"'; }?> value="event">Evenement</option>
+					<!--<option <?php // if($evenement['type']=='event'){echo 'selected="selected"'; }?> value="event">Evenement</option>-->
 					</select>				</div>
 				
           <div class="form-group ">

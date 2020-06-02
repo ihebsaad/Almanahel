@@ -126,7 +126,7 @@
 <div class="col-md-11 d-none d-md-block">
 <div class="mainmenu">
 <ul id="navigation"><li  class="<?php if($view_name=='home'){echo 'active';} ?>"   >
-  <a href="{{ route('home') }}">Accueil</a>
+  <a   <?php if($view_name=='home'){echo 'style="border-bottom:2px solid darkgrey;line-height:18px;padding-top:20px ;"';} ?>  href="{{ route('home') }}">Accueil</a>
 </li>
 <li>
   <a href="{{ route('presentation') }}"  class="<?php if($view_name=='presentation'){echo 'active';} ?>"   >Présentation</a>

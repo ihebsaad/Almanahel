@@ -130,7 +130,7 @@
     <div class="col">
        <label  for="moyenne_3">Le troisième trimestre : </label>
          <label id="alert6" style="display:none; color:red;">La moyenne de  troisième trimestre est invalide</label>
-       <input  required  max=20 min=0 type="number" step="any" name="moyenne_3" id="moyenne_3" class="form-control" onblur="checkmoyenne3()" />
+       <input    max=20 min=0 type="number" step="any" name="moyenne_3" id="moyenne_3" class="form-control" onblur="checkmoyenne3()" />
 
     </div>
 </div>
@@ -139,7 +139,7 @@
     <div class="col">
        <label  for="moyenne_g">La moyenne générale : </label>
          <label id="alert7" style="display:none; color:red;">La moyenne générale est invalide</label>
-       <input  required   max=20 min=0 type="number" step="any" name="moyenne_g" id="moyenne_g" class="form-control"  onblur="checkmoyenneg()" />
+       <input    max=20 min=0 type="number" step="any" name="moyenne_g" id="moyenne_g" class="form-control"  onblur="checkmoyenneg()" />
  </div>
    
 </div>

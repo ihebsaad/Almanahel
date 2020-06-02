@@ -120,7 +120,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Calendrier d'inscription
+      Critères et calendrier d'admission
         </a>
       </h4>
       </div>
@@ -136,7 +136,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
       <div class="panel-heading" role="tab" id="headingTwo">
         <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          Procédure d'admission de nouveaux élèves 
+          Procédure de préinscription
         </a>
       </h4>
       </div>
@@ -150,7 +150,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
       <div class="panel-heading" role="tab" id="headingThree">
         <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          Procédures d'inscription
+          Procédure d'inscription
         </a>
       </h4>
       </div>
@@ -282,7 +282,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						<div class="col">
 					       <label for="moyenne_3">Le troisième trimestre : </label>
 					        <label id="alert6" style="display:none; color:red;">La moyenne de  troisième trimestre est invalide</label>
-					       <input required class="form-control" type="number" step="any" name="moyenne_3" id="moyenne_3" placeholder="Moyenne de Le troisième trimestre" onblur="checkmoyenne3()" />
+					       <input  class="form-control" type="number" step="any" name="moyenne_3" id="moyenne_3" placeholder="Moyenne de Le troisième trimestre" onblur="checkmoyenne3()" />
 					    </div>
 					    
 					</div>
@@ -290,7 +290,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						<div class="col">							
 					       <label for="moyenne_g">La moyenne générale : </label>
 					        <label id="alert7" style="display:none; color:red;">La moyenne générale est invalide</label>
-					       <input required class="form-control" type="number" step="any" name="moyenne_g" id="moyenne_g" placeholder="Moyenne générale" onblur="checkmoyenneg()" />
+					       <input  class="form-control" type="number" step="any" name="moyenne_g" id="moyenne_g" placeholder="Moyenne générale" onblur="checkmoyenneg()" />
 						</div>
 						<div class="col"></div>
 						<div class="col"></div>

@@ -55,7 +55,11 @@
                          <option value="prof">Enseignant</option>
                           <option value="classe">Classe</option>
                             <option value="moimeme">Moi-même</option>
-  </select>
+                             <?php if((\Gate::allows('isAdmin'))|| (\Gate::allows('isConseil') ) || (\Gate::allows('isSuivi') ) ) { ?>
+               <option value="tousleseleves">Tous les élèves</option>
+                <option value="touslesutilisateurs">Tous les utilisateurs</option>
+               <?php }  ?>
+                </select>   
                             </div>
                            
                         </div>
@@ -123,6 +127,16 @@
       
  </div>
     </div>
+    <div  id="secttousleseleves" class="form-group " style="margin-bottom:30px ;display:none"   > 
+
+        <input  autocomplete="off"  id="destinataire5" type="hidden" class="form-control" name="destinataire5"   >
+      
+ </div>
+    <div  id="secttouslesutilisateurs" class="form-group " style="margin-bottom:30px ;display:none"   > 
+
+        <input  autocomplete="off"  id="destinataire6" type="hidden" class="form-control" name="destinataire6"   >
+      
+ </div>
   
  
       
@@ -189,6 +203,28 @@ document.getElementById('sectclasse').style.display = 'block';
 else
 {
 document.getElementById('sectclasse').style.display = 'none'; 
+}
+ if(type=="tousleseleves")
+{
+document.getElementById('secttousleseleves').style.display = 'block'; 
+document.getElementById("destinataire5").value=1;
+
+
+}
+else
+{
+document.getElementById('secttousleseleves').style.display = 'none'; 
+}
+ if(type=="touslesutilisateurs")
+{
+document.getElementById('secttouslesutilisateurs').style.display = 'block'; 
+document.getElementById("destinataire6").value=1;
+
+
+}
+else
+{
+document.getElementById('secttouslesutilisateurs').style.display = 'none'; 
 }
 }
 </script>

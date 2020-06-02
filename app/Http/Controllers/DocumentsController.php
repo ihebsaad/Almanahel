@@ -115,11 +115,68 @@ class DocumentsController extends Controller
  
           $chemin->move($path, $name);
     }*/
-   if( ($request->get('destinataire2'))!=0) {$destinataire=0;$destinataire=$request->get('destinataire2');}
+    if(($request->get('destinataire5'))==1)
+{
+
+     $classes = DB::table('classes')
+    ->get();
+          $emetteur=Auth::id(); 
+  foreach ($classes as $classe) {
+     $document = new Document([
+             'titre' =>$request->get('titre'),
+             'chemin'=> $name,
+             'description' => $request->get('description'),
+             'annee' => $request->get('annee'),
+             'type' => 'classe',
+             'destinataire' => $classe->id,
+             'emetteur' => $emetteur,
+            
+            // 'par'=> $request->get('p,ar'),ville
+
+        ]);
+
+
+        $document->save();
+
+
+}
+
+}
+  else if (($request->get('destinataire6'))==1)
+{
+
+     $users = DB::table('users')
+    ->get();
+          $emetteur=Auth::id(); 
+  foreach ($users as $user) {
+     $document = new Document([
+             'titre' =>$request->get('titre'),
+             'chemin'=> $name,
+             'description' => $request->get('description'),
+             'annee' => $request->get('annee'),
+             'type' => $user->user_type,
+             'destinataire' => $user->id,
+             'emetteur' => $emetteur,
+            
+            // 'par'=> $request->get('p,ar'),ville
+
+        ]);
+
+
+        $document->save();
+
+
+}
+
+}
+  
+  else 
+
+  { if( ($request->get('destinataire2'))!=0) {$destinataire=0;$destinataire=$request->get('destinataire2');}
    if( ($request->get('destinataire1'))!=0) {$destinataire=0; $destinataire=$request->get('destinataire1');}
       if( ($request->get('destinataire3'))!=0) {$destinataire=0; $destinataire=$request->get('destinataire3');}
         if( ($request->get('destinataire4'))!=0) {$destinataire=0; $destinataire=$request->get('destinataire4');}
-              if( ($request->get('destinataire3'))==0 &&($request->get('destinataire2'))==0 && ($request->get('destinataire1'))==0 && ($request->get('destinataire4'))==0) {$destinataire=0; $destinataire=Auth::id();}
+              if( ($request->get('destinataire3'))==0 &&($request->get('destinataire2'))==0 && ($request->get('destinataire1'))==0 && ($request->get('destinataire4'))==0  && ($request->get('destinataire5'))==0  ) {$destinataire=0; $destinataire=Auth::id();}
       $emetteur=Auth::id(); 
 
         $document = new Document([
@@ -135,7 +192,9 @@ class DocumentsController extends Controller
 
         ]);
 
+
         $document->save();
+       }
         if($request->get('sourcepg') != null)
         {return redirect('/bienvenue');}
         else

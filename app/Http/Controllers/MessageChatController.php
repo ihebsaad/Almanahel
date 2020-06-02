@@ -9,7 +9,12 @@ use auth;
 
 class MessageChatController extends Controller
 {
-   
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+	
+	
  public function fetch_user_chat_history ($to_user_id)
    {
     $from_user_id =auth::user()->id;

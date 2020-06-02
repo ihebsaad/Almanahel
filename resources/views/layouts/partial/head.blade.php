@@ -33,6 +33,9 @@
     height: 38px!important;
     padding-top: 5px!important;
 }
+.mainmenu ul li .active > a {
+font-weight:800;border-bottom:2px solid darkgrey;line-height:16px;padding-top:26px ;
+}
 </style>
 
 </head>
@@ -122,23 +125,23 @@
 </div>
 <div class="col-md-11 d-none d-md-block">
 <div class="mainmenu">
-<ul id="navigation"><li>
+<ul id="navigation"><li  class="<?php if($view_name=='home'){echo 'active';} ?>"   >
   <a href="{{ route('home') }}">Accueil</a>
 </li>
 <li>
-  <a href="{{ route('presentation') }}">Présentation</a>
+  <a href="{{ route('presentation') }}"  class="<?php if($view_name=='presentation'){echo 'active';} ?>"   >Présentation</a>
 </li>
 <li>
-  <a href="{{ route('inscription') }}">Inscription</a>
+  <a href="{{ route('inscription') }}" class="<?php if($view_name=='inscription'){echo 'active';} ?>"   >Inscription</a>
 </li>
 <li>
-  <a href="{{ route('scolaire') }}">Vie Scolaire</a>
+  <a href="{{ route('scolaire') }}" class="<?php if($view_name=='scolaire'){echo 'active';} ?>"   >Vie Scolaire</a>
 </li>
 <li>
-  <a href="{{ route('formation') }}">Formation & Emploi</a>
+  <a href="{{ route('formation') }}" class="<?php if($view_name=='formation'){echo 'active';} ?>"   >Formation & Emploi</a>
 </li>
 <li>
-  <a href="{{ route('contact') }}">Contact</a>
+  <a href="{{ route('contact') }}" class="<?php if($view_name=='contact'){echo 'active';} ?>"   >Contact</a>
 </li>
 </ul>
 </div>

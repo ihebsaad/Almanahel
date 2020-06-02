@@ -56,8 +56,9 @@
 						foreach($eleves as $el)
 						{
 							$classe=ClassesController::ClasseEleve($el->id);
- 							if(isset ($classe->classe )){
-						 echo ' <option  class="classe cl-'.$classe->classe.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+							echo json_encode($classe) ;
+ 							if(isset ($classe['classe'] )){
+						 echo ' <option  class="classe cl-'.$classe['classe'].'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 							}else{
 						 echo ' <option  class="classe" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 							}
@@ -79,7 +80,7 @@
                     <input autocomplete="off" id="debut" type="text" class="form-control" name="debut"/>
                 </div>
 				 <div class="form-group">
-                    <label for="heure_debut">Heure de Fin:</label>
+                    <label for="heure_debut">Heure de Début:</label>
                     <input id="heure_debut" type="time" class="form-control" name="heure_debut"/>
                 </div>				
                 <div class="form-group">

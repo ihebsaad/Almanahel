@@ -39,9 +39,9 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
 </div>
 
 
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Questions? n'hésitez pas à nous contacter</p>
+    <div class="row" style="margin-left:60px">
+      <div class="col-lg-8 col-md-10  ">
+        <b>Questions? n'hésitez pas à nous contacter :</b><br>
 		<!--<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">-->
 		<form method="post"   >
 			  {{ csrf_field() }}

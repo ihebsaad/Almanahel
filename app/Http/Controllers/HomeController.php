@@ -89,29 +89,51 @@ class HomeController extends Controller
 
 	public function contenu_presentation()
     {
-         return view('contenus.presentation' );
-    } 
+	if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.presentation' );
+		}		
+     } 
 
 	public function contenu_scolaire()
     {
-         return view('contenus.scolaire' );
-    }
+	if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.scolaire' );
+		}		
+     } 		
+        
 
 	public function contenu_formation()
     {
-         return view('contenus.formation' );
-    } 
+	if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.formation' );
+		}		
+     }         
 
 	public function contenu_contact()
     {
-         return view('contenus.contact' );
-    } 
+	if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.contact' );
+		}		
+     }       
 
 		public function contenu_inscription()
     {
-         return view('contenus.inscription' );
-    } 
-	  
+ 	if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.inscription' );
+		}		
+     }         
+
+ 	  
 	  
 	  
 	 	public function show_actualite($id)

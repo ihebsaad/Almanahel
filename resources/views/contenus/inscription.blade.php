@@ -20,7 +20,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Calendrier:</label>
+                    <label for="contenu">Critères et calendrier d'admission:</label>
                     <div class="editor" >
                         <textarea style="min-height: 280px;"  id="inscription" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>
@@ -33,7 +33,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	    <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Procédure d'admission de nouveaux élèves:</label>
+                    <label for="contenu">Procédure de préinscription:</label>
                     <div class="editor" >
                         <textarea style="min-height: 280px;"  id="inscription2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu2; ?></textarea>
                     </div>
@@ -46,7 +46,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 		 <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Procédures d'inscription</label>
+                    <label for="contenu">Procédure d'inscription:</label>
                     <div class="editor" >
                         <textarea style="min-height: 280px;"  id="inscription3" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu3; ?></textarea>
                     </div>

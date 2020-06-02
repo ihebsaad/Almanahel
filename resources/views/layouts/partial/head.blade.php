@@ -34,7 +34,7 @@
     padding-top: 5px!important;
 }
  li .active  {
- border-bottom:2px solid darkgrey;line-height:18px; 
+ border-bottom:3px solid darkgrey;line-height:23px; 
 }
 </style>
 
@@ -126,7 +126,7 @@
 <div class="col-md-11 d-none d-md-block">
 <div class="mainmenu"  style="padding-left:40px">
 <ul id="navigation"><li  class="<?php if($view_name=='home'){echo 'active';} ?>"   >
-  <a   <?php if($view_name=='home'){echo 'style="border-bottom:2px solid darkgrey;line-height:18px; ;"';} ?>  href="{{ route('home') }}">Accueil</a>
+  <a   <?php if($view_name=='home'){echo 'style="border-bottom:3px solid darkgrey;line-height:23px; ;"';} ?>  href="{{ route('home') }}">Accueil</a>
 </li>
 <li>
   <a href="{{ route('presentation') }}"  class="<?php if($view_name=='presentation'){echo 'active';} ?>"   >Présentation</a>

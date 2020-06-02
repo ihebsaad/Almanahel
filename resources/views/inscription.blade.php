@@ -624,9 +624,3 @@ return false;
 }
  </script>
 @endsection
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help

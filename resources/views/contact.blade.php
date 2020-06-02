@@ -87,7 +87,8 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
       </div>
     </div>
   </div>
-  <script    src="{{  URL::asset('public/site/vendor/jquery/jquery.min.js') }}"   ></script>
+   <script    src="{{  URL::asset('public/site/vendor/jquery/jquery.min.js') }}"   ></script>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
     $(document).ready(function(){
@@ -111,21 +112,21 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
 					swal({
                         type: 'success',
                         title: 'Envoyé ...',
-                        text: 'Votre demande a été envoyée avec succès'
+                        text: 'Votre message a été envoyée avec succès'
  					//	icon: "success",
                     }); 
+					document.getElementById("myform").reset();
+
                     }
                 });
             }else{
 					swal({
                         type: 'error',
-                        title: 'Erreur ...',
-                        text: 'Erreur! '
- 					//	icon: "success",
-                    });             }
+                        title: 'Existe ...',
+                        html: string
+                    });            
+					}
         });
-
-
 
 
     });

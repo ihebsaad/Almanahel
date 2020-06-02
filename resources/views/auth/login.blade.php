@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row" style="margin-top:8%;">
       <!--  <center><img style="margin-bottom:30px;"  class="img-circle" width="100" src="{{ asset('public/img/najda.png') }}"></img></center>-->
-<center><div style="background-color:white;border-radius30px;padding:10px 10px 10px 10px;width:250px"><img style="margin-bottom:30px;"  src="{{  URL::asset('public/site/img/logo.png') }}" alt="Almanahel Academy" class="img-circle" width="200"></div></center>
+<center><div style="background-color:white;border-radius:30px;padding:10px 10px 10px 10px;width:250px;margin-bottom:30px"><img style=";"  src="{{  URL::asset('public/site/img/logo.png') }}" alt="Almanahel Academy" class="img-circle" width="200"></div></center>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default ">
                 <div class="panel-heading  icon3" style="color:white;font-weight:800;font-size:20px;background-color:#028dc8"><center>Connexion</center></div>

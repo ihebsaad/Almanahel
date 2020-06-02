@@ -141,7 +141,7 @@ class PaiementsController extends Controller
  
 		 Paiement::where('id',$id)->update(
 		array(
-			'eleve' => $eleve ,
+			//'eleve' => $eleve ,
               'details' => trim($request->get('details')),
              'montant' => trim($request->get('montant')),
              'libelle' => trim($request->get('libelle')),

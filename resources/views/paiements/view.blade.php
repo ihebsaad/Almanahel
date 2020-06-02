@@ -33,9 +33,10 @@
 					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)
-						{if($paiement['eleve']==$el->id){$sel='selected="selected"';}else{$sel='';}
+						{if($paiement['eleve']==$el->id){$sel='selected="selected"'; 
  						echo ' <option  '.$sel.' value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 	
+						}
 						}
 					?>
 					</select>

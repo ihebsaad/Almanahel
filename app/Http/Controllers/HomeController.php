@@ -80,37 +80,35 @@ class HomeController extends Controller
 	 
 	public function contenu_home()
     {
-		  $this->middleware('auth');
-         return view('contenus.home' );
+		if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.home' );
+		}
     } 
 
 	public function contenu_presentation()
     {
-		  $this->middleware('auth');
          return view('contenus.presentation' );
     } 
 
 	public function contenu_scolaire()
     {
-		  $this->middleware('auth');
          return view('contenus.scolaire' );
     }
 
 	public function contenu_formation()
     {
- 		  $this->middleware('auth');
-        return view('contenus.formation' );
+         return view('contenus.formation' );
     } 
 
 	public function contenu_contact()
     {
-		  $this->middleware('auth');
          return view('contenus.contact' );
     } 
 
 		public function contenu_inscription()
     {
-		  $this->middleware('auth');
          return view('contenus.inscription' );
     } 
 	  

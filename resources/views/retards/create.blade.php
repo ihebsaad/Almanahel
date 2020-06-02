@@ -51,8 +51,7 @@
 					?>
  					</select>
                 </div>
-				<?php use \App\Http\Controllers\ClassesController; ?>
-				
+ 				
 				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>

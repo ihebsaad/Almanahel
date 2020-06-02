@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
   use App\Retard ;
   use App\Absence ;
   use App\Paiement ;
+   use App\Inscriptionv ;
  use DB;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -29,23 +30,21 @@ class UsersController extends Controller
      */
     public function index()
     {
-		/*
+    /*
         if(\Gate::allows('isAdmin'))
         {
-
             $users = User::orderBy('name', 'asc')->get() ;
             return view('users.index',['dossiers' => $dossiers], compact('users'));        }
         else {
             // redirect
             return redirect('/home')->with('success', 'droits insuffisants');
-
         }
-		*/
+    */
          $id=Auth::id();
            $user = User::find($id);
          
 
-		  $users = User::orderBy('name', 'asc')->get() ;
+      $users = User::orderBy('name', 'asc')->get() ;
                               
          
              if ( $user->user_type==='parent')
@@ -60,7 +59,7 @@ class UsersController extends Controller
             }
 
             return view('users.index',  ['users' => $users]);        
-		 
+     
 
 
      }
@@ -69,47 +68,47 @@ class UsersController extends Controller
  
  public function parents()
     {
-		  
-		  $users = User::where('user_type','parent')->orderBy('name', 'asc')->get() ;
+      
+      $users = User::where('user_type','parent')->orderBy('name', 'asc')->get() ;
               
            return view('users.parents',  ['users' => $users]);        
-		  
+      
      }
  
  
   public function eleves()
     {
-		  
-		  $users = User::where('user_type','eleve')->orderBy('name', 'asc')->get() ;
+      
+      $users = User::where('user_type','eleve')->orderBy('name', 'asc')->get() ;
               
            return view('users.eleves',  ['users' => $users]);        
-		  
+      
      }
-	 
-	   public function profs()
+   
+     public function profs()
     {
-		  
-		  $users = User::where('user_type','prof')->orderBy('name', 'asc')->get() ;
+      
+      $users = User::where('user_type','prof')->orderBy('name', 'asc')->get() ;
               
            return view('users.profs',  ['users' => $users]);        
-		  
+      
      }
-	 
-	 	   public function personnels()
+   
+       public function personnels()
     {
-		  
-		  $users = User::where('user_type','membre')
-		  ->orWhere('user_type','suivi')
-		  ->orWhere('user_type','admin')
-		  ->orWhere('user_type','conseil')
-		  ->orWhere('user_type','financier')
-		  ->orderBy('name', 'asc')->get() ;
+      
+      $users = User::where('user_type','membre')
+      ->orWhere('user_type','suivi')
+      ->orWhere('user_type','admin')
+      ->orWhere('user_type','conseil')
+      ->orWhere('user_type','financier')
+      ->orderBy('name', 'asc')->get() ;
               
            return view('users.personnels',  ['users' => $users]);        
-		  
+      
      }
-	 
-	 
+   
+   
     /**
      * Show the form for creating a new resource.
      *
@@ -126,13 +125,12 @@ class UsersController extends Controller
        /* else {
             // redirect
             return redirect('/')->with('success', 'droits insuffisants');
-
         }*/
     }
 
 
-	 
-	     protected function validator(array $data)
+   
+       protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
@@ -141,7 +139,7 @@ class UsersController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
-	
+  
     public function store(array $data)
     {
         User::create([
@@ -150,7 +148,7 @@ class UsersController extends Controller
             'username' => $data['username'],
             'password' => bcrypt($data['password']),
         ]);
-		
+    
         return redirect('/users')->with('success', ' ajouté avec succès');
 
     }
@@ -182,16 +180,16 @@ class UsersController extends Controller
 public function view($id)
     {
     $user = User::find($id);
-		//ANNEE
-		$year=date('Y');$month=date('m');
-		$mois=intval($month);
-		$annee=intval($year);
-		if($mois > 9 ){$annee=$annee-1;}
-		$this->countPaiements($id,$annee);
-		$this->countRetards($id,$annee);
-		$this->countAbsences($id,$annee);
+    //ANNEE
+    $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+    $this->countPaiements($id,$annee);
+    $this->countRetards($id,$annee);
+    $this->countAbsences($id,$annee);
 
-		$relations = DB::table('parents_eleve')->select('eleve')
+    $relations = DB::table('parents_eleve')->select('eleve')
             ->where('parent','=',$id)
             ->get();
             $eleves = DB::table('users')
@@ -265,7 +263,6 @@ public function view($id)
             'share_price'=> 'required|integer',
             'share_qty' => 'required|integer'
         ]);
-
         */
       /*  $user = User::find($id);
       $user->name = $request->get('name');
@@ -308,7 +305,10 @@ public function view($id)
     {
         $user = User::find($id);
         $user->delete();
-
+         Paiement::where('eleve', $id)->delete();
+          Retard::where('eleve', $id)->delete();
+           Absence::where('eleve', $id)->delete();
+            Inscriptionv::where('ideleve', $id)->delete();
         return redirect('/users')->with('success', '  supprimé avec succès');
     }
 
@@ -393,8 +393,8 @@ public function view($id)
 
 
     }
-	
-	
+  
+  
     public  function removeeleve(Request $request)
     {
         $parent=$request->get('parent');
@@ -411,34 +411,34 @@ public function view($id)
  
      public  function countRetards(  $user,$annee)
     {
-		$count=Retard::where('eleve', $user)
-		->where('annee',$annee)
-		->count();
-		
-		 User::where('id', $user)->update(array('retards' => $count));
+    $count=Retard::where('eleve', $user)
+    ->where('annee',$annee)
+    ->count();
+    
+     User::where('id', $user)->update(array('retards' => $count));
  
     }
-	
-	    public  function countAbsences(  $user,$annee)
+  
+      public  function countAbsences(  $user,$annee)
     {
-		$count=Absence::where('eleve', $user)
-		->where('annee',$annee)
-		->count();
-		
-		 User::where('id', $user)->update(array('absences' => $count));
+    $count=Absence::where('eleve', $user)
+    ->where('annee',$annee)
+    ->count();
+    
+     User::where('id', $user)->update(array('absences' => $count));
  
     }
-	
-		  public  function countPaiements(  $user,$annee)
+  
+      public  function countPaiements(  $user,$annee)
     {
-		$count=Paiement::where('eleve', $user)
-		->where('annee',$annee)
-		->sum('montant');
-		
-		 User::where('id', $user)->update(array('totalpaiement' => $count));
+    $count=Paiement::where('eleve', $user)
+    ->where('annee',$annee)
+    ->sum('montant');
+    
+     User::where('id', $user)->update(array('totalpaiement' => $count));
  
     }
-	
+  
 
 
 public  function createparent(Request $request)

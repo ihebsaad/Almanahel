@@ -163,7 +163,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
          
 	</section>
 </div>
-<div class="row">
+<div class="container">
     <div class="nouveau box">
     	<div class="row" style="margin-top: 10px">
     	<p style="color:#f20101;text-decoration: underline;">Cette pré-inscription ne concerne pas les élèves déjà scolarisés au lycée Al-Manahel</p>

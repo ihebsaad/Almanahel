@@ -74,7 +74,7 @@
  
 					<td style="width:10%"   >
                         @can('isAdmin')
-                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('PaiementsController@destroy', $depense['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('DepensesController@destroy', $depense['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                                 <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
                         @endcan

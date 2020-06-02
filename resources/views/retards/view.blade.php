@@ -31,7 +31,7 @@
 
 <div class="form-group">
                     <label for="classe">Classe:</label>
-                    <select id="classe" type="number" class="form-control select2" readonly name="classe" style="height:38px;">
+                    <select id="classe" type="number" class="form-control" readonly name="classe" style="height:38px;">
 					 <option></option>
 					<?php $classes= \App\Classe::get(); 
 						foreach($classes as $cl)

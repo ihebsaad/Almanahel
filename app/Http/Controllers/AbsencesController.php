@@ -95,6 +95,8 @@ $user_type=$user->user_type;
 		$details = trim($request->get('details'));
         $debut = trim($request->get('debut'));
         $fin = trim($request->get('fin'));
+        $heure_debut = trim($request->get('heure_debut'));
+        $heure_fin = trim($request->get('heure_fin'));
         $annee = trim($request->get('annee'));
  		$leleve=DB::table('users')->where('id',$eleve)->first();
  		$nomeleve=$leleve->name .' '.$leleve->lastname;
@@ -153,6 +155,8 @@ $user_type=$user->user_type;
              'details' => $details ,
              'debut' => $debut ,
              'fin' => $fin ,
+             'heure_debut' => $heure_debut ,
+             'heure_fin' => $heure_fin ,
              'annee' => $annee 
              
         ]);
@@ -230,7 +234,9 @@ $user_type=$user->user_type;
              'details' => trim($request->get('details')),
              'seance' => trim($request->get('seance')),
              'debut' => trim($request->get('debut')),
+             'heure_debut' => trim($request->get('heure_debut')),
              'fin' => trim($request->get('fin')),
+             'heure_fin' => trim($request->get('heure_fin')),
 		)
 		);	
 			

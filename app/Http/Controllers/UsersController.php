@@ -309,6 +309,8 @@ public function view($id)
           Retard::where('eleve', $id)->delete();
            Absence::where('eleve', $id)->delete();
             Inscriptionv::where('ideleve', $id)->delete();
+            DB::table('eleves_classe')->where('eleve' , $id)->delete();
+             DB::table('parents_eleve')->where('eleve' , $id)->delete();
         return redirect('/users')->with('success', '  supprimé avec succès');
     }
 

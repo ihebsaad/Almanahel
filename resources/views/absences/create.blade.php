@@ -58,6 +58,7 @@
 							$classe=ClassesController::ClasseEleve($el->id);
 							echo  ($classe) ;
  							if(   isset($classe )){
+								
 						 echo ' <option  class="classe cl-'.$classe.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 							}else{
 						 echo ' <option  class="classe" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';

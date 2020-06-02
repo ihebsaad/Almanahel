@@ -322,11 +322,11 @@ class ClassesController extends Controller
 	  
 
       $classe=  DB::table('eleves_classe')
-            ->where(['eleve'=> $eleve])->pluck('classe');
+            ->where(['eleve'=> $eleve])->first();
 			
 	if (isset($classe  ))
 	{
-		return $classe   ;
+		return $classe->classe   ;
 	} else{
 		return null;
 	}		

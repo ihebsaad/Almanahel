@@ -33,8 +33,8 @@
     height: 38px!important;
     padding-top: 5px!important;
 }
-.mainmenu ul li .active > a {
-font-weight:800;border-bottom:2px solid darkgrey;line-height:16px;padding-top:26px ;
+ li .active  {
+ border-bottom:2px solid darkgrey;line-height:18px;padding-top:20px ;
 }
 </style>
 

@@ -56,7 +56,11 @@
 						foreach($eleves as $el)
 						{
 							$classe=ClassesController::ClasseEleve($el->id);
-						echo ' <option  class="classe cl-'.$classe->id.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+							if(isset ($classe)){
+						 echo ' <option  class="classe cl-'.$classe->id.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+							}else{
+						 echo ' <option  class="classe" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+							}
 	
 						}
 					?>

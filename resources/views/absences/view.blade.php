@@ -27,14 +27,15 @@
 			  <input type="hidden" value="<?php echo $absence['id']; ?>" name="id"  >
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <select id="classe" type="number" class="form-control select2" name="classe" style="height:38px;">
+                    <select id="classe" type="number" class="form-control select2" name="classe" readonly style="height:38px;">
 					 <option></option>
 					<?php $classes= \App\Classe::get(); 
 						foreach($classes as $cl)
-						{ if($absence['classe']==$cl->id){$sel='selected="selected"';}else{$sel='';}
+						{ if($absence['classe']==$cl->id){ 
 
 						echo ' <option '.$sel.' value="'.$cl->id.'">'.$cl->titre.'</option>';
 	
+						}
 						}
 					?>
  					</select>
@@ -44,14 +45,15 @@
 				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+                    <select id="eleve" type="number" class="form-control  " name="eleve" readonly style="height:38px;" >
 					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)
-						{if($absence['eleve']==$el->id){$sel='selected="selected"';}else{$sel='';}
+						{if($absence['eleve']==$el->id){$sel='selected="selected"'; 
 							$classe=ClassesController::ClasseEleve($el->id);
 						echo ' <option  '.$sel.' value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 	
+						}
 						}
 					?>
 					</select>

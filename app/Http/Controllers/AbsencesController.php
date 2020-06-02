@@ -229,8 +229,8 @@ $user_type=$user->user_type;
  
 		 Absence::where('id',$id)->update(
 		array(
-			'eleve' =>trim( $request->get('eleve')),
-             'classe' => trim($request->get('classe')),
+		//	'eleve' =>trim( $request->get('eleve')),
+         //    'classe' => trim($request->get('classe')),
              'details' => trim($request->get('details')),
              'seance' => trim($request->get('seance')),
              'debut' => trim($request->get('debut')),

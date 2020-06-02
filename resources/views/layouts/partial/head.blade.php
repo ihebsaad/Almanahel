@@ -34,7 +34,7 @@
     padding-top: 5px!important;
 }
  li .active  {
- border-bottom:3px solid darkgrey;line-height:23px;color:#8f8f8f ;
+ border-bottom:3px solid darkgrey;line-height:23px;color:#8f8f8f!important ;
 }
 </style>
 

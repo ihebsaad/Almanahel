@@ -34,7 +34,7 @@
 
 			  	<div class="form-group">
                     <label for="classe">Classe:</label>
-                    <select id="classe" type="number" class="form-control select2" name="classe" style="height:38px;">
+                    <select id="classe"  class="form-control select2" name="classe" style="height:38px;" onchange="verif()">
 					 <option></option>
 					<?php $classes= \App\Classe::get(); 
 						foreach($classes as $cl)
@@ -56,7 +56,7 @@
 						foreach($eleves as $el)
 						{
 							$classe=ClassesController::ClasseEleve($el->id);
-						echo ' <option   value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+						echo ' <option  class="classe cl-'.$classe->id.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 	
 						}
 					?>
@@ -144,7 +144,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <script>
-
+function verif()
+{
+	var classe= document.getElementsById('classe').value ;
+	toggle('classe','none');
+	toggle('cl-'+classe,'block');
+}
 function toggle(className, displayState){
             var elements = document.getElementsByClassName(className);
 

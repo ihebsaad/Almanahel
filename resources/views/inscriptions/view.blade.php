@@ -110,7 +110,7 @@
   
     <div class="col">
        <label  for="moyenne_1">Le premier trimestre : </label>
-       <input class="form-control" type="number" step="any" name="moyenne_1" id="moyenne_1" onchange="changing(this)"    value="{{ $inscription-> moyenne_1}}"  
+       <input class="form-control" type="number" step="any" name="moyenne_1" id="moyenne_1" onchange="changing(this)"    value="{{ $inscription-> moyenne_1}}"  />
  
   
     </div>

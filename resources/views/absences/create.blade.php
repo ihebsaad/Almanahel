@@ -150,7 +150,7 @@
 <script>
 function verif()
 {
-	var classe= document.getElementsById('classe').value ;
+	var classe= document.getElementById('classe').value ;
 	toggle('classe','none');
 	toggle('cl-'+classe,'block');
 }

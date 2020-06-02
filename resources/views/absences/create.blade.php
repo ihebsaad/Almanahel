@@ -50,12 +50,13 @@
 				
                 <div class="form-group">
                     <label for="eleve">Elève:</label>
-                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;" >
 					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)
 						{
 							$classe=ClassesController::ClasseEleve($el->id);
+							echo 'Classe : '.json_encode($classe);
 							if(isset ($classe->id )){
 						 echo ' <option  class="classe cl-'.$classe->id.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 							}else{

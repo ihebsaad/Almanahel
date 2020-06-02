@@ -31,7 +31,7 @@
 					 <option></option>
 					<?php $classes= \App\Classe::get(); 
 						foreach($classes as $cl)
-						{ if($absence['classe']==$cl->id){ 
+						{ if($absence['classe']==$cl->id){ $sel='selected="selected"'; 
 
 						echo ' <option '.$sel.' value="'.$cl->id.'">'.$cl->titre.'</option>';
 	

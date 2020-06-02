@@ -56,9 +56,9 @@
 						foreach($eleves as $el)
 						{
 							$classe=ClassesController::ClasseEleve($el->id);
-							echo json_encode($classe) ;
- 							if(isset ($classe['classe'] )){
-						 echo ' <option  class="classe cl-'.$classe['classe'].'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
+							echo  ($classe) ;
+ 							if(  ($classe >0 )){
+						 echo ' <option  class="classe cl-'.$classe.'" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 							}else{
 						 echo ' <option  class="classe" value="'.$el->id.'">'.$el->name. ' '.$el->lastname.'</option>';
 							}

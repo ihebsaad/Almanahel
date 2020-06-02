@@ -454,7 +454,8 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					    
 					</div>
 					<div class="row" style="margin-top: 20px">
-						<span class="badge badge-warning">Une fois la pré-inscription est validée, vous recevrez un email de confirmation de la validation de la demande, et promettant que vous serez tenu au courant de l'issue de votre demande dans les plus brefs délais.</span>
+						<span class="badge badge-warning">Une fois la pré-inscription est validée, vous recevrez un email de confirmation de la validation de la demande,<br>
+						et promettant que vous serez tenu au courant de l'issue de votre demande dans les plus brefs délais.</span>
 					</div>
 					   </fieldset>
 					    <div class="row form-group" style="margin-top:20px;margin-bottom:20px">

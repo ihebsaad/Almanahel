@@ -162,7 +162,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     </div>
   </div>
 </div>
-<div class="row" style="text-align: center;padding-bottom: 20px">
+<div class="row" style="text-align: center;padding-bottom: 20px"  id="inscription">
 	<h3> Pré-inscription / Inscription 2020-2021 </h3>
 </div>
 <div class="row">

@@ -28,6 +28,12 @@
   <link  href="{{  URL::asset('public/site/css/menu.css') }}"   rel="stylesheet">
   <link  href="{{  URL::asset('public/site/css/custom.css') }}"   rel="stylesheet">
 
+<style>
+.select2-container--default .select2-selection--single {    
+    height: 38px;
+    padding-top: 5px;
+}
+</style>
 
 </head>
 

@@ -10,7 +10,12 @@
         @show
     </title>
 	
- <style>
+<style>
+.select2-container--default .select2-selection--single {    
+    height: 38px;
+    padding-top: 5px;
+}
+
  #mytable_filter{right:10px!important;position:absolute!important;}
      #swal2-content{font-size:15px;}
 	 .editor{width:800px;}

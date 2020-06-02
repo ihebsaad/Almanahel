@@ -1,4 +1,3 @@
-
 @extends('layouts.back')
 
 
@@ -47,13 +46,13 @@
    
 </div>
 
- <?php	  //ANNEE
-		$year=date('Y');$month=date('m');
-		$mois=intval($month);
-		$annee=intval($year);
-		if($mois > 9 ){$annee=$annee-1;}
-		?>
-	   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
+ <?php    //ANNEE
+    $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+    ?>
+     <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
 
 <div class="row" style="margin-left:10px">
   
@@ -345,21 +344,15 @@
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-
  $('#test').prop('disabled', false);
-
 function checkMail()
 {
 var champA = document.getElementById("email_rep").value;
-
 var champB = document.getElementById("reemail_rep").value;
-
-
  
 if(champA == champB)
 {
 document.getElementById("alert1").style.display="none";
-
 }
 else
 {
@@ -369,15 +362,11 @@ document.getElementById("reemail_rep").value  = "";
 function checkMail1()
 {
 var champA = document.getElementById("email").value;
-
 var champB = document.getElementById("reemail").value;
-
-
  
 if(champA == champB)
 {
 document.getElementById("alert").style.display="none";
-
 }
 else
 {
@@ -388,7 +377,6 @@ document.getElementById("reemail").value  = "";
 function sectionverif()
 {
   var niveau = document.getElementById("niveau").value;
-
  if(niveau=="Bac" || niveau=="Baccalauréat" ||niveau=="bac"|| niveau=="3 ième année"|| niveau=="4 ième année"  )
 {
 document.getElementById('sect').style.display = 'block'; 
@@ -401,7 +389,6 @@ document.getElementById('sect').style.display = 'none';
 function autreverif()
 {
   var nomclub = document.getElementById("nomclub").value;
-
  if(nomclub=="Autres")
 {
 document.getElementById('sectautre').style.display = 'block'; 
@@ -415,7 +402,6 @@ function clubverif()
 {
   var clubs = document.getElementById("clubs").value;
   
-
  if(clubs==true)
 {
 document.getElementById('sect1').style.display = 'block'; 
@@ -430,7 +416,6 @@ function clubverif1()
 {
   var clubs = document.getElementById("clubs").value;
   
-
  if(clubs==false)
 {
 document.getElementById('sect1').style.display = 'block'; 
@@ -448,12 +433,8 @@ document.getElementById('sect2').style.display = 'none';
 });
      function checktaillebull1()
 {
-
 taille=document.getElementById('bulletin1').files[0].size;
-
-
-
-if(taille >20000000)
+if(taille >2000000)
 {
 document.getElementById("alert2").style.display="block";
 document.getElementById("bulletin1").value  = "";
@@ -461,20 +442,13 @@ document.getElementById("bulletin1").value  = "";
 else
 {
 document.getElementById("alert2").style.display="none";
-
 }
-
-
  
 }
      function checktaillebull2()
 {
-
 taille=document.getElementById('bulletin2').files[0].size;
-
-
-
-if(taille >20000000)
+if(taille >2000000)
 {
 document.getElementById("alert3").style.display="block";
 document.getElementById("bulletin2").value  = "";
@@ -482,20 +456,12 @@ document.getElementById("bulletin2").value  = "";
 else
 {
 document.getElementById("alert3").style.display="none";
-
 }
-
-
  
 }
     function checkmoyenne1()
 {
-
 var moy1 = document.getElementById("moyenne_1").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert4").style.display="block";
@@ -504,20 +470,12 @@ document.getElementById("moyenne_1").value  = "";
 else
 {
 document.getElementById("alert4").style.display="none";
-
 }
-
-
  
 }
  function checkmoyenne2()
 {
-
 var moy1 = document.getElementById("moyenne_2").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert5").style.display="block";
@@ -526,16 +484,10 @@ document.getElementById("moyenne_2").value  = "";
 else
 {
 document.getElementById("alert5").style.display="none";
-
 }}
  function checkmoyenne3()
 {
-
 var moy1 = document.getElementById("moyenne_3").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert6").style.display="block";
@@ -544,16 +496,10 @@ document.getElementById("moyenne_3").value  = "";
 else
 {
 document.getElementById("alert6").style.display="none";
-
 }}
 function checkmoyenneg()
 {
-
 var moy1 = document.getElementById("moyenne_g").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert7").style.display="block";
@@ -562,57 +508,38 @@ document.getElementById("moyenne_g").value  = "";
 else
 {
 document.getElementById("alert7").style.display="none";
-
 }
-
  
 }
-
 function validation()
 {
 var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-
 if (expressionReguliere.test(document.getElementById("email").value))
 {
   document.getElementById("alert8").style.display="none";
-
-
 }
 else
 {
   document.getElementById("alert8").style.display="block";
 document.getElementById("email").value  = "";
-
 }
 return false;
 }
 function validation1()
 {
 var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-
 if (expressionReguliere.test(document.getElementById("email_rep").value))
 {
   document.getElementById("alert9").style.display="none";
-
-
 }
 else
 {
   document.getElementById("alert9").style.display="block";
 document.getElementById("email_rep").value  = "";
-
 }
 return false;
 }
-
-
 </script>
 
 
 @endsection
-
-
-
-
-
-

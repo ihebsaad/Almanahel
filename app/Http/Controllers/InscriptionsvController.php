@@ -297,10 +297,8 @@ if(empty($parent))
          $to=$parent["email"];
          $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
-                 Rappel :  Vos codes accès :'.'<br>
-                   Username :'.$parent['username'].'<br>
-                   Mot de passe :'.$parent['password'];
+                lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>';
+                 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
@@ -404,19 +402,19 @@ if(empty($parent))
     }
       public function index()
     {
-		$inscriptionsv =Inscriptionv::orderBy('created_at', 'desc')->get() ;                     
+    $inscriptionsv =Inscriptionv::orderBy('created_at', 'desc')->get() ;                     
          return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
          
-	}
-	
-	     public function annee($annee)
+  }
+  
+       public function annee($annee)
     {
-		$inscriptionsv =Inscriptionv::orderBy('created_at', 'desc')->where('annee',$annee)->get() ;                     
+    $inscriptionsv =Inscriptionv::orderBy('created_at', 'desc')->where('annee',$annee)->get() ;                     
          return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
          
-	}
-	
-	
+  }
+  
+  
   public function destroy($id)
     {
         $inscriptionv = Inscriptionv::find($id);
@@ -445,7 +443,6 @@ if(empty($parent))
             'share_price'=> 'required|integer',
             'share_qty' => 'required|integer'
         ]);
-
         */
       /*  $user = User::find($id);
       $user->name = $request->get('name');

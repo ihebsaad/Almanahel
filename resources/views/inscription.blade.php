@@ -17,10 +17,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     }
     .nouveau{ color: #000; margin-top: 10px;}
     .ancien{ color: #000; margin-top: 10px; }
-
     /* Accordion */
-
-
 	.panel-default>.panel-heading {
 	  color: #333;
 	  background-color: #eee;
@@ -31,13 +28,11 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	  -ms-user-select: none;
 	  user-select: none;
 	}
-
 	.panel-default>.panel-heading a {
 	    display: block;
 	    padding: 10px 15px;
 	    font-size: 16px;
 	}
-
 	.panel-default>.panel-heading a:after {
 	  content: "";
 	  position: relative;
@@ -53,30 +48,25 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	  transition: transform .25s linear;
 	  -webkit-transition: -webkit-transform .25s linear;
 	}
-
 	.panel-default>.panel-heading a[aria-expanded="true"] {
 	  background-color: #ccc;
 	}
-
 	.panel-default>.panel-heading a[aria-expanded="true"]:after {
 	  content: "\2212";
 	  -webkit-transform: rotate(180deg);
 	  transform: rotate(180deg);
 	}
-
 	.panel-default>.panel-heading a[aria-expanded="false"]:after {
 	  content: "\002b";
 	  -webkit-transform: rotate(90deg);
 	  transform: rotate(90deg);
 	}
-
 	.accordion-option {
 	  width: 100%;
 	  float: left;
 	  clear: both;
 	  margin: 15px 0;
 	}
-
 	.accordion-option .title {
 	  font-size: 20px;
 	  font-weight: bold;
@@ -84,7 +74,6 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	  padding: 0;
 	  margin: 0;
 	}
-
 	.accordion-option .toggle-accordion {
 	  float: right;
 	  font-size: 16px;
@@ -102,7 +91,6 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     	margin-top: 20px;
 		margin-bottom: 15px}
 	.btn-preinscrit {
-
 	}
 </style>
 <div class="jumbotron card card-image" style="background-image: url({{  URL::asset('public/site/img/gradient.jpg') }}); padding:0px!important;text-align:left!important;border:none!important;border-radius:0px!important;margin-top: -30px;">
@@ -498,7 +486,6 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
  	function clubverif()
 {
   
-
  if(document.getElementById("clubs1").checked==true)
 {
 document.getElementById('sect1').style.display = 'block'; 
@@ -515,11 +502,9 @@ function clubverif1()
   document.getElementById('sect1').style.display = 'none'; 
 document.getElementById('sect2').style.display = 'none'; 
 }
-
 function autreverif()
 {
   var nomclub = document.getElementById("nomclub").value;
-
  if(nomclub=="Autres")
 {
 document.getElementById('sectautre').style.display = 'block'; 
@@ -531,12 +516,8 @@ document.getElementById('sectautre').style.display = 'none';
 }
    function checktaillebull1()
 {
-
 taille=document.getElementById('bulletin1').files[0].size;
-
-
-
-if(taille >20000000)
+if(taille >2000000)
 {
 document.getElementById("alert2").style.display="block";
 document.getElementById("bulletin1").value  = "";
@@ -544,20 +525,13 @@ document.getElementById("bulletin1").value  = "";
 else
 {
 document.getElementById("alert2").style.display="none";
-
 }
-
-
  
 }
      function checktaillebull2()
 {
-
 taille=document.getElementById('bulletin2').files[0].size;
-
-
-
-if(taille >20000000)
+if(taille >2000000)
 {
 document.getElementById("alert3").style.display="block";
 document.getElementById("bulletin2").value  = "";
@@ -565,20 +539,12 @@ document.getElementById("bulletin2").value  = "";
 else
 {
 document.getElementById("alert3").style.display="none";
-
 }
-
-
  
 }
   function checkmoyenne1()
 {
-
 var moy1 = document.getElementById("moyenne_1").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert4").style.display="block";
@@ -587,20 +553,12 @@ document.getElementById("moyenne_1").value  = "";
 else
 {
 document.getElementById("alert4").style.display="none";
-
 }
-
-
  
 }
  function checkmoyenne2()
 {
-
 var moy1 = document.getElementById("moyenne_2").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert5").style.display="block";
@@ -609,16 +567,10 @@ document.getElementById("moyenne_2").value  = "";
 else
 {
 document.getElementById("alert5").style.display="none";
-
 }}
  function checkmoyenne3()
 {
-
 var moy1 = document.getElementById("moyenne_3").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert6").style.display="block";
@@ -627,16 +579,10 @@ document.getElementById("moyenne_3").value  = "";
 else
 {
 document.getElementById("alert6").style.display="none";
-
 }}
 function checkmoyenneg()
 {
-
 var moy1 = document.getElementById("moyenne_g").value;
-
-
-
-
 if(moy1 >20 || moy1 <0) 
 {
 document.getElementById("alert7").style.display="block";
@@ -645,48 +591,42 @@ document.getElementById("moyenne_g").value  = "";
 else
 {
 document.getElementById("alert7").style.display="none";
-
 }
-
  
 }
-
 function validation()
 {
 var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-
 if (expressionReguliere.test(document.getElementById("email").value))
 {
   document.getElementById("alert8").style.display="none";
-
-
 }
 else
 {
   document.getElementById("alert8").style.display="block";
 document.getElementById("email").value  = "";
-
 }
 return false;
 }
 function validation1()
 {
 var expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-
 if (expressionReguliere.test(document.getElementById("email_rep").value))
 {
   document.getElementById("alert9").style.display="none";
-
-
 }
 else
 {
   document.getElementById("alert9").style.display="block";
 document.getElementById("email_rep").value  = "";
-
 }
 return false;
 }
-
  </script>
 @endsection
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help

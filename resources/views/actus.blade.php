@@ -136,7 +136,7 @@ p.card-text {
 </style>
 
 <!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" style="width:100%" >
 
   <!--Controls-->
   <div class="controls-top">

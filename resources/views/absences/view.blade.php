@@ -69,7 +69,7 @@
                     <input autocomplete="off" id="debut" type="text" class="form-control" name="debut" value="<?php echo $absence['debut']; ?>"  />
                 </div>
 				 <div class="form-group">
-                    <label for="heure_debut">Heure de Fin:</label>
+                    <label for="heure_debut">Heure de Début:</label>
                     <input id="heure_debut" type="time" class="form-control" name="heure_debut"  value="<?php echo $absence['heure_debut']; ?>"  />
                 </div>				
                 <div class="form-group">

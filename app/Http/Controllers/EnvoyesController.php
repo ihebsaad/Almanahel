@@ -102,8 +102,8 @@ public function sending(Request $request)
 	 $contenu= $request->get('contenu') ;
 	
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
@@ -174,8 +174,8 @@ public function sending(Request $request)
 	 } else{$id=0;}
 
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
@@ -234,8 +234,8 @@ public function sending(Request $request)
 			Message: '.$mess.'<br>';
  
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
@@ -302,8 +302,8 @@ public function sending(Request $request)
 			Message: '.$mess.'<br>';
  
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);

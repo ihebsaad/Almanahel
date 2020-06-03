@@ -94,8 +94,8 @@ class InscriptionsvController extends Controller
            $inscriptionv->save();
           
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$user["email"];
@@ -110,8 +110,8 @@ class InscriptionsvController extends Controller
                        ->setBody($contenu, 'text/html');
             });
         $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
@@ -126,7 +126,7 @@ class InscriptionsvController extends Controller
                     ->subject($sujet)
                        ->setBody($contenu, 'text/html');
             }); 
-             $to=trim('hammalisirine120@gmail.com');
+             $to=trim('lyceealmanahel@gmail.com');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
@@ -231,8 +231,8 @@ $pass1=InscriptionsvController::genererMDP(8);
                   $eleve->save();
 
         $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$eleve["email"];
@@ -270,8 +270,8 @@ if(empty($parent))
         ]);
         $parent->save();
                 $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
@@ -290,8 +290,8 @@ if(empty($parent))
             }); }
              else{
                 $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('hammalisirine120@gmail.com'); //adresse email
-        $swiftTransport->setPassword('21septembre'); // mot de passe email
+        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
@@ -314,7 +314,7 @@ if(empty($parent))
             );
           
  Inscription::where('id', $ins['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"],'valide'  => 1]);
-        $to=trim('hammalisirine120@gmail.com');
+        $to=trim('lyceealmanahel@gmail.com');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";

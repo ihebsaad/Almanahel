@@ -46,14 +46,14 @@
             @foreach($evenements as $evenement)
    
 <?php $type= $evenement->type ;
-if($type=="simple"){$style="background-color:#04b431;color:white";}
-if($type=="examens"){$style="background-color:#ec3aa5;color:white";}
-if($type=="vacances"){$style="background-color:#028dc8;color:white";}
+if($type=="simple"){$style="background-color:#04b431;color:white";$Type="Evénement";}
+if($type=="examens"){$style="background-color:#ec3aa5;color:white";$Type="Examens";}
+if($type=="vacances"){$style="background-color:#028dc8;color:white";$Type="Vacances";}
  ?>
                 <tr>
                     <td style="width:5%" >{{$evenement->id}}</td>
                     <td style="width:30%" ><a href="{{action('EvenementsController@view', $evenement['id'])}}" ><?php echo $evenement->titre; ?>   </a></td>
-                     <td style="width:15%;<?php echo $style;?>" > {{$evenement->type}} </td>
+                     <td style="width:15%;<?php echo $style;?>" > <?php echo $Type;?></td>
                      <td style="width:10%" > {{$evenement->debut}} </td>
                      <td style="width:10%" > {{$evenement->fin}} </td>
                   

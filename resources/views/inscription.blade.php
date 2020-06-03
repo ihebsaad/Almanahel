@@ -479,7 +479,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     <div class="ancien box">
 		<p>1- Veuillez télécharger ce formulaire en pdf (<a href="{{  URL::asset('public/site/Demande_inscription.pdf') }}" download>lien de téléchargement</a>)</p>
 		<p>2- le remplir et le signer</p>
-		<p>3- le déposer, avec le formulaire de règlement Intérieur et le frais d'inscription, au secrétariat du lycée.</p>
+		<p>3- le déposer, avec le dossier complet de demande d'inscription, au secrétariat du lycée.</p>
     </div>
 </div> 
 </div>

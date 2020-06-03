@@ -24,7 +24,11 @@
                 </div>
             </div>
         </div>
-
+<div class="row" style="width:100%;margin-left:30px;margin-bottom:25px;text-align:center;">
+<div style="width:170px;background-color:#04b431;color:white;margin-left:20px">Evénements</div>
+<div style="width:170px;background-color:#ec3aa5;color:white;margin-left:20px">Examens</div>
+<div style="width:170px;background-color:#028dc8;color:white;margin-left:20px">Vacances </div>
+ </div>
         <table id="mytable" class="table table-striped" id="mytable" style="width:100%">
             <thead>
             <tr id="headtable">
@@ -41,11 +45,15 @@
             <tbody>
             @foreach($evenements as $evenement)
    
-
+<?php $type= $evenement->type ;
+if($type=="simple"){$style="background-color:#04b431;color:white";}
+if($type=="examens"){$style="background-color:#ec3aa5;color:white";}
+if($type=="vacances"){$style="background-color:#028dc8;color:white";}
+ ?>
                 <tr>
                     <td style="width:5%" >{{$evenement->id}}</td>
                     <td style="width:30%" ><a href="{{action('EvenementsController@view', $evenement['id'])}}" ><?php echo $evenement->titre; ?>   </a></td>
-                     <td style="width:15%" > {{$evenement->type}} </td>
+                     <td style="width:15%;<?php echo $style;?>" > {{$evenement->type}} </td>
                      <td style="width:10%" > {{$evenement->debut}} </td>
                      <td style="width:10%" > {{$evenement->fin}} </td>
                   

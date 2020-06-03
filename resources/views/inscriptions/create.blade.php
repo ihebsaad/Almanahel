@@ -88,7 +88,7 @@
        <label  class="form-label" for="section">Section : </label>
     <select  name="section" id="section" class="form-control" >
     <option value="">--Please choose an option--</option>
-     <option value="Bac Français<">Bac Français</option>
+     <option value="Bac Français">Bac Français</option>
     <option value="Sciences expérimentales">Sciences expérimentales</option>
     <option value="Mathématiques">Mathématiques</option>
     <option value="Sciences techniques">Sciences techniques</option>

@@ -74,7 +74,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
  	</div>
 
   <div class="col-lg-12 col-sm-12" style="margin-bottom: 20px;margin-top: 40px">
- <h2 class="heading-title" >Calendrier de l'école</h2>
+ <h2 class="heading-title" >Calendrier du Lycée Al Manahel</h2>
   <span class="heading-title-border"></span>
 
 	@include('evenements.calendar')  

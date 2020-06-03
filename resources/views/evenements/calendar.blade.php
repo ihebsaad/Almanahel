@@ -234,7 +234,7 @@ allDayText:'Toute la journée',
 
   <div id='loading'>Chargement...</div>
 <div class="row" style="width:100%;margin-left:30px;margin-bottom:25px;text-align:center;">
-<div style="width:170px;background-color:#04b431;color:white;margin-left:20px">Evénement court</div>
+<div style="width:170px;background-color:#04b431;color:white;margin-left:20px">Evénements en cours</div>
 <div style="width:170px;background-color:#ec3aa5;color:white;margin-left:20px">Examens</div>
 <div style="width:170px;background-color:#028dc8;color:white;margin-left:20px">Vacances </div>
  </div>

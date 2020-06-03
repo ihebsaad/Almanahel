@@ -45,7 +45,7 @@ class DocumentsController extends Controller
    $idclasses = DB::table('eleves_classe')->where('eleve','=',$id)->pluck('classe');
 
           $documents = Document::orderBy('created_at', 'desc')->where('type', '!=' , 'classe')->where('destinataire',$id)
-          ->orWhere('type','classe')->whereIn('destinataire', $idclasses)->orderBy('titre', 'asc')->get() ;
+          ->orWhere('type','classe')->whereIn('destinataire', $idclasses)->get() ;
         
           
                 
@@ -370,3 +370,4 @@ class DocumentsController extends Controller
  
 
  }
+

@@ -19,7 +19,7 @@
           </li>
           <li>
             <p>
-              <i class="fas fa-envelope mr-2"></i> contact@almanahelacademy.com</p>
+              <i class="fas fa-envelope mr-2"></i> ce.almanhel@gmail.com</p>
           </li>
           <li>
             <p>

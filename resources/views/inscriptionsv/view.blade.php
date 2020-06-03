@@ -271,7 +271,7 @@
  </div>
           <div class="col">
 
-        <?php if($inscriptionv->bulletin1 !==''){?>
+        <?php if($inscriptionv->bulletin1 !==''  && $inscriptionv->bulletin1 !==null ){?>
 
 
           <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscriptionv['bulletin1'];?>" > 
@@ -289,7 +289,7 @@
  </div>
           <div class="col">
 
-        <?php if($inscriptionv->bulletin2 !==''){?>
+        <?php if($inscriptionv->bulletin2 !=='' && $inscriptionv->bulletin2 !==null ){?>
 
 
           <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscriptionv['bulletin2'];?>" > 

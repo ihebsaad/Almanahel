@@ -50,7 +50,7 @@
                          <div class="form-group " style="margin-bottom:30px">
                          <label for="name" class="col-md-4 control-label">Type</label>
                           <div class="col-md-6">
-                               <select name="type" id="type" class="form-control"   >
+                               <select name="type" id="type" class="form-control"  readonly >
                               <option value="">--Sélectionnez--</option>
                              <option  <?php if($type=='comptable'){echo 'selected="selected"';}?> value="comptable">Comptable</option>
                           <option <?php if($type=='caisse'){echo 'selected="selected"';}?> value="caisse">Caisse</option>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -25,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/contenuhome';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -54,4 +57,34 @@ class LoginController extends Controller
     {
         return $this->username;
     }
+	
+	  protected function authenticated(Request $request, $user)
+    {
+        /*if ( $user->isAdmin() ) {
+            return redirect()->route('dashboard');
+        }*/
+        $user = auth()->user();
+        $iduser = $user->id;
+        $type = $user->user_type;
+
+		if ($type == 'prof') {
+            return redirect('/docsrecu');
+		}
+		if ($type == 'parent') {
+            return redirect('/docsrecu');
+		}		
+		if ($type == 'eleve') {
+            return redirect('/docsrecu');
+		}
+		
+		if ($type == 'financier') {
+            return redirect('/excels');
+		}
+		if ($type == 'admin' || $type == 'suivi' || $type == 'conseil' ) {
+            return redirect('/inscriptions');
+		}
+
+	}
+
+
 }

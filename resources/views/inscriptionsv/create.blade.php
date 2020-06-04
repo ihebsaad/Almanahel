@@ -17,10 +17,7 @@
     }
     .nouveau{ color: #000; margin-top: 10px;}
     .ancien{ color: #000; margin-top: 10px; }
-
     /* Accordion */
-
-
   .panel-default>.panel-heading {
     color: #333;
     background-color: #eee;
@@ -31,13 +28,11 @@
     -ms-user-select: none;
     user-select: none;
   }
-
   .panel-default>.panel-heading a {
       display: block;
       padding: 10px 15px;
       font-size: 16px;
   }
-
   .panel-default>.panel-heading a:after {
     content: "";
     position: relative;
@@ -53,30 +48,25 @@
     transition: transform .25s linear;
     -webkit-transition: -webkit-transform .25s linear;
   }
-
   .panel-default>.panel-heading a[aria-expanded="true"] {
     background-color: #ccc;
   }
-
   .panel-default>.panel-heading a[aria-expanded="true"]:after {
     content: "\2212";
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   .panel-default>.panel-heading a[aria-expanded="false"]:after {
     content: "\002b";
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
   }
-
   .accordion-option {
     width: 100%;
     float: left;
     clear: both;
     margin: 15px 0;
   }
-
   .accordion-option .title {
     font-size: 20px;
     font-weight: bold;
@@ -84,7 +74,6 @@
     padding: 0;
     margin: 0;
   }
-
   .accordion-option .toggle-accordion {
     float: right;
     font-size: 16px;
@@ -102,12 +91,11 @@
       margin-top: 20px;
     margin-bottom: 15px}
   .btn-preinscrit {
-
   }
   
   .select2-container--default .select2-selection--single{
-	height:38px ;padding-top:5px; 
-	  
+  height:38px ;padding-top:5px; 
+    
   }
 </style>
  <div class="card uper">
@@ -127,13 +115,13 @@
 <div id="ancien_box" style="display:none">
    <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsadd') }}">
       {{ csrf_field() }}
-	  
-	  <?php	  //ANNEE
-		$year=date('Y');$month=date('m');
-		$mois=intval($month);
-		$annee=intval($year);
-		if($mois > 9 ){$annee=$annee-1;}
-		?>
+    
+    <?php   //ANNEE
+    $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+    ?>
  <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
  
    <div class="form-group " >
@@ -197,7 +185,6 @@ $(champ2).select2();
 function eleveverif()
 {
   var eleve = document.getElementById("elevestat").value;
-
  if(eleve=="nouveau")
 {
 document.getElementById('nouveau_box').style.display = 'block'; 
@@ -216,17 +203,10 @@ document.getElementById('ancien_box').style.display = 'none';
 }
  
 }
-
-
-
-
-
-
     function checkexiste1( elm) {
         var id=elm.id;
         var val =document.getElementById(id).value;
         //  var type = $('#type').val();
-
         //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();
         $.ajax({
@@ -234,7 +214,6 @@ document.getElementById('ancien_box').style.display = 'none';
             method: "POST",
             data: {   val:val, _token: _token},
             success: function (data) {
-
                parsed = JSON.parse(data);
     
                 if(data>0){
@@ -242,9 +221,8 @@ document.getElementById('ancien_box').style.display = 'none';
                     document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
                     $('#test').prop('disabled', true);
-                     string='Eleve deja inscrit ! ';
+                     string='Élève déjà inscrit ! ';
                     
-
                    // alert(string);  
                     Swal.fire({
                         type: 'error',
@@ -254,14 +232,9 @@ document.getElementById('ancien_box').style.display = 'none';
                 }
                 else
                   {  $('#test').prop('disabled', false);}
-
-
-
-
             }
         });
         // } else {
-
         // }
     }
      function adding(){
@@ -275,10 +248,8 @@ document.getElementById('ancien_box').style.display = 'none';
                     method:"POST",
                     data:{ champ:champ, _token:_token},
                     success:function(data){
-
                      alert('Added successfully');
                       //  window.location =data;
-
                     }
                 });
             }
@@ -294,10 +265,8 @@ document.getElementById('ancien_box').style.display = 'none';
                     method:"POST",
                     data:{ champ:champ, _token:_token},
                     success:function(data){
-
                      alert('Added successfully');
                       //  window.location =data;
-
                     }
                 });
             }
@@ -306,7 +275,6 @@ document.getElementById('ancien_box').style.display = 'none';
         var id=elm.id;
         var val =document.getElementById(id).value;
         //  var type = $('#type').val();
-
         //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();
         $.ajax({
@@ -314,7 +282,6 @@ document.getElementById('ancien_box').style.display = 'none';
             method: "POST",
             data: {   val:val, _token: _token},
             success: function (data) {
-
                parsed = JSON.parse(data);
     
                 if(data>0){
@@ -322,9 +289,8 @@ document.getElementById('ancien_box').style.display = 'none';
                     document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
                     $('#test1').prop('disabled', true);
-                     string='Eleve deja inscrit ! ';
+                     string='Élève déjà inscrit ! ';
                     
-
                    // alert(string);  
                     Swal.fire({
                         type: 'error',
@@ -334,21 +300,12 @@ document.getElementById('ancien_box').style.display = 'none';
                 }
                  else
                   {  $('#test1').prop('disabled', false);}
-
-
-
-
             }
         });
         // } else {
-
         // }
     }
  
-
-
  
-
 </script>
 @endsection
-

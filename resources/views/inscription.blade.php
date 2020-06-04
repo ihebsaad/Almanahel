@@ -485,9 +485,6 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 </div>
 
 
-<!----- Datepicker ------->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 
  <script type="text/javascript">
  	function clubverif()
@@ -629,10 +626,22 @@ document.getElementById("email_rep").value  = "";
 }
 return false;
 }
+
+ </script>
+@endsection
+
+@section(footer-scripts)
+<!----- Datepicker ------->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+ 
+ <script>
+
   $(function () {
      $('#datenaissance').datepicker({
                     locale: 'fr'
                 });
 });
+
  </script>
 @endsection

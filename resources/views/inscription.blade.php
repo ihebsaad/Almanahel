@@ -195,7 +195,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="datenaissance">Date de naissance : </label>
-					       <input required class="form-control" type="date" name="datenaissance" id="datenaissance" />
+					       <input required class="form-control" type="text" name="datenaissance" id="datenaissance" />
 					 	</div>
 					 	<div class="col">
 					 	</div>
@@ -623,5 +623,10 @@ document.getElementById("email_rep").value  = "";
 }
 return false;
 }
+  $(function () {
+     $('#datenaissance').datepicker({
+                    locale: 'fr'
+                });
+});
  </script>
 @endsection

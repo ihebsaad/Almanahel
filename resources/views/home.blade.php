@@ -32,8 +32,7 @@
                   @foreach($imagesslider as $ims)
 
     <div class="carousel-item <?php if($u==0){echo'active' ; $u++ ; }?>">
-      <!-- <img src="http://test6.enterpriseesolutions.com/almanahel/wp-content/uploads/2016/08/slide01.jpg" alt="Los Angeles" width="1100" height="450"> -->
-      <img src="{{URL::to('/').'/storage/'.$ims->url }}"  alt="" title="slide01"  width="1920" height="1065" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+       <img src="{{URL::to('/').'/storage/'.$ims->url }}"  alt="" title="slide01"  width="1920" height="1065" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
       <div class="carousel-caption">
            <h3>{{$ims->titre}}</h3>
           <p>{{$ims->descrip}}</p> 
@@ -45,14 +44,12 @@
     </div>
     <!-- <div class="carousel-item">
           
-      <img src="http://test6.enterpriseesolutions.com/almanahel/wp-content/uploads/2016/08/slide02.jpg"  alt="" title="slide02"  width="1574" height="800" data-bgposition="right center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-      <div class="carousel-caption">
+       <div class="carousel-caption">
          
         </div>
     </div>
     <div class="carousel-item">
-      <img src="http://test6.enterpriseesolutions.com/almanahel/wp-content/uploads/2016/08/slide01.jpg" alt="New York" width="1100" height="450">
-      <div class="carousel-caption">
+       <div class="carousel-caption">
           <!-- <h3>Almanahel</h3>
           <p>LA is always so much fun!</p> 
         </div>

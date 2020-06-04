@@ -190,7 +190,7 @@ allDayText:'Toute la journée',
         },
         {
           title: 'Click for Google',
-          url: 'http://google.com/',
+          url: 'https://google.com/',
           start: '2020-05-28'
         }
       ]

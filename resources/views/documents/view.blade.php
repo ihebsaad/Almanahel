@@ -33,7 +33,7 @@
                 <?php if($document->chemin !==''){?>
 
 
-          <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $document['chemin'];?>" > 
+          <a target="_blank" class="form-control" href="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo $document['chemin'];?>" > 
            <span class="fa fa-fw fa-download-alt"></span> <?php echo $document['chemin'];?>
       </a>
           <?php } ?>

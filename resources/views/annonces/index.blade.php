@@ -44,7 +44,7 @@
 
                 <tr>
                     <td style="width:5%" >{{$annonce->id}}</td>
-                    <td style="width:20%" ><a href="{{action('AnnoncesController@view', $annonce['id'])}}" ><center><?php if($annonce->image==''){ ?> <img src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:100px" /> <?php }else{  ?><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce->image;?>" style="max-width:150px"/> <?php } ?></center> </a></td>
+                    <td style="width:20%" ><a href="{{action('AnnoncesController@view', $annonce['id'])}}" ><center><?php if($annonce->image==''){ ?> <img src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:100px" /> <?php }else{  ?><img src="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce->image;?>" style="max-width:150px"/> <?php } ?></center> </a></td>
                     <td style="width:20%" ><a href="{{action('AnnoncesController@view', $annonce['id'])}}" >{{$annonce->titre}}</a></td>
                     <td style="width:35%" > {{$annonce->extrait}} </td>
                     <td style="width:10%" >   <label><span class="checked">

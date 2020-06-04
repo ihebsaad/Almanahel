@@ -26,7 +26,7 @@
                 </div>
 				 <div class="  col-md-6">
 
-				<?php if($annonce['image'] !=''){?><img class="pull-right" src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce['image'];?>" style="max-width:150px"/><?php } ?>
+				<?php if($annonce['image'] !=''){?><img class="pull-right" src="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $annonce['image'];?>" style="max-width:150px"/><?php } ?>
                 </div>
 				
                 </div>

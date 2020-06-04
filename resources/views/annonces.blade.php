@@ -206,7 +206,7 @@ $actualites=array();
     <!-- <td> <div style="width:90%;margin-left:10%;margin-right:10%"  >-->
       <div  class="col-md-4  col-lg-4  col-sm-6  col-xs-12 "  >
         <div class="card mb-2" style=" ">
-       	 <?php if($image==''){ ?><center> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> </center><?php }else{  ?><center><img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:300px;height:219px"/></center><?php } ?>
+       	 <?php if($image==''){ ?><center> <img  class="card-img-top" src="{{  URL::asset('public/site/img/no-image.png') }}" style="width:300px!important;height:219px" /> </center><?php }else{  ?><center><img src="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/images/<?php echo $image;?>" style="width:300px;height:219px"/></center><?php } ?>
 
           <div class="card-body" >
             <h4 class="card-title" ><?php custom_echo($titre, 80) ?></h4>

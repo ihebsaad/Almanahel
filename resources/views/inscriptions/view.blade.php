@@ -266,7 +266,7 @@
         <?php if($inscription->bulletin1 !=='' && $inscription->bulletin1 !==null){?>
 
 
-          <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin1'];?>" > 
+          <a target="_blank" class="form-control" href="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin1'];?>" > 
            <span class="far fa-eye"></span> <?php echo $inscription['bulletin1'];?>
 </a>
           <?php } ?>
@@ -284,7 +284,7 @@
         <?php if($inscription->bulletin2 !=='' && $inscription->bulletin2 !==null){?>
 
 
-          <a target="_blank" class="form-control" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin2'];?>" > 
+          <a target="_blank" class="form-control" href="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/fichiers/<?php echo $inscription['bulletin2'];?>" > 
            <span class="far fa-eye"></span> <?php echo $inscription['bulletin2'];?>
 </a>
           <?php } ?>

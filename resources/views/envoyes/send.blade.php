@@ -64,7 +64,7 @@
                     <label id="attachem">Documents</label>
                     <div class="row"  >
                         <div class="col-md-10">
-                            <select id="attachs"  class="itemName form-control col-lg-12" style="" name="attachs[]"  multiple  value="$('#attachs').val()">
+                            <select id="attachs"  class="select2 form-control col-lg-12" style="" name="attachs[]"  multiple  value="$('#attachs').val()">
                                 <option></option>
                                 @foreach($attachements as $attach)
                                       <option value="<?php   echo $attach->id;?>"> <?php  echo $attach->chemin ;?> </option>

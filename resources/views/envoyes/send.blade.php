@@ -15,7 +15,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            <label>Ajouter</label>
+            <label>Envoyer un email</label>
         </div>
         <div class="card-body">
             @if ($errors->any())

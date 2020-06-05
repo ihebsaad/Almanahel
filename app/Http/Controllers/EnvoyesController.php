@@ -138,10 +138,10 @@ $user = auth()->user();
 		
 		
 		
-		
-		
-		                foreach($attachs as $attach) {
-                    $count++;
+		    $count=0;
+
+		      foreach($attachs as $attach) {
+                  $count++;
                  $path=$this->PathattachById($attach);
  				       $fullpath = storage_path()."/documents/";
 

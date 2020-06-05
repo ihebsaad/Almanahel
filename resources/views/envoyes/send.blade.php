@@ -67,7 +67,7 @@
                             <select id="attachs"  class="itemName form-control col-lg-12" style="" name="attachs[]"  multiple  value="$('#attachs').val()">
                                 <option></option>
                                 @foreach($attachements as $attach)
-                                      <option value="<?php   echo $attach->id;?>"> <?php  echo $attach->titre;?> </option>
+                                      <option value="<?php   echo $attach->id;?>"> <?php  echo $attach->chemin ;?> </option>
                                 @endforeach
                             </select>
                         </div>

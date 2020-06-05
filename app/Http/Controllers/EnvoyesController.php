@@ -126,7 +126,7 @@ $user = auth()->user();
 		Mail::setSwiftMailer($swiftMailer);
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$attachs   ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$attachs ,$iduser  ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])

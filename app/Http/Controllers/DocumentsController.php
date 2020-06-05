@@ -99,13 +99,16 @@ class DocumentsController extends Controller
   
     public function store(Request $request)
     {
-     $name='';
+     $name='';$filesize=1;
     if($request->file('chemin')!=null)
     {$chemin=$request->file('chemin');
      $name =  $chemin->getClientOriginalName();
      $path = storage_path()."/documents/";
  
-          $chemin->move($path, $name);
+       $chemin->move($path, $name);
+		  
+	  $filesize= filesize($path);
+	  
     }
    /*   $name='';
     if($request->file('chemin')!=null)
@@ -130,6 +133,7 @@ class DocumentsController extends Controller
              'type' => 'classe',
              'destinataire' => $classe->id,
              'emetteur' => $emetteur,
+             'taille' => $filesize,
             
             // 'par'=> $request->get('p,ar'),ville
 
@@ -157,6 +161,7 @@ class DocumentsController extends Controller
              'type' => $user->user_type,
              'destinataire' => $user->id,
              'emetteur' => $emetteur,
+             'taille' => $filesize,
             
             // 'par'=> $request->get('p,ar'),ville
 

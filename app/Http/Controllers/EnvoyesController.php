@@ -141,7 +141,7 @@ $user = auth()->user();
 		      foreach($attachs as $attach) {
                   $count++;
                  $path=$this->PathattachById($attach);
- 				       $fullpath = storage_path()."/documents/";
+ 				       $fullpath = storage_path()."/documents/".$path;
 
                     $path_parts = pathinfo($fullpath);
                     if (isset( $path_parts['extension']))

@@ -232,6 +232,15 @@ $user = auth()->user();
 	}
 
 
+   public static function PathattachById($id)
+    {
+        $attach = Document::find($id);
+
+        if (isset($attach['chemin'])) {
+            return $attach['chemin'];
+        }else{return '';}
+    }
+
 	
 	  public function sendnotif(Request $request)
     {

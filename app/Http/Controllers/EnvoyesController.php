@@ -133,10 +133,8 @@ $user = auth()->user();
                     ->subject($sujet)
                        ->setBody($contenu, 'text/html')
                     ->setFrom([$from => $fromname]);
-					   ;
-            });
-		
-		
+					    
+           
 		
 		    $count=0;
 
@@ -182,6 +180,8 @@ $user = auth()->user();
 
             }
 		
+		
+		 });
 		
 		
 		

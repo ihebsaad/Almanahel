@@ -46,7 +46,19 @@ $user = auth()->user();
     public function send()
     {
  
-        return view('envoyes.send'  );
+$user = auth()->user();
+ $iduser=$user->id;
+ 
+        $attachements=   Document::where(function ($query) use($iduser/*,$idenv*/) {
+            $query->where('emetteur',$iduser )
+              //  ->orWhereIn('envoye_id',$idenv );
+        })->orWhere(function ($query) use($iduser) {
+            $query->Where('destinataire','=',$iduser );
+        })->orderBy('created_at', 'desc')
+            ->distinct()
+            ->get();
+
+        return view('envoyes.send' ,['attachements'=>$attachements] );
     }
 
     /**
@@ -100,6 +112,11 @@ public function sending(Request $request)
  	 $to= $request->get('destinataire') ;
 	 $sujet= $request->get('sujet') ;
 	 $contenu= $request->get('contenu') ;
+	 $attachs = $request->get('attachs');
+
+$user = auth()->user();
+ $iduser=$user->id;
+ 
 	
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
@@ -109,7 +126,7 @@ public function sending(Request $request)
 		Mail::setSwiftMailer($swiftMailer);
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$attachs   ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -118,6 +135,59 @@ public function sending(Request $request)
                     ->setFrom([$from => $fromname]);
 					   ;
             });
+		
+		
+		
+		
+		
+		                foreach($attachs as $attach) {
+                    $count++;
+                 $path=$this->PathattachById($attach);
+ 				       $fullpath = storage_path()."/documents/";
+
+                    $path_parts = pathinfo($fullpath);
+                    if (isset( $path_parts['extension']))
+                   { $ext=  $path_parts['extension'];}else{
+                $ext="";
+                    }
+
+    $name=basename($fullpath);
+      $mime_content_type=mime_content_type ($fullpath);
+                 $message->attach($fullpath, array(
+                         'as' =>$name,
+                         'mime' => $mime_content_type)
+                );
+              $filesize= filesize($fullpath);
+
+                $counta2= Attachement::where('filesize',$filesize)->where('nom', $name )->count();
+
+                if($counta2==0)
+                {
+                // DB::table('attachements')->insert([
+                   $doc = new Document([
+
+
+			'titre' =>$path,
+             'description' =>'attachement',
+             'chemin'=> $path,
+             'emetteur' => $iduser,
+           //  'envoye' =>  $id,
+           //   'type' => $destinataire->user_type,
+             'destinataire' => $to,
+   
+			]);
+                    $doc->save();
+
+                }
+
+            }
+		
+		
+		
+		
+		
+		
+		
 		
 			$envoye  = new Envoye([
               'emetteur' => ( $request->get('emetteur')),

@@ -54,11 +54,25 @@
                         <textarea style="min-height: 380px;"  id="contenu" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="contenu" required  ></textarea>
                     </div>
 				</div>
-               <div class="form-group">
+               <!--<div class="form-group">
                     <label for="contenu">Document:</label>
               
                         <input type="file"  id="document" type="text"    name="document"   ></input >
                  
+                </div>-->
+				 <div class="form-group form-group-default">
+                    <label id="attachem">Documents</label>
+                    <div class="row"  >
+                        <div class="col-md-10">
+                            <select id="attachs"  class="itemName form-control col-lg-12" style="" name="attachs[]"  multiple  value="$('#attachs').val()">
+                                <option></option>
+                                @foreach($attachements as $attach)
+                               <!--     <option  value="<?php echo $attach->id;?>" pathem="<?php  echo URL::asset('storage'.addslashes($attach->path)) ; ?>" typeem="<?php echo $attach->type;?>"><?php echo $attach->nom;?> </option>-->
+                                     <option value="<?php   echo $attach->id;?>"> <?php  echo $attach->nom;?> </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Envoyer</button>

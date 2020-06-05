@@ -162,7 +162,7 @@ $user = auth()->user();
                 if($counta2==0)
                 {
                 // DB::table('attachements')->insert([
- /*                  $doc = new Document([
+                   $doc = new Document([
 
 
 			'titre' =>$path,
@@ -171,11 +171,11 @@ $user = auth()->user();
              'emetteur' => $iduser,
            //  'envoye' =>  $id,
            //   'type' => $destinataire->user_type,
-             'destinataire' => $to,
+          //////   'destinataire' => $to,
    
 			]);
                     $doc->save();
-*/
+
                 }
 
             }

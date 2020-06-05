@@ -157,7 +157,7 @@ $user = auth()->user();
                 );
               $filesize= filesize($fullpath);
 
-                $counta2= Document::where('filesize',$filesize)->where('chemin', $name )->count();
+                $counta2= Document::where('taille',$filesize)->where('chemin', $name )->count();
 
                 if($counta2==0)
                 {

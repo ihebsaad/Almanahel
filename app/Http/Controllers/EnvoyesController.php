@@ -50,7 +50,7 @@ $user = auth()->user();
  $iduser=$user->id;
  
         $attachements=   Document::where(function ($query) use($iduser/*,$idenv*/) {
-            $query->where('emetteur',$iduser )
+            $query->where('emetteur',$iduser );
               //  ->orWhereIn('envoye_id',$idenv );
         })->orWhere(function ($query) use($iduser) {
             $query->Where('destinataire','=',$iduser );

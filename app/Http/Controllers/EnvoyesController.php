@@ -157,7 +157,7 @@ $user = auth()->user();
                 );
               $filesize= filesize($fullpath);
 
-                $counta2= Attachement::where('filesize',$filesize)->where('nom', $name )->count();
+                $counta2= Document::where('filesize',$filesize)->where('chemin', $name )->count();
 
                 if($counta2==0)
                 {

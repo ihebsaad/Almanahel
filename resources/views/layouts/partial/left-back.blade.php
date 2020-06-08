@@ -49,6 +49,8 @@ $user_type=$user->user_type;
             <a class="collapse-item" href="{{route('contenuscolaire')}}">Vie Scolaire</a>
             <a class="collapse-item" href="{{route('contenuinscription')}}">Inscription</a>
             <a class="collapse-item" href="{{route('contenucontact')}}">Contact</a>
+            <a class="collapse-item" href="{{route('contenuresultats')}}">Résultats</a>
+            <a class="collapse-item" href="{{route('contenualumni')}}">Alumni</a>
           </div>
         </div>
       </li>

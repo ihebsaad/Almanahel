@@ -73,7 +73,7 @@
 		 
 <?php } ?>
 
-       <?php if($user->user_type!='eleve' && $user->user_type!='prof'   ) { ?>
+       <?php if($user->user_type!='eleve' && $user->user_type!='prof' && $user->user_type!='parent'   ) { ?>
 
             <div class="form-group">
 			<label><span class="checked">

@@ -27,7 +27,7 @@ $user_type=$user->user_type;
           <i class="fas fa-fw fa-home"></i>
           <span>Acueil</span></a>
       </li>
-<?php  if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' ||  $user_type=='membre' ){?>
+<?php  if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' ||  $user_type=='membre'   || $user->direction==1 || $user->conseil ==1 || $user->suivi ==1 ){?>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -94,7 +94,7 @@ $user_type=$user->user_type;
 	  
 <?php } ?>
 
-	<?php  if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' || $user_type=='membre' || $user_type=='parent' ){ ?>
+	<?php  if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' || $user_type=='membre' || $user_type=='parent' || $user->direction  || $user->suvi   || $user->conseil     ){ ?>
 	  
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if  (( ! (strpos($view_name,'absences') === false) ) ||( ! (strpos($view_name,'retards') === false) )||( ! (strpos($view_name,'inscriptions') === false) ) )   { echo 'active';}?>">
@@ -117,7 +117,7 @@ $user_type=$user->user_type;
       </li>
 	
 
-	<?php } if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' ||$user_type=='financier' ){?>
+	<?php } if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' ||$user_type=='financier' || $user->direction  || $user->suvi  || $user->conseil || $user->finances ){?>
 
 	  <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if  (( ! (strpos($view_name,'depenses') === false) ) ||( ! (strpos($view_name,'paiements') === false) )||( ! (strpos($view_name,'excels') === false) ) )   { echo 'active';}?>">
@@ -136,7 +136,7 @@ $user_type=$user->user_type;
         </div>
       </li>
 
-	<?php } if ($user_type=='admin'  || $user_type=='suivi' || $user_type=='conseil'   ){?>
+	<?php } if ($user_type=='admin'  || $user_type=='suivi' || $user_type=='conseil' || $user->direction || $user->suivi || $user->conseil   ){?>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item   <?php if  ( ! (strpos($view_name,'documents-index') === false) )   { echo 'active';}?>">

@@ -77,7 +77,17 @@ class HomeController extends Controller
     {
          return view('contact' );
     } 
-	 
+
+	public function resultats()
+    {
+         return view('resultats' );
+    } 
+
+	public function alumni()
+    {
+         return view('alumni' );
+    } 
+	
 	public function contenu_home()
     {
 		if (Auth::guest()) {
@@ -122,7 +132,26 @@ class HomeController extends Controller
 		}else{
 	  return view('contenus.contact' );
 		}		
-     }       
+     }  
+
+
+	public function contenu_resultats()
+    {
+	if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.resultats' );
+		}		
+     }  
+
+   	public function contenu_alumni()
+    {
+	if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('contenus.alumni' );
+		}		
+     }    
 
 		public function contenu_inscription()
     {

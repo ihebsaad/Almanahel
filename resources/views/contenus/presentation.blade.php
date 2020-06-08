@@ -14,6 +14,7 @@ $cont =  App\Contenu::where('zone', 'presentation')->first();$contenu=$cont->con
 $cont2 =  App\Contenu::where('zone', 'presentation2')->first();$contenu2=$cont2->contenu ;
 $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3->contenu ;
 $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4->contenu ;
+$cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5->contenu ;
 
 ?>
 <div class="modal-body">
@@ -32,7 +33,7 @@ $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4-
 	   <button   class="btn btn-md btn-success"  onclick=";changing('presentation');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    <br><br>
-	    <div class="row">
+   	    <div class="row">
 	
        <div class="form-group ">
                     <label for="contenu">Nos résultats:</label>
@@ -44,6 +45,20 @@ $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4-
     </div>
 	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick="  changing('presentation2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+   </div>
+   <br><br>
+	    <div class="row">
+	
+       <div class="form-group ">
+                    <label for="contenu">Sections d'études:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="presentation5" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu5; ?></textarea>
+                    </div>
+         </div>
+
+    </div>
+	 <div class="row" style="margin-bottom:30px">
+	   <button   class="btn btn-md btn-success"  onclick="  changing('presentation5');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    <br><br>
   <div class="row">

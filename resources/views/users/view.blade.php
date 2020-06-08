@@ -56,9 +56,37 @@
 			<input id="tel" onchange="changing(this);"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
           	 </div>
 
-       <?php if($user->user_type!='admin') { ?>
+       <?php if($user->user_type!='eleve' && $user->user_type!='prof'   ) { ?>
+
+            <div class="form-group">
+			<label><span class="checked">
+                            <input  class="user-admin"  type="checkbox"    id="admin"    <?php if ($user->admin ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+              </span> Direction et scolarité</label>
+			</div>
+
+            <div class="form-group">
+			<label><span class="checked">
+                            <input  class="user-finances"  type="checkbox"    id="finances"    <?php if ($user->finances ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+              </span> Direction financière</label>
+			</div>
+			
+            <div class="form-group">
+			<label><span class="checked">
+                            <input  class="user-conseil"  type="checkbox"    id="conseil"    <?php if ($user->conseil ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+              </span> Conseil de pilotage</label>
+			</div>
+
+            <div class="form-group">
+			<label><span class="checked">
+                            <input  class="user-suvi"  type="checkbox"    id="suivi"    <?php if ($user->suivi ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+              </span> Direction pédagogique</label>
+			</div>
+
+			
+			
+       <?php } if($user->user_type!='admin') { ?>
          
-                <div class="form-group">
+              <div class="form-group">
                     <label for="user_type">Qualification:</label>
                 <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
                     <option></option>

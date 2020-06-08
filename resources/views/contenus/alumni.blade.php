@@ -21,7 +21,7 @@ $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->conte
     <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu"> :</label>
+                    <label for="contenu">  </label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="alumni" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>

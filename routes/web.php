@@ -23,6 +23,8 @@ Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scola
 Route::get('/inscription', array('as' => 'inscription','uses' => 'HomeController@inscription'));
 Route::get('/bienvenue', array('as' => 'bienvenue','uses' => 'HomeController@bienvenue'));
 Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
+Route::get('/resultats', array('as' => 'resultats','uses' => 'HomeController@resultats'));
+Route::get('/alumni', array('as' => 'alumni','uses' => 'HomeController@alumni'));
 
 Route::post('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));
 
@@ -196,6 +198,8 @@ Route::get('/contenuformation', array('as' => 'contenuformation','uses' => 'Home
 Route::get('/contenuscolaire', array('as' => 'contenuscolaire','uses' => 'HomeController@contenu_scolaire'));
 Route::get('/contenucontact', array('as' => 'contenucontact','uses' => 'HomeController@contenu_contact'));
 Route::get('/contenuinscription', array('as' => 'contenuinscription','uses' => 'HomeController@contenu_inscription'));
+Route::get('/contenualumni', array('as' => 'contenualumni','uses' => 'HomeController@contenu_alumni'));
+Route::get('/contenuresultats', array('as' => 'contenuresultats','uses' => 'HomeController@contenu_resultats'));
 
 /****  Messages chat  *****/
 Route::get('/messagerie', 'MessageChatController@index')->name('message');

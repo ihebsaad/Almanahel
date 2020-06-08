@@ -13,7 +13,7 @@
 $cont =  App\Contenu::where('zone', 'alumni')->first();$contenu=$cont->contenu ;
 $cont2 =  App\Contenu::where('zone', 'alumni2')->first();$contenu2=$cont2->contenu ;
 $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->contenu ;
-$cont4 =  App\Contenu::where('zone', 'alumni4')->first();$contenu4=$cont4->contenu ;
+//$cont4 =  App\Contenu::where('zone', 'alumni4')->first();$contenu4=$cont4->contenu ;
 
 ?>
 <div class="modal-body">
@@ -68,7 +68,7 @@ $cont4 =  App\Contenu::where('zone', 'alumni4')->first();$contenu4=$cont4->conte
        <div class="form-group ">
                     <label for="contenu"></label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="alumni4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu4; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="alumni4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php // echo $contenu4; ?></textarea>
                     </div>
          </div>
 

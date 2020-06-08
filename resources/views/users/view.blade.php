@@ -60,25 +60,25 @@
 
             <div class="form-group">
 			<label><span class="checked">
-                            <input  class="user-admin"  type="checkbox"    id="admin"    <?php if ($user->admin ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+                            <input  class="user-admin"  type="checkbox"    id="admin"    <?php if ($user->admin ==1){echo 'checked  value="1"   '; }else{echo ' value="0" ' ;}  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
               </span> Direction et scolarité</label>
 			</div>
 
             <div class="form-group">
 			<label><span class="checked">
-                            <input  class="user-finances"  type="checkbox"    id="finances"    <?php if ($user->finances ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+                            <input  class="user-finances"  type="checkbox"    id="finances"    <?php if ($user->finances ==1){echo 'checked  value="1" '; }else{echo ' value="0" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
               </span> Direction financière</label>
 			</div>
 			
             <div class="form-group">
 			<label><span class="checked">
-                            <input  class="user-conseil"  type="checkbox"    id="conseil"    <?php if ($user->conseil ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+                            <input  class="user-conseil"  type="checkbox"    id="conseil"    <?php if ($user->conseil ==1){echo 'checked  value="1" '; }else{echo ' value="0" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
               </span> Conseil de pilotage</label>
 			</div>
 
             <div class="form-group">
 			<label><span class="checked">
-                            <input  class="user-suvi"  type="checkbox"    id="suivi"    <?php if ($user->suivi ==1){echo 'checked'; }  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+                            <input  class="user-suvi"  type="checkbox"    id="suivi"    <?php if ($user->suivi ==1){echo 'checked value="1" '; }else{echo ' value="0" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
               </span> Direction pédagogique</label>
 			</div>
 

@@ -6,7 +6,7 @@
 
 @section('content')
  
-<h1>Gestion du contenu: Page Présenation </h1>
+<h1>Gestion du contenu: Page Alumni </h1>
 <div class="form-group">
      {{ csrf_field() }}
 <?php 
@@ -21,7 +21,7 @@ $cont4 =  App\Contenu::where('zone', 'alumni4')->first();$contenu4=$cont4->conte
     <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu">Mot de la Direction:</label>
+                    <label for="contenu"> :</label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="alumni" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>

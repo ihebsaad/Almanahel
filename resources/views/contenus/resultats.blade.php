@@ -6,7 +6,7 @@
 
 @section('content')
  
-<h1>Gestion du contenu: Page Présenation </h1>
+<h1>Gestion du contenu: Page Résultats </h1>
 <div class="form-group">
      {{ csrf_field() }}
 <?php 

@@ -68,7 +68,7 @@ $cont3 =  App\Contenu::where('zone', 'resultats3')->first();$contenu3=$cont3->co
        <div class="form-group ">
                     <label for="contenu">Divers:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="resultats4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu4; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="resultats4" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php // echo $contenu4; ?></textarea>
                     </div>
          </div>
 

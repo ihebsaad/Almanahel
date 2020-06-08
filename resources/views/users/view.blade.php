@@ -55,6 +55,23 @@
 
 			<input id="tel" onchange="changing(this);"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
           	 </div>
+			 
+		  <?php if($user->user_type!='admin') {  ?>
+		   <div class="form-group">
+                    <label for="user_type">Qualification:</label>
+                <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
+                    <option></option>
+                     <option value="eleve"  <?php if($user->user_type=='eleve') {echo'selected="selected"';}?> >Élève</option>
+                     <option value="prof"  <?php if($user->user_type=='prof') {echo'selected="selected"';}?> >Enseignant </option>
+                    <option  value="parent"  <?php if($user->user_type=='parent') {echo'selected="selected"';}?>  >Parent</option>
+                    <option  value="membre"  <?php if($user->user_type=='membre') {echo'selected="selected"';}?>  >Membre d'administration</option>
+                    <option  value="conseil"  <?php if($user->user_type=='conseil') {echo'selected="selected"';}?>  >Conseil de pilotage</option>
+                    <option  value="suivi"  <?php if($user->user_type=='suivi') {echo'selected="selected"';}?>  >Suivi pédagogique</option>
+                   
+                </select>
+           </div> 
+		 
+<?php } ?>
 
        <?php if($user->user_type!='eleve' && $user->user_type!='prof'   ) { ?>
 
@@ -81,26 +98,10 @@
                             <input  class="user-suvi"  type="checkbox"    id="suivi"    <?php if ($user->suivi ==1){echo 'checked value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
               </span> Direction pédagogique</label>
 			</div>
+ 
+       <?php }  ?>
 
-			
-			
-       <?php } if($user->user_type!='admin') { ?>
-         
-              <div class="form-group">
-                    <label for="user_type">Qualification:</label>
-                <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
-                    <option></option>
-                     <option value="eleve"  <?php if($user->user_type=='eleve') {echo'selected="selected"';}?> >Élève</option>
-                     <option value="prof"  <?php if($user->user_type=='prof') {echo'selected="selected"';}?> >Enseignant </option>
-                    <option  value="parent"  <?php if($user->user_type=='parent') {echo'selected="selected"';}?>  >Parent</option>
-                    <option  value="membre"  <?php if($user->user_type=='membre') {echo'selected="selected"';}?>  >Membre d'administration</option>
-                    <option  value="conseil"  <?php if($user->user_type=='conseil') {echo'selected="selected"';}?>  >Conseil de pilotage</option>
-                    <option  value="suivi"  <?php if($user->user_type=='suivi') {echo'selected="selected"';}?>  >Suivi pédagogique</option>
-                   
-                </select>
-           </div>
-
-<?php } ?>
+        
 <?php if($user->user_type=='eleve') {?>
  
                 <div class="form-group">

@@ -7,9 +7,9 @@
  
  
 <?php 
-$cont =  App\Contenu::where('zone', 'resultat')->first();$contenu=$cont->contenu ;
-$cont2 =  App\Contenu::where('zone', 'resultat2')->first();$contenu2=$cont2->contenu ;
-$cont3 =  App\Contenu::where('zone', 'resultat3')->first();$contenu3=$cont3->contenu ;
+$cont =  App\Contenu::where('zone', 'resultats')->first();$contenu=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'resultats2')->first();$contenu2=$cont2->contenu ;
+$cont3 =  App\Contenu::where('zone', 'resultats3')->first();$contenu3=$cont3->contenu ;
 //$cont4 =  App\Contenu::where('zone', 'resultat4')->first();$contenu4=$cont4->contenu ;
 
 ?>

@@ -105,7 +105,7 @@ $user_type=$user->user_type;
       </li>
 	  
 
-	<?php  if ($user_type=='admin'   || $user_type=='membre' || $user_type=='parent' || $user->direction      ){ ?>
+<?php } if ($user_type=='admin'   || $user_type=='membre' || $user_type=='parent' || $user->direction      ){ ?>
 	  
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if  (( ! (strpos($view_name,'absences') === false) ) ||( ! (strpos($view_name,'retards') === false) )||( ! (strpos($view_name,'inscriptions') === false) ) )   { echo 'active';}?>">

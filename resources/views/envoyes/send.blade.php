@@ -95,7 +95,7 @@
 function verif()
 {
   var dest = document.getElementById("destination").value;
- if(type=="personne")
+ if(dest=="personne")
 {
 document.getElementById('dest').style.display = 'block'; 
 }

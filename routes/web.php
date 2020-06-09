@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/home', array('as' => 'home','uses' => 'HomeController@home'));
+Route::get('/admin', array('as' => 'admin','uses' => 'HomeController@admin'));
 Route::get('/presentation', array('as' => 'presentation','uses' => 'HomeController@presentation'));
 Route::get('/formation', array('as' => 'formation','uses' => 'HomeController@formation'));
 Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scolaire'));

@@ -88,6 +88,16 @@ class HomeController extends Controller
          return view('alumni' );
     } 
 	
+	
+		public function admin()
+    {
+		if (Auth::guest()) {
+		return redirect('login');
+		}else{
+	  return view('admin' );
+		}
+    }
+	
 	public function contenu_home()
     {
 		if (Auth::guest()) {

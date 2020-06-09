@@ -27,7 +27,7 @@ $user_type=$user->user_type;
           <i class="fas fa-fw fa-home"></i>
           <span>Acueil</span></a>
       </li>
-<?php  if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' ||  $user_type=='membre'   || $user->direction==1 || $user->conseil ==1 || $user->suivi ==1 ){?>
+<?php  if ($user_type=='admin' || $user_type=='suivi' ||  $user_type=='membre'   || $user->direction==1   || $user->suivi ==1 ){ ?>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -44,16 +44,23 @@ $user_type=$user->user_type;
         </a>
         <div id="collapseTwo" class="collapse <?php if  ( ! (strpos($view_name,'contenus') === false) )   { echo 'show';}?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-             <a class="collapse-item" href="{{route('contenuhome')}}">Accueil</a>
-            <a class="collapse-item" href="{{route('contenupresentation')}}">Presentation</a>
-            <a class="collapse-item" href="{{route('contenuscolaire')}}">Vie Scolaire</a>
-            <a class="collapse-item" href="{{route('contenuinscription')}}">Inscription</a>
-            <a class="collapse-item" href="{{route('contenucontact')}}">Contact</a>
-            <a class="collapse-item" href="{{route('contenuresultats')}}">Résultats</a>
-            <a class="collapse-item" href="{{route('contenualumni')}}">Alumni</a>
-          </div>
+         <?php  if ($user_type=='admin' || $user_type=='suivi' || $user->suivi==1  ) { ?>
+		<a class="collapse-item" href="{{route('contenuhome')}}">Accueil</a>
+            <a class="collapse-item" href="{{route('contenupresentation')}}">Présentation</a>
+            <a class="collapse-item" href="{{route('contenuformation')}}">Formation</a>
+             <a class="collapse-item" href="{{route('contenucontact')}}">Contact</a>
+		 <?php } ?>
+	 
+		  <?php  if ($user_type=='admin' || $user_type=='membre' || $user->direction==1  ) { ?>
+			  <a class="collapse-item" href="{{route('contenuscolaire')}}">Vie Scolaire</a>
+              <a class="collapse-item" href="{{route('contenuinscription')}}">Inscription</a>
+          <?php } ?>
+
+            </div>
         </div>
       </li>
+<?php } ?>
+<?php  if ($user_type=='admin' || $user_type=='suivi'     || $user->suivi ==1 ){ ?>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item  <?php if  (( ! (strpos($view_name,'annonces') === false) ) ||( ! (strpos($view_name,'evenements') === false) )||( ! (strpos($view_name,'actualites') === false) ) )   { echo 'active';}?>">
@@ -71,8 +78,11 @@ $user_type=$user->user_type;
       </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
-
+<?php } ?>
       <!-- Heading -->
+	  
+<?php  if ($user_type=='admin' || $user_type=='membre'     || $user->direction ==1 ){ ?>
+	  
       <div class="sidebar-heading">
         Utilisateurs
       </div>
@@ -83,7 +93,9 @@ $user_type=$user->user_type;
         </a>
         <div id="collapsethree" class="collapse   <?php if  ( ! (strpos($view_name,'users') === false) )   { echo 'show';}?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('personnels')}}">Administration</a>
+  <?php    if ($user_type=='admin')  {  ?>
+      <a class="collapse-item" href="{{route('personnels')}}">Administration</a>
+	 <?php  } ?>
 			<a class="collapse-item" href="{{route('eleves')}}">Elèves</a>
             <a class="collapse-item" href="{{route('profs')}}">Enseignants</a>
             <a class="collapse-item" href="{{route('parents')}}">Parents</a>
@@ -92,9 +104,8 @@ $user_type=$user->user_type;
         </div>
       </li>
 	  
-<?php } ?>
 
-	<?php  if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' || $user_type=='membre' || $user_type=='parent' || $user->direction  || $user->suvi   || $user->conseil     ){ ?>
+	<?php  if ($user_type=='admin'   || $user_type=='membre' || $user_type=='parent' || $user->direction      ){ ?>
 	  
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if  (( ! (strpos($view_name,'absences') === false) ) ||( ! (strpos($view_name,'retards') === false) )||( ! (strpos($view_name,'inscriptions') === false) ) )   { echo 'active';}?>">
@@ -117,7 +128,7 @@ $user_type=$user->user_type;
       </li>
 	
 
-	<?php } if ($user_type=='admin' || $user_type=='suivi' || $user_type=='conseil' ||$user_type=='financier' || $user->direction  || $user->suvi  || $user->conseil || $user->finances ){?>
+	<?php } if ($user_type=='admin' ||  $user_type=='conseil' ||$user_type=='financier' ||   $user->conseil || $user->finances ){?>
 
 	  <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if  (( ! (strpos($view_name,'depenses') === false) ) ||( ! (strpos($view_name,'paiements') === false) )||( ! (strpos($view_name,'excels') === false) ) )   { echo 'active';}?>">

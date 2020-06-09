@@ -47,6 +47,7 @@
 					<option value="parents">Tous les parents</option>
 					<option value="eleves">Tous les élèves</option>
 					<option value="parents">Tous les enseignants</option>
+					</select>
                 </div>	
 				
                 <div class="form-group"   id="dest"  style="display:none">

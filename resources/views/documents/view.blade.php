@@ -41,8 +41,8 @@
         </div>
          <div class="form-group ">
             <label class="text-primary">Date : </label>
-           
-                <input id="created_at" onchange="changing(this)" readonly="" class="form-control" name="created_at"  value="{{ $document->created_at }}" />
+             <?php $date=  date('d/m/Y H:i', strtotime($document['created_at'] )); ?>
+                <input id="created_at" onchange="changing(this)" readonly="" class="form-control" name="created_at"  value="<?php echo $date;?>" />
           
         </div>
         <div class="form-group ">

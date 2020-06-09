@@ -25,7 +25,7 @@ $user_type=$user->user_type;
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div style="font-size:22px;margin-bottom:25px" class="text-xs font-weight-bold text-primary text-uppercase mb-1">Direction et Scoalrité</div>
-                      <div class=" "><a href="{{route('contenupresentation')}}">Contenu "Inscription"</a> </div>
+                      <div class=" "><a href="{{route('contenuinscription')}}">Contenu "Inscription"</a> </div>
                       <div class=" "><a href="{{route('contenuscolaire')}}">Contenu "vie scolaire"</a> </div>                     
 					 <div class=" "><a   href="{{route('eleves')}}">Elèves</a> </div>
                       <div class=" "><a   href="{{route('profs')}}">Enseignants</a> </div>

@@ -66,8 +66,9 @@
 				
 				?>
                 <tr>
+                    <?php $date=  date('d/m/Y H:i', strtotime($depense['created_at'] )); ?>
                     <td style="width:5%" ><a href="{{action('DepensesController@view', $depense['id'])}}" >{{$depense->id}}</a></td>
-                    <td style="width:10%" ><?php echo $depense['created_at'];?> </td>
+                    <td style="width:10%" ><?php echo $date;?> </td>
                      <td style="width:20%" ><?php echo $depense['libelle'];?> </td>
                      <td style="width:20%" ><?php echo $depense['beneficiaire'];?> </td>
                     <td style="width:10%" ><?php echo $depense['montant'];?> dt</td>

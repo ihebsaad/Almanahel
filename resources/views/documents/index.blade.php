@@ -60,8 +60,9 @@
             @foreach($documents as $document)
 
                 <tr>
+                       <?php $date=  date('d/m/Y H:i', strtotime($document['created_at'] )); ?>
                     <td>{{$document->id}}</td>
-                     <td><?php echo $document->created_at;?></td>
+                     <td><?php echo $date;?></td>
                      <td><a href="{{action('DocumentsController@view', $document['id'])}}" >{{ $document->titre }}</a></td>
                     <td><?php 
 $user=User::where('id',$document->emetteur)->first() ;

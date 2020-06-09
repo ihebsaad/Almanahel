@@ -76,6 +76,9 @@
 
        <?php if($user->user_type!='eleve' && $user->user_type!='prof' && $user->user_type!='parent'   ) { ?>
 
+         <label for="user_type">Droits d'accès:</label>
+
+
             <div class="form-group">
 			<label><span class="checked">
                             <input  class="user-admin"  type="checkbox"    id="admin"    <?php if ($user->admin ==1){echo 'checked  value="0"   '; }else{echo ' value="1" ' ;}  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >

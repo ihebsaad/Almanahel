@@ -48,7 +48,7 @@
 					<option value="personne">une personne</option>
                 </div>	
 				
-                <div class="form-group">
+                <div class="form-group"   id="dest"  style="display:none">
                     <label for="destinataire">Destinataire:</label>
                     <input id="destinataire" type="text" class="form-control" name="destinataire"/>
                 </div>						
@@ -97,11 +97,11 @@ function verif()
   var dest = document.getElementById("destination").value;
  if(type=="personne")
 {
-document.getElementById('destinataire').style.display = 'block'; 
+document.getElementById('dest').style.display = 'block'; 
 }
 else
 {
-document.getElementById('destinataire').style.display = 'none'; 
+document.getElementById('dest').style.display = 'none'; 
 }
 
 }

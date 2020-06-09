@@ -77,6 +77,9 @@
                             <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('DepensesController@destroy', $depense['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                                 <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
+                             <a   href="{{action('DepensesController@view', $depense['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
+                            <span class="far fa-eye" ></span> Voir
+                        </a>
                         @endcan
                     </td>
  

@@ -119,8 +119,7 @@ $user_type=$user->user_type;
 <?php  if ( ! ($user_type=='parent') ) { ?> 
             <a class="collapse-item" href="{{route('inscriptions')}}">Pré-Inscriptions</a>
             <a class="collapse-item" href="{{route('inscriptionsv')}}">Inscriptions</a>
-			<a class="collapse-item" href="{{route('paiements')}}">Paiements</a> 
-<?php } ?> 
+ <?php } ?> 
             <a class="collapse-item" href="{{route('absences')}}">Absences</a>
             <a class="collapse-item" href="{{route('retards')}}">Retards</a>
            </div>

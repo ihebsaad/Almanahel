@@ -1,6 +1,8 @@
 
 @extends('layouts.back')
  
+ @section('content')
+
  <div class="row">
 
             <!-- Earnings (Monthly) Card Example -->

@@ -218,6 +218,7 @@ $user = auth()->user();
                     ->setFrom([$from => $fromname]);         
 		
 		    $count=0;
+				if(isset($attachs)){
 
 		      foreach($attachs as $attach) {
                   $count++;
@@ -261,7 +262,7 @@ $user = auth()->user();
 
             }
 		
-		
+				}
 		 });
 		 
 		 

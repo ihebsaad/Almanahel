@@ -51,6 +51,9 @@ $user=User::where('id',$document->emetteur)->first() ;
                         <a  class="btn btn-md btn-success" role="button" target="_blank" class="form-control" href="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/documents/<?php echo  $document->chemin?>" > 
                             <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>
+                       <a   href="{{action('DocumentsController@view', $document['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
+                            <span class="far fa-eye" ></span> Voir
+                        </a>
                   
                   </td>
                 </tr>

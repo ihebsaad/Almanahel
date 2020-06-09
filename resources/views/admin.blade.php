@@ -24,7 +24,7 @@ $user_type=$user->user_type;
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div style="font-size:22px;margin-bottom:15px" class="text-xs font-weight-bold text-primary text-uppercase mb-1">Direction et Scoalrité</div>
+                      <div style="font-size:22px;margin-bottom:25px" class="text-xs font-weight-bold text-primary text-uppercase mb-1">Direction et Scoalrité</div>
                       <div class=" "><a href="{{route('contenupresentation')}}">Contenu "Inscription"</a> </div>
                       <div class=" "><a href="{{route('contenuscolaire')}}">Contenu "vie scolaire"</a> </div>                     
 					 <div class=" "><a   href="{{route('eleves')}}">Elèves</a> </div>
@@ -53,7 +53,7 @@ $user_type=$user->user_type;
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div style="font-size:22px;margin-bottom:15px"  class="text-xs font-weight-bold text-success text-uppercase mb-1">Direction Financière</div>
+                      <div style="font-size:22px;margin-bottom:25px"  class="text-xs font-weight-bold text-success text-uppercase mb-1">Direction Financière</div>
                       <div class="  "><a  href="{{route('paiements')}}">Paiements</a> </div>
                       <div class="  "><a  href="{{route('depenses')}}">Dépenses</a> </div>
                       <div class="  "><a  href="{{route('excels')}}">Excels</a> </div>
@@ -75,7 +75,7 @@ $user_type=$user->user_type;
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div style="font-size:22px;margin-bottom:15px"  class="text-xs font-weight-bold text-info text-uppercase mb-1">Suivi Pédagogique</div>
+                      <div style="font-size:22px;margin-bottom:25px"  class="text-xs font-weight-bold text-info text-uppercase mb-1">Suivi Pédagogique</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                       <div class="  "><a  href="{{route('contenuhome')}}">Contenu "Accueil"</a> </div>
@@ -106,7 +106,7 @@ $user_type=$user->user_type;
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div style="font-size:22px;margin-bottom:15px"  class="text-xs font-weight-bold text-warning text-uppercase mb-1">Conseil de pilotage</div>
+                      <div style="font-size:22px;margin-bottom:25px"  class="text-xs font-weight-bold text-warning text-uppercase mb-1">Conseil de pilotage</div>
 					  <div class="  "><a  href="{{route('paiements')}}">Paiements</a> </div>
                       <div class="  "><a  href="{{route('depenses')}}">Dépenses</a> </div>
                       <div class="  "><a  href="{{route('excels')}}">Excels</a> </div>

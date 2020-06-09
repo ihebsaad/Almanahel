@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -63,7 +63,9 @@ class LoginController extends Controller
         /*if ( $user->isAdmin() ) {
             return redirect()->route('dashboard');
         }*/
-        $user = auth()->user();
+    
+	/*
+		$user = auth()->user();
         $iduser = $user->id;
         $type = $user->user_type;
 
@@ -100,6 +102,7 @@ class LoginController extends Controller
 			if ($type == 'admin'  ) {
             return redirect('/inscriptions');
 		}
+*/
 
 	}
 

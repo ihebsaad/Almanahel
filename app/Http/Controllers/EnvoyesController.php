@@ -140,7 +140,7 @@ $user = auth()->user();
                     ->setFrom([$from => $fromname]);         
 		
 		    $count=0;
-
+				if(isset($attachs)){
 		      foreach($attachs as $attach) {
                   $count++;
                  $path=$this->PathattachById($attach);
@@ -183,7 +183,7 @@ $user = auth()->user();
 
             }
 		
-		
+		}
 		 });
 		
 		

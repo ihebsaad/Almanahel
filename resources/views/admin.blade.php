@@ -25,8 +25,8 @@ $user_type=$user->user_type;
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div style="font-size:22px;margin-bottom:15px" class="text-xs font-weight-bold text-primary text-uppercase mb-1">Direction et Scoalrité</div>
-                      <div class=" "><a href="{{route('contenupresentation')}}">Contenu page Inscription</a> </div>
-                      <div class=" "><a href="{{route('contenuscolaire')}}">Contenu page vie scolaire</a> </div>                     
+                      <div class=" "><a href="{{route('contenupresentation')}}">Contenu "Inscription"</a> </div>
+                      <div class=" "><a href="{{route('contenuscolaire')}}">Contenu "vie scolaire"</a> </div>                     
 					 <div class=" "><a   href="{{route('eleves')}}">Elèves</a> </div>
                       <div class=" "><a   href="{{route('profs')}}">Enseignants</a> </div>
                       <div class=""><a  href="{{route('parents')}}">Parents</a> </div>
@@ -78,10 +78,10 @@ $user_type=$user->user_type;
                       <div style="font-size:22px;margin-bottom:15px"  class="text-xs font-weight-bold text-info text-uppercase mb-1">Suivi Pédagogique</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                      <div class="  "><a  href="{{route('contenuhome')}}">Contenu page Accueil</a> </div>
-                      <div class="  "><a  href="{{route('contenupresentation')}}">Contenu page Présentation </a> </div>
-                      <div class="  "><a  href="{{route('contenuformation')}}">Contenu page Formation</a> </div>
-                      <div class="  "><a  href="{{route('contenucontact')}}">Contenu page contact</a> </div>
+                      <div class="  "><a  href="{{route('contenuhome')}}">Contenu "Accueil"</a> </div>
+                      <div class="  "><a  href="{{route('contenupresentation')}}">Contenu "Présentation" </a> </div>
+                      <div class="  "><a  href="{{route('contenuformation')}}">Contenu "Formation</a> </div>
+                      <div class="  "><a  href="{{route('contenucontact')}}">Contenu "Contact"</a> </div>
                       <div class="  "><a  href="{{route('evenements')}}">Evénements</a> </div>
                       <div class="  "><a  href="{{route('actualites')}}">Actualités</a> </div>
                       <div class="  "><a  href="{{route('annonces')}}">Annonces</a> </div>

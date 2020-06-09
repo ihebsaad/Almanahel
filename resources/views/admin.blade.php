@@ -19,7 +19,7 @@ $user_type=$user->user_type;
 <?php  if ($user_type=='admin' ||   $user_type=='membre'   || $user->direction==1    ){ ?>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-6 col-md-6 mb-6"  style="margin-bottom:15px" >
+            <div class="col-xl-6 col-md-6 mb-6"  style="margin-bottom:25px" >
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -48,7 +48,7 @@ $user_type=$user->user_type;
 
  
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-6 col-md-6 mb-6"   style="margin-bottom:15px" >
+            <div class="col-xl-6 col-md-6 mb-6"   style="margin-bottom:25px" >
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -70,7 +70,7 @@ $user_type=$user->user_type;
    if ($user_type=='admin' ||   $user_type=='suivi'   || $user->suivi==1    ){ ?>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-6 col-md-6 mb-6"   style="margin-bottom:15px" >
+            <div class="col-xl-6 col-md-6 mb-6"   style="margin-bottom:25px" >
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -101,7 +101,7 @@ $user_type=$user->user_type;
    if ($user_type=='admin' ||   $user_type=='conseil'   || $user->conseil==1    ){ ?>
 
             <!-- Pending Requests Card Example -->
-            <div class="col-xl-6 col-md-6 mb-6"   style="margin-bottom:15px" >
+            <div class="col-xl-6 col-md-6 mb-6"   style="margin-bottom:25px" >
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">

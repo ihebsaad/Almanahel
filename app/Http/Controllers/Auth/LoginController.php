@@ -80,7 +80,24 @@ class LoginController extends Controller
 		if ($type == 'financier') {
             return redirect('/excels');
 		}
-		if ($type == 'admin' || $type == 'suivi' || $type == 'conseil' ) {
+		
+ 		if ($type == 'conseil'  ) {
+            return redirect('/excels');
+		}
+		
+			if ($type == 'conseil'  ) {
+            return redirect('/excels');
+		}
+		
+			if ($type == 'suivi'  ) {
+            return redirect('/evenements');
+		}
+		
+		 if ($type == 'membre'  ) {
+            return redirect('/inscriptions');
+		}
+		
+			if ($type == 'admin'  ) {
             return redirect('/inscriptions');
 		}
 

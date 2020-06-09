@@ -42,10 +42,10 @@
                 <div class="form-group">
                     <label for="destination">Destination:</label>
                     <select  class="form-control" name="destination"   id="destination"   onchange="verif()"/>
+					<option value="personne">Une personne</option>
 					<option value="parents">Tous les parents</option>
 					<option value="eleves">Tous les élèves</option>
 					<option value="parents">Tous les enseignants</option>
-					<option value="personne">une personne</option>
                 </div>	
 				
                 <div class="form-group"   id="dest"  style="display:none">

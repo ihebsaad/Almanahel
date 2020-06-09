@@ -95,6 +95,9 @@ $user=User::where('id',$excel->emetteur)->first() ;
                           <a  class="btn btn-md btn-success" role="button"  target="_blank"   class="form-control" href="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/excels/<?php echo  $excel->chemin?>" > 
                             <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>
+                     <a   href="{{action('ExcelsController@view', $excel['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
+                            <span class="far fa-eye" ></span> Voir
+                        </a>
                   
                   </td>
                 </tr>

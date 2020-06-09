@@ -41,8 +41,9 @@
    
 
                 <tr>
+                      <?php $date=  date('d/m/Y H:i', strtotime($document['created_at'] )); ?>
                     <td style="width:5%" ><a href="{{action('EnvoyesController@view', $envoye['id'])}}" >{{$envoye->id}}</a></td>
-                    <td style="width:15%" ><?php echo $envoye['created_at'];?> </td>
+                    <td style="width:15%" ><?php echo $date;?> </td>
                <!--     <td style="width:20%" ><?php echo $envoye['emetteur'];?> </td>-->
                     <td style="width:30%" ><?php echo $envoye['sujet'];?> </td>
                     <td style="width:15%" ><?php echo $envoye['destinataire'];?> </td>

@@ -142,7 +142,7 @@ $user_type=$user->user_type;
       <li class="nav-item   <?php if  ( ! (strpos($view_name,'documents-index') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('documents')}}">
           <i class="fas fa-fw fa-folder-open"></i>
-          <span>Tous les Documetnts</span></a>
+          <span>Tous les Documents</span></a>
       </li>
 	<?php }  ?>
 

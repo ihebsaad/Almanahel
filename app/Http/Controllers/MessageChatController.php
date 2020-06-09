@@ -40,13 +40,13 @@ class MessageChatController extends Controller
         {
             if($row->status == '2')
             {
-                $chat_message = '<em>This message has been removed</em>';
-                $user_name = '<b class="text-success">You</b>';
+                $chat_message = '<em>message supprimé</em>';
+                $user_name = '<b class="text-success">Vous</b>';
             }
             else
             {
                 $chat_message = $row->message;
-                $user_name = '<button type="button" class="btn btn-danger btn-xs remove_chat" id="'.$row->message.'">x</button>&nbsp;<b class="text-success">You</b>';
+                $user_name = '<button type="button" class="btn btn-danger btn-xs remove_chat" id="'.$row->message.'">x</button>&nbsp;<b class="text-success">Vous</b>';
             }
             
 

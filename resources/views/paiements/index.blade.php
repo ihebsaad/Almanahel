@@ -73,7 +73,7 @@
                     <td style="width:10%" ><?php echo $paiement['created_at'];?> </td>
                     <td style="width:20%" ><?php if($userid>0){echo $user['name'] .' '.$user['lastname'];}?> </td>
                     <td style="width:20%" ><?php echo $paiement['libelle'];?> </td>
-                    <td style="width:10%" ><?php echo $paiement['montant'];?> </td>
+                    <td style="width:10%" ><?php echo $paiement['montant'];?> dt</td>
  
 					<td style="width:10%"   >
                         @can('isAdmin')

@@ -40,6 +40,15 @@
 	 		  <input id="emetteur" type="hidden" value="<?php echo $iduser; ?>" name="emetteur"  />
 
                 <div class="form-group">
+                    <label for="destination">Destination:</label>
+                    <select  class="form-control" name="destination"   id="destination"   onchange="verif()"/>
+					<option value="parents">Tous les parents</option>
+					<option value="eleves">Tous les élèves</option>
+					<option value="parents">Tous les enseignants</option>
+					<option value="personne">une personne</option>
+                </div>	
+				
+                <div class="form-group">
                     <label for="destinataire">Destinataire:</label>
                     <input id="destinataire" type="text" class="form-control" name="destinataire"/>
                 </div>						
@@ -81,6 +90,22 @@
             </form>
         </div>
     </div>
+	
+	<script>
+function verif()
+{
+  var dest = document.getElementById("destination").value;
+ if(type=="personne")
+{
+document.getElementById('destinataire').style.display = 'block'; 
+}
+else
+{
+document.getElementById('destinataire').style.display = 'none'; 
+}
+
+}
+</script>
 @endsection
  
 

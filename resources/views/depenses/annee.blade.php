@@ -70,7 +70,7 @@
                     <td style="width:10%" ><?php echo $depense['created_at'];?> </td>
                      <td style="width:20%" ><?php echo $depense['libelle'];?> </td>
                      <td style="width:20%" ><?php echo $depense['beneficiaire'];?> </td>
-                    <td style="width:10%" ><?php echo $depense['montant'];?> </td>
+                    <td style="width:10%" ><?php echo $depense['montant'];?> dt</td>
  
 					<td style="width:10%"   >
                         @can('isAdmin')

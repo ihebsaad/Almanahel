@@ -51,12 +51,12 @@
                     <input id="libelle" type="text" class="form-control" name="libelle"/>
                 </div>						
                 <div class="form-group">
-                    <label for="montant">Montant:</label>
+                    <label for="montant">Montant(dt):</label>
                     <input id="montant" type="number" min="0" step="0.1" class="form-control" name="montant"/>
                 </div>		
 		 
 				 <div class="form-group">
-                    <label for="montant">Détails:</label>
+                    <label for="details">Détails:</label>
                     <input id="details" type="text" class="form-control" name="details"/>
                 </div>
 				

@@ -42,6 +42,7 @@
                 <div class="form-group">
                     <label for="destination">Destination:</label>
                     <select  class="form-control" name="destination"   id="destination"   onchange="verif()"/>
+					<option value=""></option>
 					<option value="personne">Une personne</option>
 					<option value="parents">Tous les parents</option>
 					<option value="eleves">Tous les élèves</option>

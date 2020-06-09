@@ -150,13 +150,13 @@ $user_type=$user->user_type;
       <li class="nav-item  <?php if  ( ! (strpos($view_name,'documents-docsrecu') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('docsrecu')}}">
           <i class="fas fa-file-import"></i>
-          <span>Mes Documetnts reçus</span></a>
+          <span>Mes Documents reçus</span></a>
       </li>
 	  <!-- Nav Item - Charts -->
       <li class="nav-item   <?php if  ( ! (strpos($view_name,'documents-docsenv') === false) )   { echo 'active';}?>">
         <a class="nav-link" href="{{route('docsenv')}}">
           <i class="fas fa-file-export"></i>
-          <span>Mes Documetnts envoyés</span></a>
+          <span>Mes Documents envoyés</span></a>
       </li>
 	  
       <!-- Nav Item - Tables -->

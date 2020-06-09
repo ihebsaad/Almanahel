@@ -347,7 +347,7 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
          $to=$inscription["email"];
          $sujet="AlManahel Academy - votre préinscription est validée";
          $contenu='BONJOUR ,'.$inscription['prenom'].' '.$inscription['nom'].'<br>
-                  VOTRE PRÉINSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>';
+                  On a le plaisir de vous informer que votre demande de pré-inscription au lycée Al-Manahel  a été acceptée. Pour s"inscrire à notre établissement il faudrait :'.'<br>'.'<br>'.'I- Joindre les documents suivants:'.'<br>'.'<br>'.'1.  Le formulaire d"inscription rempli et signé. '.'<br>'.'2. Le règlement intérieur du lycée signé. '.'<br>'.'3. Un acte d"état civil de moins de 3 mois'.'<br>'.'4. 5 enveloppes portant l"adresse du parent, timbrées (4 timbres pour des envois postaux normaux et un timbre pour un envoi recommandé)'.'<br>'.'5.  Cinq (5) photos'.'<br>'.'6. Une copie de la carte d"identité nationale du parent'.'<br>'.'7.  Demande d"inscription à la garderie (pour ceux qui le souhaitent). Le formulaire d"inscription, le règlement intérieur et la demande d"inscription à la garderie peuvent être téléchargés à partir du site web'.'<a href="https://lyceealmanahel.com/"</a>'.'comme ils peuvent être retirés auprès du  secrétariat du lycée.'.'<br>'.'<br>'.'II- Déposer le dossier complet au secrétariat  du lycée. '.'<br>'.'<br>'.'Au plaisir de vous voir parmi nous au sein du lycée Al-Manahel.'.'<br>'.'<br>'.'Cordialement.'.'Direction pédagogique du lycée Al-Manahel';
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)

@@ -250,10 +250,10 @@ $pass1=InscriptionsvController::genererMDP(8);
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$eleve['email'].'<br>
                    Mot de passe :'.$pass1;
-                $fromname='Almanahel Academy';
+                
              $from='almanahelacademy@gmail.com';
   
-
+            $fromname='Almanahel Academy';
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname  ) {
 
                 $message

@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 mx-auto" style="padding:0px">
 
-          <div id="demo" class="carousel slide" data-ride="carousel" >
+          <div id="demo" class="carousel slide" data-ride="carousel" data-interval="6000">
 
 
   <!-- Indicators -->

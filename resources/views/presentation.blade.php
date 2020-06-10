@@ -6,13 +6,13 @@
   
  
  
-<?php 
+<?php /*
 $cont =  App\Contenu::where('zone', 'presentation')->first();$contenu=$cont->contenu ;
 $cont2 =  App\Contenu::where('zone', 'presentation2')->first();$contenu2=$cont2->contenu ;
 $cont3 =  App\Contenu::where('zone', 'presentation3')->first();$contenu3=$cont3->contenu ;
 $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4->contenu ;
 $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5->contenu ;
-
+*/
 ?>
 
 <div class="jumbotron card card-image" style="background-image: url({{  URL::asset('public/site/img/gradient.jpg') }}); padding:0px!important;text-align:left!important;border:none!important;border-radius:0px!important;margin-top: -30px;">
@@ -26,9 +26,9 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
  <div class="col-xs-12 col-sm-12     ">
 
 <section>
-<h2 class="heading-title" >Mot de la direction pédagogique du lycée Al-Manahel-Monastir</h2>
+<a href="{{URL::to('/mot')}}" ><h2 class="heading-title" >Mot de la direction pédagogique du lycée Al-Manahel-Monastir</h2></a>
   <span class="heading-title-border"></span>
-<?php echo $contenu; ?>
+<?php // echo $contenu; ?>
 </section>
 
 </div>
@@ -36,9 +36,9 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
  <div class="col-xs-12 col-sm-12     ">
 
 <section>
-<h2 class="heading-title" >Sections d'études</h2>
+<a href="{{URL::to('/sections')}}" ><h2 class="heading-title" >Sections d'études</h2></a>
   <span class="heading-title-border"></span>
-<?php echo $contenu5; ?>
+<?php // echo $contenu5; ?>
 </section>
 
 </div>
@@ -49,7 +49,7 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
 <a href="{{URL::to('/resultats')}}" ><h2 class="heading-title" >Nos résultats</h2></a>
   <span class="heading-title-border"></span>
 <section>
-<?php echo $contenu2; ?>
+<?php //echo $contenu2; ?>
 </section>
 
 </div>
@@ -58,7 +58,7 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
 <a href="{{URL::to('/alumni')}}" ><h2 class="heading-title" >Alumni</h2></a>
   <span class="heading-title-border"></span>
 <section>
-<?php echo $contenu3; ?>
+<?php// echo $contenu3; ?>
 </section>
 
 </div>

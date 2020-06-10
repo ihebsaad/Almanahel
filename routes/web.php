@@ -26,6 +26,8 @@ Route::get('/bienvenue', array('as' => 'bienvenue','uses' => 'HomeController@bie
 Route::get('/contact', array('as' => 'contact','uses' => 'HomeController@contact'));
 Route::get('/resultats', array('as' => 'resultats','uses' => 'HomeController@resultats'));
 Route::get('/alumni', array('as' => 'alumni','uses' => 'HomeController@alumni'));
+Route::get('/sections', array('as' => 'alumni','uses' => 'HomeController@sections'));
+Route::get('/mot', array('as' => 'alumni','uses' => 'HomeController@mot'));
 
 Route::post('/updatecontent', array('as' => 'home.updatecontent','uses' => 'HomeController@updatecontent'));
 

@@ -88,6 +88,17 @@ class HomeController extends Controller
          return view('alumni' );
     } 
 	
+		public function mot()
+    {
+         return view('mot' );
+    } 
+	
+	
+		public function sections()
+    {
+         return view('sections' );
+    } 
+	
 	
 		public function admin()
     {

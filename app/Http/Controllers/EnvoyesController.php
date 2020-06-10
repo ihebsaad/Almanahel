@@ -214,7 +214,7 @@ $user = auth()->user();
 		}
  
 	  $emails=$emails->toArray() ;
-	  $chunks = array_chunk($emails, 50);
+	  $chunks = array_chunk($emails, 30);
 
         // parcours divisions
         foreach ($chunks as $chunk)

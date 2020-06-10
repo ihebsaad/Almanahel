@@ -32,13 +32,15 @@
 			 
 			 <?php use \App\Http\Controllers\UsersController;
  
-    $CurrentUser = auth()->user();
+    $user = auth()->user();
 
-    $iduser=$CurrentUser->id;
+    $iduser=$user->id;
+	$user_type=$user->user_type;
+
 
     ?>
 	 		  <input id="emetteur" type="hidden" value="<?php echo $iduser; ?>" name="emetteur"  />
-
+ <?php  if ( ! (  $user_type=='eleve' || $user_type=='prof' $user_type=='prent')  ) {?>
                 <div class="form-group">
                     <label for="destination">Destination:</label>
                     <select  class="form-control" name="destination"   id="destination"   onchange="verif()"/>
@@ -54,7 +56,16 @@
                     <label for="destinataire">Destinataire:</label>
                     <input id="destinataire" type="text" class="form-control" name="destinataire"/>
                 </div>						
-               
+               <? } else{   ?>
+				   
+		         <div class="form-group"   id="dest"  >
+                    <label for="destinataire">Destinataire:</label>
+                    <input id="destinataire" type="text" class="form-control" name="destinataire"/>
+                </div>			   
+				   
+				   
+				   
+			<?php   }  ?>
 			 <div class="form-group">
                     <label for="sujet">Sujet:</label>
                     <input id="sujet" type="text" class="form-control" name="sujet"/>

@@ -64,8 +64,8 @@
                      <option value="eleve"  <?php if($user->user_type=='eleve') {echo'selected="selected"';}?> >Élève</option>
                      <option value="prof"  <?php if($user->user_type=='prof') {echo'selected="selected"';}?> >Enseignant </option>
                     <option  value="parent"  <?php if($user->user_type=='parent') {echo'selected="selected"';}?>  >Parent</option>
-                    <option  value="membre"  <?php if($user->user_type=='membre') {echo'selected="selected"';}?>  >Membre d'administration</option>
-                    <option  value="financier"  <?php if($user->user_type=='financier') {echo'selected="selected"';}?>  >Finances</option>
+                    <option  value="membre"  <?php if($user->user_type=='membre') {echo'selected="selected"';}?>  >Membre de direction et scolarité</option>
+                    <option  value="financier"  <?php if($user->user_type=='financier') {echo'selected="selected"';}?>  >Direction Financière</option>
                     <option  value="conseil"  <?php if($user->user_type=='conseil') {echo'selected="selected"';}?>  >Conseil de pilotage</option>
                     <option  value="suivi"  <?php if($user->user_type=='suivi') {echo'selected="selected"';}?>  >Suivi pédagogique</option>
                    
@@ -100,7 +100,7 @@
             <div class="form-group">
 			<label><span class="checked">
                             <input  class="user-suvi"  type="checkbox"    id="suivi"    <?php if ($user->suivi ==1){echo 'checked value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Direction pédagogique</label>
+              </span> Suivi pédagogique</label>
 			</div>
  
        <?php }  ?>

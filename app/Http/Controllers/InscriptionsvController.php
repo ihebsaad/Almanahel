@@ -114,17 +114,14 @@ class InscriptionsvController extends Controller
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
-        
+           $fromname='Almanahel Academy';
+  $from='almanahelacademy@gmail.com';
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
           $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 L"inscription de votre fils/fille à  AlManahel '.$user['name'].' ' .$user['lastname']. ' est validée.'.'<br>';
                   
-           $fromname='Almanahel Academy';
-             $from='almanahelacademy@gmail.com';
-  
-
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname  ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$form,$fromname   ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -243,19 +240,14 @@ $pass1=InscriptionsvController::genererMDP(8);
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$eleve["email"];
-         
+          $fromname='Almanahel Academy';
          $sujet="AlManahel Academy - votre inscription est validée";
          $contenu='Bonjour ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
                   Votre inscription à Almanahel est validée.'.'<br>
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$eleve['email'].'<br>
                    Mot de passe :'.$pass1;
-                
-             $from='almanahelacademy@gmail.com';
-  
-            $fromname='Almanahel Academy';
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname  ) {
-
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -289,19 +281,15 @@ if(empty($parent))
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
-        
+            $fromname='Almanahel Academy';
+  $from='almanahelacademy@gmail.com';
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
                  L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$parent['email'].'<br>
                    Mot de passe :'.$pass;
-              $fromname='Almanahel Academy';
-             $from='almanahelacademy@gmail.com';
-  
-
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname  ) {
-             
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$form,$fromname    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -317,16 +305,15 @@ if(empty($parent))
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
-        
+           $fromname='Almanahel Academy';
+  $from='almanahelacademy@gmail.com';
+
+
          $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 L"inscription de votre fils/fille à  AlManahel'.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>';
                  
-               $fromname='Almanahel Academy';
-             $from='almanahelacademy@gmail.com';
-  
-
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname  ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname   ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])

@@ -414,6 +414,8 @@ $user = auth()->user();
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
         
+		$dests = array("ihebsaad@gmail.com", "saadiheb@gmail.com" );
+
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
                 $message
                    // ->to($to)
@@ -422,9 +424,12 @@ $user = auth()->user();
                        ->setBody($contenu, 'text/html')
                     ->setFrom([$from => $fromname]);
 					   ;
-					   foreach ($to as $em) {
-                      $message->to($em);
-                  }
+					  
+				foreach($dests as $dest)
+				{
+			  $message->to($em);
+				}	  
+					  
             });
 			
 		 

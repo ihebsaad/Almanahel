@@ -56,7 +56,6 @@
 			<input id="tel" onchange="changing(this);"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
           	 </div>
 			 
-		  <?php if($user->user_type!='admin') {  ?>
 		   <div class="form-group">
                     <label for="user_type">Qualification:</label>
                 <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
@@ -68,13 +67,13 @@
                     <option  value="financier"  <?php if($user->user_type=='financier') {echo'selected="selected"';}?>  >Direction Financière</option>
                     <option  value="conseil"  <?php if($user->user_type=='conseil') {echo'selected="selected"';}?>  >Conseil de pilotage</option>
                     <option  value="suivi"  <?php if($user->user_type=='suivi') {echo'selected="selected"';}?>  >Suivi pédagogique</option>
+                    <option  value="admin"  <?php if($user->user_type=='admin') {echo'selected="selected"';}?>  >Super Administrateur</option>
                    
                 </select>
            </div> 
 		 
-<?php } ?>
-
-       <?php if($user->user_type!='eleve' && $user->user_type!='prof' && $user->user_type!='parent'   ) { ?>
+ 
+       <?php if( $user->user_type!='admin' && $user->user_type!='eleve' && $user->user_type!='prof' && $user->user_type!='parent'   ) { ?>
 
          <label for="user_type">Droits d'accès:</label>
 

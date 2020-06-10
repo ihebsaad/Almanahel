@@ -511,7 +511,7 @@ $user = auth()->user();
 		 
 			$envoye  = new Envoye([
               'emetteur' =>   $id  ,
-             'destinataire' => 'Administration'),
+             'destinataire' => 'Administration' ,
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu')),
              'type' => $type

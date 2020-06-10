@@ -111,10 +111,10 @@ $user_type=$user->user_type;
       <li class="nav-item <?php if  (( ! (strpos($view_name,'absences') === false) ) ||( ! (strpos($view_name,'retards') === false) )||( ! (strpos($view_name,'inscriptions') === false) ) )   { echo 'active';}?>">
       <!--  <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">-->
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" >
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fas fa-fw fa-school"></i>
           <span>Vie Scolaire</span>
         </a>
-        <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse <?php if($user_type=='parent'){echo 'show';}?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 <?php  if ( ! ($user_type=='parent') ) { ?> 
             <a class="collapse-item" href="{{route('inscriptions')}}">Pré-Inscriptions</a>

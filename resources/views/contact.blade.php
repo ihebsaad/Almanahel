@@ -46,7 +46,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
 		<form method="post"  id="myform" >
 			  {{ csrf_field() }}
 			  <?php
-			  $dest=array(ihebsaad@gmail.com,saadiheb@gmail.com );
+			  $dest=array('ihebsaad@gmail.com','saadiheb@gmail.com' );
 			  ?>
 		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire[]"  value="<?php echo $dest;?>">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="contact">

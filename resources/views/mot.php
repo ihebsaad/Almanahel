@@ -9,7 +9,7 @@
 <?php 
 $cont =  App\Contenu::where('zone', 'mot')->first();$contenu=$cont->contenu ;
 $cont2 =  App\Contenu::where('zone', 'mot2')->first();$contenu2=$cont2->contenu ;
-$cont3 =  App\Contenu::where('zone', 'mot3')->first();$contenu3=$cont3->contenu ;
+//$cont3 =  App\Contenu::where('zone', 'mot3')->first();$contenu3=$cont3->contenu ;
 //$cont4 =  App\Contenu::where('zone', 'alumni4')->first();$contenu4=$cont4->contenu ;
 
 ?>
@@ -49,7 +49,7 @@ $cont3 =  App\Contenu::where('zone', 'mot3')->first();$contenu3=$cont3->contenu 
 <!--<h2 class="heading-title" >Alumni</h2>
   <span class="heading-title-border"></span>-->
 <section>
-<?php echo $contenu3; ?>
+<?php echo // $contenu3; ?>
 </section>
 
 </div>

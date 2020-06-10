@@ -49,7 +49,7 @@ $cont2 =  App\Contenu::where('zone', 'mot2')->first();$contenu2=$cont2->contenu 
 <!--<h2 class="heading-title" >Alumni</h2>
   <span class="heading-title-border"></span>-->
 <section>
-<?php echo // $contenu3; ?>
+<?php // echo  $contenu3; ?>
 </section>
 
 </div>

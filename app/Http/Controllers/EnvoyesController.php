@@ -416,7 +416,7 @@ $user = auth()->user();
         
 		$dests = array("ihebsaad@gmail.com", "saadiheb@gmail.com" );
 
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message
                    // ->to($to)
                     //   ->cc($cc  ?: [])
@@ -427,7 +427,7 @@ $user = auth()->user();
 					  
 				foreach($dests as $dest)
 				{
-			  $message->to($em);
+			  $message->to($dest);
 				}	  
 					  
             });
@@ -491,19 +491,27 @@ $user = auth()->user();
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
         
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
+				$dests = array("ihebsaad@gmail.com", "saadiheb@gmail.com" );
+
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message
-                    ->to($to)
+                 //   ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
                        ->setBody($contenu, 'text/html')
                     ->setFrom([$from => $fromname]);
-					   ;
+					   
+					foreach($dests as $dest)
+				{
+			  $message->to($dest);
+				}	   
+					   
+					   
             });
 		 
 			$envoye  = new Envoye([
               'emetteur' =>   $id  ,
-             'destinataire' => trim($request->get('destinataire')),
+             'destinataire' => 'Administration'),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu')),
              'type' => $type

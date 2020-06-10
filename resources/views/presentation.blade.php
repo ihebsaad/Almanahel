@@ -14,7 +14,10 @@ $cont4 =  App\Contenu::where('zone', 'presentation4')->first();$contenu4=$cont4-
 $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5->contenu ;
 */
 ?>
+<style>
+h3{font-size:25px!important;}
 
+</style>
 <div class="jumbotron card card-image" style="background-image: url({{  URL::asset('public/site/img/gradient.jpg') }}); padding:0px!important;text-align:left!important;border:none!important;border-radius:0px!important;margin-top: -30px;">
   <div class="text-white text-center py-5 px-4" style="padding-top: 20px!important; padding-bottom: 40px!important;">
     <div>
@@ -35,7 +38,7 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
 <div class="row">
  <div class="col-xs-12 col-sm-12     ">
 
-<section  >
+<section style="margin-left:15px" >
 <a href="{{URL::to('/sections')}}" ><h2 class="heading-title" >Sections d'études</h2></a>
   <span class="heading-title-border"></span>
 <?php // echo $contenu5; ?>
@@ -46,7 +49,7 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
 <div class="row">
 <!-- contenu 2 -->
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
-<section>
+<section  style="margin-left:15px" >
 
 <a href="{{URL::to('/resultats')}}" ><h2 class="heading-title" >Nos résultats</h2></a>
   <span class="heading-title-border"></span>
@@ -56,7 +59,7 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
 </div>
 <!-- contenu 3 -->
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
-<section>
+<section  style="margin-left:15px" >
 <a href="{{URL::to('/alumni')}}" ><h2 class="heading-title" >Alumni</h2></a>
   <span class="heading-title-border"></span>
  

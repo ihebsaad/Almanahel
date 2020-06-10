@@ -37,12 +37,12 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
    </div>
    
    
-          <div class="form-group ">
-                    <label for="contenu">Mot de la Direction:</label>
-                    <div class="editor" >
+     <div class="form-group ">
+            <label for="contenu">Mot de la Direction:</label>
+           <div class="editor" >
                         <textarea style="min-height: 380px;"  id="mot2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $mot2; ?></textarea>
-                    </div>
          </div>
+     </div>
  
 	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick=";changing('mot2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
@@ -67,7 +67,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
       	    <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu"> </label>
+                    <label for="contenu">Nos résultats: </label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="resultats2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $resultats2; ?></textarea>
                     </div>
@@ -96,7 +96,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
    	    <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu"> </label>
+                    <label for="contenu">Sections d'études: </label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="sections2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $sections2; ?></textarea>
                     </div>
@@ -107,8 +107,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
 	   <button   class="btn btn-md btn-success"  onclick="  changing('sections2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    <br><br>
-   <hr>
-  <div class="row">
+   <div class="row">
 	
        <div class="form-group ">
                     <label for="contenu">Alumni:</label>
@@ -127,7 +126,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
   <div class="row">
 	
        <div class="form-group ">
-                    <label for="contenu"></label>
+                    <label for="contenu">Alumni:</label>
                     <div class="editor" >
                         <textarea style="min-height: 380px;"  id="alumni2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $alumni2; ?></textarea>
                     </div>

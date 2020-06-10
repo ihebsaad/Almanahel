@@ -35,7 +35,7 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
 <div class="row">
  <div class="col-xs-12 col-sm-12     ">
 
-<section>
+<section  >
 <a href="{{URL::to('/sections')}}" ><h2 class="heading-title" >Sections d'études</h2></a>
   <span class="heading-title-border"></span>
 <?php // echo $contenu5; ?>
@@ -46,18 +46,20 @@ $cont5 =  App\Contenu::where('zone', 'presentation5')->first();$contenu5=$cont5-
 <div class="row">
 <!-- contenu 2 -->
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
+<section>
+
 <a href="{{URL::to('/resultats')}}" ><h2 class="heading-title" >Nos résultats</h2></a>
   <span class="heading-title-border"></span>
-<section>
 <?php //echo $contenu2; ?>
 </section>
 
 </div>
 <!-- contenu 3 -->
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
+<section>
 <a href="{{URL::to('/alumni')}}" ><h2 class="heading-title" >Alumni</h2></a>
   <span class="heading-title-border"></span>
-<section>
+ 
 <?php// echo $contenu3; ?>
 </section>
 

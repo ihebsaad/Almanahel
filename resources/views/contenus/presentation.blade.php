@@ -43,8 +43,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
                         <textarea style="min-height: 380px;"  id="mot2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $mot2; ?></textarea>
                     </div>
          </div>
-
-    </div>
+ 
 	 <div class="row" style="margin-bottom:30px">
 	   <button   class="btn btn-md btn-success"  onclick=";changing('mot2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>

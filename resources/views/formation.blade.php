@@ -39,7 +39,7 @@ $cont =  App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conten
 		<!--<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">-->
 		<form method="post"  id="myform" >
 			  {{ csrf_field() }}
-		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com;saadiheb@gmail.com ">
+		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com; ">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="demande">
 		  <input type="hidden" class="form-control"  id="sujet"  name="sujet"  value="Demande d'Emploi/Formation - Al Manahel">
  

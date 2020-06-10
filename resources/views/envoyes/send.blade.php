@@ -46,7 +46,7 @@
 					<option value="personne">Une personne</option>
 					<option value="parents">Tous les parents</option>
 					<option value="eleves">Tous les élèves</option>
-					<option value="parents">Tous les enseignants</option>
+					<option value="profs">Tous les enseignants</option>
 					</select>
                 </div>	
 				

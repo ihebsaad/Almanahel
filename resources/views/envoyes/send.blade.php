@@ -39,7 +39,7 @@
 
      ?>
 	 		  <input id="emetteur" type="hidden" value="<?php echo $iduser; ?>" name="emetteur"  />
- <?php  if (   (  $user_type!='eleve' && $user_type!='prof' && $user_type!='parent')  ) {?>
+ <?php  if (      $user_type!='eleve' && $user_type!='prof' && $user_type!='parent')    { ?>
                 <div class="form-group">
                     <label for="destination">Destination:</label>
                     <select  class="form-control" name="destination"   id="destination"   onchange="verif()"/>
@@ -55,9 +55,9 @@
                     <label for="destinataire">Destinataire:</label>
                     <input id="destinataire" type="text" class="form-control" name="destinataire"/>
                 </div>						
-               <? } else{   ?>
+               <?php } else{   ?>
 				   
-		         <div class="form-group"   id="dest"  >
+		         <div class="form-group"     >
                     <label for="destinataire">Destinataire:</label>
                     <input id="destinataire" type="text" class="form-control" name="destinataire"/>
                 </div>			   

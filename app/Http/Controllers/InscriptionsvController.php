@@ -109,7 +109,10 @@ class InscriptionsvController extends Controller
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
-                       ->setBody($contenu, 'text/html');
+                       ->setBody($contenu, 'text/html')
+                         ->setFrom([$from => $fromname]);
+                       
+
             });
         $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email

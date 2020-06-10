@@ -114,17 +114,20 @@ class InscriptionsvController extends Controller
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
+         $fromname='Almanahel Academy';
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
           $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$user['name'].' ' .$user['lastname']. ' EST VALIDÉE.'.'<br>';
+                L"inscription de votre fils/fille à  AlManahel '.$user['name'].' ' .$user['lastname']. ' est validée.'.'<br>';
                   
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
-                       ->setBody($contenu, 'text/html');
+
+        ->setBody($contenu, 'text/html')
+          ->setFrom([$from => $fromname]);
             }); 
              $to=trim('lyceealmanahel@gmail.com');
         $type='notif demande Pré-inscription';
@@ -236,10 +239,11 @@ $pass1=InscriptionsvController::genererMDP(8);
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$eleve["email"];
+          $fromname='Almanahel Academy';
          $sujet="AlManahel Academy - votre inscription est validée";
-         $contenu='BONJOUR ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
-                  VOTRE INSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>
-                  Vos codes accès :'.'<br>
+         $contenu='Bonjour ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
+                  Votre inscription à Almanahel est validée.'.'<br>
+                  Vos codes d"accès :'.'<br>
                    E-mail :'.$eleve['email'].'<br>
                    Mot de passe :'.$pass1;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
@@ -247,7 +251,8 @@ $pass1=InscriptionsvController::genererMDP(8);
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
-                       ->setBody($contenu, 'text/html');
+                       ->setBody($contenu, 'text/html')
+                         ->setFrom([$from => $fromname]);
             });
 
 $parent = User::where('user_type','parent')
@@ -275,10 +280,11 @@ if(empty($parent))
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
+          $fromname='Almanahel Academy';
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
-          $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
-                  Vos codes accès :'.'<br>
+          $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
+                 L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
+                  Vos codes d"accès :'.'<br>
                    E-mail :'.$parent['email'].'<br>
                    Mot de passe :'.$pass;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
@@ -286,7 +292,9 @@ if(empty($parent))
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
-                       ->setBody($contenu, 'text/html');
+                       ->setBody($contenu, 'text/html')
+                       ->setFrom([$from => $fromname]);
+
             }); }
              else{
                 $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
@@ -295,16 +303,18 @@ if(empty($parent))
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
+          $fromname='Almanahel Academy';
          $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
-          $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                lINSCRIPTION DE VOTRE FILS/FILLE À  ALMANAHEL '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>';
+          $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
+                L"inscription de votre fils/fille à  AlManahel'.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>';
                  
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
-                       ->setBody($contenu, 'text/html');
+                       ->setBody($contenu, 'text/html')
+                       ->setFrom([$from => $fromname]);
              }); }
         Inscriptionv::where('id', $inscriptionv['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"]]);
          DB::table('parents_eleve')->insert(

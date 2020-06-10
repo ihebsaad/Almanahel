@@ -25,7 +25,7 @@ $user_type=$user->user_type;
       <li class="nav-item">
         <a class="nav-link"  href="{{route('admin')}}">
           <i class="fas fa-fw fa-home"></i>
-          <span>Acueil</span></a>
+          <span>Accueil</span></a>
       </li>
 <?php  if ($user_type=='admin' || $user_type=='suivi' ||  $user_type=='membre'   || $user->direction==1   || $user->suivi ==1 ){ ?>
       <!-- Divider -->

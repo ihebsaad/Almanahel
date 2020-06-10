@@ -239,7 +239,7 @@ $pass1=InscriptionsvController::genererMDP(8);
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$eleve["email"];
-          $fromname='Almanahel Academy';
+         
          $sujet="AlManahel Academy - votre inscription est validée";
          $contenu='Bonjour ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
                   Votre inscription à Almanahel est validée.'.'<br>
@@ -247,6 +247,7 @@ $pass1=InscriptionsvController::genererMDP(8);
                    E-mail :'.$eleve['email'].'<br>
                    Mot de passe :'.$pass1;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+               $fromname='Almanahel Academy';
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -280,7 +281,7 @@ if(empty($parent))
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
-          $fromname='Almanahel Academy';
+        
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
                  L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
@@ -288,6 +289,7 @@ if(empty($parent))
                    E-mail :'.$parent['email'].'<br>
                    Mot de passe :'.$pass;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+                $fromname='Almanahel Academy';
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -303,12 +305,13 @@ if(empty($parent))
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
-          $fromname='Almanahel Academy';
+        
          $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 L"inscription de votre fils/fille à  AlManahel'.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>';
                  
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+                $fromname='Almanahel Academy';
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])

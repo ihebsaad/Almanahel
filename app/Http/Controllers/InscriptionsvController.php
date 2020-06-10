@@ -121,7 +121,7 @@ class InscriptionsvController extends Controller
           $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 L"inscription de votre fils/fille à  AlManahel '.$user['name'].' ' .$user['lastname']. ' est validée.'.'<br>';
                   
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$form,$fromname   ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname   ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -283,14 +283,14 @@ if(empty($parent))
          Mail::setSwiftMailer($swiftMailer);
          $to=$parent["email"];
             $fromname='Almanahel Academy';
-  $from='almanahelacademy@gmail.com';
+           $from='almanahelacademy@gmail.com';
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
                  L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$parent['email'].'<br>
                    Mot de passe :'.$pass;
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$form,$fromname    ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])

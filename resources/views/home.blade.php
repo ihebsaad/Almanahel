@@ -31,7 +31,7 @@
           <div class="carousel-inner">
                   @foreach($imagesslider as $ims)
 
-    <div class="carousel-item <?php if($u==0){echo'active' ; $u++ ; }?>">
+    <div class="carousel-item <?php if($u==0){echo'active' ; $u++ ; }?>" data-interval="60000">
        <img src="{{URL::to('/').'/storage/'.$ims->url }}"  alt="" title="slide01"  width="1920" height="1065" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
       <div class="carousel-caption">
            <h3>{{$ims->titre}}</h3>

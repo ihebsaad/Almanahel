@@ -25,6 +25,7 @@ h3{font-size:25px!important;}
     </div>
   </div>
 </div>
+<br><br>
 <div class="row">
  <div class="col-xs-12 col-sm-12     ">
 
@@ -70,8 +71,8 @@ h3{font-size:25px!important;}
 </div>
  
 
-
 <br>
+<br><br>
 <br>
 <br>
 </div>

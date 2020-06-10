@@ -286,7 +286,7 @@ if(empty($parent))
            $from='almanahelacademy@gmail.com';
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                 L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>
+                 L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' est validée.'.'<br>
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$parent['email'].'<br>
                    Mot de passe :'.$pass;
@@ -312,7 +312,7 @@ if(empty($parent))
 
          $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                L"inscription de votre fils/fille à  AlManahel'.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>';
+                L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' est validée.'.'<br>';
                  
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from ,$fromname   ) {
                 $message

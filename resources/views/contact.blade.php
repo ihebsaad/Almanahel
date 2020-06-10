@@ -45,7 +45,10 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
 		<!--<form method="post" action="{{ route('envoyes.sendnotif') }}"  enctype="multipart/form-data">-->
 		<form method="post"  id="myform" >
 			  {{ csrf_field() }}
-		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com;saadiheb@gmail.com ">
+			  <?php
+			  $dest=array(ihebsaad@gmail.com,saadiheb@gmail.com );
+			  ?>
+		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire[]"  value="<?php echo $dest;?>">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="contact">
 		  <input type="hidden" class="form-control"  id="sujet"  name="sujet"  value="Message de Contact - Al Manahel">
  

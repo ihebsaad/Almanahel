@@ -241,6 +241,7 @@ $pass1=InscriptionsvController::genererMDP(8);
          Mail::setSwiftMailer($swiftMailer);
          $to=$eleve["email"];
           $fromname='Almanahel Academy';
+            $from='almanahelacademy@gmail.com';
          $sujet="AlManahel Academy - votre inscription est validée";
          $contenu='Bonjour ,'.$eleve['name'].' '.$eleve['lastname'].'<br>
                   Votre inscription à Almanahel est validée.'.'<br>

@@ -247,8 +247,8 @@ $pass1=InscriptionsvController::genererMDP(8);
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$eleve['email'].'<br>
                    Mot de passe :'.$pass1;
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
-                $message
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from,$fromname   ) {
+                $message,
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)

@@ -416,17 +416,21 @@ $user = auth()->user();
         
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
                 $message
-                    ->to($to)
+                   // ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)
                        ->setBody($contenu, 'text/html')
                     ->setFrom([$from => $fromname]);
 					   ;
+					   foreach ($to as $em) {
+                      $message->to($em);
+                  }
             });
+			
 		 
 			$envoye  = new Envoye([
               'emetteur' =>   $id  ,
-             'destinataire' => trim($request->get('destinataire')),
+             'destinataire' => 'Administration'),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu')),
              'type' => $type

@@ -427,7 +427,7 @@ $user = auth()->user();
 					  
 				foreach($dests as $dest)
 				{
-			  $message->to($em);
+			  $message->to($dest);
 				}	  
 					  
             });

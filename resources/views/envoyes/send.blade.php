@@ -37,7 +37,7 @@
     $iduser=$user->id;
 	$user_type=$user->user_type;
 
-
+echo $user_type;
     ?>
 	 		  <input id="emetteur" type="hidden" value="<?php echo $iduser; ?>" name="emetteur"  />
  <?php  if ( ! (  $user_type=='eleve' || $user_type=='prof' || $user_type=='prent')  ) {?>

@@ -135,7 +135,7 @@ class InscriptionsvController extends Controller
         ->setBody($contenu, 'text/html')
           ->setFrom([$from => $fromname]);
             }); 
-             $to=trim('lyceealmanahel@gmail.com');
+             $to=trim('letaief_med_ali@yahoo.fr');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
@@ -147,7 +147,19 @@ class InscriptionsvController extends Controller
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-              $to=trim('hammalisirine95@gmail.com');
+              $to=trim('zilimounir@yahoo.fr');
+        $type='notif demande Pré-inscription';
+        //$nomp=$parent->name. ' '.$parent->lastname ;
+        $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
+        $contenu="Bonjour,<br>
+        Nous vous informons que l'Élève ".$inscriptionv['prenom']." ". $inscriptionv['nom']." a été inscit dans votre Lycée <br>";
+        
+        
+        $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+        $request = new Request($data);
+        //\App\Http\Controllers\EnvoyesController::sendnotif($request);
+         app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
+              $to=trim('betboutsaida@yahoo.fr');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
@@ -335,7 +347,7 @@ if(empty($parent))
             );
           
  Inscription::where('id', $ins['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"],'valide'  => 1]);
-        $to=trim('lyceealmanahel@gmail.com');
+        $to=trim('betboutsaida@yahoo.fr');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
@@ -347,7 +359,19 @@ if(empty($parent))
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-              $to=trim('hammalisirine95@gmail.com');
+        $to=trim('zilimounir@yahoo.fr');
+        $type='notif demande Pré-inscription';
+        //$nomp=$parent->name. ' '.$parent->lastname ;
+        $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
+        $contenu="Bonjour,<br>
+        Nous vous informons que l'Élève ".$inscriptionv['prenom']." ". $inscriptionv['nom']." a été inscit dans votre Lycée <br>";
+        
+        
+        $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+        $request = new Request($data);
+        //\App\Http\Controllers\EnvoyesController::sendnotif($request);
+         app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
+        $to=trim('letaief_med_ali@yahoo.fr');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";

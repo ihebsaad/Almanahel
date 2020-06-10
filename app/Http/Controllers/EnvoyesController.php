@@ -416,7 +416,7 @@ $user = auth()->user();
         
 		$dests = array("ihebsaad@gmail.com", "saadiheb@gmail.com" );
 
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message
                    // ->to($to)
                     //   ->cc($cc  ?: [])

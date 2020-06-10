@@ -114,13 +114,17 @@ class InscriptionsvController extends Controller
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
-         $fromname='Almanahel Academy';
+        
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
           $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 L"inscription de votre fils/fille à  AlManahel '.$user['name'].' ' .$user['lastname']. ' est validée.'.'<br>';
                   
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+           $fromname='Almanahel Academy';
+             $from='almanahelacademy@gmail.com';
+  
+
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname  ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])

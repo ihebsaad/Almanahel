@@ -39,7 +39,7 @@
 
      ?>
 	 		  <input id="emetteur" type="hidden" value="<?php echo $iduser; ?>" name="emetteur"  />
- <?php  if (   (  $user_type!='eleve' && $user_type!='prof' && $user_type!='prent')  ) {?>
+ <?php  if (   (  $user_type!='eleve' && $user_type!='prof' && $user_type!='parent')  ) {?>
                 <div class="form-group">
                     <label for="destination">Destination:</label>
                     <select  class="form-control" name="destination"   id="destination"   onchange="verif()"/>

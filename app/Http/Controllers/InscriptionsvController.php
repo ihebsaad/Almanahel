@@ -314,7 +314,7 @@ if(empty($parent))
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 L"inscription de votre fils/fille à  AlManahel'.$eleve['name'].' ' .$eleve['lastname']. ' EST VALIDÉE.'.'<br>';
                  
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$form ,$fromname   ) {
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from ,$fromname   ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])

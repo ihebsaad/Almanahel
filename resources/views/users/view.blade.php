@@ -81,7 +81,7 @@
 
             <div class="form-group">
 			<label><span class="checked">
-                            <input  class="user-admin"  type="checkbox"    id="admin"    <?php if ($user->admin ==1){echo 'checked  value="0"   '; }else{echo ' value="1" ' ;}  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
+                            <input  class="user-direction"  type="checkbox"    id="direction"    <?php if ($user->direction ==1){echo 'checked  value="0"   '; }else{echo ' value="1" ' ;}  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
               </span> Direction et scolarité</label>
 			</div>
 

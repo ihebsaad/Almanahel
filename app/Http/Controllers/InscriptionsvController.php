@@ -100,9 +100,11 @@ class InscriptionsvController extends Controller
          Mail::setSwiftMailer($swiftMailer);
          $to=$user["email"];
          $sujet="AlManahel Academy - votre inscription est validée";
-         $contenu='BONJOUR ,'.$user['name'].' '.$user['lastname'].'<br>
-                  VOTRE INSCRIPTION À  ALMANAHEL EST VALIDÉE.'.'<br>';
-             Mail::send([], [], function ($message) use ($to,$sujet, $contenu    ) {
+         $contenu='Bonjour ,'.$user['name'].' '.$user['lastname'].'<br>
+                  Votre inscription à  Almanahel est validée.'.'<br>';
+                            $fromname='Almanahel Academy';
+  $from='almanahelacademy@gmail.com';
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from,$fromname   ) {
                 $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
@@ -118,7 +120,7 @@ class InscriptionsvController extends Controller
   $from='almanahelacademy@gmail.com';
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
-          $contenu='BONJOUR ,'.$parent['name'].' '.$parent['lastname'].'<br>
+          $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
                 L"inscription de votre fils/fille à  AlManahel '.$user['name'].' ' .$user['lastname']. ' est validée.'.'<br>';
                   
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname   ) {

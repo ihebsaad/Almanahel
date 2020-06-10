@@ -29,7 +29,7 @@ h3{font-size:25px!important;}
  <div class="col-xs-12 col-sm-12     ">
 
 <section>
-<a href="{{URL::to('/mot')}}" ><h2 class="heading-title" >Mot de la direction pédagogique du lycée Al-Manahel-Monastir</h2></a>
+<a href="{{URL::to('/mot')}}" ><h3 class="heading-title" >Mot de la direction pédagogique du lycée Al-Manahel-Monastir</h3></a>
   <span class="heading-title-border"></span>
 <?php // echo $contenu; ?>
 </section>
@@ -39,7 +39,7 @@ h3{font-size:25px!important;}
  <div class="col-xs-12 col-sm-12     ">
 
 <section style="margin-left:15px" >
-<a href="{{URL::to('/sections')}}" ><h2 class="heading-title" >Sections d'études</h2></a>
+<a href="{{URL::to('/sections')}}" ><h3 class="heading-title" >Sections d'études</h3></a>
   <span class="heading-title-border"></span>
 <?php // echo $contenu5; ?>
 </section>
@@ -51,7 +51,7 @@ h3{font-size:25px!important;}
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
 <section  style="margin-left:15px" >
 
-<a href="{{URL::to('/resultats')}}" ><h2 class="heading-title" >Nos résultats</h2></a>
+<a href="{{URL::to('/resultats')}}" ><h3 class="heading-title" >Nos résultats</h3></a>
   <span class="heading-title-border"></span>
 <?php //echo $contenu2; ?>
 </section>
@@ -60,7 +60,7 @@ h3{font-size:25px!important;}
 <!-- contenu 3 -->
  <div class="col-xs-12 col-sm-12   col-md-12 col-lg-12  ">
 <section  style="margin-left:15px" >
-<a href="{{URL::to('/alumni')}}" ><h2 class="heading-title" >Alumni</h2></a>
+<a href="{{URL::to('/alumni')}}" ><h3 class="heading-title" >Alumni</h3></a>
   <span class="heading-title-border"></span>
  
 <?php// echo $contenu3; ?>
@@ -71,7 +71,9 @@ h3{font-size:25px!important;}
  
 
 
-
+<br>
+<br>
+<br>
 </div>
 </div>
 

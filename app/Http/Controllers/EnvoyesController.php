@@ -188,31 +188,44 @@ $user = auth()->user();
 		
 		
 	}else{
-		 /*if($destination=='eleves'){
-			 $parents = DB::table('users')
+		$to='';
+		$emails =array();
+		 if($destination=='eleves'){
+			 $emails = DB::table('users')
                   ->where('user_type','eleve' )
-                ->select('email');
-       
+                ->pluck('email');
+				$to='Tous les élèves';
+       }
+	   		 if($destination=='parents'){
+
           $eleves = DB::table('users')
                   ->where('user_type','parent' )
-                ->select('email');
-		}
+                ->pluck('email');
+		 $to='Tous les parents';
+	
+			 }
 		
 		if($destination=='profs'){
-			 $enseignants = DB::table('users')
+			 $emails = DB::table('users')
                   ->where('user_type','prof' )
-                ->select('email');
-		}	
+                ->pluck('email');
+		 $to='Tous les enseignants';
 		
-		 */
+		}
+ 
+	  $chunks = array_chunk($emails, 50);
+
+        // parcours divisions
+        foreach ($chunks as $chunk)
+        {
 		 
-		  $to='ihebsaad@gmail.com';
+		//  $to='ihebsaad@gmail.com';
 		 
 		 
-		  Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$attachs ,$iduser  ) {
+		  Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$attachs ,$iduser,$chunk  ) {
                 $message
-                    ->to($to)
-                    //   ->cc($cc  ?: [])
+                   // ->to($to)
+					->bcc($chunk ?: [])
                     ->subject($sujet)
                        ->setBody($contenu, 'text/html')
                     ->setFrom([$from => $fromname]);         
@@ -243,18 +256,13 @@ $user = auth()->user();
 
                 if($counta2==0)
                 {
-                // DB::table('attachements')->insert([
-                   $doc = new Document([
-
-
+                    $doc = new Document([
+ 
 			'titre' =>$path,
              'description' =>'attachement',
              'chemin'=> $path,
              'emetteur' => $iduser,
-           //  'envoye' =>  $id,
-           //   'type' => $destinataire->user_type,
-          //////   'destinataire' => $to,
-   
+    
 			]);
                     $doc->save();
 
@@ -265,11 +273,11 @@ $user = auth()->user();
 				}
 		 });
 		 
-		 
+		} //foreach chunk
 		 
 
 		
-	}
+	}  // else envoi multiple
 	
 	
 	
@@ -283,7 +291,7 @@ $user = auth()->user();
 		
 			$envoye  = new Envoye([
               'emetteur' => ( $request->get('emetteur')),
-             'destinataire' => trim($request->get('destinataire')),
+             'destinataire' => $to),
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu')),
              'type' => 'communication'

@@ -283,7 +283,7 @@ $user = auth()->user();
 		
 			$envoye  = new Envoye([
               'emetteur' => ( $request->get('emetteur')),
-             'destinataire' => $to),
+             'destinataire' => $to  ,
              'sujet' => trim($request->get('sujet')),
              'contenu' => trim($request->get('contenu')),
              'type' => 'communication'

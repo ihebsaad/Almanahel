@@ -248,7 +248,7 @@ $pass1=InscriptionsvController::genererMDP(8);
                    E-mail :'.$eleve['email'].'<br>
                    Mot de passe :'.$pass1;
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from,$fromname   ) {
-                $message,
+                $message
                     ->to($to)
                     //   ->cc($cc  ?: [])
                     ->subject($sujet)

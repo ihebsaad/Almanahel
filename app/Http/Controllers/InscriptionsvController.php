@@ -121,7 +121,7 @@ class InscriptionsvController extends Controller
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                L"inscription de votre fils/fille à  AlManahel '.$user['name'].' ' .$user['lastname']. ' est validée.'.'<br>';
+                L"inscription de votre fils/fille '.$user['name'].' ' .$user['lastname']. ' à AlManahel est validée.'.'<br>';
                   
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname   ) {
                 $message
@@ -288,7 +288,7 @@ if(empty($parent))
            $from='almanahelacademy@gmail.com';
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                 L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' est validée.'.'<br>
+                 L"inscription de votre fils/fille '.$eleve['name'].' ' .$eleve['lastname']. ' à AlManahel est validée.'.'<br>
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$parent['email'].'<br>
                    Mot de passe :'.$pass;
@@ -314,7 +314,7 @@ if(empty($parent))
 
          $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
           $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
-                L"inscription de votre fils/fille à  AlManahel '.$eleve['name'].' ' .$eleve['lastname']. ' est validée.'.'<br>';
+                L"inscription de votre fils/fille '.$eleve['name'].' ' .$eleve['lastname']. ' à AlManahel est validée.'.'<br>';
                  
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from ,$fromname   ) {
                 $message

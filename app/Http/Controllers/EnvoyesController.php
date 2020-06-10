@@ -213,7 +213,7 @@ $user = auth()->user();
 		
 		}
  
-	  $chunks=$chunks->toArray() ;
+	  $emails=$emails->toArray() ;
 	  $chunks = array_chunk($emails, 50);
 
         // parcours divisions

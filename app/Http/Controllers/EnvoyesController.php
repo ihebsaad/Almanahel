@@ -198,7 +198,7 @@ $user = auth()->user();
        }
 	   		 if($destination=='parents'){
 
-          $eleves = DB::table('users')
+          $emails = DB::table('users')
                   ->where('user_type','parent' )
                 ->pluck('email');
 		 $to='Tous les parents';
@@ -278,16 +278,8 @@ $user = auth()->user();
 
 		
 	}  // else envoi multiple
-	
-	
-	
-	
-	
-	
-	
-		
-		
-		
+	 
+	 
 		
 			$envoye  = new Envoye([
               'emetteur' => ( $request->get('emetteur')),

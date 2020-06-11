@@ -57,7 +57,9 @@ class DocumentsController extends Controller
         $id=Auth::id();
  
 
-          $documents = Document::orderBy('created_at', 'desc')->where('emetteur',$id)
+          $documents = Document::orderBy('created_at', 'desc')
+		  ->distinct('chemin')
+		  ->where('emetteur',$id)
           ->get() ;
         
           

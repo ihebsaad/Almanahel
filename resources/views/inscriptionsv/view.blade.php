@@ -482,7 +482,7 @@ function changing(elm) {
         //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();
         $.ajax({
-            url: "{{ route('inscriptions.updating') }}",
+            url: "{{ route('inscriptionsv.updating') }}",
             method: "POST",
             data: {inscription: inscription , champ:champ ,val:val, _token: _token},
             success: function (data) {

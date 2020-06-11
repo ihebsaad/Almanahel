@@ -58,11 +58,11 @@ class DocumentsController extends Controller
  
 
           $documents = Document::orderBy('created_at', 'desc')
-		  ->distinct('chemin')
+		 // ->distinct('chemin')
 		  ->where('emetteur',$id)
           ->get() ;
         
-          
+          $documents =$documents->unique('chemin');
                 
            return view('documents.docsenv',  ['documents' => $documents]);        
           

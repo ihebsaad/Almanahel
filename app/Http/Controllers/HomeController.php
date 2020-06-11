@@ -112,10 +112,11 @@ class HomeController extends Controller
 	
 	 public function parents()
     {
+		
+		if (Auth::check()) {
 		$user = auth()->user();
-        $iduser = $user->id;
-        $type = $user->user_type;
-
+         $type = $user->user_type;
+		}
 		if (Auth::guest()) {
 		return redirect('login');
 		}else{
@@ -132,10 +133,10 @@ class HomeController extends Controller
 	
 	 public function eleves()
     {
+			if (Auth::check()) {
 		$user = auth()->user();
-        $iduser = $user->id;
-        $type = $user->user_type;
-
+         $type = $user->user_type;
+		}
 		if (Auth::guest()) {
 		return redirect('login');
 		}else{
@@ -152,10 +153,11 @@ class HomeController extends Controller
 		
 	 public function profs()
     {
+				if (Auth::check()) {
 		$user = auth()->user();
-        $iduser = $user->id;
-        $type = $user->user_type;
-
+         $type = $user->user_type;
+		}
+		
 		if (Auth::guest()) {
 		return redirect('login');
 		}else{

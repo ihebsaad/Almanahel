@@ -10,7 +10,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            <label>Ajouter</label>
+            <label>Ajouter une dépense</label>
         </div>
         <div class="card-body">
             @if ($errors->any())

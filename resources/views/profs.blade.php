@@ -12,10 +12,10 @@ $user = auth()->user();
 $user_type=$user->user_type;
 } 
  
- if ($user_type =='parent'  ){
+ if ($user_type =='prof'  ){
 
  ?>
- <H2>Espace Enseignants</h2>
+ <H2>Espace Enseignants</h2><br><br>
  <div class="row">
  
             <!-- Earnings (Monthly) Card Example  
@@ -46,8 +46,8 @@ $user_type=$user->user_type;
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div style="font-size:22px;margin-bottom:25px"  class="text-xs font-weight-bold text-success text-uppercase mb-1">Communication</div>
-                      <div class="  "><a  href="{{route('docsrecu')}}">Documents reçus</a> </div>
-                      <div class="  "><a  href="{{route('docsenv')}}">Documents Envoyés</a> </div>
+                      <div class="  "><a  href="{{route('docsenv')}}">Documents Envoyés</a> </div>                     
+					 <div class="  "><a  href="{{route('docsrecu')}}">Documents reçus</a> </div>
                        <div class="  "><a  href="{{route('message')}}">Chat</a> </div>
                      </div>
                     <div class="col-auto">

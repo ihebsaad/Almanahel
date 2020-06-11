@@ -70,13 +70,13 @@ class LoginController extends Controller
         $type = $user->user_type;
 
 		if ($type == 'prof') {
-            return redirect('/profs');
+            return redirect('/espaceprofs');
 		}
 		if ($type == 'parent') {
-            return redirect('/parents');
+            return redirect('/espaceparents');
 		}		
 		if ($type == 'eleve') {
-            return redirect('/eleves');
+            return redirect('/espaceeleves');
 		}
 		
 		if ($type == 'financier') {

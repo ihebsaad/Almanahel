@@ -213,6 +213,14 @@ $user = auth()->user();
 		
 		}
  
+ 
+ 				foreach($emails as $key=> $value)
+				{
+				if ( ! (filter_var($value, FILTER_VALIDATE_EMAIL) )) {
+				   unset($emails[$key]); 
+				}
+				}
+				
 	  $emails=$emails->toArray() ;
 	  $chunks = array_chunk($emails, 30);
 
@@ -414,7 +422,7 @@ $user = auth()->user();
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
         
-		$dests = array("ihebsaad@gmail.com", "saadiheb@gmail.com" );
+		$dests = array("ihebsaad@gmail.com", "ce.almanhel@gmail.com" );
 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message
@@ -491,7 +499,7 @@ $user = auth()->user();
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
         
-				$dests = array("ihebsaad@gmail.com", "saadiheb@gmail.com" );
+				$dests = array("ihebsaad@gmail.com", "ce.almanhel@gmail.com" );
 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message

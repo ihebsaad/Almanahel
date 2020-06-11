@@ -132,7 +132,7 @@ $user_type=$user->user_type;
 	  <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if  (( ! (strpos($view_name,'depenses') === false) ) ||( ! (strpos($view_name,'paiements') === false) )||( ! (strpos($view_name,'excels') === false) ) )   { echo 'active';}?>">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="fas fa-fw fa-dollar-sign"></i>
           <span>Finances</span>
         </a>
         <div id="collapse3" class="collapse " aria-labelledby="collapse3" data-parent="#accordionSidebar"><!--collapse show-->

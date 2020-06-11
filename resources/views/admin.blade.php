@@ -15,7 +15,7 @@ $user_type=$user->user_type;
  if ($user_type!='eleve' && $user_type!='parent' && $user_type!='prof'){
 
  ?>
- <H2>Espace Administration<h2>
+ <H2>Espace Administration</h2>
  <div class="row">
 <?php  if ($user_type=='admin' ||   $user_type=='membre'   || $user->direction==1    ){ ?>
 

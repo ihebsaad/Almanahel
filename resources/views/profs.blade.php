@@ -15,7 +15,7 @@ $user_type=$user->user_type;
  if ($user_type =='parent'  ){
 
  ?>
- <H2>Espace Enseignants<h2>
+ <H2>Espace Enseignants</h2>
  <div class="row">
  
             <!-- Earnings (Monthly) Card Example  

@@ -27,9 +27,7 @@ class DocumentsController extends Controller
     public function index()
     {
      
-      $documents =Document::orderBy('created_at', 'desc')
-	  ->groupBy('chemin')
-	  ->get() ;
+      $documents =Document::orderBy('created_at', 'desc')->get() ;
                               
           return view('documents.index',  ['documents' => $documents]);        
      
@@ -59,9 +57,7 @@ class DocumentsController extends Controller
         $id=Auth::id();
  
 
-          $documents = Document:://orderBy('created_at', 'desc')
-		  	   groupBy('chemin')
-		  ->where('emetteur',$id)
+          $documents = Document::orderBy('created_at', 'desc')->where('emetteur',$id)
           ->get() ;
         
           

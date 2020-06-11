@@ -109,6 +109,67 @@ class HomeController extends Controller
 		}
     }
 	
+	
+	 public function parents()
+    {
+		$user = auth()->user();
+        $iduser = $user->id;
+        $type = $user->user_type;
+
+		if (Auth::guest()) {
+		return redirect('login');
+		}else{
+			
+		if( $type== 'parent'  )	
+		{return view('parents' );}
+			else{
+			return view('home' );
+			}
+  
+		}
+    }
+	
+	
+	 public function eleves()
+    {
+		$user = auth()->user();
+        $iduser = $user->id;
+        $type = $user->user_type;
+
+		if (Auth::guest()) {
+		return redirect('login');
+		}else{
+			
+		if( $type== 'eleve'  )	
+		{return view('eleve' );}
+			else{
+			return view('home' );
+			}
+  
+		}
+    }	
+	
+		
+	 public function profs()
+    {
+		$user = auth()->user();
+        $iduser = $user->id;
+        $type = $user->user_type;
+
+		if (Auth::guest()) {
+		return redirect('login');
+		}else{
+			
+		if( $type== 'prof'  )	
+		{return view('profs' );}
+			else{
+			return view('home' );
+			}
+  
+		}
+    }
+	
+	
 	public function contenu_home()
     {
 		if (Auth::guest()) {

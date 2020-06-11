@@ -64,45 +64,45 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         }*/
     
-	/*
+	 
 		$user = auth()->user();
         $iduser = $user->id;
         $type = $user->user_type;
 
 		if ($type == 'prof') {
-            return redirect('/docsrecu');
+            return redirect('/profs');
 		}
 		if ($type == 'parent') {
-            return redirect('/docsrecu');
+            return redirect('/parents');
 		}		
 		if ($type == 'eleve') {
-            return redirect('/docsrecu');
+            return redirect('/eleves');
 		}
 		
 		if ($type == 'financier') {
-            return redirect('/excels');
+            return redirect('/admin');
 		}
 		
  		if ($type == 'conseil'  ) {
-            return redirect('/excels');
+            return redirect('/admin');
 		}
 		
 			if ($type == 'conseil'  ) {
-            return redirect('/excels');
+            return redirect('/admin');
 		}
 		
 			if ($type == 'suivi'  ) {
-            return redirect('/evenements');
+            return redirect('/admin');
 		}
 		
 		 if ($type == 'membre'  ) {
-            return redirect('/inscriptions');
+            return redirect('/admin');
 		}
 		
 			if ($type == 'admin'  ) {
-            return redirect('/inscriptions');
+            return redirect('/admin');
 		}
-*/
+ 
 
 	}
 

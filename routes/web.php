@@ -18,6 +18,9 @@ Route::get('/', function () {
 
 Route::get('/home', array('as' => 'home','uses' => 'HomeController@home'));
 Route::get('/admin', array('as' => 'admin','uses' => 'HomeController@admin'));
+Route::get('/eleves', array('as' => 'eleves','uses' => 'HomeController@eleves'));
+Route::get('/parents', array('as' => 'parents','uses' => 'HomeController@parents'));
+Route::get('/profs', array('as' => 'profs','uses' => 'HomeController@profs'));
 Route::get('/presentation', array('as' => 'presentation','uses' => 'HomeController@presentation'));
 Route::get('/formation', array('as' => 'formation','uses' => 'HomeController@formation'));
 Route::get('/scolaire', array('as' => 'scolaire','uses' => 'HomeController@scolaire'));

@@ -28,14 +28,19 @@ class DocumentsController extends Controller
     {
      
       $documents =Document::orderBy('created_at', 'desc')->get() ;
-                              
+	  
+        $documents =$documents->unique('chemin');
+                        
           return view('documents.index',  ['documents' => $documents]);        
      
      }
    
   public function annee($annee)
     {
-     $documents =Document::orderBy('created_at', 'desc')->where('annee',$annee)->get() ;                              
+     $documents =Document::orderBy('created_at', 'desc')->where('annee',$annee)->get() ;     
+
+	          $documents =$documents->unique('chemin');
+ 
           return view('documents.annee',  ['annee'=>$annee,'documents' => $documents]);        
 
   }
@@ -47,7 +52,8 @@ class DocumentsController extends Controller
           $documents = Document::orderBy('created_at', 'desc')->where('type', '!=' , 'classe')->where('destinataire',$id)
           ->orWhere('type','classe')->whereIn('destinataire', $idclasses)->get() ;
         
-          
+                    $documents =$documents->unique('chemin');
+
                 
            return view('documents.docsrecu',  ['documents' => $documents]);        
           

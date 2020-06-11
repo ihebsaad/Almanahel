@@ -58,6 +58,8 @@ $user = auth()->user();
             ->distinct()
             ->get();
 
+          $attachements =$attachements->unique('chemin');
+
         return view('envoyes.send' ,['attachements'=>$attachements] );
     }
 

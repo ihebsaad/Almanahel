@@ -6,7 +6,7 @@
 
 
   use App\Classe;
-   use App\User
+   use App\User ;
    
    if (Auth::check()) {
 
@@ -50,7 +50,7 @@ $user_type=$user->user_type;
                     <label for="email">Adresse Email:</label>
                <input id="email" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
                </div>
-	 <?php if( $user->user_type=='admin' ){?>
+	 <?php if( $user_type=='admin' ){?>
 	 <div class="form-group">
                     <label for="email">Mot de passe :</label>
 				<input autocomplete="off"   onchange="changing(this)"  type="password" class="form-control" name="password"  id="password"   />  

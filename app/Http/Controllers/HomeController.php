@@ -142,7 +142,7 @@ class HomeController extends Controller
 		}else{
 			
 		if( $type== 'eleve'  )	
-		{return view('eleve' );}
+		{return view('eleves' );}
 			else{
 			return view('home' );
 			}

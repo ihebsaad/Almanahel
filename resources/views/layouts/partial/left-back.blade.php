@@ -22,11 +22,41 @@ $user_type=$user->user_type;
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link"  href="{{route('admin')}}">
+    <?php  if ($user_type=='admin' || $user_type=='suivi' ||  $user_type=='membre'  ||  $user_type=='financier' ||  $user_type=='conseil'  ){  ?>
+
+  <li class="nav-item">
+	  
+  <a class="nav-link"  href="{{route('admin')}}">
           <i class="fas fa-fw fa-home"></i>
           <span>Accueil</span></a>
       </li>
+ <?php   }  ?>
+ 
+ <?php  if ($user_type=='eleve' ){ ?>
+	
+  <li class="nav-item">
+	<a class="nav-link"  href="{{route('espaceeleves')}}">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Accueil</span></a>
+      </li>  
+ <?php   }  ?>
+ <?php  if ($user_type=='parent' ){ ?>
+	
+  <li class="nav-item">
+    <a class="nav-link"  href="{{route('espaceparents')}}">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Accueil</span></a>
+      </li>
+ <?php   }  ?>
+  <?php  if ($user_type=='prof' ){ ?>
+	   <li class="nav-item">
+	<a class="nav-link"  href="{{route('espaceprofs')}}">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Accueil</span></a>
+      </li> 
+ <?php   }  ?>
+ 
+ 
 <?php  if ($user_type=='admin' || $user_type=='suivi' ||  $user_type=='membre'   || $user->direction==1   || $user->suivi ==1 ){ ?>
       <!-- Divider -->
       <hr class="sidebar-divider">

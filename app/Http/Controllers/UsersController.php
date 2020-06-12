@@ -269,7 +269,7 @@ public function view($id)
               'finances' => trim($request->get('finances')),
               'suivi' => trim($request->get('suivi')),
               'conseil' => trim($request->get('conseil'))
-    )
+    
     )
     );  
       

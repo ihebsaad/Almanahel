@@ -424,7 +424,7 @@ $user = auth()->user();
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
         
-		$dests = array("ihebsaad@gmail.com", "ce.almanhel@gmail.com" );
+		$dests = array("ihebsaad@gmail.com", "ce.almanahel@gmail.com" );
 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message
@@ -501,7 +501,7 @@ $user = auth()->user();
 		$from='almanahelacademy@gmail.com';
 		$fromname='Almanahel Academy';
         
-				$dests = array("ihebsaad@gmail.com", "ce.almanhel@gmail.com" );
+				$dests = array("ihebsaad@gmail.com", "ce.almanahel@gmail.com" );
 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message

@@ -275,7 +275,7 @@ public function view($id)
       
      
     
-        return redirect('/retards/view/'.$id)->with('success', ' Modifié avec succès');
+        return redirect('/users/view/'.$id)->with('success', ' Modifié avec succès');
     }
     /**
      * Update the specified resource in storage.

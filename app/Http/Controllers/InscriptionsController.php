@@ -118,39 +118,39 @@ $pathb = storage_path()."/fichiers/";
 
         $Inscription->save();
         $id=$Inscription ['id'];
-        $to=trim('hammalisirine120@gmail.com');
+        $to=trim('letaief_med_ali@yahoo.fr');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
         Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>
-        Le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
+        Le lien de la préinscription : <a href='http://lyceealmanahel.com/inscriptions/view/$id'>voir le lien</a>";
         
         
         $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-        $to=trim('hammalisirine95@gmail.com');
+           $to=trim('betboutsaida@yahoo.fr');
         $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
         Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>
-        Le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
+        Le lien de la préinscription : <a href='http://lyceealmanahel.com/inscriptions/view/$id'>voir le lien</a>";
         
         
         $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-           $to=trim('lyceealmanahel@gmail.com');
+           $to=trim('zilimounir@yahoo.fr');
         $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
         Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>
-        Le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
+        Le lien de la préinscription : <a href='http://lyceealmanahel.com/inscriptions/view/$id'>voir le lien</a>";
         
         
         $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);

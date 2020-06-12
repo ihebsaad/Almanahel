@@ -18,7 +18,7 @@
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
-     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->where('home',1)->orderBy('created_at','ASC')->get();
+     <?php $imagesslider=App\Image::where('categorie','slider')->where('visible',1)->where('home',1)->orderBy('numero','asc')->get();
      $nb= $imagesslider->count();$u=0;
       ?>
 

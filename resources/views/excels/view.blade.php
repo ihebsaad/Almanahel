@@ -1,7 +1,14 @@
 @extends('layouts.back')
  
 @section('content')
+<?php
+if (Auth::check()) {
 
+$user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+} 
+?>
     <h3 style="margin-left:50px">Modifier le fichier excel </h3><br><br>
 
      <form class="form-horizontal" method="POST" action="{{ route('excels.edit') }}" enctype="multipart/form-data">
@@ -62,6 +69,7 @@
                            
                         </div>
                     
+                     <?php if ($user_type =='admin' || $user_type =='financier' || $user->finances==1 ){  ?>
 
                         <div class="form-group" style="margin-bottom:30px">
                             <div class="col-md-6 col-md-offset-4">
@@ -70,6 +78,8 @@
                                 </button>
                             </div>
                         </div>
+						
+					 <?php }?>
                     </form>
 
 

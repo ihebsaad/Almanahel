@@ -6,6 +6,14 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('resources/assets/datatables/css/scroller.bootstrap.css') }}" />
  
  <?php use App\Classe;  ?>
+  <?php
+if (Auth::check()) {
+
+$user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+} 
+?>
 @section('content')
  
     <style>
@@ -41,10 +49,13 @@
                 </ul>
             </div>
 				
- 				</div>				
+ 				</div>
+              <?php if ($user_type =='admin' || $user_type =='financier' || $user->finances==1 ){  ?>
+				
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success"    href="{{action('PaiementsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un paiement</b></a>
                 </div>
+			  <?php }?>
             </div>
         </div>
 
@@ -77,15 +88,15 @@
                     <td style="width:10%" ><?php echo $paiement['montant'];?> dt</td>
  
 					<td style="width:10%"   >
-                        @can('isAdmin')
+                     <?php if ($user_type =='admin' || $user_type =='financier' || $user->finances==1 ){  ?>
                             <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('PaiementsController@destroy', $paiement['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                                 <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
                              <a   href="{{action('PaiementsController@view', $paiement['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
                             <span class="far fa-eye" ></span> Voir
                         </a>
-                        @endcan
-                    </td>
+					 <?php } ?>	
+					 </td>
  
                 </tr>
             <?php } ?>

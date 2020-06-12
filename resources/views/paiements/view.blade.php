@@ -57,11 +57,12 @@
                     <input id="details" type="text" class="form-control" name="details"   value="<?php echo $paiement['details']; ?>"/>
                 </div>
 			 
-			  
+	    <?php if ($user_type =='admin' || $user_type =='financier' || $user->finances==1 ){  ?>
+	  
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Modifier</button>
   			 </div>
-
+		<?php } ?>
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
         </div>

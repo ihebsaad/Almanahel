@@ -3,6 +3,14 @@
 
  
 @section('content')
+<?php
+if (Auth::check()) {
+
+$user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+} 
+?>
     <style>
         .uper {
             margin-top: 40px;
@@ -46,11 +54,12 @@
                     <input id="details" type="text" class="form-control" name="details"   value="<?php echo $depense['details']; ?>"/>
                 </div>
 				 
-			  
+	      <?php if ($user_type =='admin' || $user_type =='financier' || $user->finances==1 ){  ?>
+
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Modifier</button>
   			 </div>
-
+		  <?php }?>
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
         </div>

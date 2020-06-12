@@ -10,9 +10,9 @@
    
    if (Auth::check()) {
 
-$user = auth()->user();
- $iduser=$user->id;
-$user_type=$user->user_type;
+$cuser = auth()->user();
+ $iduser=$cuser->id;
+$user_type=$cuser->user_type;
 } 
   ?>
 

@@ -265,7 +265,7 @@ public function view($id)
               'paiements' => trim($request->get('paiements')),
               'totalpaiement' => trim($request->get('totalpaiement')),
                'absences' => trim($request->get('absences')),
-              'retards' => trim($retards->get('retards')),
+              'retards' => trim($request->get('retards')),
               'finances' => trim($request->get('finances')),
               'suivi' => trim($request->get('suivi')),
               'conseil' => trim($request->get('conseil'))

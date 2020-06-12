@@ -7,12 +7,12 @@
  <?php
   use App\User ;
   
-if (Auth::check()) {
+ 
 
-$user = auth()->user();
- $iduser=$user->id;
-$user_type=$user->user_type;
-} 
+$cuser = auth()->user();
+ $iduser=$cuser->id;
+$user_type=$cuser->user_type;
+ 
   
   ?>
 
@@ -48,7 +48,7 @@ $user_type=$user->user_type;
             </div>
                 
                 </div>
-	   <?php if ($user_type =='admin' || $user_type =='financier' || $user->finances==1 ){  ?>
+	   <?php if ($user_type =='admin' || $user_type =='financier' || $cuser->finances==1 ){  ?>
 			
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success" href="{{action('ExcelsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un excel</b></a>
@@ -101,7 +101,11 @@ $user=User::where('id',$excel->emetteur)->first() ;
                     
 
                     <td>
-        
+                              <?php if ($user_type =='admin' || $user_type =='financier'     ){  ?>
+                            <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('ExcelsController@destroy', $excel['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
+                                <span class="fa fa-fw fa-trash-alt"></span> Supprimer
+                            </a>
+						<?php }?>
                           <a  class="btn btn-md btn-success" role="button"  target="_blank" class="form-control" href="//<?php echo $_SERVER['HTTP_HOST'];?>/storage/excels/<?php echo  $excel->chemin?>" > 
                             <span class="fa fa-fw fa-download"></span> Télécharger
                    </a>

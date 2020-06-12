@@ -10,9 +10,9 @@
    <?php
 if (Auth::check()) {
 
-$user = auth()->user();
- $iduser=$user->id;
-$user_type=$user->user_type;
+$cuser = auth()->user();
+ $iduser=$cuser->id;
+$user_type=$cuser->user_type;
 } 
 ?>
 
@@ -48,7 +48,7 @@ $user_type=$user->user_type;
             </div>
                 
                 </div>
-        <?php if ($user_type =='admin' || $user_type =='financier' || $user->finances==1 ){  ?>
+        <?php if ($user_type =='admin' || $user_type =='financier' || $cuser->finances==1 ){  ?>
 				
                 <div class="col-lg-3">
                     <a   class="btn btn-md btn-success" href="{{action('ExcelsController@create')}}" ><b><i class="fas fa-plus"></i> Ajouter un excel</b></a>

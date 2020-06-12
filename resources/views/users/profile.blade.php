@@ -117,7 +117,7 @@
 
         
  <?php } ?> 
-
+<!--
 
                                 <tr>
                                 <td class="text-primary">Rôle</td>
@@ -135,7 +135,7 @@
                 </select>                                    </td>
                                 </tr>
 
-
+-->
                                 <tr>
                                     <td colspan="2">
 

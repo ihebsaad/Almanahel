@@ -144,7 +144,7 @@ $user=User::where('id',$excel->emetteur)->first() ;
 
 
     <script type="text/javascript">
-        $(excel).ready(function() {
+        $(docuement).ready(function() {
             $('#mytable thead tr:eq(1) th').each( function () {
                 var title = $('#mytable thead tr:eq(0) th').eq( $(this).index() ).text();
                 $(this).html( '<input class="searchfield" type="text"   />' );

@@ -102,11 +102,22 @@ class HomeController extends Controller
 	
 		public function admin()
     {
+			if (Auth::check()) {
+		$user = auth()->user();
+         $type = $user->user_type;
+		}
+		
 		if (Auth::guest()) {
 		return redirect('login');
 		}else{
-	  return view('admin' );
-		}
+		 if( $type == 'eleve' || $type == 'parent' || $type == 'prof' )	
+		 {
+		 return view('home' );
+		 }else{
+		  return view('admin' );
+		 }
+		 
+ 		}
     }
 	
 	

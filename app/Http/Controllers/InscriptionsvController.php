@@ -351,7 +351,7 @@ if(empty($parent))
             );
           
  Inscription::where('id', $ins['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"],'valide'  => 1]);
- $is=$inscriptionv['id'];
+ $id=$inscriptionv['id'];
         $to=trim('hammalisirine120@gmail.com');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;

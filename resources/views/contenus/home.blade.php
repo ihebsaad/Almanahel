@@ -79,6 +79,10 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
     <label for="descripfileExterne" class=" control-label" style="font-size:20px;font-weight:bold ; color: black">Description </label>
  <textarea class="form-control" style="width:72%; height:70px;"  name="descripfileExterne" id="descripfileExterne" ></textarea>
  </div>
+  <div class="form-group">
+    <label for="numerofileExterne" class=" control-label" style="font-size:20px;font-weight:bold ; color: black">Numéro </label>
+ <input type="number"  class="form-control" style="width:72%; height:70px;"  name="numerofileExterne" id="numerofileExterne" ></input>
+ </div>
 
  <div class="form-group">
  <button type="submit" class="btn btn-md btn-success m-4 float-right"><span id="spinnerkbs"></span> Charger Image</button >

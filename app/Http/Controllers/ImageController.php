@@ -22,7 +22,8 @@ class ImageController extends Controller
      $imagesslider=Image::where('id',$req->get('iden'))->first();
      $imagesslider->update([
             'titre'=>$req->get('titre'),
-            'descrip' => $req->get('descrip')             
+            'descrip' => $req->get('descrip') ,   
+            'numero' => $req->get('numero')             
         ]);
        //$a=$req->get('iden');
        return 'La modification est effectuée avec succès';
@@ -120,6 +121,7 @@ class ImageController extends Controller
          $fichier = $request->file('imgInp');
          $Nouveautitrefichier =  $request->get("titrefileExterne");
          $descfichier =  $request->get("descripfileExterne");
+         $numerofichier =  $request->get("numerofileExterne");
           $fichier_name="";
           $fichier_ext= "";
 
@@ -174,6 +176,7 @@ class ImageController extends Controller
 
             'titre'=>$Nouveautitrefichier,
             'descrip' => $descfichier,
+            'numero' => $numerofichier ,
             'url' => "/ImagesSlider/".$fichier_name,
             'type'  => $fichier_ext,
              'visible'=> 0,
@@ -198,6 +201,7 @@ class ImageController extends Controller
      $output='<table class="table table-bordered" style="background-color:white">
     <thead>
       <tr>
+      <th>Numéro</th>
         <th>titre image</th>
         <th>description image</th>
         <th>Vue</th>
@@ -213,6 +217,7 @@ class ImageController extends Controller
       {
        $urlimg= URL::to('/').'/storage/'.$ims->url;
       $output.='<tr>
+      <td id="n'.$ims->id.'">'.$ims->numero.'</td>
         <td id="t'.$ims->id.'">'.$ims->titre.'</td>
         <td id="d'.$ims->id.'">'.$ims->descrip.'</td><td><img  width="100" height="100" src="'.$urlimg.'" alt="" /></td> <td><input id="c'.$ims->id.'" type="checkbox" class="checkboxkbs"'; 
 
@@ -248,6 +253,7 @@ class ImageController extends Controller
      $output='<table class="table table-bordered" style="background-color:white">
     <thead>
       <tr>
+        <th>Numéro</th>
         <th>titre image</th>
         <th>description image</th>
         <th>Vue</th>
@@ -263,6 +269,7 @@ class ImageController extends Controller
       {
        $urlimg= URL::to('/').'/storage/'.$ims->url;
       $output.='<tr>
+        <td id="n'.$ims->id.'">'.$ims->numero.'</td>
         <td id="t'.$ims->id.'">'.$ims->titre.'</td>
         <td id="d'.$ims->id.'">'.$ims->descrip.'</td><td><img  width="100" height="100" src="'.$urlimg.'" alt="" /></td> <td><input id="c'.$ims->id.'" type="checkbox" class="checkboxkbs"'; 
 

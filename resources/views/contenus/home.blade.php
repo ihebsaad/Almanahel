@@ -99,6 +99,7 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
   <table class="table table-bordered" style="background-color:white">
     <thead>
       <tr>
+        <th>Numéro</th>
         <th>titre image</th>
         <th>description image</th>
         <th>Vue</th>
@@ -112,6 +113,7 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 
       @foreach($imagesslider as $ims)
       <tr>
+       <td id="n{{$ims->id}}">{{$ims->numero}}</td>
         <td id="t{{$ims->id}}">{{$ims->titre}}</td>
         <td id="d{{$ims->id}}">{{$ims->descrip}}</td>
         <td><img id=""  width="100" height="100" src="{{URL::to('/').'/storage/'.$ims->url}}" alt="your image" /></td>
@@ -173,6 +175,16 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
              
             </div>
           </div>
+          <div class="form-group ">
+            <label class="control-label col-sm-2" for="nom">Numéro:</label>
+           
+            <div class="col-sm-10">
+             
+            <input type="number" class="form-control" id="numero" name="numero" value="">
+            
+            </div>
+          </div>
+
          
           <button type="Button"  id="modifierbuttonmodal" class="btn btn-success " style="margin-left: 200px ; margin-top: 20px;">Modifier</button>
        
@@ -496,12 +508,13 @@ $(document).on('click', '#majslider', function() {
      
       var t = $('#t'.concat(idwd)).text();
       var d = $('#d'.concat(idwd)).text();
-      
+      var n = $('#n'.concat(idwd)).text();
 
       //alert(d);
       $('#titreModal').val(t);
       $('#descModal').val(d);
        $('#idModal').val(idwd);
+       $('#numero').val(n);
      
       
    $('#modifierkbs').modal('show');
@@ -520,7 +533,7 @@ $(document).on('click', '#majslider', function() {
     var v1=$('input[name=idModal]').val();
     var v2=$('input[name=titreModal]').val();
     var v3=$('textarea#descModal').val();
-
+     var v4=$('input[name=numero]').val();
     //alert (v1+" "+v2+" "+v3);
 
     $.ajax({
@@ -530,6 +543,7 @@ $(document).on('click', '#majslider', function() {
          iden:v1,
          titre :v2,
          descrip: v3,
+         numero: v4,
          _token:_tok
          
       },

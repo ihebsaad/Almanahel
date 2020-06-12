@@ -1,7 +1,14 @@
 @extends('layouts.back')
 
  @section('content')  
+<?php
+if (Auth::check()) {
 
+$user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+} 
+?>
     <h3 style="margin-left:50px">Créer un nouveau utilisateur</h3><br><br>
 
                     <form class="form-horizontal" method="POST" action="{{ route('users.saving') }}">
@@ -73,7 +80,7 @@
                                     <option value="eleve">Élève</option>
                                     <option value="prof"   >Enseignant</option>
                                     <option  value="parent"   >Parent</option>
-                                    <option  value="financier"   >Direction Finacière</option>
+                                    <option  value="financier"   >Direction Financière</option>
                                     <option  value="membre"    >Membre d'administration</option>
                                     <option  value="conseil"    >Conseil de pilotage</option>
                                     <option  value="suivi"    >Suivi pédagogique</option>

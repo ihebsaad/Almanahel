@@ -111,8 +111,7 @@ $user_type=$user->user_type;
 					  <div class="  "><a  href="{{route('paiements')}}">Paiements</a> </div>
                       <div class="  "><a  href="{{route('depenses')}}">Dépenses</a> </div>
                       <div class="  "><a  href="{{route('excels')}}">Excels</a> </div>
-                      <div class="  "><a  href="{{route('excels.create')}}">Ajouter un Excel</a> </div>
-                    </div>
+                     </div>
                     <div class="col-auto">
                       <i class="fas fa-university fa-2x text-gray-300"></i>
                     </div>

@@ -12,6 +12,14 @@
 		$annee=intval($year);
 		if($mois > 9 ){$annee=$annee-1;}
 		?>
+<?php
+if (Auth::check()) {
+
+$user = auth()->user();
+ $iduser=$user->id;
+$user_type=$user->user_type;
+} 
+?>		
 			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
 
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">

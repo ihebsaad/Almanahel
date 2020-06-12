@@ -15,7 +15,7 @@ $user_type=$user->user_type;
  if ($user_type =='eleve'  ){
 
  ?>
- <H2>Espace Elèves</h2><br><br>
+ <H2>Espace Élèves</h2><br><br>
  <div class="row">
  
             <!-- Earnings (Monthly) Card Example -->

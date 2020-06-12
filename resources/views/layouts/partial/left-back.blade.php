@@ -140,8 +140,9 @@ $user_type=$user->user_type;
 		   <a class="collapse-item" href="{{route('paiements')}}">Paiements</a>
             <a class="collapse-item" href="{{route('depenses')}}">Dépenses</a>
             <a class="collapse-item" href="{{route('excels')}}">Excels</a>
-            <a class="collapse-item" href="{{route('excels.create')}}">Ajouter un Excel</a>
-               
+     <?php if ($user_type=='admin' ||  $user_type=='financier' || $user->finances ){ ?>
+	 <a class="collapse-item" href="{{route('excels.create')}}">Ajouter un Excel</a>
+       <?php } ?>          
 		  </div>
         </div>
       </li>

@@ -55,7 +55,7 @@
 <div class="header-top-right text-right">
 <ul>
 <li><a href="https://www.facebook.com/almanahel.monastir/" target="blank"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://twitter.com/al_lycee" target="blank"><i class="fa fa-twitter"></i></a></li>
 <li><a href="#"><i class="fa fa-youtube"></i></a></li>
 </ul>
 </div>

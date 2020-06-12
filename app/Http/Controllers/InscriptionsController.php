@@ -124,7 +124,7 @@ $pathb = storage_path()."/fichiers/";
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
         Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>
-        le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
+        Le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
         
         
         $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
@@ -137,7 +137,7 @@ $pathb = storage_path()."/fichiers/";
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
         Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>
-        le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
+        Le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
         
         
         $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
@@ -150,7 +150,7 @@ $pathb = storage_path()."/fichiers/";
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
         Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>
-        le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
+        Le lien de la préinscription : <a href='http://almanahel.enterprise-esolutions.com/inscriptions/view/$id'>voir le lien</a>";
         
         
         $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);

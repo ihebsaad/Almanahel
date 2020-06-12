@@ -31,34 +31,34 @@
         
                 <div class="form-group">
                 <label for="name">Prénom:</label>
-                <input id="name" onchange="changing(this)" type="text" class="form-control" name="name"  value="{{ $user->name }}" />
+                <input type="text" class="form-control" name="name"  value="{{ $user->name }}" />
                </div>
            
                 <div class="form-group">
                     <label for="eleve">Nom:</label>
-                <input id="lastname" onchange="changing(this)" type="text" class="form-control" name="lastname"  value="{{ $user->lastname }}" />
+                <input  type="text" class="form-control" name="lastname"  value="{{ $user->lastname }}" />
              
          		 </div>
 
                 <div class="form-group">
                     <label for="email">Adresse Email:</label>
-               <input id="email" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
+               <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
                </div>
 
                 <div class="form-group">
                     <label for="eleve">Date de naissance:</label>
-              <input id="naissance" autocomplete="off" onchange="changing(this)"   type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
+              <input id="naissance" autocomplete="off"    type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
              	 </div>
 
                 <div class="form-group">
                     <label for="eleve">N° Tel:</label>
 
-			<input id="tel" onchange="changing(this);"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
+			<input id="tel"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
           	 </div>
 			 
 		   <div class="form-group">
                     <label for="user_type">Qualification:</label>
-                <select  name="user_type"  id="user_type" onchange="changing(this);"  class="form-control" >
+                <select  name="user_type"  id="user_type"  class="form-control" >
                     <option></option>
                      <option value="eleve"  <?php if($user->user_type=='eleve') {echo'selected="selected"';}?> >Élève</option>
                      <option value="prof"  <?php if($user->user_type=='prof') {echo'selected="selected"';}?> >Enseignant </option>
@@ -109,7 +109,7 @@
  
                 <div class="form-group">
                     <label for="eleve">Niveau:</label>
-             <input id="niveau" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
+             <input id="niveau" autocomplete="off"  type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
        
 		 		 </div>
 
@@ -138,7 +138,7 @@
 
                 <div class="form-group">
                     <label for="paiements">Paiements:</label>
-				<select id="paiements"   onchange="changing(this)"    class="form-control" name="paiements"    >
+				<select id="paiements"     class="form-control" name="paiements"    >
 				<option value=""></option>
 				<option <?php if(  $user->paiements =='termine'  ){echo 'selected="selected"';} ?> value="termine">Terminé</option>
 				<option <?php if(  $user->paiements =='encours'  ){echo 'selected="selected"';} ?>value="encours">En cours</option>
@@ -158,7 +158,7 @@
           		 </div>
                 <div class="form-group">
                     <label for="eleve">Remarques:</label>
-		  <textarea id="remarques" autocomplete="off" onchange="changing(this)"    class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
+		  <textarea id="remarques" autocomplete="off"    class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
         
 				</div>
                 <div class="form-group">

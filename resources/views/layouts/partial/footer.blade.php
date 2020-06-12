@@ -73,7 +73,7 @@
             </li>
 
             <li class="list-inline-item">
-              <a href="https://twitter.com/al_lycee">
+              <a href="https://twitter.com/al_lycee" target="blank">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>

@@ -22,8 +22,7 @@ class ImageController extends Controller
      $imagesslider=Image::where('id',$req->get('iden'))->first();
      $imagesslider->update([
             'titre'=>$req->get('titre'),
-            'descrip' => $req->get('descrip')    
-           'numero' => $req->get('numero')          
+            'descrip' => $req->get('descrip')             
         ]);
        //$a=$req->get('iden');
        return 'La modification est effectuée avec succès';

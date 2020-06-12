@@ -19,7 +19,7 @@
             Fiche d'utilisateur
         </div>
         <div class="card-body">
-    <form class="form-horizontal" method="POST"  action="{{action('UsersController@update', $id)}}" >
+     <form method="post" action="{{ route('users.edit') }}" >
         {{ csrf_field() }}
 
 
@@ -238,7 +238,9 @@
 
 
        
- 
+     <div class="form-group ">
+      <button  type="submit"  class="btn btn-primary">Enregistrer</button>
+             </div>
 
        
     </form>

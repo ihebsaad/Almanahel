@@ -241,14 +241,42 @@ public function view($id)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+     public function edit(Request $request)
     {
  
-        $user = User::find($id);
-
-        return view('users.edit',  compact('user','id'));
+    $id=$request->get('id');
+     
+        $user  = User::find($id);
+    
+ 
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+              'adresse' => trim($request->get('adresse')),
+                'niveau' => trim($request->get('nniveauame')),
+             'user_type' => trim($request->get('user_type')),
+              'remarques' => trim($request->get('remarques')),
+              'paiements' => trim($request->get('paiements')),
+              'totalpaiement' => trim($request->get('totalpaiement')),
+               'absences' => trim($request->get('absences')),
+              'retards' => trim($retards->get('retards')),
+              'finances' => trim($request->get('finances')),
+              'suivi' => trim($request->get('suivi')),
+              'conseil' => trim($request->get('conseil'))
+    )
+    )
+    );  
+      
+     
+    
+        return redirect('/retards/view/'.$id)->with('success', ' Modifié avec succès');
     }
-
     /**
      * Update the specified resource in storage.
      *

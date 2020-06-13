@@ -64,14 +64,14 @@ allDayText:'Toute la journée',
     if ($ct>0) {
 	  foreach($liste as $event)  
 	  {$i++;
-				$titre=$event->titre;
+				$titre=addslashes ($event->titre);
 				$type=$event->type;
 				$heure_debut=substr($event->heure_debut,0,5);
 				$heure_fin=substr($event->heure_fin,0,5);
  				 $debut = DateTime::createFromFormat('d/m/Y', $event->debut );
  				 $fin = DateTime::createFromFormat('d/m/Y', $event->fin );
-				 $debut=$debut->format('Y-m-d');
-				 $fin=$fin->format('Y-m-d');
+				if(strlen($event->debut)==10) {$debut=$debut->format('Y-m-d');}
+				if(strlen($event->fin)==10) { $fin=$fin->format('Y-m-d');}
 				 
 				 if($heure_debut !=''){ $debut=$debut.'T'.$heure_debut; }
 				 if($heure_fin !=''){ $fin=$fin.'T'.$heure_fin; }

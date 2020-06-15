@@ -78,7 +78,7 @@
 	function verif()
 	{
 	  var eleve = document.getElementById("eleve").value;
- if(type!="")
+ if(eleve!="")
 {
 document.getElementById('divautre').style.display = 'block'; 
 }

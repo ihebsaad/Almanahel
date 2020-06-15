@@ -46,7 +46,7 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
 		<form method="post"  id="myform" >
 			  {{ csrf_field() }}
 			  
-		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="">
+		  <input type="hidden" class="form-control"  id="destinataire"  name="destinataire"  value="ihebsaad@gmail.com">
 		  <input type="hidden" class="form-control"  id="type"  name="type"  value="contact">
 		  <input type="hidden" class="form-control"  id="sujet"  name="sujet"  value="Message de Contact - Al Manahel">
  
@@ -81,10 +81,13 @@ $cont =  App\Contenu::where('zone', 'contact')->first();$contenu=$cont->contenu 
           <br>
           <div id="success"></div>
   
-        </form>
+
+		  </form>
+		    
 		    <div class="form-group">
             <button  class="btn btn-primary" id="send">Envoyer</button>
           </div>
+		  
       </div>
     </div>
   </div>

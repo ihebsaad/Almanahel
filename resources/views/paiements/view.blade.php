@@ -50,6 +50,10 @@ $user_type=$user->user_type;
                 </div>	
 		
 		<?php  } ?>
+		        <div class="form-group">
+                    <label for="autre">Autre:</label>
+                    <input id="autre" type="text" class="form-control" name="autre"/>
+                </div>
                 <div class="form-group">
                     <label for="libelle">Libellé:</label>
                     <input id="libelle" type="text" class="form-control" name="libelle"  value="<?php echo $paiement['libelle']; ?>"/>

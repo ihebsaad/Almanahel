@@ -33,7 +33,7 @@ $user_type=$cuser->user_type;
         <?php use \App\Http\Controllers\UsersController;     ?>
 
 
-        <input type="hidden" id="iduser" value="{{$id}}" />
+        <input type="hidden" id="iduser" value="{{$id}}" name="id" />
         
         
 		     
@@ -169,7 +169,7 @@ $user_type=$cuser->user_type;
       			 </div>
                 <div class="form-group">
                     <label for="retards">Total des retards:</label>
-             <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                <
+             <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                
           		 </div>
                 <div class="form-group">
                     <label for="eleve">Remarques:</label>

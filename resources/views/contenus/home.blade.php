@@ -29,7 +29,7 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 	
 	
 	<div class="row">
-	   <button id="save" class="btn btn-md btn-success"   onclick="changing('home');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button id="save" class="btn btn-md btn-success"   onclick="changing('home'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
 
     </div>
 
@@ -228,6 +228,9 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 
 </div>
 @endsection
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
 
    function changing(elm) {
@@ -246,7 +249,12 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
                 $('#'+elm).animate({
                     opacity: '1',
                 });
-
+					swal({
+                        type: 'success',
+                        title: 'Modifié ...',
+                        text: 'Contenu modifié avec succès'
+ 					//	icon: "success",
+                    });
             }
         });
        
@@ -416,7 +424,7 @@ $(document).on('click', '#majslider', function() {
 
    $(document).on('click','#actualiserAtt',function(e){
     
-     location.reload();
+      
 
    });
  $(document).on("submit","#formFileExterne",function(e) {
@@ -474,7 +482,7 @@ $(document).on('click', '#majslider', function() {
                          {
                            /*$("#successUloadExterneFile").html('<span style="color:green">Le fichier est envoyé au serveur avec succès</span>');*/
                            alert("Le fichier est envoyé au serveur avec succès");
-                           location.reload();
+                            
                          }
                          else
                          {
@@ -554,7 +562,7 @@ $(document).on('click', '#majslider', function() {
       success: function (data) {
                // $('#target').html(data.msg);
                alert(data);
-               location.reload();
+                
             },
       error: function (data) {
         alert('Erreur:', data);
@@ -588,7 +596,7 @@ if (r == true) {
                success: function(data){
                // alert("la suppression a été effectuée avec succès");
                 alert(data);
-                location.reload();
+                 
 
                /* $('#tab').empty();
                 $('#tab').html(data);*/
@@ -614,7 +622,7 @@ $(document).on('click','#okapreschargement', function() {
                // alert(data);
                /* $('#tabImageSlider').empty();
                 $('#tabImageSlider').html(data);*/
-                location.reload();
+                 
 
             }
 

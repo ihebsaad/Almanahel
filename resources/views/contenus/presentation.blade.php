@@ -1,12 +1,27 @@
 @extends('layouts.back')
+ <head>
+ <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  </head>
 <?php
+
+ header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
+    header('Last-Modified: ' . gmdate( 'D, d M Y H:i:s') . ' GMT');
+    header('Cache-Control: no-store, no-cache, must-revalidate');
+    header('Cache-Control: post-check=0, pre-check=0', false);
+    header('Pragma: no-cache'); 
+
+
 $link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <script>/*
 window.onload = function() {
     if(!window.location.hash) {
         window.location = window.location + '#loaded';
-        window.location.reload();
+        window. 
     }
 }*/
 </script>
@@ -43,7 +58,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick=";changing('mot');document.location.reload(true);"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=";changing('mot');"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    
  <div class="row">
@@ -57,7 +72,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
      </div>
  
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick=";changing('mot2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=";changing('mot2'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
     
    <br><br>
@@ -72,7 +87,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick="  changing('resultats');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick="  changing('resultats'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
     <br><br>
       	    <div class="row">
@@ -86,7 +101,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick="  changing('resultats2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick="  changing('resultats2'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    
    <br><br>
@@ -101,7 +116,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick="  changing('sections');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick="  changing('sections'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    <br><br>
    	    <div class="row">
@@ -115,7 +130,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick="  changing('sections2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick="  changing('sections2'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    <br><br>
    <div class="row">
@@ -130,7 +145,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
     </div>
 	
  <div class="row">
-	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 
  <br><br>
@@ -146,7 +161,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
     </div>
 	
  <div class="row">
-	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni2'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 
 
@@ -156,6 +171,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
   </div>
 
 @endsection
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
 
@@ -175,8 +191,15 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
                 $('#'+elm).animate({
                     opacity: '1',
                 });
-
+					swal({
+                        type: 'success',
+                        title: 'Modifié ...',
+                        text: 'Contenu modifié avec succès'
+ 					//	icon: "success",
+                    });
             }
+			
+			
         });
        
     }

@@ -34,7 +34,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick="changing('scolaire');;location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick="changing('scolaire');; "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    
    
@@ -50,7 +50,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire2'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 	 
@@ -67,7 +67,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire3');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire3'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 
@@ -84,7 +84,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire4');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire4'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 
@@ -101,7 +101,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire5');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire5'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 <br>
@@ -118,7 +118,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire6');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire6'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 <br>
@@ -135,7 +135,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire7');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire7'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 <br>
@@ -152,7 +152,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
     </div>
 	
 	<div class="row">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire8');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('scolaire8'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>	
 	 
 	 
@@ -334,6 +334,7 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
 
 
 @endsection
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
 
@@ -353,7 +354,12 @@ $cont8 =  App\Contenu::where('zone', 'scolaire8')->first();$contenu8=$cont8->con
                 $('#'+elm).animate({
                     opacity: '1',
                 });
-
+					swal({
+                        type: 'success',
+                        title: 'Modifié ...',
+                        text: 'Contenu modifié avec succès'
+ 					//	icon: "success",
+                    });
             }
         });
        
@@ -523,7 +529,7 @@ $(document).on('click', '#majslider', function() {
 
    $(document).on('click','#actualiserAtt',function(e){
     
-     location.reload();
+      
 
    });
  $(document).on("submit","#formFileExterne",function(e) {
@@ -581,7 +587,7 @@ $(document).on('click', '#majslider', function() {
                          {
                            /*$("#successUloadExterneFile").html('<span style="color:green">Le fichier est envoyé au serveur avec succès</span>');*/
                            alert("Le fichier est envoyé au serveur avec succès");
-                           location.reload();
+                            
                          }
                          else
                          {
@@ -659,7 +665,7 @@ $(document).on('click', '#majslider', function() {
       success: function (data) {
                // $('#target').html(data.msg);
                alert(data);
-               location.reload();
+                
             },
       error: function (data) {
         alert('Erreur:', data);
@@ -693,7 +699,7 @@ if (r == true) {
                success: function(data){
                // alert("la suppression a été effectuée avec succès");
                 alert(data);
-                location.reload();
+                 
 
                /* $('#tab').empty();
                 $('#tab').html(data);*/
@@ -719,7 +725,7 @@ $(document).on('click','#okapreschargement', function() {
                // alert(data);
                /* $('#tabImageSlider').empty();
                 $('#tabImageSlider').html(data);*/
-                location.reload();
+                 
 
             }
 

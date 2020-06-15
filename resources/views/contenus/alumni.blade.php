@@ -29,7 +29,7 @@ $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->conte
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick=";changing('alumni');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=";changing('alumni'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    <br><br>
 	    <div class="row">
@@ -43,7 +43,7 @@ $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->conte
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick="  changing('alumni2');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick="  changing('alumni2'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    <br><br>
   <div class="row">
@@ -58,7 +58,7 @@ $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->conte
     </div>
 	
  <div class="row">
-	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni3');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni3'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 
 <!--
@@ -75,7 +75,7 @@ $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->conte
     </div>
 	
  <div class="row">
-	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni4');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button  class="btn btn-md btn-success"  onclick=" ;changing('alumni4'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 
 -->
@@ -85,6 +85,7 @@ $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->conte
   </div>
 
 @endsection
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
 
@@ -104,7 +105,12 @@ $cont3 =  App\Contenu::where('zone', 'alumni3')->first();$contenu3=$cont3->conte
                 $('#'+elm).animate({
                     opacity: '1',
                 });
-
+					swal({
+                        type: 'success',
+                        title: 'Modifié ...',
+                        text: 'Contenu modifié avec succès'
+ 					//	icon: "success",
+                    });
             }
         });
        

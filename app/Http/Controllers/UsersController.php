@@ -265,9 +265,7 @@ public function view($id)
              'user_type' => trim($request->get('user_type')),
               'remarques' => trim($request->get('remarques')),
               'paiements' => trim($request->get('paiements')),
-              'totalpaiement' => trim($request->get('totalpaiement')),
-               'absences' => trim($request->get('absences')),
-              'retards' => trim($request->get('retards')),
+             
               'password' => bcrypt(trim($request->get('password')))
     
     )

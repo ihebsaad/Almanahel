@@ -26,7 +26,7 @@ $user_type=$cuser->user_type;
             Fiche d'utilisateur
         </div>
         <div class="card-body">
-     <form method="post" action="{{ route('users.edit') }}"  >
+   <form method="post" action="{{ route('users.edit') }}"  enctype="multipart/form-data">
         {{ csrf_field() }}
 
 
@@ -52,23 +52,23 @@ $user_type=$cuser->user_type;
          		 </div>
                 <div class="form-group">
                     <label for="email">Adresse Email:</label>
-               <input id="email" autocomplete="off"  onchange="changing(this)"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
+               <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
                </div>
 	 <?php if( $user_type=='admin' ){?>
 	 <div class="form-group">
                     <label for="email">Mot de passe :</label>
-				<input autocomplete="off"  onchange="changing(this)"  type="password" class="form-control"   id="password"   />  
+				<input autocomplete="off"    type="password" class="form-control"   id="password"   />  
                </div>
 		<?php } ?>
                 <div class="form-group">
                     <label for="eleve">Date de naissance:</label>
-              <input id="naissance" autocomplete="off"  onchange="changing(this)"   type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
+              <input id="naissance" autocomplete="off"  type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
              	 </div>
 
                 <div class="form-group">
                     <label for="eleve">N° Tel:</label>
 
-			<input id="tel"    type="text" class="form-control" name="tel"  onchange="changing(this)" id="tel" value="{{ $user->tel }}" />
+			<input id="tel"    type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
           	 </div>
 			 
 		   <div class="form-group">

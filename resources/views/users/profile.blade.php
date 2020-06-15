@@ -18,42 +18,42 @@
                         <div class="col-md-10">
                             <table class="table">
 
-                                <form class="form-horizontal" method="POST"   >
+                                  <form method="post" action="{{ route('users.edit') }}"  enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                    <input type="hidden" id="iduser" value="{{$id}}" ></input>
+                                    <input type="hidden" id="iduser" value="{{$id}}" name="id" ></input>
                                     <tbody>
                                     <tr>
             <td class="text-primary">Prénom </td>
             <td>
-                <input id="name" onchange="changing(this)" type="text" class="form-control" name="name"  value="{{ $user->name }}" />
+                <input id="name"  type="text" class="form-control" name="name"  value="{{ $user->name }}" />
                 </td>
         </tr>
         <tr>
             <td class="text-primary">Nom </td>
             <td>
-                <input id="lastname" onchange="changing(this)" type="text" class="form-control" name="lastname"  value="{{ $user->lastname }}" />
+                <input id="lastname"  type="text" class="form-control" name="lastname"  value="{{ $user->lastname }}" />
             </td>
         </tr>
         <tr>
             <td class="text-primary">Identifiant</td>
-            <td> <input   id="username" autocomplete="off"  onchange="changing(this)" type="text" class="form-control" name="username" value="{{ $user->username }}" />          </td>
+            <td> <input   id="username" autocomplete="off"  type="text" class="form-control" name="username" value="{{ $user->username }}" />          </td>
         </tr>
         <tr>
             <td class="text-primary">Mot de passe</td>
-            <td> <input autocomplete="off"   onchange="changing(this)"  type="password" class="form-control" name="password"  id="password"   />          </td>
+            <td> <input autocomplete="off"    type="password" class="form-control" name="password"  id="password"   />          </td>
         </tr>
         <tr>
             <td class="text-primary">Adresse E-mail</td>
-            <td> <input id="email" autocomplete="off" onchange="changing(this)"  type="email" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
+            <td> <input id="email" autocomplete="off"  type="email" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
         </tr>
         <tr>
             <td class="text-primary">Date de naissance</td>
-            <td> <input id="naissance" autocomplete="off" onchange="changing(this)"   type="text" class="form-control datepicker" name="naissance"  id="naissance" value="{{ $user->naissance }}" />
+            <td> <input id="naissance" autocomplete="off" type="text" class="form-control datepicker" name="naissance"  id="naissance" value="{{ $user->naissance }}" />
             </td>
         </tr>
             <tr>
                 <td class="text-primary">Tel</td>
-                <td>    <input id="tel" onchange="changing(this);"  type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
+                <td>    <input id="tel"   type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
                 </td>
             </tr>
        
@@ -63,25 +63,25 @@
     <tr>
 
         <td class="text-primary">Niveau</td>
-            <td> <input id="niveau" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
+            <td> <input id="niveau" autocomplete="off"  type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
         </tr>
     <tr>
         <td class="text-primary">Paiements</td>
-            <td> <input id="paiements" autocomplete="off" onchange="changing(this)"  type="text" class="form-control" name="paiements" id="paiements" value="{{ $user->paiements }}" />                  </td>
+            <td> <input id="paiements" autocomplete="off"  type="text" class="form-control" name="paiements" id="paiements" value="{{ $user->paiements }}" />                  </td>
         </tr>
         <tr>
         <td class="text-primary">Total Paiement</td>
-            <td> <input id="totalpaiement" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
+            <td> <input id="totalpaiement" autocomplete="off"   type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
         </tr>
         <tr>
 
         <td class="text-primary">Absences</td>
-            <td> <input id="absences" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
+            <td> <input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
         </tr>
         <tr>
 
         <td class="text-primary">Retards</td>
-            <td> <input id="retards" autocomplete="off" onchange="changing(this)"  type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                  </td>
+            <td> <input id="retards" autocomplete="off"  type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                  </td>
         </tr>
         
         

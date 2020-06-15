@@ -259,7 +259,7 @@ public function view($id)
               'naissance' => trim($request->get('naissance')),
               'tel' => trim($request->get('tel')),
               'adresse' => trim($request->get('adresse')),
-                'niveau' => trim($request->get('nniveauame')),
+                'niveau' => trim($request->get('niveau')),
              'user_type' => trim($request->get('user_type')),
               'remarques' => trim($request->get('remarques')),
               'paiements' => trim($request->get('paiements')),

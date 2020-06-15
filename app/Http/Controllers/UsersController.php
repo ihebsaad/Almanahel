@@ -266,10 +266,12 @@ public function view($id)
               'remarques' => trim($request->get('remarques')),
               'paiements' => trim($request->get('paiements')),
              
-              'password' => bcrypt($request->get('password'))
+             
     
     )
-    );  }
+    );  
+     if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));}}
        if($usertype=="parent")
         {
      User::where('id',$id)->update(
@@ -282,10 +284,12 @@ public function view($id)
               'naissance' => trim($request->get('naissance')),
               'tel' => trim($request->get('tel')),
               'user_type' => trim($request->get('user_type')),
-              'password' => bcrypt($request->get('password'))
+             
     
     )
-    );  }
+    ); 
+     if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));} }
       if($usertype=="prof")
         {
      User::where('id',$id)->update(
@@ -298,11 +302,13 @@ public function view($id)
               'naissance' => trim($request->get('naissance')),
               'tel' => trim($request->get('tel')),
               'user_type' => trim($request->get('user_type')),
-              'password' => bcrypt($request->get('password'))
+              
     
     )
-    );  }
-      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil" || $usertype=="admin")
+    );  
+  if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));}}
+      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil" | $usertype=="admin")
         {
      User::where('id',$id)->update(
     array(
@@ -314,15 +320,105 @@ public function view($id)
               'naissance' => trim($request->get('naissance')),
               'tel' => trim($request->get('tel')),
               'user_type' => trim($request->get('user_type')),
-              'password' => bcrypt($request->get('password')),
-           
+             
     )
-    );  }
+    ); 
+     if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));} }
 
       
      
     
         return redirect('/users')->with('success', ' Modifié avec succès');
+    }
+      public function edit1(Request $request)
+    {
+ 
+    $id=$request->get('iduser');
+     
+        $user  = User::find($id);
+    $user = auth()->user();
+    $usertype=$user['user_type'];
+    if($usertype=="eleve")
+        {
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+              'adresse' => trim($request->get('adresse')),
+                'niveau' => trim($request->get('niveau')),
+            'remarques' => trim($request->get('remarques')),
+              'paiements' => trim($request->get('paiements')),
+             
+             
+    
+    )
+    );  
+     if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));}}
+       if($usertype=="parent")
+        {
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+              
+             
+    
+    )
+    ); 
+     if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));} }
+      if($usertype=="prof")
+        {
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+             
+              
+    
+    )
+    );  
+  if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));}}
+      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil" | $usertype=="admin")
+        {
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+             
+             
+    )
+    ); 
+     if($request->get('password')!="")
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));} }
+
+      
+     
+    
+       return redirect('/users/profile/'.$id)->with('success', ' Modifié avec succès');
     }
     /**
      * Update the specified resource in storage.

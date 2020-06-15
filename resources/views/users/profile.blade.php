@@ -23,17 +23,17 @@ $user_type=$cuser->user_type;
      <div class="card uper">
 
         <div class="card-header">
-            Fiche d'utilisateur
+            Profil
         </div>
         <div class="card-body">
-   <form method="post" action="{{ route('users.edit') }}"  enctype="multipart/form-data">
+   <form method="post" action="{{ route('users.edit1') }}"  enctype="multipart/form-data">
         {{ csrf_field() }}
 
 
         <?php use \App\Http\Controllers\UsersController;     ?>
 
 
-        <input type="hidden" id="iduser" value="{{$id}}" name="id" />
+        <input type="hidden" id="iduser" value="{{$id}}" name="iduser" />
         
         
              
@@ -54,12 +54,12 @@ $user_type=$cuser->user_type;
                     <label for="email">Adresse Email:</label>
                <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}"/>                 
                </div>
-     <?php if( $user_type=='admin' ){?>
+   
      <div class="form-group">
                     <label for="email">Mot de passe :</label>
                 <input autocomplete="off"    type="password" class="form-control" name="password"  id="password"   />  
                </div>
-        <?php } ?>
+   
                 <div class="form-group">
                     <label for="eleve">Date de naissance:</label>
               <input id="naissance" autocomplete="off"  type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />
@@ -73,36 +73,7 @@ $user_type=$cuser->user_type;
              
           
  
-       <?php if( $user->user_type!='admin' && $user->user_type!='eleve' && $user->user_type!='prof' && $user->user_type!='parent'   ) { ?>
-
-         <label for="user_type">Droits d'accès:</label>
-
-
-            <div id="directionscolarite" class="form-group" style="<?php if($user->user_type=='membre') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-direction"  type="checkbox"    id="direction"    <?php if ($user->direction ==1){echo 'checked  value="0"   '; }else{echo ' value="1" ' ;}  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Direction et scolarité</label>
-            </div>
-
-            <div id="directionfinanciere" class="form-group" style="<?php if($user->user_type=='financier') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-finances"  type="checkbox"    id="finances"    <?php if ($user->finances ==1){echo 'checked  value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Direction financière</label>
-            </div>
-            
-            <div id="conseilpilotage" class="form-group" style="<?php if($user->user_type=='conseil') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-conseil"  type="checkbox"    id="conseil"    <?php if ($user->conseil ==1){echo 'checked  value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Conseil de pilotage</label>
-            </div>
-
-            <div id="suivipedagogique" class="form-group" style="<?php if($user->user_type=='suivi') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-suvi"  type="checkbox"    id="suivi"    <?php if ($user->suivi ==1){echo 'checked value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Suivi pédagogique</label>
-            </div>
- 
-       <?php }  ?>
+       
 
         
 <?php if($user->user_type=='eleve') {?>

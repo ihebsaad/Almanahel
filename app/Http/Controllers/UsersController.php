@@ -248,7 +248,9 @@ public function view($id)
      
         $user  = User::find($id);
     
- 
+    $usertype=$request->get('user_type')
+    if($usertype=="eleve")
+        {
      User::where('id',$id)->update(
     array(
     //  'eleve' =>trim( $request->get('eleve')),
@@ -265,10 +267,63 @@ public function view($id)
               'paiements' => trim($request->get('paiements')),
               'totalpaiement' => trim($request->get('totalpaiement')),
                'absences' => trim($request->get('absences')),
-              'retards' => trim($request->get('retards'))
+              'retards' => trim($request->get('retards')),
+              'password' => bcrypt(trim($request->get('password')))
     
     )
-    );  
+    );  }
+       if($usertype=="parent")
+        {
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+              'user_type' => trim($request->get('user_type')),
+              'password' => bcrypt(trim($request->get('password')))
+    
+    )
+    );  }
+      if($usertype=="prof")
+        {
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+              'user_type' => trim($request->get('user_type')),
+              'password' => bcrypt(trim($request->get('password')))
+    
+    )
+    );  }
+      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil")
+        {
+     User::where('id',$id)->update(
+    array(
+    //  'eleve' =>trim( $request->get('eleve')),
+        //     'classe' => trim($request->get('classe')),
+             'name' => trim($request->get('name')),
+             'lastname' => trim($request->get('lastname')),
+             'email' => trim($request->get('email')),
+              'naissance' => trim($request->get('naissance')),
+              'tel' => trim($request->get('tel')),
+              'user_type' => trim($request->get('user_type')),
+              'password' => bcrypt(trim($request->get('password'))),
+              'finances' => trim($request->get('finances')),
+               'direction' =>trim($request->get('direction')),
+                'suivi' => trim($request->get('suivi')),
+                 'conseil' => trim($request->get('conseil')),
+    )
+    );  }
+
       
      
     

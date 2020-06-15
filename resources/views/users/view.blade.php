@@ -57,7 +57,7 @@ $user_type=$cuser->user_type;
 	 <?php if( $user_type=='admin' ){?>
 	 <div class="form-group">
                     <label for="email">Mot de passe :</label>
-				<input autocomplete="off"    type="password" class="form-control"   id="password"   />  
+				<input autocomplete="off"    type="password" class="form-control" name="password"  id="password"   />  
                </div>
 		<?php } ?>
                 <div class="form-group">

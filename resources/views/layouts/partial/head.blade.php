@@ -83,7 +83,7 @@ $user = auth()->user();
  $user_type=$user->user_type;
  $prenom=$user->name;
  $nom=$user->lastname;
-echo '<li>Bienvenue <B>'.$prenom.' '.$nom.'</B> </li>';
+echo '<li>Bienvenue  <B>'.$prenom.' '.$nom.'</B> </li>';
 
 }
 ?>

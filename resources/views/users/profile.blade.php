@@ -23,7 +23,7 @@ $user_type=$cuser->user_type;
      <div class="card uper">
 
         <div class="card-header">
-            Fiche d'utilisateur
+            Profil
         </div>
         <div class="card-body">
    <form method="post" action="{{ route('users.edit1') }}"  enctype="multipart/form-data">
@@ -33,7 +33,7 @@ $user_type=$cuser->user_type;
         <?php use \App\Http\Controllers\UsersController;     ?>
 
 
-        <input type="hidden" id="iduser" value="{{$id}}" name="id" />
+        <input type="hidden" id="iduser" value="{{$id}}" name="iduser" />
         
         
              
@@ -54,12 +54,12 @@ $user_type=$cuser->user_type;
                     <label for="email">Adresse Email:</label>
                <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}"/>                 
                </div>
-     <?php if( $user_type=='admin' ){?>
+   
      <div class="form-group">
                     <label for="email">Mot de passe :</label>
                 <input autocomplete="off"    type="password" class="form-control" name="password"  id="password"   />  
                </div>
-        <?php } ?>
+   
                 <div class="form-group">
                     <label for="eleve">Date de naissance:</label>
               <input id="naissance" autocomplete="off"  type="text" class="form-control datepicker"  name="naissance"  id="naissance" value="{{ $user->naissance }}" />

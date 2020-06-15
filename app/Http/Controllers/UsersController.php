@@ -334,7 +334,7 @@ public function view($id)
       public function edit1(Request $request)
     {
  
-    $id=$request->get('id');
+    $id=$request->get('iduser');
      
         $user  = User::find($id);
     

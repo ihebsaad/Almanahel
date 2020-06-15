@@ -4,9 +4,9 @@
 <?php
 if (Auth::check()) {
 
-$user = auth()->user();
- $iduser=$user->id;
-$user_type=$user->user_type;
+$cuser = auth()->user();
+ $iduser=$cuser->id;
+$user_type=$cuser->user_type;
 } 
 ?>
     <h3 style="margin-left:50px">Créer un nouveau utilisateur</h3><br><br>
@@ -84,6 +84,9 @@ $user_type=$user->user_type;
                                     <option  value="membre"    >Membre d'administration</option>
                                     <option  value="conseil"    >Conseil de pilotage</option>
                                     <option  value="suivi"    >Suivi pédagogique</option>
+                        <?php if($user_type=='admin'){?> 
+						<option  value="admin"    >Super Administrateur</option>
+						<?php } ?>
                                   
                                 </select>
 

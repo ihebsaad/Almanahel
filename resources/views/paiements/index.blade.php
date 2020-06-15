@@ -64,7 +64,7 @@ $user_type=$user->user_type;
             <tr id="headtable">
                 <th style="width:5%">N°</th>
                 <th style="width:10%">Date</th>
-				<th style="width:20%">Elève</th>
+				<th style="width:20%">Payé par </th>
                 <th style="width:20%">Libellé</th>
                 <th style="width:10%">Montant</th>
                  <th style="width:10%">Actions</th>
@@ -83,7 +83,7 @@ $user_type=$user->user_type;
                        <?php $date=  date('d/m/Y H:i', strtotime($paiement['created_at'] )); ?>
                     <td style="width:5%" ><a href="{{action('PaiementsController@view', $paiement['id'])}}" >{{$paiement->id}}</a></td>
                     <td style="width:10%" ><?php echo $date;?> </td>
-                    <td style="width:20%" ><?php if($userid>0){echo $user['name'] .' '.$user['lastname'];}?> </td>
+                    <td style="width:20%" ><?php if($userid>0){echo $user['name'] .' '.$user['lastname'];}else{echo $paiement['autre'];} ?> </td>
                     <td style="width:20%" ><?php echo $paiement['libelle'];?> </td>
                     <td style="width:10%" ><?php echo $paiement['montant'];?> dt</td>
  

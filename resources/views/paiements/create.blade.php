@@ -78,13 +78,13 @@
 	function verif()
 	{
 	  var eleve = document.getElementById("eleve").value;
- if(type!="")
+ if(eleve!="")
 {
-document.getElementById('divautre').style.display = 'block'; 
+document.getElementById('divautre').style.display = 'none'; 
 }
 else
 {
-document.getElementById('divautre').style.display = 'none'; 
+document.getElementById('divautre').style.display = 'block'; 
 }
 	}
 	</script>

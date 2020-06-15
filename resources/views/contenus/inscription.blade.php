@@ -28,7 +28,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button  class="btn btn-md btn-success"  onclick="changing('inscription');  ;location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button  class="btn btn-md btn-success"  onclick="changing('inscription');  ; "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div><br><br>
 	    <div class="row">
 	
@@ -41,7 +41,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 
     </div><br><br>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick=" changing('inscription2'); ;location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=" changing('inscription2'); ; "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 		 <div class="row">
 	
@@ -56,7 +56,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 	
 	
 	 <div class="row">
-	   <button class="btn btn-md btn-success"  onclick=" changing('inscription3');location.reload();"  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button class="btn btn-md btn-success"  onclick=" changing('inscription3'); "  ><b><i class="fas fa-save"></i> Enregistrer</b></button>
     </div>
 
 	
@@ -65,6 +65,8 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
   </div>
 
 @endsection
+
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
 
@@ -84,8 +86,15 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
                 $('#'+elm).animate({
                     opacity: '1',
                 });
-
+					swal({
+                        type: 'success',
+                        title: 'Modifié ...',
+                        text: 'Contenu modifié avec succès'
+ 					//	icon: "success",
+                    });
             }
+			
+			
         });
        
     }

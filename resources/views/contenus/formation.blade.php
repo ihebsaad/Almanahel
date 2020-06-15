@@ -29,7 +29,7 @@ $cont =  \App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conte
 	
 	
 	 <div class="row">
-	   <button id="save" class="btn btn-md btn-success"    onclick="changing('formation');location.reload();" ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button id="save" class="btn btn-md btn-success"    onclick="changing('formation'); " ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
 	
 	
@@ -40,6 +40,7 @@ $cont =  \App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conte
 @endsection
 
  
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
 
@@ -59,8 +60,15 @@ $cont =  \App\Contenu::where('zone', 'formation')->first();$contenu=$cont->conte
                 $('#'+elm).animate({
                     opacity: '1',
                 });
-
+					swal({
+                        type: 'success',
+                        title: 'Modifié ...',
+                        text: 'Contenu modifié avec succès'
+ 					//	icon: "success",
+                    });
             }
+			
+			
         });
        
     }

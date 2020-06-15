@@ -72,6 +72,21 @@ $user_type=$cuser->user_type;
                                 @endif
                             </div>
                         </div>
+						
+                        <div class="row form-group ">
+                            <label for="email" class="col-md-4 control-label">Email</label>
+
+                            <div class="col-md-6">
+                                <input  autocomplete="off"   id="email" type="email" class="form-control" name="email"  >
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+						
                         <div class="row form-group " style="margin-bottom:30px">
                             <label for="type" class="col-md-4 control-label">Qualification</label>
 

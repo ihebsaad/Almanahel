@@ -142,10 +142,11 @@
 
                                     </td>
                                 </tr>
-                                 </tbody>
-                                  <div class="form-group ">
+                                  <tr>
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>
-             </div>
+             </tr>
+                                 </tbody>
+
        
  
 

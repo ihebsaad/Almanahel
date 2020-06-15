@@ -26,6 +26,11 @@ $cont2 =  App\Contenu::where('zone', 'home2')->first();$contenu2=$cont2->contenu
                     </div>
          </div>
 
+	 <div class="row">
+	   <button id="save" class="btn btn-md btn-success"   onclick="changing('home'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+
+    </div>	
+	
     </div>
 	
 	<br>

@@ -20,7 +20,7 @@
 
                                   <form method="post" action="{{ route('users.edit') }}"  enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                    <input type="hidden" id="iduser" value="{{$id}}" name="id" ></input>
+                                    <input type="hidden" id="iduser" value="{{$user->id}}" name="id" />
                                     <tbody>
                                     <tr>
             <td class="text-primary">Prénom </td>

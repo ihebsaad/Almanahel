@@ -266,7 +266,7 @@ public function view($id)
               'remarques' => trim($request->get('remarques')),
               'paiements' => trim($request->get('paiements')),
              
-              'password' => bcrypt(trim($request->get('password')))
+              'password' => bcrypt($request->get('password'))
     
     )
     );  }
@@ -282,7 +282,7 @@ public function view($id)
               'naissance' => trim($request->get('naissance')),
               'tel' => trim($request->get('tel')),
               'user_type' => trim($request->get('user_type')),
-              'password' => bcrypt(trim($request->get('password')))
+              'password' => bcrypt($request->get('password'))
     
     )
     );  }
@@ -298,11 +298,11 @@ public function view($id)
               'naissance' => trim($request->get('naissance')),
               'tel' => trim($request->get('tel')),
               'user_type' => trim($request->get('user_type')),
-              'password' => bcrypt(trim($request->get('password')))
+              'password' => bcrypt($request->get('password'))
     
     )
     );  }
-      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil")
+      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil" | $usertype=="admin")
         {
      User::where('id',$id)->update(
     array(
@@ -314,7 +314,7 @@ public function view($id)
               'naissance' => trim($request->get('naissance')),
               'tel' => trim($request->get('tel')),
               'user_type' => trim($request->get('user_type')),
-              'password' => bcrypt(trim($request->get('password'))),
+              'password' => bcrypt($request->get('password')),
            
     )
     );  }

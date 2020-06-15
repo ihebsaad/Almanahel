@@ -20,7 +20,11 @@
 
                                   <form method="post" action="{{ route('users.edit') }}"  enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                    <input type="hidden" id="iduser" value="{{$user->id}}" name="id" />
+                                    
+        <?php use \App\Http\Controllers\UsersController;     ?>
+
+
+        <input type="hidden" id="iduser" value="{{$id}}" name="id" />
                                     <tbody>
                                     <tr>
             <td class="text-primary">Prénom </td>

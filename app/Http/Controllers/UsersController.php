@@ -302,7 +302,7 @@ public function view($id)
     
     )
     );  }
-      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil" | $usertype=="admin")
+      if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil" || $usertype=="admin")
         {
      User::where('id',$id)->update(
     array(

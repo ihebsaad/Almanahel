@@ -317,10 +317,7 @@ public function view($id)
               'tel' => trim($request->get('tel')),
               'user_type' => trim($request->get('user_type')),
               'password' => bcrypt(trim($request->get('password'))),
-              'finances' => trim($request->get('finances')),
-               'direction' =>trim($request->get('direction')),
-                'suivi' => trim($request->get('suivi')),
-                 'conseil' => trim($request->get('conseil')),
+           
     )
     );  }
 

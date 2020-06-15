@@ -84,7 +84,8 @@ $user_type=$cuser->user_type;
              <input id="niveau" autocomplete="off"    type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  
        
                  </div>
- <div class="form-group">
+
+         <div class="form-group">
                     <label for="paiements">Paiements:</label>
                 <select id="paiements"       class="form-control" name="paiements"    >
                 <option value=""></option>
@@ -109,10 +110,36 @@ $user_type=$cuser->user_type;
           <textarea id="remarques" autocomplete="off"     class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                
         
                 </div>
-                
+               
                     
  <?php } ?> 
- 
+ <?php if($user->user_type=='parent') {?>
+   
+        
+                <div class="form-group">
+                    <label for="eleve">Enfant:</label>
+               <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="eleve" >
+                          <?php if ( count($relations) > 0 ) { ?>
+
+                         @foreach($relations as $relation)
+                             @foreach($eleves as $eleve)
+                                 <option  <?php if($relation->eleve==$eleve->id){echo 'selected="selected"';}?>    onclick="createeleve('tpr<?php echo $eleve->id; ?>')"  value="<?php echo $eleve->id;?>"> <?php echo $eleve->name.$eleve->lastname ;?></option>
+                             @endforeach
+                         @endforeach
+
+                         <?php
+                         } else { ?>
+                         @foreach($eleves as $eleve)
+                             <option    onclick="createeleve('tpr<?php echo $eleve->id; ?>')"  value="<?php echo $eleve->id;?>"> <?php echo $eleve->name.$eleve->lastname ; ?></option>
+                         @endforeach
+
+                         <?php }  ?>
+
+                     </select>
+       
+</div>
+ <?php } ?> 
+       
 
     <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>

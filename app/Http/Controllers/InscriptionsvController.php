@@ -124,7 +124,7 @@ class InscriptionsvController extends Controller
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
           $contenu="Madame, Monsieur,<br>
-                 L'inscription de votre fils/fille ".$user['name']." ".$user['lastname']. " à almanahel est validée."."<br>"
+                 L'inscription de votre fils/fille ".$user['name']." ".$user['lastname']. " à almanahel est validée."."<br>";
                   
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname   ) {
                 $message

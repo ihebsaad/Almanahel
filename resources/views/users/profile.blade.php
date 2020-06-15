@@ -107,31 +107,10 @@ $user_type=$cuser->user_type;
                      </select>
               </div>
 
-                <div class="form-group">
-                    <label for="paiements">Paiements:</label>
-                <select id="paiements"       class="form-control" name="paiements"    >
-                <option value=""></option>
-                <option <?php if(  $user->paiements =='termine'  ){echo 'selected="selected"';} ?> value="termine">Terminé</option>
-                <option <?php if(  $user->paiements =='encours'  ){echo 'selected="selected"';} ?>value="encours">En cours</option>
-                </select>
-                 </div>
-                <div class="form-group">
-                    <label for="eleve">Total des paiements:</label>
-          <input id="totalpaiement" autocomplete="off"    type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  
-                </div>
-                <div class="form-group">
-                    <label for="absences">Total des absences:</label>
-                    <input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                
-                 </div>
-                <div class="form-group">
-                    <label for="retards">Total des retards:</label>
-             <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                
-                 </div>
-                <div class="form-group">
-                    <label for="eleve">Remarques:</label>
-          <textarea id="remarques" autocomplete="off"     class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                
-        
-                </div>
+               
+               
+              
+               
                 <div class="form-group">
                     <label for="eleve">Parents:</label>
              <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="parent" >

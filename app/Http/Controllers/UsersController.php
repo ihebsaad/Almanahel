@@ -224,14 +224,30 @@ public function view($id)
         { 
           $user = User::find($id);
 
-          $relations = DB::table('parents_eleve')->select('eleve')
+           $relations = DB::table('parents_eleve')->select('eleve')
             ->where('parent','=',$id)
             ->get();
             $eleves = DB::table('users')
-            ->where('user_type','=','Élève')
-            ->get();  
-         $user = User::find($id);
-        return view('users.profile',['relations'=>$relations, 'eleves'=>$eleves] , compact('user','id'));
+            ->where('user_type','=','eleve')
+            ->get();
+          $relations1 = DB::table('parents_eleve')->select('parent')
+            ->where('eleve','=',$id)
+            ->get();
+            $parents = DB::table('users')
+            ->where('user_type','=','parent')
+            ->get();
+             $relations2 = DB::table('eleves_classe')->select('classe')
+            ->where('eleve','=',$id)
+            ->get();
+            $classes = DB::table('classes')
+            ->get();
+             $relations3 = DB::table('profs_classe')->select('classe')
+            ->where('prof','=',$id)
+            ->get();
+            $classes1 = DB::table('classes')
+            ->get();
+         
+        return view('users.profile',['relations'=>$relations, 'eleves'=>$eleves,'relations1'=>$relations1, 'parents'=>$parents,'relations2'=>$relations2, 'classes'=>$classes,'relations3'=>$relations3, 'classes1'=>$classes1] , compact('user','id'));
         }
     }
 
@@ -352,8 +368,7 @@ public function view($id)
               'tel' => trim($request->get('tel')),
               'adresse' => trim($request->get('adresse')),
                 'niveau' => trim($request->get('niveau')),
-            'remarques' => trim($request->get('remarques')),
-              'paiements' => trim($request->get('paiements')),
+            
              
              
     

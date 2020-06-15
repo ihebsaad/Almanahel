@@ -345,7 +345,7 @@ public function view($id)
       
      
     
-        return redirect('/users')->with('success', ' Modifié avec succès');
+       return redirect('/users/view/'.$id)->with('success', ' Modifié avec succès');
     }
       public function edit1(Request $request)
     {

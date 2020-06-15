@@ -71,24 +71,10 @@ $user_type=$cuser->user_type;
             <input id="tel"    type="text" class="form-control" name="tel"  id="tel" value="{{ $user->tel }}" />
              </div>
              
-           <div class="form-group">
-                    <label for="user_type">Qualification:</label>
-                <select  name="user_type"  id="user_type"   class="form-control" >
-                    <option></option>
-                     <option value="eleve"  <?php if($user->user_type=='eleve') {echo'selected="selected"';}?> >Élève</option>
-                     <option value="prof"  <?php if($user->user_type=='prof') {echo'selected="selected"';}?> >Enseignant </option>
-                    <option  value="parent"  <?php if($user->user_type=='parent') {echo'selected="selected"';}?>  >Parent</option>
-                    <option  value="membre"  <?php if($user->user_type=='membre') {echo'selected="selected"';}?>  >Membre de direction et scolarité</option>
-                    <option  value="financier"  <?php if($user->user_type=='financier') {echo'selected="selected"';}?>  >Direction Financière</option>
-                    <option  value="conseil"  <?php if($user->user_type=='conseil') {echo'selected="selected"';}?>  >Conseil de pilotage</option>
-                    <option  value="suivi"  <?php if($user->user_type=='suivi') {echo'selected="selected"';}?>  >Suivi pédagogique</option>
-                    <option  value="admin"  <?php if($user->user_type=='admin') {echo'selected="selected"';}?>  >Super Administrateur</option>
-                   
-                </select>
-           </div> 
+          
          
  
-      
+
         
 <?php if($user->user_type=='eleve') {?>
  
@@ -99,27 +85,7 @@ $user_type=$cuser->user_type;
                  </div>
 
         
-                <div class="form-group">
-                    <label for="classe">Classe:</label>
-              <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="classe" >
-                          <?php if ( count($relations2) > 0 ) { ?>
-
-                         @foreach($relations2 as $relation2)
-                             @foreach($classes as $classe)
-                                 <option  <?php if($relation2->classe==$classe->id){echo 'selected="selected"';}?>    onclick="createclasse('tpr<?php echo $classe->id; ?>')"  value="<?php echo $classe->id;?>"> <?php echo $classe->titre;?></option>
-                             @endforeach
-                         @endforeach
-
-                         <?php
-                         } else { ?>
-                         @foreach($classes as $classe)
-                             <option    onclick="createclasse('tpr<?php echo $classe->id; ?>')"  value="<?php echo $classe->id;?>"> <?php echo $classe->titre ; ?></option>
-                         @endforeach
-
-                         <?php }  ?>
-
-                     </select>
-              </div>
+             
 
                 <div class="form-group">
                     <label for="paiements">Paiements:</label>
@@ -146,26 +112,7 @@ $user_type=$cuser->user_type;
           <textarea id="remarques" autocomplete="off"     class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                
         
                 </div>
-                <div class="form-group">
-                    <label for="eleve">Parents:</label>
-             <select class="  form-control select2 " style="width:100%" name="itemName"  multiple  id="parent" >
-                          <?php if ( count($relations1) > 0 ) { ?>
-
-                         @foreach($relations1 as $relation1)
-                             @foreach($parents as $parent)
-                                 <option  <?php if($relation1->parent==$parent->id){echo 'selected="selected"';}?>    onclick="createparent('tpr<?php echo $parent->id; ?>')"  value="<?php echo $parent->id;?>"> <?php echo $parent->name.$parent->lastname ;?></option>
-                             @endforeach
-                         @endforeach
-
-                         <?php
-                         } else { ?>
-                         @foreach($parents as $parent)
-                             <option    onclick="createeleve('tpr<?php echo $parent->id; ?>')"  value="<?php echo $parent->id;?>"> <?php echo $parent->name.' '.$parent->lastname ; ?></option>
-                         @endforeach
-
-                         <?php }  ?>
-            </select>
-            </div>
+              
                     
  <?php } ?> 
  <?php if($user->user_type=='parent') {?>
@@ -193,33 +140,7 @@ $user_type=$cuser->user_type;
                      </select>
        
 </div>
- <?php } ?> 
-        <?php if($user->user_type=='prof') {?>
-   
-        
-                <div class="form-group">
-                    <label for="eleve">Classse(s):</label>
-                <select class="form-control select2 " style="width:100%" name="itemName1"  multiple  id="classe1" >
-                          <?php if ( count($relations3) > 0 ) { ?>
-
-                         @foreach($relations3 as $relation3)
-                             @foreach($classes1 as $classe1)
-                                 <option  <?php if($relation3->classe==$classe1->id){echo 'selected="selected"';}?>    onclick="createclasse1('tpr<?php echo $classe1->id; ?>')"  value="<?php echo $classe1->id;?>"> <?php echo $classe1->titre;?></option>
-                             @endforeach
-                         @endforeach
-
-                         <?php
-                         } else { ?>
-                         @foreach($classes1 as $classe1)
-                             <option    onclick="createclasse1('tpr<?php echo $classe1->id; ?>')"  value="<?php echo $classe1->id;?>"> <?php echo $classe1->titre ; ?></option>
-                         @endforeach
-
-                         <?php }  ?>
-
-                     </select>
-       </div>
-        
- <?php } ?> 
+ 
 
     <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>

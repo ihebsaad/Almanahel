@@ -119,6 +119,7 @@
  <?php } ?> 
   <tr>
    <td>   <button  type="submit"  class="btn btn-primary">Enregistrer</button>  </td>
+     <td>   </td>
              </tr>
 <!--
 

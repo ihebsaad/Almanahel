@@ -26,7 +26,7 @@ $user_type=$cuser->user_type;
             Fiche d'utilisateur
         </div>
         <div class="card-body">
-   <form method="post" action="{{ route('users.edit') }}"  enctype="multipart/form-data">
+   <form method="post" action="{{ route('users.edit1') }}"  enctype="multipart/form-data">
         {{ csrf_field() }}
 
 

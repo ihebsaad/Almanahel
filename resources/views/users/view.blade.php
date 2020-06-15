@@ -33,7 +33,7 @@ $user_type=$cuser->user_type;
         <?php use \App\Http\Controllers\UsersController;     ?>
 
 
-        <input type="hidden" id="iduser" value="{{$id}}" ></input>
+        <input type="hidden" id="iduser" value="{{$id}}" />
         
         
 		     
@@ -52,7 +52,7 @@ $user_type=$cuser->user_type;
          		 </div>
                 <div class="form-group">
                     <label for="email">Adresse Email:</label>
-               <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" />                  </td>
+               <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}"/>                 
                </div>
 	 <?php if( $user_type=='admin' ){?>
 	 <div class="form-group">
@@ -124,7 +124,7 @@ $user_type=$cuser->user_type;
  
                 <div class="form-group">
                     <label for="eleve">Niveau:</label>
-             <input id="niveau" autocomplete="off"    type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  </td>
+             <input id="niveau" autocomplete="off"    type="text" class="form-control" name="niveau" id="niveau" value="{{ $user->niveau }}" />                  
        
 		 		 </div>
 
@@ -161,19 +161,19 @@ $user_type=$cuser->user_type;
 		 		 </div>
                 <div class="form-group">
                     <label for="eleve">Total des paiements:</label>
-          <input id="totalpaiement" autocomplete="off"    type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  </td>
+          <input id="totalpaiement" autocomplete="off"    type="number" class="form-control" name="totalpaiement" id="totalpaiement" value="{{ $user->totalpaiement }}" />                  
          	 	</div>
                 <div class="form-group">
                     <label for="absences">Total des absences:</label>
-					<input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                  </td>
+					<input id="absences" autocomplete="off"   type="number" class="form-control" name="absences" id="absences" value="{{ $user->absences }}" />                
       			 </div>
                 <div class="form-group">
                     <label for="retards">Total des retards:</label>
-             <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                </td>
+             <input id="retards" autocomplete="off"   type="number" class="form-control" name="retards" id="retards" value="{{ $user->retards }}" />                <
           		 </div>
                 <div class="form-group">
                     <label for="eleve">Remarques:</label>
-		  <textarea id="remarques" autocomplete="off"     class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                </td>
+		  <textarea id="remarques" autocomplete="off"     class="form-control" name="remarques"    > {{ $user->remarques }} </textarea>                
         
 				</div>
                 <div class="form-group">

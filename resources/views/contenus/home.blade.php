@@ -25,6 +25,7 @@ $cont2 =  App\Contenu::where('zone', 'home2')->first();$contenu2=$cont2->contenu
                         <textarea style="min-height: 380px;"  id="home" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home" required  ><?php echo $contenu; ?></textarea>
                     </div>
          </div>
+     </div>
 
 	 <div class="row">
 	   <button id="save" class="btn btn-md btn-success"   onclick="changing('home'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>

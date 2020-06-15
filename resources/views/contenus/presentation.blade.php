@@ -1,5 +1,15 @@
 @extends('layouts.back')
-
+<?php
+$link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+?>
+<script>/*
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}*/
+</script>
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
@@ -33,7 +43,7 @@ $cont8 =  App\Contenu::where('zone', 'alumni2')->first();$alumni2=$cont8->conten
 
     </div>
 	 <div class="row" style="margin-bottom:30px">
-	   <button   class="btn btn-md btn-success"  onclick=";changing('mot');location.reload();"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+	   <button   class="btn btn-md btn-success"  onclick=";changing('mot');document.location.reload(true);"   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
    </div>
    
  <div class="row">

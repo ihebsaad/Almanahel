@@ -74,15 +74,28 @@
 <div class="col-md-9 col-xs-12">
 <div class="header-middle-right">
 <ul>
+<?php
+$user_type="";
+$loggedin=false;
+if (Auth::check()) {
+$loggedin=true;
+$user = auth()->user();
+ $user_type=$user->user_type;
+ $nom=$user->name;
+ $prenom=$user->lastname;
+echo '<li>Bienvenue '.$prenom.' '.$nom.' </li>';
+
+}
+?>
+<?php if(! $loggedin || $user_type=='eleve'){?>
 <li>
-<!--<div class="contact-icon">
-<i class="fa fa-clock-o"></i>
-</div>-->
 <div class="contact-info">
 <a href="{{ route('espaceeleves') }}">Espace Élèves</a>
 <!--<span>Sunday colsed</span>-->
 </div>
 </li>
+<?php } ?>
+<?php if(! $loggedin || $user_type=='prof'){?>
 <li>
 <!--<div class="contact-icon">
 <i class="fa fa-envelope"></i>
@@ -91,6 +104,8 @@
 <a href="{{ route('espaceprofs') }}">Espace Enseignants</a>
 </div>
 </li>
+<?php } ?>
+<?php if(! $loggedin || $user_type=='parent'){?>
 <li>
 <!--<div class="contact-icon">
 <i class="fa fa-phone"></i>
@@ -100,6 +115,8 @@
 <!--<span> (+1) 1144-1254</span>-->
 </div>
 </li>
+<?php } ?>
+<?php if(! $loggedin || (($user_type!='parent')&& ($user_type!='prof') && ($user_type!='eleve')    )  ){?>
 <li>
 <!--<div class="contact-icon">
 <i class="fa fa-phone"></i>
@@ -109,6 +126,7 @@
 <!--<span> (+1) 1144-1254</span>-->
 </div>
 </li>
+<?php } ?>
 </ul>
 </div>
 </div>

@@ -62,12 +62,14 @@ class PaiementsController extends Controller
 		$montant = trim($request->get('montant'));
 		$annee = trim($request->get('annee'));
         $details = trim($request->get('details'));
+        $autre = trim($request->get('autre'));
 		 
 		  	 
         $paiement  = new Paiement([
               'eleve' => $eleve,
              'libelle' => $libelle ,
              'montant' => $montant ,
+             'autre' => $autre ,
              'details' => $details ,
              'annee' => $annee ,
               

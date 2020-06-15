@@ -11,6 +11,7 @@
      {{ csrf_field() }}
 <?php 
 $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'home2')->first();$contenu2=$cont2->contenu ;
 
 ?>
 <div class="modal-body">
@@ -27,12 +28,22 @@ $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
 
     </div>
 	
+	<br>
+ 	
+    <div class="row">
 	
-	<div class="row">
-	   <button id="save" class="btn btn-md btn-success"   onclick="changing('home'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
+       <div class="form-group ">
+                    <label for="contenu">Contenu:</label>
+                    <div class="editor" >
+                        <textarea style="min-height: 380px;"  id="home2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home2" required  ><?php echo $contenu2; ?></textarea>
+                    </div>
+         </div>
 
     </div>
+	<div class="row">
+	   <button id="save" class="btn btn-md btn-success"   onclick="changing('home2'); "   ><b><i class="fas fa-save"></i> Enregistrer</b></button>
 
+    </div>	
 	
      </form>
  </div>	 

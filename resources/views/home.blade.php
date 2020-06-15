@@ -78,8 +78,10 @@
   <span class="heading-title-border"></span>
 <?php
 $cont =  App\Contenu::where('zone', 'home')->first();$contenu=$cont->contenu ;
+$cont2 =  App\Contenu::where('zone', 'home2')->first();$contenu2=$cont2->contenu ;
 
 echo $contenu ;
+echo $contenu2 ;
 ?>
 
 </section>

@@ -79,9 +79,9 @@ $user_type=$cuser->user_type;
                             <div class="col-md-6">
                                 <input  autocomplete="off"   id="email" type="email" class="form-control" name="email"  >
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>

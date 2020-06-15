@@ -294,7 +294,7 @@ return 'Pas de résultats';
 });*/
 
 
-    /*function changing(elm) {
+    function changing(elm) {
         var champ = elm.id;
 
         var val = document.getElementById(champ).value;

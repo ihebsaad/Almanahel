@@ -337,8 +337,8 @@ public function view($id)
     $id=$request->get('iduser');
      
         $user  = User::find($id);
-    
-    $usertype=$request->get('user_type');
+    $user = auth()->user();
+    $usertype=$user['user_type'];
     if($usertype=="eleve")
         {
      User::where('id',$id)->update(

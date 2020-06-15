@@ -143,6 +143,18 @@
                                     </td>
                                 </tr>
                                  </tbody>
+                                  <div class="form-group ">
+      <button  type="submit"  class="btn btn-primary">Enregistrer</button>
+             </div>
+       
+ 
+
+       
+    </form>
+    
+
+
+ </div>
                                 </form>
                             </table>
                         </div>

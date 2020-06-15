@@ -123,7 +123,7 @@ class InscriptionsvController extends Controller
   $from='almanahelacademy@gmail.com';
          $to=$parent["email"];
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$user['name'].' '.$user['lastname']. " est validée";
-          $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
+          $contenu='Madame, Monsieur,<br>
                 L"inscription de votre fils/fille '.$user['name'].' ' .$user['lastname']. ' à AlManahel est validée.'.'<br>';
                   
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname   ) {
@@ -135,9 +135,9 @@ class InscriptionsvController extends Controller
         ->setBody($contenu, 'text/html')
           ->setFrom([$from => $fromname]);
             }); 
-             $to=trim('letaief_med_ali@yahoo.fr');
+             $to=trim('betboutsaida@yahoo.fr');
            $id=$inscriptionv['id'];
-        $type='notif demande Pré-inscription';
+        $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
         $contenu="Bonjour,<br>
@@ -149,8 +149,8 @@ class InscriptionsvController extends Controller
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-              $to=trim('zilimounir@yahoo.fr');
-        $type='notif demande Pré-inscription';
+              $to=trim('lyceealmanahel@gmail.com');
+        $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
         $contenu="Bonjour,<br>
@@ -162,8 +162,21 @@ class InscriptionsvController extends Controller
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-              $to=trim('betboutsaida@yahoo.fr');
-        $type='notif demande Pré-inscription';
+              $to=trim('ce.almanahel@gmail.com');
+        $type='notif demande inscription';
+        //$nomp=$parent->name. ' '.$parent->lastname ;
+        $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
+        $contenu="Bonjour,<br>
+        Nous vous informons que l'Élève ".$inscriptionv['prenom']." ". $inscriptionv['nom']." a été inscit dans votre Lycée <br>
+        Le lien de l'inscription : <a href='http://lyceealmanahel.com/inscriptionsv/view/$id'>voir le lien</a>";
+        
+        
+        $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+        $request = new Request($data);
+        //\App\Http\Controllers\EnvoyesController::sendnotif($request);
+         app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
+          $to=trim('contact@lyceealmanahel.com');
+        $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
         $contenu="Bonjour,<br>
@@ -306,7 +319,7 @@ if(empty($parent))
             $fromname='Almanahel Academy';
            $from='almanahelacademy@gmail.com';
           $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
-          $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
+          $contenu='Madame, Monsieur,<br>
                  L"inscription de votre fils/fille '.$eleve['name'].' ' .$eleve['lastname']. ' à AlManahel est validée.'.'<br>
                   Vos codes d"accès :'.'<br>
                    E-mail :'.$parent['email'].'<br>
@@ -332,7 +345,7 @@ if(empty($parent))
 
 
          $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
-          $contenu='Bonjour ,'.$parent['name'].' '.$parent['lastname'].'<br>
+          $contenu='Madame, Monsieur,<br>
                 L"inscription de votre fils/fille '.$eleve['name'].' ' .$eleve['lastname']. ' à AlManahel est validée.'.'<br>';
                  
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from ,$fromname   ) {
@@ -353,7 +366,7 @@ if(empty($parent))
  Inscription::where('id', $ins['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"],'valide'  => 1]);
  $id=$inscriptionv['id'];
         $to=trim('betboutsaida@yahoo.fr');
-        $type='notif demande Pré-inscription';
+        $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
         $contenu="Bonjour,<br>
@@ -365,8 +378,8 @@ if(empty($parent))
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-        $to=trim('zilimounir@yahoo.fr');
-        $type='notif demande Pré-inscription';
+        $to=trim('lyceealmanahel@gmail.com');
+        $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
         $contenu="Bonjour,<br>
@@ -378,8 +391,21 @@ if(empty($parent))
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-        $to=trim('letaief_med_ali@yahoo.fr');
-        $type='notif demande Pré-inscription';
+        $to=trim('ce.almanahel@gmail.com');
+        $type='notif demande inscription';
+        //$nomp=$parent->name. ' '.$parent->lastname ;
+        $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
+        $contenu="Bonjour,<br>
+        Nous vous informons que l'Élève ".$inscriptionv['prenom']." ". $inscriptionv['nom']." a été inscit dans votre Lycée <br>
+          Le lien de l'inscription : <a href='http://lyceealmanahel.com/inscriptionsv/view/$id'>voir le lien</a>";
+        
+        
+        $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+        $request = new Request($data);
+        //\App\Http\Controllers\EnvoyesController::sendnotif($request);
+         app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
+          $to=trim('contact@lyceealmanahel.com');
+        $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
         $contenu="Bonjour,<br>

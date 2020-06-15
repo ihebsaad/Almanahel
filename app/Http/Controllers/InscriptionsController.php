@@ -118,7 +118,7 @@ $pathb = storage_path()."/fichiers/";
 
         $Inscription->save();
         $id=$Inscription ['id'];
-        $to=trim('letaief_med_ali@yahoo.fr');
+        $to=trim('lyceealmanahel@gmail.com');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
@@ -131,8 +131,8 @@ $pathb = storage_path()."/fichiers/";
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-           $to=trim('betboutsaida@yahoo.fr');
-        $type='notif demande inscription';
+           $to=trim('contact@lyceealmanahel.com');
+        $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
@@ -144,8 +144,21 @@ $pathb = storage_path()."/fichiers/";
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-           $to=trim('zilimounir@yahoo.fr');
-        $type='notif demande inscription';
+           $to=trim('ce.almanahel@gmail.com');
+        $type='notif demande Pré-inscription';
+        //$nomp=$parent->name. ' '.$parent->lastname ;
+        $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
+        $contenu="Bonjour,<br>
+        Nous vous informons que l'Élève ".$Inscription['prenom']." ".$Inscription['nom']." a envoyé une demande de Pré-inscription <br>
+        Le lien de la préinscription : <a href='http://lyceealmanahel.com/inscriptions/view/$id'>voir le lien</a>";
+        
+        
+        $data=array('destinataire'=>$to,'sujet'=>$sujet,'contenu'=>$contenu,'type'=>$type);
+        $request = new Request($data);
+        //\App\Http\Controllers\EnvoyesController::sendnotif($request);
+         app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
+            $to=trim('betboutsaida@yahoo.fr');
+        $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
         $contenu="Bonjour,<br>
@@ -387,7 +400,7 @@ Mail::setSwiftMailer($swiftMailer);
 
          $to=$inscription["email_rep"];
          $sujet="AlManahel Academy - la préinscription de votre fils/fille ".$inscription['prenom']." " .$inscription['nom']." est validée";
-          $contenu='Bonjour ,'.$inscription['prenom_rep'].' '.$inscription['nom_rep'].'<br>
+          $contenu='Madame, Monsieur,<br>
                On a le plaisir de vous informer que la demande de pré-inscription de votre fils/fille au lycée Al-Manahel  a été acceptée. Pour que votre fils/fille soit inscrit à notre établissement il faudrait :'.'<br>'.'<br>'.'I- Joindre les documents suivants:'.'<br>'.'<br>'.'1.  Le formulaire d"inscription rempli et signé. '.'<br>'.'2. Le règlement intérieur du lycée signé. '.'<br>'.'3. Un acte d"état civil de moins de 3 mois'.'<br>'.'4. 5 enveloppes portant l"adresse du parent, timbrées (4 timbres pour des envois postaux normaux et un timbre pour un envoi recommandé)'.'<br>'.'5.  Cinq (5) photos'.'<br>'.'6. Une copie de la carte d"identité nationale du parent'.'<br>'.'7.  Demande d"inscription à la garderie (pour ceux qui le souhaitent). Le formulaire d"inscription, le règlement intérieur et la demande d"inscription à la garderie peuvent être téléchargés à partir du site web'.'<a href="https://lyceealmanahel.com/"> Al Manahel Academy,</a>'.'comme ils peuvent être retirés auprès du  secrétariat du lycée.'.'<br>'.'<br>'.'II- Déposer le dossier complet au secrétariat  du lycée. '.'<br>'.'<br>'.'Au plaisir de voir votre fils/fille  parmi nous au sein du lycée Al-Manahel.'.'<br>'.'<br>'.'Cordialement.'.'<br>'.'Direction pédagogique du lycée Al-Manahel';
                   
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu, $from ,$fromname ) {

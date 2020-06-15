@@ -17,7 +17,7 @@ class EnvoyesController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except' => ['sendmessage','sendmessagef','sendnotif','sending']]);
     }
 
     /**
@@ -127,7 +127,7 @@ $user = auth()->user();
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='almanahelacademy@gmail.com';
+		$from='lyceealmanahel@gmail.com';
 		$fromname='Almanahel Academy';
 		
 		
@@ -361,7 +361,7 @@ $user = auth()->user();
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='almanahelacademy@gmail.com';
+		$from='lyceealmanahel@gmail.com';
 		$fromname='Almanahel Academy';
         
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
@@ -421,10 +421,10 @@ $user = auth()->user();
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='almanahelacademy@gmail.com';
+		$from='lyceealmanahel@gmail.com';
 		$fromname='Almanahel Academy';
         
-		$dests = array("ihebsaad@gmail.com", "ce.almanahel@gmail.com" );
+		$dests = array('ihebsaad@gmail.com', 'ce.almanahel@gmail.com', 'betboutsaida@yahoo.fr' ,'lyceealmanahel@gmail.com' ,  'contact@lyceealmanahel.com' );
 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message
@@ -498,10 +498,10 @@ $user = auth()->user();
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='almanahelacademy@gmail.com';
+		$from='lyceealmanahel@gmail.com';
 		$fromname='Almanahel Academy';
         
-				$dests = array("ihebsaad@gmail.com", "ce.almanahel@gmail.com" );
+		$dests = array('ihebsaad@gmail.com', 'ce.almanahel@gmail.com', 'contact@lyceealmanahel.com' );
 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message

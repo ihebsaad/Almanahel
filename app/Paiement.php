@@ -11,7 +11,8 @@ class Paiement extends Model
  'montant',
  'libelle',
   'details',
-  'annee'
+  'annee',
+  'autre'
  ];
  
 }

@@ -34,8 +34,8 @@
 			   <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
 
                 <div class="form-group">
-                    <label for="eleve">Elève:</label>
-                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;padding:" >
+                    <label for="eleve">Elève Inscrit:</label>
+                    <select id="eleve" type="number" class="form-control  " name="eleve"  style="height:38px;" onchange="verif();" >
 					<option></option>
 					<?php $eleves= \App\User::where('user_type','eleve')->get(); 
 						foreach($eleves as $el)
@@ -46,10 +46,14 @@
 					?>
 					</select>
                 </div>		
+                <div class="form-group"  id="divautre">
+                    <label for="autre">Autre:</label>
+                    <input id="autre" type="text" class="form-control" name="autre"/>
+                </div>
                 <div class="form-group">
                     <label for="libelle">Libellé:</label>
                     <input id="libelle" type="text" class="form-control" name="libelle"/>
-                </div>						
+                </div>					
                 <div class="form-group">
                     <label for="montant">Montant(dt):</label>
                     <input id="montant" type="number" min="0" step="0.1" class="form-control" name="montant"/>
@@ -70,6 +74,20 @@
             </form>
         </div>
     </div>
+	<script>
+	function verif()
+	{
+	  var eleve = document.getElementById("eleve").value;
+ if(type!="")
+{
+document.getElementById('divautre').style.display = 'block'; 
+}
+else
+{
+document.getElementById('divautre').style.display = 'none'; 
+}
+	}
+	</script>
 @endsection
  
 

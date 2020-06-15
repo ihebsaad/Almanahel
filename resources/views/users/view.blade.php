@@ -325,7 +325,7 @@ return 'Pas de résultats';
         // } else {
 
         // }
-    }*/
+    }
     $('#eleve').select2({
             filter: true,
             language: {

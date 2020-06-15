@@ -73,36 +73,7 @@ $user_type=$cuser->user_type;
              
           
  
-       <?php if( $user->user_type!='admin' && $user->user_type!='eleve' && $user->user_type!='prof' && $user->user_type!='parent'   ) { ?>
-
-         <label for="user_type">Droits d'accès:</label>
-
-
-            <div id="directionscolarite" class="form-group" style="<?php if($user->user_type=='membre') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-direction"  type="checkbox"    id="direction"    <?php if ($user->direction ==1){echo 'checked  value="0"   '; }else{echo ' value="1" ' ;}  ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Direction et scolarité</label>
-            </div>
-
-            <div id="directionfinanciere" class="form-group" style="<?php if($user->user_type=='financier') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-finances"  type="checkbox"    id="finances"    <?php if ($user->finances ==1){echo 'checked  value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Direction financière</label>
-            </div>
-            
-            <div id="conseilpilotage" class="form-group" style="<?php if($user->user_type=='conseil') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-conseil"  type="checkbox"    id="conseil"    <?php if ($user->conseil ==1){echo 'checked  value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Conseil de pilotage</label>
-            </div>
-
-            <div id="suivipedagogique" class="form-group" style="<?php if($user->user_type=='suivi') {echo 'display:none';}?>">
-            <label><span class="checked">
-                            <input  class="user-suvi"  type="checkbox"    id="suivi"    <?php if ($user->suivi ==1){echo 'checked value="0" '; }else{echo ' value="1" ' ;}    ?>  onclick="changing(this,'<?php echo $user->id; ?>' );"      >
-              </span> Suivi pédagogique</label>
-            </div>
- 
-       <?php }  ?>
+       
 
         
 <?php if($user->user_type=='eleve') {?>

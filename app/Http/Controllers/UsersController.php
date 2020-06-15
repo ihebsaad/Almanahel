@@ -271,7 +271,7 @@ public function view($id)
     )
     );  
      if($request->get('password')!="")
-    {User::where('id', $id)->update(array('password' => trim($request->get('password'))));}}
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));}}
        if($usertype=="parent")
         {
      User::where('id',$id)->update(
@@ -289,7 +289,7 @@ public function view($id)
     )
     ); 
      if($request->get('password')!="")
-    {User::where('id', $id)->update(array('password' => trim($request->get('password'))));} }
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));} }
       if($usertype=="prof")
         {
      User::where('id',$id)->update(
@@ -307,7 +307,7 @@ public function view($id)
     )
     );  
   if($request->get('password')!="")
-    {User::where('id', $id)->update(array('password' => trim($request->get('password'))));}}
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));}}
       if($usertype=="suivi" || $usertype=="financier"|| $usertype=="membre" || $usertype=="conseil" | $usertype=="admin")
         {
      User::where('id',$id)->update(
@@ -324,7 +324,7 @@ public function view($id)
     )
     ); 
      if($request->get('password')!="")
-    {User::where('id', $id)->update(array('password' => trim($request->get('password'))));} }
+    {User::where('id', $id)->update(array('password' => bcrypt(trim($request->get('password')))));} }
 
       
      

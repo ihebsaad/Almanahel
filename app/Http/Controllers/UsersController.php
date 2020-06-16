@@ -158,6 +158,7 @@ class UsersController extends Controller
         $user = new User([
             'name' => $request->get('name'),
             'lastname' => $request->get('lastname'),
+            'email' => $request->get('email'),
                 'username' => $request->get('username'),
                'user_type'=> $request->get('user_type'),
                'password'=>  bcrypt($request->get('password')),

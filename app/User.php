@@ -5,7 +5,7 @@ namespace App;
  use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
 use Illuminate\Support\Facades\Cache;
-
+use Noifiable;
 class User extends Authenticatable
 {
  

@@ -41,7 +41,7 @@ $cont2 =  App\Contenu::where('zone', 'home2')->first();$contenu2=$cont2->contenu
        <div class="form-group ">
                     <label for="contenu">Contenu:</label>
                     <div class="editor" >
-                        <textarea style="min-height: 380px;"  id="home2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home2" required  ><?php echo $contenu2; ?></textarea>
+                        <textarea style="min-height: 380px;"  id="home2" type="text"  class="textarea tex-com" placeholder="Contenu ici" name="home2"    ><?php echo $contenu2; ?></textarea>
                     </div>
          </div>
 
@@ -76,7 +76,7 @@ $cont2 =  App\Contenu::where('zone', 'home2')->first();$contenu2=$cont2->contenu
       <input  type='file' id="imgInp" name="imgInp"  />
        </div>
     </div>
-	      <input  type='hidden' id="home" name="home" value="1" />
+	      <input  type='hidden'   name="home" value="1" />
 
    <div class="col">
      <div class="form-group">

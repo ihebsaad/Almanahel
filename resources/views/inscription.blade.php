@@ -484,7 +484,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 </div> 
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
  <script type="text/javascript">
  	function clubverif()

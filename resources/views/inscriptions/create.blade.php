@@ -343,6 +343,7 @@
 
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script>
  $('#test').prop('disabled', false);
 function checkMail()

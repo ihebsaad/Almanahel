@@ -711,7 +711,7 @@ public  function createparent(Request $request)
      public static function checkexiste2(Request $request)
     {
         $val =  trim($request->get('val'));
-      $id =  trim($request->get('id'));
+      $id =  trim($request->get('iduser'));
      $count =  User::where('email', $val)
               -> where('id', '!=' , $id)
                ->count();

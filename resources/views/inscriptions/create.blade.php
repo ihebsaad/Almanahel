@@ -558,7 +558,7 @@ return false;
                     document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
                     $('#test').prop('disabled', true);
-                     string='Élève existe avec ce mail ! ';
+                     string='Utilisateur existe avec ce mail ! ';
                     
                    // alert(string);  
                     Swal.fire({

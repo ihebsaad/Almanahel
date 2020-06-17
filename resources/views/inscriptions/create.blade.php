@@ -32,7 +32,7 @@
     <div class="col">
        <label  for="email">E-mail: </label>
          <label id="alert8" style="display:none; color:red;">L'adresse E-mail est invalide</label>
-       <input   required  class="form-control" type="text" name="email" id="email" onchange="validation()" />
+       <input   required  class="form-control" type="text" name="email" id="email" onchange="validation();checkexiste(this) " />
 
     </div>
 </div>
@@ -539,6 +539,40 @@ document.getElementById("email_rep").value  = "";
 }
 return false;
 }
+ function checkexiste( elm) {
+        var id=elm.id;
+        var val =document.getElementById(id).value;
+        //  var type = $('#type').val();
+        //if ( (val != '')) {
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: "{{ route('inscriptions.checkexiste') }}",
+            method: "POST",
+            data: {   val:val, _token: _token},
+            success: function (data) {
+               parsed = JSON.parse(data);
+    
+                if(data>0){
+                     
+                    document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                    $('#test1').prop('disabled', true);
+                     string='Élève existe avec ce mail ! ';
+                    
+                   // alert(string);  
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Existe ...',
+                        html: string
+                    });                
+                }
+                 else
+                  {  $('#test1').prop('disabled', false);}
+            }
+        });
+        // } else {
+        // }
+    }
 </script>
 
 

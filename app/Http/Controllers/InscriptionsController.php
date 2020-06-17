@@ -512,7 +512,16 @@ Mail::setSwiftMailer($swiftMailer);
      return $count;
 
     }
- 
+  public static function checkexiste(Request $request)
+    {
+        $val =  trim($request->get('val'));
+     
+     $count =  User::where('email', $val)
+               ->count();
+
+     return $count;
+
+    }
 
 
 }

@@ -252,7 +252,7 @@ $user_type=$cuser->user_type;
  <?php } ?> 
 
     <div class="form-group ">
-      <button  type="submit"  class="btn btn-primary">Enregistrer</button>
+      <button  type="submit" id="test" class="btn btn-primary">Enregistrer</button>
              </div>
        
  

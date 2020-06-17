@@ -77,7 +77,7 @@ $user_type=$cuser->user_type;
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input  autocomplete="off"   id="email" type="email" class="form-control" name="email" onchange="checkexiste3()" >
+                                <input  autocomplete="off"   id="email" type="email" class="form-control" name="email" onchange="checkexiste3(this)" >
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">

@@ -546,7 +546,7 @@ return false;
         //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();
         $.ajax({
-            url: "{{ route('inscriptions.checkexiste') }}",
+            url: "{{ route('inscriptions.checkexiste2') }}",
             method: "POST",
             data: {   val:val, _token: _token},
             success: function (data) {
@@ -556,7 +556,7 @@ return false;
                      
                     document.getElementById(id).style.background='white';
                     document.getElementById(id).style.color='black';
-                    $('#test1').prop('disabled', true);
+                    $('#test').prop('disabled', true);
                      string='Élève existe avec ce mail ! ';
                     
                    // alert(string);  
@@ -567,7 +567,7 @@ return false;
                     });                
                 }
                  else
-                  {  $('#test1').prop('disabled', false);}
+                  {  $('#test').prop('disabled', false);}
             }
         });
         // } else {

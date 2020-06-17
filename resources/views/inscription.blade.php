@@ -460,7 +460,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					   </fieldset>
 					    <div class="row form-group" style="margin-top:20px;margin-bottom:20px">
                             <div class="col">
-                                <button type="submit" class="btn btn-primary btn-preinscrit">
+                                <button type="submit" id="test" class="btn btn-primary btn-preinscrit">
                                    Je valide la demande de pré-inscription
                                 </button>
                             </div>

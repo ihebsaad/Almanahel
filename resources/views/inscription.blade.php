@@ -204,7 +204,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						<div class="col">
 					       <label for="email">E-mail : </label>
 					          <label id="alert8" style="display:none; color:red;">L'adresse E-mail est invalide</label>
-					       <input required class="form-control" type="text" name="email" id="email" onchange="validation()" />
+					       <input required class="form-control" type="text" name="email" id="email" onchange="validation();checkexiste2(this) "  />
 					   </div>
 					 	<div class="col">
 					       <label for="reemail">Confirmez E-mail : </label>
@@ -655,6 +655,40 @@ closeText: 'Fermer',
             dateFormat: "dd/mm/yy"   
 			});
 });
+   function checkexiste2( elm) {
+        var id=elm.id;
+        var val =document.getElementById(id).value;
+        //  var type = $('#type').val();
+        //if ( (val != '')) {
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: "{{ route('inscriptions.checkexiste2') }}",
+            method: "POST",
+            data: {   val:val, _token: _token},
+            success: function (data) {
+               parsed = JSON.parse(data);
+    
+                if(data>0){
+                     
+                    document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                    $('#test').prop('disabled', true);
+                     string='Utilisateur existe avec ce mail ! ';
+                    
+                   // alert(string);  
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Existe ...',
+                        html: string
+                    });                
+                }
+                 else
+                  {  $('#test').prop('disabled', false);}
+            }
+        });
+        // } else {
+        // }
+    }
 
  </script>
 @endsection

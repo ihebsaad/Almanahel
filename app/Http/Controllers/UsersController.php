@@ -708,6 +708,17 @@ public  function createparent(Request $request)
                 'prof' => $prof]
             )->delete();
     }
+     public static function checkexiste2(Request $request)
+    {
+        $val =  trim($request->get('val'));
+      $id =  trim($request->get('id'));
+     $count =  User::where('email', $val)
+              -> where('id', '!=' , $id)
+               ->count();
+
+     return $count;
+
+    }
 
 
  }

@@ -196,6 +196,7 @@ Route::post('/users/removeclasse1','UsersController@removeclasse1')->name('users
 Route::get('/users/destroy/{id}', 'UsersController@destroy');
 Route::post('/users/edit/', 'UsersController@edit')->name('users.edit');
 Route::post('/users/edit1/', 'UsersController@edit1')->name('users.edit1');
+Route::post('/users/checkexiste2', 'UsersController@checkexiste2')->name('users.checkexiste2');
 
 /****  Contenus  *****/
 

@@ -112,7 +112,7 @@
             <option value="ancien">Ancien élève dans la plateforme  </option>
         </select>
  </div>
-<div id="ancien_box" style="display:none">
+<div id="ancien_box" style="visibility:hidden">
    <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsadd') }}">
       {{ csrf_field() }}
     
@@ -147,7 +147,7 @@
   </div>
                       
 
-<div id="nouveau_box" style="display:none">
+<div id="nouveau_box" style="visibility:hidden">
      <form class="form-horizontal" method="POST" action="{{ route('inscriptionsv.inscriptionsaddnov') }}">
          {{ csrf_field() }}
    <div class="form-group " >
@@ -187,19 +187,19 @@ function eleveverif()
   var eleve = document.getElementById("elevestat").value;
  if(eleve=="nouveau")
 {
-document.getElementById('nouveau_box').style.display = 'block'; 
+document.getElementById('nouveau_box').style.visibility = 'visible'; 
 }
 else
 {
-document.getElementById('nouveau_box').style.display = 'none'; 
+document.getElementById('nouveau_box').style.visibility = 'hidden'; 
 }
 if(eleve=="ancien")
 {
-document.getElementById('ancien_box').style.display = 'block'; 
+document.getElementById('ancien_box').style.visibility = 'visible'; 
 }
 else
 {
-document.getElementById('ancien_box').style.display = 'none'; 
+document.getElementById('ancien_box').style.visibility = 'hidden'; 
 }
  
 }

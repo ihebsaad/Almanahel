@@ -681,7 +681,7 @@ $('#classe').select2({
         function checkexiste2( elm) {
         var id=elm.id;
         var val =document.getElementById(id).value;
-        var id =document.getElementById(idins).value;
+        var id =document.getElementById(iduser).value;
         //  var type = $('#type').val();
         //if ( (val != '')) {
         var _token = $('input[name="_token"]').val();

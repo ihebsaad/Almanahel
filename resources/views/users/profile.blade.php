@@ -52,7 +52,7 @@ $user_type=$cuser->user_type;
                  </div>
                 <div class="form-group">
                     <label for="email">Adresse Email:</label>
-               <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}"/>                 
+               <input id="email" autocomplete="off"  type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" onchange="checkexiste2(this) "/>                 
                </div>
    
      <div class="form-group">
@@ -187,7 +187,7 @@ $user_type=$cuser->user_type;
  <?php } ?> 
 
     <div class="form-group ">
-      <button  type="submit"  class="btn btn-primary">Enregistrer</button>
+      <button  type="submit"  id="test" class="btn btn-primary">Enregistrer</button>
              </div>
        
  
@@ -209,6 +209,8 @@ $user_type=$cuser->user_type;
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 
 <script>
 
@@ -612,6 +614,41 @@ $('#classe').select2({
             dateFormat: "dd/mm/yy"
                 });
 });
+         function checkexiste2( elm) {
+        var id=elm.id;
+        var val =document.getElementById(id).value;
+        var iduser = $('#iduser').val();
+        //  var type = $('#type').val();
+        //if ( (val != '')) {
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: "{{ route('users.checkexiste2') }}",
+            method: "POST",
+            data: {   val:val, _token: _token,id:id},
+            success: function (data) {
+               parsed = JSON.parse(data);
+    
+                if(data>0){
+                     
+                    document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                    $('#test').prop('disabled', true);
+                     string='Autre utilisateur existe avec ce mail ! ';
+                    
+                   // alert(string);  
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Existe ...',
+                        html: string
+                    });                
+                }
+                 else
+                  {  $('#test').prop('disabled', false);}
+            }
+        });
+        // } else {
+        // }
+    }
 
 </script>
 

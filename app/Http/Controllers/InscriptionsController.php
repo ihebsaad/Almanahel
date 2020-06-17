@@ -512,7 +512,7 @@ Mail::setSwiftMailer($swiftMailer);
      return $count;
 
     }
-  public static function checkexiste(Request $request)
+  public static function checkexiste2(Request $request)
     {
         $val =  trim($request->get('val'));
      

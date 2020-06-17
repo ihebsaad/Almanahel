@@ -245,7 +245,7 @@ Route::post('/inscriptions/checkexiste', 'InscriptionsController@checkexiste')->
 Route::post('/inscriptions/inscriptionsadd', 'InscriptionsController@inscriptionsadd')->name('inscriptions.inscriptionsadd');
 Route::post('/inscriptions/checkexiste1', 'InscriptionsController@checkexiste1')->name('inscriptions.checkexiste1');
 Route::get('/inscriptions/annee/{annee}', 'InscriptionsController@annee')->name('inscriptions.annee');
-Route::post('/inscriptions/checkexiste', 'InscriptionsController@checkexiste')->name('inscriptions.checkexiste');
+Route::post('/inscriptions/checkexiste2', 'InscriptionsController@checkexiste2')->name('inscriptions.checkexiste2');
 
 
  /*** Inscriptions **/

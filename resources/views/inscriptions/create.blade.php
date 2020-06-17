@@ -32,7 +32,7 @@
     <div class="col">
        <label  for="email">E-mail: </label>
          <label id="alert8" style="display:none; color:red;">L'adresse E-mail est invalide</label>
-       <input   required  class="form-control" type="text" name="email" id="email" onchange="validation();checkexiste(this) " />
+       <input   required  class="form-control" type="text" name="email" id="email" onchange="validation();checkexiste2(this) " />
 
     </div>
 </div>
@@ -539,7 +539,7 @@ document.getElementById("email_rep").value  = "";
 }
 return false;
 }
- function checkexiste( elm) {
+ function checkexiste2( elm) {
         var id=elm.id;
         var val =document.getElementById(id).value;
         //  var type = $('#type').val();

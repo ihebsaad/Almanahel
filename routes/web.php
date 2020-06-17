@@ -197,7 +197,7 @@ Route::get('/users/destroy/{id}', 'UsersController@destroy');
 Route::post('/users/edit/', 'UsersController@edit')->name('users.edit');
 Route::post('/users/edit1/', 'UsersController@edit1')->name('users.edit1');
 Route::post('/users/checkexiste2', 'UsersController@checkexiste2')->name('users.checkexiste2');
-
+Route::post('/users/checkexiste3', 'UsersController@checkexiste3')->name('users.checkexiste3');
 /****  Contenus  *****/
 
 Route::get('/contenuhome', array('as' => 'contenuhome','uses' => 'HomeController@contenu_home'));

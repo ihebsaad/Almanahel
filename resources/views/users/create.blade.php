@@ -77,7 +77,7 @@ $user_type=$cuser->user_type;
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input  autocomplete="off"   id="email" type="email" class="form-control" name="email"  >
+                                <input  autocomplete="off"   id="email" type="email" class="form-control" name="email" onchange="checkexiste3()" >
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -139,5 +139,43 @@ $user_type=$cuser->user_type;
 
 
 </style>
-
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script>
+     function checkexiste3( elm) {
+        var id=elm.id;
+        var val =document.getElementById(id).value;
+        //  var type = $('#type').val();
+        //if ( (val != '')) {
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: "{{ route('users.checkexiste3') }}",
+            method: "POST",
+            data: {   val:val, _token: _token},
+            success: function (data) {
+               parsed = JSON.parse(data);
+    
+                if(data>0){
+                     
+                    document.getElementById(id).style.background='white';
+                    document.getElementById(id).style.color='black';
+                    $('#test').prop('disabled', true);
+                     string='Utilisateur existe avec ce mail ! ';
+                    
+                   // alert(string);  
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Existe ...',
+                        html: string
+                    });                
+                }
+                 else
+                  {  $('#test').prop('disabled', false);}
+            }
+        });
+        // } else {
+        // }
+    }
+</script>
+</script>
 @endsection 

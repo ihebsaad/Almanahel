@@ -688,7 +688,7 @@ $('#classe').select2({
         $.ajax({
             url: "{{ route('users.checkexiste2') }}",
             method: "POST",
-            data: {   val:val, _token: _token,id:id},
+            data: {   val:val, _token: _token,iduser:iduser},
             success: function (data) {
                parsed = JSON.parse(data);
     

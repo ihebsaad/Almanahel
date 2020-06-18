@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 
 namespace Illuminate\Auth\Notifications;
 
@@ -45,8 +45,8 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('Vous recevez cet e-mail car nous avons reÁu une demande de rÈinitialisation de mot de passe pour votre compte.')
-            ->action('RÈinitialiser le mot de passe', url(config('app.url').route('password.reset', $this->token, false)))
-            ->line('Si vous n\'avez pas demandÈ de rÈinitialisation de mot de passe, ignorez cet email.');
+            ->line('Vous recevez cet e-mail car nous avons re√ßu une demande de r√©initialisation de mot de passe pour votre compte.')
+            ->action('R√©initialiser le mot de passe', url(config('app.url').route('password.reset', $this->token, false)))
+            ->line('Si vous n\'avez pas demand√© de r√©initialisation de mot de passe, ignorez cet email.');
     }
 }

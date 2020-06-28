@@ -166,7 +166,18 @@ class UsersController extends Controller
         ]);
 
         $user->save();
-        return redirect('/users')->with('success', ' ajouté avec succès');
+        $usertype=$user['user_type'];
+        if($usertype=='eleve')
+            { return redirect('/eleves')->with('success', ' ajouté avec succès');}
+         else if($usertype=='prof')
+        {return redirect('/profs')->with('success', ' ajouté avec succès');} 
+         else if($usertype=='parent')
+             { return redirect('/parents')->with('success', ' ajouté avec succès');}
+             else if($usertype=="suivi" ||$usertype=="financier"||$usertype=="membre" || $usertype=="conseil" | $usertype=="admin")
+             { return redirect('/personnels')->with('success', ' ajouté avec succès');}
+         else{return redirect('/users')->with('success', ' ajouté avec succès');}
+
+       
 
     }
 

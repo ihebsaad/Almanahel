@@ -491,6 +491,7 @@ public function view($id)
     public function destroy($id)
     {
         $user = User::find($id);
+        $usertype=$user['user_type'];
         $user->delete();
          Paiement::where('eleve', $id)->delete();
           Retard::where('eleve', $id)->delete();
@@ -498,7 +499,16 @@ public function view($id)
             Inscriptionv::where('ideleve', $id)->delete();
             DB::table('eleves_classe')->where('eleve' , $id)->delete();
              DB::table('parents_eleve')->where('eleve' , $id)->delete();
-        return redirect('/users')->with('success', '  supprimé avec succès');
+             if($usertype=='eleve')
+             { return redirect('/eleves')->with('success', '  supprimé avec succès');}
+         else if($usertype=='prof')
+             { return redirect('/profs')->with('success', '  supprimé avec succès');}
+         else if($usertype=='parent')
+             { return redirect('/parents')->with('success', '  supprimé avec succès');}
+             else if($usertype=="suivi" ||$usertype=="financier"||$usertype=="membre" || $usertype=="conseil" | $usertype=="admin")
+             { return redirect('/personnels')->with('success', '  supprimé avec succès');}
+         else{ return redirect('/users')->with('success', '  supprimé avec succès');}
+       
     }
 
 

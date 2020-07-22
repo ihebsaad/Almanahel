@@ -398,9 +398,9 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 						 <div class="col">
        <label  for="bulletin1">Les deux derniers Bulletins de notes de la dernière année d'études: </label>
         <label id="alert2" style="display:none; color:red;">La taille de fichier 1 dépasse la taille maximale</label>
-       <input  required  accept="image/png, image/jpeg,image/jpg,.pdf" type="file" name="bulletin1" id="bulletin1" class="form-control" onchange="checktaillebull1()"/>
+       <input   accept="image/png, image/jpeg,image/jpg,.pdf" type="file" name="bulletin1" id="bulletin1" class="form-control" onchange="checktaillebull1()"/>
                <label id="alert3" style="display:none; color:red;">La taille de fichier 2 dépasse la taille maximale</label>
-       <input  required  type="file"  accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin2" id="bulletin2" class="form-control" onchange="checktaillebull2()" />
+       <input   type="file"  accept="image/png, image/jpeg,image/jpg,.pdf"  name="bulletin2" id="bulletin2" class="form-control" onchange="checktaillebull2()" />
  
   
        </div>

@@ -122,12 +122,12 @@ $user = auth()->user();
  
 	
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='lyceealmanahel@gmail.com';
+		$from='almanahelmonastir@gmail.com';
 		$fromname='Almanahel Academy';
 		
 		
@@ -356,12 +356,12 @@ $user = auth()->user();
 	 } else{$id=0;}
 
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='lyceealmanahel@gmail.com';
+		$from='almanahelmonastir@gmail.com';
 		$fromname='Almanahel Academy';
         
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {
@@ -416,15 +416,15 @@ $user = auth()->user();
 			Message: '.$mess.'<br>';
  
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='lyceealmanahel@gmail.com';
+		$from='almanahelmonastir@gmail.com';
 		$fromname='Almanahel Academy';
         
-		$dests = array('ihebsaad@gmail.com', 'ce.almanahel@gmail.com', 'betboutsaida@yahoo.fr' ,'lyceealmanahel@gmail.com' ,  'contact@lyceealmanahel.com' );
+		$dests = array('ihebsaad@gmail.com', 'ce.almanahel@gmail.com', 'betboutsaida@yahoo.fr' ,'almanahelmonastir@gmail.com' ,  'contact@lyceealmanahel.com' );
 
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname ,$dests   ) {
                 $message
@@ -493,12 +493,12 @@ $user = auth()->user();
 			Message: '.$mess.'<br>';
  
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='lyceealmanahel@gmail.com';
+		$from='almanahelmonastir@gmail.com';
 		$fromname='Almanahel Academy';
         
 		$dests = array('ihebsaad@gmail.com', 'ce.almanahel@gmail.com', 'contact@lyceealmanahel.com' );

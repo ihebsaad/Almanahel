@@ -118,7 +118,7 @@ $pathb = storage_path()."/fichiers/";
 
         $Inscription->save();
         $id=$Inscription ['id'];
-        $to=trim('lyceealmanahel@gmail.com');
+        $to=trim('almanahelmonastir@gmail.com');
         $type='notif demande Pré-inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification - demande de Pré-inscription ".$Inscription['prenom']." ".$Inscription['nom']." ";
@@ -369,7 +369,7 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
          
 
         $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
@@ -391,7 +391,7 @@ if( ($request->get('eleve'))!=null) { $inscription->eleve = $request->get('eleve
             });
 
      $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
 Mail::setSwiftMailer($swiftMailer);

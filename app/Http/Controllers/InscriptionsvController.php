@@ -94,7 +94,7 @@ class InscriptionsvController extends Controller
            $inscriptionv->save();
           
  $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
@@ -115,7 +115,7 @@ class InscriptionsvController extends Controller
 
             });
         $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
@@ -149,7 +149,7 @@ class InscriptionsvController extends Controller
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-              $to=trim('lyceealmanahel@gmail.com');
+              $to=trim('almanahelmonastir@gmail.com');
         $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";
@@ -269,7 +269,7 @@ $pass1=InscriptionsvController::genererMDP(8);
                   $eleve->save();
 
         $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
@@ -311,7 +311,7 @@ if(empty($parent))
         ]);
         $parent->save();
                 $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
@@ -335,7 +335,7 @@ if(empty($parent))
             }); }
              else{
                 $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('lyceealmanahel@gmail.com'); //adresse email
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         $swiftMailer = new Swift_Mailer($swiftTransport);
          Mail::setSwiftMailer($swiftMailer);
@@ -378,7 +378,7 @@ if(empty($parent))
         $request = new Request($data);
         //\App\Http\Controllers\EnvoyesController::sendnotif($request);
          app('\App\Http\Controllers\EnvoyesController')->sendnotif($request);
-        $to=trim('lyceealmanahel@gmail.com');
+        $to=trim('almanahelmonastir@gmail.com');
         $type='notif demande inscription';
         //$nomp=$parent->name. ' '.$parent->lastname ;
         $sujet="Notification -inscription ".$inscriptionv['prenom']." ". $inscriptionv['nom']." ";

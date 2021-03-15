@@ -2,6 +2,7 @@
 
     <link href="{{ asset('public/js/select2/css/select2.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/js/select2/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+       <?php use \App\Http\Controllers\UsersController;     ?>
 <?php
 
 
@@ -13,6 +14,13 @@
 $cuser = auth()->user();
  $iduser=$cuser->id;
 $user_type=$cuser->user_type;
+ $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+ UsersController::countPaiements($id,$annee);
+ UsersController::countRetards($id,$annee);
+ UsersController::countAbsences($id,$annee);
 } 
   ?>
 
@@ -30,7 +38,7 @@ $user_type=$cuser->user_type;
         {{ csrf_field() }}
 
 
-        <?php use \App\Http\Controllers\UsersController;     ?>
+ 
 
 
         <input type="hidden" id="iduser" value="{{$id}}" name="id" />

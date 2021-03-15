@@ -355,7 +355,7 @@ $user = auth()->user();
 		$id=Auth::id();
 	 } else{$id=0;}
 
- $swiftTransport =  new \Swift_SmtpTransport( 'smtp.ionos.fr', '587', 'tls');
+ $swiftTransport =  new \Swift_SmtpTransport( 'ssl0.ionos.fr', '587', 'ssl');
         $swiftTransport->setUsername('contact@lyceealmanahel.com'); //adresse email
         $swiftTransport->setPassword('Almanahel2020!'); // mot de passe email
 		

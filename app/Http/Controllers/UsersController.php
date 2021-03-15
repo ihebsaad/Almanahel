@@ -197,9 +197,9 @@ public function view($id)
     $mois=intval($month);
     $annee=intval($year);
     if($mois > 9 ){$annee=$annee-1;}
-    $this->countPaiements($id,$annee);
-    $this->countRetards($id,$annee);
-    $this->countAbsences($id,$annee);
+    //$this->countPaiements($id,$annee);
+   // $this->countRetards($id,$annee);
+    //$this->countAbsences($id,$annee);
 
     $relations = DB::table('parents_eleve')->select('eleve')
             ->where('parent','=',$id)

@@ -355,13 +355,13 @@ $user = auth()->user();
 		$id=Auth::id();
 	 } else{$id=0;}
 
- $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
-        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
-        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
+ $swiftTransport =  new \Swift_SmtpTransport( 'smtp.ionos.fr', '25', 'tls');
+        $swiftTransport->setUsername('contact@lyceealmanahel.com'); //adresse email
+        $swiftTransport->setPassword('Almanahel2020!'); // mot de passe email
 		
         $swiftMailer = new Swift_Mailer($swiftTransport);
 		Mail::setSwiftMailer($swiftMailer);
-		$from='almanahelmonastir@gmail.com';
+		$from='contact@lyceealmanahel.com';
 		$fromname='Almanahel Academy';
         
              Mail::send([], [], function ($message) use ($to,$sujet, $contenu,$from,$fromname    ) {

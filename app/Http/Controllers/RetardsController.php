@@ -262,7 +262,12 @@ $user_type=$user->user_type;
     public function destroy($id)
     {
         $retards = Retard::find($id);
+        $eleve=$retards->eleve;
         $retards->delete();
+           $count=Retard::where('eleve', $eleve)
+    ->where('annee',$annee)
+    ->count();
+     User::where('id', $eleve)->update(array('retards' => $count));
 
         return redirect('/retards')->with('success', '  Supprimé avec succès');
     }

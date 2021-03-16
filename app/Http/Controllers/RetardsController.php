@@ -160,6 +160,11 @@ $user_type=$user->user_type;
         ]);
 
         $retards->save();
+         $count=Retard::where('eleve', $eleve)
+    ->where('annee',$annee)
+    ->count();
+    
+     User::where('id', $user)->update(array('retards' => $count));
         return redirect('/retards')->with('success', ' ajouté avec succès');
 
     }

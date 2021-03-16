@@ -74,13 +74,14 @@ class PaiementsController extends Controller
              'annee' => $annee ,
               
         ]);
+        
+        $paiement->save();
          $count=Paiement::where('eleve', $eleve)
     ->where('annee',$annee)
     ->sum('montant');
     
      User::where('id', $eleve)->update(array('totalpaiement' => $count));
 
-        $paiement->save();
         return redirect('/paiements')->with('success', ' ajouté avec succès');
 
     }

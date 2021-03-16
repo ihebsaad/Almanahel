@@ -162,6 +162,11 @@ $user_type=$user->user_type;
         ]);
 
         $absences->save();
+         $count=Absence::where('eleve', $eleve)
+    ->where('annee',$annee)
+    ->count();
+    
+     User::where('id', $eleve)->update(array('absences' => $count));
         return redirect('/absences')->with('success', ' ajouté avec succès');
 
     }

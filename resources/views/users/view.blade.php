@@ -19,7 +19,7 @@ $user_type=$cuser->user_type;
     $annee=intval($year);
     if($mois > 9 ){$annee=$annee-1;}
     $usercont=new  UsersController;
- $usercont->countPaiements($id,$annee);
+UsersController::countPaiements($id,$annee);
  $usercont->countRetards($id,$annee);
  $usercont->countAbsences($id,$annee);
 } 

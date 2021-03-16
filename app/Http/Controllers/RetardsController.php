@@ -164,7 +164,7 @@ $user_type=$user->user_type;
     ->where('annee',$annee)
     ->count();
     
-     User::where('id', $user)->update(array('retards' => $count));
+     User::where('id', $eleve)->update(array('retards' => $count));
         return redirect('/retards')->with('success', ' ajouté avec succès');
 
     }

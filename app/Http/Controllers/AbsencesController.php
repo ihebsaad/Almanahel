@@ -267,10 +267,20 @@ $user_type=$user->user_type;
     public function destroy($id)
     {
         $absences = Absence::find($id);
+        $eleve=$absences['eleve'];
         $absences->delete();
+ $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+        $count=Absence::where('eleve', $eleve)
+    ->where('annee',$annee)
+    ->count();
+    
+     User::where('id', $eleve)->update(array('absences' => $count));
 
         return redirect('/absences')->with('success', '  Supprimé avec succès');
-    }
+          }
 
  
  

@@ -264,6 +264,10 @@ $user_type=$user->user_type;
         $retards = Retard::find($id);
         $eleve=$retards->eleve;
         $retards->delete();
+        $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
            $count=Retard::where('eleve', $eleve)
     ->where('annee',$annee)
     ->count();

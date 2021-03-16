@@ -117,24 +117,7 @@ class PaiementsController extends Controller
 
        $val= $request->get('val');
        Paiement::where('id', $id)->update(array('visible' => $val));
-if($champ==='montant')
-{
-$paiment=Paiement::where('id', $id)->first();
-$eleve=$paiment['eleve'];
-    $year=date('Y');$month=date('m');
-    $mois=intval($month);
-    $annee=intval($year);
-    if($mois > 9 ){$annee=$annee-1;}
-         $count=Paiement::where('eleve', $eleve)
-    ->where('annee',$annee)
-    ->sum('montant');
-    dd($count);
 
-    
-     User::where('id', $eleve)->update(array('totalpaiement' => $count));
-
-}
- 
     }
 
     /**
@@ -173,7 +156,23 @@ $eleve=$paiment['eleve'];
              'libelle' => trim($request->get('libelle')),
  		)
 		);	
-			
+	
+
+$eleve=$paiment['eleve'];
+    $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+         $count=Paiement::where('eleve', $eleve)
+    ->where('annee',$annee)
+    ->sum('montant');
+   
+
+    
+     User::where('id', $eleve)->update(array('totalpaiement' => $count));
+
+
+ 	
 		 
 		
         return redirect('/paiements/view/'.$id)->with('success', ' Modifié avec succès');

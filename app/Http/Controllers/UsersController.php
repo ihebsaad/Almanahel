@@ -629,7 +629,7 @@ public function view($id)
  
     }
   
-      public  function countAbsences(  $user,$annee)
+      public  static function countAbsences(  $user,$annee)
     {
     $count=Absence::where('eleve', $user)
     ->where('annee',$annee)

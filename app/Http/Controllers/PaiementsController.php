@@ -158,7 +158,7 @@ class PaiementsController extends Controller
 		);	
 	
 
-$eleve=$paiment['eleve'];
+$eleve=$paiement['eleve'];
     $year=date('Y');$month=date('m');
     $mois=intval($month);
     $annee=intval($year);

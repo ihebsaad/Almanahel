@@ -111,10 +111,26 @@ class PaiementsController extends Controller
     {
 
         $id= $request->get('paiement');
+
         $champ= strval($request->get('champ'));
+
        $val= $request->get('val');
        Paiement::where('id', $id)->update(array('visible' => $val));
+if($champ==='montant')
+{
+$paiment=Paiement::where('id', $id)->first();
+$eleve=$paiment['eleve'];
+    $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+         $count=Paiement::where('eleve', $eleve)
+    ->where('annee',$annee)
+    ->sum('montant');
+    
+     User::where('id', $eleve)->update(array('totalpaiement' => $count));
 
+}
  
     }
 
@@ -177,7 +193,18 @@ class PaiementsController extends Controller
     public function destroy($id)
     {
         $paiements = Paiement::find($id);
+        $eleve=$paiements['eleve'];
         $paiements->delete();
+         $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 9 ){$annee=$annee-1;}
+         $count=Paiement::where('eleve', $eleve)
+    ->where('annee',$annee)
+    ->sum('montant');
+    
+     User::where('id', $eleve)->update(array('totalpaiement' => $count));
+
 
         return redirect('/paiements')->with('success', '  Supprimé avec succès');
     }

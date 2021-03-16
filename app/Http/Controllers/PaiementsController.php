@@ -128,6 +128,8 @@ $eleve=$paiment['eleve'];
          $count=Paiement::where('eleve', $eleve)
     ->where('annee',$annee)
     ->sum('montant');
+    dd($count);
+
     
      User::where('id', $eleve)->update(array('totalpaiement' => $count));
 

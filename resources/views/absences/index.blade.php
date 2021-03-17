@@ -86,9 +86,11 @@ $user_type=$cuser->user_type;
                     <td style="width:10%" ><?php echo $absence['fin'];?> </td>
  
 					<td style="width:10%"   >
+                        <?php  if($user_type!='parent') {?>  
                              <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{action('AbsencesController@destroy', $absence['id'])}}" class="btn btn-danger btn-sm btn-responsive " role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Supprimer" >
                                 <span class="fa fa-fw fa-trash-alt"></span> Supprimer
                             </a>
+                        <?php } ?>
                               <a   href="{{action('AbsencesController@view', $absence['id'])}}"  class="btn btn-md btn-success"  role="button" data-toggle="tooltip" data-tooltip="tooltip" data-placement="bottom" data-original-title="Valider" >
                             <span class="far fa-eye" ></span> Voir
                         </a>

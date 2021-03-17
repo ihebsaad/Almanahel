@@ -59,6 +59,7 @@
 				   
 		         <div class="form-group"     >
                     <label for="destinataire">Destinataire:</label>
+                      <input  class="form-control" name="destination"   id="destination"   type="hidden" />
                     <input id="destinataire" type="text" class="form-control" name="destinataire"/>
                 </div>			   
 				   

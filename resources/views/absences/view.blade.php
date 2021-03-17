@@ -85,10 +85,18 @@
 			 
 				
 			 
+<?php 
+$cuser = auth()->user();
+ $iduser=$cuser->id;
+$user_type=$cuser->user_type;
 
+
+             if($user_type!='parent') {?>
           <div class="form-group ">
+
       <button  type="submit"  class="btn btn-primary">Modifier</button>
   			 </div>
+            <?php  } ?>
 
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>

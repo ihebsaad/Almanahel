@@ -88,7 +88,7 @@ $user_type=$cuser->user_type;
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>
   			 </div>
-<?php ?>
+<?php } ?>
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
         </div>

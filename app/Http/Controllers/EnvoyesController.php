@@ -222,9 +222,8 @@ $user = auth()->user();
 				   unset($emails[$key]); 
 				}
 				}
-		if(!is_array ($emails ) )
-		
-	{ $emails=$emails->toArray() ;}
+				
+	  $emails=$emails->toArray() ;
 	  $chunks = array_chunk($emails, 30);
 
         // parcours divisions

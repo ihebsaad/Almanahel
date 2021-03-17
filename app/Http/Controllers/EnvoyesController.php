@@ -354,12 +354,13 @@ $user = auth()->user();
 	 if (Auth::check()) {
 		$id=Auth::id();
 	 } else{$id=0;}
-     
+
      $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
         
         $swiftMailer = new Swift_Mailer($swiftTransport);
+         Mail::setSwiftMailer($swiftMailer);
         $from='almanahelmonastir@gmail.com';
         $fromname='Almanahel Academy';
 

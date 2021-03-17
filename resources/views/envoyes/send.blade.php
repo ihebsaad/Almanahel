@@ -58,8 +58,9 @@
                <?php } else{   ?>
 				   
 		         <div class="form-group"     >
+                    <input  class="form-control" name="destination"   id="destination"   value="personne" type="hidden" />
                     <label for="destinataire">Destinataire:</label>
-                      <input  class="form-control" name="destination"   id="destination"   value="personne" type="hidden" />
+
                     <input id="destinataire" type="text" class="form-control" name="destinataire"/>
                 </div>			   
 				   

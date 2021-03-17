@@ -125,7 +125,7 @@ $user_type=$user->user_type;
 				$sujet="Notification - Absence de l'éleve ".$nomeleve." ";
 				$contenu="Bonjour,<br>
 				Nous vous informons que votre enfant ".$nomeleve." a été absent à l'école.<br>
-				De: ".$debut." A: ".$fin."<br>
+				De: ".$debut.$heure_debut." A: ".$fin.$heure_fin."<br>
 				Séance(s): ".$seance."<br>
 				".$details."<br><br>
 				

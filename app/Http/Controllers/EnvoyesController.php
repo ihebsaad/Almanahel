@@ -116,6 +116,7 @@ public function sending(Request $request)
 	 $contenu= $request->get('contenu') ;
 	 $attachs = $request->get('attachs');
 	 $destination = $request->get('destination');
+     dd($destination);
 
 $user = auth()->user();
  $iduser=$user->id;

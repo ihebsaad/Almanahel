@@ -77,12 +77,18 @@
                     <label for="date">Date:</label>
                     <input id="date" type="text" class="form-control datepicker" name="date"    value="<?php echo $retard['date'] ; ?>"/>
                 </div>	
-			   
+			   <?php 
+$cuser = auth()->user();
+ $iduser=$cuser->id;
+$user_type=$cuser->user_type;
+
+
+             if($user_type!='parent') {?>
 
           <div class="form-group ">
       <button  type="submit"  class="btn btn-primary">Enregistrer</button>
   			 </div>
-
+<?php ?>
              <!--   <button id="add"  class="btn btn-primary">Ajax Add</button>-->
             </form>
         </div>

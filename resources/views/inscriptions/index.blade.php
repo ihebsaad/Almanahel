@@ -16,7 +16,7 @@
             $year=date('Y');
              $annee=intval($year);
              $anneep=$annee-1;
-             $annees=$annee+1
+             $annees=$annee+1;
              $anneess=$annee+2;
             ?>
          <div class="row">

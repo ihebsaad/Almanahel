@@ -29,7 +29,7 @@
   </div>
    <div class="col">
                 <label for="annee">Année : </label>
-              <input  min="2021" value="" type="number" name="annee" id="annee" />
+              <input  required class="form-control" min="2021" value="" type="number" name="annee" id="annee" />
             </div>
 
 </div>

@@ -65,7 +65,8 @@ $user_type=$cuser->user_type;
                 <th style="width:5%">N°</th>
                 <th style="width:20%">Classe</th>
                 <th style="width:20%">Elève</th>
-                <th style="width:10%">Date</th>
+                 <th style="width:10%">Date de création </th>
+                <th style="width:10%">Date de retard</th>
                  <th style="width:10%">Actions</th>
               </tr>
          
@@ -85,6 +86,7 @@ $user_type=$cuser->user_type;
                     <td style="width:5%" ><a href="{{action('RetardsController@view', $retard['id'])}}" >{{$retard->id}}</a></td>
                   <td style="width:20%" ><?php if(isset($classe)){echo $classe->titre;}?> </td>
                     <td style="width:20%" ><?php echo $user->name .' '.$user->lastname;;?> </td>
+                    <td style="width:10%" ><?php echo $retard['created_at']->format('d/m/y H:i:s') ;?> </td>
                        <td style="width:10%" ><?php echo $retard['date'];?> </td>
  
 					<td style="width:10%"   >

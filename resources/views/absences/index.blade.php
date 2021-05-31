@@ -62,6 +62,7 @@ $user_type=$cuser->user_type;
                 <th style="width:5%">N°</th>
                 <th style="width:20%">Classe</th>
                 <th style="width:20%">Elève</th>
+                 <th style="width:20%">Date</th>
                 <th style="width:10%">Début</th>
                 <th style="width:10%">Fin</th>
                  <th style="width:10%">Actions</th>
@@ -82,6 +83,8 @@ $user_type=$cuser->user_type;
                     <td style="width:5%" ><a href="{{action('AbsencesController@view', $absence['id'])}}" >{{$absence->id}}</a></td>
                     <td style="width:20%" ><?php   echo $classe->titre ; ?> </td>
                     <td style="width:20%" ><?php if($userid>0){echo $user['name'] .' '.$user['lastname'];}?> </td>
+
+                    <td style="width:10%" ><?php echo $absence['created_at']->format('d/m/y H:i:s') ;?> </td>
                     <td style="width:10%" ><?php echo $absence['debut'];?> </td>
                     <td style="width:10%" ><?php echo $absence['fin'];?> </td>
  

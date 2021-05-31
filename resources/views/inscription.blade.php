@@ -184,6 +184,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					<div class="row sectionform">L'élève</div>
 					<div class="row">
 	    				<div class="col">
+	    					<label for="nom">Nom : </label>
 						       <input required class="form-control" type="text" name="nom" id="nom"  placeholder="Veuillez entrer votre nom" />
 						</div> 
 						<div class="col">

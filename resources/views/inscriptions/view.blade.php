@@ -10,7 +10,7 @@
 <div  style="padding:8px 8px 8px 8px" >
         <div class="portlet box grey" >
 <h3 style="margin-left:50px">Pré-inscription</h3>
-<h3 style="float:right;:50px"><?php echo $inscription['created_at'] ;?></h3>
+<h3 style="float:right;"><?php echo $inscription['created_at']->format('d/m/y H:i:s') ;?></h3>
 
 <br><br>    
                <form class="form-horizontal" method="POST"  action="{{action('InscriptionsController@update', $id)}} " enctype="multipart/form-data" >

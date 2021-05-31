@@ -15,6 +15,13 @@ $user_type=$cuser->user_type;
  
   
   ?>
+  <?php
+            $year=date('Y');
+             $annee=intval($year);
+             $anneep=$annee-1;
+             $annees=$annee+1;
+             $anneess=$annee+2;
+            ?>
 
 @section('content')
     <style>
@@ -32,16 +39,17 @@ $user_type=$cuser->user_type;
                 </button>
                 <ul class="dropdown-menu pull-right">
                     <li style="text-align:center;width:120px">
-                        <a href="{{route('excels.annee',['annee'=>'2020' ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2020 </a>
+                        <a href="{{action(ExcelsController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                           <?php echo $anneep.'-'.$annee  ?> </a>
                     </li>
                     <li style="text-align:center;width:120px">
-                        <a href="{{route('excels.annee',['annee'=>2021 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2021 </a>
+                        <a href="{{action(ExcelsController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                           <?php echo $annee.'-'.$annees  ?> </a>
                     </li>
                     <li style="text-align:center;;width:120px">
-                        <a href="{{route('excels.annee',['annee'=>2022 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2022 </a>
+                        <a href="{{action(ExcelsController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        
+                            <?php echo $annees.'-'.$anneess  ?> </a>
                     </li>
 
                 </ul>

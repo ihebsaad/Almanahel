@@ -71,6 +71,8 @@ class InscriptionsvController extends Controller
                                             ])->first();
  $parent= User::where('id',  $relation->parent)->first();
  $classe= Classe::where('id',  $relation1->classe)->first();
+     $year=date('Y');
+             $anneean=intval($year);
             $inscriptionv = new Inscriptionv([
                 'nom' => $user['lastname'],
                 'prenom' =>$user['name'] ,
@@ -78,7 +80,7 @@ class InscriptionsvController extends Controller
                  'datenaissance' =>$user['naissance'],
                 'valide' => 1,
                 'user_type' => 'eleve',
-                'annee' => $request->get('annee'),
+                'annee' => $anneean,
                   'eleve' => $user['id'],
                   'ideleve' => $user['id'],
                   'nom_rep' => $parent['lastname'],

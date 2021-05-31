@@ -13,6 +13,13 @@
             margin-top: 40px;
         }
     </style>
+    <?php
+            $year=date('Y');
+             $annee=intval($year);
+             $anneep=$annee-1;
+             $annees=$annee+1;
+             $anneess=$annee+2;
+            ?>
          <div class="row">
             <div class="col-md-6"><H2> Liste des inscriptions</H2></div>
 			                <div class="col-lg-3">
@@ -21,17 +28,17 @@
                     <i class="fa fa-archive"></i> Archive  
                 </button>
                 <ul class="dropdown-menu pull-right">
-                    <li style="text-align:center;width:120px">
-                        <a href="{{route('inscriptionsv.annee',['annee'=>'2020' ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2020-2021 </a>
+                   <li style="text-align:center;width:120px">
+                        <a href="{{action('InscriptionsvController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            <?php echo $anneep.'-'.$annee  ?></a>
                     </li>
                     <li style="text-align:center;width:120px">
-                        <a href="{{route('inscriptionsv.annee',['annee'=>2021 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2021-2022</a>
+                        <a href="{{action('InscriptionsvController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            <?php echo $annee.'-'.$annees  ?></a>
                     </li>
                     <li style="text-align:center;;width:120px">
-                        <a href="{{route('inscriptionsv.annee',['annee'=>2022 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2022-2023 </a>
+                        <a href="{{action('InscriptionsvController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                            <?php echo $annees.'-'.$anneess  ?> </a>
                     </li>
 
                 </ul>

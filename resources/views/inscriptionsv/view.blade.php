@@ -9,7 +9,9 @@
 @section('content')
 <div class=" " style="padding:8px 8px 8px 8px">
         <div class="portlet box grey">
-<h3 style="margin-left:50px">Inscription</h3><br><br>    
+<h3 style="margin-left:50px">Inscription</h3>
+<h3 style="float:right;"><?php echo $inscriptionv['created_at']->format('d/m/y H:i:s') ;?></h3>
+<br><br>    
                <form class="form-horizontal" method="POST"  action="{{action('InscriptionsvController@update1', $id)}} " enctype="multipart/form-data" >
       {{ csrf_field() }}
 
@@ -48,6 +50,23 @@
  
 
          </div>
+           <div class="col">
+       <label class="form-label" for="annee">Année: </label>
+ <?php
+            $year=date('Y');
+             $annee=intval($year);
+             $anneep=$annee-1;
+             $annees=$annee+1
+            ?>
+       <select class="form-control"  name="annee" id="annee"  onchange="changing(this)"  value="{{ $inscriptionv->annee }}"  >
+  
+     <option  <?php if ($inscriptionv['annee'] ==$anneep){echo 'selected="selected"';}?>  value="<?php echo $anneep ?>"><?php echo $anneep.'-'.$annee ?></option>
+    <option  <?php if ($inscriptionv['annee'] ==$annee){echo 'selected="selected"';}?>  value="<?php echo $annee ?>"><?php echo $annee.'-'.$annees ?></option>
+    
+  </select>
+
+         </div>
+
 </div>
 <div class="row" style="margin-left:10px">
  

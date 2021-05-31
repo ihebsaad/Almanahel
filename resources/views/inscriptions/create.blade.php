@@ -35,7 +35,7 @@
             ?>
             <div class="col">
                 <label for="annee">Année : </label>
-               <select  class="custom-select" name="section" id="section">
+               <select  class="custom-select" name="annee" id="annee">
                 <option value="<?php echo $anneep ?>"><?php echo $anneep.'-'.$annee ?></option>
                  <option value="<?php echo $annee ?>"><?php echo $annee.'-'.$annees ?></option>
                 

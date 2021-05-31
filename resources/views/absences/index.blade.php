@@ -32,15 +32,15 @@
                 </button>
                 <ul class="dropdown-menu pull-right">
                     <li style="text-align:center;width:120px">
-                        <a href="{{action(AbsencesController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('AbsencesController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                            <?php echo $anneep.'-'.$annee  ?> </a>
                     </li>
                     <li style="text-align:center;width:120px">
-                        <a href="{{action(AbsencesController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('AbsencesController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                       <?php echo $annee.'-'.$annees  ?></a>
                     </li>
                     <li style="text-align:center;;width:120px">
-                        <a href="{{action(AbsencesController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('AbsencesController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                              <?php echo $annees.'-'.$anneess  ?> </a>
                     </li>
 

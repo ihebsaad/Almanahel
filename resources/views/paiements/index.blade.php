@@ -41,15 +41,15 @@ $user_type=$user->user_type;
                 </button>
                 <ul class="dropdown-menu pull-right">
                     <li style="text-align:center;width:120px">
-                        <a href="{{action(PaiementsController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('PaiementsController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             <?php echo $anneep.'-'.$annee  ?> </a>
                     </li>
                     <li style="text-align:center;width:120px">
-                        <a href="{{action(PaiementsController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('PaiementsController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                            <?php echo $annee.'-'.$annees  ?></a>
                     </li>
                     <li style="text-align:center;;width:120px">
-                        <a href="{{action(PaiementsController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('PaiementsController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                            <?php echo $annees.'-'.$anneess  ?></a>
                     </li>
 

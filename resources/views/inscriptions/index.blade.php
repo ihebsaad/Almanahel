@@ -28,15 +28,15 @@
                 </button>
                 <ul class="dropdown-menu pull-right">
                     <li style="text-align:center;width:120px">
-                        <a href="{{route('inscriptions.annee',['annee'=> <?php echo $anneep ?>])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('InscriptionsController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             <?php echo $anneep.'-'.$annee  ?></a>
                     </li>
                     <li style="text-align:center;width:120px">
-                        <a href="{{route('inscriptions.annee',['annee'=> <?php echo $annee ?> ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('InscriptionsController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             <?php echo $annee.'-'.$annees  ?></a>
                     </li>
                     <li style="text-align:center;;width:120px">
-                        <a href="{{route('inscriptions.annee',['annee'=> <?php echo $annees ?> ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                        <a href="{{action('InscriptionsController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
                             <?php echo $annees.'-'.$anneess  ?> </a>
                     </li>
 

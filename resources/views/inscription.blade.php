@@ -150,8 +150,14 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     </div>
   </div>
 </div>
+<?php
+					 	$year=date('Y');
+					 	 $annee=intval($year);
+					 	 $anneep=$annee-1;
+					 	 $annees=$annee+1
+					 	?>
 <div class="row" style="text-align: center;padding-bottom: 20px"  id="inscription">
-	<h3> Pré-inscription / Inscription 2020-2021 </h3>
+	<h3> Pré-inscription / Inscription <?php echo  $annee.'-'. $annees ?> </h3>
 </div>
 <div class="row">
 	<section style=" font-size: 18px; font-weight: 500; color: #545454;width:200px">
@@ -205,7 +211,7 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					 	?>
 					 	<div class="col">
 					 		  <label for="annee">Année : </label>
-					 		 <select  class="custom-select" name="section" id="section">
+					 		 <select  class="custom-select" name="annee" id="annee">
 						    <option value="<?php echo $anneep ?>"><?php echo $anneep.'-'.$annee ?></option>
 						     <option value="<?php echo $annee ?>"><?php echo $annee.'-'.$annees ?></option>
 						    

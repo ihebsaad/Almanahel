@@ -196,14 +196,14 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					       <label for="datenaissance">Date de naissance : </label>
 					       <input required class="form-control" type="text" name="datenaissance" id="datenaissance" />
 					 	</div>
-					 	
-					</div>
-						<div class="row" style="margin-top: 10px">
-					<div class="col">
+					 	<div class="col">
 					 		  <label for="annee">Année : </label>
 					 		<input  min="2021" value="" type="number" name="annee" id="annee" />
 					 	</div>
-					 	</div>
+					</div>
+						
+					 	
+
 					<div class="row" style="margin-top: 10px">
 						<div class="col">
 					       <label for="email">E-mail : </label>

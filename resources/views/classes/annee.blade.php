@@ -33,11 +33,11 @@
                 <ul class="dropdown-menu pull-right">
                     <li style="text-align:center;width:120px">
                         <a href="{{action('ClassesController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            <?php echo $anneep.'-'.$annee  ?> </a>
+                            <?php echo $anneep.'-'.$anneeac  ?> </a>
                     </li>
                     <li style="text-align:center;width:120px">
-                        <a href="{{action('ClassesController@annee', $annee)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                           <?php echo $annee.'-'.$annees  ?> </a>
+                        <a href="{{action('ClassesController@annee', $anneeac)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                           <?php echo $anneeac.'-'.$annees  ?> </a>
                     </li>
                     <li style="text-align:center;;width:120px">
                         <a href="{{action('ClassesController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">

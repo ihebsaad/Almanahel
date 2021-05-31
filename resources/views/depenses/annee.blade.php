@@ -12,6 +12,14 @@ $user = auth()->user();
 $user_type=$user->user_type;
 } 
 ?>
+<?php
+            $year=date('Y');
+             $anneeac=intval($year);
+             $anneep=$anneeac-1;
+             $annees=$anneeac+1;
+             $anneess=$anneeac+2;
+             $anneet=$annee+1;
+            ?>
  @section('content')
  
     <style>
@@ -24,7 +32,7 @@ $user_type=$user->user_type;
 
         <div class="portlet box grey">
             <div class="row">
-                <div class="col-lg-6"><h2>Liste des Dépenses - Année <?php echo  $annee; ?></h2></div>
+                <div class="col-lg-6"><h2>Liste des Dépenses - Année  <?php echo $annee.'-'.$anneet?></h2></div>
 			 <div class="col-lg-3">
              <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -32,16 +40,16 @@ $user_type=$user->user_type;
                 </button>
                 <ul class="dropdown-menu pull-right">
                     <li style="text-align:center;width:120px">
-                        <a href="{{route('depenses.annee',['annee'=>'2020' ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2020 </a>
+                        <a href="{{action('DepensesController@annee', $anneep)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                           <?php echo $anneep.'-'.$anneeac  ?> </a>
                     </li>
                     <li style="text-align:center;width:120px">
-                        <a href="{{route('depenses.annee',['annee'=>2021 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2021 </a>
+                        <a href="{{action('DepensesController@annee', $anneeac)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                           <?php echo $anneeac.'-'.$annees ?> </a>
                     </li>
                     <li style="text-align:center;;width:120px">
-                        <a href="{{route('depenses.annee',['annee'=>2022 ])}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
-                            2022 </a>
+                        <a href="{{action('DepensesController@annee', $annees)}}"  style="font-size:17px;height:25px;margin-bottom:3px;">
+                           <?php echo $annees.'-'.$anneess  ?> </a>
                     </li>
 
                 </ul>

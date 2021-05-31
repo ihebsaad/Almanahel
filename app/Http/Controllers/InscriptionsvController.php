@@ -492,7 +492,14 @@ if(empty($parent))
     }
       public function index()
     {
-    $inscriptionsv =Inscriptionv::orderBy('created_at', 'desc')->get() ;                     
+      $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 2 ){$annee=$annee;}
+    else
+    { $annee=$annee-1;}
+   
+    $inscriptionsv =Inscriptionv::where('annee',$annee)->orderBy('created_at', 'desc')->get() ;                     
          return view('inscriptionsv.index',  ['inscriptionsv' => $inscriptionsv]);        
          
   }

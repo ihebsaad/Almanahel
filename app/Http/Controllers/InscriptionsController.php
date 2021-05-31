@@ -197,7 +197,15 @@ $pathb = storage_path()."/fichiers/";
      */
     public function index()
     {  
-          $inscriptions =Inscription::orderBy('created_at', 'desc')->get() ;              
+       
+    $year=date('Y');$month=date('m');
+    $mois=intval($month);
+    $annee=intval($year);
+    if($mois > 2 ){$annee=$annee;}
+    else
+    { $annee=$annee-1;}
+   
+          $inscriptions =Inscription::where('annee',$annee)->orderBy('created_at', 'desc')->get() ;              
           return view('inscriptions.index',  ['inscriptions' => $inscriptions]);        
 
      }

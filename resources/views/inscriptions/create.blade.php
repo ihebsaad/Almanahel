@@ -27,9 +27,13 @@
        <input  required  type="text" name="datenaissance" id="datenaissance" class="form-control" />
  
   </div>
+  <?php
+            $year=date('Y');
+             $annee=intval($year);
+            ?>
    <div class="col">
                 <label for="annee">Année : </label>
-              <input  required class="form-control" min="2021" value="" type="number" name="annee" id="annee" />
+              <input  required class="form-control" min="2021" value="" type="number" value="<?php  echo $annee ?>"  name="annee" id="annee" />
             </div>
 
 </div>

@@ -179,12 +179,11 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
     	            <form class="form-horizontal" method="POST" action="{{ route('inscriptions.store') }} "  enctype="multipart/form-data">
                         {{ csrf_field() }}
 					<fieldset>
-						<input  value="2020" type="hidden" name="annee" id="annee" />
+						
 						<input  value="front" type="hidden" name="sourcepg" id="sourcepg" />
 					<div class="row sectionform">L'élève</div>
 					<div class="row">
 	    				<div class="col">
-						       <label for="nom">Nom : </label>
 						       <input required class="form-control" type="text" name="nom" id="nom"  placeholder="Veuillez entrer votre nom" />
 						</div> 
 						<div class="col">
@@ -198,6 +197,8 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					       <input required class="form-control" type="text" name="datenaissance" id="datenaissance" />
 					 	</div>
 					 	<div class="col">
+					 		  <label for="annee">Année : </label>
+					 		<input  min="2021" value="" type="number" name="annee" id="annee" />
 					 	</div>
 					</div>
 					<div class="row" style="margin-top: 10px">

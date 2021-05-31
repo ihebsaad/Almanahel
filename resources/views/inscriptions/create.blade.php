@@ -26,7 +26,12 @@
        <label  for="datenaissance">Date de naissance : </label>
        <input  required  type="text" name="datenaissance" id="datenaissance" class="form-control" />
  
-  </div></div>
+  </div>
+ <div class="col">
+ <label for="annee">Année : </label>
+              <input  min="2021" value="" type="number" name="annee" id="annee" />
+              </div>
+</div>
    <div class="row" style="margin-left:10px">
   
     <div class="col">
@@ -46,13 +51,7 @@
    
 </div>
 
- <?php    //ANNEE
-    $year=date('Y');$month=date('m');
-    $mois=intval($month);
-    $annee=intval($year);
-    if($mois > 9 ){$annee=$annee-1;}
-    ?>
-     <input id="annee" type="hidden" class="form-control" name="annee"  value="<?php echo $annee;?>"/>
+
 
 <div class="row" style="margin-left:10px">
   

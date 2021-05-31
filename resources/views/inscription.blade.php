@@ -200,10 +200,16 @@ $cont3 =  App\Contenu::where('zone', 'inscription3')->first();$contenu3=$cont3->
 					 	<?php
 					 	$year=date('Y');
 					 	 $annee=intval($year);
+					 	 $anneep=$annee-1;
+					 	 $annees=$annee+1
 					 	?>
 					 	<div class="col">
 					 		  <label for="annee">Année : </label>
-					 		<input   required class="form-control" min="2021" value="<?php  echo $annee ?>" type="number" name="annee" id="annee" />
+					 		 <select  class="custom-select" name="section" id="section">
+						    <option value="<?php echo $anneep ?>"><?php echo $anneep.'-'.$annee ?></option>
+						     <option value="<?php echo $annee ?>"><?php echo $annee.'-'.$annees ?></option>
+						    
+						  </select>
 					 	</div>
 					</div>
 						

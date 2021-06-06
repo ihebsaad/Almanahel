@@ -300,9 +300,8 @@ $pass1=InscriptionsvController::genererMDP(8);
                          ->setFrom([$from => $fromname]);
             });
 
-$parent = User::where('user_type','parent')
-          ->where('email',$inscriptionv["email_rep"])->first() ;
-echo($parent);
+$parent = User::where('email',$inscriptionv["email_rep"])->first() ;
+
 
 if(empty($parent))
 
@@ -344,6 +343,8 @@ if(empty($parent))
 
             }); }
              else{
+              if($parent['user_type']==='parent')
+{
       $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
         $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
         $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
@@ -367,6 +368,34 @@ if(empty($parent))
                        ->setBody($contenu, 'text/html')
                        ->setFrom([$from => $fromname]);
              }); }
+             if($parent['user_type']==='prof' || $parent['user_type']==='conseil' || $parent['user_type']==='admin' || $parent['user_type']==='suivi' || $parent['user_type']==='financier' || $parent['user_type']==='membre' )
+             {
+               User::where('id', $parent['id'])->update(['isparent' => 1]);
+               $swiftTransport =  new \Swift_SmtpTransport( 'smtp.gmail.com', '587', 'tls');
+        $swiftTransport->setUsername('almanahelmonastir@gmail.com'); //adresse email
+        $swiftTransport->setPassword('lyceealmanahel2020'); // mot de passe email
+    
+        $swiftMailer = new Swift_Mailer($swiftTransport);
+    Mail::setSwiftMailer($swiftMailer);
+         $to=$parent["email"];
+           $from='almanahelmonastir@gmail.com';
+    $fromname='Almanahel Academy';
+
+
+         $sujet="AlManahel Academy - inscription de votre fils/fille ".$eleve['name'].' '.$eleve['lastname']. " est validée";
+          $contenu="Madame, Monsieur,<br>
+                L'inscription de votre fils/fille ".$eleve['name']." " .$eleve['lastname']. " à almanahel est validée."."<br>";
+                 
+             Mail::send([], [], function ($message) use ($to,$sujet, $contenu ,$from ,$fromname   ) {
+                $message
+                    ->to($to)
+                    //   ->cc($cc  ?: [])
+                    ->subject($sujet)
+                       ->setBody($contenu, 'text/html')
+                       ->setFrom([$from => $fromname]);
+             }); 
+             }
+           }
         Inscriptionv::where('id', $inscriptionv['id'])->update(['ideleve' => $eleve["id"],'idparent' => $parent["id"]]);
          DB::table('parents_eleve')->insert(
                ['parent' => $parent['id'],

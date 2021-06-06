@@ -69,7 +69,7 @@ class UsersController extends Controller
  public function parents()
     {
       
-      $users = User::where('user_type','parent')->orderBy('name', 'asc')->get() ;
+      $users = User::where('user_type','parent')->orWhere('isparent',1)->orderBy('name', 'asc')->get() ;
               
            return view('users.parents',  ['users' => $users]);        
       
@@ -212,6 +212,7 @@ public function view($id)
             ->get();
             $parents = DB::table('users')
             ->where('user_type','=','parent')
+            ->orWhere('isparent',1)
             ->get();
              $relations2 = DB::table('eleves_classe')->select('classe')
             ->where('eleve','=',$id)
@@ -247,6 +248,7 @@ public function view($id)
             ->get();
             $parents = DB::table('users')
             ->where('user_type','=','parent')
+            ->orWhere('isparent',1)
             ->get();
              $relations2 = DB::table('eleves_classe')->select('classe')
             ->where('eleve','=',$id)

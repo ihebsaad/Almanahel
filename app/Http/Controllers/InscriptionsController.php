@@ -197,7 +197,7 @@ $pathb = storage_path()."/fichiers/";
      */
     public function index()
     {  
-       
+      
     $year=date('Y');$month=date('m');
     $mois=intval($month);
     $annee=intval($year);
@@ -205,7 +205,8 @@ $pathb = storage_path()."/fichiers/";
     else
     { $annee=$annee-1;}
    
-          $inscriptions =Inscription::where('annee',$annee)->orderBy('created_at', 'desc')->get() ;              
+          $inscriptions =Inscription::where('annee',$annee)->orderBy('created_at', 'desc')->get() ;  
+           dd($inscriptions);    
           return view('inscriptions.index',  ['inscriptions' => $inscriptions]);        
 
      }

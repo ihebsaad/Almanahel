@@ -81,6 +81,7 @@ if (Auth::check()) {
 $loggedin=true;
 $user = auth()->user();
  $user_type=$user->user_type;
+ $isparent=$user->isparent;
  $prenom=$user->name;
  $nom=$user->lastname;
 echo '<li>Bienvenue  <B>'.$prenom.' '.$nom.'</B> </li>';
@@ -105,7 +106,7 @@ echo '<li>Bienvenue  <B>'.$prenom.' '.$nom.'</B> </li>';
 </div>
 </li>
 <?php } ?>
-<?php if(! $loggedin || $user_type=='parent'){?>
+<?php if(! $loggedin || $user_type=='parent' || $isparent===1){?>
 <li>
 <!--<div class="contact-icon">
 <i class="fa fa-phone"></i>
@@ -116,6 +117,7 @@ echo '<li>Bienvenue  <B>'.$prenom.' '.$nom.'</B> </li>';
 </div>
 </li>
 <?php } ?>
+
 <?php if(! $loggedin || (($user_type!='parent')&& ($user_type!='prof') && ($user_type!='eleve')    )  ){?>
 <li>
 <!--<div class="contact-icon">

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
     use App\Absence ;
     use App\User ;
  use DB;
-
+ use Session;
 
 class AbsencesController extends Controller
 {
@@ -30,9 +30,9 @@ class AbsencesController extends Controller
  $user = auth()->user();
  $iduser=$user->id;
 $user_type=$user->user_type;
+$isparent=$user->isparent;
 
-
-	if($user_type=='parent'){
+	if($user_type=='parent' || (Session::get('parent')=='true')){
 		
 		 $ideleves= DB::table('parents_eleve')->where('parent',  $iduser)->pluck('eleve');
                            
@@ -53,9 +53,9 @@ $user_type=$user->user_type;
  $user = auth()->user();
  $iduser=$user->id;
 $user_type=$user->user_type;
+$isparent=$user->isparent;
 
-
-	if($user_type=='parent'){
+	if($user_type=='parent' ||  (Session::get('parent')=='true')){
 		
 		 $ideleves= DB::table('parents_eleve')->where('parent',  $iduser)->pluck('eleve');
                            

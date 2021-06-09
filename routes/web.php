@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-
+Route::get('/espacechoix', 'HomeController@espacechoix')->name('espacechoix');
 Route::get('/home', array('as' => 'home','uses' => 'HomeController@home'));
 Route::get('/admin', array('as' => 'admin','uses' => 'HomeController@admin'));
 Route::get('/espaceeleves', array('as' => 'espaceeleves','uses' => 'HomeController@eleves'));
@@ -178,6 +178,7 @@ Route::get('/personnels', array('as' => 'personnels','uses' => 'UsersController@
 Route::get('/users', array('as' => 'users','uses' => 'UsersController@index'));
 Route::get('/users/create','UsersController@create')->name('users.create');
 Route::post('/users/saving','UsersController@saving')->name('users.saving');
+Route::post('/users/confirmrole','UsersController@confirmrole')->name('users.confirmrole');
 Route::post('/users/updating','UsersController@updating')->name('users.updating');
 Route::get('/users/view/{id}', 'UsersController@view');
 Route::get('/users/profile/{id}', 'UsersController@profile')->name('profile');

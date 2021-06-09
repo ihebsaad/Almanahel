@@ -22,7 +22,7 @@ $user_type=$user->user_type;
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-    <?php  if ($user_type=='admin' || $user_type=='suivi' ||  $user_type=='membre'  ||  $user_type=='financier' ||  $user_type=='conseil'  ){  ?>
+    <?php  if (($user_type=='admin' || $user_type=='suivi' ||  $user_type=='membre'  ||  $user_type=='financier' ||  $user_type=='conseil' ) &&  (Session::get('parent')=='false') ){  ?>
 
   <li class="nav-item">
 	  
@@ -31,7 +31,15 @@ $user_type=$user->user_type;
           <span>Accueil</span></a>
       </li>
  <?php   }  ?>
- 
+   <?php  if (($user_type=='admin' || $user_type=='suivi' ||  $user_type=='membre'  ||  $user_type=='financier' ||  $user_type=='conseil' ) &&  (Session::get('parent')=='true') ){  ?>
+
+  <li class="nav-item">
+    
+  <a class="nav-link"  href="{{route('espaceparents')}}">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Accueil</span></a>
+      </li>
+ <?php   }  ?>
  <?php  if ($user_type=='eleve' ){ ?>
 	
   <li class="nav-item">
@@ -48,9 +56,16 @@ $user_type=$user->user_type;
           <span>Accueil</span></a>
       </li>
  <?php   }  ?>
-  <?php  if ($user_type=='prof' ){ ?>
+  <?php  if ($user_type=='prof' && (Session::get('parent')=='false')){ ?>
 	   <li class="nav-item">
 	<a class="nav-link"  href="{{route('espaceprofs')}}">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Accueil</span></a>
+      </li> 
+ <?php   }  ?>
+  <?php  if ($user_type=='prof' && (Session::get('parent')=='true')){ ?>
+     <li class="nav-item">
+  <a class="nav-link"  href="{{route('espaceparents')}}">
           <i class="fas fa-fw fa-home"></i>
           <span>Accueil</span></a>
       </li> 
@@ -135,7 +150,7 @@ $user_type=$user->user_type;
       </li>
 	  
 
-<?php } if ($user_type=='admin'   || $user_type=='membre' || $user_type=='parent' || $user->direction      ){ ?>
+<?php } if ($user_type=='admin'   || $user_type=='membre' || $user_type=='parent' || $user->direction     || $user->isparent==1 ){ ?>
 	  
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item <?php if  (( ! (strpos($view_name,'absences') === false) ) ||( ! (strpos($view_name,'retards') === false) )||( ! (strpos($view_name,'inscriptions') === false) ) )   { echo 'active';}?>">
@@ -144,9 +159,9 @@ $user_type=$user->user_type;
           <i class="fas fa-fw fa-school"></i>
           <span>Vie Scolaire</span>
         </a>
-        <div id="collapsePages" class="collapse <?php if($user_type=='parent'){echo 'show';}?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse <?php if($user_type=='parent' || $user->isparent==1 ){echo 'show';}?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-<?php  if ( ! ($user_type=='parent') ) { ?> 
+<?php  if ( ($user_type=='membre') || ($user_type=='admin')|| ($user->direction)   ) { ?> 
             <a class="collapse-item" href="{{route('inscriptions')}}">Pré-Inscriptions</a>
             <a class="collapse-item" href="{{route('inscriptionsv')}}">Inscriptions</a>
  <?php } ?> 

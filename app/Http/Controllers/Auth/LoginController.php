@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Session;
 
 class LoginController extends Controller
 {
@@ -63,46 +63,74 @@ class LoginController extends Controller
         /*if ( $user->isAdmin() ) {
             return redirect()->route('dashboard');
         }*/
-    
+    Session::put('parent', 'false');
 	 
 		$user = auth()->user();
         $iduser = $user->id;
         $type = $user->user_type;
+        $isparent=$user->isparent;
 
-		if ($type == 'prof') {
+		if ($type == 'prof' && $isparent !== 1) {
             return redirect('/espaceprofs');
 		}
-		if ($type == 'parent') {
+		if ($type == 'parent' ) {
             return redirect('/espaceparents');
 		}		
 		if ($type == 'eleve') {
             return redirect('/espaceeleves');
 		}
 		
-		if ($type == 'financier') {
+		if ($type == 'financier'  && $isparent !== 1) {
             return redirect('/admin');
 		}
 		
- 		if ($type == 'conseil'  ) {
+ 		if ($type == 'conseil'  && $isparent !== 1 ) {
             return redirect('/admin');
 		}
 		
-			if ($type == 'conseil'  ) {
+			if ($type == 'conseil'   && $isparent !== 1 ) {
             return redirect('/admin');
 		}
 		
-			if ($type == 'suivi'  ) {
+			if ($type == 'suivi'  && $isparent !== 1 ) {
             return redirect('/admin');
 		}
 		
-		 if ($type == 'membre'  ) {
+		 if ($type == 'membre'  && $isparent !== 1 ) {
             return redirect('/admin');
 		}
 		
-			if ($type == 'admin'  ) {
+			if ($type == 'admin'  && $isparent !== 1 ) {
             return redirect('/admin');
 		}
- 
+ if ($type == 'prof' && $isparent === 1) {
+            return redirect('/espacechoix');
+        }
+        
+        
+        if ($type == 'financier' && $isparent === 1) {
+            return redirect('/espacechoix');
+        }
+        
+        if ($type == 'conseil' && $isparent === 1  ) {
+            return redirect('/espacechoix');
+        }
+        
+            if ($type == 'conseil'  && $isparent === 1) {
+            return redirect('/espacechoix');
+        }
+        
+            if ($type == 'suivi'  && $isparent === 1) {
+            return redirect('/espacechoix');
+        }
+        
+         if ($type == 'membre' && $isparent === 1 ) {
+            return redirect('/espacechoix');
+        }
+        
+            if ($type == 'admin' && $isparent === 1  ) {
+            return redirect('/espacechoix');
+        }
 
 	}
 

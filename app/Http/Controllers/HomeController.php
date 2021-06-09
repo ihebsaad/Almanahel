@@ -127,18 +127,35 @@ class HomeController extends Controller
 		if (Auth::check()) {
 		$user = auth()->user();
          $type = $user->user_type;
+         $isparent=$user->isparent;
 		}
 		if (Auth::guest()) {
 		return redirect('login');
 		}else{
 			
-		if( $type== 'parent'  )	
+		if( $type== 'parent' || $isparent==1)	
 		{return view('parents' );}
 			else{
 			return view('home' );
 			}
   
 		}
+    }
+	 public function espacechoix()
+    {
+		
+		if (Auth::check()) {
+		$user = auth()->user();
+         $type = $user->user_type;
+		}
+		if (Auth::guest()) {
+		return redirect('login');
+		}else{
+			
+		return view('auth.espacechoix' );}
+			
+  
+		
     }
 	
 	
@@ -167,13 +184,14 @@ class HomeController extends Controller
 				if (Auth::check()) {
 		$user = auth()->user();
          $type = $user->user_type;
+         $isparent=$user->isparent;
 		}
 		
 		if (Auth::guest()) {
 		return redirect('login');
 		}else{
 			
-		if( $type== 'prof'  )	
+		if( $type== 'prof')	
 		{return view('profs' );}
 			else{
 			return view('home' );

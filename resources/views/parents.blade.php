@@ -10,9 +10,10 @@ if (Auth::check()) {
 $user = auth()->user();
  $iduser=$user->id;
 $user_type=$user->user_type;
+$isparent=$user->isparent;
 } 
  
- if ($user_type =='parent'  ){
+ if ($user_type =='parent' || $isparent===1 ){
 
  ?>
  <H2>Espace Parents</h2><br><br>

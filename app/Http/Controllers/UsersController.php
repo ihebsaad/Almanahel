@@ -752,6 +752,40 @@ public  function createparent(Request $request)
      return $count;
 
     }
-
+ public  function confirmrole(Request $request)
+    {
+        $isparent=$request->get('isparent');
+        $role= $request->get('role');
+        Session::put('parent','false');
+      if($isparent==='1')
+       {
+         Session::put('parent','true');
+              return 'espaceparents';
+       }
+      if($isparent==='0' && $role==='prof')
+       {
+          return 'espaceprofs';
+       }
+       if($isparent==='0' && $role==='financier')
+       {
+          return 'admin';
+       }
+       if($isparent==='0' && $role==='conseil')
+       {
+          return 'admin';
+       }
+       if($isparent==='0' && $role==='suivi')
+       {
+          return 'admin';
+       }
+       if($isparent==='0' && $role==='admin')
+       {
+          return 'admin';
+       }
+       if($isparent==='0' && $role==='membre')
+       {
+          return 'admin';
+       }
+    }
 
  }

@@ -133,7 +133,7 @@ $user_type=$cuser->user_type;
             </div>
                     
  <?php } ?> 
- <?php if($user->user_type=='parent') {?>
+ <?php if($user->user_type=='parent' || $user->isparent==1) {?>
    
         
                 <div class="form-group">

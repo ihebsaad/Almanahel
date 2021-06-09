@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
     use App\Retard ;
  use DB;
+ use Session;
 
 
 class RetardsController extends Controller
@@ -29,9 +30,9 @@ class RetardsController extends Controller
  $user = auth()->user();
  $iduser=$user->id;
 $user_type=$user->user_type;
+$isparent=$user->isparent;
 
-
-	if($user_type=='parent'){
+	if($user_type=='parent' || (Session::get('parent')=='true')  ) {
 		
 		 $ideleves= DB::table('parents_eleve')->where('parent',  $iduser)->pluck('eleve');
                            
@@ -53,9 +54,9 @@ $user_type=$user->user_type;
  $user = auth()->user();
  $iduser=$user->id;
 $user_type=$user->user_type;
+$isparent=$user->isparent;
 
-
-	if($user_type=='parent'){
+	if($user_type=='parent' ||  (Session::get('parent')=='true')){
 		
 		 $ideleves= DB::table('parents_eleve')->where('parent',  $iduser)->pluck('eleve');
                            
